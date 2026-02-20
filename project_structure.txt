@@ -1,0 +1,101 @@
+
+🔄🔄🔄 FLUXO END-TO-END 🔄🔄🔄
+
+1️⃣ COLLECTOR_HISTORY (Dados OHLC)
+   ├─ scheduler.py (job a cada 1 min)
+   ├─ sync_service.py
+   │  ├─ Conecta MT5Provider
+   │  ├─ Busca symbol_config ativos
+   │  ├─ Baixa candles (últimos 1000)
+   │  └─ Upsert em market_data
+   └─ Resultado: market_data populada
+   
+   ↓
+
+2️⃣ INDICATOR_ENGINE (Cálculo de Indicadores)
+   ├─ calculator.py (job a cada 5 min)
+   ├─ IndicatorRegistry
+   │  ├─ Load indicator_definitions
+   │  └─ Create instances dynamically
+   ├─ IndicatorCalculator
+   │  ├─ Busca indicator_instances ativos
+   │  ├─ Para cada instância:
+   │  │  ├─ Fetch market_data
+   │  │  ├─ Create indicator (via registry)
+   │  │  ├─ Calculate (RSI, MACD, etc)
+   │  │  └─ Save to indicator_values
+   └─ Resultado: indicator_values populada
+
+   ↓
+
+3️⃣ COLLECTOR_EVENTS (Notícias & Currency Strength)
+   ├─ news_scraper.py
+   │  ├─ Scrape Reuters, Twitter
+   │  └─ Save to MongoDB (news_events)
+   ├─ sentiment_analyzer.py
+   │  ├─ NLP analysis (hawkish/dovish)
+   │  └─ Update news_events.nlp_analysis
+   ├─ currency_strength_calculator.py
+   │  ├─ Aggregate events por moeda
+   │  ├─ Calculate strength_score
+   │  └─ Save to currency_strength
+   └─ Resultado: news_events + currency_strength
+
+   ↓
+
+4️⃣ SIGNAL_GENERATOR (Geração de Sinais)
+   ├─ strategy_executor.py
+   ├─ StrategyRegistry
+   │  ├─ Load strategy_definitions
+   │  └─ Create instances
+   ├─ Para cada strategy_instance ativa:
+   │  ├─ Fetch market_data
+   │  ├─ Fetch indicator_values (via strategy_indicator_links)
+   │  ├─ Fetch currency_strength (se fundamental)
+   │  ├─ Execute strategy.analyze()
+   │  ├─ Se retornar StrategySignal:
+   │  │  └─ Save to signals table
+   └─ Resultado: signals gerados
+
+   ↓
+
+5️⃣ ENGINE_ML (Validação & Filtragem)
+   ├─ feature_builder.py
+   │  ├─ Fetch signals
+   │  ├─ Build features:
+   │  │  ├─ Technical: RSI, MACD, volatility
+   │  │  ├─ Fundamental: news_sentiment, currency_strength
+   │  │  ├─ Temporal: hour, day, session_overlap
+   │  │  └─ Multi-timeframe: M1, M5, H1 trends
+   ├─ pattern_detector.py (ML Model)
+   │  ├─ Classify signal quality:
+   │  │  ├─ NOISE (ignore)
+   │  │  ├─ WEAK_SIGNAL (low confidence)
+   │  │  └─ STRONG_SIGNAL (execute)
+   │  └─ Update signals.ml_prediction_score
+   └─ Resultado: signals filtrados por ML
+
+   ↓
+
+6️⃣ RISK_MANAGER (Validação de Risco)
+   ├─ risk_calculator.py
+   │  ├─ Check exposure (max 5% da conta)
+   │  ├─ Check correlation (não abrir EUR/USD + GBP/USD juntos)
+   │  ├─ Check drawdown (< 20%)
+   │  └─ Approve/Reject signal
+   └─ Resultado: signals aprovados
+
+   ↓
+
+7️⃣ EXECUTOR_TRADING (Execução)
+   ├─ order_manager.py
+   │  ├─ Fetch approved signals
+   │  ├─ Calculate position size (Kelly Criterion)
+   │  ├─ Execute via MT5Provider
+   │  ├─ Set SL/TP
+   │  └─ Save to trades table
+   ├─ trade_monitor.py
+   │  ├─ Monitor open positions
+   │  ├─ Trailing stop
+   │  └─ Close on TP/SL
+   └─ Resultado: trades executados
