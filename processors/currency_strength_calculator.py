@@ -12,6 +12,7 @@ class CurrencyStrengthCalculator:
     Calcula strength score de cada moeda baseado em eventos
     """
     
+    # Deve pegar da sessão !!!!
     CURRENCIES = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'NZD']
     
     def __init__(self, mongo_client: MongoClient):

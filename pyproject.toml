@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "collector_events"
+version = "0.1.0"
+description = "Global News and Events internet collector"
+dependencies = [
+    "pandas"
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+include = ["collector_events*"]
