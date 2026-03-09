@@ -1,6 +1,6 @@
 # services/collector_events/app/processors/currency_strength_calculator.py
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Dict, List
 import numpy as np
 from pymongo import MongoClient
@@ -45,7 +45,7 @@ class CurrencyStrengthCalculator:
         """
         
         # Buscar eventos recentes (últimas 48 horas)
-        cutoff_time = datetime.utcnow() - timedelta(hours=48)
+        cutoff_time = datetime.now(timezone.utc) - timedelta(hours=48)
         
         events = list(self.news_collection.find({
             'published_at': {'$gte': cutoff_time},
@@ -95,7 +95,7 @@ class CurrencyStrengthCalculator:
                 'market_sentiment': sentiment_score
             },
             'recent_events': [e['event_id'] for e in events[:10]],
-            'calculated_at': datetime.utcnow(),
+            'calculated_at': datetime.now(timezone.utc),
             'confidence': self._calculate_confidence(events)
         }
     
@@ -135,7 +135,7 @@ class CurrencyStrengthCalculator:
             event_score = base_score * magnitude
             
             # Decay por tempo (eventos mais recentes pesam mais)
-            hours_ago = (datetime.utcnow() - event['published_at']).total_seconds() / 3600
+            hours_ago = (datetime.now(timezone.utc) - event['published_at']).total_seconds() / 3600
             time_weight = np.exp(-hours_ago / 24)  # Decay exponencial
             
             scores.append(event_score * time_weight)
@@ -174,7 +174,7 @@ class CurrencyStrengthCalculator:
                 event_score = 0
             
             # Time decay
-            hours_ago = (datetime.utcnow() - event['published_at']).total_seconds() / 3600
+            hours_ago = (datetime.now(timezone.utc) - event['published_at']).total_seconds() / 3600
             time_weight = np.exp(-hours_ago / 12)
             
             scores.append(event_score * time_weight)
@@ -209,7 +209,7 @@ class CurrencyStrengthCalculator:
             else:
                 event_score = sentiment * 30 * magnitude
             
-            hours_ago = (datetime.utcnow() - event['published_at']).total_seconds() / 3600
+            hours_ago = (datetime.now(timezone.utc) - event['published_at']).total_seconds() / 3600
             time_weight = np.exp(-hours_ago / 48)  # Eventos geo duram mais
             
             scores.append(event_score * time_weight)
@@ -225,7 +225,7 @@ class CurrencyStrengthCalculator:
             if currency in event.get('nlp_analysis', {}).get('predicted_impact', {}):
                 sentiment = event['nlp_analysis'].get('sentiment', 0)
                 
-                hours_ago = (datetime.utcnow() - event['published_at']).total_seconds() / 3600
+                hours_ago = (datetime.now(timezone.utc) - event['published_at']).total_seconds() / 3600
                 time_weight = np.exp(-hours_ago / 6)  # Sentiment muda rápido
                 
                 sentiments.append(sentiment * 20 * time_weight)
@@ -247,7 +247,7 @@ class CurrencyStrengthCalculator:
         
         past = db.query(CurrencyStrength).filter(
             CurrencyStrength.currency == currency,
-            CurrencyStrength.calculated_at < datetime.utcnow() - timedelta(hours=24)
+            CurrencyStrength.calculated_at < datetime.now(timezone.utc) - timedelta(hours=24)
         ).order_by(CurrencyStrength.calculated_at.desc()).first()
         
         if not current or not past:
@@ -295,7 +295,7 @@ class CurrencyStrengthCalculator:
                 'market_sentiment': 0.0
             },
             'recent_events': [],
-            'calculated_at': datetime.utcnow(),
+            'calculated_at': datetime.now(timezone.utc),
             'confidence': 0.0
         }
     
