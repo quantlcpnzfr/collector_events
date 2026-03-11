@@ -7,7 +7,9 @@ name = "collector_events"
 version = "0.1.0"
 description = "Global News and Events internet collector"
 dependencies = [
-    "pandas"
+    "pandas", 
+    "asyncio", 
+    "debugpy"
 ]
 
 [tool.setuptools]
