@@ -1,7 +1,0 @@
-Metadata-Version: 2.4
-Name: collector_events
-Version: 0.1.0
-Summary: Global News and Events internet collector
-Requires-Dist: pandas
-Requires-Dist: asyncio
-Requires-Dist: debugpy

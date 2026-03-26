@@ -1,5 +1,17 @@
 # services/collector_events/app/processors/currency_strength_calculator.py
 
+"""
+NOT FULLY IMPLEMENTED YET, NOT USED YET
+"""
+
+# TODO: Este é um esboço inicial para a classe CurrencyStrengthCalculator, 
+# que será responsável por calcular o strength score de cada moeda com base nos eventos coletados. 
+# A implementação real dependerá dos dados disponíveis e dos requisitos específicos do projeto. 
+# O código inclui placeholders para as funções de cálculo de cada componente do score, 
+# bem como para a lógica de momentum e trend. 
+# A função calculate_all_currencies pode ser chamada periodicamente (ex: a cada hora) 
+# para atualizar os scores de todas as moedas.
+
 from datetime import datetime, timedelta, timezone
 from typing import Dict, List
 import numpy as np

@@ -1,6 +1,0 @@
-pyproject.toml
-collector_events.egg-info/PKG-INFO
-collector_events.egg-info/SOURCES.txt
-collector_events.egg-info/dependency_links.txt
-collector_events.egg-info/requires.txt
-collector_events.egg-info/top_level.txt
