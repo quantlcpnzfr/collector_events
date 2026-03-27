@@ -1,0 +1,26 @@
+collector_events/
+├── .gitignore
+├── CLAUDE.md
+├── collector_events/
+│   ├── nlp/
+│   │   ├── __init__.py
+│   │   ├── entity_extractor.py
+│   │   ├── impact_classifier.py
+│   │   └── sentiment_analyzer.py
+│   ├── processors/
+│   │   ├── __init__.py
+│   │   ├── currency_strength_calculator.py
+│   │   └── event_processor.py
+│   ├── scrapers/
+│   │   ├── __init__.py
+│   │   ├── economic_calendar.py
+│   │   ├── instagram_scraper.py
+│   │   ├── news_scraper.py
+│   │   └── twitter_scraper.py
+│   └── sources/
+│       ├── __init__.py
+│       └── sites.json
+├── main.py
+├── pyproject.toml
+├── requirements.txt
+└── structure.txt
