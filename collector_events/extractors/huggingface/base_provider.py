@@ -134,6 +134,22 @@ class BaseHuggingFaceDatasetProvider(ExtractorProvider):
         max_rows: int | None = 500,
         batch_size: int = 100,
     ) -> pd.DataFrame:
+        return pd.DataFrame(
+            self.fetch_records(
+                split=split,
+                config=config,
+                max_rows=max_rows,
+                batch_size=batch_size,
+            )
+        )
+
+    def fetch_records(
+        self,
+        split: str | None = None,
+        config: str | None = None,
+        max_rows: int | None = 500,
+        batch_size: int = 100,
+    ) -> list[dict[str, Any]]:
         active_split = split or self.split
         active_config = config or self.config
         rows: list[dict[str, Any]] = []
@@ -173,7 +189,7 @@ class BaseHuggingFaceDatasetProvider(ExtractorProvider):
             if len(batch) < current_batch_size:
                 break
 
-        return pd.DataFrame(rows)
+        return rows
 
     def _get_split_row_count(self, config: str, split: str) -> int | None:
         size_payload = self.get_size()
@@ -208,6 +224,50 @@ class BaseHuggingFaceDatasetProvider(ExtractorProvider):
         normalized = {"row_idx": item.get("row_idx")}
         normalized.update(row)
         return normalized
+
+    @staticmethod
+    def build_event_id(prefix: str, *parts: Any) -> str:
+        cleaned_parts = [str(part).strip().replace(" ", "_") for part in parts if part not in (None, "")]
+        suffix = "::".join(cleaned_parts)
+        return f"{prefix}::{suffix}" if suffix else prefix
+
+    @staticmethod
+    def infer_currencies_from_central_bank(central_bank: str | None) -> list[str]:
+        if not central_bank:
+            return []
+
+        normalized_name = central_bank.lower()
+        bank_currency_map = {
+            "federal reserve": "USD",
+            "federal open market committee": "USD",
+            "ecb": "EUR",
+            "european central bank": "EUR",
+            "bank of england": "GBP",
+            "bank of japan": "JPY",
+            "bank of canada": "CAD",
+            "reserve bank of australia": "AUD",
+            "reserve bank of new zealand": "NZD",
+            "swiss national bank": "CHF",
+            "norges bank": "NOK",
+            "riksbank": "SEK",
+            "central bank of brazil": "BRL",
+            "banco central do brasil": "BRL",
+            "people's bank of china": "CNY",
+            "bank of korea": "KRW",
+            "central bank of chile": "CLP",
+            "central reserve bank of peru": "PEN",
+            "central bank of the republic of turkey": "TRY",
+            "central bank of china (taiwan)": "TWD",
+            "bangko sentral ng pilipinas": "PHP",
+            "central bank of the philippines": "PHP",
+            "reserve bank of india": "INR",
+            "south african reserve bank": "ZAR",
+        }
+
+        for bank_fragment, currency in bank_currency_map.items():
+            if bank_fragment in normalized_name:
+                return [currency]
+        return []
 
 
 class FlatHuggingFaceDatasetProvider(BaseHuggingFaceDatasetProvider):

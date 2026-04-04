@@ -373,5 +373,148 @@ class ProviderNormalizationTests(unittest.TestCase):
                 _assert_subset(self, normalized, expected_subset)
 
 
+class ProviderFetchEventsTests(unittest.TestCase):
+    def test_fetch_events_for_calendar_and_central_bank_sources(self) -> None:
+        cases = [
+            (
+                "huggingface_forex_factory_calendar",
+                [
+                    {
+                        "row_idx": 1,
+                        "event_time": "2025-04-07 08:30",
+                        "currency": "USD",
+                        "impact": "High",
+                        "event": "Non-Farm Payrolls",
+                        "actual": "250K",
+                        "forecast": "210K",
+                        "previous": "180K",
+                        "detail": "Strong labor market data.",
+                    }
+                ],
+                {
+                    "provider": "huggingface_forex_factory_calendar",
+                    "source": "Ehsanrs2/Forex_Factory_Calendar",
+                    "event_type": "economic_calendar",
+                    "category": "economic_data",
+                    "title": "USD - Non-Farm Payrolls",
+                    "text": "Strong labor market data.",
+                    "published_at": "2025-04-07 08:30",
+                    "currencies": ["USD"],
+                    "impact": "High",
+                },
+            ),
+            (
+                "huggingface_central_bank_communications",
+                [
+                    {
+                        "row_idx": 2,
+                        "central_bank": "Federal Reserve",
+                        "document_type": "minutes",
+                        "event_date": "2024-01-31",
+                        "text": "Policy remains restrictive.",
+                        "sentiment": "hawkish",
+                        "topic": "inflation",
+                        "version": "v1",
+                        "language": "en",
+                    }
+                ],
+                {
+                    "provider": "huggingface_central_bank_communications",
+                    "source": "aufklarer/central-bank-communications",
+                    "event_type": "central_bank_communication",
+                    "category": "monetary_policy",
+                    "title": "Federal Reserve - minutes",
+                    "text": "Policy remains restrictive.",
+                    "published_at": "2024-01-31",
+                    "currencies": ["USD"],
+                    "impact": None,
+                },
+            ),
+            (
+                "huggingface_bis_central_bank_speeches",
+                [
+                    {
+                        "row_idx": 3,
+                        "central_bank": "European Central Bank",
+                        "description": "Speech at Frankfurt forum",
+                        "speech_text": "Inflation remains elevated.",
+                        "event_date": "2024-02-20",
+                        "year": 2024,
+                        "month": 2,
+                    }
+                ],
+                {
+                    "provider": "huggingface_bis_central_bank_speeches",
+                    "source": "samchain/bis_central_bank_speeches",
+                    "event_type": "central_bank_speech",
+                    "category": "monetary_policy",
+                    "title": "Speech at Frankfurt forum",
+                    "text": "Inflation remains elevated.",
+                    "published_at": "2024-02-20",
+                    "currencies": ["EUR"],
+                    "impact": None,
+                },
+            ),
+            (
+                "huggingface_european_central_bank",
+                [
+                    {
+                        "row_idx": 4,
+                        "text": "Inflation is expected to decline.",
+                        "stance_label": "neutral",
+                        "time_label": "forward looking",
+                        "certain_label": "certain",
+                        "year": 2015,
+                    }
+                ],
+                {
+                    "provider": "huggingface_european_central_bank",
+                    "source": "gtfintechlab/european_central_bank",
+                    "event_type": "central_bank_communication",
+                    "category": "monetary_policy",
+                    "title": "European Central Bank policy sentence",
+                    "text": "Inflation is expected to decline.",
+                    "published_at": 2015,
+                    "currencies": ["EUR"],
+                    "impact": None,
+                },
+            ),
+            (
+                "huggingface_central_bank_of_brazil",
+                [
+                    {
+                        "row_idx": 5,
+                        "text": "Copom will maintain vigilance.",
+                        "stance_label": "hawkish",
+                        "time_label": "not forward looking",
+                        "certain_label": "uncertain",
+                        "year": 2008,
+                    }
+                ],
+                {
+                    "provider": "huggingface_central_bank_of_brazil",
+                    "source": "gtfintechlab/central_bank_of_brazil",
+                    "event_type": "central_bank_communication",
+                    "category": "monetary_policy",
+                    "title": "Central Bank of Brazil policy sentence",
+                    "text": "Copom will maintain vigilance.",
+                    "published_at": 2008,
+                    "currencies": ["BRL"],
+                    "impact": None,
+                },
+            ),
+        ]
+
+        for provider_name, records, expected_subset in cases:
+            with self.subTest(provider_name=provider_name):
+                provider = create_extractor(provider_name)
+                with patch.object(provider, "fetch_records", return_value=records):
+                    events = provider.fetch_events(max_rows=1)
+                self.assertEqual(len(events), 1)
+                _assert_subset(self, events[0], expected_subset)
+                self.assertIn("event_id", events[0])
+                self.assertIn("metadata", events[0])
+
+
 if __name__ == "__main__":
     unittest.main()

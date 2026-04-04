@@ -53,3 +53,53 @@ class HuggingFaceForexFactoryCalendarExtractor(BaseHuggingFaceDatasetProvider):
             "previous": row.get("Previous") or row.get("previous"),
             "detail": row.get("Detail") or row.get("detail"),
         }
+
+    def fetch_events(
+        self,
+        split: str | None = None,
+        config: str | None = None,
+        max_rows: int | None = 500,
+        batch_size: int = 100,
+    ) -> list[dict[str, Any]]:
+        records = self.fetch_records(
+            split=split,
+            config=config,
+            max_rows=max_rows,
+            batch_size=batch_size,
+        )
+
+        events: list[dict[str, Any]] = []
+        for record in records:
+            currency = record.get("currency")
+            title_parts = [part for part in (currency, record.get("event")) if part]
+            title = " - ".join(title_parts) if title_parts else "Economic Calendar Event"
+            text = record.get("detail") or record.get("event") or title
+
+            events.append(
+                {
+                    "event_id": self.build_event_id(
+                        "economic_calendar",
+                        currency,
+                        record.get("event_time"),
+                        record.get("event"),
+                        record.get("row_idx"),
+                    ),
+                    "provider": self.source_name,
+                    "source": self.dataset,
+                    "event_type": "economic_calendar",
+                    "category": "economic_data",
+                    "title": title,
+                    "text": text,
+                    "published_at": record.get("event_time"),
+                    "currencies": [currency] if currency else [],
+                    "impact": record.get("impact"),
+                    "metadata": {
+                        "actual": record.get("actual"),
+                        "forecast": record.get("forecast"),
+                        "previous": record.get("previous"),
+                        "row_idx": record.get("row_idx"),
+                    },
+                }
+            )
+
+        return events
