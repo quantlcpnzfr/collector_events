@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from abc import abstractmethod
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -40,7 +41,7 @@ class BaseHuggingFaceDatasetProvider(ExtractorProvider):
         self._dataset = dataset
         self.config = config
         self.split = split
-        self.token = token
+        self.token = token if token is not None else os.getenv("HF_TOKEN")
         self.timeout = timeout
 
     @property

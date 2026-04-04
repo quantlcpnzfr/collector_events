@@ -3,8 +3,14 @@ from __future__ import annotations
 from typing import Any
 
 from collector_events.extractors.provider import ExtractorProvider
+from collector_events.extractors.huggingface.bis_central_bank_speeches_extractor import (
+    HuggingFaceBisCentralBankSpeechesExtractor,
+)
 from collector_events.extractors.huggingface.bloomberg_financial_news_extractor import (
     HuggingFaceBloombergFinancialNewsExtractor,
+)
+from collector_events.extractors.huggingface.central_bank_communications_extractor import (
+    HuggingFaceCentralBankCommunicationsExtractor,
 )
 from collector_events.extractors.huggingface.finance_tasks_extractor import (
     HuggingFaceFinanceTasksExtractor,
@@ -17,6 +23,10 @@ from collector_events.extractors.huggingface.forex_factory_calendar_extractor im
 )
 from collector_events.extractors.huggingface.forex_usdjpy_extractor import (
     HuggingFaceForexUsdJpyExtractor,
+)
+from collector_events.extractors.huggingface.gtfintechlab_central_bank_extractors import (
+    HuggingFaceCentralBankOfBrazilExtractor,
+    HuggingFaceEuropeanCentralBankExtractor,
 )
 from collector_events.extractors.huggingface.ohlcv_1m_forex_extractor import (
     HuggingFaceOhlcv1mForexExtractor,
@@ -43,6 +53,10 @@ class ExtractorProviderFactory:
     """
 
     _PROVIDER_CLASSES: dict[str, type[ExtractorProvider]] = {
+        "huggingface_central_bank_communications": HuggingFaceCentralBankCommunicationsExtractor,
+        "huggingface_bis_central_bank_speeches": HuggingFaceBisCentralBankSpeechesExtractor,
+        "huggingface_european_central_bank": HuggingFaceEuropeanCentralBankExtractor,
+        "huggingface_central_bank_of_brazil": HuggingFaceCentralBankOfBrazilExtractor,
         "huggingface_forex_factory_calendar": HuggingFaceForexFactoryCalendarExtractor,
         "huggingface_sentiment": HuggingFaceSentimentExtractor,
         "huggingface_stock_market_tweets": HuggingFaceStockMarketTweetsExtractor,
@@ -56,6 +70,14 @@ class ExtractorProviderFactory:
     }
 
     _ALIASES: dict[str, str] = {
+        "central_bank_communications": "huggingface_central_bank_communications",
+        "aufklarer/central-bank-communications": "huggingface_central_bank_communications",
+        "bis_central_bank_speeches": "huggingface_bis_central_bank_speeches",
+        "samchain/bis_central_bank_speeches": "huggingface_bis_central_bank_speeches",
+        "european_central_bank": "huggingface_european_central_bank",
+        "gtfintechlab/european_central_bank": "huggingface_european_central_bank",
+        "central_bank_of_brazil": "huggingface_central_bank_of_brazil",
+        "gtfintechlab/central_bank_of_brazil": "huggingface_central_bank_of_brazil",
         "forex_factory_calendar": "huggingface_forex_factory_calendar",
         "Ehsanrs2/Forex_Factory_Calendar": "huggingface_forex_factory_calendar",
         "source_2": "huggingface_sentiment",

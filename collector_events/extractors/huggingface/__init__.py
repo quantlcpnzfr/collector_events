@@ -5,8 +5,14 @@ from collector_events.extractors.huggingface.base_provider import (
     FlatHuggingFaceDatasetProvider,
     HuggingFaceDatasetError,
 )
+from collector_events.extractors.huggingface.bis_central_bank_speeches_extractor import (
+    HuggingFaceBisCentralBankSpeechesExtractor,
+)
 from collector_events.extractors.huggingface.bloomberg_financial_news_extractor import (
     HuggingFaceBloombergFinancialNewsExtractor,
+)
+from collector_events.extractors.huggingface.central_bank_communications_extractor import (
+    HuggingFaceCentralBankCommunicationsExtractor,
 )
 from collector_events.extractors.huggingface.finance_tasks_extractor import (
     HuggingFaceFinanceTasksExtractor,
@@ -19,6 +25,10 @@ from collector_events.extractors.huggingface.forex_factory_calendar_extractor im
 )
 from collector_events.extractors.huggingface.forex_usdjpy_extractor import (
     HuggingFaceForexUsdJpyExtractor,
+)
+from collector_events.extractors.huggingface.gtfintechlab_central_bank_extractors import (
+    HuggingFaceCentralBankOfBrazilExtractor,
+    HuggingFaceEuropeanCentralBankExtractor,
 )
 from collector_events.extractors.huggingface.ohlcv_1m_forex_extractor import (
     HuggingFaceOhlcv1mForexExtractor,
@@ -40,7 +50,11 @@ __all__ = [
     "BaseHuggingFaceDatasetProvider",
     "FlatHuggingFaceDatasetProvider",
     "HuggingFaceDatasetError",
+    "HuggingFaceBisCentralBankSpeechesExtractor",
     "HuggingFaceBloombergFinancialNewsExtractor",
+    "HuggingFaceCentralBankCommunicationsExtractor",
+    "HuggingFaceCentralBankOfBrazilExtractor",
+    "HuggingFaceEuropeanCentralBankExtractor",
     "HuggingFaceFinanceTasksExtractor",
     "HuggingFaceForexDailyPriceExtractor",
     "HuggingFaceForexFactoryCalendarExtractor",
