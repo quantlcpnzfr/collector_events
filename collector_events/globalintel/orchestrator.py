@@ -1,0 +1,340 @@
+"""Global intelligence orchestrator.
+
+Runs all extractors on a schedule, stores results via IntelCache (Redis),
+and provides a unified interface for the forex_system pipeline.
+
+Usage:
+    from collector_events.globalintel.orchestrator import IntelOrchestrator
+
+    orch = IntelOrchestrator(redis_url="redis://localhost:6379/0")
+    await orch.run_all()          # one-shot all extractors
+    await orch.run_domain("cyber") # single domain
+    await orch.start_scheduler()   # background loop
+"""
+
+from __future__ import annotations
+
+import asyncio
+import logging
+import os
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from typing import Any
+
+from .base import BaseExtractor, ExtractionResult
+from .cache import IntelCache
+
+# Domain imports
+from .feeds.rss_extractor import RSSFeedExtractor
+from .conflict import ACLEDExtractor, GDELTIntelExtractor, GDELTUnrestExtractor
+from .conflict.ucdp import UCDPExtractor
+from .conflict.unrest import UnrestMergeExtractor
+from .conflict.displacement import DisplacementExtractor, GPSJammingExtractor
+from .cyber import CyberThreatExtractor
+from .economic import EconomicCalendarExtractor
+from .economic.bis import BisPolicyRateExtractor, BisExchangeRateExtractor, BisCreditExtractor
+from .economic.ecb import EcbFxRateExtractor, EcbYieldCurveExtractor, EcbStressIndexExtractor
+from .economic.bls import BlsSeriesExtractor
+from .economic.world_bank import WorldBankExtractor
+from .economic.energy import EIACrudeInventoryExtractor, EIANatGasStorageExtractor, EuGasStorageExtractor
+from .economic.prices import FaoFoodPriceExtractor, EconomicStressExtractor
+from .market import FXRateExtractor, FearGreedExtractor, PredictionMarketExtractor
+from .market.stocks import StockQuoteExtractor, SectorPerformanceExtractor, EarningsCalendarExtractor
+from .market.crypto import (
+    CryptoQuoteExtractor, DefiTokenExtractor, AiTokenExtractor,
+    OtherTokenExtractor, StablecoinExtractor, CryptoSectorExtractor,
+)
+from .market.commodities import CommodityQuoteExtractor
+from .market.etf import BtcEtfFlowExtractor
+from .market.gulf import GulfQuoteExtractor
+from .market.cot import CotPositioningExtractor
+from .market.country_index import CountryStockIndexExtractor
+from .environment import (
+    USGSEarthquakeExtractor, NASAFireExtractor, GDACSExtractor, NASAEONETExtractor,
+)
+from .sanctions import OFACSanctionsExtractor
+from .social import RedditVelocityExtractor, TelegramRelayExtractor
+from .advisories import AdvisoryExtractor
+from .trade import WtoTradeRestrictionExtractor, ComtradeFlowExtractor, TariffTrendExtractor
+from .supply_chain import (
+    ChokepointStatusExtractor, CriticalMineralsExtractor,
+    ShippingRateExtractor, ShippingStressExtractor,
+)
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass
+class ScheduleEntry:
+    """Maps an extractor to its run interval."""
+    extractor: BaseExtractor
+    interval_seconds: int
+    last_run: float = 0.0
+
+
+@dataclass
+class OrchestratorConfig:
+    """Configuration assembled from environment variables."""
+    redis_url: str = ""
+    acled_email: str = ""
+    acled_key: str = ""
+    fred_api_key: str = ""
+    otx_key: str = ""
+    abuseipdb_key: str = ""
+    nasa_firms_key: str = ""
+    telegram_relay_url: str = ""
+    telegram_secret: str = ""
+    # Finance-variant keys
+    finnhub_api_key: str = ""
+    bls_api_key: str = ""
+    eia_api_key: str = ""
+    wto_api_key: str = ""
+    # Conflict-variant keys
+    acled_access_token: str = ""
+    acled_password: str = ""
+    wingbits_api_key: str = ""
+
+    @classmethod
+    def from_env(cls) -> OrchestratorConfig:
+        return cls(
+            redis_url=os.getenv("REDIS_URL", "redis://localhost:6379/0"),
+            acled_email=os.getenv("ACLED_EMAIL", ""),
+            acled_key=os.getenv("ACLED_API_KEY", ""),
+            acled_access_token=os.getenv("ACLED_ACCESS_TOKEN", ""),
+            acled_password=os.getenv("ACLED_PASSWORD", ""),
+            fred_api_key=os.getenv("FRED_API_KEY", ""),
+            otx_key=os.getenv("OTX_API_KEY", ""),
+            abuseipdb_key=os.getenv("ABUSEIPDB_API_KEY", ""),
+            nasa_firms_key=os.getenv("NASA_FIRMS_KEY", ""),
+            telegram_relay_url=os.getenv("TELEGRAM_RELAY_URL", ""),
+            telegram_secret=os.getenv("TELEGRAM_RELAY_SECRET", ""),
+            finnhub_api_key=os.getenv("FINNHUB_API_KEY", ""),
+            bls_api_key=os.getenv("BLS_API_KEY", ""),
+            eia_api_key=os.getenv("EIA_API_KEY", ""),
+            wto_api_key=os.getenv("WTO_API_KEY", ""),
+            wingbits_api_key=os.getenv("WINGBITS_API_KEY", ""),
+        )
+
+
+class IntelOrchestrator:
+    """Central orchestrator for all global intelligence extractors.
+
+    Instantiates all extractors, runs them on a schedule, and stores
+    results to Redis via IntelCache.
+    """
+
+    def __init__(self, config: OrchestratorConfig | None = None):
+        self._config = config or OrchestratorConfig.from_env()
+        self._cache: IntelCache | None = None
+        self._schedule: list[ScheduleEntry] = []
+        self._running = False
+        self._build_schedule()
+
+    def _build_schedule(self) -> None:
+        cfg = self._config
+
+        self._schedule = [
+            # ── Feeds ──
+            ScheduleEntry(RSSFeedExtractor(), interval_seconds=900),
+
+            # ── Conflict/Geopolitics ──
+            ScheduleEntry(ACLEDExtractor(
+                email=cfg.acled_email, api_key=cfg.acled_key,
+                access_token=cfg.acled_access_token, password=cfg.acled_password,
+            ), interval_seconds=900),
+            ScheduleEntry(GDELTIntelExtractor(), interval_seconds=86400),
+            ScheduleEntry(GDELTUnrestExtractor(), interval_seconds=16200),
+            ScheduleEntry(UCDPExtractor(), interval_seconds=86400),
+            ScheduleEntry(UnrestMergeExtractor(
+                acled_email=cfg.acled_email, acled_api_key=cfg.acled_key,
+                acled_access_token=cfg.acled_access_token,
+            ), interval_seconds=16200),
+            ScheduleEntry(DisplacementExtractor(), interval_seconds=86400),
+            ScheduleEntry(GPSJammingExtractor(api_key=cfg.wingbits_api_key), interval_seconds=172800),
+
+            # ── Cyber ──
+            ScheduleEntry(CyberThreatExtractor(otx_key=cfg.otx_key, abuseipdb_key=cfg.abuseipdb_key), interval_seconds=10800),
+
+            # ── Economic (calendar) ──
+            ScheduleEntry(EconomicCalendarExtractor(fred_api_key=cfg.fred_api_key), interval_seconds=129600),
+
+            # ── Economic (BIS) ──
+            ScheduleEntry(BisPolicyRateExtractor(), interval_seconds=604800),    # weekly
+            ScheduleEntry(BisExchangeRateExtractor(), interval_seconds=604800),
+            ScheduleEntry(BisCreditExtractor(), interval_seconds=604800),
+
+            # ── Economic (ECB) ──
+            ScheduleEntry(EcbFxRateExtractor(), interval_seconds=86400),         # daily
+            ScheduleEntry(EcbYieldCurveExtractor(), interval_seconds=86400),
+            ScheduleEntry(EcbStressIndexExtractor(), interval_seconds=86400),
+
+            # ── Economic (BLS) ──
+            ScheduleEntry(BlsSeriesExtractor(api_key=cfg.bls_api_key), interval_seconds=604800),
+
+            # ── Economic (World Bank) ──
+            ScheduleEntry(WorldBankExtractor(), interval_seconds=604800),
+
+            # ── Economic (Energy) ──
+            ScheduleEntry(EIACrudeInventoryExtractor(eia_api_key=cfg.eia_api_key), interval_seconds=604800),
+            ScheduleEntry(EIANatGasStorageExtractor(eia_api_key=cfg.eia_api_key), interval_seconds=604800),
+            ScheduleEntry(EuGasStorageExtractor(), interval_seconds=86400),
+
+            # ── Economic (Prices & Stress) ──
+            ScheduleEntry(FaoFoodPriceExtractor(), interval_seconds=604800),
+            ScheduleEntry(EconomicStressExtractor(fred_api_key=cfg.fred_api_key), interval_seconds=21600),
+
+            # ── Market (FX, Fear/Greed, Prediction) ──
+            ScheduleEntry(FXRateExtractor(), interval_seconds=90000),
+            ScheduleEntry(FearGreedExtractor(), interval_seconds=64800),
+            ScheduleEntry(PredictionMarketExtractor(), interval_seconds=10800),
+
+            # ── Market (Stocks) ──
+            ScheduleEntry(StockQuoteExtractor(finnhub_api_key=cfg.finnhub_api_key), interval_seconds=3600),
+            ScheduleEntry(SectorPerformanceExtractor(), interval_seconds=3600),
+            ScheduleEntry(EarningsCalendarExtractor(finnhub_api_key=cfg.finnhub_api_key), interval_seconds=86400),
+
+            # ── Market (Crypto) ──
+            ScheduleEntry(CryptoQuoteExtractor(), interval_seconds=3600),
+            ScheduleEntry(DefiTokenExtractor(), interval_seconds=3600),
+            ScheduleEntry(AiTokenExtractor(), interval_seconds=3600),
+            ScheduleEntry(OtherTokenExtractor(), interval_seconds=3600),
+            ScheduleEntry(StablecoinExtractor(), interval_seconds=3600),
+            ScheduleEntry(CryptoSectorExtractor(), interval_seconds=7200),
+
+            # ── Market (Commodities, ETFs, Gulf, COT) ──
+            ScheduleEntry(CommodityQuoteExtractor(), interval_seconds=3600),
+            ScheduleEntry(BtcEtfFlowExtractor(), interval_seconds=3600),
+            ScheduleEntry(GulfQuoteExtractor(), interval_seconds=3600),
+            ScheduleEntry(CotPositioningExtractor(), interval_seconds=604800),   # weekly
+            ScheduleEntry(CountryStockIndexExtractor(), interval_seconds=43200),  # 12h
+
+            # ── Environment ──
+            ScheduleEntry(USGSEarthquakeExtractor(), interval_seconds=3600),
+            ScheduleEntry(NASAFireExtractor(api_key=cfg.nasa_firms_key), interval_seconds=7200),
+            ScheduleEntry(GDACSExtractor(), interval_seconds=7200),
+            ScheduleEntry(NASAEONETExtractor(), interval_seconds=14400),
+
+            # ── Sanctions ──
+            ScheduleEntry(OFACSanctionsExtractor(), interval_seconds=54000),
+
+            # ── Social ──
+            ScheduleEntry(RedditVelocityExtractor(), interval_seconds=600),
+            ScheduleEntry(TelegramRelayExtractor(
+                relay_url=cfg.telegram_relay_url,
+                shared_secret=cfg.telegram_secret,
+            ), interval_seconds=60),
+
+            # ── Advisories ──
+            ScheduleEntry(AdvisoryExtractor(), interval_seconds=10800),
+
+            # ── Trade ──
+            ScheduleEntry(WtoTradeRestrictionExtractor(wto_api_key=cfg.wto_api_key), interval_seconds=604800),
+            ScheduleEntry(TariffTrendExtractor(wto_api_key=cfg.wto_api_key), interval_seconds=604800),
+            ScheduleEntry(ComtradeFlowExtractor(), interval_seconds=604800),
+
+            # ── Supply Chain ──
+            ScheduleEntry(ChokepointStatusExtractor(), interval_seconds=43200),
+            ScheduleEntry(CriticalMineralsExtractor(), interval_seconds=604800),
+            ScheduleEntry(ShippingRateExtractor(), interval_seconds=86400),
+            ScheduleEntry(ShippingStressExtractor(), interval_seconds=86400),
+        ]
+
+    def _get_cache(self) -> IntelCache:
+        if self._cache is None:
+            import redis
+            client = redis.Redis.from_url(self._config.redis_url, decode_responses=True)
+            self._cache = IntelCache(client)
+        return self._cache
+
+    # ── One-shot methods ─────────────────────────────────────────────
+
+    async def run_all(self) -> list[ExtractionResult]:
+        """Run all extractors once and store results."""
+        results: list[ExtractionResult] = []
+        for entry in self._schedule:
+            result = await self._run_entry(entry)
+            results.append(result)
+        return results
+
+    async def run_domain(self, domain: str) -> list[ExtractionResult]:
+        """Run extractors for a single domain."""
+        results: list[ExtractionResult] = []
+        for entry in self._schedule:
+            if entry.extractor.DOMAIN == domain:
+                result = await self._run_entry(entry)
+                results.append(result)
+        return results
+
+    async def run_source(self, source: str) -> ExtractionResult | None:
+        """Run a single extractor by SOURCE name."""
+        for entry in self._schedule:
+            if entry.extractor.SOURCE == source:
+                return await self._run_entry(entry)
+        return None
+
+    async def _run_entry(self, entry: ScheduleEntry) -> ExtractionResult:
+        ext = entry.extractor
+        logger.info("Running %s/%s ...", ext.DOMAIN, ext.SOURCE)
+        result = await ext.run()
+        if result.ok:
+            cache = self._get_cache()
+            cache.store(result, ext.REDIS_KEY, ext.TTL_SECONDS)
+            logger.info(
+                "  ✓ %s: %d items in %.0fms → Redis %s (TTL %ds)",
+                ext.SOURCE, len(result.items), result.elapsed_ms,
+                ext.REDIS_KEY, ext.TTL_SECONDS,
+            )
+        else:
+            logger.warning("  ✗ %s: %s", ext.SOURCE, result.error)
+        entry.last_run = datetime.now(timezone.utc).timestamp()
+        return result
+
+    # ── Scheduler loop ───────────────────────────────────────────────
+
+    async def start_scheduler(self) -> None:
+        """Background loop that runs extractors at their configured intervals."""
+        self._running = True
+        logger.info("IntelOrchestrator scheduler started with %d extractors", len(self._schedule))
+        while self._running:
+            now = datetime.now(timezone.utc).timestamp()
+            for entry in self._schedule:
+                elapsed = now - entry.last_run
+                if elapsed >= entry.interval_seconds:
+                    try:
+                        await self._run_entry(entry)
+                    except Exception as exc:
+                        logger.exception(
+                            "Scheduler error in %s/%s: %s",
+                            entry.extractor.DOMAIN, entry.extractor.SOURCE, exc,
+                        )
+            await asyncio.sleep(30)  # check every 30s
+
+    def stop_scheduler(self) -> None:
+        self._running = False
+
+    # ── Status / health ──────────────────────────────────────────────
+
+    def health(self) -> dict[str, Any]:
+        """Return health status of all extractors."""
+        cache = self._get_cache()
+        status: dict[str, Any] = {}
+        for entry in self._schedule:
+            ext = entry.extractor
+            key = f"{ext.DOMAIN}/{ext.SOURCE}"
+            meta = cache.health(ext.REDIS_KEY)
+            status[key] = {
+                "redis_key": ext.REDIS_KEY,
+                "ttl_seconds": ext.TTL_SECONDS,
+                "interval_seconds": entry.interval_seconds,
+                "last_run": entry.last_run,
+                "cache_meta": meta,
+            }
+        return status
+
+    @property
+    def extractors(self) -> list[BaseExtractor]:
+        return [e.extractor for e in self._schedule]
+
+    @property
+    def domains(self) -> set[str]:
+        return {e.extractor.DOMAIN for e in self._schedule}
