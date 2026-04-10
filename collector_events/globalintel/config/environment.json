@@ -1,0 +1,7 @@
+{
+    "usgs_earthquake_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+    "firms_api_base": "https://firms.modaps.eosdis.nasa.gov/api/country/csv",
+    "firms_default_countries": ["USA", "AUS", "BRA", "CAN", "GRC", "PRT", "ESP", "TUR"],
+    "gdacs_rss_url": "https://www.gdacs.org/xml/rss.xml",
+    "eonet_api": "https://eonet.gsfc.nasa.gov/api/v3/events"
+}

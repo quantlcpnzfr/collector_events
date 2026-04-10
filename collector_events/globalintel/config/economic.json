@@ -1,0 +1,21 @@
+{
+    "fred": {
+        "release_url": "https://api.stlouisfed.org/fred/release/dates",
+        "releases": {
+            "10": "CPI (Consumer Price Index)",
+            "50": "Employment Situation (NFP)",
+            "53": "GDP (Gross Domestic Product)",
+            "54": "PCE (Personal Consumption Expenditures)",
+            "336": "Advance Retail Sales"
+        }
+    },
+    "eurostat": {
+        "api_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data",
+        "datasets": {
+            "prc_hicp_manr": "HICP Monthly Inflation (EU)",
+            "une_rt_m": "Unemployment Rate (EU)",
+            "namq_10_gdp": "GDP Quarterly (EU)"
+        }
+    },
+    "fomc_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+}

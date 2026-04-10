@@ -1,0 +1,66 @@
+{
+    "fx": {
+        "yahoo_chart_url": "https://query1.finance.yahoo.com/v8/finance/chart/",
+        "currencies": [
+            "EUR", "GBP", "JPY", "AUD", "NZD", "CAD", "CHF", "CNY", "HKD",
+            "SGD", "SEK", "NOK", "DKK", "PLN", "CZK", "HUF", "RON", "TRY",
+            "ZAR", "MXN", "BRL", "ARS", "CLP", "COP", "PEN", "INR", "IDR",
+            "MYR", "THB", "PHP", "KRW", "TWD", "VND", "ILS", "SAR", "AED",
+            "QAR", "KWD", "BHD", "OMR", "EGP", "NGN", "KES", "GHS", "XAF",
+            "XOF", "PKR", "BDT", "LKR", "RUB"
+        ]
+    },
+    "fear_greed": {
+        "cnn_url": "https://production.dataviz.cnn.io/index/fearandgreed/graphdata",
+        "aaii_url": "https://www.aaii.com/files/surveys/sentiment.xls",
+        "barchart_cpc_url": "https://www.barchart.com/options/put-call-ratio",
+        "barchart_s5th_url": "https://www.barchart.com/stocks/quotes/$S5TH/overview",
+        "yahoo_symbols": {
+            "vix": "^VIX",
+            "sp500": "^GSPC",
+            "sp500_200_sma_spy": "SPY",
+            "junk_spread_hyg": "HYG",
+            "junk_spread_lqd": "LQD",
+            "safe_haven_gold": "GC=F",
+            "safe_haven_tnx": "^TNX",
+            "momentum_sp500_125": "^GSPC",
+            "breadth_advance": "^ADL",
+            "breadth_decline": "^ADD",
+            "market_cap_spy": "SPY"
+        },
+        "category_weights": {
+            "vix": 0.15,
+            "put_call": 0.10,
+            "breadth": 0.10,
+            "sp500_125ma": 0.10,
+            "sp500_200sma": 0.10,
+            "junk_spread": 0.10,
+            "safe_haven": 0.10,
+            "aaii_sentiment": 0.10,
+            "momentum": 0.10,
+            "market_cap": 0.05
+        }
+    },
+    "prediction_markets": {
+        "polymarket_api": "https://gamma-api.polymarket.com/events",
+        "kalshi_api": "https://api.elections.kalshi.com/v1/events",
+        "tags": [
+            "geopolitics", "war", "conflict", "election", "president",
+            "federal-reserve", "interest-rates", "inflation", "recession",
+            "china", "russia", "ukraine", "iran", "middle-east",
+            "oil", "energy", "trade", "tariff", "sanctions",
+            "nato", "nuclear", "pandemic"
+        ],
+        "exclusion_keywords": [
+            "sports", "nfl", "nba", "mlb", "nhl", "soccer", "football",
+            "tennis", "golf", "cricket", "formula1", "f1", "ufc", "boxing",
+            "bachelor", "bachelorette", "survivor", "big brother",
+            "oscars", "grammys", "emmys", "tony", "super bowl",
+            "weather tomorrow", "temperature", "tiktok trend",
+            "youtube", "twitch", "streamer"
+        ],
+        "min_volume": 10000,
+        "price_range": [0.05, 0.95]
+    },
+    "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+}

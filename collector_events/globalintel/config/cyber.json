@@ -1,0 +1,16 @@
+{
+    "feeds": {
+        "feodo_url": "https://feodotracker.abuse.ch/downloads/ipblocklist_recommended.txt",
+        "urlhaus_url": "https://urlhaus-api.abuse.ch/v1/urls/recent/",
+        "c2intel_url": "https://raw.githubusercontent.com/montysecurity/C2-Tracker/main/data/all.csv",
+        "otx_url": "https://otx.alienvault.com/api/v1/pulses/subscribed",
+        "abuseipdb_url": "https://api.abuseipdb.com/api/v2/blacklist"
+    },
+    "severity_map": {
+        "critical": "HIGH",
+        "high": "HIGH",
+        "medium": "MEDIUM",
+        "low": "LOW",
+        "informational": "LOW"
+    }
+}

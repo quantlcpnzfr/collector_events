@@ -1,0 +1,31 @@
+{
+    "acled": {
+        "oauth_url": "https://api.acleddata.com/actor/oauth/token",
+        "api_url": "https://api.acleddata.com/acled/read",
+        "conflict_countries": [
+            "Ukraine", "Russia", "Israel", "Palestine", "Syria", "Yemen",
+            "Sudan", "Somalia", "Ethiopia", "Libya", "Iraq", "Afghanistan",
+            "Mali", "Burkina Faso", "Niger", "Nigeria", "Mozambique",
+            "Myanmar", "Democratic Republic of Congo", "Central African Republic"
+        ],
+        "conflict_types": [
+            "Battles", "Explosions/Remote violence", "Violence against civilians"
+        ]
+    },
+    "gdelt": {
+        "doc_api": "https://api.gdeltproject.org/api/v2/doc/doc",
+        "gkg_url": "http://data.gdeltproject.org/gdeltv2/lastupdate.txt",
+        "topics": [
+            "\"nuclear weapon\" OR \"nuclear test\" OR \"nuclear missile\"",
+            "\"military buildup\" OR \"troops deployed\" OR \"military exercise\"",
+            "\"coup attempt\" OR \"coup d'état\" OR \"government overthrow\"",
+            "\"border conflict\" OR \"border clash\" OR \"territorial dispute\"",
+            "\"peace agreement\" OR \"ceasefire\" OR \"peace talks\"",
+            "\"arms deal\" OR \"weapons shipment\" OR \"arms embargo\""
+        ],
+        "riot_keywords": [
+            "protest", "riot", "unrest", "demonstration", "strike action",
+            "civil unrest", "uprising", "mass gathering"
+        ]
+    }
+}

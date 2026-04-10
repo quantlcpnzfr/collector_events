@@ -1,0 +1,4 @@
+{
+    "ofac_sdn_url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.XML",
+    "ofac_cons_url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/CONS_PRIM.XML"
+}

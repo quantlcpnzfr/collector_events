@@ -1,0 +1,6 @@
+{
+    "wto_api_base": "https://api.wto.org/timeseries/v1/data",
+    "comtrade_api_base": "https://comtradeapi.un.org/data/v1/get/C/A/HS",
+    "comtrade_reporters": ["840", "156", "276", "392", "826"],
+    "tariff_economies": "840,156,826,276,392,356"
+}

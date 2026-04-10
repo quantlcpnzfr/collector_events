@@ -1,0 +1,26 @@
+{
+    "reddit": {
+        "base_url": "https://www.reddit.com",
+        "subreddits": ["worldnews", "geopolitics"]
+    },
+    "telegram_channels": [
+        {"handle": "intelooperr", "tier": "A", "topic": "OSINT/military", "region": "global"},
+        {"handle": "nexaborisov", "tier": "A", "topic": "Eastern Europe OSINT", "region": "UA/RU"},
+        {"handle": "militaryblog", "tier": "A", "topic": "Military ops", "region": "UA/RU"},
+        {"handle": "operativnozsu", "tier": "A", "topic": "Ukrainian mil update", "region": "UA"},
+        {"handle": "legitimniy", "tier": "A", "topic": "Russian domestic OSINT", "region": "RU"},
+        {"handle": "readovkanews", "tier": "B", "topic": "Russian frontline", "region": "RU"},
+        {"handle": "rybar", "tier": "A", "topic": "Russian mapping/OSINT", "region": "RU"},
+        {"handle": "SBUkraine", "tier": "A", "topic": "Ukraine security service", "region": "UA"},
+        {"handle": "UkrainianLandForces", "tier": "A", "topic": "Ukraine army", "region": "UA"},
+        {"handle": "CyberBoroshno", "tier": "B", "topic": "Cyber/hacking UA front", "region": "UA"},
+        {"handle": "maboroshchuk", "tier": "B", "topic": "UA analysis", "region": "UA"},
+        {"handle": "aaborishpol", "tier": "B", "topic": "UA analysis", "region": "UA"},
+        {"handle": "Middle_East_Spectator", "tier": "A", "topic": "Middle East", "region": "ME"},
+        {"handle": "MEObserverr", "tier": "B", "topic": "Middle East events", "region": "ME"},
+        {"handle": "SyrianObservatory", "tier": "B", "topic": "Syria conflict", "region": "SY"},
+        {"handle": "WW3Monitor", "tier": "B", "topic": "Global conflict monitor", "region": "global"},
+        {"handle": "NewResistance1", "tier": "B", "topic": "Resistance movements", "region": "ME"},
+        {"handle": "saborisk", "tier": "B", "topic": "Risk/intelligence", "region": "global"}
+    ]
+}

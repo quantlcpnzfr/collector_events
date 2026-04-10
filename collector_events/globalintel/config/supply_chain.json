@@ -1,0 +1,30 @@
+{
+    "chokepoints": [
+        {"id": "suez", "name": "Suez Canal", "lat": 30.585, "lon": 32.265, "country": "EG", "daily_ships": 50, "pct_global_trade": 12},
+        {"id": "hormuz", "name": "Strait of Hormuz", "lat": 26.6, "lon": 56.25, "country": "OM", "daily_ships": 20, "pct_global_trade": 21},
+        {"id": "malacca", "name": "Strait of Malacca", "lat": 2.5, "lon": 101.8, "country": "MY", "daily_ships": 80, "pct_global_trade": 25},
+        {"id": "panama", "name": "Panama Canal", "lat": 9.08, "lon": -79.68, "country": "PA", "daily_ships": 35, "pct_global_trade": 6},
+        {"id": "bosporus", "name": "Turkish Straits", "lat": 41.12, "lon": 29.08, "country": "TR", "daily_ships": 120, "pct_global_trade": 3},
+        {"id": "gibraltar", "name": "Strait of Gibraltar", "lat": 35.96, "lon": -5.60, "country": "ES", "daily_ships": 300, "pct_global_trade": 5},
+        {"id": "bab_el_mandeb", "name": "Bab el-Mandeb", "lat": 12.6, "lon": 43.3, "country": "DJ", "daily_ships": 40, "pct_global_trade": 10},
+        {"id": "cape_good_hope", "name": "Cape of Good Hope", "lat": -34.35, "lon": 18.47, "country": "ZA", "daily_ships": 50, "pct_global_trade": 0}
+    ],
+    "critical_minerals": [
+        {"id": "lithium", "name": "Lithium", "top_producers": ["AU", "CL", "CN"], "use": "EV batteries"},
+        {"id": "cobalt", "name": "Cobalt", "top_producers": ["CD", "AU", "PH"], "use": "EV batteries"},
+        {"id": "rare_earth", "name": "Rare Earth Elements", "top_producers": ["CN", "US", "MM"], "use": "Electronics, defense"},
+        {"id": "nickel", "name": "Nickel", "top_producers": ["ID", "PH", "RU"], "use": "Stainless steel, EV batteries"},
+        {"id": "copper", "name": "Copper", "top_producers": ["CL", "PE", "CD"], "use": "Electrical, construction"},
+        {"id": "uranium", "name": "Uranium", "top_producers": ["KZ", "CA", "NA"], "use": "Nuclear energy"},
+        {"id": "manganese", "name": "Manganese", "top_producers": ["ZA", "GA", "AU"], "use": "Steel production"},
+        {"id": "graphite", "name": "Graphite", "top_producers": ["CN", "MZ", "BR"], "use": "Batteries, lubricants"},
+        {"id": "tin", "name": "Tin", "top_producers": ["CN", "ID", "MM"], "use": "Electronics, solder"},
+        {"id": "tungsten", "name": "Tungsten", "top_producers": ["CN", "VN", "RW"], "use": "Hard metals, defense"}
+    ],
+    "shipping_routes": [
+        {"id": "fbx01", "name": "China/East Asia → North America West Coast"},
+        {"id": "fbx03", "name": "China/East Asia → North Europe"},
+        {"id": "fbx11", "name": "China/East Asia → Mediterranean"},
+        {"id": "fbx13", "name": "North Europe → North America East Coast"}
+    ]
+}
