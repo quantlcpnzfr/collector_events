@@ -6,11 +6,20 @@ import asyncio
 import logging
 import time
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any
 
 import aiohttp
+
+# ─── Cross-service contracts delegados ao shared_lib ───────────────
+# IntelItem, ExtractionResult e ExtractionResult são definidos em
+# forex_shared.domain.intel para permitir consumo por qualquer serviço
+# sem depender de collector_events.
+from forex_shared.domain.intel import ExtractionResult, IntelItem
+
+# Re-exportados para backward compatibility: qualquer módulo que
+# importava "from .base import IntelItem" continua funcionando.
+__all__ = ["IntelItem", "ExtractionResult", "BaseExtractor", "CHROME_UA", "DEFAULT_TIMEOUT"]
 
 logger = logging.getLogger(__name__)
 
@@ -23,77 +32,6 @@ CHROME_UA = (
 )
 
 DEFAULT_TIMEOUT = aiohttp.ClientTimeout(total=30)
-
-
-# ─── Data models ────────────────────────────────────────────────────
-
-@dataclass
-class IntelItem:
-    """Normalised intelligence item — the universal output of every extractor."""
-
-    id: str
-    source: str           # extractor source name (e.g. "acled", "gdelt", "feodo")
-    domain: str           # top-level domain (e.g. "conflict", "cyber", "market")
-    title: str
-    url: str = ""
-    body: str = ""
-    ts: str = ""          # ISO-8601 timestamp of the upstream event
-    fetched_at: str = ""  # ISO-8601 timestamp when we fetched it
-    lat: float | None = None
-    lon: float | None = None
-    country: str = ""
-    severity: str = ""    # "HIGH" | "MEDIUM" | "LOW" | ""
-    tags: list[str] = field(default_factory=list)
-    extra: dict[str, Any] = field(default_factory=dict)
-
-    def to_dict(self) -> dict[str, Any]:
-        d = {
-            "id": self.id,
-            "source": self.source,
-            "domain": self.domain,
-            "title": self.title,
-            "url": self.url,
-            "body": self.body,
-            "ts": self.ts,
-            "fetched_at": self.fetched_at,
-            "country": self.country,
-            "severity": self.severity,
-            "tags": self.tags,
-        }
-        if self.lat is not None:
-            d["lat"] = self.lat
-        if self.lon is not None:
-            d["lon"] = self.lon
-        if self.extra:
-            d["extra"] = self.extra
-        return d
-
-
-@dataclass
-class ExtractionResult:
-    """Wrapper returned by every extractor run."""
-
-    source: str
-    domain: str
-    items: list[IntelItem] = field(default_factory=list)
-    error: str | None = None
-    elapsed_ms: float = 0.0
-    fetched_at: str = ""
-
-    @property
-    def ok(self) -> bool:
-        return self.error is None
-
-    def to_dict(self) -> dict[str, Any]:
-        return {
-            "source": self.source,
-            "domain": self.domain,
-            "count": len(self.items),
-            "error": self.error,
-            "elapsed_ms": round(self.elapsed_ms, 1),
-            "fetched_at": self.fetched_at,
-            "items": [item.to_dict() for item in self.items],
-        }
 
 
 # ─── Base extractor ─────────────────────────────────────────────────
