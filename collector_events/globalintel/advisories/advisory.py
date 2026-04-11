@@ -4,8 +4,7 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
-import logging
-import re
+from forex_shared.logging.get_logger import get_loggerimport re
 from xml.etree import ElementTree
 
 import aiohttp
@@ -13,7 +12,7 @@ import aiohttp
 from ..base import BaseExtractor, IntelItem
 from ..config import _load
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 _ADVISORY_FEEDS: list[dict] = _load("advisories.json")
 

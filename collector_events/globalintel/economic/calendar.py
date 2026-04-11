@@ -2,8 +2,7 @@
 
 from __future__ import annotations
 
-import logging
-import re
+from forex_shared.logging.get_logger import get_loggerimport re
 from datetime import datetime, timezone
 
 import aiohttp
@@ -11,7 +10,7 @@ import aiohttp
 from ..base import BaseExtractor, IntelItem
 from ..config import _load
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 _CFG = _load("economic.json")
 _FRED_RELEASE_URL = _CFG["fred"]["release_url"]

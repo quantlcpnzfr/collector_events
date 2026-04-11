@@ -7,14 +7,13 @@ Upstream: Aggregated from public filings / SoSoValue-style APIs.
 from __future__ import annotations
 
 import asyncio
-import logging
-
+from forex_shared.logging.get_logger import get_logger
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 from ..reference import BTC_SPOT_ETFS
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 YAHOO_CHART = "https://query1.finance.yahoo.com/v8/finance/chart"
 

@@ -3,15 +3,14 @@
 from __future__ import annotations
 
 import asyncio
-import logging
-import re
+from forex_shared.logging.get_logger import get_loggerimport re
 
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 from ..config import _load
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 _CFG = _load("market.json")
 _YAHOO_CHART_URL = _CFG["fx"]["yahoo_chart_url"]

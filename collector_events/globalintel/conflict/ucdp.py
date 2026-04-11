@@ -14,14 +14,13 @@ Violence types: STATE_BASED (1), NON_STATE (2), ONE_SIDED (3).
 
 from __future__ import annotations
 
-import logging
-from datetime import datetime, timedelta, timezone
+from forex_shared.logging.get_logger import get_loggerfrom datetime import datetime, timedelta, timezone
 
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 UCDP_BASE = "https://ucdpapi.pcr.uu.se/api/gedevents"
 UCDP_PAGE_SIZE = 1000

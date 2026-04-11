@@ -13,15 +13,14 @@ from __future__ import annotations
 
 import csv
 import io
-import logging
-from collections import defaultdict
+from forex_shared.logging.get_logger import get_loggerfrom collections import defaultdict
 
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 from ..reference import BIS_COUNTRY_CODES
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 BIS_API = "https://stats.bis.org/api/v1/data"
 

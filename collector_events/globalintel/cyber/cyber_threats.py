@@ -4,14 +4,13 @@ from __future__ import annotations
 
 import csv
 import io
-import logging
-
+from forex_shared.logging.get_logger import get_logger
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 from ..config import _load
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 _CFG = _load("cyber.json")
 _FEEDS = _CFG["feeds"]

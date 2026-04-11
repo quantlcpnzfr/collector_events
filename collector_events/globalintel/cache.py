@@ -2,23 +2,24 @@
 
 Mirrors worldmonitor's seed→Redis→API pattern:
 each extractor writes its result to a Redis key with a domain-scoped TTL.
+Uses ``redis.asyncio`` for non-blocking I/O compatible with asyncio event loops.
 """
 
 from __future__ import annotations
 
 import json
-import logging
 from typing import Any
 
-import redis
+import redis.asyncio as aioredis
 
+from forex_shared.logging.get_logger import get_logger
 from .base import ExtractionResult
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class IntelCache:
-    """Thin wrapper around a ``redis.Redis`` client for intelligence storage.
+    """Async wrapper around ``redis.asyncio.Redis`` for intelligence storage.
 
     Key naming convention (matches worldmonitor):
         ``{domain}:{source}:{version}``
@@ -33,15 +34,15 @@ class IntelCache:
 
     META_TTL = 7 * 24 * 3600  # 7 days — same as worldmonitor
 
-    def __init__(self, redis_client: redis.Redis):
+    def __init__(self, redis_client: aioredis.Redis):
         self._r = redis_client
 
     # ── write ────────────────────────────────────────────────────
 
-    def store(self, result: ExtractionResult, key: str, ttl: int) -> None:
+    async def store(self, result: ExtractionResult, key: str, ttl: int) -> None:
         """Persist an extraction result + metadata."""
         payload = json.dumps(result.to_dict(), default=str)
-        self._r.setex(key, ttl, payload)
+        await self._r.setex(key, ttl, payload)
         meta_key = f"seed-meta:{key.replace(':', '-')}"
         meta = json.dumps({
             "key": key,
@@ -50,22 +51,22 @@ class IntelCache:
             "fetched_at": result.fetched_at,
             "error": result.error,
         })
-        self._r.setex(meta_key, self.META_TTL, meta)
+        await self._r.setex(meta_key, self.META_TTL, meta)
         logger.info(
             "Cached %d items → %s (TTL %ds)", len(result.items), key, ttl,
         )
 
     # ── read ─────────────────────────────────────────────────────
 
-    def load(self, key: str) -> dict[str, Any] | None:
-        raw = self._r.get(key)
+    async def load(self, key: str) -> dict[str, Any] | None:
+        raw = await self._r.get(key)
         if raw is None:
             return None
         return json.loads(raw)
 
-    def health(self, key: str) -> dict[str, Any] | None:
+    async def health(self, key: str) -> dict[str, Any] | None:
         meta_key = f"seed-meta:{key.replace(':', '-')}"
-        raw = self._r.get(meta_key)
+        raw = await self._r.get(meta_key)
         if raw is None:
             return None
         return json.loads(raw)

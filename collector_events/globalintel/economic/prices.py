@@ -9,14 +9,13 @@ Mirrors worldmonitor handlers:
 
 from __future__ import annotations
 
-import logging
-import re
+from forex_shared.logging.get_logger import get_loggerimport re
 
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class FaoFoodPriceExtractor(BaseExtractor):

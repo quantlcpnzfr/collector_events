@@ -6,23 +6,29 @@ and provides a unified interface for the forex_system pipeline.
 Usage:
     from collector_events.globalintel.orchestrator import IntelOrchestrator
 
-    orch = IntelOrchestrator(redis_url="redis://localhost:6379/0")
-    await orch.run_all()          # one-shot all extractors
-    await orch.run_domain("cyber") # single domain
-    await orch.start_scheduler()   # background loop
+    orch = IntelOrchestrator()                # uses GlobalIntelConfig from env
+    await orch.run_all()                      # one-shot all extractors (shared session)
+    await orch.run_domain("cyber")            # single domain (shared session)
+    await orch.start_scheduler()              # background APScheduler loop
 """
 
 from __future__ import annotations
 
 import asyncio
-import logging
 import os
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any
 
-from .base import BaseExtractor, ExtractionResult
+import aiohttp
+import redis.asyncio as aioredis
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+
+from .base import BaseExtractor, ExtractionResult, CHROME_UA, DEFAULT_TIMEOUT
 from .cache import IntelCache
+from .config_env import GlobalIntelConfig
+from forex_shared.logging.get_logger import get_logger
+from forex_shared.logging.loggable import Loggable
 
 # Domain imports
 from .feeds.rss_extractor import RSSFeedExtractor
@@ -61,7 +67,7 @@ from .supply_chain import (
     ShippingRateExtractor, ShippingStressExtractor,
 )
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 @dataclass
@@ -116,22 +122,59 @@ class OrchestratorConfig:
         )
 
 
-class IntelOrchestrator:
+class IntelOrchestrator(Loggable):
     """Central orchestrator for all global intelligence extractors.
 
-    Instantiates all extractors, runs them on a schedule, and stores
-    results to Redis via IntelCache.
+    Instantiates all extractors, runs them on a schedule via APScheduler,
+    and stores results to Redis via IntelCache.
+
+    Uses ``GlobalIntelConfig`` (hot-reloadable via ``EnvConfigManager``) by
+    default.  Accepts a legacy ``OrchestratorConfig`` for backward compatibility.
     """
 
-    def __init__(self, config: OrchestratorConfig | None = None):
-        self._config = config or OrchestratorConfig.from_env()
+    def __init__(
+        self,
+        config: GlobalIntelConfig | OrchestratorConfig | None = None,
+    ) -> None:
+        if config is None:
+            config = GlobalIntelConfig()
+        self._config = config
         self._cache: IntelCache | None = None
         self._schedule: list[ScheduleEntry] = []
-        self._running = False
+        self._scheduler: AsyncIOScheduler = AsyncIOScheduler()
         self._build_schedule()
 
-    def _build_schedule(self) -> None:
+    # ── Config helpers ───────────────────────────────────────────────
+
+    def _attr(self, new_name: str, old_name: str, default: str = "") -> str:
+        """Read an attribute from either config type by name."""
         cfg = self._config
+        if isinstance(cfg, GlobalIntelConfig):
+            return getattr(cfg, new_name, default)
+        return getattr(cfg, old_name, default)
+
+    def _get_redis_url(self) -> str:
+        if isinstance(self._config, GlobalIntelConfig):
+            return self._config.REDIS_URL
+        return self._config.redis_url
+
+    def _build_schedule(self) -> None:
+        # Normalise attribute access across GlobalIntelConfig and legacy OrchestratorConfig
+        acled_email        = self._attr("ACLED_EMAIL",           "acled_email")
+        acled_key          = self._attr("ACLED_API_KEY",         "acled_key")
+        acled_access_token = self._attr("ACLED_ACCESS_TOKEN",    "acled_access_token")
+        acled_password     = self._attr("ACLED_PASSWORD",        "acled_password")
+        wingbits_api_key   = self._attr("WINGBITS_API_KEY",      "wingbits_api_key")
+        otx_key            = self._attr("OTX_API_KEY",           "otx_key")
+        abuseipdb_key      = self._attr("ABUSEIPDB_API_KEY",     "abuseipdb_key")
+        fred_api_key       = self._attr("FRED_API_KEY",          "fred_api_key")
+        bls_api_key        = self._attr("BLS_API_KEY",           "bls_api_key")
+        eia_api_key        = self._attr("EIA_API_KEY",           "eia_api_key")
+        wto_api_key        = self._attr("WTO_API_KEY",           "wto_api_key")
+        nasa_firms_key     = self._attr("NASA_FIRMS_KEY",        "nasa_firms_key")
+        finnhub_api_key    = self._attr("FINNHUB_API_KEY",       "finnhub_api_key")
+        telegram_relay_url = self._attr("TELEGRAM_RELAY_URL",    "telegram_relay_url")
+        telegram_secret    = self._attr("TELEGRAM_RELAY_SECRET", "telegram_secret")
 
         self._schedule = [
             # ── Feeds ──
@@ -139,24 +182,24 @@ class IntelOrchestrator:
 
             # ── Conflict/Geopolitics ──
             ScheduleEntry(ACLEDExtractor(
-                email=cfg.acled_email, api_key=cfg.acled_key,
-                access_token=cfg.acled_access_token, password=cfg.acled_password,
+                email=acled_email, api_key=acled_key,
+                access_token=acled_access_token, password=acled_password,
             ), interval_seconds=900),
             ScheduleEntry(GDELTIntelExtractor(), interval_seconds=86400),
             ScheduleEntry(GDELTUnrestExtractor(), interval_seconds=16200),
             ScheduleEntry(UCDPExtractor(), interval_seconds=86400),
             ScheduleEntry(UnrestMergeExtractor(
-                acled_email=cfg.acled_email, acled_api_key=cfg.acled_key,
-                acled_access_token=cfg.acled_access_token,
+                acled_email=acled_email, acled_api_key=acled_key,
+                acled_access_token=acled_access_token,
             ), interval_seconds=16200),
             ScheduleEntry(DisplacementExtractor(), interval_seconds=86400),
-            ScheduleEntry(GPSJammingExtractor(api_key=cfg.wingbits_api_key), interval_seconds=172800),
+            ScheduleEntry(GPSJammingExtractor(api_key=wingbits_api_key), interval_seconds=172800),
 
             # ── Cyber ──
-            ScheduleEntry(CyberThreatExtractor(otx_key=cfg.otx_key, abuseipdb_key=cfg.abuseipdb_key), interval_seconds=10800),
+            ScheduleEntry(CyberThreatExtractor(otx_key=otx_key, abuseipdb_key=abuseipdb_key), interval_seconds=10800),
 
             # ── Economic (calendar) ──
-            ScheduleEntry(EconomicCalendarExtractor(fred_api_key=cfg.fred_api_key), interval_seconds=129600),
+            ScheduleEntry(EconomicCalendarExtractor(fred_api_key=fred_api_key), interval_seconds=129600),
 
             # ── Economic (BIS) ──
             ScheduleEntry(BisPolicyRateExtractor(), interval_seconds=604800),    # weekly
@@ -169,19 +212,19 @@ class IntelOrchestrator:
             ScheduleEntry(EcbStressIndexExtractor(), interval_seconds=86400),
 
             # ── Economic (BLS) ──
-            ScheduleEntry(BlsSeriesExtractor(api_key=cfg.bls_api_key), interval_seconds=604800),
+            ScheduleEntry(BlsSeriesExtractor(api_key=bls_api_key), interval_seconds=604800),
 
             # ── Economic (World Bank) ──
             ScheduleEntry(WorldBankExtractor(), interval_seconds=604800),
 
             # ── Economic (Energy) ──
-            ScheduleEntry(EIACrudeInventoryExtractor(eia_api_key=cfg.eia_api_key), interval_seconds=604800),
-            ScheduleEntry(EIANatGasStorageExtractor(eia_api_key=cfg.eia_api_key), interval_seconds=604800),
+            ScheduleEntry(EIACrudeInventoryExtractor(eia_api_key=eia_api_key), interval_seconds=604800),
+            ScheduleEntry(EIANatGasStorageExtractor(eia_api_key=eia_api_key), interval_seconds=604800),
             ScheduleEntry(EuGasStorageExtractor(), interval_seconds=86400),
 
             # ── Economic (Prices & Stress) ──
             ScheduleEntry(FaoFoodPriceExtractor(), interval_seconds=604800),
-            ScheduleEntry(EconomicStressExtractor(fred_api_key=cfg.fred_api_key), interval_seconds=21600),
+            ScheduleEntry(EconomicStressExtractor(fred_api_key=fred_api_key), interval_seconds=21600),
 
             # ── Market (FX, Fear/Greed, Prediction) ──
             ScheduleEntry(FXRateExtractor(), interval_seconds=90000),
@@ -189,9 +232,9 @@ class IntelOrchestrator:
             ScheduleEntry(PredictionMarketExtractor(), interval_seconds=10800),
 
             # ── Market (Stocks) ──
-            ScheduleEntry(StockQuoteExtractor(finnhub_api_key=cfg.finnhub_api_key), interval_seconds=3600),
+            ScheduleEntry(StockQuoteExtractor(finnhub_api_key=finnhub_api_key), interval_seconds=3600),
             ScheduleEntry(SectorPerformanceExtractor(), interval_seconds=3600),
-            ScheduleEntry(EarningsCalendarExtractor(finnhub_api_key=cfg.finnhub_api_key), interval_seconds=86400),
+            ScheduleEntry(EarningsCalendarExtractor(finnhub_api_key=finnhub_api_key), interval_seconds=86400),
 
             # ── Market (Crypto) ──
             ScheduleEntry(CryptoQuoteExtractor(), interval_seconds=3600),
@@ -210,7 +253,7 @@ class IntelOrchestrator:
 
             # ── Environment ──
             ScheduleEntry(USGSEarthquakeExtractor(), interval_seconds=3600),
-            ScheduleEntry(NASAFireExtractor(api_key=cfg.nasa_firms_key), interval_seconds=7200),
+            ScheduleEntry(NASAFireExtractor(api_key=nasa_firms_key), interval_seconds=7200),
             ScheduleEntry(GDACSExtractor(), interval_seconds=7200),
             ScheduleEntry(NASAEONETExtractor(), interval_seconds=14400),
 
@@ -220,16 +263,16 @@ class IntelOrchestrator:
             # ── Social ──
             ScheduleEntry(RedditVelocityExtractor(), interval_seconds=600),
             ScheduleEntry(TelegramRelayExtractor(
-                relay_url=cfg.telegram_relay_url,
-                shared_secret=cfg.telegram_secret,
+                relay_url=telegram_relay_url,
+                shared_secret=telegram_secret,
             ), interval_seconds=60),
 
             # ── Advisories ──
             ScheduleEntry(AdvisoryExtractor(), interval_seconds=10800),
 
             # ── Trade ──
-            ScheduleEntry(WtoTradeRestrictionExtractor(wto_api_key=cfg.wto_api_key), interval_seconds=604800),
-            ScheduleEntry(TariffTrendExtractor(wto_api_key=cfg.wto_api_key), interval_seconds=604800),
+            ScheduleEntry(WtoTradeRestrictionExtractor(wto_api_key=wto_api_key), interval_seconds=604800),
+            ScheduleEntry(TariffTrendExtractor(wto_api_key=wto_api_key), interval_seconds=604800),
             ScheduleEntry(ComtradeFlowExtractor(), interval_seconds=604800),
 
             # ── Supply Chain ──
@@ -241,28 +284,35 @@ class IntelOrchestrator:
 
     def _get_cache(self) -> IntelCache:
         if self._cache is None:
-            import redis
-            client = redis.Redis.from_url(self._config.redis_url, decode_responses=True)
+            client = aioredis.Redis.from_url(self._get_redis_url(), decode_responses=True)
             self._cache = IntelCache(client)
         return self._cache
 
     # ── One-shot methods ─────────────────────────────────────────────
 
     async def run_all(self) -> list[ExtractionResult]:
-        """Run all extractors once and store results."""
+        """Run all extractors once with a shared aiohttp session."""
         results: list[ExtractionResult] = []
-        for entry in self._schedule:
-            result = await self._run_entry(entry)
-            results.append(result)
+        async with aiohttp.ClientSession(
+            timeout=DEFAULT_TIMEOUT,
+            headers={"User-Agent": CHROME_UA},
+        ) as session:
+            for entry in self._schedule:
+                result = await self._run_entry(entry, session=session)
+                results.append(result)
         return results
 
     async def run_domain(self, domain: str) -> list[ExtractionResult]:
-        """Run extractors for a single domain."""
+        """Run extractors for a single domain with a shared session."""
         results: list[ExtractionResult] = []
-        for entry in self._schedule:
-            if entry.extractor.DOMAIN == domain:
-                result = await self._run_entry(entry)
-                results.append(result)
+        async with aiohttp.ClientSession(
+            timeout=DEFAULT_TIMEOUT,
+            headers={"User-Agent": CHROME_UA},
+        ) as session:
+            for entry in self._schedule:
+                if entry.extractor.DOMAIN == domain:
+                    result = await self._run_entry(entry, session=session)
+                    results.append(result)
         return results
 
     async def run_source(self, source: str) -> ExtractionResult | None:
@@ -272,56 +322,62 @@ class IntelOrchestrator:
                 return await self._run_entry(entry)
         return None
 
-    async def _run_entry(self, entry: ScheduleEntry) -> ExtractionResult:
+    async def _run_entry(
+        self,
+        entry: ScheduleEntry,
+        session: aiohttp.ClientSession | None = None,
+    ) -> ExtractionResult:
         ext = entry.extractor
-        logger.info("Running %s/%s ...", ext.DOMAIN, ext.SOURCE)
-        result = await ext.run()
+        self.log.info("Running %s/%s ...", ext.DOMAIN, ext.SOURCE)
+        result = await ext.run(session=session)
         if result.ok:
             cache = self._get_cache()
-            cache.store(result, ext.REDIS_KEY, ext.TTL_SECONDS)
-            logger.info(
+            await cache.store(result, ext.REDIS_KEY, ext.TTL_SECONDS)
+            self.log.info(
                 "  ✓ %s: %d items in %.0fms → Redis %s (TTL %ds)",
                 ext.SOURCE, len(result.items), result.elapsed_ms,
                 ext.REDIS_KEY, ext.TTL_SECONDS,
             )
         else:
-            logger.warning("  ✗ %s: %s", ext.SOURCE, result.error)
+            self.log.warning("  ✗ %s: %s", ext.SOURCE, result.error)
         entry.last_run = datetime.now(timezone.utc).timestamp()
         return result
 
     # ── Scheduler loop ───────────────────────────────────────────────
 
     async def start_scheduler(self) -> None:
-        """Background loop that runs extractors at their configured intervals."""
-        self._running = True
-        logger.info("IntelOrchestrator scheduler started with %d extractors", len(self._schedule))
-        while self._running:
-            now = datetime.now(timezone.utc).timestamp()
-            for entry in self._schedule:
-                elapsed = now - entry.last_run
-                if elapsed >= entry.interval_seconds:
-                    try:
-                        await self._run_entry(entry)
-                    except Exception as exc:
-                        logger.exception(
-                            "Scheduler error in %s/%s: %s",
-                            entry.extractor.DOMAIN, entry.extractor.SOURCE, exc,
-                        )
-            await asyncio.sleep(30)  # check every 30s
+        """Start the APScheduler background loop — one job per extractor."""
+        for entry in self._schedule:
+            self._scheduler.add_job(
+                self._run_entry,
+                trigger="interval",
+                seconds=entry.interval_seconds,
+                args=[entry],
+                id=f"{entry.extractor.DOMAIN}_{entry.extractor.SOURCE}",
+                next_run_time=datetime.now(timezone.utc),  # run immediately on start
+                misfire_grace_time=60,
+                coalesce=True,
+            )
+        self._scheduler.start()
+        self.log.info(
+            "IntelOrchestrator scheduler started with %d extractors",
+            len(self._schedule),
+        )
 
     def stop_scheduler(self) -> None:
-        self._running = False
+        if self._scheduler.running:
+            self._scheduler.shutdown(wait=False)
 
     # ── Status / health ──────────────────────────────────────────────
 
-    def health(self) -> dict[str, Any]:
-        """Return health status of all extractors."""
+    async def health(self) -> dict[str, Any]:
+        """Return health status of all extractors (async — reads Redis)."""
         cache = self._get_cache()
         status: dict[str, Any] = {}
         for entry in self._schedule:
             ext = entry.extractor
             key = f"{ext.DOMAIN}/{ext.SOURCE}"
-            meta = cache.health(ext.REDIS_KEY)
+            meta = await cache.health(ext.REDIS_KEY)
             status[key] = {
                 "redis_key": ext.REDIS_KEY,
                 "ttl_seconds": ext.TTL_SECONDS,

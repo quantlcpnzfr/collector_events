@@ -16,8 +16,7 @@ Upstream:
 from __future__ import annotations
 
 import asyncio
-import logging
-
+from forex_shared.logging.get_logger import get_logger
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
@@ -30,7 +29,7 @@ from ..reference import (
     CRYPTO_SECTORS,
 )
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 COINGECKO_API = "https://api.coingecko.com/api/v3"
 COINPAPRIKA_API = "https://api.coinpaprika.com/v1"

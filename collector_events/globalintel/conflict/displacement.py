@@ -18,14 +18,13 @@ GPS Interference — Wingbits ADS-B
 
 from __future__ import annotations
 
-import logging
-from datetime import datetime, timezone
+from forex_shared.logging.get_logger import get_loggerfrom datetime import datetime, timezone
 
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 # ─── UNHCR Displacement ─────────────────────────────────────────────
 

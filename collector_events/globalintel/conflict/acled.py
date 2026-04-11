@@ -2,8 +2,7 @@
 
 from __future__ import annotations
 
-import logging
-from datetime import datetime, timedelta, timezone
+from forex_shared.logging.get_logger import get_loggerfrom datetime import datetime, timedelta, timezone
 
 import aiohttp
 
@@ -11,7 +10,7 @@ from ..base import BaseExtractor, IntelItem
 from ..config import _load
 from ..utils import safe_float
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 _CFG = _load("conflict.json")["acled"]
 _OAUTH_URL = _CFG["oauth_url"]

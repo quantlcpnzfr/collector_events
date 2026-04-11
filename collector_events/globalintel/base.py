@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import asyncio
-import logging
 import time
 from abc import ABC, abstractmethod
 from datetime import datetime, timezone
@@ -16,12 +15,12 @@ import aiohttp
 # forex_shared.domain.intel para permitir consumo por qualquer serviço
 # sem depender de collector_events.
 from forex_shared.domain.intel import ExtractionResult, IntelItem
+from forex_shared.logging.get_logger import get_logger
+from forex_shared.logging.loggable import Loggable
 
 # Re-exportados para backward compatibility: qualquer módulo que
 # importava "from .base import IntelItem" continua funcionando.
 __all__ = ["IntelItem", "ExtractionResult", "BaseExtractor", "CHROME_UA", "DEFAULT_TIMEOUT"]
-
-logger = logging.getLogger(__name__)
 
 # ─── Shared constants ───────────────────────────────────────────────
 
@@ -36,12 +35,15 @@ DEFAULT_TIMEOUT = aiohttp.ClientTimeout(total=30)
 
 # ─── Base extractor ─────────────────────────────────────────────────
 
-class BaseExtractor(ABC):
+class BaseExtractor(ABC, Loggable):
     """Abstract base class for all global intelligence extractors.
 
     Subclasses implement ``_fetch(session)`` which returns a list of
     ``IntelItem`` instances.  The base class provides retry logic,
-    timing, and a shared ``aiohttp.ClientSession``.
+    timing, session sharing, and concurrent sub-fetch helpers.
+
+    Logging is provided via the ``Loggable`` mixin: use ``self.log``
+    instead of a module-level ``logger``.
     """
 
     # Override in subclass
@@ -81,7 +83,7 @@ class BaseExtractor(ABC):
                 fetched_at=now,
             )
         except Exception as exc:
-            logger.exception("Extractor %s failed: %s", self.SOURCE, exc)
+            self.log.exception("Extractor %s failed: %s", self.SOURCE, exc)
             return ExtractionResult(
                 source=self.SOURCE,
                 domain=self.DOMAIN,
@@ -102,9 +104,27 @@ class BaseExtractor(ABC):
                 last_exc = exc
                 if attempt < self._max_retries:
                     wait = self._backoff_base ** attempt
-                    logger.warning(
+                    self.log.warning(
                         "%s attempt %d failed (%s), retrying in %.1fs",
                         self.SOURCE, attempt + 1, exc, wait,
                     )
                     await asyncio.sleep(wait)
         raise last_exc  # type: ignore[misc]
+
+    async def _gather_items(
+        self,
+        coroutines: list[Any],
+    ) -> list[IntelItem]:
+        """Run coroutines concurrently and return non-None results.
+
+        Drop-in helper for the ``asyncio.gather(*tasks) + filter-None``
+        pattern repeated across extractors::
+
+            tasks = [_fetch_one(x) for x in items]
+            return await self._gather_items(tasks)
+        """
+        results = await asyncio.gather(*coroutines, return_exceptions=True)
+        return [
+            r for r in results
+            if r is not None and not isinstance(r, BaseException)
+        ]

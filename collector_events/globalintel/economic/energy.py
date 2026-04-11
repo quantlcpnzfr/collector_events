@@ -14,13 +14,12 @@ Upstream:
 
 from __future__ import annotations
 
-import logging
-
+from forex_shared.logging.get_logger import get_logger
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 
 class EIACrudeInventoryExtractor(BaseExtractor):

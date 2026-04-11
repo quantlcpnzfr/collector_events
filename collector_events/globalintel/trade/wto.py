@@ -2,14 +2,13 @@
 
 from __future__ import annotations
 
-import logging
-
+from forex_shared.logging.get_logger import get_logger
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 from ..config import _load
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 _CFG = _load("trade.json")
 _WTO_API_BASE = _CFG["wto_api_base"]

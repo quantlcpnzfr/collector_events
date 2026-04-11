@@ -15,15 +15,14 @@ from __future__ import annotations
 
 import csv
 import io
-import logging
-from collections import defaultdict
+from forex_shared.logging.get_logger import get_loggerfrom collections import defaultdict
 from datetime import datetime, timedelta, timezone
 
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 ECB_API = "https://data-api.ecb.europa.eu/service/data"
 
