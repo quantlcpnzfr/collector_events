@@ -1,6 +1,6 @@
+forex_shared
 aiohttp
 apscheduler<4,>=3.10
-asyncio
 debugpy
 pandas
 redis[asyncio]>=4.5

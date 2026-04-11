@@ -7,12 +7,12 @@ name = "collector_events"
 version = "0.1.0"
 description = "Global News and Events internet collector"
 dependencies = [
+    "forex_shared",
     "aiohttp",
     "apscheduler>=3.10,<4",
-    "asyncio",
     "debugpy",
     "pandas",
-    "redis[asyncio]>=4.5",
+    "redis>=7.3,<8",
 ]
 
 [tool.setuptools]

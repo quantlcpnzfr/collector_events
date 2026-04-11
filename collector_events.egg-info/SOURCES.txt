@@ -22,6 +22,7 @@ pyproject.toml
 ./collector_events/globalintel/base.py
 ./collector_events/globalintel/cache.py
 ./collector_events/globalintel/config_env.py
+./collector_events/globalintel/global_tag_manager.py
 ./collector_events/globalintel/orchestrator.py
 ./collector_events/globalintel/utils.py
 ./collector_events/globalintel/advisories/__init__.py
@@ -122,6 +123,7 @@ collector_events/globalintel/__init__.py
 collector_events/globalintel/base.py
 collector_events/globalintel/cache.py
 collector_events/globalintel/config_env.py
+collector_events/globalintel/global_tag_manager.py
 collector_events/globalintel/orchestrator.py
 collector_events/globalintel/utils.py
 collector_events/globalintel/advisories/__init__.py

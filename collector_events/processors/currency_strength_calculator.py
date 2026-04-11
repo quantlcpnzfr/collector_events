@@ -15,8 +15,8 @@ NOT FULLY IMPLEMENTED YET, NOT USED YET
 from datetime import datetime, timedelta, timezone
 from typing import Dict, List
 import numpy as np
-from pymongo import MongoClient
 from forex_shared.database import get_db
+from forex_shared.mongo_manager import MongoManager
 from forex_shared.models import CurrencyStrength, EventImpact
 
 class CurrencyStrengthCalculator:
@@ -27,9 +27,9 @@ class CurrencyStrengthCalculator:
     # Deve pegar da sessão !!!!
     CURRENCIES = ['USD', 'EUR', 'GBP', 'JPY', 'AUD', 'CAD', 'CHF', 'NZD']
     
-    def __init__(self, mongo_client: MongoClient):
-        self.mongo = mongo_client
-        self.news_collection = self.mongo.forex_ai.news_events
+    def __init__(self, mongo_manager: MongoManager | None = None):
+        self.mongo = mongo_manager or MongoManager()
+        self.news_collection = self.mongo.get_collection("news_events")
     
     def calculate_all_currencies(self):
         """Calcula strength de todas as moedas"""

@@ -28,50 +28,15 @@ mascara todos os campos sensíveis com "***".
 
 from __future__ import annotations
 
-from forex_shared.config.base_config import BaseConfig, EnvField
+from forex_shared.config.categories import IntelConfig, StorageConfig
 
 
-class GlobalIntelConfig(BaseConfig):
+class GlobalIntelConfig(StorageConfig, IntelConfig):
     """Configuração completa para o módulo de inteligência global.
 
     Todos os campos são hot-reloadáveis via EnvConfigManager.
     Chaves de API são mascaradas em ``to_dict()`` para segurança.
     """
-
-    # ── Infraestrutura ────────────────────────────────────────────────
-    REDIS_URL = EnvField("REDIS_URL", "redis://localhost:6379/0", str)
-    """URL de conexão Redis para IntelCache."""
-
-    # ── Intervalo base do scheduler (segundos) ────────────────────────
-    SCHEDULER_TICK_SECONDS = EnvField("INTEL_SCHEDULER_TICK", 60, int)
-    """Intervalo de verificação do scheduler para decidir quais extractors rodar."""
-
-    # ── Conflict / Geopolitics ────────────────────────────────────────
-    ACLED_EMAIL        = EnvField("ACLED_EMAIL",              "", str)
-    ACLED_API_KEY      = EnvField("ACLED_API_KEY",             "", str)
-    ACLED_ACCESS_TOKEN = EnvField("ACLED_ACCESS_TOKEN",        "", str)
-    ACLED_PASSWORD     = EnvField("ACLED_PASSWORD",            "", str)
-    WINGBITS_API_KEY   = EnvField("WINGBITS_API_KEY",          "", str)
-
-    # ── Cyber ─────────────────────────────────────────────────────────
-    OTX_API_KEY        = EnvField("OTX_API_KEY",               "", str)
-    ABUSEIPDB_API_KEY  = EnvField("ABUSEIPDB_API_KEY",         "", str)
-
-    # ── Economic ─────────────────────────────────────────────────────
-    FRED_API_KEY       = EnvField("FRED_API_KEY",              "", str)
-    BLS_API_KEY        = EnvField("BLS_API_KEY",               "", str)
-    EIA_API_KEY        = EnvField("EIA_API_KEY",               "", str)
-    WTO_API_KEY        = EnvField("WTO_API_KEY",               "", str)
-
-    # ── Environment ───────────────────────────────────────────────────
-    NASA_FIRMS_KEY     = EnvField("NASA_FIRMS_KEY",            "", str)
-
-    # ── Market / Finance ─────────────────────────────────────────────
-    FINNHUB_API_KEY    = EnvField("FINNHUB_API_KEY",           "", str)
-
-    # ── Social / Telegram ────────────────────────────────────────────
-    TELEGRAM_RELAY_URL    = EnvField("TELEGRAM_RELAY_URL",     "", str)
-    TELEGRAM_RELAY_SECRET = EnvField("TELEGRAM_RELAY_SECRET",  "", str)
 
     # ── Campos sensíveis — mascarados em to_dict() ────────────────────
     _SENSITIVE_FIELDS: tuple[str, ...] = (

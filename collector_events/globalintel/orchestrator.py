@@ -21,7 +21,6 @@ from datetime import datetime, timezone
 from typing import Any
 
 import aiohttp
-import redis.asyncio as aioredis
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 from .base import BaseExtractor, ExtractionResult, CHROME_UA, DEFAULT_TIMEOUT
@@ -31,6 +30,7 @@ from .global_tag_manager import GlobalTagManager
 from forex_shared.domain.intel import IntelDomain
 from forex_shared.logging.get_logger import get_logger
 from forex_shared.logging.loggable import Loggable
+from forex_shared.providers.cache.redis_provider import RedisProvider
 from forex_shared.providers.mq.mq_factory import MQFactory
 from forex_shared.providers.mq.mq_provider_async import MQProviderAsync
 from forex_shared.providers.mq.topics import IntelTopics
@@ -146,6 +146,7 @@ class IntelOrchestrator(Loggable):
             config = GlobalIntelConfig()
         self._config = config
         self._mq: MQProviderAsync | None = mq
+        self._redis: RedisProvider | None = None
         self._cache: IntelCache | None = None
         self._tag_manager: GlobalTagManager | None = None
         self._schedule: list[ScheduleEntry] = []
@@ -179,9 +180,8 @@ class IntelOrchestrator(Loggable):
         if self._mq is None:
             self._mq = MQFactory.create_async_from_env()
         await self._mq.connect()
-        redis_url = self._get_redis_url()
-        redis_client = aioredis.Redis.from_url(redis_url, decode_responses=True)
-        self._tag_manager = GlobalTagManager(redis_client=redis_client, mq=self._mq)
+        redis_provider = await self._get_redis_provider()
+        self._tag_manager = GlobalTagManager(redis_provider=redis_provider, mq=self._mq)
         self.log.info("IntelOrchestrator MQ connected; GlobalTagManager ready")
 
     async def disconnect_mq(self) -> None:
@@ -191,6 +191,14 @@ class IntelOrchestrator(Loggable):
             self._mq = None
             self._tag_manager = None
             self.log.info("IntelOrchestrator MQ disconnected")
+
+    async def disconnect_redis(self) -> None:
+        """Gracefully disconnect Redis provider."""
+        if self._redis is not None:
+            await self._redis.disconnect()
+            self._redis = None
+            self._cache = None
+            self.log.info("IntelOrchestrator Redis disconnected")
 
     def _build_schedule(self) -> None:
         # Normalise attribute access across GlobalIntelConfig and legacy OrchestratorConfig
@@ -316,10 +324,16 @@ class IntelOrchestrator(Loggable):
             ScheduleEntry(ShippingStressExtractor(), interval_seconds=86400),
         ]
 
-    def _get_cache(self) -> IntelCache:
+    async def _get_redis_provider(self) -> RedisProvider:
+        if self._redis is None:
+            self._redis = RedisProvider.from_env()
+            await self._redis.connect()
+        return self._redis
+
+    async def _get_cache(self) -> IntelCache:
         if self._cache is None:
-            client = aioredis.Redis.from_url(self._get_redis_url(), decode_responses=True)
-            self._cache = IntelCache(client)
+            redis_provider = await self._get_redis_provider()
+            self._cache = IntelCache(redis_provider)
         return self._cache
 
     # ── One-shot methods ─────────────────────────────────────────────
@@ -365,7 +379,7 @@ class IntelOrchestrator(Loggable):
         self.log.info("Running %s/%s ...", ext.DOMAIN, ext.SOURCE)
         result = await ext.run(session=session)
         if result.ok:
-            cache = self._get_cache()
+            cache = await self._get_cache()
             await cache.store(result, ext.REDIS_KEY, ext.TTL_SECONDS)
             self.log.info(
                 "  ✓ %s: %d items in %.0fms → Redis %s (TTL %ds)",
@@ -414,7 +428,7 @@ class IntelOrchestrator(Loggable):
 
     async def health(self) -> dict[str, Any]:
         """Return health status of all extractors (async — reads Redis)."""
-        cache = self._get_cache()
+        cache = await self._get_cache()
         status: dict[str, Any] = {}
         for entry in self._schedule:
             ext = entry.extractor

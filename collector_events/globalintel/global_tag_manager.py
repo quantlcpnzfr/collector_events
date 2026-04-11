@@ -31,7 +31,6 @@ from datetime import datetime, timedelta, timezone
 from typing import Any
 
 import aiohttp
-import redis.asyncio as aioredis
 
 from forex_shared.config.categories import AIConfig
 from forex_shared.domain.intel import (
@@ -42,6 +41,7 @@ from forex_shared.domain.intel import (
     IntelSeverity,
 )
 from forex_shared.logging.loggable import Loggable
+from forex_shared.providers.cache.redis_provider import RedisProvider
 from forex_shared.providers.mq.topics import IntelTopics
 
 # DeepSeek chat endpoint (default LLM provider)
@@ -158,14 +158,14 @@ class GlobalTagManager(Loggable):
 
     def __init__(
         self,
-        redis_client: aioredis.Redis,
+        redis_provider: RedisProvider,
         mq: Any | None = None,  # MQProviderAsync — typed loosely to avoid circular import
         min_severity: str = IntelSeverity.HIGH,
         llm_enrich: bool = False,
     ) -> None:
         """
         Args:
-            redis_client: Redis async client (already connected).
+            redis_provider: RedisProvider (already connected).
             mq: Optional MQProviderAsync for publishing GlobalTag events.
             min_severity: Minimum severity to trigger tag creation (HIGH by default).
             llm_enrich: When True, call LLM AI Trend Oracle to refine bias and
@@ -173,7 +173,7 @@ class GlobalTagManager(Loggable):
                 or CLAUDE_API_KEY in the environment. Falls back gracefully when
                 no key is available.
         """
-        self._r = redis_client
+        self._r = redis_provider
         self._mq = mq
         self._min_severity = min_severity
         self._llm_enrich = llm_enrich
@@ -245,7 +245,7 @@ class GlobalTagManager(Loggable):
         )
 
         redis_key = tag.redis_key()   # "alert_global:{asset}"
-        await self._r.setex(redis_key, ttl, json.dumps(tag.to_dict()))
+        await self._r.set_json_raw(redis_key, tag.to_dict(), ttl=ttl)
         self.log.info(
             "GlobalTag stored: %s | bias=%s risk=%.2f ttl=%dh | trigger=%s",
             tag.asset, tag.bias, tag.risk_score, ttl // 3600, item.id,
