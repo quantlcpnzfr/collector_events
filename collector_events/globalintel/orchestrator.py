@@ -27,8 +27,13 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from .base import BaseExtractor, ExtractionResult, CHROME_UA, DEFAULT_TIMEOUT
 from .cache import IntelCache
 from .config_env import GlobalIntelConfig
+from .global_tag_manager import GlobalTagManager
+from forex_shared.domain.intel import IntelDomain
 from forex_shared.logging.get_logger import get_logger
 from forex_shared.logging.loggable import Loggable
+from forex_shared.providers.mq.mq_factory import MQFactory
+from forex_shared.providers.mq.mq_provider_async import MQProviderAsync
+from forex_shared.providers.mq.topics import IntelTopics
 
 # Domain imports
 from .feeds.rss_extractor import RSSFeedExtractor
@@ -135,11 +140,14 @@ class IntelOrchestrator(Loggable):
     def __init__(
         self,
         config: GlobalIntelConfig | OrchestratorConfig | None = None,
+        mq: MQProviderAsync | None = None,
     ) -> None:
         if config is None:
             config = GlobalIntelConfig()
         self._config = config
+        self._mq: MQProviderAsync | None = mq
         self._cache: IntelCache | None = None
+        self._tag_manager: GlobalTagManager | None = None
         self._schedule: list[ScheduleEntry] = []
         self._scheduler: AsyncIOScheduler = AsyncIOScheduler()
         self._build_schedule()
@@ -157,6 +165,32 @@ class IntelOrchestrator(Loggable):
         if isinstance(self._config, GlobalIntelConfig):
             return self._config.REDIS_URL
         return self._config.redis_url
+
+    # ── MQ helpers ───────────────────────────────────────────────────
+
+    async def connect_mq(self, mq: MQProviderAsync | None = None) -> None:
+        """Connect MQ provider.  If ``mq`` is provided, uses it directly.
+
+        Call this before ``start_scheduler()`` to enable MQ publishing.
+        If not called, the orchestrator runs in cache-only mode (no MQ).
+        """
+        if mq is not None:
+            self._mq = mq
+        if self._mq is None:
+            self._mq = MQFactory.create_async_from_env()
+        await self._mq.connect()
+        redis_url = self._get_redis_url()
+        redis_client = aioredis.Redis.from_url(redis_url, decode_responses=True)
+        self._tag_manager = GlobalTagManager(redis_client=redis_client, mq=self._mq)
+        self.log.info("IntelOrchestrator MQ connected; GlobalTagManager ready")
+
+    async def disconnect_mq(self) -> None:
+        """Gracefully disconnect MQ provider."""
+        if self._mq is not None:
+            await self._mq.disconnect()
+            self._mq = None
+            self._tag_manager = None
+            self.log.info("IntelOrchestrator MQ disconnected")
 
     def _build_schedule(self) -> None:
         # Normalise attribute access across GlobalIntelConfig and legacy OrchestratorConfig
@@ -341,6 +375,14 @@ class IntelOrchestrator(Loggable):
         else:
             self.log.warning("  ✗ %s: %s", ext.SOURCE, result.error)
         entry.last_run = datetime.now(timezone.utc).timestamp()
+
+        # Publish items to MQ and process GlobalTags (F3.2 + F3.4)
+        if result.ok and self._mq is not None:
+            for item in result.items:
+                await self._mq.publish(IntelTopics.events(item.domain), item.to_mq_payload())
+            if self._tag_manager is not None:
+                await self._tag_manager.process_result(result)
+
         return result
 
     # ── Scheduler loop ───────────────────────────────────────────────
