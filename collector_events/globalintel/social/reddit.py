@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from forex_shared.logging.get_logger import get_loggerimport math
+from forex_shared.logging.get_logger import get_logger
+import math
 import time
 
 import aiohttp
