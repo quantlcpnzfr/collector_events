@@ -15,7 +15,6 @@ Usage:
 from __future__ import annotations
 
 import asyncio
-import os
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any
@@ -26,6 +25,7 @@ from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from .base import BaseExtractor, ExtractionResult, CHROME_UA, DEFAULT_TIMEOUT
 from .cache import IntelCache
 from .config_env import GlobalIntelConfig
+from forex_shared.config import IntelConfig, StorageConfig
 from .global_tag_manager import GlobalTagManager
 from forex_shared.domain.intel import IntelDomain
 from forex_shared.logging.get_logger import get_logger
@@ -108,22 +108,22 @@ class OrchestratorConfig:
     @classmethod
     def from_env(cls) -> OrchestratorConfig:
         return cls(
-            redis_url=os.getenv("REDIS_URL", "redis://localhost:6379/0"),
-            acled_email=os.getenv("ACLED_EMAIL", ""),
-            acled_key=os.getenv("ACLED_API_KEY", ""),
-            acled_access_token=os.getenv("ACLED_ACCESS_TOKEN", ""),
-            acled_password=os.getenv("ACLED_PASSWORD", ""),
-            fred_api_key=os.getenv("FRED_API_KEY", ""),
-            otx_key=os.getenv("OTX_API_KEY", ""),
-            abuseipdb_key=os.getenv("ABUSEIPDB_API_KEY", ""),
-            nasa_firms_key=os.getenv("NASA_FIRMS_KEY", ""),
-            telegram_relay_url=os.getenv("TELEGRAM_RELAY_URL", ""),
-            telegram_secret=os.getenv("TELEGRAM_RELAY_SECRET", ""),
-            finnhub_api_key=os.getenv("FINNHUB_API_KEY", ""),
-            bls_api_key=os.getenv("BLS_API_KEY", ""),
-            eia_api_key=os.getenv("EIA_API_KEY", ""),
-            wto_api_key=os.getenv("WTO_API_KEY", ""),
-            wingbits_api_key=os.getenv("WINGBITS_API_KEY", ""),
+            redis_url=StorageConfig.REDIS_URL,
+            acled_email=IntelConfig.ACLED_EMAIL,
+            acled_key=IntelConfig.ACLED_API_KEY,
+            acled_access_token=IntelConfig.ACLED_ACCESS_TOKEN,
+            acled_password=IntelConfig.ACLED_PASSWORD,
+            fred_api_key=IntelConfig.FRED_API_KEY,
+            otx_key=IntelConfig.OTX_API_KEY,
+            abuseipdb_key=IntelConfig.ABUSEIPDB_API_KEY,
+            nasa_firms_key=IntelConfig.NASA_FIRMS_KEY,
+            telegram_relay_url=IntelConfig.TELEGRAM_RELAY_URL,
+            telegram_secret=IntelConfig.TELEGRAM_RELAY_SECRET,
+            finnhub_api_key=IntelConfig.FINNHUB_API_KEY,
+            bls_api_key=IntelConfig.BLS_API_KEY,
+            eia_api_key=IntelConfig.EIA_API_KEY,
+            wto_api_key=IntelConfig.WTO_API_KEY,
+            wingbits_api_key=IntelConfig.WINGBITS_API_KEY,
         )
 
 

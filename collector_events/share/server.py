@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 import logging
-import os
 from html import escape
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -10,6 +9,7 @@ from typing import Any
 from urllib.parse import urlparse
 
 from collector_events.telemetry import track
+from forex_shared.config import AppConfig
 from collector_events.share.snapshots import build_currency_strength_snapshot
 from collector_events.share.tokens import ShareTokenError, create_signed_token, token_fingerprint, verify_signed_token
 
@@ -233,7 +233,7 @@ class ShareServerHandler(BaseHTTPRequestHandler):
         self._send(status, "text/html; charset=utf-8", html.encode("utf-8"))
 
     def _base_url(self) -> str:
-        configured = os.getenv("PUBLIC_BASE_URL")
+        configured = AppConfig.PUBLIC_BASE_URL
         if configured:
             return configured.rstrip("/")
         host = self.headers.get("Host") or "localhost"
@@ -258,7 +258,7 @@ class ShareServerHandler(BaseHTTPRequestHandler):
 
         if path.startswith("/s/"):
             token = path[len("/s/") :]
-            secret = os.getenv("SHARE_TOKEN_SECRET", "")
+            secret = AppConfig.SHARE_TOKEN_SECRET
             try:
                 payload = verify_signed_token(token, secret=secret)
             except ShareTokenError as exc:
@@ -297,7 +297,7 @@ class ShareServerHandler(BaseHTTPRequestHandler):
         path = parsed.path
 
         if path == "/api/share/currency-strength":
-            secret = os.getenv("SHARE_TOKEN_SECRET", "")
+            secret = AppConfig.SHARE_TOKEN_SECRET
             if not secret:
                 self._send_json(
                     HTTPStatus.INTERNAL_SERVER_ERROR,

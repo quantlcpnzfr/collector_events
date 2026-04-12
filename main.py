@@ -26,6 +26,7 @@ import asyncio
 import signal
 import sys
 
+from forex_shared.config import AppConfig
 from forex_shared.env_config_manager import EnvConfigManager
 from forex_shared.logging.get_logger import get_logger, setup_logging
 
@@ -41,6 +42,14 @@ async def run(no_mq: bool = False, run_once: bool = False) -> None:
         EnvConfigManager.startup()
     except Exception as exc:
         log.warning("EnvConfigManager.startup() failed (continuing with .env): %s", exc)
+
+    strict = AppConfig.REQUIRED_CONFIG_STRICT
+    EnvConfigManager.validate_required(["REDIS_URL"], raise_error=strict)
+    if not no_mq:
+        EnvConfigManager.validate_required(
+            ["MQ_HOST", "MQ_PORT", "MQ_USER", "MQ_PASSWORD"],
+            raise_error=strict,
+        )
 
     config = GlobalIntelConfig()
     orchestrator = IntelOrchestrator(config=config)

@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 import logging
-import os
 from abc import abstractmethod
 from typing import Any
 from urllib.error import HTTPError, URLError
@@ -11,6 +10,7 @@ from urllib.request import Request, urlopen
 
 import pandas as pd
 
+from forex_shared.config import AppConfig
 from collector_events.extractors.provider import DatasetSplitInfo, ExtractorProvider
 
 
@@ -41,7 +41,7 @@ class BaseHuggingFaceDatasetProvider(ExtractorProvider):
         self._dataset = dataset
         self.config = config
         self.split = split
-        self.token = token if token is not None else os.getenv("HF_TOKEN")
+        self.token = token if token is not None else AppConfig.HF_TOKEN
         self.timeout = timeout
 
     @property

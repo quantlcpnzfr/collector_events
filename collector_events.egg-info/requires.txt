@@ -3,4 +3,4 @@ aiohttp
 apscheduler<4,>=3.10
 debugpy
 pandas
-redis[asyncio]>=4.5
+redis<8,>=7.3
