@@ -35,7 +35,7 @@ class FXRateExtractor(BaseExtractor):
         async def _get_rate(cur: str) -> IntelItem | None:
             async with sem:
                 symbol = f"{cur}USD=X" if cur != "USD" else "DX-Y.NYB"
-                url = f"{_YAHOO_CHART_URL}/{symbol}"
+                url = f"{_YAHOO_CHART_URL.rstrip('/')}/{symbol}"
                 try:
                     async with session.get(url) as resp:
                         if resp.status != 200:
