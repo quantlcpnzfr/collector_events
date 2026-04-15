@@ -16,7 +16,8 @@ for global protest/unrest tracking:
 from __future__ import annotations
 
 import asyncio
-from forex_shared.logging.get_logger import get_loggerimport math
+from forex_shared.logging.get_logger import get_logger
+import math
 from datetime import datetime, timedelta, timezone
 
 import aiohttp

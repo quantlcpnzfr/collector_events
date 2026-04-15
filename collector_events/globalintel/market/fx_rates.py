@@ -36,9 +36,8 @@ class FXRateExtractor(BaseExtractor):
             async with sem:
                 symbol = f"{cur}USD=X" if cur != "USD" else "DX-Y.NYB"
                 url = f"{_YAHOO_CHART_URL}/{symbol}"
-                params = {"interval": "1d", "range": "2d"}
                 try:
-                    async with session.get(url, params=params) as resp:
+                    async with session.get(url) as resp:
                         if resp.status != 200:
                             return None
                         data = await resp.json(content_type=None)

@@ -14,7 +14,8 @@ Violence types: STATE_BASED (1), NON_STATE (2), ONE_SIDED (3).
 
 from __future__ import annotations
 
-from forex_shared.logging.get_logger import get_loggerfrom datetime import datetime, timedelta, timezone
+from forex_shared.logging.get_logger import get_logger
+from datetime import datetime, timedelta, timezone
 
 import aiohttp
 

@@ -8,7 +8,8 @@ and propaganda-risk metadata.
 from __future__ import annotations
 
 import hashlib
-from forex_shared.logging.get_logger import get_loggerfrom dataclasses import dataclass, field
+from forex_shared.logging.get_logger import get_logger
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any
 from xml.etree import ElementTree

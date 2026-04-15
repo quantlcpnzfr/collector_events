@@ -4,7 +4,8 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
-from forex_shared.logging.get_logger import get_loggerimport re
+from forex_shared.logging.get_logger import get_logger
+import re
 from xml.etree import ElementTree
 
 import aiohttp

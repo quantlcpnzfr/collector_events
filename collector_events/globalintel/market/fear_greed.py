@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 import asyncio
-from forex_shared.logging.get_logger import get_loggerimport re
+from forex_shared.logging.get_logger import get_logger
+import re
 
 import aiohttp
 

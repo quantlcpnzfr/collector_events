@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from forex_shared.logging.get_logger import get_loggerfrom xml.etree import ElementTree
+from forex_shared.logging.get_logger import get_logger
+from xml.etree import ElementTree
 
 import aiohttp
 

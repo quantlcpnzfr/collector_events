@@ -15,7 +15,8 @@ from __future__ import annotations
 
 import csv
 import io
-from forex_shared.logging.get_logger import get_loggerfrom collections import defaultdict
+from forex_shared.logging.get_logger import get_logger
+from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 
 import aiohttp

@@ -18,7 +18,8 @@ GPS Interference — Wingbits ADS-B
 
 from __future__ import annotations
 
-from forex_shared.logging.get_logger import get_loggerfrom datetime import datetime, timezone
+from forex_shared.logging.get_logger import get_logger
+from datetime import datetime, timezone
 
 import aiohttp
 

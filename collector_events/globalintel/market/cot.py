@@ -24,7 +24,8 @@ Net positioning:
 
 from __future__ import annotations
 
-from forex_shared.logging.get_logger import get_loggerimport re
+from forex_shared.logging.get_logger import get_logger
+import re
 
 import aiohttp
 

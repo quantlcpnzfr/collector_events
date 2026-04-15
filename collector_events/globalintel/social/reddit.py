@@ -75,6 +75,7 @@ class RedditVelocityExtractor(BaseExtractor):
                         "upvote_ratio": ratio,
                         "num_comments": post.get("num_comments", 0),
                         "velocity": round(velocity, 2),
+                        "velocity_score": round(velocity, 2),
                         "author": post.get("author", ""),
                     },
                 ))
