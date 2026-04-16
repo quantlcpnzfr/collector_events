@@ -29,10 +29,14 @@ class CriticalMineralsExtractor(BaseExtractor):
             use = mineral.get("use", "")
 
             # Concentration risk based on producer dominance
+            # producers may be country code strings ["CN", "AU"] or dicts [{"country": "CN"}]
+            def _country(p) -> str:
+                return p.get("country", p) if isinstance(p, dict) else str(p)
+
             if len(producers) <= 2:
                 severity = "HIGH"
-            elif any(p.get("country") == "CN" for p in producers):
-                severity = "HIGH" if producers[0].get("country") == "CN" else "MEDIUM"
+            elif any(_country(p) == "CN" for p in producers):
+                severity = "HIGH" if _country(producers[0]) == "CN" else "MEDIUM"
             else:
                 severity = "LOW"
 

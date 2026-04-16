@@ -91,12 +91,22 @@ class PredictionMarketExtractor(BaseExtractor):
                 markets = ev.get("markets", [])
                 best_price = 0.5
                 for mkt in markets:
-                    p = float(mkt.get("outcomePrices", mkt.get("lastTradePrice", 0.5)) or 0.5)
-                    if isinstance(p, str):
+                    raw_price = mkt.get("outcomePrices", mkt.get("lastTradePrice", 0.5))
+                    # outcomePrices can be a JSON string like '["0.95","0.05"]'
+                    if isinstance(raw_price, str):
                         try:
-                            p = float(p)
-                        except ValueError:
+                            import json
+                            parsed = json.loads(raw_price)
+                            if isinstance(parsed, list) and parsed:
+                                p = float(parsed[0])
+                            else:
+                                p = float(raw_price)
+                        except (json.JSONDecodeError, ValueError, IndexError):
                             p = 0.5
+                    elif raw_price is None:
+                        p = 0.5
+                    else:
+                        p = float(raw_price)
                     if _PRICE_MIN <= p <= _PRICE_MAX:
                         best_price = p
 

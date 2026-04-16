@@ -34,14 +34,19 @@ class GDELTIntelExtractor(BaseExtractor):
     GDELT_MAX_RETRIES = 3
     GDELT_BACKOFF_BASE_S = 60
 
-    def __init__(self, topics: dict[str, str] | None = None, rate_limit_s: float = 20):
+    def __init__(self, topics: dict[str, str] | list[str] | None = None, rate_limit_s: float = 20):
         super().__init__()
         self._topics = topics or _TOPICS
         self._rate_limit_s = rate_limit_s
 
     async def _fetch(self, session: aiohttp.ClientSession) -> list[IntelItem]:
         all_items: list[IntelItem] = []
-        for topic_key, query in self._topics.items():
+        # Config may be a list (from JSON) or dict — normalise iteration
+        if isinstance(self._topics, dict):
+            topic_iter = self._topics.items()
+        else:
+            topic_iter = ((f"topic_{i}", q) for i, q in enumerate(self._topics))
+        for topic_key, query in topic_iter:
             articles = await self._fetch_topic(session, topic_key, query)
             all_items.extend(articles)
             if self._rate_limit_s > 0:

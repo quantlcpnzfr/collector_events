@@ -64,6 +64,10 @@ class ShippingStressExtractor(BaseExtractor):
         }
         if api_key:
             params["api_key"] = api_key
+        else:
+            # FRED API requires an api_key parameter — return empty when not configured
+            self.log.warning("ShippingStress: FRED_API_KEY not configured, skipping BDI fetch")
+            return []
 
         async with session.get(_FRED_BASE_URL, params=params) as resp:
             resp.raise_for_status()

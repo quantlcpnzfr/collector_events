@@ -39,8 +39,8 @@ class BtcEtfFlowExtractor(BaseExtractor):
         items: list[IntelItem] = []
 
         async def _get_etf(etf: dict) -> IntelItem | None:
-            symbol = etf["symbol"]
-            name = etf["name"]
+            symbol = etf.get("symbol") or etf.get("ticker", "")
+            name = etf.get("name") or etf.get("issuer", symbol)
             async with sem:
                 try:
                     url = f"{YAHOO_CHART}/{symbol}"
