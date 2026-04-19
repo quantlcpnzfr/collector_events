@@ -1,6 +1,6 @@
 # collector_events/globalintel/main.py
 """
-GlobalIntel daemon — continuous extraction + MongoDB persistence.
+GlobalIntel daemon — continuous extraction + optional persistence.
 
 Verified-OK extractors (29 free, no paid API keys required) are grouped
 by domain. On startup, an initial full sweep runs immediately. The
@@ -10,15 +10,34 @@ Usage:
     python -m collector_events.globalintel.main
     python -m collector_events.globalintel.main --no-persist
     python -m collector_events.globalintel.main --only market
-    python -m collector_events.globalintel.main --only environment --no-persist
+    python -m collector_events.globalintel.main --json ./intel_dump.jsonl
+    python -m collector_events.globalintel.main --no-persist --json ./intel_dump.jsonl
+    python -m collector_events.globalintel.main --only environment --json ./env.jsonl
+
+JSON output format (--json):
+    One JSON object per line (JSONL).  Each line is the output of
+    ``ExtractionResult.to_dict()``:
+        {
+          "source": "usgs",
+          "domain": "environment",
+          "count": 12,
+          "elapsed_ms": 843.1,
+          "fetched_at": "2026-04-19T15:30:00Z",
+          "items": [ { "id": "usgs:us7000...", "title": "...", ... }, ... ]
+        }
+    Append-safe: existing files are not overwritten.  Concurrent writes
+    within the same process are serialised by an asyncio.Lock.
 """
 
 from __future__ import annotations
 
 import argparse
 import asyncio
+import json
 import signal
 import sys
+from pathlib import Path
+from typing import Callable, Awaitable
 
 from forex_shared.logging.get_logger import get_logger, setup_logging
 setup_logging()
@@ -35,8 +54,56 @@ try:
 except Exception:
     pass  # works without MongoDB config sync
 
+from forex_shared.domain.intel import ExtractionResult
 from collector_events.globalintel.orchestrator import IntelOrchestrator
 from collector_events.globalintel.intel_store import IntelMongoStore
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# JSONL writer
+# ─────────────────────────────────────────────────────────────────────────────
+
+class JsonlWriter:
+    """Appends one ExtractionResult per line to a JSONL file.
+
+    Thread/task-safe: an asyncio.Lock serialises concurrent on_result calls.
+    Opens the file in append mode — existing content is preserved.
+
+    Usage::
+
+        writer = JsonlWriter("intel_dump.jsonl")
+        # wire as on_result callback:
+        orch = IntelOrchestrator(on_result=writer.write)
+    """
+
+    def __init__(self, path: str | Path) -> None:
+        self._path = Path(path)
+        self._lock = asyncio.Lock()
+        self._count = 0
+
+    async def write(self, result: ExtractionResult) -> None:
+        """Append result as a single JSON line (JSONL)."""
+        line = json.dumps(result.to_dict(), ensure_ascii=False)
+        async with self._lock:
+            with self._path.open("a", encoding="utf-8") as fh:
+                fh.write(line + "\n")
+            self._count += 1
+        logger.debug("JsonlWriter: wrote %s/%s (%d items) → %s",
+                     result.source, result.domain, len(result.items), self._path)
+
+    @property
+    def count(self) -> int:
+        """Total results written so far."""
+        return self._count
+
+
+def _chain(*callbacks: Callable[[ExtractionResult], Awaitable[None]]) \
+        -> Callable[[ExtractionResult], Awaitable[None]]:
+    """Combine multiple on_result callbacks into one (called sequentially)."""
+    async def _combined(result: ExtractionResult) -> None:
+        for cb in callbacks:
+            await cb(result)
+    return _combined
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Canonical list of 29 verified-OK extractors (no paid API keys needed).
@@ -101,7 +168,7 @@ ALL_OK_SOURCES: set[str] = {
 # Daemon
 # ─────────────────────────────────────────────────────────────────────────────
 
-async def main(persist: bool = True, only_domain: str = "") -> int:
+async def main(persist: bool = True, only_domain: str = "", json_path: str = "") -> int:
     """Production daemon: initial sweep + continuous APScheduler loop."""
     sources_filter: set[str] | None = None
     if only_domain:
@@ -113,15 +180,28 @@ async def main(persist: bool = True, only_domain: str = "") -> int:
         logger.info("Domain filter active: %s (%d sources)",
                     only_domain, len(sources_filter))
 
+    callbacks = []
+
     store: IntelMongoStore | None = None
-    on_result = None
     if persist:
-        store = IntelMongoStore()
-        await store.ensure_indexes()
-        on_result = store.store_result
-        logger.info("MongoDB persistence enabled (intel_items / intel_runs)")
+        try:
+            store = IntelMongoStore()
+            await store.ensure_indexes()
+            callbacks.append(store.store_result)
+            logger.info("MongoDB persistence enabled (intel_items / intel_runs)")
+        except Exception as exc:
+            logger.warning("MongoDB unavailable — persistence skipped: %s", exc)
+            store = None
     else:
         logger.info("Persistence disabled (--no-persist)")
+
+    writer: JsonlWriter | None = None
+    if json_path:
+        writer = JsonlWriter(json_path)
+        callbacks.append(writer.write)
+        logger.info("JSONL output enabled → %s", json_path)
+
+    on_result = _chain(*callbacks) if callbacks else None
 
     orch = IntelOrchestrator(
         sources_filter=sources_filter,
@@ -182,6 +262,16 @@ if __name__ == "__main__":
         metavar="DOMAIN",
         help="Run only extractors in a specific domain (e.g. 'market', 'environment')",
     )
+    parser.add_argument(
+        "--json", default="",
+        metavar="PATH",
+        dest="json_path",
+        help="Write each ExtractionResult as a JSON line (JSONL) to PATH (append mode)",
+    )
     args = parser.parse_args()
 
-    sys.exit(asyncio.run(main(persist=args.persist, only_domain=args.only)))
+    sys.exit(asyncio.run(main(
+        persist=args.persist,
+        only_domain=args.only,
+        json_path=args.json_path,
+    )))

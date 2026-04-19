@@ -111,14 +111,17 @@ class IntelMongoStore(Loggable):
             [("danger_score", -1)],
             [("fetched_at", -1)],
         ])
-        # Unique index on fingerprint must be created separately
-        loop = asyncio.get_running_loop()
-        await loop.run_in_executor(
-            None,
-            lambda: self._mongo.get_collection(self.COLLECTION_ITEMS).create_index(
-                [("fingerprint", 1)], unique=True, background=True
-            ),
-        )
+        # Unique index on fingerprint — wrapped to match MongoManager's WARNING-level behaviour
+        try:
+            loop = asyncio.get_running_loop()
+            await loop.run_in_executor(
+                None,
+                lambda: self._mongo.get_collection(self.COLLECTION_ITEMS).create_index(
+                    [("fingerprint", 1)], unique=True
+                ),
+            )
+        except Exception as exc:
+            self.log.warning("IntelMongoStore: create_index(fingerprint) failed: %s", exc)
         await self._mongo.async_ensure_indexes(self.COLLECTION_RUNS, [
             [("source", 1), ("fetched_at", -1)],
         ])
