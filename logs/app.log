@@ -241,3 +241,2432 @@ INFO → collector_events.globalintel.cache → Cached 304 items → prediction:
 INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 304 items in 8977ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
 INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 0 new, 0 updated, 304 skipped, 0 errors
 INFO → __main__ → Stopping scheduler …
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → __main__ → MongoDB persistence enabled (intel_items / intel_runs)
+INFO → __main__ → JSONL output enabled → ./market.jsonl
+INFO → __main__ → GlobalIntel daemon starting — 55 extractors scheduled
+INFO → __main__ → Running initial extraction sweep …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → forex_shared.providers.cache.redis_provider → [Redis] Conectado — fx-redis.redis.cache.windows.net:6380/db0 prefix='forex:' (SSL)
+INFO → collector_events.globalintel.cache → Cached 1646 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1646 items in 3133ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running conflict/acled ...
+WARNING → collector_events.globalintel.conflict.acled.ACLEDExtractor → acled attempt 1 failed (Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]), retrying in 1.0s
+WARNING → collector_events.globalintel.conflict.acled.ACLEDExtractor → acled attempt 2 failed (Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]), retrying in 2.0s
+ERROR → collector_events.globalintel.conflict.acled.ACLEDExtractor → Extractor acled failed: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1574, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1190, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1221, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 74, in run
+    items = await self._retry_fetch(session)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 112, in _retry_fetch
+    raise last_exc  # type: ignore[misc]
+    ^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 102, in _retry_fetch
+    return await self._fetch(session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\conflict\acled.py", line 93, in _fetch
+    async with session.get(_API_URL, params=params) as resp:
+               ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 1521, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 788, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 742, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1251, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1580, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+WARNING → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✗ acled: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running conflict/gdelt ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 1646 new, 0 updated, 0 skipped, 0 errors
+WARNING → collector_events.globalintel.conflict.gdelt_intel → GDELT 429 on topic_0 — backoff 60s
+WARNING → collector_events.globalintel.conflict.gdelt_intel → GDELT 429 on topic_0 — backoff 120s
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → __main__ → MongoDB persistence enabled (intel_items / intel_runs)
+INFO → __main__ → GlobalIntel daemon starting — 55 extractors scheduled
+INFO → __main__ → Running initial extraction sweep …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → forex_shared.providers.cache.redis_provider → [Redis] Conectado — fx-redis.redis.cache.windows.net:6380/db0 prefix='forex:' (SSL)
+INFO → collector_events.globalintel.cache → Cached 1648 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1648 items in 1813ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running conflict/acled ...
+WARNING → collector_events.globalintel.conflict.acled.ACLEDExtractor → acled attempt 1 failed (Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]), retrying in 1.0s
+WARNING → collector_events.globalintel.conflict.acled.ACLEDExtractor → acled attempt 2 failed (Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]), retrying in 2.0s
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 16 new, 1 updated, 1631 skipped, 0 errors
+ERROR → collector_events.globalintel.conflict.acled.ACLEDExtractor → Extractor acled failed: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1574, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1190, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1221, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 74, in run
+    items = await self._retry_fetch(session)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 112, in _retry_fetch
+    raise last_exc  # type: ignore[misc]
+    ^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 102, in _retry_fetch
+    return await self._fetch(session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\conflict\acled.py", line 93, in _fetch
+    async with session.get(_API_URL, params=params) as resp:
+               ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 1521, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 788, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 742, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1251, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1580, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+WARNING → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✗ acled: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running conflict/gdelt ...
+WARNING → collector_events.globalintel.conflict.gdelt_intel → GDELT 429 on topic_0 — backoff 60s
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → __main__ → MongoDB persistence enabled (intel_items / intel_runs)
+INFO → __main__ → GlobalIntel daemon starting — 55 extractors scheduled
+INFO → __main__ → Running initial extraction sweep …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → forex_shared.providers.cache.redis_provider → [Redis] Conectado — fx-redis.redis.cache.windows.net:6380/db0 prefix='forex:' (SSL)
+INFO → collector_events.globalintel.cache → Cached 1648 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1648 items in 2096ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running conflict/acled ...
+WARNING → collector_events.globalintel.conflict.acled.ACLEDExtractor → acled attempt 1 failed (Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]), retrying in 1.0s
+WARNING → collector_events.globalintel.conflict.acled.ACLEDExtractor → acled attempt 2 failed (Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]), retrying in 2.0s
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 8 new, 0 updated, 1640 skipped, 0 errors
+ERROR → collector_events.globalintel.conflict.acled.ACLEDExtractor → Extractor acled failed: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1574, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1190, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1221, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 74, in run
+    items = await self._retry_fetch(session)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 112, in _retry_fetch
+    raise last_exc  # type: ignore[misc]
+    ^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 102, in _retry_fetch
+    return await self._fetch(session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\conflict\acled.py", line 93, in _fetch
+    async with session.get(_API_URL, params=params) as resp:
+               ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 1521, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 788, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 742, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1251, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1580, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+WARNING → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✗ acled: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running conflict/gdelt ...
+WARNING → collector_events.globalintel.conflict.gdelt_intel → GDELT topic_0 attempt 1 failed: Expecting value: line 1 column 1 (char 0) — retry in 60s
+WARNING → collector_events.globalintel.conflict.gdelt_intel → GDELT topic_0 attempt 2 failed: Expecting value: line 1 column 1 (char 0) — retry in 120s
+WARNING → collector_events.globalintel.conflict.gdelt_intel → GDELT topic_0 attempt 3 failed: Expecting value: line 1 column 1 (char 0) — retry in 240s
+ERROR → collector_events.globalintel.conflict.gdelt_intel → GDELT topic topic_0 all retries exhausted: Expecting value: line 1 column 1 (char 0)
+WARNING → collector_events.globalintel.conflict.gdelt_intel → GDELT 429 on topic_1 — backoff 60s
+WARNING → collector_events.globalintel.conflict.gdelt_intel → GDELT 429 on topic_1 — backoff 120s
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → __main__ → MongoDB persistence enabled (intel_items / intel_runs)
+INFO → __main__ → GlobalIntel daemon starting — 55 extractors scheduled
+INFO → __main__ → Running initial extraction sweep …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → forex_shared.providers.cache.redis_provider → [Redis] Conectado — fx-redis.redis.cache.windows.net:6380/db0 prefix='forex:' (SSL)
+INFO → collector_events.globalintel.cache → Cached 1647 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1647 items in 1808ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running conflict/acled ...
+WARNING → collector_events.globalintel.conflict.acled.ACLEDExtractor → acled attempt 1 failed (Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]), retrying in 1.0s
+WARNING → collector_events.globalintel.conflict.acled.ACLEDExtractor → acled attempt 2 failed (Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]), retrying in 2.0s
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 9 new, 1 updated, 1637 skipped, 0 errors
+ERROR → collector_events.globalintel.conflict.acled.ACLEDExtractor → Extractor acled failed: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1574, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1190, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1221, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\resolver.py", line 40, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Program Files\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 74, in run
+    items = await self._retry_fetch(session)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 116, in _retry_fetch
+    raise last_exc  # type: ignore[misc]
+    ^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\base.py", line 104, in _retry_fetch
+    return await self._fetch(session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\conflict\acled.py", line 93, in _fetch
+    async with session.get(_API_URL, params=params) as resp:
+               ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 1521, in __aenter__
+    self._resp: _RetType = await self._coro
+                           ^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 788, in _request
+    resp = await handler(req)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\client.py", line 742, in _connect_and_send_request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 672, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1251, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\aiohttp\connector.py", line 1580, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+WARNING → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✗ acled: Cannot connect to host api.acleddata.com:443 ssl:default [getaddrinfo failed]
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running conflict/gdelt ...
+WARNING → collector_events.globalintel.conflict.gdelt_intel → GDELT topic_0 attempt 1 failed: Expecting value: line 1 column 1 (char 0) — retry in 60s
+INFO → __main__ → Shutdown requested during initial sweep — stopping gracefully
+INFO → __main__ → Starting continuous scheduler …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → IntelOrchestrator scheduler started with 55 extractors
+INFO → __main__ → Stopping scheduler …
+ERROR → apscheduler.executors.default → Error running job feeds_rss_feeds
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job conflict_acled
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job conflict_gdelt
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job conflict_gdelt_unrest
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job conflict_ucdp
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job conflict_unrest_merged
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job conflict_unhcr_displacement
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job conflict_gps_jamming
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job cyber_cyber_threats
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_economic_calendar
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_bis_policy_rates
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_bis_exchange_rates
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_bis_credit
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_ecb_fx_rates
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_ecb_yield_curve
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_ecb_fsi
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_bls
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_world_bank
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_eia_crude
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_eia_natgas
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_gie_gas
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_fao_food_price
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_economic_stress
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_yahoo_fx
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_fear_greed
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_prediction_markets
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_stock_quotes
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_sector_performance
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_earnings_calendar
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_crypto_quotes
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_defi_tokens
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_ai_tokens
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_other_tokens
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_stablecoins
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_crypto_sectors
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_commodity_quotes
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_btc_etf_flows
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_gulf_quotes
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_cot_positioning
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_country_indices
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job environment_usgs
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job environment_nasa_firms
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job environment_gdacs
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job environment_eonet
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job sanctions_ofac
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job social_reddit
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job social_telegram
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job advisories_advisories
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job trade_wto_restrictions
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job trade_tariff_trends
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job trade_comtrade_flows
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job supply_chain_chokepoints
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job supply_chain_critical_minerals
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job supply_chain_shipping_rates
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job supply_chain_bdi_fred
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → __main__ → MongoDB persistence enabled (intel_items / intel_runs)
+INFO → __main__ → GlobalIntel daemon starting — 32 extractors scheduled
+INFO → __main__ → Running initial extraction sweep …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → forex_shared.providers.cache.redis_provider → [Redis] Conectado — fx-redis.redis.cache.windows.net:6380/db0 prefix='forex:' (SSL)
+INFO → collector_events.globalintel.cache → Cached 1646 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1646 items in 1769ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_policy_rates ...
+INFO → collector_events.globalintel.cache → Cached 11 items → economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_policy_rates: 11 items in 1971ms → Redis economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_exchange_rates ...
+INFO → collector_events.globalintel.cache → Cached 12 items → economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_exchange_rates: 12 items in 219ms → Redis economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_credit ...
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_credit: 1 items in 222ms → Redis economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fx_rates ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 9 new, 0 updated, 1637 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_policy_rates: 11 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_exchange_rates: 12 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_credit: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 26 items → economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fx_rates: 26 items in 5979ms → Redis economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_yield_curve ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fx_rates: 26 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_yield_curve: 1 items in 2753ms → Redis economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fsi ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_yield_curve: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fsi: 1 items in 323ms → Redis economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bls ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fsi: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bls: 6 items in 922ms → Redis economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/gie_gas ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bls: 6 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gie_gas: 1 items in 698ms → Redis economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/economic_stress ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/gie_gas: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ economic_stress: 1 items in 825ms → Redis economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/yahoo_fx ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/economic_stress: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 50 items → shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ yahoo_fx: 50 items in 4200ms → Redis shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/fear_greed ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/yahoo_fx: 0 new, 0 updated, 50 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ fear_greed: 1 items in 2333ms → Redis market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/prediction_markets ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/fear_greed: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 304 items → prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 304 items in 13509ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stock_quotes ...
+INFO → collector_events.globalintel.cache → Cached 28 items → market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stock_quotes: 28 items in 2036ms → Redis market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/sector_performance ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 0 new, 0 updated, 304 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stock_quotes: 0 new, 0 updated, 28 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 12 items → market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ sector_performance: 12 items in 4291ms → Redis market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/crypto_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/sector_performance: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ crypto_quotes: 10 items in 348ms → Redis market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/defi_tokens ...
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ defi_tokens: 10 items in 233ms → Redis market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/ai_tokens ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/crypto_quotes: 8 new, 0 updated, 2 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 9 items → market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ai_tokens: 9 items in 220ms → Redis market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stablecoins ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/defi_tokens: 6 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/ai_tokens: 4 new, 0 updated, 5 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 5 items → market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stablecoins: 5 items in 2391ms → Redis market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/commodity_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stablecoins: 3 new, 0 updated, 2 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 33 items → market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ commodity_quotes: 33 items in 2310ms → Redis market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/btc_etf_flows ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/commodity_quotes: 0 new, 0 updated, 33 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 10 items → market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ btc_etf_flows: 10 items in 891ms → Redis market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/gulf_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/btc_etf_flows: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 12 items → market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gulf_quotes: 12 items in 1006ms → Redis market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/cot_positioning ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/gulf_quotes: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ cot_positioning: 6 items in 1812ms → Redis market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/country_indices ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/cot_positioning: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 35 items → market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ country_indices: 35 items in 3757ms → Redis market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/usgs ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/country_indices: 0 new, 0 updated, 35 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 14 items → environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ usgs: 14 items in 342ms → Redis environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/gdacs ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/usgs: 14 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 240 items → environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gdacs: 240 items in 2514ms → Redis environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/eonet ...
+INFO → collector_events.globalintel.cache → Cached 50 items → environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ eonet: 50 items in 882ms → Redis environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.cache → Cached 25 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 25 items in 57016ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running advisories/advisories ...
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.cache → Cached 0 items → intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ advisories: 0 items in 32714ms → Redis intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/chokepoints ...
+INFO → collector_events.globalintel.cache → Cached 8 items → supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ chokepoints: 8 items in 0ms → Redis supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/critical_minerals ...
+INFO → collector_events.globalintel.cache → Cached 10 items → supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ critical_minerals: 10 items in 0ms → Redis supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/shipping_rates ...
+INFO → collector_events.globalintel.cache → Cached 4 items → supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ shipping_rates: 4 items in 0ms → Redis supply:shipping:rates:v1 (TTL 86400s)
+INFO → __main__ → Starting continuous scheduler …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → IntelOrchestrator scheduler started with 32 extractors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_policy_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_exchange_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_credit ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fx_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_yield_curve ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fsi ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bls ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/gie_gas ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/economic_stress ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/yahoo_fx ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/fear_greed ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/prediction_markets ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stock_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/sector_performance ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/crypto_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/defi_tokens ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/ai_tokens ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stablecoins ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/commodity_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/btc_etf_flows ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/gulf_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/cot_positioning ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/country_indices ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/usgs ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/gdacs ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/eonet ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running advisories/advisories ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/chokepoints ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/critical_minerals ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/shipping_rates ...
+INFO → collector_events.globalintel.cache → Cached 8 items → supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ chokepoints: 8 items in 0ms → Redis supply:chokepoints:v1 (TTL 43200s)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): remaining connection slots are reserved for non-replication superuser connections, full error: {'ok': 0.0, 'code': 12485, 'codeName': 'DocumentDB error.', 'errmsg': 'remaining connection slots are reserved for non-replication superuser connections'}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/eonet: 50 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 5 items → market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stablecoins: 5 items in 14803ms → Redis market:crypto:stablecoins:v1 (TTL 600s)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/gdacs: 240 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gie_gas: 1 items in 15520ms → Redis economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fsi: 1 items in 15890ms → Redis economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 25 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_credit: 1 items in 16285ms → Redis economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 10 items → supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ critical_minerals: 10 items in 0ms → Redis supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/chokepoints: 8 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/shipping_rates: 4 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/critical_minerals: 10 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 674 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 674 items in 16686ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.cache → Cached 50 items → environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ eonet: 50 items in 17434ms → Redis environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.cache → Cached 14 items → environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ usgs: 14 items in 15063ms → Redis environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ crypto_quotes: 10 items in 14912ms → Redis market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.cache → Cached 28 items → market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stock_quotes: 28 items in 17832ms → Redis market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_yield_curve: 1 items in 18116ms → Redis economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ defi_tokens: 10 items in 14999ms → Redis market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.cache → Cached 9 items → market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ai_tokens: 9 items in 15203ms → Redis market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.cache → Cached 4 items → supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ shipping_rates: 4 items in 0ms → Redis supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 35 items → market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ country_indices: 35 items in 19049ms → Redis market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 6 items → market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ cot_positioning: 6 items in 19496ms → Redis market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.cache → Cached 12 items → market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ sector_performance: 12 items in 19712ms → Redis market:sectors:v1 (TTL 3600s)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.cache → Cached 50 items → shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ yahoo_fx: 50 items in 20403ms → Redis shared:fx-rates:v1 (TTL 90000s)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/gie_gas: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fsi: 0 new, 0 updated, 1 skipped, 0 errors
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_credit: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/critical_minerals: 0 new, 0 updated, 10 skipped, 0 errors
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/chokepoints: 8 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ fear_greed: 1 items in 25932ms → Redis market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.cache → Cached 240 items → environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gdacs: 240 items in 30508ms → Redis environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/eonet: 0 new, 0 updated, 50 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/usgs: 0 new, 0 updated, 14 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_yield_curve: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stock_quotes: 0 new, 0 updated, 28 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/shipping_rates: 0 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/country_indices: 0 new, 0 updated, 35 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/sector_performance: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/cot_positioning: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stablecoins: 5 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/fear_greed: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/yahoo_fx: 0 new, 0 updated, 50 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 304 items → prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 304 items in 39939ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
+ERROR → apscheduler.executors.default → Job "IntelOrchestrator._run_entry (trigger: interval[3:00:00], next run at: 2026-04-19 15:45:06 -03)" raised an exception
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 895, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 1508, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 371, in connect_check_health
+    await self._connect()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 894, in _connect
+    async with async_timeout(self.socket_connect_timeout):
+               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\timeouts.py", line 116, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 181, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\orchestrator.py", line 393, in _run_entry
+    await cache.store(result, ext.REDIS_KEY, ext.TTL_SECONDS)
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\cache.py", line 44, in store
+    await self._r.set_json_raw(key, payload, ttl=ttl)
+  File "C:\Projects\forex_system\shared_lib\forex_shared\providers\cache\redis_provider.py", line 497, in set_json_raw
+    await self._client.setex(key, ttl, payload)
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\retry.py", line 81, in call_with_retry
+    raise error
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 385, in connect_check_health
+    raise e
+redis.exceptions.TimeoutError: Timeout connecting to server
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 3 new, 0 updated, 671 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/crypto_quotes: 3 new, 0 updated, 7 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/defi_tokens: 2 new, 0 updated, 8 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/ai_tokens: 2 new, 0 updated, 7 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/gdacs: 0 new, 0 updated, 240 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 12 items → market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gulf_quotes: 12 items in 16282ms → Redis market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.cache → Cached 10 items → market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ btc_etf_flows: 10 items in 15745ms → Redis market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.cache → Cached 11 items → economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_policy_rates: 11 items in 16057ms → Redis economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 12 items → economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_exchange_rates: 12 items in 16370ms → Redis economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 33 items → market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ commodity_quotes: 33 items in 17513ms → Redis market:commodities:v1 (TTL 300s)
+INFO → __main__ → Stopping scheduler …
+ERROR → apscheduler.executors.default → Job "IntelOrchestrator._run_entry (trigger: interval[1 day, 0:00:00], next run at: 2026-04-20 12:45:06 -03)" raised an exception
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 244, in main
+    await stop_event.wait()
+  File "C:\Program Files\Python313\Lib\asyncio\locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 181, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\orchestrator.py", line 393, in _run_entry
+    await cache.store(result, ext.REDIS_KEY, ext.TTL_SECONDS)
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\cache.py", line 44, in store
+    await self._r.set_json_raw(key, payload, ttl=ttl)
+  File "C:\Projects\forex_system\shared_lib\forex_shared\providers\cache\redis_provider.py", line 497, in set_json_raw
+    await self._client.setex(key, ttl, payload)
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 371, in connect_check_health
+    await self._connect()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 895, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 1508, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Job "IntelOrchestrator._run_entry (trigger: interval[6:00:00], next run at: 2026-04-19 18:45:06 -03)" raised an exception
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 244, in main
+    await stop_event.wait()
+  File "C:\Program Files\Python313\Lib\asyncio\locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 181, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\orchestrator.py", line 393, in _run_entry
+    await cache.store(result, ext.REDIS_KEY, ext.TTL_SECONDS)
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\cache.py", line 44, in store
+    await self._r.set_json_raw(key, payload, ttl=ttl)
+  File "C:\Projects\forex_system\shared_lib\forex_shared\providers\cache\redis_provider.py", line 497, in set_json_raw
+    await self._client.setex(key, ttl, payload)
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 371, in connect_check_health
+    await self._connect()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 895, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 1508, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Job "IntelOrchestrator._run_entry (trigger: interval[7 days, 0:00:00], next run at: 2026-04-26 12:45:06 -03)" raised an exception
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 244, in main
+    await stop_event.wait()
+  File "C:\Program Files\Python313\Lib\asyncio\locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 181, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\orchestrator.py", line 393, in _run_entry
+    await cache.store(result, ext.REDIS_KEY, ext.TTL_SECONDS)
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\cache.py", line 44, in store
+    await self._r.set_json_raw(key, payload, ttl=ttl)
+  File "C:\Projects\forex_system\shared_lib\forex_shared\providers\cache\redis_provider.py", line 497, in set_json_raw
+    await self._client.setex(key, ttl, payload)
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 371, in connect_check_health
+    await self._connect()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 895, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 1508, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Job "IntelOrchestrator._run_entry (trigger: interval[0:10:00], next run at: 2026-04-19 12:55:06 -03)" raised an exception
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 244, in main
+    await stop_event.wait()
+  File "C:\Program Files\Python313\Lib\asyncio\locks.py", line 213, in wait
+    await fut
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 181, in run_coroutine_job
+    retval = await job.func(*job.args, **job.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\orchestrator.py", line 393, in _run_entry
+    await cache.store(result, ext.REDIS_KEY, ext.TTL_SECONDS)
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\cache.py", line 44, in store
+    await self._r.set_json_raw(key, payload, ttl=ttl)
+  File "C:\Projects\forex_system\shared_lib\forex_shared\providers\cache\redis_provider.py", line 497, in set_json_raw
+    await self._client.setex(key, ttl, payload)
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\client.py", line 764, in execute_command
+    conn = self.connection or await pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\utils.py", line 227, in async_wrapper
+    return await func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1448, in get_connection
+    await self.ensure_connection(connection)
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 1489, in ensure_connection
+    await connection.connect()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 340, in connect
+    await self.retry.call_with_retry(
+    ...<7 lines>...
+    )
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\retry.py", line 69, in call_with_retry
+    return await do()
+           ^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 371, in connect_check_health
+    await self._connect()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\redis\asyncio\connection.py", line 895, in _connect
+    reader, writer = await asyncio.open_connection(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **self._connection_arguments()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Program Files\Python313\Lib\asyncio\streams.py", line 48, in open_connection
+    transport, _ = await loop.create_connection(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        lambda: protocol, host, port, **kwds)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 1122, in create_connection
+    infos = await self._ensure_resolved(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        (host, port), family=family,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        type=socket.SOCK_STREAM, proto=proto, flags=flags, loop=self)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 1508, in _ensure_resolved
+    return await loop.getaddrinfo(host, port, family=family, type=type,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                                  proto=proto, flags=flags)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+asyncio.exceptions.CancelledError

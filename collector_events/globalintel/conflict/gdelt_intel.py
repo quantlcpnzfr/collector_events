@@ -79,6 +79,8 @@ class GDELTIntelExtractor(BaseExtractor):
                     resp.raise_for_status()
                     data = await resp.json(content_type=None)
                 return self._parse_articles(data, topic_key)
+            except asyncio.CancelledError:
+                raise
             except Exception as exc:
                 last_exc = exc
                 wait = self.GDELT_BACKOFF_BASE_S * (2 ** attempt)

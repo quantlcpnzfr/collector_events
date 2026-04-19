@@ -188,7 +188,7 @@ class IntelMongoStore(Loggable):
         if not existing:
             doc = self._build_doc(item, processed, fingerprint, new_hash)
             await self._mongo.async_replace_one(
-                self.COLLECTION_ITEMS, {"_id": doc["_id"]}, doc, upsert=True
+                self.COLLECTION_ITEMS, {"fingerprint": fingerprint}, doc, upsert=True
             )
             return "new"
 

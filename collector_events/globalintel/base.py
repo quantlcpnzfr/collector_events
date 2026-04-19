@@ -82,6 +82,8 @@ class BaseExtractor(ABC, Loggable):
                 elapsed_ms=(time.monotonic() - t0) * 1000,
                 fetched_at=now,
             )
+        except asyncio.CancelledError:
+            raise
         except Exception as exc:
             self.log.exception("Extractor %s failed: %s", self.SOURCE, exc)
             return ExtractionResult(
@@ -100,6 +102,8 @@ class BaseExtractor(ABC, Loggable):
         for attempt in range(self._max_retries + 1):
             try:
                 return await self._fetch(session)
+            except asyncio.CancelledError:
+                raise
             except Exception as exc:
                 last_exc = exc
                 if attempt < self._max_retries:

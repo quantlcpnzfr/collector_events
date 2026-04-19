@@ -170,7 +170,7 @@ ALL_OK_SOURCES: set[str] = {
 
 async def main(persist: bool = True, only_domain: str = "", json_path: str = "") -> int:
     """Production daemon: initial sweep + continuous APScheduler loop."""
-    sources_filter: set[str] | None = None
+    sources_filter: set[str] | None = ALL_OK_SOURCES  # default to verified-OK set
     if only_domain:
         sources_filter = set(OK_EXTRACTORS.get(only_domain, []))
         if not sources_filter:
@@ -230,6 +230,9 @@ async def main(persist: bool = True, only_domain: str = "", json_path: str = "")
     logger.info("Running initial extraction sweep …")
     try:
         await orch.run_all()
+    except asyncio.CancelledError:
+        logger.info("Shutdown requested during initial sweep — stopping gracefully")
+        stop_event.set()
     except Exception:
         logger.exception("Initial sweep failed (non-fatal — scheduler will retry)")
 
