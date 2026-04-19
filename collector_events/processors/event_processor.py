@@ -28,6 +28,7 @@ nem chamada de API externa neste estágio).
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass
 from typing import Sequence
 
@@ -230,6 +231,34 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
         ImpactCategory.ELECTION,
         0.10,
     ),
+    # Forex pairs and FX market moves
+    (
+        {"eur/usd", "eurusd", "gbp/usd", "gbpusd", "usd/jpy", "usdjpy",
+         "usd/chf", "usdchf", "aud/usd", "audusd", "nzd/usd", "nzdusd",
+         "usd/cad", "usdcad", "eur/gbp", "eurgbp", "eur/jpy", "eurjpy",
+         "gbp/jpy", "gbpjpy", "dollar index", "dxy", "usdx",
+         "currency pair", "exchange rate", "spot rate",
+         "dollar strength", "dollar weakness", "dollar rally", "dollar selloff",
+         "forex market", "fx market", "currency move", "fx volatility",
+         "currency crisis", "devaluation", "peg broken", "managed float"},
+        ImpactCategory.ECONOMIC_DATA,
+        0.12,
+    ),
+    # Crypto / digital assets — market sentiment and risk appetite signal
+    (
+        {"bitcoin", "btc", "ethereum", "eth", "crypto", "cryptocurrency",
+         "digital asset", "stablecoin", "defi", "altcoin", "token",
+         "etf", "spot etf", "btc etf", "crypto etf", "grayscale", "ibit",
+         "bitb", "fbtc", "arkb", "btco", "brrr", "hodl",
+         "on-chain", "hash rate", "mining", "halving", "blockchain",
+         "crypto market", "crypto sell-off", "crypto rally",
+         "exchange outflow", "exchange inflow", "whale", "liquidation",
+         "funding rate", "open interest", "perpetual", "futures basis",
+         "tether", "usdc", "usdt", "stablecoin depeg", "binance", "coinbase",
+         "kraken", "okx", "bybit", "deribit", "cme bitcoin"},
+        ImpactCategory.ECONOMIC_DATA,
+        0.08,
+    ),
 ]
 
 # Critical keywords that amplify the danger score further
@@ -276,6 +305,14 @@ _DOMAIN_WEIGHT: dict[str, float] = {
     IntelDomain.REFERENCE:    0.70,
     IntelDomain.ADVISORIES:   1.10,
 }
+
+
+# Regex: directional word followed by a percentage value (e.g. "drops 5%", "surges 2.3%")
+_DIRECTIONAL_PCT = re.compile(
+    r'(?:drop|fall|rise|gain|surge|plunge|jump|climb|crash|rally|slide|tumble|soar|spike|dip|down|up)'
+    r'\w{0,4}\s+(\d+(?:\.\d+)?)\s*%',
+    re.IGNORECASE,
+)
 
 
 # ── Result dataclass ─────────────────────────────────────────────────────────
@@ -332,9 +369,9 @@ class EventProcessor(Loggable):
         critical_bonus = self._critical_bonus(text)
 
         raw_score = (base_score + keyword_boost) * domain_weight + critical_bonus
-        danger_score = round(min(max(raw_score, 0.0), 1.0), 3)
-
-        # Enrich item in-place
+        numeric_bonus = self._numeric_signal_bonus(item)
+        text_bonus    = self._text_pct_bonus(text)
+        danger_score = round(min(max(raw_score + max(numeric_bonus, text_bonus), 0.0), 1.0), 3)
         item.extra["impact_category"] = category
         item.extra["danger_score"] = danger_score
 
@@ -415,4 +452,72 @@ class EventProcessor(Loggable):
         for kw in _CRITICAL_KEYWORDS:
             if kw in text:
                 return 0.15
+        return 0.0
+
+    @staticmethod
+    def _numeric_signal_bonus(item: IntelItem) -> float:
+        """Bonus based on numeric fields in item.extra (market-domain items).
+
+        Applied on top of keyword score. Designed for price/flow extractors
+        (btc_etf_flows, commodity_quotes, yahoo_fx, etc.) that embed numeric
+        signals in ``extra`` rather than prose text.
+
+        Scale:
+            |change_pct| >= 5%  → +0.15
+            |change_pct| >= 3%  → +0.10
+            |change_pct| >= 1%  → +0.05
+            flow_usd / volume signals may be added per extractor convention.
+        """
+        extra = item.extra
+        if not extra:
+            return 0.0
+
+        # Normalise change: "change_pct", "change", "pct_change" (float, may be 0)
+        change_pct: float | None = None
+        for key in ("change_pct", "pct_change"):
+            if key in extra and isinstance(extra[key], (int, float)):
+                change_pct = float(extra[key])
+                break
+        # Some extractors store raw price change (not %) under "change"
+        # Only use it if it looks like a percentage (abs <= 100)
+        if change_pct is None and "change" in extra:
+            val = extra["change"]
+            if isinstance(val, (int, float)) and abs(val) <= 100:
+                change_pct = float(val)
+
+        if change_pct is None:
+            return 0.0
+
+        abs_change = abs(change_pct)
+        if abs_change >= 5.0:
+            return 0.15
+        if abs_change >= 3.0:
+            return 0.10
+        if abs_change >= 1.0:
+            return 0.05
+        return 0.0
+
+    @staticmethod
+    def _text_pct_bonus(text: str) -> float:
+        """Bonus extracted from prose percentage mentions (e.g. 'EUR/USD drops 5%').
+
+        Complements _numeric_signal_bonus for news items where the move is
+        expressed in text rather than structured extra fields.
+        Takes the largest single match to avoid double-counting.
+
+        Scale:
+            >= 5%  → +0.15
+            >= 3%  → +0.10
+            >= 1%  → +0.05
+        """
+        best = max(
+            (float(m.group(1)) for m in _DIRECTIONAL_PCT.finditer(text)),
+            default=0.0,
+        )
+        if best >= 5.0:
+            return 0.15
+        if best >= 3.0:
+            return 0.10
+        if best >= 1.0:
+            return 0.05
         return 0.0

@@ -2936,3 +2936,4 @@ INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore
 INFO → collector_events.globalintel.cache → Cached 304 items → prediction:markets-bootstrap:v1 (TTL 10800s)
 INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 304 items in 13432ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
 INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 0 new, 0 updated, 304 skipped, 0 errors
+INFO → __main__ → Stopping scheduler …
