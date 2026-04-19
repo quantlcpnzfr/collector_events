@@ -15,6 +15,11 @@ from ..reference import GULF_SYMBOLS
 
 logger = get_logger(__name__)
 
+_GULF_COUNTRY_MAP: dict[str, str] = {
+    "Saudi Arabia": "SA", "UAE": "AE", "Qatar": "QA",
+    "Kuwait": "KW", "Bahrain": "BH", "Oman": "OM",
+}
+
 YAHOO_CHART = "https://query1.finance.yahoo.com/v8/finance/chart"
 
 
@@ -50,12 +55,14 @@ class GulfQuoteExtractor(BaseExtractor):
                     price = meta.get("regularMarketPrice", 0)
                     prev = meta.get("previousClose", 0)
                     change = ((price - prev) / prev * 100) if prev else 0
+                    cc = _GULF_COUNTRY_MAP.get(entry.get("country", ""), "")
                     return IntelItem(
                         id=f"gulf:{symbol}",
                         source=self.SOURCE,
                         domain=self.DOMAIN,
                         title=f"{name}: {price:,.2f}",
                         tags=["gulf", "gcc", category],
+                        country=[cc] if cc else [],
                         extra={
                             "symbol": symbol, "name": name,
                             "category": category,

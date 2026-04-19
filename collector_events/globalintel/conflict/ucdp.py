@@ -156,7 +156,7 @@ class UCDPExtractor(BaseExtractor):
                 title=f"{side_a} vs {side_b}" if side_b else side_a,
                 lat=lat,
                 lon=lon,
-                country=country,
+                country=[country] if country else [],
                 ts=ds[:10] if ds else "",
                 severity=severity,
                 tags=["conflict", vtype.lower()],

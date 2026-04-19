@@ -51,7 +51,7 @@ def compute_fingerprint(item: IntelItem) -> str:
         (item.source or "").lower(),
         (item.domain or "").lower(),
         local_key.lower(),
-        (item.country or "").lower(),
+        ",".join(sorted(c.lower() for c in item.country)) if item.country else "",
         published_date,
         (item.title or "").lower().strip()[:200],
     ])

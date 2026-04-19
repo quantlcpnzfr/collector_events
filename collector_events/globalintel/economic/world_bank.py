@@ -76,7 +76,7 @@ class WorldBankExtractor(BaseExtractor):
                             source=self.SOURCE,
                             domain=self.DOMAIN,
                             title=f"{label}: {entry.get('country', {}).get('value', cc)}",
-                            country=cc,
+                            country=[cc],
                             tags=["world_bank", "macro", "development"],
                             extra={
                                 "indicator_code": code,

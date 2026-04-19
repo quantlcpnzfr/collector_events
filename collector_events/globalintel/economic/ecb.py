@@ -74,6 +74,7 @@ class EcbFxRateExtractor(BaseExtractor):
                 source=self.SOURCE,
                 domain=self.DOMAIN,
                 title=f"EUR/{cur}",
+                country=["EU"],
                 tags=["fx", "ecb", "reference_rate"],
                 extra={
                     "pair": f"EUR{cur}",
@@ -131,6 +132,7 @@ class EcbYieldCurveExtractor(BaseExtractor):
             source=self.SOURCE,
             domain=self.DOMAIN,
             title="Euro Area Yield Curve (AAA)",
+            country=["EU"],
             tags=["yield_curve", "ecb", "bonds"],
             extra={"rates": rates, "date": date_str},
         )]
@@ -179,6 +181,7 @@ class EcbStressIndexExtractor(BaseExtractor):
             domain=self.DOMAIN,
             title=f"ECB CISS: {label} ({latest:.3f})" if latest else "ECB CISS",
             severity="HIGH" if latest and latest > 0.3 else "",
+            country=["EU"],
             tags=["stress", "ecb", "systemic_risk"],
             extra={
                 "latest_value": latest,

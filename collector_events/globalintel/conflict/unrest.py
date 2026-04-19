@@ -197,7 +197,7 @@ class UnrestMergeExtractor(BaseExtractor):
                 title=f"{ev.get('sub_event_type', 'Protest')}: {ev.get('notes', '')[:200]}",
                 lat=lat,
                 lon=lon,
-                country=ev.get("country", ""),
+                country=[ev["country"]] if ev.get("country") else [],
                 ts=date_str,
                 severity=severity,
                 tags=["unrest", "protest", "acled"],

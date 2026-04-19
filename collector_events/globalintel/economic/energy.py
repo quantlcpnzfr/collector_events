@@ -68,6 +68,7 @@ class EIACrudeInventoryExtractor(BaseExtractor):
                 source=self.SOURCE,
                 domain=self.DOMAIN,
                 title=f"US Crude Inventories: {stocks:.1f} mb" if stocks else "US Crude Inventories",
+                country=["US"],
                 tags=["oil", "crude", "eia", "energy"],
                 extra={
                     "period": w.get("period"),
@@ -123,6 +124,7 @@ class EIANatGasStorageExtractor(BaseExtractor):
                 source=self.SOURCE,
                 domain=self.DOMAIN,
                 title=f"US NatGas Storage: {stor:.0f} Bcf" if stor else "US NatGas Storage",
+                country=["US"],
                 tags=["natgas", "storage", "eia", "energy"],
                 extra={
                     "period": w.get("period"),
@@ -178,6 +180,7 @@ class EuGasStorageExtractor(BaseExtractor):
             source=self.SOURCE,
             domain=self.DOMAIN,
             title=f"EU Gas Storage: {fill_pct:.1f}%" if fill_pct else "EU Gas Storage",
+            country=["EU"],
             tags=["gas", "energy", "eu", "storage"],
             extra={
                 "fill_pct": fill_pct,

@@ -66,6 +66,7 @@ class StockQuoteExtractor(BaseExtractor):
                                         source="finnhub",
                                         domain=self.DOMAIN,
                                         title=f"{display}: ${price:.2f}",
+                                        country=["US"],
                                         tags=["stock", "equity"],
                                         extra={
                                             "symbol": symbol, "name": name, "display": display,
@@ -98,6 +99,7 @@ class StockQuoteExtractor(BaseExtractor):
                         source="yahoo_finance",
                         domain=self.DOMAIN,
                         title=f"{display}: ${price:.2f}" if price else f"{display}",
+                        country=["US"],
                         tags=["stock", "equity"],
                         extra={
                             "symbol": symbol, "name": name, "display": display,
@@ -149,6 +151,7 @@ class SectorPerformanceExtractor(BaseExtractor):
                     source=self.SOURCE,
                     domain=self.DOMAIN,
                     title=f"{name}: {change:+.2f}%",
+                    country=["US"],
                     tags=["sector", "etf"],
                     extra={
                         "symbol": symbol, "name": name,
@@ -200,6 +203,7 @@ class EarningsCalendarExtractor(BaseExtractor):
                 source=self.SOURCE,
                 domain=self.DOMAIN,
                 title=f"Earnings: {symbol}",
+                country=["US"],
                 tags=["earnings", "calendar"],
                 extra={
                     "symbol": symbol,

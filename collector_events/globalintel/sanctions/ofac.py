@@ -51,7 +51,7 @@ class OFACSanctionsExtractor(BaseExtractor):
                 source="ofac",
                 domain="sanctions",
                 title=f"OFAC: {country} ({count} entities)",
-                country=country,
+                country=[country] if country else [],
                 severity=severity,
                 tags=["sanctions", "ofac"],
                 extra={

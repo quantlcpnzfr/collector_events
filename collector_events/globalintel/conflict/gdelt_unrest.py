@@ -6,6 +6,7 @@ from forex_shared.logging.get_logger import get_logger
 import aiohttp
 
 from ..base import BaseExtractor, IntelItem
+from ..processors.country_resolver import CountryResolver
 from ..config import _load
 
 logger = get_logger(__name__)
@@ -84,6 +85,7 @@ class GDELTUnrestExtractor(BaseExtractor):
                 lon=cell["lon"],
                 severity=severity,
                 tags=["unrest", "gdelt"],
+                country=CountryResolver().resolve(cell["name"]),
                 extra={"count": count, "grid": gk},
             ))
         _sev_order = {"HIGH": 0, "MEDIUM": 1, "LOW": 2}

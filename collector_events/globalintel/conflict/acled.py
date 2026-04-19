@@ -107,7 +107,7 @@ class ACLEDExtractor(BaseExtractor):
                 title=f"{ev.get('event_type', '')}: {ev.get('notes', '')[:200]}",
                 lat=safe_float(ev.get("latitude")),
                 lon=safe_float(ev.get("longitude")),
-                country=ev.get("country", ""),
+                country=[ev["country"]] if ev.get("country") else [],
                 ts=ev.get("event_date", ""),
                 severity=severity,
                 tags=[ev.get("event_type", ""), ev.get("sub_event_type", "")],

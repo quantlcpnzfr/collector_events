@@ -69,7 +69,7 @@ class NASAFireExtractor(BaseExtractor):
                         ts=f"{row.get('acq_date', '')}T{row.get('acq_time', '0000')[:2]}:{row.get('acq_time', '0000')[2:]}",
                         lat=lat,
                         lon=lon,
-                        country=country,
+                        country=[country] if country else [],
                         severity=severity,
                         tags=["fire", "wildfire"],
                         extra={

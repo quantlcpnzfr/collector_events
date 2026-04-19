@@ -35,6 +35,8 @@ from typing import Sequence
 from forex_shared.domain.intel import IntelDomain, IntelItem, IntelSeverity
 from forex_shared.logging.loggable import Loggable
 
+from collector_events.processors.country_resolver import CountryResolver
+
 
 # ── Categorias de impacto ────────────────────────────────────────────────────
 
@@ -50,28 +52,42 @@ class ImpactCategory:
     NATURAL_EVENT  = "NATURAL_EVENT"
     PIRACY         = "PIRACY"
     ELECTION       = "ELECTION"
+    TECH_CRYPTO    = "TECH_CRYPTO"
     GENERIC        = "GENERIC"
+    IGNORED        = "IGNORED"
+
+
+# ── Anti-noise filter (sports / entertainment / celebrity) ───────────────────
+# If any of these appear in the text, the event is classified as IGNORED.
+_EXCLUDE_KEYWORDS: frozenset[str] = frozenset({
+    "nba", "nfl", "mlb", "nhl", "fifa", "world cup", "super bowl", "championship",
+    "playoffs", "oscar", "grammy", "emmy", "box office", "movie", "album", "song",
+    "streamer", "influencer", "celebrity", "kardashian",
+    "bachelor", "reality tv", "mvp", "touchdown", "home run", "goal scorer",
+    "academy award", "bafta", "golden globe", "cannes", "sundance",
+    "documentary", "feature film", "tv series", "season finale",
+})
 
 
 # ── Tabelas de keyword matching ──────────────────────────────────────────────
 
 # keywords → (category, score_boost)
-_KEYWORD_RULES: list[tuple[set[str], str, float]] = [
+_KEYWORD_RULES: tuple[tuple[frozenset[str], str, float], ...] = (
     # Monetary / Rate decisions — alto impacto imediato
     (
-        {"interest rate", "rate hike", "rate cut", "fed rate", "ecb rate",
+        frozenset({"interest rate", "rate hike", "rate cut", "fed rate", "ecb rate",
          "boe rate", "boj rate", "fomc", "monetary policy", "basis points",
          "hawkish", "dovish", "quantitative easing", "qe", "tapering",
          "rate decision", "central bank", "balance sheet", "forward guidance",
          "yield curve control", "negative rates", "rate hold", "pause hike",
          "inflation target", "policy rate", "overnight rate", "repo rate",
-         "reserve requirement", "open market operations"},
+         "reserve requirement", "open market operations"}),
         ImpactCategory.RATE_DECISION,
         0.25,
     ),
     # Economic data releases
     (
-        {"gdp", "inflation", "cpi", "ppi", "nfp", "non-farm payroll",
+        frozenset({"gdp", "inflation", "cpi", "ppi", "nfp", "non-farm payroll",
          "unemployment", "trade balance", "current account", "retail sales",
          "manufacturing pmi", "services pmi", "ism", "housing starts",
          "consumer confidence", "oecd", "imf forecast",
@@ -83,13 +99,13 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
          "stimulus package", "fiscal policy", "government spending",
          "trade deficit", "balance of payments", "foreign reserves",
          "capital flows", "credit rating", "sovereign debt", "bond yields",
-         "yield spread", "inverted yield curve", "treasury yields"},
+         "yield spread", "inverted yield curve", "treasury yields"}),
         ImpactCategory.ECONOMIC_DATA,
         0.15,
     ),
     # Armed conflict and wars
     (
-        {"war", "armed conflict", "military", "airstrikes", "invasion",
+        frozenset({"war", "armed conflict", "military", "airstrikes", "invasion",
          "missile", "troops", "ceasefire", "offensive", "nato", "drone attack",
          "artillery", "escalation", "troops movement",
          "bombing", "casualties", "drone strike", "airstrike", "assassination",
@@ -104,13 +120,13 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
          "military aid", "defense pact", "mutual defense", "article 5",
          "chemical weapons", "biological weapons", "cluster munitions",
          "ballistic missile", "hypersonic", "intercontinental", "warhead",
-         "nuclear submarine", "aircraft carrier", "military mobilization"},
+         "nuclear submarine", "aircraft carrier", "military mobilization"}),
         ImpactCategory.CONFLICT,
         0.30,
     ),
     # Geopolitical tension (non-kinetic)
     (
-        {"geopolitical", "diplomatic crisis", "summit", "trade war",
+        frozenset({"geopolitical", "diplomatic crisis", "summit", "trade war",
          "tariff", "retaliation", "expulsion", "ambassador", "g7", "g20",
          "un resolution", "veto", "bilateral", "multilateral",
          "coup d'état", "diplomatic incident", "expel diplomat",
@@ -122,13 +138,13 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
          "national security", "strategic competition", "great power",
          "sphere of influence", "proxy war", "regime stability",
          "state collapse", "political transition", "junta",
-         "international tribunal", "war crimes tribunal", "icj", "icc"},
+         "international tribunal", "war crimes tribunal", "icj", "icc"}),
         ImpactCategory.GEOPOLITICAL,
         0.15,
     ),
     # Sanctions
     (
-        {"sanction", "sanctions", "embargo", "asset freeze", "blacklist",
+        frozenset({"sanction", "sanctions", "embargo", "asset freeze", "blacklist",
          "ofac", "blocked", "export restriction", "import ban",
          "trade restriction", "economic sanction", "financial sanction",
          "targeted sanction", "sectoral sanction", "secondary sanction",
@@ -136,13 +152,13 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
          "swift ban", "correspondent banking", "de-risking",
          "export control", "technology ban", "chip ban", "semiconductor ban",
          "entity list", "denied party", "debarment", "delisting",
-         "oil embargo", "arms embargo", "financial blockade"},
+         "oil embargo", "arms embargo", "financial blockade"}),
         ImpactCategory.SANCTION,
         0.25,
     ),
     # Cyber threats
     (
-        {"cyberattack", "ransomware", "ddos", "data breach", "malware",
+        frozenset({"cyberattack", "ransomware", "ddos", "data breach", "malware",
          "exploit", "vulnerability", "critical infrastructure", "hacked",
          "zero-day", "apt group",
          "cyber attack", "internet disruption", "gps jamming",
@@ -152,13 +168,13 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
          "power grid attack", "water system attack", "hospital attack",
          "election interference", "disinformation campaign",
          "information warfare", "hybrid warfare", "deepfake",
-         "social engineering", "credential theft", "identity theft"},
+         "social engineering", "credential theft", "identity theft"}),
         ImpactCategory.CYBER,
         0.20,
     ),
     # Supply chain
     (
-        {"supply chain", "port congestion", "shipping lanes", "suez",
+        frozenset({"supply chain", "port congestion", "shipping lanes", "suez",
          "panama canal", "strait of hormuz", "bdi", "freight rates",
          "container shortage", "blank sailing", "logistics",
          "chokepoint", "bab el-mandeb", "strait of malacca",
@@ -171,13 +187,13 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
          "food supply", "grain export", "wheat export", "corn export",
          "fertilizer shortage", "agriculture disruption",
          "energy crisis", "gas crisis", "power outage", "blackout",
-         "infrastructure damage", "pipeline explosion", "cable cut"},
+         "infrastructure damage", "pipeline explosion", "cable cut"}),
         ImpactCategory.SUPPLY_CHAIN,
         0.15,
     ),
     # Social unrest
     (
-        {"protest", "riot", "strike", "unrest", "demonstration",
+        frozenset({"protest", "riot", "strike", "unrest", "demonstration",
          "revolution", "civil war", "insurrection",
          "general strike", "mass protest", "political violence",
          "social unrest", "civil unrest", "popular uprising",
@@ -185,13 +201,13 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
          "human rights", "political prisoner", "opposition leader",
          "dissident", "censorship", "press freedom", "internet shutdown",
          "surveillance", "authoritarian crackdown", "jailed opposition",
-         "political repression", "forced disappearance"},
+         "political repression", "forced disappearance"}),
         ImpactCategory.SOCIAL,
         0.10,
     ),
     # Natural events and disasters
     (
-        {"earthquake", "wildfire", "storm", "flood", "tsunami",
+        frozenset({"earthquake", "wildfire", "storm", "flood", "tsunami",
          "hurricane", "typhoon", "volcano", "drought", "tropical system",
          "climate anomaly", "extreme weather",
          "volcanic eruption", "seismic activity", "aftershock",
@@ -202,24 +218,24 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
          "crop failure", "water shortage", "el niño", "la niña",
          "climate disaster", "natural disaster", "state of emergency",
          "disaster declaration", "evacuation", "displaced population",
-         "humanitarian crisis", "aid effort", "rescue operation"},
+         "humanitarian crisis", "aid effort", "rescue operation"}),
         ImpactCategory.NATURAL_EVENT,
         0.15,
     ),
     # Maritime piracy and vessel threats
     (
-        {"piracy", "hijack", "vessel seized", "maritime threat", "naval blockade",
+        frozenset({"piracy", "hijack", "vessel seized", "maritime threat", "naval blockade",
          "ship attacked", "tanker seized", "cargo ship hijacked",
          "pirate attack", "armed boarding", "crew held hostage",
          "vessel detained", "maritime incident", "sea lanes threat",
          "red sea attack", "houthi attack", "gulf of aden",
-         "somali pirates", "strait attack", "naval incident"},
+         "somali pirates", "strait attack", "naval incident"}),
         ImpactCategory.PIRACY,
         0.20,
     ),
     # Elections and political transitions
     (
-        {"election", "referendum", "ballot", "polling", "president-elect",
+        frozenset({"election", "referendum", "ballot", "polling", "president-elect",
          "electoral fraud", "recount", "snap election", "early election",
          "election results", "vote count", "exit poll", "election day",
          "voter turnout", "contested election", "disputed election",
@@ -227,26 +243,26 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
          "primary election", "midterm election", "general election",
          "parliamentary election", "presidential election",
          "political transition", "power transfer", "inauguration",
-         "election monitoring", "international observers"},
+         "election monitoring", "international observers"}),
         ImpactCategory.ELECTION,
         0.10,
     ),
     # Forex pairs and FX market moves
     (
-        {"eur/usd", "eurusd", "gbp/usd", "gbpusd", "usd/jpy", "usdjpy",
+        frozenset({"eur/usd", "eurusd", "gbp/usd", "gbpusd", "usd/jpy", "usdjpy",
          "usd/chf", "usdchf", "aud/usd", "audusd", "nzd/usd", "nzdusd",
          "usd/cad", "usdcad", "eur/gbp", "eurgbp", "eur/jpy", "eurjpy",
          "gbp/jpy", "gbpjpy", "dollar index", "dxy", "usdx",
          "currency pair", "exchange rate", "spot rate",
          "dollar strength", "dollar weakness", "dollar rally", "dollar selloff",
          "forex market", "fx market", "currency move", "fx volatility",
-         "currency crisis", "devaluation", "peg broken", "managed float"},
+         "currency crisis", "devaluation", "peg broken", "managed float"}),
         ImpactCategory.ECONOMIC_DATA,
         0.12,
     ),
     # Crypto / digital assets — market sentiment and risk appetite signal
     (
-        {"bitcoin", "btc", "ethereum", "eth", "crypto", "cryptocurrency",
+        frozenset({"bitcoin", "btc", "ethereum", "eth", "crypto", "cryptocurrency",
          "digital asset", "stablecoin", "defi", "altcoin", "token",
          "etf", "spot etf", "btc etf", "crypto etf", "grayscale", "ibit",
          "bitb", "fbtc", "arkb", "btco", "brrr", "hodl",
@@ -255,11 +271,11 @@ _KEYWORD_RULES: list[tuple[set[str], str, float]] = [
          "exchange outflow", "exchange inflow", "whale", "liquidation",
          "funding rate", "open interest", "perpetual", "futures basis",
          "tether", "usdc", "usdt", "stablecoin depeg", "binance", "coinbase",
-         "kraken", "okx", "bybit", "deribit", "cme bitcoin"},
+         "kraken", "okx", "bybit", "deribit", "cme bitcoin"}),
         ImpactCategory.ECONOMIC_DATA,
         0.08,
     ),
-]
+)
 
 # Critical keywords that amplify the danger score further
 _CRITICAL_KEYWORDS: frozenset[str] = frozenset({
@@ -353,6 +369,7 @@ class EventProcessor(Loggable):
                 são retornados mas sinalizados como GENERIC de baixo risco.
         """
         self._min_danger_score = min_danger_score
+        self._country_resolver = CountryResolver()
 
     # ── Public API ───────────────────────────────────────────────────────
 
@@ -363,6 +380,22 @@ class EventProcessor(Loggable):
         ``item.extra["danger_score"]`` no item original.
         """
         text = self._extract_text(item)
+
+        # Anti-noise: skip sports / entertainment / celebrity content
+        if self._is_noise(text):
+            item.extra["impact_category"] = ImpactCategory.IGNORED
+            item.extra["danger_score"] = 0.0
+            return ProcessedEvent(
+                item=item,
+                impact_category=ImpactCategory.IGNORED,
+                danger_score=0.0,
+                matched_keywords=[],
+            )
+
+        # Country enrichment: resolve from text if extractor didn't set it
+        if not item.country:
+            item.country = self._country_resolver.resolve(text)
+
         category, keyword_boost, matched = self._classify(text)
         base_score = _SEVERITY_BASE.get(item.severity, 0.30)
         domain_weight = _DOMAIN_WEIGHT.get(item.domain, 1.0)
@@ -422,6 +455,14 @@ class EventProcessor(Loggable):
             if isinstance(v, str):
                 parts.append(v)
         return " ".join(parts).lower()
+
+    @staticmethod
+    def _is_noise(text: str) -> bool:
+        """Return True if text matches sports/entertainment/celebrity noise."""
+        for kw in _EXCLUDE_KEYWORDS:
+            if kw in text:
+                return True
+        return False
 
     @staticmethod
     def _classify(text: str) -> tuple[str, float, list[str]]:

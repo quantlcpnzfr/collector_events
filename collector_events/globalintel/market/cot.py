@@ -155,6 +155,7 @@ class CotPositioningExtractor(BaseExtractor):
                 source=self.SOURCE,
                 domain=self.DOMAIN,
                 title=f"COT {spec['label']}: {sentiment} (AM net {am_net_pct:+.1f}%)",
+                country=["US"],
                 tags=["cot", "positioning", "cftc", "tff"],
                 extra={
                     "report": "TFF",
@@ -227,6 +228,7 @@ class CotPositioningExtractor(BaseExtractor):
                 source=self.SOURCE,
                 domain=self.DOMAIN,
                 title=f"COT {spec['label']}: {sentiment} (MM net {mm_net_pct:+.1f}%)",
+                country=["US"],
                 tags=["cot", "positioning", "cftc", "disaggregated"],
                 extra={
                     "report": "Disaggregated",

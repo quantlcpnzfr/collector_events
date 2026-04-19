@@ -17,6 +17,7 @@ from xml.etree import ElementTree
 import aiohttp
 
 from ..base import CHROME_UA, BaseExtractor, IntelItem
+from ..processors.country_resolver import CountryResolver
 
 logger = get_logger(__name__)
 
@@ -109,6 +110,19 @@ FEEDS: list[FeedDef] = [
 
 # ─── RSS parser ──────────────────────────────────────────────────────
 
+def _resolve_feed_country(feed: FeedDef, title: str, desc: str) -> list[str]:
+    """Resolve country codes from feed metadata + article text."""
+    resolver = CountryResolver()
+    codes: list[str] = []
+    if feed.state_affiliation:
+        codes.extend(resolver.resolve_state_affiliation(feed.state_affiliation))
+    text_codes = resolver.resolve(f"{title} {desc}")
+    for c in text_codes:
+        if c not in codes:
+            codes.append(c)
+    return codes
+
+
 def _parse_rss_xml(xml_text: str, feed: FeedDef) -> list[IntelItem]:
     """Parse RSS 2.0 or Atom XML into IntelItem list."""
     items: list[IntelItem] = []
@@ -137,6 +151,7 @@ def _parse_rss_xml(xml_text: str, feed: FeedDef) -> list[IntelItem]:
             body=desc[:1000],
             ts=pub_date,
             tags=[feed.category, feed.source_type],
+            country=_resolve_feed_country(feed, title, desc),
             extra={
                 "lang": feed.lang,
                 "propaganda_risk": feed.propaganda_risk,
@@ -163,6 +178,7 @@ def _parse_rss_xml(xml_text: str, feed: FeedDef) -> list[IntelItem]:
                 body=summary[:1000],
                 ts=updated,
                 tags=[feed.category, feed.source_type],
+                country=_resolve_feed_country(feed, title, summary),
                 extra={
                     "lang": feed.lang,
                     "propaganda_risk": feed.propaganda_risk,

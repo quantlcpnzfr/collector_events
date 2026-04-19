@@ -56,6 +56,7 @@ class TariffTrendExtractor(BaseExtractor):
                     id=f"wto:tariff:{economy}:{year}",
                     source="wto",
                     domain="trade",
+                    country=[economy] if economy else [],
                     title=f"Tariff: {economy} avg applied rate ({year})",
                     tags=["wto", "tariff"],
                     extra={

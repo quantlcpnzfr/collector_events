@@ -170,17 +170,19 @@ class CyberThreatExtractor(BaseExtractor):
             items: list[IntelItem] = []
             for entry in data.get("data", []):
                 ip = entry.get("ipAddress", "")
+                cc = entry.get("countryCode", "")
                 items.append(IntelItem(
                     id=f"abuseipdb:{ip}",
                     source="abuseipdb",
                     domain="cyber",
                     title=f"Abusive IP: {ip}",
+                    country=[cc] if cc else [],
                     severity="MEDIUM",
                     tags=["abuse"],
                     extra={
                         "indicator_type": "ip",
                         "abuse_confidence": entry.get("abuseConfidenceScore"),
-                        "country": entry.get("countryCode", ""),
+                        "country_code": cc,
                         "total_reports": entry.get("totalReports"),
                     },
                 ))

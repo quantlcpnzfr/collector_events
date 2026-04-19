@@ -107,7 +107,7 @@ class DisplacementExtractor(BaseExtractor):
                 source="unhcr_displacement",
                 domain="conflict",
                 title=f"{country}: {total:,} displaced persons",
-                country=country,
+                country=[country] if country else [],
                 severity=severity,
                 tags=["displacement", "refugees", "unhcr"],
                 extra={

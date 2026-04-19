@@ -141,7 +141,7 @@ class CountryStockIndexExtractor(BaseExtractor):
                         source="country_indices",
                         domain="market",
                         title=f"{country} ({spec['name']}): {weekly_change:+.1f}% weekly",
-                        country=country,
+                        country=[country],
                         severity=severity,
                         tags=["index", "equity", country.lower().replace(" ", "_")],
                         extra={

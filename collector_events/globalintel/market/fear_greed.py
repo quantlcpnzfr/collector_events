@@ -114,6 +114,7 @@ class FearGreedExtractor(BaseExtractor):
             domain="market",
             title=f"Fear & Greed: {label} ({score:.0f})",
             severity="HIGH" if score < 20 or score > 80 else "",
+            country=["US"],
             tags=["sentiment", "market", "fear_greed"],
             extra={
                 "score": round(score, 1),

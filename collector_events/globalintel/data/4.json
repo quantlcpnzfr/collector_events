@@ -1,0 +1,38 @@
+{
+  "_id": "64c13a7f-29c0-4769-b141-fb7f6d709485",
+  "item_id": "rt:3fff895c7b61fa95",
+  "fingerprint": "1de81099-f895-5a25-970f-e76df09dcebc",
+  "hash": "2de60de307693bcef77c8287976bdc03827bee1c5578978c6348e476a2efdbf3",
+  "source": "RT",
+  "domain": "feeds",
+  "title": "War on Iran leaves $58 billion repair bill across region – report",
+  "url": "https://www.rt.com/business/638519-iran-war-billion-energy-repair/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+  "body": "<img alt=\"Preview\" align=\"left\" style=\"margin-right: 10px;\" src=\"https://mf.b37mrtl.ru/files/2026.04/thumbnail/69e0fecb85f54069fd331fee.jpg\" /> US-Israel strikes and Tehran’s retaliation are pushing oil and gas facility damage costs toward $50 billion, Rystad Energy projects <br/><a href=\"https://www.rt.com/business/638519-iran-war-billion-energy-repair/?utm_source=rss&utm_medium=rss&utm_campaign=RSS\">Read Full Article at RT.com</a>",
+  "ts": "Thu, 16 Apr 2026 17:48:10 +0000",
+  "fetched_at": "2026-04-19T16:48:41.281389+00:00",
+  "country": "",
+  "severity": "",
+  "tags": [
+    "europe",
+    "mainstream"
+  ],
+  "lat": null,
+  "lon": null,
+  "extra": {
+    "lang": "en",
+    "propaganda_risk": "high",
+    "state_affiliation": "Russia",
+    "impact_category": "CONFLICT",
+    "danger_score": 0.416
+  },
+  "impact_category": "CONFLICT",
+  "danger_score": 0.416,
+  "matched_keywords": [
+    "war",
+    "retaliation",
+    "strike"
+  ],
+  "created_at": "2026-04-19T16:48:49.633939+00:00",
+  "updated_at": "2026-04-19T16:48:49.633939+00:00",
+  "update_count": 0
+}

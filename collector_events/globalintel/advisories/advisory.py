@@ -12,6 +12,7 @@ import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 from ..config import _load
+from ..processors.country_resolver import CountryResolver
 
 logger = get_logger(__name__)
 
@@ -128,6 +129,7 @@ class AdvisoryExtractor(BaseExtractor):
                 body=body,
                 ts=pub_date,
                 tags=["advisory", domain_tag],
+                country=CountryResolver().resolve(f"{source_name} {title} {body}"),
                 extra={
                     "feed": source_name,
                     "feed_url": feed_url,

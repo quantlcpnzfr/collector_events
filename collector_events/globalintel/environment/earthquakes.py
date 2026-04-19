@@ -54,7 +54,7 @@ class USGSEarthquakeExtractor(BaseExtractor):
                 ts=str(props.get("time", "")),
                 lat=safe_float(geo[1]) if len(geo) > 1 else None,
                 lon=safe_float(geo[0]) if len(geo) > 0 else None,
-                country=props.get("place", ""),
+                country=[props.get("place")] if props.get("place") else [],
                 severity=severity,
                 tags=["earthquake", "natural_disaster"],
                 extra={

@@ -25,6 +25,7 @@ class ChokepointStatusExtractor(BaseExtractor):
         items: list[IntelItem] = []
         for cp in _CHOKEPOINTS:
             name = cp["name"]
+            cc = cp.get("country", "")
             items.append(IntelItem(
                 id=f"chokepoint:{name.lower().replace(' ', '_')}",
                 source="chokepoints",
@@ -34,6 +35,7 @@ class ChokepointStatusExtractor(BaseExtractor):
                 lon=cp.get("lon"),
                 severity="LOW",
                 tags=["chokepoint", "maritime", "supply_chain"],
+                country=[cc] if cc else [],
                 extra={
                     "region": cp.get("region", ""),
                     "daily_barrels_m": cp.get("daily_barrels_m"),

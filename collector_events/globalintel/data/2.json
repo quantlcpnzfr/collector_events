@@ -1,0 +1,40 @@
+{
+  "_id": "8ed761fc-40f4-4a19-b4e5-85b404bc988a",
+  "item_id": "rt:80f01d35b8529516",
+  "fingerprint": "dbe7ab9d-f7dc-5d33-9771-1f227c77f248",
+  "hash": "446d2afa29c3c2c34503ad2fb55235ec26bf06ecf72d6c1e815dba005f0101fd",
+  "source": "RT",
+  "domain": "feeds",
+  "title": "Russian security chief issues drone attack warning to four NATO states",
+  "url": "https://www.rt.com/russia/638524-russian-security-chief-warning-nato-states/?utm_source=rss&utm_medium=rss&utm_campaign=RSS",
+  "body": "<img alt=\"Preview\" align=\"left\" style=\"margin-right: 10px;\" src=\"https://mf.b37mrtl.ru/files/2026.04/thumbnail/69e13ff32030275ffd59dc6c.jpg\" /> Sergey Shoigu has warned that Russia could respond if Finland and the Baltic states enable Ukrainian drone strikes via their territory <br/><a href=\"https://www.rt.com/russia/638524-russian-security-chief-warning-nato-states/?utm_source=rss&utm_medium=rss&utm_campaign=RSS\">Read Full Article at RT.com</a>",
+  "ts": "Thu, 16 Apr 2026 20:21:54 +0000",
+  "fetched_at": "2026-04-19T16:48:41.281389+00:00",
+  "country": "",
+  "severity": "",
+  "tags": [
+    "europe",
+    "mainstream"
+  ],
+  "lat": null,
+  "lon": null,
+  "extra": {
+    "lang": "en",
+    "propaganda_risk": "high",
+    "state_affiliation": "Russia",
+    "impact_category": "CONFLICT",
+    "danger_score": 0.71
+  },
+  "impact_category": "CONFLICT",
+  "danger_score": 0.71,
+  "matched_keywords": [
+    "drone strike",
+    "nato",
+    "drone attack",
+    "war",
+    "strike"
+  ],
+  "created_at": "2026-04-19T16:48:49.606360+00:00",
+  "updated_at": "2026-04-19T16:48:49.606360+00:00",
+  "update_count": 0
+}

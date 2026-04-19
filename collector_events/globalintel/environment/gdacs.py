@@ -76,7 +76,7 @@ class GDACSExtractor(BaseExtractor):
                 ts=pub_date,
                 lat=lat,
                 lon=lon,
-                country=country_el,
+                country=[country_el] if country_el else [],
                 severity=severity,
                 tags=["disaster", event_type.lower()],
                 extra={

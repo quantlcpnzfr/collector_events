@@ -77,6 +77,7 @@ class BlsSeriesExtractor(BaseExtractor):
                     source=self.SOURCE,
                     domain=self.DOMAIN,
                     title=f"BLS: {label}",
+                    country=["US"],
                     tags=["labor", "bls", "macro"],
                     extra={
                         "series_id": sid,

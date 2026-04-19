@@ -4375,3 +4375,270 @@ INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ p
 INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 3 new, 0 updated, 1633 skipped, 0 errors
 INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 0 new, 0 updated, 304 skipped, 0 errors
 INFO → __main__ → Stopping scheduler …
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → __main__ → MongoDB persistence enabled (intel_items / intel_runs)
+INFO → __main__ → GlobalIntel daemon starting — 32 extractors scheduled
+INFO → __main__ → Running initial extraction sweep …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → forex_shared.providers.cache.redis_provider → [Redis] Conectado — fx-redis.redis.cache.windows.net:6380/db0 prefix='forex:' (SSL)
+INFO → collector_events.globalintel.cache → Cached 1651 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1651 items in 2007ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_policy_rates ...
+INFO → collector_events.globalintel.cache → Cached 11 items → economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_policy_rates: 11 items in 1207ms → Redis economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_exchange_rates ...
+INFO → collector_events.globalintel.cache → Cached 12 items → economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_exchange_rates: 12 items in 220ms → Redis economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_credit ...
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_credit: 1 items in 220ms → Redis economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fx_rates ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_policy_rates: 0 new, 0 updated, 11 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_credit: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_exchange_rates: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 26 items → economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fx_rates: 26 items in 17913ms → Redis economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_yield_curve ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 144 new, 2 updated, 1505 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fx_rates: 0 new, 0 updated, 26 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_yield_curve: 1 items in 5516ms → Redis economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fsi ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_yield_curve: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fsi: 1 items in 317ms → Redis economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bls ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fsi: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bls: 6 items in 666ms → Redis economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/gie_gas ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bls: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gie_gas: 1 items in 1066ms → Redis economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/economic_stress ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/gie_gas: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ economic_stress: 1 items in 1226ms → Redis economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/yahoo_fx ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/economic_stress: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 50 items → shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ yahoo_fx: 50 items in 4199ms → Redis shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/fear_greed ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/yahoo_fx: 0 new, 0 updated, 50 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ fear_greed: 1 items in 2638ms → Redis market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/prediction_markets ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/fear_greed: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 304 items → prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 304 items in 15882ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stock_quotes ...
+INFO → collector_events.globalintel.cache → Cached 28 items → market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stock_quotes: 28 items in 2624ms → Redis market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/sector_performance ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 0 new, 0 updated, 304 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stock_quotes: 0 new, 0 updated, 28 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 12 items → market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ sector_performance: 12 items in 4268ms → Redis market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/crypto_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/sector_performance: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ crypto_quotes: 10 items in 378ms → Redis market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/defi_tokens ...
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ defi_tokens: 10 items in 227ms → Redis market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/ai_tokens ...
+INFO → collector_events.globalintel.cache → Cached 9 items → market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ai_tokens: 9 items in 242ms → Redis market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stablecoins ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/crypto_quotes: 6 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/ai_tokens: 3 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/defi_tokens: 6 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 5 items → market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stablecoins: 5 items in 2772ms → Redis market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/commodity_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stablecoins: 5 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 33 items → market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ commodity_quotes: 33 items in 2370ms → Redis market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/btc_etf_flows ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/commodity_quotes: 0 new, 0 updated, 33 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 10 items → market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ btc_etf_flows: 10 items in 659ms → Redis market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/gulf_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/btc_etf_flows: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 12 items → market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gulf_quotes: 12 items in 988ms → Redis market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/cot_positioning ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/gulf_quotes: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ cot_positioning: 6 items in 1804ms → Redis market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/country_indices ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/cot_positioning: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 35 items → market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ country_indices: 35 items in 3748ms → Redis market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/usgs ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/country_indices: 0 new, 0 updated, 35 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 15 items → environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ usgs: 15 items in 348ms → Redis environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/gdacs ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/usgs: 3 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 244 items → environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gdacs: 244 items in 3568ms → Redis environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/eonet ...
+WARNING → collector_events.globalintel.environment.eonet → EONET fetch failed: 503, message='Service Unavailable', url='https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=50'
+INFO → collector_events.globalintel.cache → Cached 0 items → environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ eonet: 0 items in 662ms → Redis environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 2478ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running advisories/advisories ...
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/gdacs: 4 new, 0 updated, 240 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 4 new, 0 updated, 26 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ advisories: 30 items in 2198ms → Redis intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/chokepoints ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore advisories/advisories: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 8 items → supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ chokepoints: 8 items in 0ms → Redis supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/critical_minerals ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/chokepoints: 0 new, 0 updated, 8 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 10 items → supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ critical_minerals: 10 items in 0ms → Redis supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/shipping_rates ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/critical_minerals: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 4 items → supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ shipping_rates: 4 items in 0ms → Redis supply:shipping:rates:v1 (TTL 86400s)
+INFO → __main__ → Starting continuous scheduler …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → IntelOrchestrator scheduler started with 32 extractors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_policy_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_exchange_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_credit ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fx_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_yield_curve ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fsi ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bls ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/gie_gas ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/economic_stress ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/yahoo_fx ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/fear_greed ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/prediction_markets ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stock_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/sector_performance ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/crypto_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/defi_tokens ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/ai_tokens ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stablecoins ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/commodity_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/btc_etf_flows ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/gulf_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/cot_positioning ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/country_indices ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/usgs ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/gdacs ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/eonet ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running advisories/advisories ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/chokepoints ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/critical_minerals ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/shipping_rates ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/shipping_rates: 0 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 8 items → supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ chokepoints: 8 items in 0ms → Redis supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/chokepoints: 0 new, 0 updated, 8 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 0 items → market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ai_tokens: 0 items in 424ms → Redis market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.cache → Cached 10 items → supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ critical_minerals: 10 items in 0ms → Redis supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.cache → Cached 4 items → supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ shipping_rates: 4 items in 0ms → Redis supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fsi: 1 items in 2017ms → Redis economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/shipping_rates: 0 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/critical_minerals: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fsi: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 10 items → market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ btc_etf_flows: 10 items in 2611ms → Redis market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/btc_etf_flows: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ economic_stress: 1 items in 2954ms → Redis economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 0 items → market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ defi_tokens: 0 items in 426ms → Redis market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.cache → Cached 12 items → market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gulf_quotes: 12 items in 2951ms → Redis market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/economic_stress: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 15 items → environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ usgs: 15 items in 1110ms → Redis environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.cache → Cached 26 items → economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fx_rates: 26 items in 1721ms → Redis economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/gulf_quotes: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ cot_positioning: 6 items in 3089ms → Redis market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gie_gas: 1 items in 1728ms → Redis economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 11 items → economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_policy_rates: 11 items in 1747ms → Redis economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/usgs: 0 new, 0 updated, 15 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bls: 6 items in 1757ms → Redis economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 12 items → economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_exchange_rates: 12 items in 1785ms → Redis economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_credit: 1 items in 1784ms → Redis economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fx_rates: 0 new, 0 updated, 26 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/gie_gas: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/cot_positioning: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 5 items → market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stablecoins: 5 items in 3347ms → Redis market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_policy_rates: 0 new, 0 updated, 11 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bls: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 50 items → environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ eonet: 50 items in 2017ms → Redis environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_exchange_rates: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_credit: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 2395ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stablecoins: 0 new, 0 updated, 5 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ advisories: 30 items in 2497ms → Redis intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/eonet: 0 new, 0 updated, 50 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 28 items → market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stock_quotes: 28 items in 4026ms → Redis market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore advisories/advisories: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stock_quotes: 0 new, 0 updated, 28 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 33 items → market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ commodity_quotes: 33 items in 4240ms → Redis market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/commodity_quotes: 1 new, 0 updated, 32 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1651 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1651 items in 3825ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.cache → Cached 1 items → market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ fear_greed: 1 items in 4692ms → Redis market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.cache → Cached 244 items → environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gdacs: 244 items in 4606ms → Redis environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_yield_curve: 1 items in 7259ms → Redis economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ crypto_quotes: 10 items in 8063ms → Redis market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.cache → Cached 35 items → market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ country_indices: 35 items in 8201ms → Redis market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 50 items → shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ yahoo_fx: 50 items in 8297ms → Redis shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.cache → Cached 12 items → market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ sector_performance: 12 items in 8818ms → Redis market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/fear_greed: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/gdacs: 0 new, 0 updated, 244 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_yield_curve: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/country_indices: 0 new, 0 updated, 35 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/yahoo_fx: 0 new, 0 updated, 50 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/sector_performance: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 1 new, 0 updated, 1650 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/crypto_quotes: 6 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 304 items → prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 304 items in 17547ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 0 new, 0 updated, 304 skipped, 0 errors

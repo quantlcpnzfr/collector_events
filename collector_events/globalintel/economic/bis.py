@@ -71,7 +71,7 @@ class BisPolicyRateExtractor(BaseExtractor):
                 source=self.SOURCE,
                 domain=self.DOMAIN,
                 title=f"Policy rate: {BIS_COUNTRIES.get(cc, cc)}",
-                country=cc,
+                country=[cc],
                 tags=["central_bank", "policy_rate", "bis"],
                 extra={
                     "country_code": cc,
@@ -122,7 +122,7 @@ class BisExchangeRateExtractor(BaseExtractor):
                 source=self.SOURCE,
                 domain=self.DOMAIN,
                 title=f"REER: {BIS_COUNTRIES.get(cc, cc)}",
-                country=cc,
+                country=[cc],
                 tags=["fx", "reer", "bis"],
                 extra={
                     "country_code": cc,
@@ -174,7 +174,7 @@ class BisCreditExtractor(BaseExtractor):
                 source=self.SOURCE,
                 domain=self.DOMAIN,
                 title=f"Credit-to-GDP: {BIS_COUNTRIES.get(cc, cc)}",
-                country=cc,
+                country=[cc],
                 tags=["credit", "gdp", "bis"],
                 extra={
                     "country_code": cc,

@@ -40,11 +40,15 @@ class CriticalMineralsExtractor(BaseExtractor):
             else:
                 severity = "LOW"
 
+            # Extract country codes from producers list
+            producer_codes = [_country(p).upper() for p in producers if _country(p)]
+
             items.append(IntelItem(
                 id=f"mineral:{name.lower().replace(' ', '_')}",
                 source="critical_minerals",
                 domain="supply_chain",
                 title=f"Critical Mineral: {name}",
+                country=producer_codes,
                 severity=severity,
                 tags=["mineral", "supply_chain", "critical"],
                 extra={

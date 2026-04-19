@@ -63,6 +63,7 @@ class EconomicCalendarExtractor(BaseExtractor):
                         domain="economic",
                         title=f"FRED: {name} ({rd.get('date', '')})",
                         ts=rd.get("date", ""),
+                        country=["US"],
                         tags=["fred", "release", name.lower().replace(" ", "_")],
                         extra={
                             "release_id": int(release_id),
@@ -96,6 +97,7 @@ class EconomicCalendarExtractor(BaseExtractor):
                         title=f"FOMC Meeting: {d}",
                         ts=d,
                         severity="HIGH",
+                        country=["US"],
                         tags=["fomc", "fed", "interest_rate"],
                         extra={"date": d, "event": "FOMC Meeting"},
                     ))
@@ -119,6 +121,7 @@ class EconomicCalendarExtractor(BaseExtractor):
                     source="eurostat",
                     domain="economic",
                     title=f"Eurostat: {label}",
+                    country=["EU"],
                     tags=["eurostat", dataset_id],
                     extra={
                         "dataset": dataset_id,

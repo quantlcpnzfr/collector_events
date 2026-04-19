@@ -55,6 +55,7 @@ class ComtradeFlowExtractor(BaseExtractor):
                         id=f"comtrade:{reporter}:{flow}:{period}",
                         source="comtrade",
                         domain="trade",
+                        country=[reporter] if reporter else [],
                         title=f"Comtrade: {reporter} {flow} ({period})",
                         tags=["comtrade", "trade_flow"],
                         extra={

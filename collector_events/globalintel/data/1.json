@@ -1,0 +1,41 @@
+{
+  "_id": "9a33c1da-9604-41f1-9da2-a8549d35edb7",
+  "item_id": "mineral:rare_earth_elements",
+  "fingerprint": "3582d304-3655-5cec-8964-3bb6149e3e68",
+  "hash": "3f77f7c1db29a3ce3ba267f679d8f7990f5b4584a20d89724b7d86355acf251c",
+  "source": "critical_minerals",
+  "domain": "supply_chain",
+  "title": "Critical Mineral: Rare Earth Elements",
+  "url": "",
+  "body": "",
+  "ts": "",
+  "fetched_at": "2026-04-19T16:50:57.935592+00:00",
+  "country": "",
+  "severity": "HIGH",
+  "tags": [
+    "mineral",
+    "supply_chain",
+    "critical"
+  ],
+  "lat": null,
+  "lon": null,
+  "extra": {
+    "use": "Electronics, defense",
+    "top_producers": [
+      "CN",
+      "US",
+      "MM"
+    ],
+    "producer_count": 3,
+    "impact_category": "SUPPLY_CHAIN",
+    "danger_score": 0.836
+  },
+  "impact_category": "SUPPLY_CHAIN",
+  "danger_score": 0.836,
+  "matched_keywords": [
+    "rare earth"
+  ],
+  "created_at": "2026-04-19T16:50:59.038514+00:00",
+  "updated_at": "2026-04-19T16:50:59.038514+00:00",
+  "update_count": 0
+}

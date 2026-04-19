@@ -52,6 +52,7 @@ class WtoTradeRestrictionExtractor(BaseExtractor):
                     id=f"wto:restrictions:{reporter}:{year}",
                     source="wto",
                     domain="trade",
+                    country=[reporter] if reporter else [],
                     title=f"WTO: {reporter} - {measure} ({year})",
                     tags=["wto", "trade_restriction"],
                     extra={

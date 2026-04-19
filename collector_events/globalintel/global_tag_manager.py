@@ -276,9 +276,10 @@ class GlobalTagManager(Loggable):
         # 2. Country field → currency → pairs
         currencies: set[str] = set()
         if item.country:
-            currency = self._country_to_currency(item.country)
-            if currency:
-                currencies.add(currency)
+            for cc in item.country:
+                currency = self._country_to_currency(cc)
+                if currency:
+                    currencies.add(currency)
 
         # 3. Search item.tags for country/currency mentions
         if not currencies:
@@ -417,7 +418,7 @@ def _build_oracle_prompt(
 ) -> str:
     return (
         f"Event: {item.title}\n"
-        f"Domain: {item.domain} | Severity: {item.severity} | Country: {item.country}\n"
+        f"Domain: {item.domain} | Severity: {item.severity} | Country: {','.join(item.country)}\n"
         f"Asset pair: {asset}\n"
         f"Initial rule-based assessment: bias={current_bias}, risk_score={current_risk:.2f}\n"
         f"Body (first 300 chars): {item.body[:300]}\n\n"
