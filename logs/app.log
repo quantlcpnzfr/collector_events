@@ -4642,3 +4642,35 @@ INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore
 INFO → collector_events.globalintel.cache → Cached 304 items → prediction:markets-bootstrap:v1 (TTL 10800s)
 INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 304 items in 17547ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
 INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 0 new, 0 updated, 304 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 1414ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → collector_events.globalintel.cache → Cached 1650 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1650 items in 1996ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 20 new, 0 updated, 1630 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 1361ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 1 new, 0 updated, 29 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 1686ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1651 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1651 items in 2195ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 18 new, 0 updated, 1633 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 1623ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → collector_events.globalintel.cache → Cached 1652 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1652 items in 2846ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 16 new, 1 updated, 1635 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 1993ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 2 new, 0 updated, 28 skipped, 0 errors
