@@ -3,4 +3,5 @@ aiohttp
 apscheduler<4,>=3.10
 debugpy
 pandas
+pycountry
 redis<8,>=7.3

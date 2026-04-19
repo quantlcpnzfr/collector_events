@@ -12,6 +12,7 @@ dependencies = [
     "apscheduler>=3.10,<4",
     "debugpy",
     "pandas",
+    "pycountry", 
     "redis>=7.3,<8",
 ]
 

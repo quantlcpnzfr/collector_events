@@ -7,4 +7,5 @@ Requires-Dist: aiohttp
 Requires-Dist: apscheduler<4,>=3.10
 Requires-Dist: debugpy
 Requires-Dist: pandas
+Requires-Dist: pycountry
 Requires-Dist: redis<8,>=7.3
