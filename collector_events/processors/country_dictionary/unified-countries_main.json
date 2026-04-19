@@ -1,0 +1,1451 @@
+{
+  "AF": {
+    "name": "Afghanistan",
+    "currency": "AFN",
+    "keywords": [
+      "afghanistan",
+      "kabul"
+    ]
+  },
+  "AL": {
+    "name": "Albania",
+    "currency": "ALL",
+    "keywords": [
+      "tirana",
+      "albania"
+    ]
+  },
+  "DZ": {
+    "name": "Algeria",
+    "currency": "DZD",
+    "keywords": [
+      "algiers",
+      "algeria"
+    ]
+  },
+  "AD": {
+    "name": "Andorra",
+    "currency": "EUR",
+    "keywords": [
+      "andorra"
+    ]
+  },
+  "AO": {
+    "name": "Angola",
+    "currency": "AOA",
+    "keywords": [
+      "luanda",
+      "angola"
+    ]
+  },
+  "AG": {
+    "name": "Antigua and Barbuda",
+    "currency": "XCD",
+    "keywords": [
+      "antigua and barbuda",
+      "antigua"
+    ]
+  },
+  "AR": {
+    "name": "Argentina",
+    "currency": "ARS",
+    "keywords": [
+      "buenos aires",
+      "argentina"
+    ]
+  },
+  "AM": {
+    "name": "Armenia",
+    "currency": "AMD",
+    "keywords": [
+      "armenia",
+      "yerevan"
+    ]
+  },
+  "AU": {
+    "name": "Australia",
+    "currency": "AUD",
+    "keywords": [
+      "canberra",
+      "australia",
+      "sydney"
+    ]
+  },
+  "AT": {
+    "name": "Austria",
+    "currency": "EUR",
+    "keywords": [
+      "vienna",
+      "austria"
+    ]
+  },
+  "AZ": {
+    "name": "Azerbaijan",
+    "currency": "AZN",
+    "keywords": [
+      "azerbaijan",
+      "baku"
+    ]
+  },
+  "BS": {
+    "name": "Bahamas",
+    "currency": "BSD",
+    "keywords": [
+      "the bahamas",
+      "bahamas the",
+      "bahamas"
+    ]
+  },
+  "BH": {
+    "name": "Bahrain",
+    "currency": "BHD",
+    "keywords": [
+      "bahrain",
+      "manama"
+    ]
+  },
+  "BD": {
+    "name": "Bangladesh",
+    "currency": "BDT",
+    "keywords": [
+      "bangladesh",
+      "dhaka"
+    ]
+  },
+  "BB": {
+    "name": "Barbados",
+    "currency": "BBD",
+    "keywords": [
+      "barbados"
+    ]
+  },
+  "BY": {
+    "name": "Belarus",
+    "currency": "BYN",
+    "keywords": [
+      "minsk",
+      "lukashenko",
+      "belarus"
+    ]
+  },
+  "BE": {
+    "name": "Belgium",
+    "currency": "EUR",
+    "keywords": [
+      "brussels",
+      "belgium"
+    ]
+  },
+  "BZ": {
+    "name": "Belize",
+    "currency": "BZD",
+    "keywords": [
+      "belize"
+    ]
+  },
+  "BJ": {
+    "name": "Benin",
+    "currency": "XOF",
+    "keywords": [
+      "benin"
+    ]
+  },
+  "BT": {
+    "name": "Bhutan",
+    "currency": "BTN",
+    "keywords": [
+      "bhutan"
+    ]
+  },
+  "BO": {
+    "name": "Bolivia",
+    "currency": "BOB",
+    "keywords": [
+      "plurinational state of bolivia",
+      "bolivia"
+    ]
+  },
+  "BA": {
+    "name": "Bosnia and Herzegovina",
+    "currency": "BAM",
+    "keywords": [
+      "sarajevo",
+      "bosnia",
+      "bosnia and herzegovina"
+    ]
+  },
+  "BW": {
+    "name": "Botswana",
+    "currency": "BWP",
+    "keywords": [
+      "botswana"
+    ]
+  },
+  "BR": {
+    "name": "Brazil",
+    "currency": "BRL",
+    "keywords": [
+      "são paulo",
+      "brazil",
+      "brasilia"
+    ]
+  },
+  "BN": {
+    "name": "Brunei",
+    "currency": "BND",
+    "keywords": [
+      "brunei darussalam",
+      "brunei"
+    ]
+  },
+  "BG": {
+    "name": "Bulgaria",
+    "currency": "BGN",
+    "keywords": [
+      "sofia",
+      "bulgaria"
+    ]
+  },
+  "BF": {
+    "name": "Burkina Faso",
+    "currency": "XOF",
+    "keywords": [
+      "ouagadougou",
+      "burkina faso"
+    ]
+  },
+  "BI": {
+    "name": "Burundi",
+    "currency": "BIF",
+    "keywords": [
+      "burundi"
+    ]
+  },
+  "CV": {
+    "name": "Cape Verde",
+    "currency": "CVE",
+    "keywords": [
+      "cabo verde",
+      "cape verde"
+    ]
+  },
+  "KH": {
+    "name": "Cambodia",
+    "currency": "KHR",
+    "keywords": [
+      "cambodia",
+      "phnom penh"
+    ]
+  },
+  "CM": {
+    "name": "Cameroon",
+    "currency": "XAF",
+    "keywords": [
+      "yaoundé",
+      "cameroon"
+    ]
+  },
+  "CA": {
+    "name": "Canada",
+    "currency": "CAD",
+    "keywords": [
+      "canada",
+      "toronto",
+      "ottawa"
+    ]
+  },
+  "CF": {
+    "name": "Central African Republic",
+    "currency": "XAF",
+    "keywords": [
+      "central african republic"
+    ]
+  },
+  "TD": {
+    "name": "Chad",
+    "currency": "XAF",
+    "keywords": [
+      "ndjamena",
+      "chad"
+    ]
+  },
+  "CL": {
+    "name": "Chile",
+    "currency": "CLP",
+    "keywords": [
+      "chile",
+      "santiago"
+    ]
+  },
+  "CN": {
+    "name": "China",
+    "currency": "CNY",
+    "keywords": [
+      "beijing",
+      "prc",
+      "china",
+      "xi jinping"
+    ]
+  },
+  "CO": {
+    "name": "Colombia",
+    "currency": "COP",
+    "keywords": [
+      "bogotá",
+      "colombia"
+    ]
+  },
+  "KM": {
+    "name": "Comoros",
+    "currency": "KMF",
+    "keywords": [
+      "the comoros",
+      "comoros"
+    ]
+  },
+  "CG": {
+    "name": "Congo",
+    "currency": "XAF",
+    "keywords": [
+      "congo",
+      "congo rep",
+      "brazzaville",
+      "republic of the congo",
+      "congo brazzaville"
+    ]
+  },
+  "CD": {
+    "name": "DR Congo",
+    "currency": "CDF",
+    "keywords": [
+      "congo",
+      "democratic republic of the congo",
+      "drc",
+      "congo dem rep",
+      "kinshasa",
+      "dr congo",
+      "congo kinshasa"
+    ]
+  },
+  "CR": {
+    "name": "Costa Rica",
+    "currency": "CRC",
+    "keywords": [
+      "costa rica"
+    ]
+  },
+  "CI": {
+    "name": "Ivory Coast",
+    "currency": "XOF",
+    "keywords": [
+      "abidjan",
+      "côte d'ivoire",
+      "ivory coast",
+      "cote d ivoire"
+    ]
+  },
+  "HR": {
+    "name": "Croatia",
+    "currency": "EUR",
+    "keywords": [
+      "zagreb",
+      "croatia"
+    ]
+  },
+  "CU": {
+    "name": "Cuba",
+    "currency": "CUP",
+    "keywords": [
+      "havana",
+      "cuba"
+    ]
+  },
+  "CY": {
+    "name": "Cyprus",
+    "currency": "EUR",
+    "keywords": [
+      "cyprus",
+      "nicosia"
+    ]
+  },
+  "CZ": {
+    "name": "Czech Republic",
+    "currency": "CZK",
+    "keywords": [
+      "czechia",
+      "prague",
+      "czech",
+      "czech republic"
+    ]
+  },
+  "DK": {
+    "name": "Denmark",
+    "currency": "DKK",
+    "keywords": [
+      "denmark",
+      "copenhagen"
+    ]
+  },
+  "DJ": {
+    "name": "Djibouti",
+    "currency": "DJF",
+    "keywords": [
+      "djibouti"
+    ]
+  },
+  "DO": {
+    "name": "Dominican Republic",
+    "currency": "DOP",
+    "keywords": [
+      "dominican republic"
+    ]
+  },
+  "EC": {
+    "name": "Ecuador",
+    "currency": "USD",
+    "keywords": [
+      "ecuador",
+      "quito"
+    ]
+  },
+  "EG": {
+    "name": "Egypt",
+    "currency": "EGP",
+    "keywords": [
+      "egypt",
+      "cairo",
+      "egypt arab rep",
+      "suez"
+    ]
+  },
+  "SV": {
+    "name": "El Salvador",
+    "currency": "SVC",
+    "keywords": [
+      "el salvador"
+    ]
+  },
+  "GQ": {
+    "name": "Equatorial Guinea",
+    "currency": "XAF",
+    "keywords": [
+      "equatorial guinea"
+    ]
+  },
+  "ER": {
+    "name": "Eritrea",
+    "currency": "ERN",
+    "keywords": [
+      "eritrea",
+      "asmara"
+    ]
+  },
+  "EE": {
+    "name": "Estonia",
+    "currency": "EUR",
+    "keywords": [
+      "tallinn",
+      "estonia"
+    ]
+  },
+  "SZ": {
+    "name": "Eswatini",
+    "currency": "SZL",
+    "keywords": [
+      "eswatini",
+      "swaziland"
+    ]
+  },
+  "ET": {
+    "name": "Ethiopia",
+    "currency": "ETB",
+    "keywords": [
+      "ethiopia",
+      "tigray",
+      "addis ababa"
+    ]
+  },
+  "FJ": {
+    "name": "Fiji",
+    "currency": "FJD",
+    "keywords": [
+      "fiji"
+    ]
+  },
+  "FI": {
+    "name": "Finland",
+    "currency": "EUR",
+    "keywords": [
+      "helsinki",
+      "finland"
+    ]
+  },
+  "FR": {
+    "name": "France",
+    "currency": "EUR",
+    "keywords": [
+      "macron",
+      "paris",
+      "france"
+    ]
+  },
+  "GA": {
+    "name": "Gabon",
+    "currency": "XAF",
+    "keywords": [
+      "gabon"
+    ]
+  },
+  "GM": {
+    "name": "Gambia",
+    "currency": "GMD",
+    "keywords": [
+      "gambia",
+      "gambia the",
+      "the gambia"
+    ]
+  },
+  "GE": {
+    "name": "Georgia",
+    "currency": "GEL",
+    "keywords": [
+      "georgia",
+      "tbilisi"
+    ]
+  },
+  "DE": {
+    "name": "Germany",
+    "currency": "EUR",
+    "keywords": [
+      "germany",
+      "berlin"
+    ]
+  },
+  "GH": {
+    "name": "Ghana",
+    "currency": "GHS",
+    "keywords": [
+      "accra",
+      "ghana"
+    ]
+  },
+  "GR": {
+    "name": "Greece",
+    "currency": "EUR",
+    "keywords": [
+      "athens",
+      "greece"
+    ]
+  },
+  "GT": {
+    "name": "Guatemala",
+    "currency": "GTQ",
+    "keywords": [
+      "guatemala"
+    ]
+  },
+  "GN": {
+    "name": "Guinea",
+    "currency": "GNF",
+    "keywords": [
+      "conakry",
+      "guinea"
+    ]
+  },
+  "GW": {
+    "name": "Guinea-Bissau",
+    "currency": "XOF",
+    "keywords": [
+      "guinea-bissau",
+      "guinea bissau"
+    ]
+  },
+  "GY": {
+    "name": "Guyana",
+    "currency": "GYD",
+    "keywords": [
+      "guyana"
+    ]
+  },
+  "HT": {
+    "name": "Haiti",
+    "currency": "HTG",
+    "keywords": [
+      "haiti",
+      "port-au-prince"
+    ]
+  },
+  "HN": {
+    "name": "Honduras",
+    "currency": "HNL",
+    "keywords": [
+      "honduras"
+    ]
+  },
+  "HK": {
+    "name": "Hong Kong",
+    "currency": "HKD",
+    "keywords": [
+      "hong kong",
+      "hong kong s a r",
+      "hong kong sar china"
+    ]
+  },
+  "HU": {
+    "name": "Hungary",
+    "currency": "HUF",
+    "keywords": [
+      "hungary",
+      "budapest"
+    ]
+  },
+  "IS": {
+    "name": "Iceland",
+    "currency": "ISK",
+    "keywords": [
+      "iceland",
+      "reykjavik"
+    ]
+  },
+  "IN": {
+    "name": "India",
+    "currency": "INR",
+    "keywords": [
+      "india",
+      "modi",
+      "new delhi"
+    ]
+  },
+  "ID": {
+    "name": "Indonesia",
+    "currency": "IDR",
+    "keywords": [
+      "indonesia",
+      "jakarta"
+    ]
+  },
+  "IR": {
+    "name": "Iran",
+    "currency": "IRR",
+    "keywords": [
+      "iran",
+      "irgc",
+      "tehran",
+      "iran islamic rep",
+      "khamenei"
+    ]
+  },
+  "IQ": {
+    "name": "Iraq",
+    "currency": "IQD",
+    "keywords": [
+      "iraq",
+      "baghdad"
+    ]
+  },
+  "IE": {
+    "name": "Ireland",
+    "currency": "EUR",
+    "keywords": [
+      "dublin",
+      "ireland"
+    ]
+  },
+  "IL": {
+    "name": "Israel",
+    "currency": "ILS",
+    "keywords": [
+      "hezbollah",
+      "netanyahu",
+      "tel aviv",
+      "gaza",
+      "idf",
+      "israel",
+      "hamas"
+    ]
+  },
+  "IT": {
+    "name": "Italy",
+    "currency": "EUR",
+    "keywords": [
+      "rome",
+      "italy"
+    ]
+  },
+  "JM": {
+    "name": "Jamaica",
+    "currency": "JMD",
+    "keywords": [
+      "jamaica"
+    ]
+  },
+  "JP": {
+    "name": "Japan",
+    "currency": "JPY",
+    "keywords": [
+      "tokyo",
+      "japan"
+    ]
+  },
+  "JO": {
+    "name": "Jordan",
+    "currency": "JOD",
+    "keywords": [
+      "amman",
+      "jordan"
+    ]
+  },
+  "KZ": {
+    "name": "Kazakhstan",
+    "currency": "KZT",
+    "keywords": [
+      "kazakhstan",
+      "astana"
+    ]
+  },
+  "KE": {
+    "name": "Kenya",
+    "currency": "KES",
+    "keywords": [
+      "kenya",
+      "nairobi"
+    ]
+  },
+  "KP": {
+    "name": "North Korea",
+    "currency": "KPW",
+    "keywords": [
+      "democratic peoples republic of korea",
+      "kim jong",
+      "north korea",
+      "korea dem peoples rep",
+      "pyongyang"
+    ]
+  },
+  "KR": {
+    "name": "South Korea",
+    "currency": "KRW",
+    "keywords": [
+      "republic of korea",
+      "seoul",
+      "south korea",
+      "korea rep"
+    ]
+  },
+  "KW": {
+    "name": "Kuwait",
+    "currency": "KWD",
+    "keywords": [
+      "kuwait"
+    ]
+  },
+  "KG": {
+    "name": "Kyrgyzstan",
+    "currency": "KGS",
+    "keywords": [
+      "kyrgyz republic",
+      "kyrgyzstan"
+    ]
+  },
+  "LA": {
+    "name": "Laos",
+    "currency": "LAK",
+    "keywords": [
+      "lao pdr",
+      "laos"
+    ]
+  },
+  "LV": {
+    "name": "Latvia",
+    "currency": "EUR",
+    "keywords": [
+      "riga",
+      "latvia"
+    ]
+  },
+  "LB": {
+    "name": "Lebanon",
+    "currency": "LBP",
+    "keywords": [
+      "hezbollah",
+      "beirut",
+      "lebanon"
+    ]
+  },
+  "LS": {
+    "name": "Lesotho",
+    "currency": "LSL",
+    "keywords": [
+      "lesotho"
+    ]
+  },
+  "LR": {
+    "name": "Liberia",
+    "currency": "LRD",
+    "keywords": [
+      "liberia"
+    ]
+  },
+  "LY": {
+    "name": "Libya",
+    "currency": "LYD",
+    "keywords": [
+      "tripoli",
+      "benghazi",
+      "libya"
+    ]
+  },
+  "LI": {
+    "name": "Liechtenstein",
+    "currency": "CHF",
+    "keywords": [
+      "liechtenstein"
+    ]
+  },
+  "LT": {
+    "name": "Lithuania",
+    "currency": "EUR",
+    "keywords": [
+      "vilnius",
+      "lithuania"
+    ]
+  },
+  "LU": {
+    "name": "Luxembourg",
+    "currency": "EUR",
+    "keywords": [
+      "luxembourg"
+    ]
+  },
+  "MG": {
+    "name": "Madagascar",
+    "currency": "MGA",
+    "keywords": [
+      "madagascar"
+    ]
+  },
+  "MW": {
+    "name": "Malawi",
+    "currency": "MWK",
+    "keywords": [
+      "malawi"
+    ]
+  },
+  "MY": {
+    "name": "Malaysia",
+    "currency": "MYR",
+    "keywords": [
+      "kuala lumpur",
+      "malaysia"
+    ]
+  },
+  "MV": {
+    "name": "Maldives",
+    "currency": "MVR",
+    "keywords": [
+      "maldives",
+      "the maldives"
+    ]
+  },
+  "ML": {
+    "name": "Mali",
+    "currency": "XOF",
+    "keywords": [
+      "bamako",
+      "mali"
+    ]
+  },
+  "MT": {
+    "name": "Malta",
+    "currency": "EUR",
+    "keywords": [
+      "malta"
+    ]
+  },
+  "MR": {
+    "name": "Mauritania",
+    "currency": "MRU",
+    "keywords": [
+      "mauritania"
+    ]
+  },
+  "MU": {
+    "name": "Mauritius",
+    "currency": "MUR",
+    "keywords": [
+      "mauritius"
+    ]
+  },
+  "MX": {
+    "name": "Mexico",
+    "currency": "MXN",
+    "keywords": [
+      "mexico city",
+      "mexico"
+    ]
+  },
+  "MD": {
+    "name": "Moldova",
+    "currency": "MDL",
+    "keywords": [
+      "moldova",
+      "chisinau"
+    ]
+  },
+  "MN": {
+    "name": "Mongolia",
+    "currency": "MNT",
+    "keywords": [
+      "mongolia"
+    ]
+  },
+  "ME": {
+    "name": "Montenegro",
+    "currency": "EUR",
+    "keywords": [
+      "montenegro"
+    ]
+  },
+  "MA": {
+    "name": "Morocco",
+    "currency": "MAD",
+    "keywords": [
+      "rabat",
+      "morocco",
+      "morocco western sahara"
+    ]
+  },
+  "MZ": {
+    "name": "Mozambique",
+    "currency": "MZN",
+    "keywords": [
+      "maputo",
+      "mozambique"
+    ]
+  },
+  "MM": {
+    "name": "Myanmar",
+    "currency": "MMK",
+    "keywords": [
+      "burma",
+      "myanmar",
+      "naypyidaw"
+    ]
+  },
+  "NA": {
+    "name": "Namibia",
+    "currency": "NAD",
+    "keywords": [
+      "namibia"
+    ]
+  },
+  "NP": {
+    "name": "Nepal",
+    "currency": "NPR",
+    "keywords": [
+      "kathmandu",
+      "nepal"
+    ]
+  },
+  "NL": {
+    "name": "Netherlands",
+    "currency": "EUR",
+    "keywords": [
+      "dutch",
+      "netherlands",
+      "amsterdam",
+      "the netherlands"
+    ]
+  },
+  "NZ": {
+    "name": "New Zealand",
+    "currency": "NZD",
+    "keywords": [
+      "wellington",
+      "new zealand"
+    ]
+  },
+  "NI": {
+    "name": "Nicaragua",
+    "currency": "NIO",
+    "keywords": [
+      "nicaragua"
+    ]
+  },
+  "NE": {
+    "name": "Niger",
+    "currency": "XOF",
+    "keywords": [
+      "niamey",
+      "niger"
+    ]
+  },
+  "NG": {
+    "name": "Nigeria",
+    "currency": "NGN",
+    "keywords": [
+      "nigeria",
+      "abuja",
+      "lagos"
+    ]
+  },
+  "MK": {
+    "name": "North Macedonia",
+    "currency": "MKD",
+    "keywords": [
+      "skopje",
+      "north macedonia"
+    ]
+  },
+  "NO": {
+    "name": "Norway",
+    "currency": "NOK",
+    "keywords": [
+      "norway",
+      "oslo"
+    ]
+  },
+  "OM": {
+    "name": "Oman",
+    "currency": "OMR",
+    "keywords": [
+      "oman",
+      "muscat"
+    ]
+  },
+  "PK": {
+    "name": "Pakistan",
+    "currency": "PKR",
+    "keywords": [
+      "pakistan",
+      "islamabad",
+      "karachi"
+    ]
+  },
+  "PA": {
+    "name": "Panama",
+    "currency": "PAB",
+    "keywords": [
+      "panama"
+    ]
+  },
+  "PG": {
+    "name": "Papua New Guinea",
+    "currency": "PGK",
+    "keywords": [
+      "papua new guinea"
+    ]
+  },
+  "PY": {
+    "name": "Paraguay",
+    "currency": "PYG",
+    "keywords": [
+      "paraguay"
+    ]
+  },
+  "PE": {
+    "name": "Peru",
+    "currency": "PEN",
+    "keywords": [
+      "peru",
+      "lima"
+    ]
+  },
+  "PH": {
+    "name": "Philippines",
+    "currency": "PHP",
+    "keywords": [
+      "manila",
+      "philippines",
+      "the philippines"
+    ]
+  },
+  "PL": {
+    "name": "Poland",
+    "currency": "PLN",
+    "keywords": [
+      "warsaw",
+      "poland"
+    ]
+  },
+  "PT": {
+    "name": "Portugal",
+    "currency": "EUR",
+    "keywords": [
+      "lisbon",
+      "portugal"
+    ]
+  },
+  "QA": {
+    "name": "Qatar",
+    "currency": "QAR",
+    "keywords": [
+      "doha",
+      "qatar"
+    ]
+  },
+  "RO": {
+    "name": "Romania",
+    "currency": "RON",
+    "keywords": [
+      "bucharest",
+      "romania"
+    ]
+  },
+  "RU": {
+    "name": "Russia",
+    "currency": "RUB",
+    "keywords": [
+      "kremlin",
+      "putin",
+      "russian federation",
+      "russia",
+      "moscow"
+    ]
+  },
+  "RW": {
+    "name": "Rwanda",
+    "currency": "RWF",
+    "keywords": [
+      "rwanda",
+      "kigali"
+    ]
+  },
+  "SA": {
+    "name": "Saudi Arabia",
+    "currency": "SAR",
+    "keywords": [
+      "saudi arabia",
+      "mbs",
+      "riyadh"
+    ]
+  },
+  "SN": {
+    "name": "Senegal",
+    "currency": "XOF",
+    "keywords": [
+      "senegal",
+      "dakar"
+    ]
+  },
+  "RS": {
+    "name": "Serbia",
+    "currency": "RSD",
+    "keywords": [
+      "belgrade",
+      "serbia",
+      "republic of serbia"
+    ]
+  },
+  "SL": {
+    "name": "Sierra Leone",
+    "currency": "SLE",
+    "keywords": [
+      "sierra leone"
+    ]
+  },
+  "SG": {
+    "name": "Singapore",
+    "currency": "SGD",
+    "keywords": [
+      "singapore"
+    ]
+  },
+  "SK": {
+    "name": "Slovakia",
+    "currency": "EUR",
+    "keywords": [
+      "slovakia",
+      "slovak republic",
+      "bratislava"
+    ]
+  },
+  "SI": {
+    "name": "Slovenia",
+    "currency": "EUR",
+    "keywords": [
+      "slovenia"
+    ]
+  },
+  "SO": {
+    "name": "Somalia",
+    "currency": "SOS",
+    "keywords": [
+      "somalia",
+      "mogadishu"
+    ]
+  },
+  "ZA": {
+    "name": "South Africa",
+    "currency": "ZAR",
+    "keywords": [
+      "pretoria",
+      "johannesburg",
+      "south africa"
+    ]
+  },
+  "SS": {
+    "name": "South Sudan",
+    "currency": "SSP",
+    "keywords": [
+      "south sudan",
+      "juba"
+    ]
+  },
+  "ES": {
+    "name": "Spain",
+    "currency": "EUR",
+    "keywords": [
+      "madrid",
+      "spain"
+    ]
+  },
+  "LK": {
+    "name": "Sri Lanka",
+    "currency": "LKR",
+    "keywords": [
+      "colombo",
+      "sri lanka"
+    ]
+  },
+  "SD": {
+    "name": "Sudan",
+    "currency": "SDG",
+    "keywords": [
+      "darfur",
+      "khartoum",
+      "sudan"
+    ]
+  },
+  "SR": {
+    "name": "Suriname",
+    "currency": "SRD",
+    "keywords": [
+      "suriname"
+    ]
+  },
+  "SE": {
+    "name": "Sweden",
+    "currency": "SEK",
+    "keywords": [
+      "sweden",
+      "stockholm"
+    ]
+  },
+  "CH": {
+    "name": "Switzerland",
+    "currency": "CHF",
+    "keywords": [
+      "swiss",
+      "geneva",
+      "switzerland",
+      "zurich"
+    ]
+  },
+  "SY": {
+    "name": "Syria",
+    "currency": "SYP",
+    "keywords": [
+      "syria",
+      "syrian arab republic",
+      "assad",
+      "damascus"
+    ]
+  },
+  "TW": {
+    "name": "Taiwan",
+    "currency": "TWD",
+    "keywords": [
+      "taipei",
+      "taiwan",
+      "tsmc"
+    ]
+  },
+  "TJ": {
+    "name": "Tajikistan",
+    "currency": "TJS",
+    "keywords": [
+      "tajikistan"
+    ]
+  },
+  "TZ": {
+    "name": "Tanzania",
+    "currency": "TZS",
+    "keywords": [
+      "dar es salaam",
+      "tanzania",
+      "united republic of tanzania"
+    ]
+  },
+  "TH": {
+    "name": "Thailand",
+    "currency": "THB",
+    "keywords": [
+      "bangkok",
+      "thailand"
+    ]
+  },
+  "TL": {
+    "name": "Timor-Leste",
+    "currency": "USD",
+    "keywords": [
+      "timor leste",
+      "east timor",
+      "timor-leste"
+    ]
+  },
+  "TG": {
+    "name": "Togo",
+    "currency": "XOF",
+    "keywords": [
+      "togo"
+    ]
+  },
+  "TT": {
+    "name": "Trinidad and Tobago",
+    "currency": "TTD",
+    "keywords": [
+      "trinidad and tobago",
+      "trinidad"
+    ]
+  },
+  "TN": {
+    "name": "Tunisia",
+    "currency": "TND",
+    "keywords": [
+      "tunisia",
+      "tunis"
+    ]
+  },
+  "TR": {
+    "name": "Turkey",
+    "currency": "TRY",
+    "keywords": [
+      "istanbul",
+      "türkiye",
+      "erdogan",
+      "turkiye",
+      "turkey",
+      "ankara"
+    ]
+  },
+  "TM": {
+    "name": "Turkmenistan",
+    "currency": "TMT",
+    "keywords": [
+      "turkmenistan"
+    ]
+  },
+  "UG": {
+    "name": "Uganda",
+    "currency": "UGX",
+    "keywords": [
+      "uganda",
+      "kampala"
+    ]
+  },
+  "UA": {
+    "name": "Ukraine",
+    "currency": "UAH",
+    "keywords": [
+      "zelensky",
+      "kyiv",
+      "ukraine"
+    ]
+  },
+  "AE": {
+    "name": "United Arab Emirates",
+    "currency": "AED",
+    "keywords": [
+      "emirates",
+      "united arab emirates",
+      "dubai",
+      "uae",
+      "abu dhabi"
+    ]
+  },
+  "GB": {
+    "name": "United Kingdom",
+    "currency": "GBP",
+    "keywords": [
+      "united kingdom",
+      "britain",
+      "uk",
+      "london"
+    ]
+  },
+  "US": {
+    "name": "United States",
+    "currency": "USD",
+    "keywords": [
+      "washington",
+      "usa",
+      "united states of america",
+      "pentagon",
+      "biden",
+      "united states",
+      "trump",
+      "america"
+    ]
+  },
+  "UY": {
+    "name": "Uruguay",
+    "currency": "UYU",
+    "keywords": [
+      "uruguay"
+    ]
+  },
+  "UZ": {
+    "name": "Uzbekistan",
+    "currency": "UZS",
+    "keywords": [
+      "tashkent",
+      "uzbekistan"
+    ]
+  },
+  "VE": {
+    "name": "Venezuela",
+    "currency": "VES",
+    "keywords": [
+      "bolivarian republic of venezuela",
+      "maduro",
+      "venezuela rb",
+      "caracas",
+      "venezuela"
+    ]
+  },
+  "VN": {
+    "name": "Vietnam",
+    "currency": "VND",
+    "keywords": [
+      "hanoi",
+      "vietnam",
+      "viet nam"
+    ]
+  },
+  "YE": {
+    "name": "Yemen",
+    "currency": "YER",
+    "keywords": [
+      "yemen rep",
+      "yemen",
+      "sanaa",
+      "houthi"
+    ]
+  },
+  "ZM": {
+    "name": "Zambia",
+    "currency": "ZMW",
+    "keywords": [
+      "zambia"
+    ]
+  },
+  "ZW": {
+    "name": "Zimbabwe",
+    "currency": "ZWG",
+    "keywords": [
+      "zimbabwe",
+      "harare"
+    ]
+  }
+}
