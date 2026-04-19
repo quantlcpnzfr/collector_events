@@ -17,7 +17,7 @@ from __future__ import annotations
 import asyncio
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
-from typing import Any
+from typing import Any, Awaitable, Callable
 
 import aiohttp
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
@@ -141,6 +141,8 @@ class IntelOrchestrator(Loggable):
         self,
         config: GlobalIntelConfig | OrchestratorConfig | None = None,
         mq: MQProviderAsync | None = None,
+        sources_filter: set[str] | None = None,
+        on_result: Callable[[ExtractionResult], Awaitable[None]] | None = None,
     ) -> None:
         if config is None:
             config = GlobalIntelConfig()
@@ -151,6 +153,8 @@ class IntelOrchestrator(Loggable):
         self._tag_manager: GlobalTagManager | None = None
         self._schedule: list[ScheduleEntry] = []
         self._scheduler: AsyncIOScheduler = AsyncIOScheduler()
+        self._sources_filter = sources_filter
+        self._on_result = on_result
         self._build_schedule()
 
     # ── Config helpers ───────────────────────────────────────────────
@@ -324,6 +328,12 @@ class IntelOrchestrator(Loggable):
             ScheduleEntry(ShippingStressExtractor(), interval_seconds=86400),
         ]
 
+        if self._sources_filter is not None:
+            self._schedule = [
+                e for e in self._schedule
+                if e.extractor.SOURCE in self._sources_filter
+            ]
+
     async def _get_redis_provider(self) -> RedisProvider:
         if self._redis is None:
             self._redis = RedisProvider.from_env()
@@ -396,6 +406,10 @@ class IntelOrchestrator(Loggable):
                 await self._mq.publish(IntelTopics.events(item.domain), item.to_mq_payload())
             if self._tag_manager is not None:
                 await self._tag_manager.process_result(result)
+
+        # on_result callback (e.g. MongoDB persistence)
+        if self._on_result is not None:
+            asyncio.create_task(self._on_result(result))
 
         return result
 
