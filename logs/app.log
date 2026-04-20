@@ -4675,3 +4675,21 @@ INFO → collector_events.globalintel.cache → Cached 30 items → intelligence
 INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 1993ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
 INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 2 new, 0 updated, 28 skipped, 0 errors
 INFO → __main__ → Stopping scheduler …
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.

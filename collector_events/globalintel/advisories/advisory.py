@@ -12,7 +12,7 @@ import aiohttp
 
 from ..base import BaseExtractor, IntelItem
 from ..config import _load
-from ..processors.country_resolver import CountryResolver
+from collector_events.processors.country_resolver import CountryResolver
 
 logger = get_logger(__name__)
 

@@ -85,8 +85,11 @@ pyproject.toml
 ./collector_events/nlp/impact_classifier.py
 ./collector_events/nlp/sentiment_analyzer.py
 ./collector_events/processors/__init__.py
+./collector_events/processors/country_resolver.py
 ./collector_events/processors/currency_strength_calculator.py
+./collector_events/processors/event_processor copy.py
 ./collector_events/processors/event_processor.py
+./collector_events/processors/country_dictionary/country_dict_generator.py
 ./collector_events/scrapers/__init__.py
 ./collector_events/scrapers/economic_calendar.py
 ./collector_events/scrapers/instagram_scraper.py

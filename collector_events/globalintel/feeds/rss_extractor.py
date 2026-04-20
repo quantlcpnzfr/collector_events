@@ -17,7 +17,7 @@ from xml.etree import ElementTree
 import aiohttp
 
 from ..base import CHROME_UA, BaseExtractor, IntelItem
-from ..processors.country_resolver import CountryResolver
+from collector_events.processors.country_resolver import CountryResolver
 
 logger = get_logger(__name__)
 
