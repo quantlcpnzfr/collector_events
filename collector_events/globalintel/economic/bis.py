@@ -18,8 +18,8 @@ from collections import defaultdict
 
 import aiohttp
 
-from ..base import BaseExtractor, IntelItem
-from ..reference import BIS_COUNTRY_CODES
+from collector_events.globalintel.base import BaseExtractor, IntelItem
+from collector_events.globalintel.reference import BIS_COUNTRY_CODES
 
 logger = get_logger(__name__)
 

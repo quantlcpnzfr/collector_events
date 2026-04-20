@@ -29,7 +29,7 @@ import re
 
 import aiohttp
 
-from ..base import BaseExtractor, IntelItem
+from collector_events.globalintel.base import BaseExtractor, IntelItem
 
 logger = get_logger(__name__)
 

@@ -4,14 +4,14 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
-from forex_shared.logging.get_logger import get_logger
 import re
 from xml.etree import ElementTree
 
 import aiohttp
+from forex_shared.logging.get_logger import get_logger
 
-from ..base import BaseExtractor, IntelItem
-from ..config import _load
+from collector_events.globalintel.base import BaseExtractor, IntelItem
+from collector_events.globalintel.config import _load
 from collector_events.processors.country_resolver import CountryResolver
 
 logger = get_logger(__name__)

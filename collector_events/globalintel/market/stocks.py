@@ -15,8 +15,8 @@ import asyncio
 from forex_shared.logging.get_logger import get_logger
 import aiohttp
 
-from ..base import BaseExtractor, IntelItem
-from ..reference import STOCK_SYMBOLS, SECTOR_ETFS, YAHOO_ONLY_SYMBOLS
+from collector_events.globalintel.base import BaseExtractor, IntelItem
+from collector_events.globalintel.reference import STOCK_SYMBOLS, SECTOR_ETFS, YAHOO_ONLY_SYMBOLS
 
 logger = get_logger(__name__)
 

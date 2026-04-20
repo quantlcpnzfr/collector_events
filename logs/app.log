@@ -4693,3 +4693,1441 @@ INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atu
 INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
 INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
 INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 393 keyword entries
+INFO → __main__ → MongoDB persistence enabled (intel_items / intel_runs)
+INFO → __main__ → GlobalIntel daemon starting — 32 extractors scheduled
+INFO → __main__ → Running initial extraction sweep …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → forex_shared.providers.cache.redis_provider → [Redis] Conectado — fx-redis.redis.cache.windows.net:6380/db0 prefix='forex:' (SSL)
+INFO → collector_events.globalintel.cache → Cached 1740 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1740 items in 2238ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_policy_rates ...
+INFO → collector_events.globalintel.cache → Cached 11 items → economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_policy_rates: 11 items in 1446ms → Redis economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_exchange_rates ...
+INFO → collector_events.globalintel.cache → Cached 12 items → economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_exchange_rates: 12 items in 226ms → Redis economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_credit ...
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_credit: 1 items in 224ms → Redis economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fx_rates ...
+INFO → collector_events.globalintel.cache → Cached 26 items → economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fx_rates: 26 items in 23467ms → Redis economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_yield_curve ...
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_yield_curve: 1 items in 2450ms → Redis economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fsi ...
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fsi: 1 items in 1289ms → Redis economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bls ...
+WARNING → collector_events.globalintel.economic.bls.BlsSeriesExtractor → bls attempt 1 failed (), retrying in 1.0s
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 1740 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_exchange_rates: 12 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_credit: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_policy_rates: 11 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bls: 6 items in 62595ms → Redis economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/gie_gas ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fx_rates: 26 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_yield_curve: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fsi: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bls: 6 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gie_gas: 1 items in 1486ms → Redis economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/economic_stress ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/gie_gas: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ economic_stress: 1 items in 925ms → Redis economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/yahoo_fx ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/economic_stress: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 50 items → shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ yahoo_fx: 50 items in 4214ms → Redis shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/fear_greed ...
+INFO → collector_events.globalintel.cache → Cached 1 items → market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ fear_greed: 1 items in 2393ms → Redis market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/prediction_markets ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/fear_greed: 1 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/yahoo_fx: 50 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 306 items → prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 306 items in 16344ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stock_quotes ...
+INFO → collector_events.globalintel.cache → Cached 28 items → market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stock_quotes: 28 items in 2236ms → Redis market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/sector_performance ...
+INFO → collector_events.globalintel.cache → Cached 12 items → market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ sector_performance: 12 items in 3872ms → Redis market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/crypto_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 306 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ crypto_quotes: 10 items in 10724ms → Redis market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/defi_tokens ...
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ defi_tokens: 10 items in 234ms → Redis market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/ai_tokens ...
+INFO → collector_events.globalintel.cache → Cached 9 items → market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ai_tokens: 9 items in 227ms → Redis market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stablecoins ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stock_quotes: 28 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/sector_performance: 12 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/crypto_quotes: 10 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/defi_tokens: 10 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/ai_tokens: 9 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 5 items → market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stablecoins: 5 items in 2821ms → Redis market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/commodity_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stablecoins: 5 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 33 items → market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ commodity_quotes: 33 items in 2326ms → Redis market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/btc_etf_flows ...
+INFO → collector_events.globalintel.cache → Cached 10 items → market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ btc_etf_flows: 10 items in 619ms → Redis market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/gulf_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/commodity_quotes: 33 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/btc_etf_flows: 10 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 12 items → market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gulf_quotes: 12 items in 895ms → Redis market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/cot_positioning ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/gulf_quotes: 12 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ cot_positioning: 6 items in 1592ms → Redis market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/country_indices ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/cot_positioning: 6 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 35 items → market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ country_indices: 35 items in 3465ms → Redis market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/usgs ...
+INFO → collector_events.globalintel.cache → Cached 18 items → environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ usgs: 18 items in 320ms → Redis environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/gdacs ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/country_indices: 35 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/usgs: 18 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 217 items → environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gdacs: 217 items in 3871ms → Redis environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/eonet ...
+WARNING → collector_events.globalintel.environment.eonet → EONET fetch failed: 503, message='Service Unavailable', url='https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=50'
+INFO → collector_events.globalintel.cache → Cached 0 items → environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ eonet: 0 items in 639ms → Redis environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Could not acquire lock for operation due to deadlock, full error: {'ok': 0.0, 'code': 112, 'codeName': 'WriteConflict', 'errmsg': 'Could not acquire lock for operation due to deadlock'}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 6695ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running advisories/advisories ...
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 30 new, 0 updated, 0 skipped, 0 errors
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Duplicate key violation on the requested collection: Index 'fingerprint_1', full error: {'index': 0, 'code': 11000, 'errmsg': "Duplicate key violation on the requested collection: Index 'fingerprint_1'"}
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/gdacs: 217 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ advisories: 30 items in 7974ms → Redis intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/chokepoints ...
+INFO → collector_events.globalintel.cache → Cached 8 items → supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ chokepoints: 8 items in 0ms → Redis supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/critical_minerals ...
+INFO → collector_events.globalintel.cache → Cached 10 items → supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ critical_minerals: 10 items in 0ms → Redis supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/shipping_rates ...
+INFO → collector_events.globalintel.cache → Cached 4 items → supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ shipping_rates: 4 items in 0ms → Redis supply:shipping:rates:v1 (TTL 86400s)
+INFO → __main__ → Starting continuous scheduler …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → IntelOrchestrator scheduler started with 32 extractors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_policy_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_exchange_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_credit ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fx_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_yield_curve ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fsi ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bls ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/gie_gas ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/economic_stress ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/yahoo_fx ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/fear_greed ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/prediction_markets ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stock_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/sector_performance ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/crypto_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/defi_tokens ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/ai_tokens ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stablecoins ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/commodity_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/btc_etf_flows ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/gulf_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/cot_positioning ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/country_indices ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/usgs ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/gdacs ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/eonet ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running advisories/advisories ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/chokepoints ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/critical_minerals ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/shipping_rates ...
+INFO → collector_events.globalintel.cache → Cached 8 items → supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ chokepoints: 8 items in 0ms → Redis supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore advisories/advisories: 30 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 0 items → market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ defi_tokens: 0 items in 1384ms → Redis market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/chokepoints: 8 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/critical_minerals: 10 new, 0 updated, 0 skipped, 0 errors
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/chokepoints: 3 new, 0 updated, 5 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/shipping_rates: 4 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fsi: 1 items in 1936ms → Redis economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fsi: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 4 items → supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ shipping_rates: 4 items in 0ms → Redis supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 10 items → supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ critical_minerals: 10 items in 0ms → Redis supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ advisories: 30 items in 2297ms → Redis intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/shipping_rates: 0 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/critical_minerals: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 0 items → market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ai_tokens: 0 items in 1389ms → Redis market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.cache → Cached 18 items → environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ usgs: 18 items in 1568ms → Redis environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 2628ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.cache → Cached 26 items → economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fx_rates: 26 items in 1938ms → Redis economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 5 items → market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stablecoins: 5 items in 2705ms → Redis market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.cache → Cached 6 items → economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bls: 6 items in 1965ms → Redis economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 12 items → market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gulf_quotes: 12 items in 2810ms → Redis market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore advisories/advisories: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_credit: 1 items in 2945ms → Redis economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 11 items → economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_policy_rates: 11 items in 2961ms → Redis economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 12 items → economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_exchange_rates: 12 items in 2960ms → Redis economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 50 items → environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ eonet: 50 items in 2124ms → Redis environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.cache → Cached 10 items → market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ btc_etf_flows: 10 items in 2299ms → Redis market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/usgs: 0 new, 0 updated, 18 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ cot_positioning: 6 items in 3513ms → Redis market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fx_rates: 0 new, 0 updated, 26 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_credit: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stablecoins: 0 new, 0 updated, 5 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bls: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 217 items → environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gdacs: 217 items in 3561ms → Redis environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ economic_stress: 1 items in 3829ms → Redis economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 28 items → market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stock_quotes: 28 items in 3888ms → Redis market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.cache → Cached 33 items → market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ commodity_quotes: 33 items in 3923ms → Redis market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/gulf_quotes: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ fear_greed: 1 items in 3999ms → Redis market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_yield_curve: 1 items in 4077ms → Redis economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_policy_rates: 0 new, 0 updated, 11 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1740 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1740 items in 3503ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_exchange_rates: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/btc_etf_flows: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ crypto_quotes: 10 items in 5620ms → Redis market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/cot_positioning: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 35 items → market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ country_indices: 35 items in 5743ms → Redis market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 2 new, 0 updated, 28 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 50 items → shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ yahoo_fx: 50 items in 6013ms → Redis shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.cache → Cached 12 items → market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ sector_performance: 12 items in 6345ms → Redis market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/economic_stress: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/gdacs: 0 new, 0 updated, 217 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stock_quotes: 0 new, 0 updated, 28 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/fear_greed: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_yield_curve: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gie_gas: 1 items in 17745ms → Redis economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 231 items → prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 231 items in 41614ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/eonet: 50 new, 0 updated, 0 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/country_indices: 0 new, 0 updated, 35 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/sector_performance: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/yahoo_fx: 0 new, 0 updated, 50 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/gie_gas: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/commodity_quotes: 2 new, 0 updated, 31 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 0 new, 0 updated, 231 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 30 new, 0 updated, 1710 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/crypto_quotes: 10 new, 0 updated, 0 skipped, 0 errors
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 393 keyword entries
+INFO → __main__ → MongoDB persistence enabled (intel_items / intel_runs)
+INFO → __main__ → GlobalIntel daemon starting — 32 extractors scheduled
+INFO → __main__ → Running initial extraction sweep …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.providers.cache.redis_provider → [Redis] Conectado — fx-redis.redis.cache.windows.net:6380/db0 prefix='forex:' (SSL)
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 393 keyword entries
+INFO → collector_events.globalintel.cache → Cached 1741 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1741 items in 1954ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_policy_rates ...
+INFO → __main__ → Shutdown requested during initial sweep — stopping gracefully
+INFO → __main__ → Starting continuous scheduler …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → IntelOrchestrator scheduler started with 32 extractors
+INFO → __main__ → Stopping scheduler …
+ERROR → apscheduler.executors.default → Error running job feeds_rss_feeds
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_bis_policy_rates
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_bis_exchange_rates
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_bis_credit
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_ecb_fx_rates
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_ecb_yield_curve
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_ecb_fsi
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_bls
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_gie_gas
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job economic_economic_stress
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_yahoo_fx
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_fear_greed
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_prediction_markets
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_stock_quotes
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_sector_performance
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_crypto_quotes
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_defi_tokens
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_ai_tokens
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_stablecoins
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_commodity_quotes
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_btc_etf_flows
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_gulf_quotes
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_cot_positioning
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job market_country_indices
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job environment_usgs
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job environment_gdacs
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job environment_eonet
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job social_reddit
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job advisories_advisories
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job supply_chain_chokepoints
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job supply_chain_critical_minerals
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+ERROR → apscheduler.executors.default → Error running job supply_chain_shipping_rates
+Traceback (most recent call last):
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Program Files\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\globalintel\main.py", line 247, in main
+    await orch.stop_scheduler()
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\asyncio.py", line 35, in callback
+    events = f.result()
+  File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\apscheduler\executors\base.py", line 161, in run_coroutine_job
+    async def run_coroutine_job(job, jobstore_alias, run_times, logger_name):
+asyncio.exceptions.CancelledError
+INFO → root → Logging system initialized
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync: 0 novos, 0 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 112 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 62 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 393 keyword entries
+INFO → __main__ → MongoDB persistence enabled (intel_items / intel_runs)
+INFO → __main__ → GlobalIntel daemon starting — 32 extractors scheduled
+INFO → __main__ → Running initial extraction sweep …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → forex_shared.providers.cache.redis_provider → [Redis] Conectado — fx-redis.redis.cache.windows.net:6380/db0 prefix='forex:' (SSL)
+INFO → collector_events.globalintel.cache → Cached 1741 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1741 items in 1822ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_policy_rates ...
+INFO → collector_events.globalintel.cache → Cached 11 items → economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_policy_rates: 11 items in 1238ms → Redis economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_exchange_rates ...
+INFO → collector_events.globalintel.cache → Cached 12 items → economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_exchange_rates: 12 items in 225ms → Redis economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_credit ...
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_credit: 1 items in 237ms → Redis economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fx_rates ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_policy_rates: 0 new, 0 updated, 11 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_credit: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_exchange_rates: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 26 items → economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fx_rates: 26 items in 25409ms → Redis economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_yield_curve ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 11 new, 0 updated, 1730 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fx_rates: 0 new, 0 updated, 26 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_yield_curve: 1 items in 2299ms → Redis economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fsi ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_yield_curve: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fsi: 1 items in 287ms → Redis economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bls ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fsi: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bls: 6 items in 918ms → Redis economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/gie_gas ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bls: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gie_gas: 1 items in 1042ms → Redis economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/economic_stress ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/gie_gas: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ economic_stress: 1 items in 966ms → Redis economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/yahoo_fx ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/economic_stress: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 50 items → shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ yahoo_fx: 50 items in 4131ms → Redis shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/fear_greed ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/yahoo_fx: 0 new, 0 updated, 50 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 1 items → market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ fear_greed: 1 items in 2367ms → Redis market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/prediction_markets ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/fear_greed: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 306 items → prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 306 items in 14429ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stock_quotes ...
+INFO → collector_events.globalintel.cache → Cached 28 items → market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stock_quotes: 28 items in 2208ms → Redis market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/sector_performance ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 0 new, 0 updated, 306 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stock_quotes: 0 new, 0 updated, 28 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 12 items → market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ sector_performance: 12 items in 4260ms → Redis market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/crypto_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/sector_performance: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ crypto_quotes: 10 items in 355ms → Redis market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/defi_tokens ...
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ defi_tokens: 10 items in 304ms → Redis market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/ai_tokens ...
+INFO → collector_events.globalintel.cache → Cached 9 items → market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ai_tokens: 9 items in 220ms → Redis market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stablecoins ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/crypto_quotes: 5 new, 0 updated, 5 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/defi_tokens: 5 new, 0 updated, 5 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/ai_tokens: 2 new, 0 updated, 7 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 5 items → market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stablecoins: 5 items in 2530ms → Redis market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/commodity_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stablecoins: 4 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 33 items → market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ commodity_quotes: 33 items in 2557ms → Redis market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/btc_etf_flows ...
+INFO → collector_events.globalintel.cache → Cached 10 items → market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ btc_etf_flows: 10 items in 672ms → Redis market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/gulf_quotes ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/commodity_quotes: 2 new, 0 updated, 31 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/btc_etf_flows: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 12 items → market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gulf_quotes: 12 items in 1001ms → Redis market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/cot_positioning ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/gulf_quotes: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 6 items → market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ cot_positioning: 6 items in 2420ms → Redis market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/country_indices ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/cot_positioning: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 35 items → market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ country_indices: 35 items in 3769ms → Redis market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/usgs ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/country_indices: 0 new, 0 updated, 35 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 18 items → environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ usgs: 18 items in 315ms → Redis environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/gdacs ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/usgs: 0 new, 0 updated, 18 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 217 items → environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gdacs: 217 items in 2525ms → Redis environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/eonet ...
+INFO → collector_events.globalintel.cache → Cached 50 items → environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ eonet: 50 items in 885ms → Redis environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/gdacs: 0 new, 0 updated, 217 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/eonet: 0 new, 0 updated, 50 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 4689ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running advisories/advisories ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ advisories: 30 items in 1238ms → Redis intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/chokepoints ...
+INFO → collector_events.globalintel.cache → Cached 8 items → supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ chokepoints: 8 items in 0ms → Redis supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/critical_minerals ...
+INFO → collector_events.globalintel.cache → Cached 10 items → supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ critical_minerals: 10 items in 0ms → Redis supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/shipping_rates ...
+INFO → collector_events.globalintel.cache → Cached 4 items → supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ shipping_rates: 4 items in 0ms → Redis supply:shipping:rates:v1 (TTL 86400s)
+INFO → __main__ → Starting continuous scheduler …
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → IntelOrchestrator scheduler started with 32 extractors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_policy_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_exchange_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bis_credit ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fx_rates ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_yield_curve ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/ecb_fsi ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/bls ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/gie_gas ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running economic/economic_stress ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/yahoo_fx ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/fear_greed ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/prediction_markets ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stock_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/sector_performance ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/crypto_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/defi_tokens ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/ai_tokens ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/stablecoins ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/commodity_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/btc_etf_flows ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/gulf_quotes ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/cot_positioning ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running market/country_indices ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/usgs ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/gdacs ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running environment/eonet ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running advisories/advisories ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/chokepoints ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/critical_minerals ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running supply_chain/shipping_rates ...
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore advisories/advisories: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/chokepoints: 0 new, 0 updated, 8 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 8 items → supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ chokepoints: 8 items in 0ms → Redis supply:chokepoints:v1 (TTL 43200s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/shipping_rates: 0 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 0 items → market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ defi_tokens: 0 items in 283ms → Redis market:crypto:defi:v1 (TTL 600s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/critical_minerals: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/chokepoints: 0 new, 0 updated, 8 skipped, 0 errors
+WARNING → collector_events.globalintel.environment.eonet → EONET fetch failed: 503, message='Service Unavailable', url='https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=50'
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fsi: 1 items in 817ms → Redis economic:ecb:fsi:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ advisories: 30 items in 1183ms → Redis intelligence:advisories:v1 (TTL 10800s)
+INFO → collector_events.globalintel.cache → Cached 10 items → supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ critical_minerals: 10 items in 0ms → Redis supply:minerals:v1 (TTL 604800s)
+INFO → collector_events.globalintel.cache → Cached 4 items → supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ shipping_rates: 4 items in 0ms → Redis supply:shipping:rates:v1 (TTL 86400s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fsi: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 0 items → market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ai_tokens: 0 items in 284ms → Redis market:crypto:ai:v1 (TTL 600s)
+INFO → collector_events.globalintel.cache → Cached 18 items → environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ usgs: 18 items in 529ms → Redis environment:earthquakes:v1 (TTL 3600s)
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 1510ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.cache → Cached 6 items → economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bls: 6 items in 832ms → Redis economic:bls:series:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_credit: 1 items in 870ms → Redis economic:bis:credit:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 6 items → market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ cot_positioning: 6 items in 1675ms → Redis market:cot:v1 (TTL 604800s)
+INFO → collector_events.globalintel.cache → Cached 0 items → environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ eonet: 0 items in 893ms → Redis environment:eonet:v1 (TTL 14400s)
+INFO → collector_events.globalintel.cache → Cached 11 items → economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_policy_rates: 11 items in 875ms → Redis economic:bis:policy:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 12 items → economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ bis_exchange_rates: 12 items in 875ms → Redis economic:bis:eer:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 26 items → economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_fx_rates: 26 items in 876ms → Redis economic:ecb:fx:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 5 items → market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stablecoins: 5 items in 1734ms → Redis market:crypto:stablecoins:v1 (TTL 600s)
+INFO → collector_events.globalintel.cache → Cached 12 items → market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gulf_quotes: 12 items in 1762ms → Redis market:gulf:v1 (TTL 3600s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gie_gas: 1 items in 1142ms → Redis economic:gie:gas:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ economic_stress: 1 items in 1384ms → Redis economic:stress:v1 (TTL 86400s)
+INFO → collector_events.globalintel.cache → Cached 10 items → market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ btc_etf_flows: 10 items in 1408ms → Redis market:etf:flows:v1 (TTL 3600s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/critical_minerals: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore supply_chain/shipping_rates: 0 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore advisories/advisories: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/usgs: 0 new, 0 updated, 18 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/cot_positioning: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 0 new, 0 updated, 30 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bls: 0 new, 0 updated, 6 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_credit: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 28 items → market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ stock_quotes: 28 items in 2678ms → Redis market:stocks:v1 (TTL 300s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_policy_rates: 0 new, 0 updated, 11 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 217 items → environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ gdacs: 217 items in 2669ms → Redis environment:disasters:v1 (TTL 7200s)
+INFO → collector_events.globalintel.cache → Cached 1 items → market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ fear_greed: 1 items in 2973ms → Redis market:fear-greed:v1 (TTL 64800s)
+INFO → collector_events.globalintel.cache → Cached 33 items → market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ commodity_quotes: 33 items in 2973ms → Redis market:commodities:v1 (TTL 300s)
+INFO → collector_events.globalintel.cache → Cached 1741 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1741 items in 2213ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.cache → Cached 1 items → economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ ecb_yield_curve: 1 items in 3131ms → Redis economic:ecb:yield:v1 (TTL 86400s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/bis_exchange_rates: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_fx_rates: 0 new, 0 updated, 26 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stablecoins: 0 new, 0 updated, 5 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/gie_gas: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/gulf_quotes: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/economic_stress: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/btc_etf_flows: 0 new, 0 updated, 10 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/stock_quotes: 0 new, 0 updated, 28 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 35 items → market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ country_indices: 35 items in 4813ms → Redis market:country-indices:v1 (TTL 43200s)
+INFO → collector_events.globalintel.cache → Cached 50 items → shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ yahoo_fx: 50 items in 4847ms → Redis shared:fx-rates:v1 (TTL 90000s)
+INFO → collector_events.globalintel.cache → Cached 12 items → market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ sector_performance: 12 items in 5000ms → Redis market:sectors:v1 (TTL 3600s)
+INFO → collector_events.globalintel.cache → Cached 10 items → market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ crypto_quotes: 10 items in 5410ms → Redis market:crypto:quotes:v1 (TTL 300s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/fear_greed: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore environment/gdacs: 0 new, 0 updated, 217 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore economic/ecb_yield_curve: 0 new, 0 updated, 1 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/country_indices: 0 new, 0 updated, 35 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/yahoo_fx: 0 new, 0 updated, 50 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/sector_performance: 0 new, 0 updated, 12 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/commodity_quotes: 1 new, 0 updated, 32 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 3 new, 0 updated, 1738 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/crypto_quotes: 6 new, 0 updated, 4 skipped, 0 errors
+INFO → collector_events.globalintel.cache → Cached 306 items → prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ prediction_markets: 306 items in 28873ms → Redis prediction:markets-bootstrap:v1 (TTL 10800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore market/prediction_markets: 0 new, 0 updated, 306 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 1411ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 1 new, 0 updated, 29 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → collector_events.globalintel.cache → Cached 1722 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1722 items in 2115ms → Redis feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 13 new, 0 updated, 1709 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 1269ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 1 new, 0 updated, 29 skipped, 0 errors
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running feeds/rss_feeds ...
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator → Running social/reddit ...
+INFO → collector_events.globalintel.cache → Cached 30 items → intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ reddit: 30 items in 1485ms → Redis intelligence:social:reddit:v1 (TTL 1800s)
+INFO → collector_events.globalintel.cache → Cached 1741 items → feeds:rss-digest:v1 (TTL 900s)
+INFO → collector_events.globalintel.orchestrator.IntelOrchestrator →   ✓ rss_feeds: 1741 items in 2157ms → Redis feeds:rss-digest:v1 (TTL 900s)
+ERROR → forex_shared.mongo_manager → [MongoManager] find_many(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] find_many(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] find_many(intel_items): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+ERROR → forex_shared.mongo_manager → [MongoManager] replace_one(intel_items): Cannot modify '_id' field as part of the operation, full error: {'index': 0, 'code': 66, 'errmsg': "Cannot modify '_id' field as part of the operation"}
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore social/reddit: 4 new, 0 updated, 26 skipped, 0 errors
+INFO → collector_events.globalintel.intel_store.IntelMongoStore → IntelStore feeds/rss_feeds: 20 new, 4 updated, 1717 skipped, 0 errors

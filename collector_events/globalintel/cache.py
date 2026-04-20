@@ -12,7 +12,7 @@ from typing import Any
 
 from forex_shared.logging.get_logger import get_logger
 from forex_shared.providers.cache.redis_provider import RedisProvider
-from .base import ExtractionResult
+from collector_events.globalintel.base import ExtractionResult
 
 logger = get_logger(__name__)
 

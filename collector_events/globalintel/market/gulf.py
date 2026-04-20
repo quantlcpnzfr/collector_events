@@ -10,8 +10,8 @@ import asyncio
 from forex_shared.logging.get_logger import get_logger
 import aiohttp
 
-from ..base import BaseExtractor, IntelItem
-from ..reference import GULF_SYMBOLS
+from collector_events.globalintel.base import BaseExtractor, IntelItem
+from collector_events.globalintel.reference import GULF_SYMBOLS
 
 logger = get_logger(__name__)
 

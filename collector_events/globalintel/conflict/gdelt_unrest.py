@@ -5,9 +5,9 @@ from __future__ import annotations
 from forex_shared.logging.get_logger import get_logger
 import aiohttp
 
-from ..base import BaseExtractor, IntelItem
+from collector_events.globalintel.base import BaseExtractor, IntelItem
 from collector_events.processors.country_resolver import CountryResolver
-from ..config import _load
+from collector_events.globalintel.config import _load
 
 logger = get_logger(__name__)
 

@@ -27,8 +27,8 @@ from datetime import datetime, timezone
 
 import aiohttp
 
-from ..base import BaseExtractor, IntelItem
-from ..config_env import GlobalIntelConfig
+from collector_events.globalintel.base import BaseExtractor, IntelItem
+from collector_events.globalintel.config_env import GlobalIntelConfig
 
 # ── Pontos de corte BDI → stress ──────────────────────────────────
 _BDI_HIGH_STRESS    = 1_500   # abaixo → HIGH severity

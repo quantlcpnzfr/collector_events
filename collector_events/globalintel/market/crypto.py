@@ -19,8 +19,8 @@ import asyncio
 from forex_shared.logging.get_logger import get_logger
 import aiohttp
 
-from ..base import BaseExtractor, IntelItem
-from ..reference import (
+from collector_events.globalintel.base import BaseExtractor, IntelItem
+from collector_events.globalintel.reference import (
     CRYPTO_IDS, CRYPTO_META, CRYPTO_COINPAPRIKA,
     DEFI_IDS, DEFI_META,
     AI_TOKEN_IDS, AI_TOKEN_META,

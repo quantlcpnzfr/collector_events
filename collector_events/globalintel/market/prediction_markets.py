@@ -8,8 +8,8 @@ import math
 
 import aiohttp
 
-from ..base import BaseExtractor, IntelItem
-from ..config import _load
+from collector_events.globalintel.base import BaseExtractor, IntelItem
+from collector_events.globalintel.config import _load
 
 logger = get_logger(__name__)
 

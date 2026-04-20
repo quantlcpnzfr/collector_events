@@ -22,11 +22,12 @@ from typing import Any, Awaitable, Callable
 import aiohttp
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
-from .base import BaseExtractor, ExtractionResult, CHROME_UA, DEFAULT_TIMEOUT
-from .cache import IntelCache
-from .config_env import GlobalIntelConfig
+from collector_events.globalintel.base import BaseExtractor, ExtractionResult, CHROME_UA, DEFAULT_TIMEOUT
+from collector_events.globalintel.cache import IntelCache
+from collector_events.globalintel.config_env import GlobalIntelConfig
 from forex_shared.config import IntelConfig, StorageConfig
-from .global_tag_manager import GlobalTagManager
+from collector_events.globalintel.global_tag_manager import GlobalTagManager
+
 from forex_shared.domain.intel import IntelDomain
 from forex_shared.logging.get_logger import get_logger
 from forex_shared.logging.loggable import Loggable
@@ -36,38 +37,38 @@ from forex_shared.providers.mq.mq_provider_async import MQProviderAsync
 from forex_shared.providers.mq.topics import IntelTopics
 
 # Domain imports
-from .feeds.rss_extractor import RSSFeedExtractor
-from .conflict import ACLEDExtractor, GDELTIntelExtractor, GDELTUnrestExtractor
-from .conflict.ucdp import UCDPExtractor
-from .conflict.unrest import UnrestMergeExtractor
-from .conflict.displacement import DisplacementExtractor, GPSJammingExtractor
-from .cyber import CyberThreatExtractor
-from .economic import EconomicCalendarExtractor
-from .economic.bis import BisPolicyRateExtractor, BisExchangeRateExtractor, BisCreditExtractor
-from .economic.ecb import EcbFxRateExtractor, EcbYieldCurveExtractor, EcbStressIndexExtractor
-from .economic.bls import BlsSeriesExtractor
-from .economic.world_bank import WorldBankExtractor
-from .economic.energy import EIACrudeInventoryExtractor, EIANatGasStorageExtractor, EuGasStorageExtractor
-from .economic.prices import FaoFoodPriceExtractor, EconomicStressExtractor
-from .market import FXRateExtractor, FearGreedExtractor, PredictionMarketExtractor
-from .market.stocks import StockQuoteExtractor, SectorPerformanceExtractor, EarningsCalendarExtractor
-from .market.crypto import (
+from collector_events.globalintel.feeds.rss_extractor import RSSFeedExtractor
+from collector_events.globalintel.conflict import ACLEDExtractor, GDELTIntelExtractor, GDELTUnrestExtractor
+from collector_events.globalintel.conflict.ucdp import UCDPExtractor
+from collector_events.globalintel.conflict.unrest import UnrestMergeExtractor
+from collector_events.globalintel.conflict.displacement import DisplacementExtractor, GPSJammingExtractor
+from collector_events.globalintel.cyber import CyberThreatExtractor
+from collector_events.globalintel.economic import EconomicCalendarExtractor
+from collector_events.globalintel.economic.bis import BisPolicyRateExtractor, BisExchangeRateExtractor, BisCreditExtractor
+from collector_events.globalintel.economic.ecb import EcbFxRateExtractor, EcbYieldCurveExtractor, EcbStressIndexExtractor
+from collector_events.globalintel.economic.bls import BlsSeriesExtractor
+from collector_events.globalintel.economic.world_bank import WorldBankExtractor
+from collector_events.globalintel.economic.energy import EIACrudeInventoryExtractor, EIANatGasStorageExtractor, EuGasStorageExtractor
+from collector_events.globalintel.economic.prices import FaoFoodPriceExtractor, EconomicStressExtractor
+from collector_events.globalintel.market import FXRateExtractor, FearGreedExtractor, PredictionMarketExtractor
+from collector_events.globalintel.market.stocks import StockQuoteExtractor, SectorPerformanceExtractor, EarningsCalendarExtractor
+from collector_events.globalintel.market.crypto import (
     CryptoQuoteExtractor, DefiTokenExtractor, AiTokenExtractor,
     OtherTokenExtractor, StablecoinExtractor, CryptoSectorExtractor,
 )
-from .market.commodities import CommodityQuoteExtractor
-from .market.etf import BtcEtfFlowExtractor
-from .market.gulf import GulfQuoteExtractor
-from .market.cot import CotPositioningExtractor
-from .market.country_index import CountryStockIndexExtractor
-from .environment import (
+from collector_events.globalintel.market.commodities import CommodityQuoteExtractor
+from collector_events.globalintel.market.etf import BtcEtfFlowExtractor
+from collector_events.globalintel.market.gulf import GulfQuoteExtractor
+from collector_events.globalintel.market.cot import CotPositioningExtractor
+from collector_events.globalintel.market.country_index import CountryStockIndexExtractor
+from collector_events.globalintel.environment import (
     USGSEarthquakeExtractor, NASAFireExtractor, GDACSExtractor, NASAEONETExtractor,
 )
-from .sanctions import OFACSanctionsExtractor
-from .social import RedditVelocityExtractor, TelegramRelayExtractor
-from .advisories import AdvisoryExtractor
-from .trade import WtoTradeRestrictionExtractor, ComtradeFlowExtractor, TariffTrendExtractor
-from .supply_chain import (
+from collector_events.globalintel.sanctions import OFACSanctionsExtractor
+from collector_events.globalintel.social import RedditVelocityExtractor, TelegramRelayExtractor
+from collector_events.globalintel.advisories import AdvisoryExtractor
+from collector_events.globalintel.trade import WtoTradeRestrictionExtractor, ComtradeFlowExtractor, TariffTrendExtractor
+from collector_events.globalintel.supply_chain import (
     ChokepointStatusExtractor, CriticalMineralsExtractor,
     ShippingRateExtractor, ShippingStressExtractor,
 )

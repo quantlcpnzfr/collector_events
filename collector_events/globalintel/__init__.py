@@ -16,3 +16,23 @@
 #   trade/        — WTO restrictions, tariff trends, Comtrade flows
 #   supply_chain/ — Shipping rates, chokepoints, critical minerals
 #   reference/    — Shared config data (symbols, tickers, countries)
+
+from collector_events.globalintel.base import BaseExtractor
+from collector_events.globalintel.cache import IntelCache
+from collector_events.globalintel.global_tag_manager import GlobalTagManager
+from collector_events.globalintel.intel_store import IntelStore
+from collector_events.globalintel.orchestrator import (
+    IntelOrchestrator,
+    OrchestratorConfig,
+    ScheduleEntry,
+)
+
+__all__ = [
+    "BaseExtractor",
+    "GlobalTagManager",
+    "IntelCache",
+    "IntelOrchestrator",
+    "IntelStore",
+    "OrchestratorConfig",
+    "ScheduleEntry",
+]
