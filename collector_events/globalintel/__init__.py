@@ -20,7 +20,7 @@
 from collector_events.globalintel.base import BaseExtractor
 from collector_events.globalintel.cache import IntelCache
 from collector_events.globalintel.global_tag_manager import GlobalTagManager
-from collector_events.globalintel.intel_store import IntelStore
+from collector_events.globalintel.intel_store import IntelMongoStore
 from collector_events.globalintel.orchestrator import (
     IntelOrchestrator,
     OrchestratorConfig,
@@ -31,8 +31,8 @@ __all__ = [
     "BaseExtractor",
     "GlobalTagManager",
     "IntelCache",
+    "IntelMongoStore",
     "IntelOrchestrator",
-    "IntelStore",
     "OrchestratorConfig",
     "ScheduleEntry",
 ]
