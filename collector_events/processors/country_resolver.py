@@ -41,33 +41,51 @@ _SHORT_KEYWORD_THRESHOLD = 4
 
 
 class CountryResolver:
-    """Resolves country codes from text using a keyword dictionary."""
+    """Resolves country codes from text using a keyword dictionary.
+
+    Singleton by default.  Pass ``dictionary=`` to bypass the singleton
+    and use a custom dict (useful for testing).
+    """
 
     _instance: CountryResolver | None = None
     _loaded: bool = False
 
-    def __new__(cls) -> CountryResolver:
+    def __new__(cls, dictionary: dict[str, Any] | None = None) -> CountryResolver:
+        if dictionary is not None:
+            # Bypass singleton — return a fresh instance for testing
+            return super().__new__(cls)
         if cls._instance is None:
             cls._instance = super().__new__(cls)
         return cls._instance
 
-    def __init__(self) -> None:
+    def __init__(self, dictionary: dict[str, Any] | None = None) -> None:
+        if dictionary is not None:
+            # Fresh instance with injected data — always load
+            self._lookup: list[tuple[str, str, re.Pattern | None]] = []
+            self._state_affiliation_map: dict[str, list[str]] = {}
+            self._currency_map: dict[str, str | None] = {}
+            self._build(dictionary)
+            return
         if self._loaded:
             return
         self._loaded = True
-        self._lookup: list[tuple[str, str, re.Pattern | None]] = []
-        self._state_affiliation_map: dict[str, list[str]] = {}
+        self._lookup = []
+        self._state_affiliation_map = {}
+        self._currency_map = {}
         self._load()
 
     def _load(self) -> None:
-        """Load the unified countries dictionary and build lookup tables."""
+        """Load the unified countries dictionary from disk and build lookup tables."""
         try:
             with open(_DICT_PATH, encoding="utf-8") as f:
                 data: dict[str, Any] = json.load(f)
         except Exception as exc:
             logger.error("CountryResolver: failed to load %s: %s", _DICT_PATH, exc)
             return
+        self._build(data)
 
+    def _build(self, data: dict[str, Any]) -> None:
+        """Build lookup tables from a countries dictionary."""
         entries: list[tuple[str, str, re.Pattern | None]] = []
         for iso_code, info in data.items():
             iso_code = iso_code.upper()
@@ -92,11 +110,14 @@ class CountryResolver:
         self._lookup = entries
 
         # Build state_affiliation → country code map (for RSS feeds)
-        # e.g. "Russia" → ["RU"], "China" → ["CN"], "Qatar" → ["QA"]
         for iso_code, info in data.items():
             name = info.get("name", "")
             if name:
                 self._state_affiliation_map[name.lower()] = [iso_code.upper()]
+
+        # Cache currency codes so get_currency() never re-reads the file
+        for iso_code, info in data.items():
+            self._currency_map[iso_code.upper()] = info.get("currency")
 
         logger.info(
             "CountryResolver: loaded %d countries, %d keyword entries",
@@ -150,12 +171,6 @@ class CountryResolver:
         """Get the ISO 4217 currency code for a country.
 
         Convenience method for downstream services that need country → currency.
-        Reloads from the dictionary file.
+        Uses the cached dictionary (loaded once at init).
         """
-        try:
-            with open(_DICT_PATH, encoding="utf-8") as f:
-                data = json.load(f)
-            entry = data.get(iso_code.upper(), {})
-            return entry.get("currency")
-        except Exception:
-            return None
+        return self._currency_map.get(iso_code.upper())

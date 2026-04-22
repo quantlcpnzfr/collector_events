@@ -1,5 +1,4 @@
-from .entity_extractor import EntityExtractor
-from .sentiment_analyzer import SentimentAnalyzer   
-from .impact_classifier import ImpactClassifier
-
-__all__ = ["EntityExtractor", "SentimentAnalyzer", "ImpactClassifier"]
+# NLP pipeline — placeholder module
+# Real NLP processing is handled by processors/event_processor.py (keyword-based)
+# and globalintel/global_tag_manager.py (LLM-enriched).
+# Future: add proper NLP classes here when needed.

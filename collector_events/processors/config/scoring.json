@@ -1,0 +1,32 @@
+{
+  "severity_base": {
+    "HIGH":   0.70,
+    "MEDIUM": 0.45,
+    "LOW":    0.20,
+    "":       0.30
+  },
+  "domain_weight": {
+    "conflict":     1.30,
+    "sanctions":    1.25,
+    "cyber":        1.15,
+    "economic":     1.10,
+    "supply_chain": 1.10,
+    "environment":  1.05,
+    "trade":        1.10,
+    "social":       0.90,
+    "feeds":        0.80,
+    "market":       1.00,
+    "reference":    0.70,
+    "advisories":   1.10
+  },
+  "critical_bonus": 0.15,
+  "max_keyword_boost": 0.40,
+  "keyword_diminishing_max_hits": 3,
+  "keyword_diminishing_factor": 0.4,
+  "directional_pct_regex": "(?:drop|fall|rise|gain|surge|plunge|jump|climb|crash|rally|slide|tumble|soar|spike|dip|down|up)\\w{0,4}\\s+(\\d+(?:\\.\\d+)?)\\s*%",
+  "numeric_thresholds": [
+    {"min_pct": 5.0, "bonus": 0.15},
+    {"min_pct": 3.0, "bonus": 0.10},
+    {"min_pct": 1.0, "bonus": 0.05}
+  ]
+}

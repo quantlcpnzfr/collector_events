@@ -1,0 +1,243 @@
+{
+  "exclude_keywords": [
+    "nba", "nfl", "mlb", "nhl", "fifa", "world cup", "super bowl", "championship",
+    "playoffs", "oscar", "grammy", "emmy", "box office", "movie", "album", "song",
+    "streamer", "influencer", "celebrity", "kardashian",
+    "bachelor", "reality tv", "mvp", "touchdown", "home run", "goal scorer",
+    "academy award", "bafta", "golden globe", "cannes", "sundance",
+    "documentary", "feature film", "tv series", "season finale"
+  ],
+  "keyword_rules": [
+    {
+      "keywords": [
+        "interest rate", "rate hike", "rate cut", "fed rate", "ecb rate",
+        "boe rate", "boj rate", "fomc", "monetary policy", "basis points",
+        "hawkish", "dovish", "quantitative easing", "qe", "tapering",
+        "rate decision", "central bank", "balance sheet", "forward guidance",
+        "yield curve control", "negative rates", "rate hold", "pause hike",
+        "inflation target", "policy rate", "overnight rate", "repo rate",
+        "reserve requirement", "open market operations"
+      ],
+      "category": "RATE_DECISION",
+      "score_boost": 0.25
+    },
+    {
+      "keywords": [
+        "gdp", "inflation", "cpi", "ppi", "nfp", "non-farm payroll",
+        "unemployment", "trade balance", "current account", "retail sales",
+        "manufacturing pmi", "services pmi", "ism", "housing starts",
+        "consumer confidence", "oecd", "imf forecast",
+        "jobless claims", "payrolls", "wage growth", "labor market",
+        "industrial production", "factory orders", "durable goods",
+        "business confidence", "economic outlook", "recession",
+        "stagflation", "gdp contraction", "gdp growth", "economic slowdown",
+        "debt ceiling", "fiscal deficit", "budget deficit", "austerity",
+        "stimulus package", "fiscal policy", "government spending",
+        "trade deficit", "balance of payments", "foreign reserves",
+        "capital flows", "credit rating", "sovereign debt", "bond yields",
+        "yield spread", "inverted yield curve", "treasury yields"
+      ],
+      "category": "ECONOMIC_DATA",
+      "score_boost": 0.15
+    },
+    {
+      "keywords": [
+        "war", "armed conflict", "military", "airstrikes", "invasion",
+        "missile", "troops", "ceasefire", "offensive", "nato", "drone attack",
+        "artillery", "escalation", "troops movement",
+        "bombing", "casualties", "drone strike", "airstrike", "assassination",
+        "coup", "martial law", "troops deployed", "peace treaty", "hostage",
+        "evacuation order", "insurgency", "rebel", "militia", "shelling",
+        "ground offensive", "air campaign", "naval blockade", "siege",
+        "military operation", "special operation", "combat", "frontline",
+        "occupied territory", "annexation", "separatist", "paramilitary",
+        "war crimes", "civilian casualties", "refugee crisis", "displaced",
+        "active conflict", "ceasefire violation", "peace negotiations",
+        "demilitarized zone", "no-fly zone", "arms shipment", "weapons supply",
+        "military aid", "defense pact", "mutual defense", "article 5",
+        "chemical weapons", "biological weapons", "cluster munitions",
+        "ballistic missile", "hypersonic", "intercontinental", "warhead",
+        "nuclear submarine", "aircraft carrier", "military mobilization"
+      ],
+      "category": "CONFLICT",
+      "score_boost": 0.30
+    },
+    {
+      "keywords": [
+        "geopolitical", "diplomatic crisis", "summit", "trade war",
+        "tariff", "retaliation", "expulsion", "ambassador", "g7", "g20",
+        "un resolution", "veto", "bilateral", "multilateral",
+        "coup d'état", "diplomatic incident", "expel diplomat",
+        "economic pressure", "foreign policy", "regime change",
+        "political crisis", "state department", "foreign minister",
+        "foreign affairs", "international relations", "geopolitical risk",
+        "power struggle", "political instability", "failed state",
+        "governance crisis", "authoritarian", "democratic backsliding",
+        "national security", "strategic competition", "great power",
+        "sphere of influence", "proxy war", "regime stability",
+        "state collapse", "political transition", "junta",
+        "international tribunal", "war crimes tribunal", "icj", "icc"
+      ],
+      "category": "GEOPOLITICAL",
+      "score_boost": 0.15
+    },
+    {
+      "keywords": [
+        "sanction", "sanctions", "embargo", "asset freeze", "blacklist",
+        "ofac", "blocked", "export restriction", "import ban",
+        "trade restriction", "economic sanction", "financial sanction",
+        "targeted sanction", "sectoral sanction", "secondary sanction",
+        "travel ban", "visa restriction", "frozen assets", "seized assets",
+        "swift ban", "correspondent banking", "de-risking",
+        "export control", "technology ban", "chip ban", "semiconductor ban",
+        "entity list", "denied party", "debarment", "delisting",
+        "oil embargo", "arms embargo", "financial blockade"
+      ],
+      "category": "SANCTION",
+      "score_boost": 0.25
+    },
+    {
+      "keywords": [
+        "cyberattack", "ransomware", "ddos", "data breach", "malware",
+        "exploit", "vulnerability", "critical infrastructure", "hacked",
+        "zero-day", "apt group",
+        "cyber attack", "internet disruption", "gps jamming",
+        "phishing", "spyware", "backdoor", "rootkit", "botnet",
+        "network intrusion", "state-sponsored hacking", "cyber espionage",
+        "supply chain attack", "software vulnerability", "patch",
+        "power grid attack", "water system attack", "hospital attack",
+        "election interference", "disinformation campaign",
+        "information warfare", "hybrid warfare", "deepfake",
+        "social engineering", "credential theft", "identity theft"
+      ],
+      "category": "CYBER",
+      "score_boost": 0.20
+    },
+    {
+      "keywords": [
+        "supply chain", "port congestion", "shipping lanes", "suez",
+        "panama canal", "strait of hormuz", "bdi", "freight rates",
+        "container shortage", "blank sailing", "logistics",
+        "chokepoint", "bab el-mandeb", "strait of malacca",
+        "pipeline disruption", "energy supply", "gas supply",
+        "oil supply disruption", "refinery shutdown", "terminal closure",
+        "port strike", "dock workers", "longshoremen",
+        "shipping disruption", "cargo delay", "supply shortage",
+        "chip shortage", "semiconductor supply", "critical minerals",
+        "rare earth", "lithium supply", "cobalt supply",
+        "food supply", "grain export", "wheat export", "corn export",
+        "fertilizer shortage", "agriculture disruption",
+        "energy crisis", "gas crisis", "power outage", "blackout",
+        "infrastructure damage", "pipeline explosion", "cable cut"
+      ],
+      "category": "SUPPLY_CHAIN",
+      "score_boost": 0.15
+    },
+    {
+      "keywords": [
+        "protest", "riot", "strike", "unrest", "demonstration",
+        "revolution", "civil war", "insurrection",
+        "general strike", "mass protest", "political violence",
+        "social unrest", "civil unrest", "popular uprising",
+        "anti-government", "crackdown", "police brutality",
+        "human rights", "political prisoner", "opposition leader",
+        "dissident", "censorship", "press freedom", "internet shutdown",
+        "surveillance", "authoritarian crackdown", "jailed opposition",
+        "political repression", "forced disappearance"
+      ],
+      "category": "SOCIAL",
+      "score_boost": 0.10
+    },
+    {
+      "keywords": [
+        "earthquake", "wildfire", "storm", "flood", "tsunami",
+        "hurricane", "typhoon", "volcano", "drought", "tropical system",
+        "climate anomaly", "extreme weather",
+        "volcanic eruption", "seismic activity", "aftershock",
+        "landslide", "mudslide", "avalanche", "blizzard", "ice storm",
+        "heatwave", "cold snap", "flash flood", "river flooding",
+        "storm surge", "cyclone", "tornado", "superstorm",
+        "forest fire", "bushfire", "drought emergency", "famine",
+        "crop failure", "water shortage", "el niño", "la niña",
+        "climate disaster", "natural disaster", "state of emergency",
+        "disaster declaration", "evacuation", "displaced population",
+        "humanitarian crisis", "aid effort", "rescue operation"
+      ],
+      "category": "NATURAL_EVENT",
+      "score_boost": 0.15
+    },
+    {
+      "keywords": [
+        "piracy", "hijack", "vessel seized", "maritime threat", "naval blockade",
+        "ship attacked", "tanker seized", "cargo ship hijacked",
+        "pirate attack", "armed boarding", "crew held hostage",
+        "vessel detained", "maritime incident", "sea lanes threat",
+        "red sea attack", "houthi attack", "gulf of aden",
+        "somali pirates", "strait attack", "naval incident"
+      ],
+      "category": "PIRACY",
+      "score_boost": 0.20
+    },
+    {
+      "keywords": [
+        "election", "referendum", "ballot", "polling", "president-elect",
+        "electoral fraud", "recount", "snap election", "early election",
+        "election results", "vote count", "exit poll", "election day",
+        "voter turnout", "contested election", "disputed election",
+        "election interference", "electoral college", "runoff",
+        "primary election", "midterm election", "general election",
+        "parliamentary election", "presidential election",
+        "political transition", "power transfer", "inauguration",
+        "election monitoring", "international observers"
+      ],
+      "category": "ELECTION",
+      "score_boost": 0.10
+    },
+    {
+      "keywords": [
+        "eur/usd", "eurusd", "gbp/usd", "gbpusd", "usd/jpy", "usdjpy",
+        "usd/chf", "usdchf", "aud/usd", "audusd", "nzd/usd", "nzdusd",
+        "usd/cad", "usdcad", "eur/gbp", "eurgbp", "eur/jpy", "eurjpy",
+        "gbp/jpy", "gbpjpy", "dollar index", "dxy", "usdx",
+        "currency pair", "exchange rate", "spot rate",
+        "dollar strength", "dollar weakness", "dollar rally", "dollar selloff",
+        "forex market", "fx market", "currency move", "fx volatility",
+        "currency crisis", "devaluation", "peg broken", "managed float"
+      ],
+      "category": "ECONOMIC_DATA",
+      "score_boost": 0.12
+    },
+    {
+      "keywords": [
+        "bitcoin", "btc", "ethereum", "eth", "crypto", "cryptocurrency",
+        "digital asset", "stablecoin", "defi", "altcoin", "token",
+        "etf", "spot etf", "btc etf", "crypto etf", "grayscale", "ibit",
+        "bitb", "fbtc", "arkb", "btco", "brrr", "hodl",
+        "on-chain", "hash rate", "mining", "halving", "blockchain",
+        "crypto market", "crypto sell-off", "crypto rally",
+        "exchange outflow", "exchange inflow", "whale", "liquidation",
+        "funding rate", "open interest", "perpetual", "futures basis",
+        "tether", "usdc", "usdt", "stablecoin depeg", "binance", "coinbase",
+        "kraken", "okx", "bybit", "deribit", "cme bitcoin"
+      ],
+      "category": "ECONOMIC_DATA",
+      "score_boost": 0.08
+    }
+  ],
+  "critical_keywords": [
+    "nuclear", "collapse", "default", "emergency", "crash", "crisis",
+    "catastrophe", "imminent", "immediate threat", "financial meltdown",
+    "bank run", "sovereign default", "hyperinflation", "currency crisis",
+    "market crash", "circuit breaker", "halt trading",
+    "assassination", "coup", "martial law", "troops deployed",
+    "evacuation order", "terror attack", "terrorist", "hostage",
+    "drone strike", "airstrike", "active conflict", "nuclear threat",
+    "chemical attack", "biological attack", "nuclear launch",
+    "nuclear detonation", "dirty bomb", "radiological",
+    "systemic risk", "contagion", "bailout", "nationalization",
+    "capital controls", "currency peg broken", "devaluation",
+    "debt default", "payment default", "credit freeze",
+    "grid collapse", "infrastructure collapse", "dam failure",
+    "nuclear meltdown", "reactor leak", "radiation leak"
+  ]
+}

@@ -96,9 +96,12 @@ class IntelMongoStore(Loggable):
     COLLECTION_ITEMS = "intel_items"
     COLLECTION_RUNS  = "intel_runs"
 
-    def __init__(self) -> None:
+    def __init__(
+        self,
+        processor: EventProcessor | None = None,
+    ) -> None:
         self._mongo = MongoManager()
-        self._processor = EventProcessor()
+        self._processor = processor or EventProcessor()
 
     # ── Index setup ───────────────────────────────────────────────────
 

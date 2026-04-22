@@ -1,16 +1,19 @@
-# services/collector_events/app/processors/currency_strength_calculator.py
+# services/collector_events/collector_events/processors/currency_strength_calculator.py
 
 """
-NOT FULLY IMPLEMENTED YET, NOT USED YET
-"""
+TODO: CurrencyStrengthCalculator — NOT IMPLEMENTED, NOT USED YET
+=====================================================================
+Status: Draft/stub. Kept for future development.
+Depends on: globalintel pipeline feeding enriched events into MongoDB.
 
-# TODO: Este é um esboço inicial para a classe CurrencyStrengthCalculator, 
-# que será responsável por calcular o strength score de cada moeda com base nos eventos coletados. 
-# A implementação real dependerá dos dados disponíveis e dos requisitos específicos do projeto. 
-# O código inclui placeholders para as funções de cálculo de cada componente do score, 
-# bem como para a lógica de momentum e trend. 
-# A função calculate_all_currencies pode ser chamada periodicamente (ex: a cada hora) 
-# para atualizar os scores de todas as moedas.
+When ready to implement:
+1. Wire to globalintel IntelMongoStore output (enriched items with country, severity, danger_score)
+2. Replace direct MongoDB reads with EventProcessor-enriched data
+3. Resolve PostgreSQL vs MongoDB persistence (currently mixed)
+4. Add proper locking for concurrent calculate_all_currencies() calls
+5. Connect to FundamentalDivergence strategy via additional_data["currency_strength"]
+=====================================================================
+"""
 
 from datetime import datetime, timedelta, timezone
 from typing import Dict, List
