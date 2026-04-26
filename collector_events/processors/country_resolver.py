@@ -30,6 +30,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+#from numpy import info
+
 from forex_shared.logging.get_logger import get_logger
 
 logger = get_logger(__name__)
@@ -64,6 +66,10 @@ class CountryResolver:
             self._lookup: list[tuple[str, str, re.Pattern | None]] = []
             self._state_affiliation_map: dict[str, list[str]] = {}
             self._currency_map: dict[str, str | None] = {}
+            
+            self._name_map: dict[str, str] = {}
+            
+            
             self._build(dictionary)
             return
         if self._loaded:
@@ -72,6 +78,7 @@ class CountryResolver:
         self._lookup = []
         self._state_affiliation_map = {}
         self._currency_map = {}
+        self._name_map: dict[str, str] = {}
         self._load()
 
     def _load(self) -> None:
@@ -86,9 +93,16 @@ class CountryResolver:
 
     def _build(self, data: dict[str, Any]) -> None:
         """Build lookup tables from a countries dictionary."""
+
         entries: list[tuple[str, str, re.Pattern | None]] = []
         for iso_code, info in data.items():
             iso_code = iso_code.upper()
+            
+            # My girl deverloper asked for this to be added to the country ref output, 
+            # so here we are
+            for iso_code, info in data.items():
+                self._name_map[iso_code.upper()] = info.get("name", "")
+                
             name = info.get("name", "")
             keywords = info.get("keywords", [])
 
@@ -174,3 +188,16 @@ class CountryResolver:
         Uses the cached dictionary (loaded once at init).
         """
         return self._currency_map.get(iso_code.upper())
+    
+    # Developer girl asked for this to be added to the country ref output, so here we are
+    def get_country_ref(self, iso_code: str) -> dict[str, str | None]:
+        code = iso_code.upper()
+        return {
+            "code": code,
+            "name": self._name_map.get(code),
+            "currency": self._currency_map.get(code),
+        }
+
+    # Developer girl asked for this to be added to the country ref output, so here we are
+    def resolve_refs(self, text: str) -> list[dict[str, str | None]]:
+        return [self.get_country_ref(code) for code in self.resolve(text)]

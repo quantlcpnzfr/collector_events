@@ -31,7 +31,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Sequence
 
-from forex_shared.domain.intel import IntelItem
+from forex_shared.domain.intel import CountryRef, IntelItem
 from forex_shared.logging.loggable import Loggable
 
 from collector_events.processors.country_resolver import CountryResolver
@@ -159,9 +159,15 @@ class EventProcessor(Loggable):
                 matched_keywords=[],
             )
 
-        # Country enrichment: resolve from text if extractor didn't set it
-        if not item.country:
-            item.country = self._country_resolver.resolve(text)
+        # Country enrichment: 
+        # New feature by my girl developer, she asked for this to be added, so here we are
+        if not item.mentioned_countries:
+            item.mentioned_countries = self._country_resolver.resolve_refs(text)
+            item.country = item.mentioned_country_codes
+            
+        # TODO: DELETE THIS: legacy single country code field (deprecated in favor of mentioned_countries list) 
+        #if not item.country:
+            #item.country = self._country_resolver.resolve(text)
 
         category, keyword_boost, matched = self._classify(text)
         base_score = _SEVERITY_BASE.get(item.severity, 0.30)
@@ -213,9 +219,21 @@ class EventProcessor(Loggable):
         parts = [item.title, item.body]
         if item.tags:
             parts.append(" ".join(item.tags))
+        
+        # Country enrichment: 
+        # New feature by my girl developer, she asked for this to be added, so here we are    
+        for ref in item.mentioned_countries + item.actor_countries + item.target_countries:
+            if isinstance(ref, CountryRef):
+                parts.append(ref.name)
+                parts.append(ref.code)
+                if ref.currency:
+                    parts.append(ref.currency)
+                    
+        # TODO: DELETE THIS: legacy single country code field (deprecated in favor of mentioned_countries list) 
         for v in item.extra.values():
             if isinstance(v, str):
                 parts.append(v)
+                
         return " ".join(parts).lower()
 
     @staticmethod
