@@ -188,35 +188,66 @@ class IntelMongoStore(Loggable):
             limit=1,
         )
 
-        if not existing:
-            doc = self._build_doc(item, processed, fingerprint, new_hash)
-            await self._mongo.async_replace_one(
-                self.COLLECTION_ITEMS, {"fingerprint": fingerprint}, doc, upsert=True
+        now = datetime.now(timezone.utc).isoformat()
+
+        # Existing + same content => nothing to update
+        if existing and existing[0].get("hash") == new_hash:
+            return "skipped"
+
+        # Existing + changed content => update mutable fields only
+        if existing:
+            await self._mongo.async_update_one(
+                self.COLLECTION_ITEMS,
+                {"fingerprint": fingerprint},
+                {
+                    "$set": self._build_update_fields(item, processed, new_hash, now),
+                    "$inc": {"update_count": 1},
+                },
+            )
+            return "updated"
+
+        # New document => atomic upsert.
+        # Do NOT send _id. Let Mongo/Cosmos generate native _id.
+        insert_doc = self._build_insert_doc(item, processed, fingerprint, new_hash, now)
+
+        try:
+            await self._mongo.async_update_one(
+                self.COLLECTION_ITEMS,
+                {"fingerprint": fingerprint},
+                {
+                    "$setOnInsert": insert_doc,
+                },
+                upsert=True,
             )
             return "new"
 
-        if existing[0].get("hash") == new_hash:
-            return "skipped"
+        except Exception as exc:
+            # Race condition guard:
+            # if another async task inserted the same fingerprint between find and upsert,
+            # retry as skip/update instead of blowing up.
+            msg = str(exc).lower()
+            if "duplicate key" in msg or "11000" in msg:
+                existing_after_race = await self._mongo.async_find_many(
+                    self.COLLECTION_ITEMS,
+                    {"fingerprint": fingerprint},
+                    {"_id": 1, "hash": 1},
+                    limit=1,
+                )
 
-        # Content changed — update mutable fields only
-        now = datetime.now(timezone.utc).isoformat()
-        await self._mongo.async_update_one(
-            self.COLLECTION_ITEMS,
-            {"fingerprint": fingerprint},
-            {"$set": {
-                "title": item.title,
-                "body": item.body,
-                "hash": new_hash,
-                "url": item.url,
-                "fetched_at": item.fetched_at,
-                "extra": item.extra,
-                "impact_category": processed.impact_category,
-                "danger_score": processed.danger_score,
-                "matched_keywords": processed.matched_keywords,
-                "updated_at": now,
-            }, "$inc": {"update_count": 1}},
-        )
-        return "updated"
+                if existing_after_race and existing_after_race[0].get("hash") == new_hash:
+                    return "skipped"
+
+                await self._mongo.async_update_one(
+                    self.COLLECTION_ITEMS,
+                    {"fingerprint": fingerprint},
+                    {
+                        "$set": self._build_update_fields(item, processed, new_hash, now),
+                        "$inc": {"update_count": 1},
+                    },
+                )
+                return "updated"
+
+            raise
 
     @staticmethod
     def _build_doc(
