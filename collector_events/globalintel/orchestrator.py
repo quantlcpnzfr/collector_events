@@ -15,7 +15,7 @@ Usage:
 from __future__ import annotations
 
 import asyncio
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from typing import Any, Awaitable, Callable
 
 import aiohttp
@@ -115,15 +115,21 @@ class IntelOrchestrator(Loggable):
             self.log.info("IntelOrchestrator Redis disconnected")
 
     async def _get_redis_provider(self) -> RedisProvider:
-        if self._redis is None:
-            self._redis = RedisProvider.from_env()
-            await self._redis.connect()
-        return self._redis
+        """Return a connected RedisProvider singleton."""
+        try:
+            self._redis = await RedisProvider.shared_from_env()
+            return self._redis
+        except Exception:
+            self.log.exception("Failed to connect to Redis")
+            raise
+
 
     async def _get_cache(self) -> IntelCache:
-        if self._cache is None:
-            redis_provider = await self._get_redis_provider()
+        redis_provider = await self._get_redis_provider()
+
+        if self._cache is None or self._cache._r is not redis_provider:
             self._cache = IntelCache(redis_provider)
+
         return self._cache
 
     # ── One-shot methods ─────────────────────────────────────────────
@@ -197,17 +203,21 @@ class IntelOrchestrator(Loggable):
 
     async def start_scheduler(self) -> None:
         """Start the APScheduler background loop — one job per extractor."""
-        for entry in self._schedule:
+        now = datetime.now(timezone.utc)
+
+        for index, entry in enumerate(self._schedule):
             self._scheduler.add_job(
                 self._run_entry,
                 trigger="interval",
                 seconds=entry.interval_seconds,
                 args=[entry],
                 id=f"{entry.extractor.DOMAIN}_{entry.extractor.SOURCE}",
-                next_run_time=datetime.now(timezone.utc),
+                next_run_time=now + timedelta(seconds=index * 5),
                 misfire_grace_time=60,
                 coalesce=True,
+                max_instances=1,
             )
+
         self._scheduler.start()
         self.log.info(
             "IntelOrchestrator scheduler started with %d extractors",

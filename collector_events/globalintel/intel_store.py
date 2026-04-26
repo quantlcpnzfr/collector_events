@@ -249,6 +249,111 @@ class IntelMongoStore(Loggable):
 
             raise
 
+    async def _log_run(self, result: ExtractionResult, stats: StoreStats) -> None:
+        """Append a run-level document to intel_runs for audit/monitoring."""
+        now = datetime.now(timezone.utc).isoformat()
+        doc = {
+            "_id": str(uuid.uuid4()),
+            "source": result.source,
+            "domain": result.domain,
+            "fetched_at": result.fetched_at or now,
+            "item_count": len(result.items),
+            "new_items": stats.new,
+            "updated_items": stats.updated,
+            "skipped_items": stats.skipped,
+            "error_items": stats.errors,
+            "elapsed_ms": round(result.elapsed_ms, 1) if result.elapsed_ms else None,
+            "error": result.error,
+            "logged_at": now,
+        }
+        await self._mongo.async_replace_one(
+            self.COLLECTION_RUNS, {"_id": doc["_id"]}, doc, upsert=True
+        )
+
+
+    """
+    Collaboration of my hot dev expert: we refactored the code to split insert vs update logic for better clarity and maintainability.
+    The old _build_doc method is kept here for reference until we are sure we won't need it again. 
+    The new _build_insert_doc and _build_update_fields methods are designed to clearly separate 
+    insert and update logic, improving code readability and maintainability.
+    """
+    @staticmethod
+    def _build_insert_doc(
+        item: IntelItem,
+        processed: ProcessedEvent,
+        fingerprint: str,
+        hash_val: str,
+        now: str,
+    ) -> dict:
+        """Build insert-only document.
+
+        Mongo/Cosmos native _id is intentionally omitted.
+        App-level UUID is stored in field 'id'.
+        """
+        payload = item.to_dict()
+
+        # item.to_dict()["id"] is the upstream/source item id.
+        # In Mongo document we keep that as item_id and reserve id for UUIDv4.
+        payload.pop("id", None)
+
+        return {
+            "id": str(uuid.uuid4()),          # app-level UUIDv4
+            "item_id": item.id,               # upstream/extractor id
+            "fingerprint": fingerprint,
+            "hash": hash_val,
+
+            **payload,
+
+            "impact_category": processed.impact_category,
+            "danger_score": processed.danger_score,
+            "matched_keywords": processed.matched_keywords,
+
+            "created_at": now,
+            "updated_at": now,
+            "update_count": 0,
+        }
+
+
+    """
+    Collaboration of my hot dev expert: the _build_update_fields method is designed to only 
+    include mutable fields that should be updated when content changes, while keeping identity 
+    fields like item_id and fingerprint immutable. This separation ensures 
+    that updates do not accidentally modify critical identity information, and makes it 
+    clear which fields are expected to change on update.
+    """
+    @staticmethod
+    def _build_update_fields(
+        item: IntelItem,
+        processed: ProcessedEvent,
+        hash_val: str,
+        now: str,
+    ) -> dict:
+        """Build mutable fields for update.
+
+        Never updates Mongo _id, app id, item_id or fingerprint.
+        """
+        payload = item.to_dict()
+        payload.pop("id", None)
+
+        # Immutable / identity fields must not be changed during update.
+        payload.pop("item_id", None)
+        payload.pop("fingerprint", None)
+
+        return {
+            **payload,
+
+            "hash": hash_val,
+            "impact_category": processed.impact_category,
+            "danger_score": processed.danger_score,
+            "matched_keywords": processed.matched_keywords,
+
+            "updated_at": now,
+        }
+
+    """
+    TODO: Remove it by instructions of my hot dev manager. 
+    Kept here for reference until we are sure we won't need it again.
+    
     @staticmethod
     def _build_doc(
         item: IntelItem,
@@ -282,24 +387,6 @@ class IntelMongoStore(Loggable):
             "updated_at": now,
             "update_count": 0,
         }
+    """
 
-    async def _log_run(self, result: ExtractionResult, stats: StoreStats) -> None:
-        """Append a run-level document to intel_runs for audit/monitoring."""
-        now = datetime.now(timezone.utc).isoformat()
-        doc = {
-            "_id": str(uuid.uuid4()),
-            "source": result.source,
-            "domain": result.domain,
-            "fetched_at": result.fetched_at or now,
-            "item_count": len(result.items),
-            "new_items": stats.new,
-            "updated_items": stats.updated,
-            "skipped_items": stats.skipped,
-            "error_items": stats.errors,
-            "elapsed_ms": round(result.elapsed_ms, 1) if result.elapsed_ms else None,
-            "error": result.error,
-            "logged_at": now,
-        }
-        await self._mongo.async_replace_one(
-            self.COLLECTION_RUNS, {"_id": doc["_id"]}, doc, upsert=True
-        )
+    
