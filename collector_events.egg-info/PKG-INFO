@@ -9,3 +9,7 @@ Requires-Dist: debugpy
 Requires-Dist: pandas
 Requires-Dist: pycountry
 Requires-Dist: redis<8,>=7.3
+Requires-Dist: fastapi<1,>=0.115
+Requires-Dist: uvicorn[standard]<1,>=0.30
+Requires-Dist: telethon<2,>=1.38
+Requires-Dist: ray[default]

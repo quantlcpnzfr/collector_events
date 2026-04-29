@@ -5,3 +5,7 @@ debugpy
 pandas
 pycountry
 redis<8,>=7.3
+fastapi<1,>=0.115
+uvicorn[standard]<1,>=0.30
+telethon<2,>=1.38
+ray[default]

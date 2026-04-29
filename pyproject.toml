@@ -14,6 +14,10 @@ dependencies = [
     "pandas",
     "pycountry", 
     "redis>=7.3,<8",
+    "fastapi>=0.115,<1",
+    "uvicorn[standard]>=0.30,<1",
+    "telethon>=1.38,<2",
+    "ray[default]"
 ]
 
 [tool.setuptools]
