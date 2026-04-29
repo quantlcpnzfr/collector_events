@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-04-29T06:33:17.117Z",
+  "worldmonitorRoot": "worldmonitor",
+  "outputDirectory": "services/collector_events/collector_events/sources",
+  "basedOnPriorReport": "services/collector_events/collector_events/worldmonitor_sources.md",
+  "sourceTruthFiles": {
+    "telegramChannels": "worldmonitor/data/telegram-channels.json",
+    "clientFeeds": "worldmonitor/src/config/feeds.ts",
+    "serverFeeds": "worldmonitor/server/worldmonitor/news/v1/_feeds.ts",
+    "sourceTiers": "worldmonitor/server/_shared/source-tiers.ts",
+    "rssAllowedDomains": "worldmonitor/shared/rss-allowed-domains.json",
+    "advisoryFeeds": "worldmonitor/scripts/seed-security-advisories.mjs",
+    "seedScriptsDirectory": "worldmonitor/scripts",
+    "aiPrompts": [
+      "worldmonitor/server/worldmonitor/news/v1/_shared.ts",
+      "worldmonitor/server/worldmonitor/news/v1/summarize-article.ts",
+      "worldmonitor/server/worldmonitor/intelligence/v1/deduction-prompt.ts",
+      "worldmonitor/server/worldmonitor/intelligence/v1/chat-analyst-prompt.ts",
+      "worldmonitor/src/services/analysis-framework-store.ts",
+      "worldmonitor/src/services/summarization.ts",
+      "worldmonitor/src/services/daily-market-brief.ts",
+      "worldmonitor/scripts/seed-insights.mjs",
+      "worldmonitor/scripts/seed-forecasts.mjs"
+    ],
+    "telegramRelay": [
+      "worldmonitor/scripts/ais-relay.cjs",
+      "worldmonitor/api/telegram-feed.js",
+      "worldmonitor/server/worldmonitor/intelligence/v1/list-telegram-feed.ts",
+      "worldmonitor/scripts/telegram/session-auth.mjs",
+      "worldmonitor/docs/data-sources.mdx"
+    ],
+    "socialSources": [
+      "worldmonitor/scripts/ais-relay.cjs",
+      "worldmonitor/server/_shared/cache-keys.ts",
+      "worldmonitor/server/worldmonitor/intelligence/v1/get-social-velocity.ts",
+      "worldmonitor/src/services/social-velocity.ts",
+      "worldmonitor/api/mcp.ts"
+    ]
+  },
+  "counts": {
+    "telegramChannelOccurrences": 45,
+    "clientFeedOccurrences": 523,
+    "serverFeedOccurrences": 267,
+    "advisoryFeedCount": 23,
+    "seedScriptCount": 93,
+    "seedScriptLiteralUrlOccurrences": 254,
+    "rssAllowedDomains": 295,
+    "sourceTypes": 146,
+    "sourceTiers": 255,
+    "riskProfiles": 27,
+    "aiPromptConfigs": 10,
+    "builtInAnalysisFrameworks": 5,
+    "consolidatedSourceRecords": 941,
+    "socialSourceCount": 2,
+    "twitterXIngestionAccounts": 0
+  },
+  "outputFiles": [
+    "services/collector_events/collector_events/sources/telegram_channels.json",
+    "services/collector_events/collector_events/sources/news_feeds_client.json",
+    "services/collector_events/collector_events/sources/news_feeds_server.json",
+    "services/collector_events/collector_events/sources/sites.json",
+    "services/collector_events/collector_events/sources/source_metadata.json",
+    "services/collector_events/collector_events/sources/rss_allowed_domains.json",
+    "services/collector_events/collector_events/sources/advisory_sources.json",
+    "services/collector_events/collector_events/sources/seed_endpoint_sources.json",
+    "services/collector_events/collector_events/sources/ai_prompts.json",
+    "services/collector_events/collector_events/sources/social_sources.json",
+    "services/collector_events/collector_events/sources/all_sources.json",
+    "services/collector_events/collector_events/sources/telegram_relay_python_guide.json"
+  ]
+}

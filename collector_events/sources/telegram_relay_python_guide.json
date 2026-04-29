@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-04-29T06:30:53.142Z",
+  "sourceTruthFiles": [
+    "worldmonitor/scripts/ais-relay.cjs",
+    "worldmonitor/api/telegram-feed.js",
+    "worldmonitor/server/worldmonitor/intelligence/v1/list-telegram-feed.ts",
+    "worldmonitor/scripts/telegram/session-auth.mjs",
+    "worldmonitor/docs/data-sources.mdx"
+  ],
+  "worldmonitorTelegramRelay": {
+    "method": "telegram_mtproto_relay",
+    "worldmonitorRelayFiles": [
+      "worldmonitor/scripts/ais-relay.cjs",
+      "worldmonitor/api/telegram-feed.js",
+      "worldmonitor/server/worldmonitor/intelligence/v1/list-telegram-feed.ts",
+      "worldmonitor/scripts/telegram/session-auth.mjs",
+      "worldmonitor/docs/data-sources.mdx"
+    ],
+    "requiredEnv": [
+      "TELEGRAM_API_ID",
+      "TELEGRAM_API_HASH",
+      "TELEGRAM_SESSION"
+    ],
+    "optionalEnv": [
+      "TELEGRAM_CHANNEL_SET",
+      "TELEGRAM_POLL_INTERVAL_MS",
+      "TELEGRAM_MAX_FEED_ITEMS",
+      "TELEGRAM_MAX_TEXT_CHARS",
+      "TELEGRAM_RATE_LIMIT_MS",
+      "TELEGRAM_STARTUP_DELAY_MS",
+      "WS_RELAY_URL",
+      "RELAY_SHARED_SECRET",
+      "RELAY_AUTH_HEADER"
+    ],
+    "worldmonitorBehavior": {
+      "startupDelayMsDefault": 60000,
+      "pollIntervalMsDefault": 60000,
+      "perChannelTimeoutMs": 15000,
+      "pollCycleTimeoutMs": 180000,
+      "maxFeedItemsDefault": 200,
+      "maxTextCharsDefault": 800,
+      "rateLimitMsDefault": 800,
+      "endpoint": "/telegram/feed?limit=<1..200>&topic=<optional>&channel=<optional>"
+    },
+    "pythonPort": {
+      "preferred": "Telethon + StringSession + FastAPI endpoint; persist cursor_by_handle and rolling feed buffer.",
+      "fallback": "Scrape https://t.me/s/<handle> only as a low-reliability fallback for public channels.",
+      "cautions": [
+        "Use your own API credentials/session.",
+        "Do not run the same StringSession concurrently.",
+        "Respect flood-wait/rate limits."
+      ]
+    }
+  },
+  "pythonImplementationBlueprint": {
+    "dependencies": [
+      "telethon",
+      "fastapi",
+      "uvicorn",
+      "pydantic",
+      "redis optional"
+    ],
+    "state": [
+      "cursor_by_handle",
+      "rolling feed buffer",
+      "last_poll_at",
+      "last_error"
+    ],
+    "pollingLoop": [
+      "Load telegram_channels.json",
+      "Connect with TelegramClient(StringSession(...))",
+      "get_entity(handle)",
+      "get_messages(entity, limit, min_id)",
+      "skip media-only posts",
+      "deduplicate and cap buffer",
+      "serve GET /telegram/feed"
+    ],
+    "minimalPseudoCode": [
+      "client = TelegramClient(StringSession(session), api_id, api_hash)",
+      "await client.connect()",
+      "entity = await client.get_entity(handle)",
+      "messages = await client.get_messages(entity, limit=max_messages, min_id=cursor)",
+      "for msg in messages: normalize if msg.message"
+    ]
+  }
+}

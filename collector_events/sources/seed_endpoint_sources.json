@@ -1,0 +1,4876 @@
+{
+  "generatedAt": "2026-04-29T06:30:53.142Z",
+  "sourceTruthDirectory": "worldmonitor/scripts",
+  "note": "Literal endpoint extraction from seed-*.mjs. Dynamic URLs built from variables need script-level review during Python port.",
+  "counts": {
+    "seedScriptCount": 93,
+    "scriptsWithLiteralUrls": 81,
+    "literalUrlOccurrences": 254,
+    "uniqueLiteralUrls": 229,
+    "uniqueDomains": 164,
+    "scriptsWithEnvVars": 39,
+    "scriptsWithLLMCalls": 7
+  },
+  "scripts": [
+    {
+      "id": "seed_airport_delays",
+      "script": "worldmonitor/scripts/seed-airport-delays.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-airport-delays.mjs",
+      "urls": [
+        {
+          "url": "https://nasstatus.faa.gov/api/airport-status-information",
+          "domain": "nasstatus.faa.gov"
+        },
+        {
+          "url": "https://dataservices.icao.int/api/notams-realtime-list",
+          "domain": "dataservices.icao.int"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "dataservices.icao.int",
+        "nasstatus.faa.gov"
+      ],
+      "envVars": [
+        "ICAO_API_KEY"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "aviation:delays:faa:v1",
+        "aviation:notam:closures:v2"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_aviation",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs",
+      "urls": [
+        {
+          "url": "https://api.aviationstack.com/v1/flights",
+          "domain": "api.aviationstack.com"
+        },
+        {
+          "url": "https://www.flightglobal.com/rss",
+          "domain": "www.flightglobal.com"
+        },
+        {
+          "url": "https://simpleflying.com/feed/",
+          "domain": "simpleflying.com"
+        },
+        {
+          "url": "https://aerotime.aero/feed",
+          "domain": "aerotime.aero"
+        },
+        {
+          "url": "https://thepointsguy.com/feed/",
+          "domain": "thepointsguy.com"
+        },
+        {
+          "url": "https://airlinegeeks.com/feed/",
+          "domain": "airlinegeeks.com"
+        },
+        {
+          "url": "https://onemileatatime.com/feed/",
+          "domain": "onemileatatime.com"
+        },
+        {
+          "url": "https://viewfromthewing.com/feed/",
+          "domain": "viewfromthewing.com"
+        },
+        {
+          "url": "https://www.aviationpros.com/rss",
+          "domain": "www.aviationpros.com"
+        },
+        {
+          "url": "https://www.aviationweek.com/rss",
+          "domain": "www.aviationweek.com"
+        }
+      ],
+      "urlCount": 10,
+      "domains": [
+        "aerotime.aero",
+        "airlinegeeks.com",
+        "api.aviationstack.com",
+        "onemileatatime.com",
+        "simpleflying.com",
+        "thepointsguy.com",
+        "viewfromthewing.com",
+        "www.aviationpros.com",
+        "www.aviationweek.com",
+        "www.flightglobal.com"
+      ],
+      "envVars": [
+        "AVIATIONSTACK_API",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL"
+      ],
+      "sourceVersions": [
+        "aviationstack-rss"
+      ],
+      "redisKeys": [
+        "aviation:news::24:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_bigmac",
+      "script": "worldmonitor/scripts/seed-bigmac.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-bigmac.mjs",
+      "urls": [
+        {
+          "url": "https://api.exa.ai/search",
+          "domain": "api.exa.ai"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "api.exa.ai"
+      ],
+      "envVars": [
+        "EXA_API_KEY",
+        "EXA_API_KEYS"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "economic:bigmac:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_bis_data",
+      "script": "worldmonitor/scripts/seed-bis-data.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-bis-data.mjs",
+      "urls": [
+        {
+          "url": "https://stats.bis.org/api/v1/data",
+          "domain": "stats.bis.org"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "stats.bis.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "bis-sdmx-csv"
+      ],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "csv"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_bls_series",
+      "script": "worldmonitor/scripts/seed-bls-series.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-bls-series.mjs",
+      "urls": [
+        {
+          "url": "https://api.stlouisfed.org/fred/series/observations?${params}",
+          "domain": "api.stlouisfed.org"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "api.stlouisfed.org"
+      ],
+      "envVars": [
+        "FRED_API_KEY"
+      ],
+      "sourceVersions": [
+        "fred-v1"
+      ],
+      "redisKeys": [
+        "bls:series:v1"
+      ],
+      "inferredCaptureMethods": [],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_chokepoint_baselines",
+      "script": "worldmonitor/scripts/seed-chokepoint-baselines.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-chokepoint-baselines.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [
+        "eia-chokepoint-baselines-v1"
+      ],
+      "redisKeys": [
+        "energy:chokepoint-baselines:v1"
+      ],
+      "inferredCaptureMethods": [],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_chokepoint_flows",
+      "script": "worldmonitor/scripts/seed-chokepoint-flows.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-chokepoint-flows.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [
+        "portwatch-eia-flows-v1"
+      ],
+      "redisKeys": [
+        "energy:chokepoint-flows:v1",
+        "supply_chain:portwatch:v1",
+        "energy:chokepoint-baselines:v1",
+        "portwatch:disruptions:active:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_climate_anomalies",
+      "script": "worldmonitor/scripts/seed-climate-anomalies.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-anomalies.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [
+        "open-meteo-archive-wmo-1991-2020-v1"
+      ],
+      "redisKeys": [
+        "climate:anomalies:v2"
+      ],
+      "inferredCaptureMethods": [],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_climate_disasters",
+      "script": "worldmonitor/scripts/seed-climate-disasters.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-disasters.mjs",
+      "urls": [
+        {
+          "url": "https://api.reliefweb.int/v1/disasters",
+          "domain": "api.reliefweb.int"
+        },
+        {
+          "url": "https://api.reliefweb.int/v2/disasters",
+          "domain": "api.reliefweb.int"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "api.reliefweb.int"
+      ],
+      "envVars": [
+        "RELIEFWEB_APPNAME",
+        "RELIEFWEB_APP_NAME"
+      ],
+      "sourceVersions": [
+        "reliefweb+natural-cache-v1"
+      ],
+      "redisKeys": [
+        "climate:disasters:v1",
+        "natural:events:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_climate_news",
+      "script": "worldmonitor/scripts/seed-climate-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-news.mjs",
+      "urls": [
+        {
+          "url": "https://www.carbonbrief.org/feed",
+          "domain": "www.carbonbrief.org"
+        },
+        {
+          "url": "https://www.theguardian.com/environment/climate-crisis/rss",
+          "domain": "www.theguardian.com"
+        },
+        {
+          "url": "https://reliefweb.int/updates/rss.xml?content=reports&country=0&theme=4590",
+          "domain": "reliefweb.int"
+        },
+        {
+          "url": "https://earthobservatory.nasa.gov/feeds/earth-observatory.rss",
+          "domain": "earthobservatory.nasa.gov"
+        },
+        {
+          "url": "https://www.unep.org/rss.xml",
+          "domain": "www.unep.org"
+        },
+        {
+          "url": "https://phys.org/rss-feed/earth-news/earth-sciences/",
+          "domain": "phys.org"
+        },
+        {
+          "url": "https://climate.copernicus.eu/rss.xml",
+          "domain": "climate.copernicus.eu"
+        },
+        {
+          "url": "https://insideclimatenews.org/feed/",
+          "domain": "insideclimatenews.org"
+        },
+        {
+          "url": "https://www.climatecentral.org/rss",
+          "domain": "www.climatecentral.org"
+        }
+      ],
+      "urlCount": 9,
+      "domains": [
+        "climate.copernicus.eu",
+        "earthobservatory.nasa.gov",
+        "insideclimatenews.org",
+        "phys.org",
+        "reliefweb.int",
+        "www.carbonbrief.org",
+        "www.climatecentral.org",
+        "www.theguardian.com",
+        "www.unep.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "climate-rss-v1"
+      ],
+      "redisKeys": [
+        "climate:news-intelligence:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_climate_ocean_ice",
+      "script": "worldmonitor/scripts/seed-climate-ocean-ice.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-ocean-ice.mjs",
+      "urls": [
+        {
+          "url": "https://noaadata.apps.nsidc.org/NOAA/G02135/north/daily/data/N_seaice_extent_daily_v4.0.csv",
+          "domain": "noaadata.apps.nsidc.org"
+        },
+        {
+          "url": "https://noaadata.apps.nsidc.org/NOAA/G02135/north/daily/data/N_seaice_extent_climatology_1981-2010_v4.0.csv",
+          "domain": "noaadata.apps.nsidc.org"
+        },
+        {
+          "url": "https://sealevel.nasa.gov/overlay-global-mean-sea-level",
+          "domain": "sealevel.nasa.gov"
+        },
+        {
+          "url": "https://www.ncei.noaa.gov/data/oceans/woa/DATA_ANALYSIS/3M_HEAT_CONTENT/DATA/basin/yearly/h22-w0-700m.dat",
+          "domain": "www.ncei.noaa.gov"
+        },
+        {
+          "url": "https://www.ncei.noaa.gov/data/noaa-global-surface-temperature/v6/access/timeseries/",
+          "domain": "www.ncei.noaa.gov"
+        },
+        {
+          "url": "https://www.ncei.noaa.gov/data/noaa-global-surface-temperature/v5.1/access/timeseries/aravg.mon.ocean.90S.90N.v5.1.0.202312.asc",
+          "domain": "www.ncei.noaa.gov"
+        }
+      ],
+      "urlCount": 6,
+      "domains": [
+        "noaadata.apps.nsidc.org",
+        "sealevel.nasa.gov",
+        "www.ncei.noaa.gov"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "nsidc-sea-ice_v4-climatology-noaa-ohc-nasa-gmsl-noaa-global-ocean-v6-v51-baseline-v3"
+      ],
+      "redisKeys": [
+        "climate:ocean-ice:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "csv",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_climate_zone_normals",
+      "script": "worldmonitor/scripts/seed-climate-zone-normals.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-zone-normals.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [
+        "open-meteo-wmo-1991-2020-v1"
+      ],
+      "redisKeys": [
+        "climate:zone-normals:v1"
+      ],
+      "inferredCaptureMethods": [],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_co2_monitoring",
+      "script": "worldmonitor/scripts/seed-co2-monitoring.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-co2-monitoring.mjs",
+      "urls": [
+        {
+          "url": "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt",
+          "domain": "gml.noaa.gov"
+        },
+        {
+          "url": "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt",
+          "domain": "gml.noaa.gov"
+        },
+        {
+          "url": "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_gl.txt",
+          "domain": "gml.noaa.gov"
+        },
+        {
+          "url": "https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_mm_gl.txt",
+          "domain": "gml.noaa.gov"
+        },
+        {
+          "url": "https://gml.noaa.gov/webdata/ccgg/trends/n2o/n2o_mm_gl.txt",
+          "domain": "gml.noaa.gov"
+        }
+      ],
+      "urlCount": 5,
+      "domains": [
+        "gml.noaa.gov"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "noaa-gml-co2-ch4-n2o-v1"
+      ],
+      "redisKeys": [
+        "climate:co2-monitoring:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_commodity_quotes",
+      "script": "worldmonitor/scripts/seed-commodity-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-commodity-quotes.mjs",
+      "urls": [
+        {
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol",
+          "domain": "query1.finance.yahoo.com"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "query1.finance.yahoo.com"
+      ],
+      "envVars": [
+        "ALPHA_VANTAGE_API_KEY"
+      ],
+      "sourceVersions": [
+        "alphavantage+yahoo-chart"
+      ],
+      "redisKeys": [
+        "market:commodities-bootstrap:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "yahoo_finance"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_conflict_intel",
+      "script": "worldmonitor/scripts/seed-conflict-intel.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-conflict-intel.mjs",
+      "urls": [
+        {
+          "url": "https://acleddata.com/oauth/token",
+          "domain": "acleddata.com"
+        },
+        {
+          "url": "https://acleddata.com/api/acled/read?${params}",
+          "domain": "acleddata.com"
+        },
+        {
+          "url": "https://hapi.humdata.org/api/v2/coordination-context/conflict-events?output_format=json&limit=1000&offset=0&app_identifier=${appId}&location_code=${iso3}",
+          "domain": "hapi.humdata.org"
+        },
+        {
+          "url": "https://www.pizzint.watch/api/dashboard-data",
+          "domain": "www.pizzint.watch"
+        },
+        {
+          "url": "https://www.pizzint.watch/api/gdelt/batch?pairs=${encodeURIComponent(pairs",
+          "domain": "www.pizzint.watch"
+        }
+      ],
+      "urlCount": 5,
+      "domains": [
+        "acleddata.com",
+        "hapi.humdata.org",
+        "www.pizzint.watch"
+      ],
+      "envVars": [
+        "ACLED_ACCESS_TOKEN",
+        "ACLED_EMAIL",
+        "ACLED_PASSWORD"
+      ],
+      "sourceVersions": [
+        "acled-hapi-pizzint"
+      ],
+      "redisKeys": [
+        "conflict:acled:v1:all:0:0"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "gdelt_api"
+      ],
+      "hasLLMCall": true
+    },
+    {
+      "id": "seed_consumer_prices",
+      "script": "worldmonitor/scripts/seed-consumer-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-consumer-prices.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [
+        "CONSUMER_PRICES_CORE_API_KEY",
+        "CONSUMER_PRICES_CORE_BASE_URL",
+        "CONSUMER_PRICES_DEFAULT_MARKET"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_correlation",
+      "script": "worldmonitor/scripts/seed-correlation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-correlation.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [
+        "correlation-engine-v1"
+      ],
+      "redisKeys": [
+        "correlation:cards-bootstrap:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": true
+    },
+    {
+      "id": "seed_cot",
+      "script": "worldmonitor/scripts/seed-cot.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cot.mjs",
+      "urls": [
+        {
+          "url": "https://publicreporting.cftc.gov/resource/${datasetId}.json",
+          "domain": "publicreporting.cftc.gov"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "publicreporting.cftc.gov"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "market:cot:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_cross_source_signals",
+      "script": "worldmonitor/scripts/seed-cross-source-signals.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cross-source-signals.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [
+        "cross-source-v1"
+      ],
+      "redisKeys": [
+        "intelligence:cross-source-signals:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "gdelt_api"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_crypto_quotes",
+      "script": "worldmonitor/scripts/seed-crypto-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-crypto-quotes.mjs",
+      "urls": [
+        {
+          "url": "https://pro-api.coingecko.com/api/v3",
+          "domain": "pro-api.coingecko.com"
+        },
+        {
+          "url": "https://api.coingecko.com/api/v3",
+          "domain": "api.coingecko.com"
+        },
+        {
+          "url": "https://api.coinpaprika.com/v1/tickers?quotes=USD",
+          "domain": "api.coinpaprika.com"
+        }
+      ],
+      "urlCount": 3,
+      "domains": [
+        "api.coingecko.com",
+        "api.coinpaprika.com",
+        "pro-api.coingecko.com"
+      ],
+      "envVars": [
+        "COINGECKO_API_KEY"
+      ],
+      "sourceVersions": [
+        "coingecko-markets"
+      ],
+      "redisKeys": [
+        "market:crypto:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_crypto_sectors",
+      "script": "worldmonitor/scripts/seed-crypto-sectors.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-crypto-sectors.mjs",
+      "urls": [
+        {
+          "url": "https://pro-api.coingecko.com/api/v3",
+          "domain": "pro-api.coingecko.com"
+        },
+        {
+          "url": "https://api.coingecko.com/api/v3",
+          "domain": "api.coingecko.com"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "api.coingecko.com",
+        "pro-api.coingecko.com"
+      ],
+      "envVars": [
+        "COINGECKO_API_KEY"
+      ],
+      "sourceVersions": [
+        "coingecko-sectors"
+      ],
+      "redisKeys": [
+        "market:crypto-sectors:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_cyber_threats",
+      "script": "worldmonitor/scripts/seed-cyber-threats.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cyber-threats.mjs",
+      "urls": [
+        {
+          "url": "https://feodotracker.abuse.ch/downloads/ipblocklist.json",
+          "domain": "feodotracker.abuse.ch"
+        },
+        {
+          "url": "https://urlhaus-api.abuse.ch/v1/urls/recent/limit/${limit}/",
+          "domain": "urlhaus-api.abuse.ch"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/IPC2s-30day.csv",
+          "domain": "raw.githubusercontent.com"
+        },
+        {
+          "url": "https://otx.alienvault.com/api/v1/indicators/export?type=IPv4&modified_since=",
+          "domain": "otx.alienvault.com"
+        },
+        {
+          "url": "https://api.abuseipdb.com/api/v2/blacklist",
+          "domain": "api.abuseipdb.com"
+        },
+        {
+          "url": "https://ipinfo.io/${encodeURIComponent(ip",
+          "domain": "ipinfo.io"
+        },
+        {
+          "url": "https://freeipapi.com/api/json/${encodeURIComponent(ip",
+          "domain": "freeipapi.com"
+        }
+      ],
+      "urlCount": 7,
+      "domains": [
+        "api.abuseipdb.com",
+        "feodotracker.abuse.ch",
+        "freeipapi.com",
+        "ipinfo.io",
+        "otx.alienvault.com",
+        "raw.githubusercontent.com",
+        "urlhaus-api.abuse.ch"
+      ],
+      "envVars": [
+        "ABUSEIPDB_API_KEY",
+        "OTX_API_KEY",
+        "URLHAUS_AUTH_KEY"
+      ],
+      "sourceVersions": [
+        "multi-ioc-v2"
+      ],
+      "redisKeys": [
+        "rate:abuseipdb:last-call",
+        "cache:abuseipdb:threats",
+        "cyber:threats:v2",
+        "cyber:threats-bootstrap:v2"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom",
+        "csv"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_defense_patents",
+      "script": "worldmonitor/scripts/seed-defense-patents.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-defense-patents.mjs",
+      "urls": [
+        {
+          "url": "https://search.patentsview.org/api/v1/patent/",
+          "domain": "search.patentsview.org"
+        },
+        {
+          "url": "https://patents.google.com/patent/US${p.patent_id}",
+          "domain": "patents.google.com"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "patents.google.com",
+        "search.patentsview.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "patentsview-v1"
+      ],
+      "redisKeys": [
+        "patents:defense:latest"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_digest_notifications",
+      "script": "worldmonitor/scripts/seed-digest-notifications.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-digest-notifications.mjs",
+      "urls": [
+        {
+          "url": "https://worldmonitor.app",
+          "domain": "worldmonitor.app"
+        },
+        {
+          "url": "https://x.com/eliehabib",
+          "domain": "x.com"
+        },
+        {
+          "url": "https://github.com/koala73/worldmonitor",
+          "domain": "github.com"
+        },
+        {
+          "url": "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage",
+          "domain": "api.telegram.org"
+        }
+      ],
+      "urlCount": 4,
+      "domains": [
+        "api.telegram.org",
+        "github.com",
+        "worldmonitor.app",
+        "x.com"
+      ],
+      "envVars": [
+        "CONVEX_SITE_URL",
+        "CONVEX_URL",
+        "DIGEST_CRON_ENABLED",
+        "RELAY_SHARED_SECRET",
+        "RESEND_API_KEY",
+        "RESEND_FROM_EMAIL",
+        "TELEGRAM_BOT_TOKEN",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_disease_outbreaks",
+      "script": "worldmonitor/scripts/seed-disease-outbreaks.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-disease-outbreaks.mjs",
+      "urls": [
+        {
+          "url": "https://www.who.int/api/emergencies/diseaseoutbreaknews?sf_provider=dynamicProvider372&sf_culture=en&$orderby=PublicationDateAndTime%20desc&$select=Title,ItemDefaultUrl,PublicationDateAndTime&$top=30",
+          "domain": "www.who.int"
+        },
+        {
+          "url": "https://tools.cdc.gov/api/v2/resources/media/132608.rss",
+          "domain": "tools.cdc.gov"
+        },
+        {
+          "url": "https://outbreaknewstoday.com/feed/",
+          "domain": "outbreaknewstoday.com"
+        },
+        {
+          "url": "https://raw.githubusercontent.com/thinkglobalhealth/disease_tracker/main/index_bundle.js",
+          "domain": "raw.githubusercontent.com"
+        },
+        {
+          "url": "https://www.who.int${item.ItemDefaultUrl}",
+          "domain": "www.who.int${item.itemdefaulturl}"
+        },
+        {
+          "url": "https://thinkglobalhealth.github.io/disease_tracker/",
+          "domain": "thinkglobalhealth.github.io"
+        }
+      ],
+      "urlCount": 6,
+      "domains": [
+        "outbreaknewstoday.com",
+        "raw.githubusercontent.com",
+        "thinkglobalhealth.github.io",
+        "tools.cdc.gov",
+        "www.who.int",
+        "www.who.int${item.itemdefaulturl}"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "who-api-cdc-ont-v6"
+      ],
+      "redisKeys": [
+        "health:disease-outbreaks:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_displacement_summary",
+      "script": "worldmonitor/scripts/seed-displacement-summary.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-displacement-summary.mjs",
+      "urls": [
+        {
+          "url": "https://api.unhcr.org/population/v1/population/?year=${year}&limit=${limit}&page=${page}&coo_all=true&coa_all=true",
+          "domain": "api.unhcr.org"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "api.unhcr.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_earnings_calendar",
+      "script": "worldmonitor/scripts/seed-earnings-calendar.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-earnings-calendar.mjs",
+      "urls": [
+        {
+          "url": "https://finnhub.io/api/v1/calendar/earnings?from=${toDateStr(from",
+          "domain": "finnhub.io"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "finnhub.io"
+      ],
+      "envVars": [
+        "FINNHUB_API_KEY"
+      ],
+      "sourceVersions": [
+        "finnhub-v1"
+      ],
+      "redisKeys": [
+        "market:earnings-calendar:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_earthquakes",
+      "script": "worldmonitor/scripts/seed-earthquakes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-earthquakes.mjs",
+      "urls": [
+        {
+          "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+          "domain": "earthquake.usgs.gov"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "earthquake.usgs.gov"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "usgs-4.5-day-nuclear-v1"
+      ],
+      "redisKeys": [
+        "seismology:earthquakes:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_ecb_fx_rates",
+      "script": "worldmonitor/scripts/seed-ecb-fx-rates.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-ecb-fx-rates.mjs",
+      "urls": [
+        {
+          "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD+GBP+JPY+CHF+CAD+AUD+CNY.EUR.SP00.A",
+          "domain": "data-api.ecb.europa.eu"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "data-api.ecb.europa.eu"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "ecb-data-portal"
+      ],
+      "redisKeys": [
+        "economic:ecb-fx-rates:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_ecb_short_rates",
+      "script": "worldmonitor/scripts/seed-ecb-short-rates.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-ecb-short-rates.mjs",
+      "urls": [
+        {
+          "url": "https://data-api.ecb.europa.eu/service/data/EST/B.EU000A2X2A25.WT?format=jsondata&lastNObservations=60",
+          "domain": "data-api.ecb.europa.eu"
+        },
+        {
+          "url": "https://data-api.ecb.europa.eu/service/data/FM/M.U2.EUR.RT.MM.EURIBOR3MD_.HSTA?format=jsondata&lastNObservations=36",
+          "domain": "data-api.ecb.europa.eu"
+        },
+        {
+          "url": "https://data-api.ecb.europa.eu/service/data/FM/M.U2.EUR.RT.MM.EURIBOR6MD_.HSTA?format=jsondata&lastNObservations=36",
+          "domain": "data-api.ecb.europa.eu"
+        },
+        {
+          "url": "https://data-api.ecb.europa.eu/service/data/FM/M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA?format=jsondata&lastNObservations=36",
+          "domain": "data-api.ecb.europa.eu"
+        }
+      ],
+      "urlCount": 4,
+      "domains": [
+        "data-api.ecb.europa.eu"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_economic_calendar",
+      "script": "worldmonitor/scripts/seed-economic-calendar.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economic-calendar.mjs",
+      "urls": [
+        {
+          "url": "https://api.stlouisfed.org/fred/releases",
+          "domain": "api.stlouisfed.org"
+        },
+        {
+          "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+          "domain": "www.federalreserve.gov"
+        },
+        {
+          "url": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+          "domain": "www.ecb.europa.eu"
+        },
+        {
+          "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/${datasetId}",
+          "domain": "ec.europa.eu"
+        },
+        {
+          "url": "https://api.stlouisfed.org/fred/release/dates",
+          "domain": "api.stlouisfed.org"
+        }
+      ],
+      "urlCount": 5,
+      "domains": [
+        "api.stlouisfed.org",
+        "ec.europa.eu",
+        "www.ecb.europa.eu",
+        "www.federalreserve.gov"
+      ],
+      "envVars": [
+        "FRED_API_KEY"
+      ],
+      "sourceVersions": [
+        "fred-v1"
+      ],
+      "redisKeys": [
+        "economic:econ-calendar:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": true
+    },
+    {
+      "id": "seed_economy",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs",
+      "urls": [
+        {
+          "url": "https://api.eia.gov${c.apiPath}?${params}",
+          "domain": "api.eia.gov${c.apipath}"
+        },
+        {
+          "url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/capability/data/?${params}",
+          "domain": "api.eia.gov"
+        },
+        {
+          "url": "https://api.stlouisfed.org/fred/series/observations?${obsParams}",
+          "domain": "api.stlouisfed.org"
+        },
+        {
+          "url": "https://api.stlouisfed.org/fred/series?${metaParams}",
+          "domain": "api.stlouisfed.org"
+        },
+        {
+          "url": "https://finnhub.io/api/v1/${endpoint}?symbol=${encodeURIComponent(symbol",
+          "domain": "finnhub.io"
+        },
+        {
+          "url": "https://api.stlouisfed.org/fred/series/observations?${params}",
+          "domain": "api.stlouisfed.org"
+        },
+        {
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart",
+          "domain": "query1.finance.yahoo.com"
+        },
+        {
+          "url": "https://api.alternative.me/fng/?limit=30&format=json",
+          "domain": "api.alternative.me"
+        },
+        {
+          "url": "https://mempool.space/api/v1/mining/hashrate/1m",
+          "domain": "mempool.space"
+        },
+        {
+          "url": "https://api.eia.gov/v2/petroleum/stoc/wstk/data/?${params}",
+          "domain": "api.eia.gov"
+        },
+        {
+          "url": "https://api.eia.gov/v2/natural-gas/stor/wkly/data/?${params}",
+          "domain": "api.eia.gov"
+        },
+        {
+          "url": "https://api.eia.gov/v2/petroleum/pnp/wiup/data/?${params}",
+          "domain": "api.eia.gov"
+        }
+      ],
+      "urlCount": 12,
+      "domains": [
+        "api.alternative.me",
+        "api.eia.gov",
+        "api.eia.gov${c.apipath}",
+        "api.stlouisfed.org",
+        "finnhub.io",
+        "mempool.space",
+        "query1.finance.yahoo.com"
+      ],
+      "envVars": [
+        "EIA_API_KEY",
+        "FINNHUB_API_KEY",
+        "FRED_API_KEY"
+      ],
+      "sourceVersions": [
+        "eia-fred-macro"
+      ],
+      "redisKeys": [
+        "economic:stress-index:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "yahoo_finance"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_electricity_prices",
+      "script": "worldmonitor/scripts/seed-electricity-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-electricity-prices.mjs",
+      "urls": [
+        {
+          "url": "https://web-api.tp.entsoe.eu/api?${params.toString(",
+          "domain": "web-api.tp.entsoe.eu"
+        },
+        {
+          "url": "https://api.eia.gov/v2/electricity/rto/region-data/data/?${params.toString(",
+          "domain": "api.eia.gov"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "api.eia.gov",
+        "web-api.tp.entsoe.eu"
+      ],
+      "envVars": [
+        "EIA_API_KEY",
+        "ENTSO_E_TOKEN"
+      ],
+      "sourceVersions": [
+        "electricity-prices-v1"
+      ],
+      "redisKeys": [
+        "energy:electricity:v1:index",
+        "seed-meta:energy:electricity-prices"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_energy_intelligence",
+      "script": "worldmonitor/scripts/seed-energy-intelligence.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-energy-intelligence.mjs",
+      "urls": [
+        {
+          "url": "https://www.iea.org/rss/*.xml",
+          "domain": "www.iea.org"
+        },
+        {
+          "url": "https://oilprice.com/rss/main",
+          "domain": "oilprice.com"
+        },
+        {
+          "url": "https://www.opec.org/opec_web/en/press_room/rss.htm",
+          "domain": "www.opec.org"
+        }
+      ],
+      "urlCount": 3,
+      "domains": [
+        "oilprice.com",
+        "www.iea.org",
+        "www.opec.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "energy-intel-rss-v1"
+      ],
+      "redisKeys": [
+        "energy:intelligence:feed:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_energy_spine",
+      "script": "worldmonitor/scripts/seed-energy-spine.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-energy-spine.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "energy:spine:v1:_countries",
+        "seed-meta:energy:spine"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_etf_flows",
+      "script": "worldmonitor/scripts/seed-etf-flows.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-etf-flows.mjs",
+      "urls": [
+        {
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?range=5d&interval=1d",
+          "domain": "query1.finance.yahoo.com"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "query1.finance.yahoo.com"
+      ],
+      "envVars": [
+        "ALPHA_VANTAGE_API_KEY"
+      ],
+      "sourceVersions": [
+        "alphavantage+yahoo-chart-5d"
+      ],
+      "redisKeys": [
+        "market:etf-flows:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "yahoo_finance"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_eurostat_country_data",
+      "script": "worldmonitor/scripts/seed-eurostat-country-data.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-eurostat-country-data.mjs",
+      "urls": [
+        {
+          "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data",
+          "domain": "ec.europa.eu"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "ec.europa.eu"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "eurostat-v1"
+      ],
+      "redisKeys": [
+        "economic:eurostat-country-data:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_fao_food_price_index",
+      "script": "worldmonitor/scripts/seed-fao-food-price-index.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fao-food-price-index.mjs",
+      "urls": [
+        {
+          "url": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
+          "domain": "www.fao.org"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "www.fao.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "economic:fao-ffpi:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "csv"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_fear_greed",
+      "script": "worldmonitor/scripts/seed-fear-greed.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fear-greed.mjs",
+      "urls": [
+        {
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol",
+          "domain": "query1.finance.yahoo.com"
+        },
+        {
+          "url": "https://www.barchart.com/stocks/quotes/%24CPC",
+          "domain": "www.barchart.com"
+        },
+        {
+          "url": "https://www.barchart.com/stocks/quotes/%24S5TH",
+          "domain": "www.barchart.com"
+        },
+        {
+          "url": "https://production.dataviz.cnn.io/index/fearandgreed/current",
+          "domain": "production.dataviz.cnn.io"
+        },
+        {
+          "url": "https://www.cnn.com/markets/fear-and-greed",
+          "domain": "www.cnn.com"
+        },
+        {
+          "url": "https://www.aaii.com/sentimentsurvey/sent_results",
+          "domain": "www.aaii.com"
+        }
+      ],
+      "urlCount": 6,
+      "domains": [
+        "production.dataviz.cnn.io",
+        "query1.finance.yahoo.com",
+        "www.aaii.com",
+        "www.barchart.com",
+        "www.cnn.com"
+      ],
+      "envVars": [
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL"
+      ],
+      "sourceVersions": [
+        "yahoo-cboe-cnn-fred-v1"
+      ],
+      "redisKeys": [
+        "market:fear-greed:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape",
+        "yahoo_finance"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_fire_detections",
+      "script": "worldmonitor/scripts/seed-fire-detections.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fire-detections.mjs",
+      "urls": [
+        {
+          "url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/${apiKey}/${source}/${bbox}/1",
+          "domain": "firms.modaps.eosdis.nasa.gov"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "firms.modaps.eosdis.nasa.gov"
+      ],
+      "envVars": [
+        "FIRMS_API_KEY",
+        "NASA_FIRMS_API_KEY"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "wildfire:fires:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "csv"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_forecasts",
+      "script": "worldmonitor/scripts/seed-forecasts.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-forecasts.mjs",
+      "urls": [
+        {
+          "url": "http://test",
+          "domain": "test"
+        },
+        {
+          "url": "https://worldmonitor.app",
+          "domain": "worldmonitor.app"
+        },
+        {
+          "url": "https://api.groq.com/openai/v1/chat/completions",
+          "domain": "api.groq.com"
+        },
+        {
+          "url": "https://openrouter.ai/api/v1/chat/completions",
+          "domain": "openrouter.ai"
+        }
+      ],
+      "urlCount": 4,
+      "domains": [
+        "api.groq.com",
+        "openrouter.ai",
+        "test",
+        "worldmonitor.app"
+      ],
+      "envVars": [
+        "FORECAST_LLM_COMBINED_MODEL_OPENROUTER",
+        "FORECAST_LLM_COMBINED_PROVIDER_ORDER",
+        "FORECAST_LLM_CRITICAL_MODEL_OPENROUTER",
+        "FORECAST_LLM_CRITICAL_PROVIDER_ORDER",
+        "FORECAST_LLM_IMPACT_MODEL_OPENROUTER",
+        "FORECAST_LLM_IMPACT_PROVIDER_ORDER",
+        "FORECAST_LLM_MARKET_IMPLICATIONS_MODEL_OPENROUTER",
+        "FORECAST_LLM_MARKET_IMPLICATIONS_PROVIDER_ORDER",
+        "FORECAST_LLM_MODEL_OPENROUTER",
+        "FORECAST_LLM_PROVIDER_ORDER",
+        "FORECAST_TRACE_MAX_FORECASTS",
+        "GITHUB_SHA",
+        "RAILWAY_GIT_COMMIT_SHA",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL",
+        "VERCEL_GIT_COMMIT_SHA",
+        "WM_API_BASE_URL"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "forecast:predictions:v2",
+        "forecast:predictions:prior:v2",
+        "forecast:predictions:history:v1",
+        "forecast:trace:latest:v1",
+        "forecast:trace:runs:v1",
+        "forecast:refresh-request:v1",
+        "forecast:deep-task-queue:v1",
+        "forecast:simulation-package:latest",
+        "forecast:simulation-outcome:latest",
+        "forecast:simulation-task-queue:v1",
+        "forecast:sim-decorations:v1",
+        "forecast:prompt:impact-expansion:learned",
+        "forecast:prompt:impact-expansion:baseline",
+        "forecast:prompt:impact-expansion:last-attempt",
+        "intelligence:market-implications:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": true
+    },
+    {
+      "id": "seed_fsi_eu",
+      "script": "worldmonitor/scripts/seed-fsi-eu.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fsi-eu.mjs",
+      "urls": [
+        {
+          "url": "https://data-api.ecb.europa.eu/service/data/CISS/D.U2.Z0Z.4F.EC.SS_CI.IDX?format=jsondata&lastNObservations=52",
+          "domain": "data-api.ecb.europa.eu"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "data-api.ecb.europa.eu"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "ecb-ciss-sdmx-v1"
+      ],
+      "redisKeys": [
+        "economic:fsi-eu:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_fuel_prices",
+      "script": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "urls": [
+        {
+          "url": "https://api.data.gov.my/data-catalogue?id=fuelprice&limit=20&sort=-date",
+          "domain": "api.data.gov.my"
+        },
+        {
+          "url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/",
+          "domain": "sedeaplicaciones.minetur.gob.es"
+        },
+        {
+          "url": "https://api.datos.gob.mx/v2/precio.gasolina.publico?pageSize=1000",
+          "domain": "api.datos.gob.mx"
+        },
+        {
+          "url": "https://api.eia.gov/v2/petroleum/pri/gnd/data/?api_key=${apiKey}&data[]=value&facets[series][]=EMM_EPMR_PTE_NUS_DPG&facets[series][]=EMD_EPD2DXL0_PTE_NUS_DPG&sort[0][column]=period&sort[0][direction]=desc&length=4",
+          "domain": "api.eia.gov"
+        },
+        {
+          "url": "https://energy.ec.europa.eu/document/download/264c2d0f-f161-4ea3-a777-78faae59bea0_en",
+          "domain": "energy.ec.europa.eu"
+        },
+        {
+          "url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/qus/ultimas-4-semanas-gasolina-etanol.csv",
+          "domain": "www.gov.br"
+        },
+        {
+          "url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/qus/ultimas-4-semanas-diesel-gnv.csv",
+          "domain": "www.gov.br"
+        },
+        {
+          "url": "https://www.mbie.govt.nz/assets/Data-Files/Energy/Weekly-fuel-price-monitoring/weekly-table.csv",
+          "domain": "www.mbie.govt.nz"
+        },
+        {
+          "url": "https://www.gov.uk/api/content/government/statistics/weekly-road-fuel-prices",
+          "domain": "www.gov.uk"
+        }
+      ],
+      "urlCount": 9,
+      "domains": [
+        "api.data.gov.my",
+        "api.datos.gob.mx",
+        "api.eia.gov",
+        "energy.ec.europa.eu",
+        "sedeaplicaciones.minetur.gob.es",
+        "www.gov.br",
+        "www.gov.uk",
+        "www.mbie.govt.nz"
+      ],
+      "envVars": [
+        "EIA_API_KEY"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "economic:fuel-prices:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "csv",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_fx_rates",
+      "script": "worldmonitor/scripts/seed-fx-rates.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fx-rates.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [
+        "yahoo-fx-shared"
+      ],
+      "redisKeys": [
+        "shared:fx-rates:v1"
+      ],
+      "inferredCaptureMethods": [
+        "yahoo_finance"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_gas_storage_countries",
+      "script": "worldmonitor/scripts/seed-gas-storage-countries.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-gas-storage-countries.mjs",
+      "urls": [
+        {
+          "url": "https://agsi.gie.eu/api",
+          "domain": "agsi.gie.eu"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "agsi.gie.eu"
+      ],
+      "envVars": [
+        "AGSI_API_KEY",
+        "GIE_API_KEY"
+      ],
+      "sourceVersions": [
+        "gie-agsi-plus-countries-v1"
+      ],
+      "redisKeys": [
+        "energy:gas-storage:v1:_countries",
+        "seed-meta:energy:gas-storage-countries"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_gdelt_intel",
+      "script": "worldmonitor/scripts/seed-gdelt-intel.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-gdelt-intel.mjs",
+      "urls": [
+        {
+          "url": "https://api.gdeltproject.org/api/v2/doc/doc",
+          "domain": "api.gdeltproject.org"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "api.gdeltproject.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "gdelt-doc-v2"
+      ],
+      "redisKeys": [
+        "intelligence:gdelt-intel:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "gdelt_api"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_gie_gas_storage",
+      "script": "worldmonitor/scripts/seed-gie-gas-storage.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-gie-gas-storage.mjs",
+      "urls": [
+        {
+          "url": "https://agsi.gie.eu/api",
+          "domain": "agsi.gie.eu"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "agsi.gie.eu"
+      ],
+      "envVars": [
+        "AGSI_API_KEY",
+        "GIE_API_KEY"
+      ],
+      "sourceVersions": [
+        "gie-agsi-plus"
+      ],
+      "redisKeys": [
+        "economic:eu-gas-storage:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_grocery_basket",
+      "script": "worldmonitor/scripts/seed-grocery-basket.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-grocery-basket.mjs",
+      "urls": [
+        {
+          "url": "https://api.exa.ai/search",
+          "domain": "api.exa.ai"
+        },
+        {
+          "url": "https://api.firecrawl.dev/v1/scrape",
+          "domain": "api.firecrawl.dev"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "api.exa.ai",
+        "api.firecrawl.dev"
+      ],
+      "envVars": [
+        "EXA_API_KEY",
+        "EXA_API_KEYS",
+        "FIRECRAWL_API_KEY"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "economic:grocery-basket:v1",
+        "_migration:canola-oil-v1",
+        "_migration:bad-prices-v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": true
+    },
+    {
+      "id": "seed_gulf_quotes",
+      "script": "worldmonitor/scripts/seed-gulf-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-gulf-quotes.mjs",
+      "urls": [
+        {
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(meta.symbol",
+          "domain": "query1.finance.yahoo.com"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "query1.finance.yahoo.com"
+      ],
+      "envVars": [
+        "ALPHA_VANTAGE_API_KEY"
+      ],
+      "sourceVersions": [
+        "alphavantage+yahoo-chart"
+      ],
+      "redisKeys": [
+        "market:gulf-quotes:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "yahoo_finance"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_health_air_quality",
+      "script": "worldmonitor/scripts/seed-health-air-quality.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-health-air-quality.mjs",
+      "urls": [
+        {
+          "url": "https://api.openaq.org/v3/locations",
+          "domain": "api.openaq.org"
+        },
+        {
+          "url": "https://api.openaq.org/v3/parameters/2/latest",
+          "domain": "api.openaq.org"
+        },
+        {
+          "url": "https://api.waqi.info/map/bounds/",
+          "domain": "api.waqi.info"
+        }
+      ],
+      "urlCount": 3,
+      "domains": [
+        "api.openaq.org",
+        "api.waqi.info"
+      ],
+      "envVars": [
+        "OPENAQ_API_KEY",
+        "WAQI_API_KEY"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "health:air-quality:v1",
+        "climate:air-quality:v1",
+        "seed-meta:health:air-quality",
+        "seed-meta:climate:air-quality"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_hormuz",
+      "script": "worldmonitor/scripts/seed-hormuz.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-hormuz.mjs",
+      "urls": [
+        {
+          "url": "https://datalab.wto.org/Strait-of-Hormuz-Trade-Tracker",
+          "domain": "datalab.wto.org"
+        },
+        {
+          "url": "https://wabi-europe-north-b-api.analysis.windows.net",
+          "domain": "wabi-europe-north-b-api.analysis.windows.net"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "datalab.wto.org",
+        "wabi-europe-north-b-api.analysis.windows.net"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "supply_chain:hormuz_tracker:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_iea_oil_stocks",
+      "script": "worldmonitor/scripts/seed-iea-oil-stocks.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-iea-oil-stocks.mjs",
+      "urls": [
+        {
+          "url": "https://api.iea.org/netimports/latest",
+          "domain": "api.iea.org"
+        },
+        {
+          "url": "https://api.iea.org/netimports/monthly/?year=${year}&month=${month}",
+          "domain": "api.iea.org"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "api.iea.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "iea-oil-stocks-v1"
+      ],
+      "redisKeys": [
+        "energy:iea-oil-stocks:v1:index",
+        "energy:oil-stocks-analysis:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_imf_macro",
+      "script": "worldmonitor/scripts/seed-imf-macro.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-imf-macro.mjs",
+      "urls": [
+        {
+          "url": "https://www.imf.org/external/datamapper/api/v1",
+          "domain": "www.imf.org"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "www.imf.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "economic:imf:macro:v2"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_infra",
+      "script": "worldmonitor/scripts/seed-infra.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-infra.mjs",
+      "urls": [
+        {
+          "url": "https://api.worldmonitor.app",
+          "domain": "api.worldmonitor.app"
+        },
+        {
+          "url": "https://worldmonitor.app",
+          "domain": "worldmonitor.app"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "api.worldmonitor.app",
+        "worldmonitor.app"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_insights",
+      "script": "worldmonitor/scripts/seed-insights.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-insights.mjs",
+      "urls": [
+        {
+          "url": "https://api.groq.com/openai/v1/chat/completions",
+          "domain": "api.groq.com"
+        },
+        {
+          "url": "https://openrouter.ai/api/v1/chat/completions",
+          "domain": "openrouter.ai"
+        },
+        {
+          "url": "https://worldmonitor.app",
+          "domain": "worldmonitor.app"
+        },
+        {
+          "url": "https://api.worldmonitor.app",
+          "domain": "api.worldmonitor.app"
+        }
+      ],
+      "urlCount": 4,
+      "domains": [
+        "api.groq.com",
+        "api.worldmonitor.app",
+        "openrouter.ai",
+        "worldmonitor.app"
+      ],
+      "envVars": [
+        "API_BASE_URL",
+        "OLLAMA_API_KEY",
+        "OLLAMA_MODEL"
+      ],
+      "sourceVersions": [
+        "digest-clustering-v1"
+      ],
+      "redisKeys": [
+        "news:insights:v1",
+        "news:digest:v1:full:en"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom"
+      ],
+      "hasLLMCall": true
+    },
+    {
+      "id": "seed_internet_outages",
+      "script": "worldmonitor/scripts/seed-internet-outages.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-internet-outages.mjs",
+      "urls": [
+        {
+          "url": "https://api.cloudflare.com/client/v4/radar/annotations/outages",
+          "domain": "api.cloudflare.com"
+        },
+        {
+          "url": "https://api.cloudflare.com/client/v4",
+          "domain": "api.cloudflare.com"
+        },
+        {
+          "url": "https://radar.cloudflare.com/outage-center",
+          "domain": "radar.cloudflare.com"
+        }
+      ],
+      "urlCount": 3,
+      "domains": [
+        "api.cloudflare.com",
+        "radar.cloudflare.com"
+      ],
+      "envVars": [
+        "CLOUDFLARE_API_TOKEN"
+      ],
+      "sourceVersions": [
+        "cloudflare-radar-7d"
+      ],
+      "redisKeys": [
+        "infra:outages:v1",
+        "cf:radar:ddos:v1",
+        "cf:radar:traffic-anomalies:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_iran_events",
+      "script": "worldmonitor/scripts/seed-iran-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-iran-events.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [
+        "liveuamap-manual-v1"
+      ],
+      "redisKeys": [
+        "conflict:iran-events:v1"
+      ],
+      "inferredCaptureMethods": [
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_jodi_gas",
+      "script": "worldmonitor/scripts/seed-jodi-gas.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-jodi-gas.mjs",
+      "urls": [
+        {
+          "url": "https://www.jodidata.org/jodi-publisher/gas/17/GAS_world_NewFormat.zip",
+          "domain": "www.jodidata.org"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "www.jodidata.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "energy:jodi-gas:v1:_countries",
+        "energy:lng-vulnerability:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "csv"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_jodi_oil",
+      "script": "worldmonitor/scripts/seed-jodi-oil.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-jodi-oil.mjs",
+      "urls": [
+        {
+          "url": "https://www.jodidata.org/_resources/files/downloads/oil-data/annual-csv/",
+          "domain": "www.jodidata.org"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "www.jodidata.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "energy:jodi-oil:v1:_countries",
+        "seed-meta:energy:jodi-oil"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "csv"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_market_quotes",
+      "script": "worldmonitor/scripts/seed-market-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-market-quotes.mjs",
+      "urls": [
+        {
+          "url": "https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(symbol",
+          "domain": "finnhub.io"
+        },
+        {
+          "url": "https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol",
+          "domain": "query1.finance.yahoo.com"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "finnhub.io",
+        "query1.finance.yahoo.com"
+      ],
+      "envVars": [
+        "ALPHA_VANTAGE_API_KEY",
+        "FINNHUB_API_KEY"
+      ],
+      "sourceVersions": [
+        "alphavantage+finnhub+yahoo"
+      ],
+      "redisKeys": [
+        "market:stocks-bootstrap:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "yahoo_finance"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_military_bases",
+      "script": "worldmonitor/scripts/seed-military-bases.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-military-bases.mjs",
+      "urls": [
+        {
+          "url": "https://api.cloudflare.com/client/v4/accounts/{acct}/r2/buckets/worldmonitor-data/objects/seed-data/military-bases-final.json",
+          "domain": "api.cloudflare.com"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "api.cloudflare.com"
+      ],
+      "envVars": [
+        "CLOUDFLARE_API_TOKEN",
+        "CLOUDFLARE_R2_ACCOUNT_ID",
+        "CLOUDFLARE_R2_TOKEN",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_military_flights",
+      "script": "worldmonitor/scripts/seed-military-flights.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-military-flights.mjs",
+      "urls": [
+        {
+          "url": "https://opensky-network.org/api",
+          "domain": "opensky-network.org"
+        },
+        {
+          "url": "https://customer-api.wingbits.com/v1/flights",
+          "domain": "customer-api.wingbits.com"
+        },
+        {
+          "url": "https://auth.opensky-network.org/auth/realms/opensky-network/protocol/openid-connect/token",
+          "domain": "auth.opensky-network.org"
+        }
+      ],
+      "urlCount": 3,
+      "domains": [
+        "auth.opensky-network.org",
+        "customer-api.wingbits.com",
+        "opensky-network.org"
+      ],
+      "envVars": [
+        "CHAIN_FORECAST_SEED_ON_MILITARY",
+        "OPENSKY_CLIENT_ID",
+        "OPENSKY_CLIENT_SECRET",
+        "OPENSKY_PROXY_AUTH",
+        "PROXY_URL",
+        "WINGBITS_API_KEY"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "military:flights:v1",
+        "military:flights:stale:v1",
+        "theater-posture:sebuf:v1",
+        "theater_posture:sebuf:stale:v1",
+        "theater-posture:sebuf:backup:v1",
+        "military:forecast-inputs:v1",
+        "military:forecast-inputs:stale:v1",
+        "military:surges:v1",
+        "military:surges:stale:v1",
+        "military:surges:history:v1",
+        "military:classification-audit:v1",
+        "military:classification-audit:stale:v1",
+        "forecast:refresh-request:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_military_maritime_news",
+      "script": "worldmonitor/scripts/seed-military-maritime-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-military-maritime-news.mjs",
+      "urls": [
+        {
+          "url": "https://api.worldmonitor.app",
+          "domain": "api.worldmonitor.app"
+        },
+        {
+          "url": "https://worldmonitor.app",
+          "domain": "worldmonitor.app"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "api.worldmonitor.app",
+        "worldmonitor.app"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": true
+    },
+    {
+      "id": "seed_national_debt",
+      "script": "worldmonitor/scripts/seed-national-debt.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-national-debt.mjs",
+      "urls": [
+        {
+          "url": "https://www.imf.org/external/datamapper/api/v1",
+          "domain": "www.imf.org"
+        },
+        {
+          "url": "https://api.fiscaldata.treasury.gov/services/api/v1/accounting/od/debt_to_penny?fields=record_date,tot_pub_debt_out_amt&sort=-record_date&page[size]=1",
+          "domain": "api.fiscaldata.treasury.gov"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "api.fiscaldata.treasury.gov",
+        "www.imf.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "imf-weo-2024"
+      ],
+      "redisKeys": [
+        "economic:national-debt:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_natural_events",
+      "script": "worldmonitor/scripts/seed-natural-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-natural-events.mjs",
+      "urls": [
+        {
+          "url": "https://eonet.gsfc.nasa.gov/api/v3/events",
+          "domain": "eonet.gsfc.nasa.gov"
+        },
+        {
+          "url": "https://www.gdacs.org/gdacsapi/api/events/geteventlist/MAP",
+          "domain": "www.gdacs.org"
+        },
+        {
+          "url": "https://mapservices.weather.noaa.gov/tropical/rest/services/tropical/NHC_tropical_weather/MapServer",
+          "domain": "mapservices.weather.noaa.gov"
+        },
+        {
+          "url": "https://www.nhc.noaa.gov/",
+          "domain": "www.nhc.noaa.gov"
+        }
+      ],
+      "urlCount": 4,
+      "domains": [
+        "eonet.gsfc.nasa.gov",
+        "mapservices.weather.noaa.gov",
+        "www.gdacs.org",
+        "www.nhc.noaa.gov"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "eonet+gdacs+nhc"
+      ],
+      "redisKeys": [
+        "natural:events:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_owid_energy_mix",
+      "script": "worldmonitor/scripts/seed-owid-energy-mix.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-owid-energy-mix.mjs",
+      "urls": [
+        {
+          "url": "https://owid-public.owid.io/data/energy/owid-energy-data.csv",
+          "domain": "owid-public.owid.io"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "owid-public.owid.io"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "owid-energy-mix-v1"
+      ],
+      "redisKeys": [
+        "energy:exposure:v1:index",
+        "energy:mix:v1:_countries",
+        "energy:mix:v1:_all",
+        "seed-meta:economic:owid-energy-mix"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "csv"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_portwatch_chokepoints_ref",
+      "script": "worldmonitor/scripts/seed-portwatch-chokepoints-ref.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-portwatch-chokepoints-ref.mjs",
+      "urls": [
+        {
+          "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/PortWatch_chokepoints_database/FeatureServer/0/query",
+          "domain": "services9.arcgis.com"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "services9.arcgis.com"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "imf-portwatch-chokepoints-arcgis-v1"
+      ],
+      "redisKeys": [
+        "portwatch:chokepoints:ref:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_portwatch_disruptions",
+      "script": "worldmonitor/scripts/seed-portwatch-disruptions.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-portwatch-disruptions.mjs",
+      "urls": [
+        {
+          "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/portwatch_disruptions_database/FeatureServer/0/query",
+          "domain": "services9.arcgis.com"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "services9.arcgis.com"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "imf-portwatch-disruptions-arcgis-v1"
+      ],
+      "redisKeys": [
+        "portwatch:disruptions:active:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_portwatch_port_activity",
+      "script": "worldmonitor/scripts/seed-portwatch-port-activity.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-portwatch-port-activity.mjs",
+      "urls": [
+        {
+          "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Ports_Data/FeatureServer/0/query",
+          "domain": "services9.arcgis.com"
+        },
+        {
+          "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/PortWatch_ports_database/FeatureServer/0/query",
+          "domain": "services9.arcgis.com"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "services9.arcgis.com"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "supply_chain:portwatch-ports:v1:_countries",
+        "seed-meta:supply_chain:portwatch-ports"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_portwatch",
+      "script": "worldmonitor/scripts/seed-portwatch.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-portwatch.mjs",
+      "urls": [
+        {
+          "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query",
+          "domain": "services9.arcgis.com"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "services9.arcgis.com"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "imf-portwatch-arcgis-v1"
+      ],
+      "redisKeys": [
+        "supply_chain:portwatch:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_prediction_markets",
+      "script": "worldmonitor/scripts/seed-prediction-markets.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-prediction-markets.mjs",
+      "urls": [
+        {
+          "url": "https://gamma-api.polymarket.com",
+          "domain": "gamma-api.polymarket.com"
+        },
+        {
+          "url": "https://api.elections.kalshi.com/trade-api/v2",
+          "domain": "api.elections.kalshi.com"
+        },
+        {
+          "url": "https://kalshi.com/markets/${topMarket.ticker}",
+          "domain": "kalshi.com"
+        },
+        {
+          "url": "https://polymarket.com/event/${event.slug}",
+          "domain": "polymarket.com"
+        }
+      ],
+      "urlCount": 4,
+      "domains": [
+        "api.elections.kalshi.com",
+        "gamma-api.polymarket.com",
+        "kalshi.com",
+        "polymarket.com"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "prediction:markets-bootstrap:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_radiation_watch",
+      "script": "worldmonitor/scripts/seed-radiation-watch.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-radiation-watch.mjs",
+      "urls": [
+        {
+          "url": "https://radnet.epa.gov/cdx-radnet-rest/api/rest/csv/${year}/fixed/${site.state}/${site.slug}",
+          "domain": "radnet.epa.gov"
+        },
+        {
+          "url": "https://api.safecast.org/measurements.json?${params.toString(",
+          "domain": "api.safecast.org"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "api.safecast.org",
+        "radnet.epa.gov"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "epa-radnet-safecast-merge-v1"
+      ],
+      "redisKeys": [
+        "radiation:observations:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "csv",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_regulatory_actions",
+      "script": "worldmonitor/scripts/seed-regulatory-actions.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-regulatory-actions.mjs",
+      "urls": [
+        {
+          "url": "https://www.sec.gov/news/pressreleases.rss",
+          "domain": "www.sec.gov"
+        },
+        {
+          "url": "https://www.cftc.gov/RSS/RSSENF/rssenf.xml",
+          "domain": "www.cftc.gov"
+        },
+        {
+          "url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml",
+          "domain": "www.cftc.gov"
+        },
+        {
+          "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+          "domain": "www.federalreserve.gov"
+        },
+        {
+          "url": "https://public.govdelivery.com/topics/USFDIC_26/feed.rss",
+          "domain": "public.govdelivery.com"
+        },
+        {
+          "url": "http://feeds.finra.org/FINRANotices",
+          "domain": "feeds.finra.org"
+        }
+      ],
+      "urlCount": 6,
+      "domains": [
+        "feeds.finra.org",
+        "public.govdelivery.com",
+        "www.cftc.gov",
+        "www.federalreserve.gov",
+        "www.sec.gov"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "regulatory-rss-v1"
+      ],
+      "redisKeys": [
+        "regulatory:actions:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_research",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs",
+      "urls": [
+        {
+          "url": "https://export.arxiv.org/api/query?search_query=cat:${cat}&start=0&max_results=50",
+          "domain": "export.arxiv.org"
+        },
+        {
+          "url": "https://arxiv.org/abs/${id}",
+          "domain": "arxiv.org"
+        },
+        {
+          "url": "https://hacker-news.firebaseio.com/v0/${feed}stories.json",
+          "domain": "hacker-news.firebaseio.com"
+        },
+        {
+          "url": "https://hacker-news.firebaseio.com/v0/item/${id}.json",
+          "domain": "hacker-news.firebaseio.com"
+        },
+        {
+          "url": "https://www.techmeme.com/newsy_events.ics",
+          "domain": "www.techmeme.com"
+        },
+        {
+          "url": "https://dev.events/rss.xml",
+          "domain": "dev.events"
+        },
+        {
+          "url": "https://www.gitex.com",
+          "domain": "www.gitex.com"
+        },
+        {
+          "url": "https://www.token2049.com",
+          "domain": "www.token2049.com"
+        },
+        {
+          "url": "https://collisionconf.com",
+          "domain": "collisionconf.com"
+        },
+        {
+          "url": "https://websummit.com",
+          "domain": "websummit.com"
+        },
+        {
+          "url": "https://api.ossinsight.io/v1/trends/repos/?language=${ossLang}&period=past_24_hours",
+          "domain": "api.ossinsight.io"
+        },
+        {
+          "url": "https://github.com/${r.repo_name}",
+          "domain": "github.com"
+        },
+        {
+          "url": "https://api.github.com/search/repositories?q=language:${lang}+created:",
+          "domain": "api.github.com"
+        }
+      ],
+      "urlCount": 13,
+      "domains": [
+        "api.github.com",
+        "api.ossinsight.io",
+        "arxiv.org",
+        "collisionconf.com",
+        "dev.events",
+        "export.arxiv.org",
+        "github.com",
+        "hacker-news.firebaseio.com",
+        "websummit.com",
+        "www.gitex.com",
+        "www.techmeme.com",
+        "www.token2049.com"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "arxiv-hn-gitter"
+      ],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_resilience_scores",
+      "script": "worldmonitor/scripts/seed-resilience-scores.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-resilience-scores.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "resilience:ranking:v2",
+        "resilience:static:index:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_resilience_static",
+      "script": "worldmonitor/scripts/seed-resilience-static.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-resilience-static.mjs",
+      "urls": [
+        {
+          "url": "https://api.worldbank.org/v2",
+          "domain": "api.worldbank.org"
+        },
+        {
+          "url": "https://ghoapi.azureedge.net/api",
+          "domain": "ghoapi.azureedge.net"
+        },
+        {
+          "url": "https://rsf.org/en/ranking",
+          "domain": "rsf.org"
+        },
+        {
+          "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_id?freq=A",
+          "domain": "ec.europa.eu"
+        },
+        {
+          "url": "https://www.visionofhumanity.org/wp-content/uploads/${yr}/06/GPI_${yr}_${yr}.csv",
+          "domain": "www.visionofhumanity.org"
+        },
+        {
+          "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/2e4f7475-105b-4fae-81f7-7c32076096b6/download/ipc_global_national_wide_latest.csv",
+          "domain": "data.humdata.org"
+        }
+      ],
+      "urlCount": 6,
+      "domains": [
+        "api.worldbank.org",
+        "data.humdata.org",
+        "ec.europa.eu",
+        "ghoapi.azureedge.net",
+        "rsf.org",
+        "www.visionofhumanity.org"
+      ],
+      "envVars": [
+        "RESILIENCE_WHO_MEASLES_INDICATOR"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "resilience:static:index:v1",
+        "seed-meta:resilience:static"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "csv",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_sanctions_pressure",
+      "script": "worldmonitor/scripts/seed-sanctions-pressure.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-sanctions-pressure.mjs",
+      "urls": [
+        {
+          "url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/sdn_advanced.xml",
+          "domain": "sanctionslistservice.ofac.treas.gov"
+        },
+        {
+          "url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/cons_advanced.xml",
+          "domain": "sanctionslistservice.ofac.treas.gov"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "sanctionslistservice.ofac.treas.gov"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "ofac-sls-advanced-xml-v1"
+      ],
+      "redisKeys": [
+        "sanctions:pressure:v1",
+        "sanctions:pressure:state:v1",
+        "sanctions:entities:v1",
+        "sanctions:country-counts:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_security_advisories",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "urls": [
+        {
+          "url": "https://travel.state.gov/_res/rss/TAsTWs.xml",
+          "domain": "travel.state.gov"
+        },
+        {
+          "url": "https://www.gov.uk/foreign-travel-advice.atom",
+          "domain": "www.gov.uk"
+        },
+        {
+          "url": "https://th.usembassy.gov/category/alert/feed/",
+          "domain": "th.usembassy.gov"
+        },
+        {
+          "url": "https://ae.usembassy.gov/category/alert/feed/",
+          "domain": "ae.usembassy.gov"
+        },
+        {
+          "url": "https://de.usembassy.gov/category/alert/feed/",
+          "domain": "de.usembassy.gov"
+        },
+        {
+          "url": "https://ua.usembassy.gov/category/alert/feed/",
+          "domain": "ua.usembassy.gov"
+        },
+        {
+          "url": "https://mx.usembassy.gov/category/alert/feed/",
+          "domain": "mx.usembassy.gov"
+        },
+        {
+          "url": "https://in.usembassy.gov/category/alert/feed/",
+          "domain": "in.usembassy.gov"
+        },
+        {
+          "url": "https://pk.usembassy.gov/category/alert/feed/",
+          "domain": "pk.usembassy.gov"
+        },
+        {
+          "url": "https://co.usembassy.gov/category/alert/feed/",
+          "domain": "co.usembassy.gov"
+        },
+        {
+          "url": "https://pl.usembassy.gov/category/alert/feed/",
+          "domain": "pl.usembassy.gov"
+        },
+        {
+          "url": "https://bd.usembassy.gov/category/alert/feed/",
+          "domain": "bd.usembassy.gov"
+        },
+        {
+          "url": "https://it.usembassy.gov/category/alert/feed/",
+          "domain": "it.usembassy.gov"
+        },
+        {
+          "url": "https://do.usembassy.gov/category/alert/feed/",
+          "domain": "do.usembassy.gov"
+        },
+        {
+          "url": "https://mm.usembassy.gov/category/alert/feed/",
+          "domain": "mm.usembassy.gov"
+        },
+        {
+          "url": "https://wwwnc.cdc.gov/travel/rss/notices.xml",
+          "domain": "wwwnc.cdc.gov"
+        },
+        {
+          "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1310/feed",
+          "domain": "www.ecdc.europa.eu"
+        },
+        {
+          "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1505/feed",
+          "domain": "www.ecdc.europa.eu"
+        },
+        {
+          "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1295/feed",
+          "domain": "www.ecdc.europa.eu"
+        },
+        {
+          "url": "https://www.ecdc.europa.eu/en/taxonomy/term/323/feed",
+          "domain": "www.ecdc.europa.eu"
+        },
+        {
+          "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1244/feed",
+          "domain": "www.ecdc.europa.eu"
+        },
+        {
+          "url": "https://www.who.int/rss-feeds/news-english.xml",
+          "domain": "www.who.int"
+        },
+        {
+          "url": "https://www.afro.who.int/rss/emergencies.xml",
+          "domain": "www.afro.who.int"
+        },
+        {
+          "url": "https://proxy.worldmonitor.app",
+          "domain": "proxy.worldmonitor.app"
+        }
+      ],
+      "urlCount": 24,
+      "domains": [
+        "ae.usembassy.gov",
+        "bd.usembassy.gov",
+        "co.usembassy.gov",
+        "de.usembassy.gov",
+        "do.usembassy.gov",
+        "in.usembassy.gov",
+        "it.usembassy.gov",
+        "mm.usembassy.gov",
+        "mx.usembassy.gov",
+        "pk.usembassy.gov",
+        "pl.usembassy.gov",
+        "proxy.worldmonitor.app",
+        "th.usembassy.gov",
+        "travel.state.gov",
+        "ua.usembassy.gov",
+        "www.afro.who.int",
+        "www.ecdc.europa.eu",
+        "www.gov.uk",
+        "www.who.int",
+        "wwwnc.cdc.gov"
+      ],
+      "envVars": [
+        "RELAY_URL"
+      ],
+      "sourceVersions": [
+        "rss-feeds"
+      ],
+      "redisKeys": [
+        "intelligence:advisories:v1",
+        "intelligence:advisories-bootstrap:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_service_statuses",
+      "script": "worldmonitor/scripts/seed-service-statuses.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-service-statuses.mjs",
+      "urls": [
+        {
+          "url": "https://api.worldmonitor.app/api/infrastructure/v1/list-service-statuses",
+          "domain": "api.worldmonitor.app"
+        },
+        {
+          "url": "https://worldmonitor.app",
+          "domain": "worldmonitor.app"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "api.worldmonitor.app",
+        "worldmonitor.app"
+      ],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "infra:service-statuses:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_stablecoin_markets",
+      "script": "worldmonitor/scripts/seed-stablecoin-markets.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-stablecoin-markets.mjs",
+      "urls": [
+        {
+          "url": "https://pro-api.coingecko.com/api/v3",
+          "domain": "pro-api.coingecko.com"
+        },
+        {
+          "url": "https://api.coingecko.com/api/v3",
+          "domain": "api.coingecko.com"
+        },
+        {
+          "url": "https://api.coinpaprika.com/v1/tickers?quotes=USD",
+          "domain": "api.coinpaprika.com"
+        }
+      ],
+      "urlCount": 3,
+      "domains": [
+        "api.coingecko.com",
+        "api.coinpaprika.com",
+        "pro-api.coingecko.com"
+      ],
+      "envVars": [
+        "COINGECKO_API_KEY"
+      ],
+      "sourceVersions": [
+        "coingecko-stablecoins"
+      ],
+      "redisKeys": [
+        "market:stablecoins:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_submarine_cables",
+      "script": "worldmonitor/scripts/seed-submarine-cables.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-submarine-cables.mjs",
+      "urls": [
+        {
+          "url": "https://www.submarinecablemap.com/api/v3",
+          "domain": "www.submarinecablemap.com"
+        },
+        {
+          "url": "https://www.submarinecablemap.com/api/v3/cable/all.json",
+          "domain": "www.submarinecablemap.com"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "www.submarinecablemap.com"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "telegeography-v3"
+      ],
+      "redisKeys": [
+        "infrastructure:submarine-cables:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_supply_chain_trade",
+      "script": "worldmonitor/scripts/seed-supply-chain-trade.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-supply-chain-trade.mjs",
+      "urls": [
+        {
+          "url": "https://api.stlouisfed.org/fred/series/observations?${params}",
+          "domain": "api.stlouisfed.org"
+        },
+        {
+          "url": "https://en.sse.net.cn/currentIndex?indexName=${indexName}",
+          "domain": "en.sse.net.cn"
+        },
+        {
+          "url": "https://www.handybulk.com/baltic-dry-index/",
+          "domain": "www.handybulk.com"
+        },
+        {
+          "url": "https://api.wto.org/timeseries/v1${path}",
+          "domain": "api.wto.org"
+        },
+        {
+          "url": "https://stats.wto.org",
+          "domain": "stats.wto.org"
+        },
+        {
+          "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_9",
+          "domain": "api.fiscaldata.treasury.gov"
+        }
+      ],
+      "urlCount": 6,
+      "domains": [
+        "api.fiscaldata.treasury.gov",
+        "api.stlouisfed.org",
+        "api.wto.org",
+        "en.sse.net.cn",
+        "stats.wto.org",
+        "www.handybulk.com"
+      ],
+      "envVars": [
+        "FRED_API_KEY",
+        "WTO_API_KEY"
+      ],
+      "sourceVersions": [
+        "fred-wto-sse-bdi-budgetlab"
+      ],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_thermal_escalation",
+      "script": "worldmonitor/scripts/seed-thermal-escalation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-thermal-escalation.mjs",
+      "urls": [],
+      "urlCount": 0,
+      "domains": [],
+      "envVars": [],
+      "sourceVersions": [],
+      "redisKeys": [
+        "thermal:escalation:v1",
+        "thermal:escalation:history:v1"
+      ],
+      "inferredCaptureMethods": [],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_token_panels",
+      "script": "worldmonitor/scripts/seed-token-panels.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-token-panels.mjs",
+      "urls": [
+        {
+          "url": "https://pro-api.coingecko.com/api/v3",
+          "domain": "pro-api.coingecko.com"
+        },
+        {
+          "url": "https://api.coingecko.com/api/v3",
+          "domain": "api.coingecko.com"
+        },
+        {
+          "url": "https://api.coinpaprika.com/v1/tickers?quotes=USD",
+          "domain": "api.coinpaprika.com"
+        }
+      ],
+      "urlCount": 3,
+      "domains": [
+        "api.coingecko.com",
+        "api.coinpaprika.com",
+        "pro-api.coingecko.com"
+      ],
+      "envVars": [
+        "COINGECKO_API_KEY"
+      ],
+      "sourceVersions": [
+        "coingecko-paprika-fallback"
+      ],
+      "redisKeys": [
+        "market:defi-tokens:v1",
+        "market:ai-tokens:v1",
+        "market:other-tokens:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_trade_flows",
+      "script": "worldmonitor/scripts/seed-trade-flows.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-trade-flows.mjs",
+      "urls": [
+        {
+          "url": "https://comtradeapi.un.org/public/v1",
+          "domain": "comtradeapi.un.org"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "comtradeapi.un.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "comtrade-preview-v1"
+      ],
+      "redisKeys": [
+        "comtrade:flows:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_ucdp_events",
+      "script": "worldmonitor/scripts/seed-ucdp-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-ucdp-events.mjs",
+      "urls": [
+        {
+          "url": "https://ucdpapi.pcr.uu.se/api/gedevents/${version}?pagesize=${UCDP_PAGE_SIZE}&page=${page}",
+          "domain": "ucdpapi.pcr.uu.se"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "ucdpapi.pcr.uu.se"
+      ],
+      "envVars": [
+        "UCDP_ACCESS_TOKEN",
+        "UC_DP_KEY",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "conflict:ucdp-events:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "html_or_regex_scrape"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_unrest_events",
+      "script": "worldmonitor/scripts/seed-unrest-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-unrest-events.mjs",
+      "urls": [
+        {
+          "url": "https://api.gdeltproject.org/api/v1/gkg_geojson",
+          "domain": "api.gdeltproject.org"
+        },
+        {
+          "url": "https://acleddata.com/api/acled/read",
+          "domain": "acleddata.com"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "acleddata.com",
+        "api.gdeltproject.org"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "acled+gdelt"
+      ],
+      "redisKeys": [
+        "unrest:events:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "gdelt_api"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_usa_spending",
+      "script": "worldmonitor/scripts/seed-usa-spending.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-usa-spending.mjs",
+      "urls": [
+        {
+          "url": "https://api.usaspending.gov/api/v2",
+          "domain": "api.usaspending.gov"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "api.usaspending.gov"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "usaspending-v2"
+      ],
+      "redisKeys": [
+        "economic:spending:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_vpd_tracker",
+      "script": "worldmonitor/scripts/seed-vpd-tracker.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-vpd-tracker.mjs",
+      "urls": [
+        {
+          "url": "https://thinkglobalhealth.github.io/disease_tracker",
+          "domain": "thinkglobalhealth.github.io"
+        },
+        {
+          "url": "https://thinkglobalhealth.github.io/disease_tracker/index_bundle.js",
+          "domain": "thinkglobalhealth.github.io"
+        }
+      ],
+      "urlCount": 2,
+      "domains": [
+        "thinkglobalhealth.github.io"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "tgh-bundle-v1"
+      ],
+      "redisKeys": [
+        "health:vpd-tracker:realtime:v1",
+        "health:vpd-tracker:historical:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_wb_indicators",
+      "script": "worldmonitor/scripts/seed-wb-indicators.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-wb-indicators.mjs",
+      "urls": [
+        {
+          "url": "https://worldmonitor.app",
+          "domain": "worldmonitor.app"
+        },
+        {
+          "url": "https://api.worldbank.org/v2/country/all/indicator/${indicatorId}",
+          "domain": "api.worldbank.org"
+        },
+        {
+          "url": "https://api.worldbank.org/v2/country/1W/indicator/${ind.code}?format=json&date=${dateRange}&per_page=1000",
+          "domain": "api.worldbank.org"
+        },
+        {
+          "url": "https://api.worldbank.org/v2/country/${countryCodes}/indicator/EG.ELC.RNEW.ZS?format=json&date=${dateRange}&per_page=1000",
+          "domain": "api.worldbank.org"
+        }
+      ],
+      "urlCount": 4,
+      "domains": [
+        "api.worldbank.org",
+        "worldmonitor.app"
+      ],
+      "envVars": [
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [
+        "economic:worldbank-techreadiness:v1",
+        "economic:worldbank-progress:v1",
+        "economic:worldbank-renewable:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_weather_alerts",
+      "script": "worldmonitor/scripts/seed-weather-alerts.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-weather-alerts.mjs",
+      "urls": [
+        {
+          "url": "https://api.weather.gov/alerts/active",
+          "domain": "api.weather.gov"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "api.weather.gov"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "nws-active"
+      ],
+      "redisKeys": [
+        "weather:alerts:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_webcams",
+      "script": "worldmonitor/scripts/seed-webcams.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-webcams.mjs",
+      "urls": [
+        {
+          "url": "https://api.windy.com/webcams/api/v3/webcams",
+          "domain": "api.windy.com"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "api.windy.com"
+      ],
+      "envVars": [
+        "KEY_PREFIX",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL",
+        "WINDY_API_KEY"
+      ],
+      "sourceVersions": [],
+      "redisKeys": [],
+      "inferredCaptureMethods": [
+        "http_fetch",
+        "rss_or_atom"
+      ],
+      "hasLLMCall": false
+    },
+    {
+      "id": "seed_yield_curve_eu",
+      "script": "worldmonitor/scripts/seed-yield-curve-eu.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-yield-curve-eu.mjs",
+      "urls": [
+        {
+          "url": "https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_1Y+SR_2Y+SR_5Y+SR_10Y+SR_20Y+SR_30Y",
+          "domain": "data-api.ecb.europa.eu"
+        }
+      ],
+      "urlCount": 1,
+      "domains": [
+        "data-api.ecb.europa.eu"
+      ],
+      "envVars": [],
+      "sourceVersions": [
+        "ecb-sdmx-v1"
+      ],
+      "redisKeys": [
+        "economic:yield-curve-eu:v1"
+      ],
+      "inferredCaptureMethods": [
+        "http_fetch"
+      ],
+      "hasLLMCall": false
+    }
+  ],
+  "allLiteralUrls": [
+    {
+      "url": "https://nasstatus.faa.gov/api/airport-status-information",
+      "domain": "nasstatus.faa.gov",
+      "script": "worldmonitor/scripts/seed-airport-delays.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-airport-delays.mjs"
+    },
+    {
+      "url": "https://dataservices.icao.int/api/notams-realtime-list",
+      "domain": "dataservices.icao.int",
+      "script": "worldmonitor/scripts/seed-airport-delays.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-airport-delays.mjs"
+    },
+    {
+      "url": "https://api.aviationstack.com/v1/flights",
+      "domain": "api.aviationstack.com",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs"
+    },
+    {
+      "url": "https://www.flightglobal.com/rss",
+      "domain": "www.flightglobal.com",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs"
+    },
+    {
+      "url": "https://simpleflying.com/feed/",
+      "domain": "simpleflying.com",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs"
+    },
+    {
+      "url": "https://aerotime.aero/feed",
+      "domain": "aerotime.aero",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs"
+    },
+    {
+      "url": "https://thepointsguy.com/feed/",
+      "domain": "thepointsguy.com",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs"
+    },
+    {
+      "url": "https://airlinegeeks.com/feed/",
+      "domain": "airlinegeeks.com",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs"
+    },
+    {
+      "url": "https://onemileatatime.com/feed/",
+      "domain": "onemileatatime.com",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs"
+    },
+    {
+      "url": "https://viewfromthewing.com/feed/",
+      "domain": "viewfromthewing.com",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs"
+    },
+    {
+      "url": "https://www.aviationpros.com/rss",
+      "domain": "www.aviationpros.com",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs"
+    },
+    {
+      "url": "https://www.aviationweek.com/rss",
+      "domain": "www.aviationweek.com",
+      "script": "worldmonitor/scripts/seed-aviation.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-aviation.mjs"
+    },
+    {
+      "url": "https://api.exa.ai/search",
+      "domain": "api.exa.ai",
+      "script": "worldmonitor/scripts/seed-bigmac.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-bigmac.mjs"
+    },
+    {
+      "url": "https://stats.bis.org/api/v1/data",
+      "domain": "stats.bis.org",
+      "script": "worldmonitor/scripts/seed-bis-data.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-bis-data.mjs"
+    },
+    {
+      "url": "https://api.stlouisfed.org/fred/series/observations?${params}",
+      "domain": "api.stlouisfed.org",
+      "script": "worldmonitor/scripts/seed-bls-series.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-bls-series.mjs"
+    },
+    {
+      "url": "https://api.reliefweb.int/v1/disasters",
+      "domain": "api.reliefweb.int",
+      "script": "worldmonitor/scripts/seed-climate-disasters.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-disasters.mjs"
+    },
+    {
+      "url": "https://api.reliefweb.int/v2/disasters",
+      "domain": "api.reliefweb.int",
+      "script": "worldmonitor/scripts/seed-climate-disasters.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-disasters.mjs"
+    },
+    {
+      "url": "https://www.carbonbrief.org/feed",
+      "domain": "www.carbonbrief.org",
+      "script": "worldmonitor/scripts/seed-climate-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-news.mjs"
+    },
+    {
+      "url": "https://www.theguardian.com/environment/climate-crisis/rss",
+      "domain": "www.theguardian.com",
+      "script": "worldmonitor/scripts/seed-climate-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-news.mjs"
+    },
+    {
+      "url": "https://reliefweb.int/updates/rss.xml?content=reports&country=0&theme=4590",
+      "domain": "reliefweb.int",
+      "script": "worldmonitor/scripts/seed-climate-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-news.mjs"
+    },
+    {
+      "url": "https://earthobservatory.nasa.gov/feeds/earth-observatory.rss",
+      "domain": "earthobservatory.nasa.gov",
+      "script": "worldmonitor/scripts/seed-climate-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-news.mjs"
+    },
+    {
+      "url": "https://www.unep.org/rss.xml",
+      "domain": "www.unep.org",
+      "script": "worldmonitor/scripts/seed-climate-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-news.mjs"
+    },
+    {
+      "url": "https://phys.org/rss-feed/earth-news/earth-sciences/",
+      "domain": "phys.org",
+      "script": "worldmonitor/scripts/seed-climate-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-news.mjs"
+    },
+    {
+      "url": "https://climate.copernicus.eu/rss.xml",
+      "domain": "climate.copernicus.eu",
+      "script": "worldmonitor/scripts/seed-climate-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-news.mjs"
+    },
+    {
+      "url": "https://insideclimatenews.org/feed/",
+      "domain": "insideclimatenews.org",
+      "script": "worldmonitor/scripts/seed-climate-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-news.mjs"
+    },
+    {
+      "url": "https://www.climatecentral.org/rss",
+      "domain": "www.climatecentral.org",
+      "script": "worldmonitor/scripts/seed-climate-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-news.mjs"
+    },
+    {
+      "url": "https://noaadata.apps.nsidc.org/NOAA/G02135/north/daily/data/N_seaice_extent_daily_v4.0.csv",
+      "domain": "noaadata.apps.nsidc.org",
+      "script": "worldmonitor/scripts/seed-climate-ocean-ice.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-ocean-ice.mjs"
+    },
+    {
+      "url": "https://noaadata.apps.nsidc.org/NOAA/G02135/north/daily/data/N_seaice_extent_climatology_1981-2010_v4.0.csv",
+      "domain": "noaadata.apps.nsidc.org",
+      "script": "worldmonitor/scripts/seed-climate-ocean-ice.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-ocean-ice.mjs"
+    },
+    {
+      "url": "https://sealevel.nasa.gov/overlay-global-mean-sea-level",
+      "domain": "sealevel.nasa.gov",
+      "script": "worldmonitor/scripts/seed-climate-ocean-ice.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-ocean-ice.mjs"
+    },
+    {
+      "url": "https://www.ncei.noaa.gov/data/oceans/woa/DATA_ANALYSIS/3M_HEAT_CONTENT/DATA/basin/yearly/h22-w0-700m.dat",
+      "domain": "www.ncei.noaa.gov",
+      "script": "worldmonitor/scripts/seed-climate-ocean-ice.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-ocean-ice.mjs"
+    },
+    {
+      "url": "https://www.ncei.noaa.gov/data/noaa-global-surface-temperature/v6/access/timeseries/",
+      "domain": "www.ncei.noaa.gov",
+      "script": "worldmonitor/scripts/seed-climate-ocean-ice.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-ocean-ice.mjs"
+    },
+    {
+      "url": "https://www.ncei.noaa.gov/data/noaa-global-surface-temperature/v5.1/access/timeseries/aravg.mon.ocean.90S.90N.v5.1.0.202312.asc",
+      "domain": "www.ncei.noaa.gov",
+      "script": "worldmonitor/scripts/seed-climate-ocean-ice.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-climate-ocean-ice.mjs"
+    },
+    {
+      "url": "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_daily_mlo.txt",
+      "domain": "gml.noaa.gov",
+      "script": "worldmonitor/scripts/seed-co2-monitoring.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-co2-monitoring.mjs"
+    },
+    {
+      "url": "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt",
+      "domain": "gml.noaa.gov",
+      "script": "worldmonitor/scripts/seed-co2-monitoring.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-co2-monitoring.mjs"
+    },
+    {
+      "url": "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_gl.txt",
+      "domain": "gml.noaa.gov",
+      "script": "worldmonitor/scripts/seed-co2-monitoring.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-co2-monitoring.mjs"
+    },
+    {
+      "url": "https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_mm_gl.txt",
+      "domain": "gml.noaa.gov",
+      "script": "worldmonitor/scripts/seed-co2-monitoring.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-co2-monitoring.mjs"
+    },
+    {
+      "url": "https://gml.noaa.gov/webdata/ccgg/trends/n2o/n2o_mm_gl.txt",
+      "domain": "gml.noaa.gov",
+      "script": "worldmonitor/scripts/seed-co2-monitoring.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-co2-monitoring.mjs"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol",
+      "domain": "query1.finance.yahoo.com",
+      "script": "worldmonitor/scripts/seed-commodity-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-commodity-quotes.mjs"
+    },
+    {
+      "url": "https://acleddata.com/oauth/token",
+      "domain": "acleddata.com",
+      "script": "worldmonitor/scripts/seed-conflict-intel.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-conflict-intel.mjs"
+    },
+    {
+      "url": "https://acleddata.com/api/acled/read?${params}",
+      "domain": "acleddata.com",
+      "script": "worldmonitor/scripts/seed-conflict-intel.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-conflict-intel.mjs"
+    },
+    {
+      "url": "https://hapi.humdata.org/api/v2/coordination-context/conflict-events?output_format=json&limit=1000&offset=0&app_identifier=${appId}&location_code=${iso3}",
+      "domain": "hapi.humdata.org",
+      "script": "worldmonitor/scripts/seed-conflict-intel.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-conflict-intel.mjs"
+    },
+    {
+      "url": "https://www.pizzint.watch/api/dashboard-data",
+      "domain": "www.pizzint.watch",
+      "script": "worldmonitor/scripts/seed-conflict-intel.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-conflict-intel.mjs"
+    },
+    {
+      "url": "https://www.pizzint.watch/api/gdelt/batch?pairs=${encodeURIComponent(pairs",
+      "domain": "www.pizzint.watch",
+      "script": "worldmonitor/scripts/seed-conflict-intel.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-conflict-intel.mjs"
+    },
+    {
+      "url": "https://publicreporting.cftc.gov/resource/${datasetId}.json",
+      "domain": "publicreporting.cftc.gov",
+      "script": "worldmonitor/scripts/seed-cot.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cot.mjs"
+    },
+    {
+      "url": "https://pro-api.coingecko.com/api/v3",
+      "domain": "pro-api.coingecko.com",
+      "script": "worldmonitor/scripts/seed-crypto-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-crypto-quotes.mjs"
+    },
+    {
+      "url": "https://api.coingecko.com/api/v3",
+      "domain": "api.coingecko.com",
+      "script": "worldmonitor/scripts/seed-crypto-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-crypto-quotes.mjs"
+    },
+    {
+      "url": "https://api.coinpaprika.com/v1/tickers?quotes=USD",
+      "domain": "api.coinpaprika.com",
+      "script": "worldmonitor/scripts/seed-crypto-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-crypto-quotes.mjs"
+    },
+    {
+      "url": "https://pro-api.coingecko.com/api/v3",
+      "domain": "pro-api.coingecko.com",
+      "script": "worldmonitor/scripts/seed-crypto-sectors.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-crypto-sectors.mjs"
+    },
+    {
+      "url": "https://api.coingecko.com/api/v3",
+      "domain": "api.coingecko.com",
+      "script": "worldmonitor/scripts/seed-crypto-sectors.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-crypto-sectors.mjs"
+    },
+    {
+      "url": "https://feodotracker.abuse.ch/downloads/ipblocklist.json",
+      "domain": "feodotracker.abuse.ch",
+      "script": "worldmonitor/scripts/seed-cyber-threats.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cyber-threats.mjs"
+    },
+    {
+      "url": "https://urlhaus-api.abuse.ch/v1/urls/recent/limit/${limit}/",
+      "domain": "urlhaus-api.abuse.ch",
+      "script": "worldmonitor/scripts/seed-cyber-threats.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cyber-threats.mjs"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/IPC2s-30day.csv",
+      "domain": "raw.githubusercontent.com",
+      "script": "worldmonitor/scripts/seed-cyber-threats.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cyber-threats.mjs"
+    },
+    {
+      "url": "https://otx.alienvault.com/api/v1/indicators/export?type=IPv4&modified_since=",
+      "domain": "otx.alienvault.com",
+      "script": "worldmonitor/scripts/seed-cyber-threats.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cyber-threats.mjs"
+    },
+    {
+      "url": "https://api.abuseipdb.com/api/v2/blacklist",
+      "domain": "api.abuseipdb.com",
+      "script": "worldmonitor/scripts/seed-cyber-threats.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cyber-threats.mjs"
+    },
+    {
+      "url": "https://ipinfo.io/${encodeURIComponent(ip",
+      "domain": "ipinfo.io",
+      "script": "worldmonitor/scripts/seed-cyber-threats.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cyber-threats.mjs"
+    },
+    {
+      "url": "https://freeipapi.com/api/json/${encodeURIComponent(ip",
+      "domain": "freeipapi.com",
+      "script": "worldmonitor/scripts/seed-cyber-threats.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-cyber-threats.mjs"
+    },
+    {
+      "url": "https://search.patentsview.org/api/v1/patent/",
+      "domain": "search.patentsview.org",
+      "script": "worldmonitor/scripts/seed-defense-patents.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-defense-patents.mjs"
+    },
+    {
+      "url": "https://patents.google.com/patent/US${p.patent_id}",
+      "domain": "patents.google.com",
+      "script": "worldmonitor/scripts/seed-defense-patents.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-defense-patents.mjs"
+    },
+    {
+      "url": "https://worldmonitor.app",
+      "domain": "worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-digest-notifications.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-digest-notifications.mjs"
+    },
+    {
+      "url": "https://x.com/eliehabib",
+      "domain": "x.com",
+      "script": "worldmonitor/scripts/seed-digest-notifications.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-digest-notifications.mjs"
+    },
+    {
+      "url": "https://github.com/koala73/worldmonitor",
+      "domain": "github.com",
+      "script": "worldmonitor/scripts/seed-digest-notifications.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-digest-notifications.mjs"
+    },
+    {
+      "url": "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage",
+      "domain": "api.telegram.org",
+      "script": "worldmonitor/scripts/seed-digest-notifications.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-digest-notifications.mjs"
+    },
+    {
+      "url": "https://www.who.int/api/emergencies/diseaseoutbreaknews?sf_provider=dynamicProvider372&sf_culture=en&$orderby=PublicationDateAndTime%20desc&$select=Title,ItemDefaultUrl,PublicationDateAndTime&$top=30",
+      "domain": "www.who.int",
+      "script": "worldmonitor/scripts/seed-disease-outbreaks.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-disease-outbreaks.mjs"
+    },
+    {
+      "url": "https://tools.cdc.gov/api/v2/resources/media/132608.rss",
+      "domain": "tools.cdc.gov",
+      "script": "worldmonitor/scripts/seed-disease-outbreaks.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-disease-outbreaks.mjs"
+    },
+    {
+      "url": "https://outbreaknewstoday.com/feed/",
+      "domain": "outbreaknewstoday.com",
+      "script": "worldmonitor/scripts/seed-disease-outbreaks.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-disease-outbreaks.mjs"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/thinkglobalhealth/disease_tracker/main/index_bundle.js",
+      "domain": "raw.githubusercontent.com",
+      "script": "worldmonitor/scripts/seed-disease-outbreaks.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-disease-outbreaks.mjs"
+    },
+    {
+      "url": "https://www.who.int${item.ItemDefaultUrl}",
+      "domain": "www.who.int${item.itemdefaulturl}",
+      "script": "worldmonitor/scripts/seed-disease-outbreaks.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-disease-outbreaks.mjs"
+    },
+    {
+      "url": "https://thinkglobalhealth.github.io/disease_tracker/",
+      "domain": "thinkglobalhealth.github.io",
+      "script": "worldmonitor/scripts/seed-disease-outbreaks.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-disease-outbreaks.mjs"
+    },
+    {
+      "url": "https://api.unhcr.org/population/v1/population/?year=${year}&limit=${limit}&page=${page}&coo_all=true&coa_all=true",
+      "domain": "api.unhcr.org",
+      "script": "worldmonitor/scripts/seed-displacement-summary.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-displacement-summary.mjs"
+    },
+    {
+      "url": "https://finnhub.io/api/v1/calendar/earnings?from=${toDateStr(from",
+      "domain": "finnhub.io",
+      "script": "worldmonitor/scripts/seed-earnings-calendar.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-earnings-calendar.mjs"
+    },
+    {
+      "url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+      "domain": "earthquake.usgs.gov",
+      "script": "worldmonitor/scripts/seed-earthquakes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-earthquakes.mjs"
+    },
+    {
+      "url": "https://data-api.ecb.europa.eu/service/data/EXR/D.USD+GBP+JPY+CHF+CAD+AUD+CNY.EUR.SP00.A",
+      "domain": "data-api.ecb.europa.eu",
+      "script": "worldmonitor/scripts/seed-ecb-fx-rates.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-ecb-fx-rates.mjs"
+    },
+    {
+      "url": "https://data-api.ecb.europa.eu/service/data/EST/B.EU000A2X2A25.WT?format=jsondata&lastNObservations=60",
+      "domain": "data-api.ecb.europa.eu",
+      "script": "worldmonitor/scripts/seed-ecb-short-rates.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-ecb-short-rates.mjs"
+    },
+    {
+      "url": "https://data-api.ecb.europa.eu/service/data/FM/M.U2.EUR.RT.MM.EURIBOR3MD_.HSTA?format=jsondata&lastNObservations=36",
+      "domain": "data-api.ecb.europa.eu",
+      "script": "worldmonitor/scripts/seed-ecb-short-rates.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-ecb-short-rates.mjs"
+    },
+    {
+      "url": "https://data-api.ecb.europa.eu/service/data/FM/M.U2.EUR.RT.MM.EURIBOR6MD_.HSTA?format=jsondata&lastNObservations=36",
+      "domain": "data-api.ecb.europa.eu",
+      "script": "worldmonitor/scripts/seed-ecb-short-rates.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-ecb-short-rates.mjs"
+    },
+    {
+      "url": "https://data-api.ecb.europa.eu/service/data/FM/M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA?format=jsondata&lastNObservations=36",
+      "domain": "data-api.ecb.europa.eu",
+      "script": "worldmonitor/scripts/seed-ecb-short-rates.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-ecb-short-rates.mjs"
+    },
+    {
+      "url": "https://api.stlouisfed.org/fred/releases",
+      "domain": "api.stlouisfed.org",
+      "script": "worldmonitor/scripts/seed-economic-calendar.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economic-calendar.mjs"
+    },
+    {
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "domain": "www.federalreserve.gov",
+      "script": "worldmonitor/scripts/seed-economic-calendar.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economic-calendar.mjs"
+    },
+    {
+      "url": "https://www.ecb.europa.eu/press/calendars/mgcgc/html/index.en.html",
+      "domain": "www.ecb.europa.eu",
+      "script": "worldmonitor/scripts/seed-economic-calendar.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economic-calendar.mjs"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/${datasetId}",
+      "domain": "ec.europa.eu",
+      "script": "worldmonitor/scripts/seed-economic-calendar.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economic-calendar.mjs"
+    },
+    {
+      "url": "https://api.stlouisfed.org/fred/release/dates",
+      "domain": "api.stlouisfed.org",
+      "script": "worldmonitor/scripts/seed-economic-calendar.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economic-calendar.mjs"
+    },
+    {
+      "url": "https://api.eia.gov${c.apiPath}?${params}",
+      "domain": "api.eia.gov${c.apipath}",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://api.eia.gov/v2/electricity/state-electricity-profiles/capability/data/?${params}",
+      "domain": "api.eia.gov",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://api.stlouisfed.org/fred/series/observations?${obsParams}",
+      "domain": "api.stlouisfed.org",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://api.stlouisfed.org/fred/series?${metaParams}",
+      "domain": "api.stlouisfed.org",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://finnhub.io/api/v1/${endpoint}?symbol=${encodeURIComponent(symbol",
+      "domain": "finnhub.io",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://api.stlouisfed.org/fred/series/observations?${params}",
+      "domain": "api.stlouisfed.org",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart",
+      "domain": "query1.finance.yahoo.com",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://api.alternative.me/fng/?limit=30&format=json",
+      "domain": "api.alternative.me",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://mempool.space/api/v1/mining/hashrate/1m",
+      "domain": "mempool.space",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://api.eia.gov/v2/petroleum/stoc/wstk/data/?${params}",
+      "domain": "api.eia.gov",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://api.eia.gov/v2/natural-gas/stor/wkly/data/?${params}",
+      "domain": "api.eia.gov",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://api.eia.gov/v2/petroleum/pnp/wiup/data/?${params}",
+      "domain": "api.eia.gov",
+      "script": "worldmonitor/scripts/seed-economy.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-economy.mjs"
+    },
+    {
+      "url": "https://web-api.tp.entsoe.eu/api?${params.toString(",
+      "domain": "web-api.tp.entsoe.eu",
+      "script": "worldmonitor/scripts/seed-electricity-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-electricity-prices.mjs"
+    },
+    {
+      "url": "https://api.eia.gov/v2/electricity/rto/region-data/data/?${params.toString(",
+      "domain": "api.eia.gov",
+      "script": "worldmonitor/scripts/seed-electricity-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-electricity-prices.mjs"
+    },
+    {
+      "url": "https://www.iea.org/rss/*.xml",
+      "domain": "www.iea.org",
+      "script": "worldmonitor/scripts/seed-energy-intelligence.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-energy-intelligence.mjs"
+    },
+    {
+      "url": "https://oilprice.com/rss/main",
+      "domain": "oilprice.com",
+      "script": "worldmonitor/scripts/seed-energy-intelligence.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-energy-intelligence.mjs"
+    },
+    {
+      "url": "https://www.opec.org/opec_web/en/press_room/rss.htm",
+      "domain": "www.opec.org",
+      "script": "worldmonitor/scripts/seed-energy-intelligence.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-energy-intelligence.mjs"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?range=5d&interval=1d",
+      "domain": "query1.finance.yahoo.com",
+      "script": "worldmonitor/scripts/seed-etf-flows.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-etf-flows.mjs"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data",
+      "domain": "ec.europa.eu",
+      "script": "worldmonitor/scripts/seed-eurostat-country-data.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-eurostat-country-data.mjs"
+    },
+    {
+      "url": "https://www.fao.org/media/docs/worldfoodsituationlibraries/default-document-library/food_price_indices_data.csv",
+      "domain": "www.fao.org",
+      "script": "worldmonitor/scripts/seed-fao-food-price-index.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fao-food-price-index.mjs"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol",
+      "domain": "query1.finance.yahoo.com",
+      "script": "worldmonitor/scripts/seed-fear-greed.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fear-greed.mjs"
+    },
+    {
+      "url": "https://www.barchart.com/stocks/quotes/%24CPC",
+      "domain": "www.barchart.com",
+      "script": "worldmonitor/scripts/seed-fear-greed.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fear-greed.mjs"
+    },
+    {
+      "url": "https://www.barchart.com/stocks/quotes/%24S5TH",
+      "domain": "www.barchart.com",
+      "script": "worldmonitor/scripts/seed-fear-greed.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fear-greed.mjs"
+    },
+    {
+      "url": "https://production.dataviz.cnn.io/index/fearandgreed/current",
+      "domain": "production.dataviz.cnn.io",
+      "script": "worldmonitor/scripts/seed-fear-greed.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fear-greed.mjs"
+    },
+    {
+      "url": "https://www.cnn.com/markets/fear-and-greed",
+      "domain": "www.cnn.com",
+      "script": "worldmonitor/scripts/seed-fear-greed.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fear-greed.mjs"
+    },
+    {
+      "url": "https://www.aaii.com/sentimentsurvey/sent_results",
+      "domain": "www.aaii.com",
+      "script": "worldmonitor/scripts/seed-fear-greed.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fear-greed.mjs"
+    },
+    {
+      "url": "https://firms.modaps.eosdis.nasa.gov/api/area/csv/${apiKey}/${source}/${bbox}/1",
+      "domain": "firms.modaps.eosdis.nasa.gov",
+      "script": "worldmonitor/scripts/seed-fire-detections.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fire-detections.mjs"
+    },
+    {
+      "url": "http://test",
+      "domain": "test",
+      "script": "worldmonitor/scripts/seed-forecasts.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-forecasts.mjs"
+    },
+    {
+      "url": "https://worldmonitor.app",
+      "domain": "worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-forecasts.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-forecasts.mjs"
+    },
+    {
+      "url": "https://api.groq.com/openai/v1/chat/completions",
+      "domain": "api.groq.com",
+      "script": "worldmonitor/scripts/seed-forecasts.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-forecasts.mjs"
+    },
+    {
+      "url": "https://openrouter.ai/api/v1/chat/completions",
+      "domain": "openrouter.ai",
+      "script": "worldmonitor/scripts/seed-forecasts.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-forecasts.mjs"
+    },
+    {
+      "url": "https://data-api.ecb.europa.eu/service/data/CISS/D.U2.Z0Z.4F.EC.SS_CI.IDX?format=jsondata&lastNObservations=52",
+      "domain": "data-api.ecb.europa.eu",
+      "script": "worldmonitor/scripts/seed-fsi-eu.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fsi-eu.mjs"
+    },
+    {
+      "url": "https://api.data.gov.my/data-catalogue?id=fuelprice&limit=20&sort=-date",
+      "domain": "api.data.gov.my",
+      "script": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fuel-prices.mjs"
+    },
+    {
+      "url": "https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/",
+      "domain": "sedeaplicaciones.minetur.gob.es",
+      "script": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fuel-prices.mjs"
+    },
+    {
+      "url": "https://api.datos.gob.mx/v2/precio.gasolina.publico?pageSize=1000",
+      "domain": "api.datos.gob.mx",
+      "script": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fuel-prices.mjs"
+    },
+    {
+      "url": "https://api.eia.gov/v2/petroleum/pri/gnd/data/?api_key=${apiKey}&data[]=value&facets[series][]=EMM_EPMR_PTE_NUS_DPG&facets[series][]=EMD_EPD2DXL0_PTE_NUS_DPG&sort[0][column]=period&sort[0][direction]=desc&length=4",
+      "domain": "api.eia.gov",
+      "script": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fuel-prices.mjs"
+    },
+    {
+      "url": "https://energy.ec.europa.eu/document/download/264c2d0f-f161-4ea3-a777-78faae59bea0_en",
+      "domain": "energy.ec.europa.eu",
+      "script": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fuel-prices.mjs"
+    },
+    {
+      "url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/qus/ultimas-4-semanas-gasolina-etanol.csv",
+      "domain": "www.gov.br",
+      "script": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fuel-prices.mjs"
+    },
+    {
+      "url": "https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/arquivos/shpc/qus/ultimas-4-semanas-diesel-gnv.csv",
+      "domain": "www.gov.br",
+      "script": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fuel-prices.mjs"
+    },
+    {
+      "url": "https://www.mbie.govt.nz/assets/Data-Files/Energy/Weekly-fuel-price-monitoring/weekly-table.csv",
+      "domain": "www.mbie.govt.nz",
+      "script": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fuel-prices.mjs"
+    },
+    {
+      "url": "https://www.gov.uk/api/content/government/statistics/weekly-road-fuel-prices",
+      "domain": "www.gov.uk",
+      "script": "worldmonitor/scripts/seed-fuel-prices.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-fuel-prices.mjs"
+    },
+    {
+      "url": "https://agsi.gie.eu/api",
+      "domain": "agsi.gie.eu",
+      "script": "worldmonitor/scripts/seed-gas-storage-countries.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-gas-storage-countries.mjs"
+    },
+    {
+      "url": "https://api.gdeltproject.org/api/v2/doc/doc",
+      "domain": "api.gdeltproject.org",
+      "script": "worldmonitor/scripts/seed-gdelt-intel.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-gdelt-intel.mjs"
+    },
+    {
+      "url": "https://agsi.gie.eu/api",
+      "domain": "agsi.gie.eu",
+      "script": "worldmonitor/scripts/seed-gie-gas-storage.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-gie-gas-storage.mjs"
+    },
+    {
+      "url": "https://api.exa.ai/search",
+      "domain": "api.exa.ai",
+      "script": "worldmonitor/scripts/seed-grocery-basket.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-grocery-basket.mjs"
+    },
+    {
+      "url": "https://api.firecrawl.dev/v1/scrape",
+      "domain": "api.firecrawl.dev",
+      "script": "worldmonitor/scripts/seed-grocery-basket.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-grocery-basket.mjs"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(meta.symbol",
+      "domain": "query1.finance.yahoo.com",
+      "script": "worldmonitor/scripts/seed-gulf-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-gulf-quotes.mjs"
+    },
+    {
+      "url": "https://api.openaq.org/v3/locations",
+      "domain": "api.openaq.org",
+      "script": "worldmonitor/scripts/seed-health-air-quality.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-health-air-quality.mjs"
+    },
+    {
+      "url": "https://api.openaq.org/v3/parameters/2/latest",
+      "domain": "api.openaq.org",
+      "script": "worldmonitor/scripts/seed-health-air-quality.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-health-air-quality.mjs"
+    },
+    {
+      "url": "https://api.waqi.info/map/bounds/",
+      "domain": "api.waqi.info",
+      "script": "worldmonitor/scripts/seed-health-air-quality.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-health-air-quality.mjs"
+    },
+    {
+      "url": "https://datalab.wto.org/Strait-of-Hormuz-Trade-Tracker",
+      "domain": "datalab.wto.org",
+      "script": "worldmonitor/scripts/seed-hormuz.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-hormuz.mjs"
+    },
+    {
+      "url": "https://wabi-europe-north-b-api.analysis.windows.net",
+      "domain": "wabi-europe-north-b-api.analysis.windows.net",
+      "script": "worldmonitor/scripts/seed-hormuz.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-hormuz.mjs"
+    },
+    {
+      "url": "https://api.iea.org/netimports/latest",
+      "domain": "api.iea.org",
+      "script": "worldmonitor/scripts/seed-iea-oil-stocks.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-iea-oil-stocks.mjs"
+    },
+    {
+      "url": "https://api.iea.org/netimports/monthly/?year=${year}&month=${month}",
+      "domain": "api.iea.org",
+      "script": "worldmonitor/scripts/seed-iea-oil-stocks.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-iea-oil-stocks.mjs"
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/api/v1",
+      "domain": "www.imf.org",
+      "script": "worldmonitor/scripts/seed-imf-macro.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-imf-macro.mjs"
+    },
+    {
+      "url": "https://api.worldmonitor.app",
+      "domain": "api.worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-infra.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-infra.mjs"
+    },
+    {
+      "url": "https://worldmonitor.app",
+      "domain": "worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-infra.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-infra.mjs"
+    },
+    {
+      "url": "https://api.groq.com/openai/v1/chat/completions",
+      "domain": "api.groq.com",
+      "script": "worldmonitor/scripts/seed-insights.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-insights.mjs"
+    },
+    {
+      "url": "https://openrouter.ai/api/v1/chat/completions",
+      "domain": "openrouter.ai",
+      "script": "worldmonitor/scripts/seed-insights.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-insights.mjs"
+    },
+    {
+      "url": "https://worldmonitor.app",
+      "domain": "worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-insights.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-insights.mjs"
+    },
+    {
+      "url": "https://api.worldmonitor.app",
+      "domain": "api.worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-insights.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-insights.mjs"
+    },
+    {
+      "url": "https://api.cloudflare.com/client/v4/radar/annotations/outages",
+      "domain": "api.cloudflare.com",
+      "script": "worldmonitor/scripts/seed-internet-outages.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-internet-outages.mjs"
+    },
+    {
+      "url": "https://api.cloudflare.com/client/v4",
+      "domain": "api.cloudflare.com",
+      "script": "worldmonitor/scripts/seed-internet-outages.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-internet-outages.mjs"
+    },
+    {
+      "url": "https://radar.cloudflare.com/outage-center",
+      "domain": "radar.cloudflare.com",
+      "script": "worldmonitor/scripts/seed-internet-outages.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-internet-outages.mjs"
+    },
+    {
+      "url": "https://www.jodidata.org/jodi-publisher/gas/17/GAS_world_NewFormat.zip",
+      "domain": "www.jodidata.org",
+      "script": "worldmonitor/scripts/seed-jodi-gas.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-jodi-gas.mjs"
+    },
+    {
+      "url": "https://www.jodidata.org/_resources/files/downloads/oil-data/annual-csv/",
+      "domain": "www.jodidata.org",
+      "script": "worldmonitor/scripts/seed-jodi-oil.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-jodi-oil.mjs"
+    },
+    {
+      "url": "https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(symbol",
+      "domain": "finnhub.io",
+      "script": "worldmonitor/scripts/seed-market-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-market-quotes.mjs"
+    },
+    {
+      "url": "https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol",
+      "domain": "query1.finance.yahoo.com",
+      "script": "worldmonitor/scripts/seed-market-quotes.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-market-quotes.mjs"
+    },
+    {
+      "url": "https://api.cloudflare.com/client/v4/accounts/{acct}/r2/buckets/worldmonitor-data/objects/seed-data/military-bases-final.json",
+      "domain": "api.cloudflare.com",
+      "script": "worldmonitor/scripts/seed-military-bases.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-military-bases.mjs"
+    },
+    {
+      "url": "https://opensky-network.org/api",
+      "domain": "opensky-network.org",
+      "script": "worldmonitor/scripts/seed-military-flights.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-military-flights.mjs"
+    },
+    {
+      "url": "https://customer-api.wingbits.com/v1/flights",
+      "domain": "customer-api.wingbits.com",
+      "script": "worldmonitor/scripts/seed-military-flights.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-military-flights.mjs"
+    },
+    {
+      "url": "https://auth.opensky-network.org/auth/realms/opensky-network/protocol/openid-connect/token",
+      "domain": "auth.opensky-network.org",
+      "script": "worldmonitor/scripts/seed-military-flights.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-military-flights.mjs"
+    },
+    {
+      "url": "https://api.worldmonitor.app",
+      "domain": "api.worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-military-maritime-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-military-maritime-news.mjs"
+    },
+    {
+      "url": "https://worldmonitor.app",
+      "domain": "worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-military-maritime-news.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-military-maritime-news.mjs"
+    },
+    {
+      "url": "https://www.imf.org/external/datamapper/api/v1",
+      "domain": "www.imf.org",
+      "script": "worldmonitor/scripts/seed-national-debt.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-national-debt.mjs"
+    },
+    {
+      "url": "https://api.fiscaldata.treasury.gov/services/api/v1/accounting/od/debt_to_penny?fields=record_date,tot_pub_debt_out_amt&sort=-record_date&page[size]=1",
+      "domain": "api.fiscaldata.treasury.gov",
+      "script": "worldmonitor/scripts/seed-national-debt.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-national-debt.mjs"
+    },
+    {
+      "url": "https://eonet.gsfc.nasa.gov/api/v3/events",
+      "domain": "eonet.gsfc.nasa.gov",
+      "script": "worldmonitor/scripts/seed-natural-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-natural-events.mjs"
+    },
+    {
+      "url": "https://www.gdacs.org/gdacsapi/api/events/geteventlist/MAP",
+      "domain": "www.gdacs.org",
+      "script": "worldmonitor/scripts/seed-natural-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-natural-events.mjs"
+    },
+    {
+      "url": "https://mapservices.weather.noaa.gov/tropical/rest/services/tropical/NHC_tropical_weather/MapServer",
+      "domain": "mapservices.weather.noaa.gov",
+      "script": "worldmonitor/scripts/seed-natural-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-natural-events.mjs"
+    },
+    {
+      "url": "https://www.nhc.noaa.gov/",
+      "domain": "www.nhc.noaa.gov",
+      "script": "worldmonitor/scripts/seed-natural-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-natural-events.mjs"
+    },
+    {
+      "url": "https://owid-public.owid.io/data/energy/owid-energy-data.csv",
+      "domain": "owid-public.owid.io",
+      "script": "worldmonitor/scripts/seed-owid-energy-mix.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-owid-energy-mix.mjs"
+    },
+    {
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/PortWatch_chokepoints_database/FeatureServer/0/query",
+      "domain": "services9.arcgis.com",
+      "script": "worldmonitor/scripts/seed-portwatch-chokepoints-ref.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-portwatch-chokepoints-ref.mjs"
+    },
+    {
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/portwatch_disruptions_database/FeatureServer/0/query",
+      "domain": "services9.arcgis.com",
+      "script": "worldmonitor/scripts/seed-portwatch-disruptions.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-portwatch-disruptions.mjs"
+    },
+    {
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Ports_Data/FeatureServer/0/query",
+      "domain": "services9.arcgis.com",
+      "script": "worldmonitor/scripts/seed-portwatch-port-activity.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-portwatch-port-activity.mjs"
+    },
+    {
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/PortWatch_ports_database/FeatureServer/0/query",
+      "domain": "services9.arcgis.com",
+      "script": "worldmonitor/scripts/seed-portwatch-port-activity.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-portwatch-port-activity.mjs"
+    },
+    {
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query",
+      "domain": "services9.arcgis.com",
+      "script": "worldmonitor/scripts/seed-portwatch.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-portwatch.mjs"
+    },
+    {
+      "url": "https://gamma-api.polymarket.com",
+      "domain": "gamma-api.polymarket.com",
+      "script": "worldmonitor/scripts/seed-prediction-markets.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-prediction-markets.mjs"
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2",
+      "domain": "api.elections.kalshi.com",
+      "script": "worldmonitor/scripts/seed-prediction-markets.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-prediction-markets.mjs"
+    },
+    {
+      "url": "https://kalshi.com/markets/${topMarket.ticker}",
+      "domain": "kalshi.com",
+      "script": "worldmonitor/scripts/seed-prediction-markets.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-prediction-markets.mjs"
+    },
+    {
+      "url": "https://polymarket.com/event/${event.slug}",
+      "domain": "polymarket.com",
+      "script": "worldmonitor/scripts/seed-prediction-markets.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-prediction-markets.mjs"
+    },
+    {
+      "url": "https://radnet.epa.gov/cdx-radnet-rest/api/rest/csv/${year}/fixed/${site.state}/${site.slug}",
+      "domain": "radnet.epa.gov",
+      "script": "worldmonitor/scripts/seed-radiation-watch.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-radiation-watch.mjs"
+    },
+    {
+      "url": "https://api.safecast.org/measurements.json?${params.toString(",
+      "domain": "api.safecast.org",
+      "script": "worldmonitor/scripts/seed-radiation-watch.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-radiation-watch.mjs"
+    },
+    {
+      "url": "https://www.sec.gov/news/pressreleases.rss",
+      "domain": "www.sec.gov",
+      "script": "worldmonitor/scripts/seed-regulatory-actions.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-regulatory-actions.mjs"
+    },
+    {
+      "url": "https://www.cftc.gov/RSS/RSSENF/rssenf.xml",
+      "domain": "www.cftc.gov",
+      "script": "worldmonitor/scripts/seed-regulatory-actions.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-regulatory-actions.mjs"
+    },
+    {
+      "url": "https://www.cftc.gov/RSS/RSSGP/rssgp.xml",
+      "domain": "www.cftc.gov",
+      "script": "worldmonitor/scripts/seed-regulatory-actions.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-regulatory-actions.mjs"
+    },
+    {
+      "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "domain": "www.federalreserve.gov",
+      "script": "worldmonitor/scripts/seed-regulatory-actions.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-regulatory-actions.mjs"
+    },
+    {
+      "url": "https://public.govdelivery.com/topics/USFDIC_26/feed.rss",
+      "domain": "public.govdelivery.com",
+      "script": "worldmonitor/scripts/seed-regulatory-actions.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-regulatory-actions.mjs"
+    },
+    {
+      "url": "http://feeds.finra.org/FINRANotices",
+      "domain": "feeds.finra.org",
+      "script": "worldmonitor/scripts/seed-regulatory-actions.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-regulatory-actions.mjs"
+    },
+    {
+      "url": "https://export.arxiv.org/api/query?search_query=cat:${cat}&start=0&max_results=50",
+      "domain": "export.arxiv.org",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://arxiv.org/abs/${id}",
+      "domain": "arxiv.org",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://hacker-news.firebaseio.com/v0/${feed}stories.json",
+      "domain": "hacker-news.firebaseio.com",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://hacker-news.firebaseio.com/v0/item/${id}.json",
+      "domain": "hacker-news.firebaseio.com",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://www.techmeme.com/newsy_events.ics",
+      "domain": "www.techmeme.com",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://dev.events/rss.xml",
+      "domain": "dev.events",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://www.gitex.com",
+      "domain": "www.gitex.com",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://www.token2049.com",
+      "domain": "www.token2049.com",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://collisionconf.com",
+      "domain": "collisionconf.com",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://websummit.com",
+      "domain": "websummit.com",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://api.ossinsight.io/v1/trends/repos/?language=${ossLang}&period=past_24_hours",
+      "domain": "api.ossinsight.io",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://github.com/${r.repo_name}",
+      "domain": "github.com",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://api.github.com/search/repositories?q=language:${lang}+created:",
+      "domain": "api.github.com",
+      "script": "worldmonitor/scripts/seed-research.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-research.mjs"
+    },
+    {
+      "url": "https://api.worldbank.org/v2",
+      "domain": "api.worldbank.org",
+      "script": "worldmonitor/scripts/seed-resilience-static.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-resilience-static.mjs"
+    },
+    {
+      "url": "https://ghoapi.azureedge.net/api",
+      "domain": "ghoapi.azureedge.net",
+      "script": "worldmonitor/scripts/seed-resilience-static.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-resilience-static.mjs"
+    },
+    {
+      "url": "https://rsf.org/en/ranking",
+      "domain": "rsf.org",
+      "script": "worldmonitor/scripts/seed-resilience-static.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-resilience-static.mjs"
+    },
+    {
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_id?freq=A",
+      "domain": "ec.europa.eu",
+      "script": "worldmonitor/scripts/seed-resilience-static.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-resilience-static.mjs"
+    },
+    {
+      "url": "https://www.visionofhumanity.org/wp-content/uploads/${yr}/06/GPI_${yr}_${yr}.csv",
+      "domain": "www.visionofhumanity.org",
+      "script": "worldmonitor/scripts/seed-resilience-static.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-resilience-static.mjs"
+    },
+    {
+      "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/2e4f7475-105b-4fae-81f7-7c32076096b6/download/ipc_global_national_wide_latest.csv",
+      "domain": "data.humdata.org",
+      "script": "worldmonitor/scripts/seed-resilience-static.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-resilience-static.mjs"
+    },
+    {
+      "url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/sdn_advanced.xml",
+      "domain": "sanctionslistservice.ofac.treas.gov",
+      "script": "worldmonitor/scripts/seed-sanctions-pressure.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-sanctions-pressure.mjs"
+    },
+    {
+      "url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/cons_advanced.xml",
+      "domain": "sanctionslistservice.ofac.treas.gov",
+      "script": "worldmonitor/scripts/seed-sanctions-pressure.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-sanctions-pressure.mjs"
+    },
+    {
+      "url": "https://travel.state.gov/_res/rss/TAsTWs.xml",
+      "domain": "travel.state.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://www.gov.uk/foreign-travel-advice.atom",
+      "domain": "www.gov.uk",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://th.usembassy.gov/category/alert/feed/",
+      "domain": "th.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://ae.usembassy.gov/category/alert/feed/",
+      "domain": "ae.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://de.usembassy.gov/category/alert/feed/",
+      "domain": "de.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://ua.usembassy.gov/category/alert/feed/",
+      "domain": "ua.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://mx.usembassy.gov/category/alert/feed/",
+      "domain": "mx.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://in.usembassy.gov/category/alert/feed/",
+      "domain": "in.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://pk.usembassy.gov/category/alert/feed/",
+      "domain": "pk.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://co.usembassy.gov/category/alert/feed/",
+      "domain": "co.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://pl.usembassy.gov/category/alert/feed/",
+      "domain": "pl.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://bd.usembassy.gov/category/alert/feed/",
+      "domain": "bd.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://it.usembassy.gov/category/alert/feed/",
+      "domain": "it.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://do.usembassy.gov/category/alert/feed/",
+      "domain": "do.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://mm.usembassy.gov/category/alert/feed/",
+      "domain": "mm.usembassy.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://wwwnc.cdc.gov/travel/rss/notices.xml",
+      "domain": "wwwnc.cdc.gov",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1310/feed",
+      "domain": "www.ecdc.europa.eu",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1505/feed",
+      "domain": "www.ecdc.europa.eu",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1295/feed",
+      "domain": "www.ecdc.europa.eu",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://www.ecdc.europa.eu/en/taxonomy/term/323/feed",
+      "domain": "www.ecdc.europa.eu",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1244/feed",
+      "domain": "www.ecdc.europa.eu",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://www.who.int/rss-feeds/news-english.xml",
+      "domain": "www.who.int",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://www.afro.who.int/rss/emergencies.xml",
+      "domain": "www.afro.who.int",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://proxy.worldmonitor.app",
+      "domain": "proxy.worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs"
+    },
+    {
+      "url": "https://api.worldmonitor.app/api/infrastructure/v1/list-service-statuses",
+      "domain": "api.worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-service-statuses.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-service-statuses.mjs"
+    },
+    {
+      "url": "https://worldmonitor.app",
+      "domain": "worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-service-statuses.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-service-statuses.mjs"
+    },
+    {
+      "url": "https://pro-api.coingecko.com/api/v3",
+      "domain": "pro-api.coingecko.com",
+      "script": "worldmonitor/scripts/seed-stablecoin-markets.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-stablecoin-markets.mjs"
+    },
+    {
+      "url": "https://api.coingecko.com/api/v3",
+      "domain": "api.coingecko.com",
+      "script": "worldmonitor/scripts/seed-stablecoin-markets.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-stablecoin-markets.mjs"
+    },
+    {
+      "url": "https://api.coinpaprika.com/v1/tickers?quotes=USD",
+      "domain": "api.coinpaprika.com",
+      "script": "worldmonitor/scripts/seed-stablecoin-markets.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-stablecoin-markets.mjs"
+    },
+    {
+      "url": "https://www.submarinecablemap.com/api/v3",
+      "domain": "www.submarinecablemap.com",
+      "script": "worldmonitor/scripts/seed-submarine-cables.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-submarine-cables.mjs"
+    },
+    {
+      "url": "https://www.submarinecablemap.com/api/v3/cable/all.json",
+      "domain": "www.submarinecablemap.com",
+      "script": "worldmonitor/scripts/seed-submarine-cables.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-submarine-cables.mjs"
+    },
+    {
+      "url": "https://api.stlouisfed.org/fred/series/observations?${params}",
+      "domain": "api.stlouisfed.org",
+      "script": "worldmonitor/scripts/seed-supply-chain-trade.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-supply-chain-trade.mjs"
+    },
+    {
+      "url": "https://en.sse.net.cn/currentIndex?indexName=${indexName}",
+      "domain": "en.sse.net.cn",
+      "script": "worldmonitor/scripts/seed-supply-chain-trade.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-supply-chain-trade.mjs"
+    },
+    {
+      "url": "https://www.handybulk.com/baltic-dry-index/",
+      "domain": "www.handybulk.com",
+      "script": "worldmonitor/scripts/seed-supply-chain-trade.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-supply-chain-trade.mjs"
+    },
+    {
+      "url": "https://api.wto.org/timeseries/v1${path}",
+      "domain": "api.wto.org",
+      "script": "worldmonitor/scripts/seed-supply-chain-trade.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-supply-chain-trade.mjs"
+    },
+    {
+      "url": "https://stats.wto.org",
+      "domain": "stats.wto.org",
+      "script": "worldmonitor/scripts/seed-supply-chain-trade.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-supply-chain-trade.mjs"
+    },
+    {
+      "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_9",
+      "domain": "api.fiscaldata.treasury.gov",
+      "script": "worldmonitor/scripts/seed-supply-chain-trade.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-supply-chain-trade.mjs"
+    },
+    {
+      "url": "https://pro-api.coingecko.com/api/v3",
+      "domain": "pro-api.coingecko.com",
+      "script": "worldmonitor/scripts/seed-token-panels.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-token-panels.mjs"
+    },
+    {
+      "url": "https://api.coingecko.com/api/v3",
+      "domain": "api.coingecko.com",
+      "script": "worldmonitor/scripts/seed-token-panels.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-token-panels.mjs"
+    },
+    {
+      "url": "https://api.coinpaprika.com/v1/tickers?quotes=USD",
+      "domain": "api.coinpaprika.com",
+      "script": "worldmonitor/scripts/seed-token-panels.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-token-panels.mjs"
+    },
+    {
+      "url": "https://comtradeapi.un.org/public/v1",
+      "domain": "comtradeapi.un.org",
+      "script": "worldmonitor/scripts/seed-trade-flows.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-trade-flows.mjs"
+    },
+    {
+      "url": "https://ucdpapi.pcr.uu.se/api/gedevents/${version}?pagesize=${UCDP_PAGE_SIZE}&page=${page}",
+      "domain": "ucdpapi.pcr.uu.se",
+      "script": "worldmonitor/scripts/seed-ucdp-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-ucdp-events.mjs"
+    },
+    {
+      "url": "https://api.gdeltproject.org/api/v1/gkg_geojson",
+      "domain": "api.gdeltproject.org",
+      "script": "worldmonitor/scripts/seed-unrest-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-unrest-events.mjs"
+    },
+    {
+      "url": "https://acleddata.com/api/acled/read",
+      "domain": "acleddata.com",
+      "script": "worldmonitor/scripts/seed-unrest-events.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-unrest-events.mjs"
+    },
+    {
+      "url": "https://api.usaspending.gov/api/v2",
+      "domain": "api.usaspending.gov",
+      "script": "worldmonitor/scripts/seed-usa-spending.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-usa-spending.mjs"
+    },
+    {
+      "url": "https://thinkglobalhealth.github.io/disease_tracker",
+      "domain": "thinkglobalhealth.github.io",
+      "script": "worldmonitor/scripts/seed-vpd-tracker.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-vpd-tracker.mjs"
+    },
+    {
+      "url": "https://thinkglobalhealth.github.io/disease_tracker/index_bundle.js",
+      "domain": "thinkglobalhealth.github.io",
+      "script": "worldmonitor/scripts/seed-vpd-tracker.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-vpd-tracker.mjs"
+    },
+    {
+      "url": "https://worldmonitor.app",
+      "domain": "worldmonitor.app",
+      "script": "worldmonitor/scripts/seed-wb-indicators.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-wb-indicators.mjs"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/all/indicator/${indicatorId}",
+      "domain": "api.worldbank.org",
+      "script": "worldmonitor/scripts/seed-wb-indicators.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-wb-indicators.mjs"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/1W/indicator/${ind.code}?format=json&date=${dateRange}&per_page=1000",
+      "domain": "api.worldbank.org",
+      "script": "worldmonitor/scripts/seed-wb-indicators.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-wb-indicators.mjs"
+    },
+    {
+      "url": "https://api.worldbank.org/v2/country/${countryCodes}/indicator/EG.ELC.RNEW.ZS?format=json&date=${dateRange}&per_page=1000",
+      "domain": "api.worldbank.org",
+      "script": "worldmonitor/scripts/seed-wb-indicators.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-wb-indicators.mjs"
+    },
+    {
+      "url": "https://api.weather.gov/alerts/active",
+      "domain": "api.weather.gov",
+      "script": "worldmonitor/scripts/seed-weather-alerts.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-weather-alerts.mjs"
+    },
+    {
+      "url": "https://api.windy.com/webcams/api/v3/webcams",
+      "domain": "api.windy.com",
+      "script": "worldmonitor/scripts/seed-webcams.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-webcams.mjs"
+    },
+    {
+      "url": "https://data-api.ecb.europa.eu/service/data/YC/B.U2.EUR.4F.G_N_A.SV_C_YM.SR_1Y+SR_2Y+SR_5Y+SR_10Y+SR_20Y+SR_30Y",
+      "domain": "data-api.ecb.europa.eu",
+      "script": "worldmonitor/scripts/seed-yield-curve-eu.mjs",
+      "sourceTruthFile": "worldmonitor/scripts/seed-yield-curve-eu.mjs"
+    }
+  ]
+}

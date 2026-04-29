@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-04-29T06:32:58.343Z",
+  "sourceTruthFiles": [
+    "worldmonitor/scripts/ais-relay.cjs",
+    "worldmonitor/server/_shared/cache-keys.ts",
+    "worldmonitor/server/worldmonitor/intelligence/v1/get-social-velocity.ts",
+    "worldmonitor/src/services/social-velocity.ts",
+    "worldmonitor/api/mcp.ts"
+  ],
+  "capture": {
+    "method": "reddit_hot_json",
+    "redisKey": "intelligence:social:reddit:v1",
+    "seedMetaKey": "seed-meta:intelligence:social-reddit",
+    "intervalMs": 600000,
+    "ttlSeconds": 1800,
+    "retryMs": 1200000,
+    "perSubredditDelayMs": 500,
+    "requestTimeoutMs": 10000,
+    "userAgent": "WorldMonitor/1.0 (contact: info@worldmonitor.app)",
+    "scoring": "velocityScore = log1p(score) * upvote_ratio * exp(-age_seconds / 21600) * 100; top 30 retained",
+    "deduplication": "Cross-subreddit reposts of the same external article URL are deduplicated."
+  },
+  "sources": [
+    {
+      "id": "reddit_worldnews_hot",
+      "platform": "reddit",
+      "subreddit": "worldnews",
+      "name": "Reddit r/worldnews hot posts",
+      "sourceGroup": "social_reddit",
+      "sourceTruthFile": "worldmonitor/scripts/ais-relay.cjs",
+      "url": "https://www.reddit.com/r/worldnews/hot.json?limit=25&raw_json=1",
+      "captureMethod": "reddit_hot_json",
+      "decisionUse": [
+        "social_velocity",
+        "headline_attention",
+        "geopolitical_news_velocity"
+      ]
+    },
+    {
+      "id": "reddit_geopolitics_hot",
+      "platform": "reddit",
+      "subreddit": "geopolitics",
+      "name": "Reddit r/geopolitics hot posts",
+      "sourceGroup": "social_reddit",
+      "sourceTruthFile": "worldmonitor/scripts/ais-relay.cjs",
+      "url": "https://www.reddit.com/r/geopolitics/hot.json?limit=25&raw_json=1",
+      "captureMethod": "reddit_hot_json",
+      "decisionUse": [
+        "social_velocity",
+        "headline_attention",
+        "geopolitical_news_velocity"
+      ]
+    }
+  ],
+  "twitterXFindings": {
+    "ingestionAccountsFound": 0,
+    "note": "No X/Twitter ingestion collector or monitored X account list was found in worldmonitor code. X/Twitter references are social sharing, site/profile metadata, or product links, not data-source collectors.",
+    "profileOrShareReferencesObserved": [
+      "@worldmonitorai",
+      "@WorldMonitorApp",
+      "@eliehabib"
+    ]
+  },
+  "counts": {
+    "socialSourceCount": 2,
+    "redditSubreddits": 2,
+    "twitterXIngestionAccounts": 0
+  }
+}

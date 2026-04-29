@@ -1,0 +1,575 @@
+{
+  "generatedAt": "2026-04-29T06:30:53.142Z",
+  "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+  "capture": {
+    "method": "rss_or_atom_via_relay_allowlist",
+    "relayUrlEnv": "RELAY_URL",
+    "relayDefault": "https://proxy.worldmonitor.app",
+    "relayPath": "/rss?url=<encoded feed url>",
+    "allowlistSource": "worldmonitor/shared/rss-allowed-domains.json",
+    "timeoutMs": 15000
+  },
+  "counts": {
+    "feedCount": 23,
+    "bySourceCountry": {
+      "US": 15,
+      "UK": 1,
+      "EU": 5,
+      "INT": 2
+    }
+  },
+  "feeds": [
+    {
+      "id": "advisory_us_state_dept",
+      "name": "US State Dept",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "",
+      "levelParser": "us",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://travel.state.gov/_res/rss/TAsTWs.xml",
+          "domain": "travel.state.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_uk_fcdo",
+      "name": "UK FCDO",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "UK",
+      "targetCountry": "",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://www.gov.uk/foreign-travel-advice.atom",
+          "domain": "www.gov.uk",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_thailand",
+      "name": "US Embassy Thailand",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "TH",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://th.usembassy.gov/category/alert/feed/",
+          "domain": "th.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_uae",
+      "name": "US Embassy UAE",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "AE",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://ae.usembassy.gov/category/alert/feed/",
+          "domain": "ae.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_germany",
+      "name": "US Embassy Germany",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "DE",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://de.usembassy.gov/category/alert/feed/",
+          "domain": "de.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_ukraine",
+      "name": "US Embassy Ukraine",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "UA",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://ua.usembassy.gov/category/alert/feed/",
+          "domain": "ua.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_mexico",
+      "name": "US Embassy Mexico",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "MX",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://mx.usembassy.gov/category/alert/feed/",
+          "domain": "mx.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_india",
+      "name": "US Embassy India",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "IN",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://in.usembassy.gov/category/alert/feed/",
+          "domain": "in.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_pakistan",
+      "name": "US Embassy Pakistan",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "PK",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://pk.usembassy.gov/category/alert/feed/",
+          "domain": "pk.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_colombia",
+      "name": "US Embassy Colombia",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "CO",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://co.usembassy.gov/category/alert/feed/",
+          "domain": "co.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_poland",
+      "name": "US Embassy Poland",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "PL",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://pl.usembassy.gov/category/alert/feed/",
+          "domain": "pl.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_bangladesh",
+      "name": "US Embassy Bangladesh",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "BD",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://bd.usembassy.gov/category/alert/feed/",
+          "domain": "bd.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_italy",
+      "name": "US Embassy Italy",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "IT",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://it.usembassy.gov/category/alert/feed/",
+          "domain": "it.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_dominican_republic",
+      "name": "US Embassy Dominican Republic",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "DO",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://do.usembassy.gov/category/alert/feed/",
+          "domain": "do.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_us_embassy_myanmar",
+      "name": "US Embassy Myanmar",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "MM",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://mm.usembassy.gov/category/alert/feed/",
+          "domain": "mm.usembassy.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_cdc_travel_notices",
+      "name": "CDC Travel Notices",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "US",
+      "targetCountry": "",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://wwwnc.cdc.gov/travel/rss/notices.xml",
+          "domain": "wwwnc.cdc.gov",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_ecdc_epidemiological_updates",
+      "name": "ECDC Epidemiological Updates",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "EU",
+      "targetCountry": "",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1310/feed",
+          "domain": "www.ecdc.europa.eu",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_ecdc_threats_report",
+      "name": "ECDC Threats Report",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "EU",
+      "targetCountry": "",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1505/feed",
+          "domain": "www.ecdc.europa.eu",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_ecdc_risk_assessments",
+      "name": "ECDC Risk Assessments",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "EU",
+      "targetCountry": "",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1295/feed",
+          "domain": "www.ecdc.europa.eu",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_ecdc_avian_influenza",
+      "name": "ECDC Avian Influenza",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "EU",
+      "targetCountry": "",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://www.ecdc.europa.eu/en/taxonomy/term/323/feed",
+          "domain": "www.ecdc.europa.eu",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_ecdc_publications",
+      "name": "ECDC Publications",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "EU",
+      "targetCountry": "",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://www.ecdc.europa.eu/en/taxonomy/term/1244/feed",
+          "domain": "www.ecdc.europa.eu",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_who_news",
+      "name": "WHO News",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "INT",
+      "targetCountry": "",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://www.who.int/rss-feeds/news-english.xml",
+          "domain": "www.who.int",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    },
+    {
+      "id": "advisory_who_africa_emergencies",
+      "name": "WHO Africa Emergencies",
+      "sourceGroup": "advisory",
+      "sourceTruthFile": "worldmonitor/scripts/seed-security-advisories.mjs",
+      "sourceCountry": "INT",
+      "targetCountry": "",
+      "levelParser": "",
+      "captureMethod": "rss_or_atom_via_relay_allowlist",
+      "urls": [
+        {
+          "url": "https://www.afro.who.int/rss/emergencies.xml",
+          "domain": "www.afro.who.int",
+          "wrapper": "rss_proxy",
+          "captureMethod": "railway_rss_proxy"
+        }
+      ],
+      "decisionUse": [
+        "travel_security_risk",
+        "country_risk",
+        "health_risk",
+        "event_risk"
+      ]
+    }
+  ]
+}
