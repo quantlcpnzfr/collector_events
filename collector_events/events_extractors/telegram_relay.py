@@ -25,11 +25,12 @@ import asyncio
 import json
 import os
 from collections import deque
+from collections.abc import Awaitable, Iterable
 from contextlib import asynccontextmanager
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
@@ -40,6 +41,12 @@ from telethon.sessions import StringSession
 
 setup_logging()
 log = get_logger(__name__)
+
+
+async def _await_if_needed(result: Any) -> Any:
+    if hasattr(result, "__await__"):
+        return await cast(Awaitable[Any], result)
+    return result
 
 
 SERVICE_ROOT = Path(__file__).resolve().parents[2]
@@ -167,7 +174,7 @@ class TelegramRelay:
             log.info("Telegram relay using file session: %s", self.session_file)
 
         self.client = TelegramClient(session, self.api_id, self.api_hash, connection_retries=3)
-        await self.client.start()
+        await _await_if_needed(self.client.start())
         self.enabled = True
         log.info("Telegram relay connected; resolving %d channels", len(self.channels))
 
@@ -189,7 +196,7 @@ class TelegramRelay:
             self.backfill_task = None
         self._save_cursor()
         if self.client:
-            await self.client.disconnect()
+            await _await_if_needed(self.client.disconnect())
             self.client = None
         self.enabled = False
         log.info("Telegram relay stopped")
@@ -256,7 +263,7 @@ class TelegramRelay:
                 continue
             try:
                 min_id = self.cursor_by_handle.get(channel.handle, 0)
-                messages = await asyncio.wait_for(
+                raw_messages = await asyncio.wait_for(
                     self.client.get_messages(
                         entity,
                         limit=max(1, min(50, channel.max_messages)),
@@ -264,6 +271,12 @@ class TelegramRelay:
                     ),
                     timeout=self.request_timeout_seconds,
                 )
+                if raw_messages is None:
+                    messages: list[Any] = []
+                elif hasattr(raw_messages, "__iter__"):
+                    messages = list(cast(Iterable[Any], raw_messages))
+                else:
+                    messages = [raw_messages]
                 for message in reversed(messages):
                     if await self._add_message(message, channel, source="backfill"):
                         new_count += 1
