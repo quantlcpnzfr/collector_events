@@ -12,8 +12,8 @@ Required environment:
     TELEGRAM_API_HASH
 
 Optional environment:
-    TELEGRAM_SESSION                 Telethon StringSession used as bootstrap when MongoDB has no record yet.
-    TELEGRAM_SESSION_KEY             MongoDB document _id for the persisted StringSession (default "default").
+    TELEGRAM_SESSION                 Telethon StringSession; if absent, uses a file session.
+    TELEGRAM_SESSION_FILE            Defaults to .state/telegram_worldmonitor(.session)
     TELEGRAM_CHANNEL_SET             Defaults to "full"; use "all" for every configured channel.
     TELEGRAM_RELAY_BUFFER_SIZE       Defaults to 200.
     TELEGRAM_MAX_TEXT_CHARS          Defaults to 800.
@@ -44,7 +44,6 @@ from typing import Any, cast
 
 from forex_shared.domain.intel import IntelDomain, IntelItem
 from forex_shared.logging.get_logger import get_logger, setup_logging
-from forex_shared.mongo_manager import MongoManager
 from forex_shared.worker_api import MQEventPublisher
 from telethon import TelegramClient, events
 from telethon.errors import FloodWaitError
@@ -78,10 +77,9 @@ SERVICE_ROOT = Path(__file__).resolve().parents[2]
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CHANNELS_FILE = PACKAGE_ROOT / "sources" / "telegram_channels.json"
 DEFAULT_STATE_DIR = SERVICE_ROOT / ".state"
+DEFAULT_SESSION_FILE = DEFAULT_STATE_DIR / "telegram_worldmonitor"
 DEFAULT_CURSOR_FILE = DEFAULT_STATE_DIR / "telegram_cursor.json"
 DEFAULT_HEALTH_TOPIC = "intel.health"
-TELEGRAM_SESSION_COLLECTION = "telegram"
-DEFAULT_SESSION_KEY = "default"
 
 
 def _intel_events_topic(domain: str) -> str:
@@ -135,7 +133,7 @@ class TelegramRelay:
         channels_file: Path = DEFAULT_CHANNELS_FILE,
         channel_set: str = "full",
         session_string: str = "",
-        session_key: str = DEFAULT_SESSION_KEY,
+        session_file: Path = DEFAULT_SESSION_FILE,
         cursor_file: Path = DEFAULT_CURSOR_FILE,
         buffer_size: int = 200,
         max_text_chars: int = 800,
@@ -163,9 +161,8 @@ class TelegramRelay:
         self.channels_file = channels_file
         self.channel_set = channel_set.lower().strip() or "full"
         self.session_string = session_string
-        self.session_key = (session_key or DEFAULT_SESSION_KEY).strip() or DEFAULT_SESSION_KEY
+        self.session_file = session_file
         self.cursor_file = cursor_file
-        self._mongo: MongoManager | None = None
         self.buffer_size = buffer_size
         self.max_text_chars = max_text_chars
         self.backfill_interval_seconds = backfill_interval_seconds
@@ -246,6 +243,7 @@ class TelegramRelay:
                 raise RuntimeError("TELEGRAM_API_ID and TELEGRAM_API_HASH are required")
 
             channels_file = Path(os.getenv("TELEGRAM_CHANNELS_FILE", str(DEFAULT_CHANNELS_FILE)))
+            session_file = Path(os.getenv("TELEGRAM_SESSION_FILE", str(DEFAULT_SESSION_FILE)))
             cursor_file = Path(os.getenv("TELEGRAM_CURSOR_FILE", str(DEFAULT_CURSOR_FILE)))
 
             return cls(
@@ -254,7 +252,7 @@ class TelegramRelay:
                 channels_file=channels_file,
                 channel_set=os.getenv("TELEGRAM_CHANNEL_SET", "full"),
                 session_string=os.getenv("TELEGRAM_SESSION", "").strip(),
-                session_key=os.getenv("TELEGRAM_SESSION_KEY", DEFAULT_SESSION_KEY).strip() or DEFAULT_SESSION_KEY,
+                session_file=session_file,
                 cursor_file=cursor_file,
                 buffer_size=_int_env("TELEGRAM_RELAY_BUFFER_SIZE", 200, minimum=50),
                 max_text_chars=_int_env("TELEGRAM_MAX_TEXT_CHARS", 800, minimum=200),
@@ -285,6 +283,7 @@ class TelegramRelay:
         try:
             self._stop_event.clear()
             DEFAULT_STATE_DIR.mkdir(parents=True, exist_ok=True)
+            self.session_file.parent.mkdir(parents=True, exist_ok=True)
             self.cursor_file.parent.mkdir(parents=True, exist_ok=True)
 
             self.channels = self._load_channels()
@@ -295,30 +294,15 @@ class TelegramRelay:
             self.health_task = self._create_task(self._health_loop(), "telegram-health-loop")
             self.cursor_task = self._create_task(self._cursor_loop(), "telegram-cursor-loop")
 
-            await self._ensure_mongo()
-            session_string = await self._load_session_from_mongo()
-            if session_string:
-                log.info(
-                    "Telegram relay using StringSession from MongoDB (collection=%s, _id=%s)",
-                    TELEGRAM_SESSION_COLLECTION,
-                    self.session_key,
-                )
-            elif self.session_string:
-                session_string = self.session_string
-                log.info(
-                    "Telegram relay using StringSession from TELEGRAM_SESSION env (bootstrap; will persist to MongoDB after connect)"
-                )
+            if self.session_string:
+                session = StringSession(self.session_string)
+                log.info("Telegram relay using TELEGRAM_SESSION StringSession")
             else:
-                log.warning(
-                    "Telegram relay: no StringSession in MongoDB (collection=%s, _id=%s) and TELEGRAM_SESSION not set; "
-                    "Telethon will require interactive authentication on first run",
-                    TELEGRAM_SESSION_COLLECTION,
-                    self.session_key,
-                )
+                session = str(self.session_file)
+                log.info("Telegram relay using file session: %s", self.session_file)
 
-            self.client = TelegramClient(StringSession(session_string), self.api_id, self.api_hash, connection_retries=3)
+            self.client = TelegramClient(session, self.api_id, self.api_hash, connection_retries=3)
             await _await_if_needed(self.client.start())
-            await self._save_session_to_mongo()
             log.info("Telegram relay connected; resolving %d channels", len(self.channels))
 
             await self._resolve_entities()
@@ -904,65 +888,6 @@ class TelegramRelay:
         except Exception as exc:
             self._record_error("_load_channels", exc, level="warning")
             return []
-
-    async def _ensure_mongo(self) -> None:
-        if self._mongo is not None:
-            return
-        try:
-            self._mongo = await asyncio.to_thread(MongoManager)
-        except Exception as exc:
-            self._mongo = None
-            self._record_error("_ensure_mongo", exc, level="warning")
-
-    async def _load_session_from_mongo(self) -> str:
-        if self._mongo is None:
-            return ""
-        try:
-            results = await self._mongo.async_find_many(
-                TELEGRAM_SESSION_COLLECTION,
-                filter_={"_id": self.session_key},
-                limit=1,
-            )
-            if not results:
-                return ""
-            return str(results[0].get("session_string", "") or "")
-        except Exception as exc:
-            self._record_error("_load_session_from_mongo", exc, level="warning")
-            return ""
-
-    async def _save_session_to_mongo(self) -> None:
-        if self._mongo is None or self.client is None:
-            return
-        try:
-            session_obj = self.client.session
-            if not isinstance(session_obj, StringSession):
-                log.warning(
-                    "Telegram session is not a StringSession (got %s); skipping MongoDB persist",
-                    type(session_obj).__name__,
-                )
-                return
-            session_str = session_obj.save()
-            if not session_str:
-                return
-            doc = {
-                "_id": self.session_key,
-                "session_string": session_str,
-                "api_id": self.api_id,
-                "updated_at": datetime.now(timezone.utc).isoformat(),
-            }
-            await self._mongo.async_replace_one(
-                TELEGRAM_SESSION_COLLECTION,
-                {"_id": self.session_key},
-                doc,
-                upsert=True,
-            )
-            log.info(
-                "Telegram StringSession persisted to MongoDB (collection=%s, _id=%s)",
-                TELEGRAM_SESSION_COLLECTION,
-                self.session_key,
-            )
-        except Exception as exc:
-            self._record_error("_save_session_to_mongo", exc, level="warning")
 
     def _load_cursor(self) -> dict[str, int]:
         if not self.cursor_file.exists():
