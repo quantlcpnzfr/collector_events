@@ -35,7 +35,7 @@ import os
 import signal
 import sys
 from collections import deque
-from collections.abc import Awaitable, Coroutine, Iterable
+from collections.abc import Awaitable, Iterable
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
@@ -557,7 +557,7 @@ class TelegramRelay:
 
             enqueued = 0
             for result in results:
-                if isinstance(result, BaseException):
+                if isinstance(result, Exception):
                     self._record_error("backfill_once.task", result, level="warning")
                 else:
                     enqueued += int(result)
@@ -984,8 +984,7 @@ class TelegramRelay:
 
     async def _resolve_entities(self) -> None:
         try:
-            client = self.client
-            if client is None:
+            if not self.client:
                 return
 
             sem = asyncio.Semaphore(self.resolve_concurrency)
@@ -999,7 +998,7 @@ class TelegramRelay:
                     try:
                         await self._respect_flood_wait()
                         entity = await asyncio.wait_for(
-                            client.get_entity(channel.handle),
+                            self.client.get_entity(channel.handle),
                             timeout=self.request_timeout_seconds,
                         )
                         self.entities[channel.handle] = entity
@@ -1088,7 +1087,7 @@ class TelegramRelay:
         except Exception:
             return datetime.now(timezone.utc).isoformat()
 
-    def _create_task(self, coro: Coroutine[Any, Any, Any], name: str) -> asyncio.Task[Any]:
+    def _create_task(self, coro: Awaitable[Any], name: str) -> asyncio.Task[Any]:
         try:
             task = asyncio.create_task(coro, name=name)
             task.add_done_callback(self._log_task_result)
