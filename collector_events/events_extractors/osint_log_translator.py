@@ -10,8 +10,10 @@ log file.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import os
 import re
+import sys
 import textwrap
 import time
 from dataclasses import dataclass
@@ -152,6 +154,8 @@ def _load_dotenv_files() -> None:
 
 def _configure_transformers_output(*, quiet: bool) -> None:
     os.environ.setdefault("TRANSFORMERS_NO_ADVISORY_WARNINGS", "1")
+    if quiet:
+        os.environ["OSINT_SUPPRESS_FASTTEXT_PROGRESS"] = "1"
 
     try:
         from transformers.utils import logging as transformers_logging
@@ -169,6 +173,52 @@ def _configure_transformers_output(*, quiet: bool) -> None:
             disable_progress_bars()
         except Exception:
             pass
+
+
+@contextlib.contextmanager
+def _suppress_native_output(enabled: bool):
+    if not enabled:
+        yield
+        return
+
+    saved_fds: list[tuple[int, int]] = []
+    devnull_fd: int | None = None
+
+    try:
+        fds: list[int] = []
+        for stream in (sys.stdout, sys.stderr):
+            try:
+                stream.flush()
+                fd = stream.fileno()
+            except Exception:
+                continue
+            if fd not in fds:
+                fds.append(fd)
+
+        if not fds:
+            yield
+            return
+
+        devnull_fd = os.open(os.devnull, os.O_WRONLY)
+        for fd in fds:
+            saved_fd = os.dup(fd)
+            saved_fds.append((fd, saved_fd))
+            os.dup2(devnull_fd, fd)
+
+        yield
+    finally:
+        for stream in (sys.stdout, sys.stderr):
+            try:
+                stream.flush()
+            except Exception:
+                pass
+        for fd, saved_fd in reversed(saved_fds):
+            try:
+                os.dup2(saved_fd, fd)
+            finally:
+                os.close(saved_fd)
+        if devnull_fd is not None:
+            os.close(devnull_fd)
 
 
 def _env_path(name: str, default: Path) -> Path:
@@ -276,13 +326,18 @@ def _format_elapsed(seconds: float) -> str:
 
 
 class FastTextLanguageDetector:
-    def __init__(self, model_path: Path) -> None:
+    def __init__(self, model_path: Path, *, quiet: bool | None = None) -> None:
         if not model_path.exists():
             raise FileNotFoundError(f"language detector model not found: {model_path}")
 
         import fasttext
 
-        self._model = fasttext.load_model(str(model_path))
+        env_suppressed = (
+            os.getenv("OSINT_SUPPRESS_FASTTEXT_PROGRESS", "").strip().lower() in {"1", "true", "yes", "on"}
+        )
+        suppress_output = env_suppressed if quiet is None else quiet or env_suppressed
+        with _suppress_native_output(suppress_output):
+            self._model = fasttext.load_model(str(model_path))
 
     def detect(self, text: str) -> DetectionResult:
         sample = _compact_text(text)
@@ -613,7 +668,7 @@ def main() -> None:
     if not log_path.exists():
         raise FileNotFoundError(f"log file not found: {log_path}")
 
-    detector = FastTextLanguageDetector(args.lid_model.expanduser().resolve())
+    detector = FastTextLanguageDetector(args.lid_model.expanduser().resolve(), quiet=args.quiet)
     translator: NllbTranslator | None = None
 
     def translator_factory() -> NllbTranslator:

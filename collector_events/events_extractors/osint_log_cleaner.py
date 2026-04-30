@@ -70,5 +70,5 @@ def clean_telegram_dashboard_log(file_path: str):
 
 if __name__ == "__main__":
     # Ajuste o caminho se necessário
-    log_file = "telegram_osint_dashboard.log"
+    log_file = "telegram_osint_dashboard-big.log"
     clean_telegram_dashboard_log(log_file)

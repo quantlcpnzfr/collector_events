@@ -185,7 +185,7 @@ def render_translated_log(parsed: ParsedLog, results: list[LogTranslationResult]
 def _detector(config: TranslatorRunConfig) -> base.FastTextLanguageDetector:
     detector = getattr(_WORKER_STATE, "detector", None)
     if detector is None:
-        detector = base.FastTextLanguageDetector(config.lid_model)
+        detector = base.FastTextLanguageDetector(config.lid_model, quiet=config.quiet)
         _WORKER_STATE.detector = detector
     return detector
 

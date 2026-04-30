@@ -1047,3 +1047,32 @@ Traceback (most recent call last):
     handler = _signal.signal(_enum_to_int(signalnum), _enum_to_int(handler))
               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ValueError: signal only works in main thread of the main interpreter
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-1 → Telegram processor actor tg-proc-1 ready
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-2 → Telegram processor actor tg-proc-2 ready
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-3 → Telegram processor actor tg-proc-3 ready
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-0 → Telegram processor actor tg-proc-0 ready

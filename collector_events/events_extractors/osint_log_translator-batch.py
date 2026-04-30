@@ -133,7 +133,7 @@ def main() -> None:
     base._configure_transformers_output(quiet=config.quiet)
 
     _, newline, had_trailing_newline, parsed = common.read_parsed_log(config)
-    detector = base.FastTextLanguageDetector(config.lid_model)
+    detector = base.FastTextLanguageDetector(config.lid_model, quiet=config.quiet)
     translate_tasks, results = _build_detected_results(
         parsed.tasks,
         detector=detector,

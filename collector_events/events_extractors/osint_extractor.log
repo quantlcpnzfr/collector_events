@@ -1035,3 +1035,39 @@ INFO → forex_shared.env_config_manager → [EnvConfig] 115 novas chaves setada
 INFO → forex_shared.env_config_manager → [EnvConfig] 122 chaves recarregadas do MongoDB.
 INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
 INFO → collector_events.events_extractors.telegram_relay_ray → Ray initialized (address=local, namespace=telegram_relay)
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Secret resolvido para MONGO_URL
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Bootstrap secret carregado para MONGO_URL
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Secret resolvido para SYSTEM_X25519_PRIVATE_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Bootstrap secret carregado para SYSTEM_X25519_PRIVATE_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Secret resolvido para SYSTEM_X25519_PUBLIC_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Bootstrap secret carregado para SYSTEM_X25519_PUBLIC_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 3 bootstrap secrets carregados do Secret Manager.
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 45 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 24 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 122 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 115 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 122 chaves recarregadas do MongoDB.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → collector_events.events_extractors.telegram_relay_ray → Ray initialized (address=local, namespace=telegram_relay)
+INFO → collector_events.events_extractors.telegram_relay_ray → Spawned 4 Telegram processor actors (max_concurrency=16, inflight_cap=800)
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram relay using StringSession from MongoDB (collection=telegram, _id=default)
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram StringSession persisted to MongoDB (collection=telegram, _id=default)
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram relay connected; resolving 62 channels
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel CYBERWARCOM unresolved; stale/invalid username: No user has "cyberwarcom" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel cybersecboardrm unresolved; stale/invalid username: No user has "cybersecboardrm" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel thecyberwire unresolved; stale/invalid username: No user has "thecyberwire" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel intelooperr unresolved; stale/invalid username: No user has "intelooperr" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel nexaborisov unresolved; stale/invalid username: No user has "nexaborisov" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel militaryblog unresolved; stale/invalid username: Nobody is using this username or the username is unacceptable (caused by ResolveUsernameRequest)
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel aaborishpol unresolved; stale/invalid username: No user has "aaborishpol" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel UkrainianLandForces unresolved; stale/invalid username: No user has "ukrainianlandforces" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel MEObserverr unresolved; stale/invalid username: No user has "meobserverr" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel maboroshchuk unresolved; stale/invalid username: No user has "maboroshchuk" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel NewResistance1 unresolved; stale/invalid username: Nobody is using this username or the username is unacceptable (caused by ResolveUsernameRequest)
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram channel saborisk unresolved; stale/invalid username: No user has "saborisk" as username
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 33 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram Ray relay started: 50/62 entities active, 4 actors, max_inflight=800
