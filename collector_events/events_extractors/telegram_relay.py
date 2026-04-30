@@ -18,8 +18,8 @@ Optional environment:
     TELEGRAM_RELAY_BUFFER_SIZE       Defaults to 200.
     TELEGRAM_MAX_TEXT_CHARS          Defaults to 800.
     TELEGRAM_BACKFILL_INTERVAL       Defaults to 60 seconds; set 0 to disable periodic backfill.
-    TELEGRAM_RESOLVE_CONCURRENCY     Defaults to 8.
-    TELEGRAM_BACKFILL_CONCURRENCY    Defaults to 8.
+    TELEGRAM_RESOLVE_CONCURRENCY     Defaults to 8; MTProto calls are flood-gated.
+    TELEGRAM_BACKFILL_CONCURRENCY    Defaults to 8; MTProto calls are flood-gated.
     TELEGRAM_INGEST_WORKERS          Defaults to 16.
     TELEGRAM_PROCESSING_THREADS      Defaults to 4.
     TELEGRAM_PUBLISH_WORKERS         Defaults to 16.
@@ -40,7 +40,7 @@ from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, cast
+from typing import Any, Callable, cast
 
 from forex_shared.domain.intel import IntelDomain, IntelItem
 from forex_shared.logging.get_logger import get_logger, setup_logging
@@ -72,6 +72,29 @@ def _float_env(name: str, default: float, *, minimum: float = 0.0) -> float:
         return max(minimum, float(os.getenv(name, str(default))))
     except ValueError:
         return default
+
+
+_EXPECTED_RESOLVE_ERROR_TYPES = {
+    "UsernameInvalidError",
+    "UsernameNotOccupiedError",
+}
+_EXPECTED_RESOLVE_ERROR_TEXT = (
+    "No user has",
+    "Nobody is using this username",
+    "username is unacceptable",
+    "username is not in use",
+)
+
+
+def _is_expected_resolve_error(exc: BaseException) -> bool:
+    if exc.__class__.__name__ in _EXPECTED_RESOLVE_ERROR_TYPES:
+        return True
+    text = str(exc)
+    return any(fragment in text for fragment in _EXPECTED_RESOLVE_ERROR_TEXT)
+
+
+def _compact_error_message(exc: BaseException) -> str:
+    return " ".join(str(exc).split()) or exc.__class__.__name__
 
 
 SERVICE_ROOT = Path(__file__).resolve().parents[2]
@@ -190,6 +213,7 @@ class TelegramRelay:
 
         self.lock = asyncio.Lock()
         self._flood_lock = asyncio.Lock()
+        self._telegram_request_lock = asyncio.Lock()
         self._flood_wait_until = 0.0
         self._cursor_dirty = False
         self._stop_event = asyncio.Event()
@@ -316,7 +340,13 @@ class TelegramRelay:
                     self.session_key,
                 )
 
-            self.client = TelegramClient(StringSession(session_string), self.api_id, self.api_hash, connection_retries=3)
+            self.client = TelegramClient(
+                StringSession(session_string),
+                self.api_id,
+                self.api_hash,
+                connection_retries=3,
+                flood_sleep_threshold=0,
+            )
             await _await_if_needed(self.client.start())
             await self._save_session_to_mongo()
             log.info("Telegram relay connected; resolving %d channels", len(self.channels))
@@ -576,17 +606,18 @@ class TelegramRelay:
             self._record_error("backfill_once", exc, level="warning")
 
     async def _backfill_channel(self, channel: TelegramChannel) -> int:
-        if not self.client:
+        client = self.client
+        if not client:
             return 0
         entity = self.entities.get(channel.handle)
         if not entity:
             return 0
 
         try:
-            await self._respect_flood_wait()
             min_id = self.cursor_by_handle.get(channel.handle, 0)
-            raw_messages = await asyncio.wait_for(
-                self.client.get_messages(
+            raw_messages = await self._call_telegram(
+                f"fetch {channel.handle}",
+                lambda: client.get_messages(
                     entity,
                     limit=max(1, min(50, channel.max_messages)),
                     min_id=min_id,
@@ -598,12 +629,11 @@ class TelegramRelay:
             for message in reversed(messages):
                 if await self._enqueue_inbound(message, channel, source="backfill"):
                     count += 1
-            await asyncio.sleep(self.per_channel_delay_seconds)
             return count
         except FloodWaitError as exc:
             await self._set_flood_wait(exc.seconds)
             self.last_error = f"FLOOD_WAIT {exc.seconds}s"
-            log.warning("Telegram FLOOD_WAIT %ss; pausing backfill calls", exc.seconds)
+            log.warning("Telegram FLOOD_WAIT %ss fetching %s after retries", exc.seconds, channel.handle)
             return 0
         except asyncio.TimeoutError:
             self.last_error = f"timeout fetching {channel.handle}"
@@ -626,6 +656,49 @@ class TelegramRelay:
                 except Exception as exc:
                     self.last_error = f"backfill loop: {exc}"
                     log.exception("Telegram backfill loop error")
+
+    async def _call_telegram(
+        self,
+        operation: str,
+        call_factory: Callable[[], Any],
+        *,
+        timeout: float | None = None,
+        max_attempts: int = 3,
+    ) -> Any:
+        attempts = 0
+        while True:
+            attempts += 1
+            await self._respect_flood_wait()
+            try:
+                async with self._telegram_request_lock:
+                    await self._respect_flood_wait()
+                    try:
+                        result = call_factory()
+                        if hasattr(result, "__await__"):
+                            awaitable = cast(Awaitable[Any], result)
+                            if timeout and timeout > 0:
+                                value = await asyncio.wait_for(awaitable, timeout=timeout)
+                            else:
+                                value = await awaitable
+                        else:
+                            value = result
+                    finally:
+                        if self.per_channel_delay_seconds > 0:
+                            await asyncio.sleep(self.per_channel_delay_seconds)
+                    return value
+            except FloodWaitError as exc:
+                await self._set_flood_wait(exc.seconds)
+                self.last_error = f"FLOOD_WAIT {exc.seconds}s during {operation}"
+                if attempts >= max_attempts:
+                    raise
+                log.warning(
+                    "Telegram FLOOD_WAIT %ss during %s; retrying after pause",
+                    exc.seconds,
+                    operation,
+                )
+            except asyncio.TimeoutError:
+                self.last_error = f"timeout during {operation}"
+                raise
 
     async def _health_loop(self) -> None:
         while not self._stop_event.is_set():
@@ -997,20 +1070,44 @@ class TelegramRelay:
                     if index:
                         await asyncio.sleep(min(self.per_channel_delay_seconds, 1.0) * (index % self.resolve_concurrency))
                     try:
-                        await self._respect_flood_wait()
-                        entity = await asyncio.wait_for(
-                            client.get_entity(channel.handle),
+                        entity = await self._call_telegram(
+                            f"resolve {channel.handle}",
+                            lambda: client.get_entity(channel.handle),
                             timeout=self.request_timeout_seconds,
+                            max_attempts=5,
                         )
                         self.entities[channel.handle] = entity
-                        await asyncio.sleep(self.per_channel_delay_seconds)
                     except FloodWaitError as exc:
                         await self._set_flood_wait(exc.seconds)
                         self.last_error = f"FLOOD_WAIT {exc.seconds}s during resolve"
-                        log.warning("Telegram FLOOD_WAIT %ss while resolving", exc.seconds)
+                        log.warning(
+                            "Could not resolve Telegram channel %s after repeated FLOOD_WAIT %ss",
+                            channel.handle,
+                            exc.seconds,
+                        )
+                    except asyncio.TimeoutError:
+                        self.last_error = f"timeout resolving {channel.handle}"
+                        log.warning(
+                            "Telegram timeout resolving %s after %.1fs",
+                            channel.handle,
+                            self.request_timeout_seconds,
+                        )
                     except Exception as exc:
-                        self.last_error = f"resolve {channel.handle}: {exc}"
-                        log.warning("Could not resolve Telegram channel %s: %s", channel.handle, exc, exc_info=True)
+                        reason = _compact_error_message(exc)
+                        self.last_error = f"resolve {channel.handle}: {reason}"
+                        if _is_expected_resolve_error(exc):
+                            log.warning(
+                                "Telegram channel %s unresolved; stale/invalid username: %s",
+                                channel.handle,
+                                reason,
+                            )
+                        else:
+                            log.warning(
+                                "Could not resolve Telegram channel %s: %s",
+                                channel.handle,
+                                reason,
+                                exc_info=True,
+                            )
 
             tasks = [
                 self._create_task(_resolve(channel, index), f"telegram-resolve-{channel.handle}")
@@ -1060,7 +1157,7 @@ class TelegramRelay:
     async def _set_flood_wait(self, seconds: int | float) -> None:
         try:
             async with self._flood_lock:
-                until = asyncio.get_running_loop().time() + max(1.0, float(seconds))
+                until = asyncio.get_running_loop().time() + max(1.0, float(seconds)) + 1.0
                 self._flood_wait_until = max(self._flood_wait_until, until)
         except Exception as exc:
             self._record_error("_set_flood_wait", exc, level="warning")

@@ -1779,3 +1779,118 @@ INFO → root → Logging system initialized
 WARNING → dotenv.main → python-dotenv could not parse statement starting at line 12
 WARNING → dotenv.main → python-dotenv could not parse statement starting at line 12
 INFO → __main__ → Ray initialized for translation engine namespace=osint_translation
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-2 → Telegram processor actor tg-proc-2 ready
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-3 → Telegram processor actor tg-proc-3 ready
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-0 → Telegram processor actor tg-proc-0 ready
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-1 → Telegram processor actor tg-proc-1 ready
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → root → Logging system initialized
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-3 → Telegram processor actor tg-proc-3 ready
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-1 → Telegram processor actor tg-proc-1 ready
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-0 → Telegram processor actor tg-proc-0 ready
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-2 → Telegram processor actor tg-proc-2 ready
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-1 → Telegram processor actor tg-proc-1 ready
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-0 → Telegram processor actor tg-proc-0 ready
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-2 → Telegram processor actor tg-proc-2 ready
+INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-3 → Telegram processor actor tg-proc-3 ready
+INFO → root → Logging system initialized
+INFO → root → Logging system initialized
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped

@@ -34,7 +34,6 @@ from typing import Any
 
 from dotenv import load_dotenv
 
-
 THIS_FILE = Path(__file__).resolve()
 EXTRACTOR_DIR = THIS_FILE.parent
 PACKAGE_ROOT = THIS_FILE.parents[1]
@@ -57,9 +56,10 @@ try:
 except ImportError:  # pragma: no cover - direct execution fallback
     from .telegram_relay_ray import TelegramFeedItem, TelegramRelayRay
 
+from forex_shared.logging.get_logger import setup_logging, get_logger
 
-log = logging.getLogger(__name__)
-
+setup_logging(level=logging.INFO, log_file=f"{THIS_FILE.parent / 'osint_extractor.log'}")
+log = get_logger(__name__)
 
 @dataclass(frozen=True)
 class SourceBuildResult:

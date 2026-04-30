@@ -1,0 +1,854 @@
+INFO → root → Logging system initialized
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 38
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 41
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 43
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 46
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 54
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 55
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 58
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 66
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 38
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 41
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 43
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 46
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 54
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 55
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 58
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 66
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 38
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 41
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 43
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 46
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 54
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 55
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 58
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 66
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → collector_events.events_extractors.telegram_relay_ray → Ray initialized (address=local, namespace=telegram_relay)
+INFO → collector_events.events_extractors.telegram_relay_ray → Spawned 4 Telegram processor actors (max_concurrency=16, inflight_cap=800)
+WARNING → collector_events.events_extractors.telegram_relay_ray → Telegram relay _ensure_mongo: invalid literal for int() with base 10: ''
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1121, in _ensure_mongo
+    self._mongo = await asyncio.to_thread(MongoManager)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\shared_lib\forex_shared\mongo_manager.py", line 86, in __init__
+    self.port = int(os.environ.get("MONGO_DB_PORT", "27017"))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: ''
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram relay using StringSession from TELEGRAM_SESSION env (bootstrap; will persist to MongoDB after connect)
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram relay connected; resolving 62 channels
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 0 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram Ray relay started: 0/62 entities active, 4 actors, max_inflight=800
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.events_extractors.telegram_relay_ray → Ray runtime shut down
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram Ray relay stopped
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram Ray relay stopped
+INFO → root → Logging system initialized
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 18
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 28
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 18
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 28
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 18
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 28
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → collector_events.events_extractors.telegram_relay_ray → Ray initialized (address=local, namespace=telegram_relay)
+INFO → collector_events.events_extractors.telegram_relay_ray → Spawned 4 Telegram processor actors (max_concurrency=16, inflight_cap=800)
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram relay using StringSession from MongoDB (collection=telegram, _id=default)
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram StringSession persisted to MongoDB (collection=telegram, _id=default)
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram relay connected; resolving 62 channels
+INFO → telethon.client.users → Sleeping for 46s (0:00:46) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 46s (0:00:46) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 45s (0:00:45) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 45s (0:00:45) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 43s (0:00:43) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 43s (0:00:43) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 42s (0:00:42) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 41s (0:00:41) on ResolveUsernameRequest flood wait
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel middleeastobserver: 
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.FloodWaitError: A wait of 46 seconds is required (caused by ResolveUsernameRequest)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 123, in _call
+    await asyncio.sleep(e.seconds)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel FotrosResistancee: 
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 54, in _call
+    await asyncio.sleep(diff)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+INFO → telethon.client.users → Sleeping early for 31s (0:00:31) on ResolveUsernameRequest flood wait
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel MiddleEastEye_TG: 
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 54, in _call
+    await asyncio.sleep(diff)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel RezistanceTrench1: 
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 54, in _call
+    await asyncio.sleep(diff)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+INFO → telethon.client.users → Sleeping early for 29s (0:00:29) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 28s (0:00:28) on ResolveUsernameRequest flood wait
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel geopolitics_prime: 
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 54, in _call
+    await asyncio.sleep(diff)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel dragonwatch: 
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 54, in _call
+    await asyncio.sleep(diff)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel thehackernews: 
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 54, in _call
+    await asyncio.sleep(diff)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel cybersecboardrm: 
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 54, in _call
+    await asyncio.sleep(diff)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+INFO → telethon.client.users → Sleeping early for 26s (0:00:26) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 26s (0:00:26) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 25s (0:00:25) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 23s (0:00:23) on ResolveUsernameRequest flood wait
+INFO → telethon.client.users → Sleeping early for 21s (0:00:21) on ResolveUsernameRequest flood wait
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel DarkWebInformer: 
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 54, in _call
+    await asyncio.sleep(diff)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel CYBERWARCOM: 
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 54, in _call
+    await asyncio.sleep(diff)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+INFO → telethon.client.users → Sleeping early for 14s (0:00:14) on ResolveUsernameRequest flood wait
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel thecyberwire: 
+Traceback (most recent call last):
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 54, in _call
+    await asyncio.sleep(diff)
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1040, in _resolve
+    entity = await asyncio.wait_for(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 519, in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\timeouts.py", line 115, in __aexit__
+    raise TimeoutError from exc_val
+TimeoutError
+INFO → root → Logging system initialized
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 18
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 28
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 18
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 28
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 18
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 28
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → collector_events.events_extractors.telegram_relay_ray → Ray initialized (address=local, namespace=telegram_relay)
+INFO → collector_events.events_extractors.telegram_relay_ray → Spawned 4 Telegram processor actors (max_concurrency=16, inflight_cap=800)
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram relay using StringSession from MongoDB (collection=telegram, _id=default)
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram StringSession persisted to MongoDB (collection=telegram, _id=default)
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram relay connected; resolving 62 channels
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel CYBERWARCOM: No user has "cyberwarcom" as username
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameNotOccupiedError: The username is not in use by anyone else yet (caused by ResolveUsernameRequest)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
+    raise ValueError('No user has "{}" as username'
+ValueError: No user has "cyberwarcom" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel cybersecboardrm: No user has "cybersecboardrm" as username
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameNotOccupiedError: The username is not in use by anyone else yet (caused by ResolveUsernameRequest)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
+    raise ValueError('No user has "{}" as username'
+ValueError: No user has "cybersecboardrm" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel thecyberwire: No user has "thecyberwire" as username
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameNotOccupiedError: The username is not in use by anyone else yet (caused by ResolveUsernameRequest)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
+    raise ValueError('No user has "{}" as username'
+ValueError: No user has "thecyberwire" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel intelooperr: No user has "intelooperr" as username
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameNotOccupiedError: The username is not in use by anyone else yet (caused by ResolveUsernameRequest)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
+    raise ValueError('No user has "{}" as username'
+ValueError: No user has "intelooperr" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel nexaborisov: No user has "nexaborisov" as username
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameNotOccupiedError: The username is not in use by anyone else yet (caused by ResolveUsernameRequest)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
+    raise ValueError('No user has "{}" as username'
+ValueError: No user has "nexaborisov" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel militaryblog: Nobody is using this username or the username is unacceptable (caused by ResolveUsernameRequest)
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameInvalidError: Nobody is using this username or the username is unacceptable (caused by ResolveUsernameRequest)
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel aaborishpol: No user has "aaborishpol" as username
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameNotOccupiedError: The username is not in use by anyone else yet (caused by ResolveUsernameRequest)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
+    raise ValueError('No user has "{}" as username'
+ValueError: No user has "aaborishpol" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel UkrainianLandForces: No user has "ukrainianlandforces" as username
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameNotOccupiedError: The username is not in use by anyone else yet (caused by ResolveUsernameRequest)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
+    raise ValueError('No user has "{}" as username'
+ValueError: No user has "ukrainianlandforces" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel MEObserverr: No user has "meobserverr" as username
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameNotOccupiedError: The username is not in use by anyone else yet (caused by ResolveUsernameRequest)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
+    raise ValueError('No user has "{}" as username'
+ValueError: No user has "meobserverr" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel maboroshchuk: No user has "maboroshchuk" as username
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameNotOccupiedError: The username is not in use by anyone else yet (caused by ResolveUsernameRequest)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
+    raise ValueError('No user has "{}" as username'
+ValueError: No user has "maboroshchuk" as username
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel NewResistance1: Nobody is using this username or the username is unacceptable (caused by ResolveUsernameRequest)
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameInvalidError: Nobody is using this username or the username is unacceptable (caused by ResolveUsernameRequest)
+WARNING → collector_events.events_extractors.telegram_relay_ray → Could not resolve Telegram channel saborisk: No user has "saborisk" as username
+Traceback (most recent call last):
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 562, in _get_entity_from_string
+    result = await self(
+             ^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.UsernameNotOccupiedError: The username is not in use by anyone else yet (caused by ResolveUsernameRequest)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1083, in _resolve
+    entity = await self._call_telegram(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_relay_ray.py", line 1043, in _call_telegram
+    value = await asyncio.wait_for(awaitable, timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Adm\AppData\Local\Programs\Python\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 343, in get_entity
+    result.append(await self._get_entity_from_string(x))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
+    raise ValueError('No user has "{}" as username'
+ValueError: No user has "saborisk" as username
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 726 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram Ray relay started: 50/62 entities active, 4 actors, max_inflight=800
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 3 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 0 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 1 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 0 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 3 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 2 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 10 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 0 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 2 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 0 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 1 messages dispatched
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram backfill complete: 2 messages dispatched
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → collector_events.events_extractors.telegram_relay_ray → Ray runtime shut down
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram Ray relay stopped
+INFO → collector_events.events_extractors.telegram_relay_ray → Telegram Ray relay stopped
+INFO → __main__ → OSINT extractor shutdown requested
