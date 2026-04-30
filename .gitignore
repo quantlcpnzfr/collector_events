@@ -1,9 +1,11 @@
 .venv/
 .vscode/
+.models/
 __pycache__/
 *.pyc
 *.pyo
 collector_events/events_extractors/telegram_session.env
+collector_events/events_extractors/translation_engine.env
 collector_events/events_extractors/osint_telegram_channels.runtime.json
 collector_events/events_extractors/telegram_osint_dashboard.log
 collector_events/events_extractors/osint_extractor.stdout.log

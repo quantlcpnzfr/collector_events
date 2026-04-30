@@ -1,0 +1,3046 @@
+
+════════════════════════════════════════════════════════════════════════════════════════════════
+🛰️  FOREX_SYSTEM OSINT TELEGRAM DASHBOARD
+════════════════════════════════════════════════════════════════════════════════════════════════
+🕒 Started UTC: 2026-04-29T18:41:53+00:00
+📁 Runtime channel file: C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\osint_telegram_channels.runtime.json
+📝 Report file: C:\Projects\forex_system\services\collector_events\collector_events\events_extractors\telegram_osint_dashboard.log
+🎯 Relay channel set: all
+
+📡 Sources isolated for Telegram MTProto collection
+   • Total handles: 62
+   • WorldMonitor handles: 45
+   • Local forex_system handles: 17
+   • Duplicates skipped: 1
+   • Sets: full=37, local=17, tech=8
+   • Topics: conflict=14, cyber=10, geopolitics=16, middleeast=6, osint=16
+
+🚦 Collector status: bootstrapping Ray actors + Telethon session
+════════════════════════════════════════════════════════════════════════════════════════════════
+
+📊 HEALTH SNAPSHOT
+🕒 2026-04-29T18:42:13+00:00
+✅ enabled=False  📡 resolved=30/62  📬 accepted=0  🔁 duplicates=0  📤 dispatched=0  ⏳ in_flight=0
+🧠 actors=0  ⚠️ actor_errors=0  🧾 report_messages=0
+🏷️  report topics: -
+📣 busiest channels: -
+
+📊 HEALTH SNAPSHOT
+🕒 2026-04-29T18:42:33+00:00
+✅ enabled=False  📡 resolved=30/62  📬 accepted=0  🔁 duplicates=0  📤 dispatched=0  ⏳ in_flight=0
+🧠 actors=0  ⚠️ actor_errors=0  🧾 report_messages=0
+🏷️  report topics: -
+📣 busiest channels: -
+🚨 last_error=resolve thehackernews:
+
+📊 HEALTH SNAPSHOT
+🕒 2026-04-29T18:42:53+00:00
+✅ enabled=False  📡 resolved=30/62  📬 accepted=0  🔁 duplicates=0  📤 dispatched=0  ⏳ in_flight=0
+🧠 actors=0  ⚠️ actor_errors=0  🧾 report_messages=0
+🏷️  report topics: -
+📣 busiest channels: -
+🚨 last_error=resolve intelooperr:
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000001  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75080
+👀 views=271,667  ↗ forwards=1,118  🕯️ published=2026-04-28T20:51:14+00:00
+💬 Message
+   دونالد ترامپ، رئیس‌جمهور آمریکا، در جریان مراسمی در کاخ سفید با حضور پادشاه بریتانیا، با
+   اشاره به خاطرات شخصی خود از مادرش، از علاقه او به خانواده سلطنتی بریتانیا سخن گفت. ترامپ در
+   این مراسم گفت مادرش «عاشق ملکه بود» و هر زمان که مراسمی مرتبط با خانواده سلطنتی برگزار
+   می‌شد، «با دقت آن را از تلویزیون دنبال می‌کرد.» او افزود مادرش بارها با اشاره به مراسم‌های
+   سلطنتی به او می‌گفته: «ببین دونالد، چقدر زیباست» و تأکید کرد که او «واقعاً خانواده سلطنتی را
+   دوست داشت.» رئیس‌جمهور آمریکا همچنین با اشاره به دوران جوانی چارلز سوم، پادشاه کنونی
+   بریتانیا، گفت مادرش درباره او گفته بود: «نگاه کن، چارلز جوان... چقدر دوست‌داشتنی است» و با
+   لحنی طنزآمیز افزود: «مادرم روی چارلز کراش داشت.» ترامپ در پایان با اشاره‌ای احساسی گفت اکنون
+   با خود فکر می‌کند که مادرش «در این لحظه چه فکری می‌کند.» @VahidOOnLine 📡 @
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000002  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75081
+👀 views=155,712  ↗ forwards=291  🕯️ published=2026-04-29T14:37:47+00:00
+💬 Message
+   هشدار ترامپ به جمهوری اسلامی: بلد نیستید توافق غیرهسته‌ای امضا کنید، بهتر است زودتر عاقل
+   شوید دونالد ترامپ، رئیس جمهوری آمریکا روز چهارشنبه نهم اردیبهشت ماه پیامی هشدار و تهدیدآمیز
+   خطاب به جمهوری اسلامی منتشر کرد. ترامپ در این پیام که با یک عکس از خودش با اسلحه و تصویر
+   انفجارهای متعدد در پس زمینه، منتشر شده است نوشت: «ایران نمی‌تواند خودش را جمع‌وجور کند.
+   آن‌ها نمی‌دانند چگونه یک توافق غیرهسته‌ای امضا کنند. بهتر است هر چه زودتر عاقل شوند!» در
+   بالای تصویر ترامپ مسلح آمده است: «دیگر خبری از آقای مهربان نیست». @VahidOOnLine 📡
+   @VahidOnline
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000003  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75082
+👀 views=147,616  ↗ forwards=124  🕯️ published=2026-04-29T14:38:32+00:00
+💬 Message
+   اسکات بسنت، وزیر دارایی آمریکا در شبکه اجتماعی ایکس نوشت که در ادامه سیاست «فشار حداکثری»
+   رئیس‌جمهور آمریکا، نرخ تورم در ایران دو برابر شد و ارزش پول ملی آن کشور به‌سرعت کاهش یافت.
+   آقای بسنت می‌گوید که این اقدامات در چارچوب برنامه «فشار اقتصادی شدید»، زیرساخت‌های «بانکداری
+   سایه»‌ ایران در سطح بین‌المللی، دسترسی آن کشور به رمزارزها، ناوگان پنهان حمل‌ونقل، شبکه‌های
+   تامین تسلیحات، منابع مالی گروه‌های نیابتی در منطقه و همچنین پالایشگاه‌های مستقل چینی موسوم
+   به «تی‌پات» را که از تجارت نفت ایران حمایت می‌کنند، هدف قرار داده و تحریم کرده است. به گفته
+   او، این اقدامات آمریکا جریان ده‌ها میلیارد دلار درآمدی را که می‌توانست صرف تامین مالی
+   «فعالیت‌های تروریستی» شود، مختل کرده است. پیشتر دفتر کنترل دارایی‌های خارجی وزارت دارایی
+   آمریکا اعلام کرده بود که ۳۵ نهاد و فرد مرتبط با ایران را که در «ساختار با
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000004  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75083
+👀 views=151,443  ↗ forwards=455  🕯️ published=2026-04-29T14:38:57+00:00
+💬 Message
+   خبرگزاری حکومتی ایسنا گزارش داده قیمت دلار در بازار آزاد امروز صد و هشتاد و یک هزار و صد
+   تومان ثبت شده است. این بالاترین قیمت ثبت شده دلار محسوب می‌شود و پول ملی ایران پایین‌ترین
+   رکورد ارزش خود در تاریخ را ثبت کرده است. دلار در طول ده ماه، ۱۲۰ درصد رشد داشته و بیش از دو
+   برابر شده است. @VahidOOnLine 📡 @VahidOnline
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000005  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75084
+👀 views=130,499  ↗ forwards=615  🕯️ published=2026-04-29T15:28:02+00:00
+💬 Message
+   'سقوط درخت روی خودروها در بلوار کشاورز #تهران در اثر وزش شدید باد' عکس دریافتی، 'چهارشنبه ۹
+   اردیبهشت ساعت ۱۵' طوفان مربوط به دیروز سه‌شنبه ۸ اردیبهشت بوده و منجر به سقوط چندین درخت و
+   شکسته شدن بعضی‌ها مثل این شده که امروز افتاده. Vahid 📡 @VahidOnline
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000006  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75085
+👀 views=108,807  ↗ forwards=91  🕯️ published=2026-04-29T16:08:11+00:00
+💬 Message
+   یک مقام ارشد وزارت دفاع آمریکا اعلام کرد که هزینهٔ جنگ این کشور با ایران تاکنون به ۲۵
+   میلیارد دلار رسیده است، رقمی که نخستین برآورد رسمی از هزینه‌های این درگیری به‌شمار می‌رود.
+   جولز هرست، که در حال حاضر وظایف مدیر مالی پنتاگون را بر عهده دارد، روز چهارشنبه به
+   قانون‌گذاران در کمیتهٔ نیروهای مسلح مجلس نمایندگان آمریکا گفت که بخش عمدهٔ این هزینه صرف
+   مهمات شده است. @VahidHeadline 📡 @VahidOnline
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000007  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75086
+👀 views=108,479  ↗ forwards=158  🕯️ published=2026-04-29T16:11:06+00:00
+💬 Message
+   در جریان جلسه استماع در کمیته نیروهای مسلح مجلس نمایندگان آمریکا، پیت هگست، وزیر جنگ آمریکا
+   در تقابل با آدام اسمیت، به دفاع از استراتژی نظامی دولت ترامپ علیه ایران پرداخت. هگست با
+   اشاره به موفقیت عملیات «پتک نیمه‌شب»، گفت که تاسیسات هسته‌ای ایران نابود و زیر زمین دفن
+   شده‌اند و اکنون تحت نظارت شبانه‌روزی قرار دارند. هگست در این بحث جنجالی، رویکرد ایران را به
+   «استراتژی کره شمالی» تشبیه کرد و گفت: «تهران قصد داشت با استفاده از سپر موشک‌های متعارف،
+   مانع از به چالش کشیدن خود شود تا به آرامی به سمت سلاح هسته‌ای حرکت کند؛ اما رئیس‌جمهوری
+   ترامپ ایران را در ضعیف‌ترین لحظه‌اش دید و با همکاری شرکای اسرائیلی، اقدامی انجام داد که فقط
+   از عهده آمریکا برمی‌آمد.» در مقابل، آدام اسمیت با انتقاد از نتایج این جنگ، تاکید کرد که
+   علیرغم عملیات‌های نظامی سنگین، وضعیت هسته‌ای ایران بهبود نیافته و تهران اکنون د
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000008  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75088
+👀 views=98,975  ↗ forwards=302  🕯️ published=2026-04-29T16:24:27+00:00
+💬 Message
+   فایل صوتی که منابع حکومتی با شرح زیر منتشر کرده‌اند: "پیام صوتی قالیباف خطاب به مردم ايران
+   روایت رئیس مجلس از ۶ شکست دشمن" و جملاتی که منابع حکومتی از این فایل صوتی انتخاب کرده‌اند: "
+   🔹رئیس مجلس در یک فایل صوتی خطاب به مردم ایران درباره مهم‌ترین مسائل روز کشور به خصوص طراحی
+   جدید دشمن برای به تسلیم کشاندن مردم ایران، سخن گفت. بخش‌های اصلی این گفت‌وگو به شرح زیر است:
+   🔹دشمن‌ از روز اول دنبال این بود که با ترور رهبر انقلاب و فرمانده‌هان نظامی، ظرف ۳ روز کار
+   نظام را تمام کنند اما شکست خوردند. 🔹سپس سراغ ازبین بردن سیستم آفندی کشور رفتند اما هرچه گذشت
+   دیدند که نواخت موشک‌ها و پهپادهای ما ادامه دارد. 🔹در ادامه به سمت ونزوئلاسازی ایران رفت و
+   بازهم شکست خورد، سپس سراغ این رفتند که از غرب کشور تجزیه‌طلبان را فعال کنند که به لطف خدا و
+   زحمات نیروهای نظامی و اطلاعاتی شکست خوردند. 🔹بعد از ماه‌ها ب
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000009  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75089
+👀 views=97,480  ↗ forwards=85  🕯️ published=2026-04-29T16:30:50+00:00
+💬 Message
+   محمدباقر قالیباف، رئیس مجلس شورای اسلامی، در یک پیام صوتی تازه گفت که ایالات متحده «وارد
+   مرحله جدیدی شده است و می‌خواهد با محاصره دریایی و جوسازی‌های رسانه‌ای، فشار اقتصادی و
+   اختلاف‌های داخل کشور را فعال کند تا ما را از درون دچار ضعف یا حتی فروپاشی کند.» او در ادامه
+   هم گفت که «بهترین شاهد هم این مواضع ترامپ است که صراحتاً کشور را به دو دسته تندرو و میانه‌رو
+   تقسیم می‌کند و بعد هم بلافاصله از محاصره دریایی سخن می‌گوید تا ایران را از طریق فشار اقتصادی
+   و اختلاف‌های داخلی مجبور به تسلیم کند.» محمدباقر قالیباف در این فایل صوتی که روز چهارشنبه ۹
+   اردیبهشت منتشر شده خواستار «حفظ انسجام» شده و تهدید کرده است که «هر اقدام اختلاف‌افکنانه‌ای
+   کاملاً در طرح جدید دشمن قرار دارد.» @VahidHeadline محمدباقر قالیباف، رییس مجلس، گفت: «دشمن
+   قصد داشت با کشتن رهبر و فرماندهان در سه روز نظام را ساقط کند، اما در این
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000010  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75094
+👀 views=109,323  ↗ forwards=252  🕯️ published=2026-04-29T16:32:28+00:00
+💬 Message
+   دونالد ترامپ، روز چهارشنبه نهم اردیبهشت، در گفتگو با آکسیوس تاکید کرد که محاصره دریایی ایران
+   تا زمان پذیرش توافقی که نگرانی‌های هسته‌ای آمریکا را برطرف کند، ادامه خواهد یافت. او پیشنهاد
+   اخیر تهران مبنی بر بازگشایی مشروط تنگه هرمز و تعویق مذاکرات هسته‌ای را رد کرد و خاطرنشان کرد
+   که محاصره را «تا حدودی موثرتر از بمباران» می‌داند. همزمان، سه منبع آگاه در گفتگو با آکسیوس
+   فاش کردند که فرماندهی مرکزی آمریکا (سنتکام) طرحی برای موجی از حملات «کوتاه و قدرتمند» به
+   زیرساخت‌های ایران تهیه کرده است تا بن‌بست مذاکره را بشکند. اگرچه ترامپ تا سه‌شنبه شب دستور
+   اقدام نظامی صادر نکرده، اما هشدار داده است که اگر ایران تسلیم نشود، گزینه نظامی را بررسی
+   خواهد کرد. او همچنین با انتشار تصویری ساخته شده توسط هوش مصنوعی از خود در حالی که سلاح به
+   دست دارد، با شعار «دیگر از مرد مهربان خبری نیست»، به تهران هشدار دا
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000011  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75095
+👀 views=61,327  ↗ forwards=75  🕯️ published=2026-04-29T17:52:08+00:00
+💬 Message
+   پیت هگست، وزیر جنگ آمریکا، اعلام کرد که با گذشت دو ماه از حمله مرگبار به مدرسه ابتدایی میناب
+   که منجر به کشته شدن بیش از ۱۶۵ نفر شد، این حادثه همچنان در دست تحقیق است. این اظهارات در
+   پاسخ به پرسش‌های رو کانا، نماینده دموکرات کالیفرنیا، مطرح شد که از هگست درباره هزینه‌های
+   انسانی و تبعات این حمله پرسید. هگست با توصیف این واقعه به عنوان یک «موقعیت تاسف‌بار»، تاکید
+   کرد که نمی‌توان «هزینه یا بهایی» برای آن تعیین کرد. ماه گذشته، هگست به خبرنگاران گفته بود که
+   ارتش یکی از ژنرال‌های خارج از فرماندهی مرکزی (سنتکام) را برای بررسی این حادثه مامور کرده
+   است؛ با این حال، او از پاسخ به سوالات درباره علت وقوع حمله خودداری کرد و تکرار کرد که ایالات
+   متحده غیرنظامیان را هدف قرار نمی‌دهد. @VahidOOnLine پنج مقام سابق امریکایی، از جمله یک
+   حقوقدان ارشد نظامی، از پنتاگون به دلیل عدم پذیرش یا رد احتمال نقش امریکا
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000012  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75096
+👀 views=58,968  ↗ forwards=38  🕯️ published=2026-04-29T17:54:16+00:00
+💬 Message
+   قیمت نفت پس از انتشار خبر دیدار دونالد ترامپ، رئیس‌جمهور آمریکا، با مدیران شرکت‌های نفتی
+   برای بررسی تمدید چندماهه محاصره بنادر و کشتیرانی ایران، به‌طور چشمگیری افزایش یافته است.
+   بهای نفت شاخص برنت با رشد پنج‌ درصدی به حدود ۱۱۷ دلار در هر بشکه رسیده است. @VahidHeadline 📡
+   @VahidOnline
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000013  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75097
+👀 views=59,148  ↗ forwards=40  🕯️ published=2026-04-29T17:55:47+00:00
+💬 Message
+   یوری اوشاکوف، دستیار کاخ کرملین، روز چهارشنبه، نهم اردیبهشت، از گفتگوی تلفنی ۱.۵ ساعته میان
+   ولادیمیر پوتین و دونالد ترامپ خبر داد و فضای این تماس را «دوستانه و کاری» توصیف کرد. در این
+   رایزنی، پوتین ضمن محکوم کردن سوءقصد اخیر به جان ترامپ، حمایت خود را از تصمیم او برای تمدید
+   آتش‌بس با جمهوری اسلامی اعلام کرد و ایده‌هایی را برای حل موضوع برنامه هسته‌ای تهران ارائه
+   داد. در بخش دیگری از این گفتگو، ترامپ ابراز امیدواری کرد که توافق برای پایان دادن به
+   درگیری‌های اوکراین نزدیک است. پوتین نیز پیشنهاد برقراری آتش‌بس در اوکراین همزمان با جشن‌های
+   «روز پیروزی» در ماه مه را مطرح کرد که با واکنش مثبت ترامپ همراه شد. رئیس‌جمهوری روسیه در این
+   تماس اقدامات نظامی اوکراین را «روش‌های تروریستی» توصیف کرد. علاوه بر مسائل امنیتی، رهبران دو
+   قدرت بزرگ درباره پروژه‌های بالقوه اقتصادی و همکاری در حوزه انرژی نی
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000014  2026-04-29T18:43:03+00:00  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75099
+👀 views=60,422  ↗ forwards=516  🕯️ published=2026-04-29T17:59:33+00:00
+💬 Message
+   پلیس مرزی کانادا از ورود مهدی تاج، رئیس فدراسیون فوتبال جمهوری اسلامی ایران، هدایت ممبینی،
+   دبیر فدراسیون، و همراهان آنها به ونکوور برای شرکت در اجلاس فیفا، جلوگیری کرد و آنها را به
+   ایران بازگرداند. سایت حکومتی «ورزش سه» روز چهارشنبه ۹ اردیبهشت با تایید این خبر نوشت که این
+   افراد با وجود اینکه مجوز سفر به کانادا (و نه ویزا) را دریافت کرده بودند، با نظر پلیس مهاجرت
+   این کشور و رد درخواست ویزای‌شان، پس از انتظاری طولانی، مجبور شده‌اند راه بازگشت به ایران را
+   در پیش بگیرند. هیئت اجرایی فوتبال جمهوری اسلامی ایران روز سه‌شنبه ۸ اردیبهشت هم در نشست
+   سالانه کنفدراسیون فوتبال آسیا در ونکوور حاضر نشد. دبیرکل کنفدراسیون آسیا هنگام خواندن لیست
+   حاضران، علت غیبت نمایندگان جمهوری اسلامی را «مشکلات ویزا» اعلام کرده بود. به گزارش رسانه‌های
+   داخلی، نمایندگان فوتبال جمهوری اسلامی برای رسیدن به ونکوور در غرب کا
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000015  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121362
+👀 views=80,779  ↗ forwards=59  🕯️ published=2026-04-29T11:13:12+00:00
+💬 Message
+   לונדון: דיווח ראשוני על מעצר אדם שדקר שני יהודים באזור גולדרס גרין (אזור שהוא מרכז חשוב של
+   הקהילה היהודית בעיר). 2 תגובות
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000016  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121363
+👀 views=80,080  ↗ forwards=29  🕯️ published=2026-04-29T11:17:33+00:00
+💬 Message
+   הדוקר נתפס בידי אנשי "ארגון השומרים"-Shomrim של הקהילה היהודית בלונדון. 2 תגובות
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000017  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121364
+👀 views=79,370  ↗ forwards=57  🕯️ published=2026-04-29T11:50:29+00:00
+💬 Message
+   אורסולה פון דר ליין, נשיאת הנציבות של האיחוד האירופאי : כל הסכם עם איראן חייב לכלול מעבר
+   בטוח וקבוע במצר הורמוז ללא אגרות וכן לטפל בתוכנית הגרעין ובתוכנית הטילים של איראן. 12 תגובות
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000018  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121365
+👀 views=78,835  ↗ forwards=51  🕯️ published=2026-04-29T12:19:24+00:00
+💬 Message
+   לונדון: היהודים שנדקרו בפיגוע הם יהודים אורתודוקסים (בעלי חזות יהודית). המחבל מוסלמי. ע"פ
+   BBC שני היהודים נפצעו באורח קשה. ## ראש ממשלת בריטניה קיר סטארמר על האירוע : מדאיג מאוד. 11
+   תגובות
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000019  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121366
+👀 views=73,749  ↗ forwards=24  🕯️ published=2026-04-29T12:53:07+00:00
+💬 Message
+   על רקע המשך המצור בהורמוז: מחיר חבית נפט מסוג ברנט מתייקר היום ומגיע ל 115$ כדי להגיב לכתבה
+   לחצו כאן
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000020  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121367
+👀 views=71,531  ↗ forwards=3  🕯️ published=2026-04-29T12:59:00+00:00
+💬 Message
+   °תוכן שיווקי
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000021  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121368
+👀 views=75,212  ↗ forwards=4  🕯️ published=2026-04-29T13:00:03+00:00
+💬 Message
+   ריבונות מחילים בשטח🇮🇱 צהריים טובים כאן אביחי ואסתר סוויסה מחוות נוף המשכן שבבנימין. המפה הזו
+   שמסמנת את שטחי המרעה עליהם החווה שלנו שומרת פשוט מדברת בעד עצמה. אלפי דונמים של אדמות הלאום
+   שיוצרים חגורת הגנה ביטחונית לישובים שבות רחל ושילה, ובעיקר נשמרים בבעלות יהודית. כל דונם כאן
+   נגאל בעמל ויזע, אחרי שהיה בשליטה ערבית מלאה במשך שנים. לצערנו, כל המפעל העצום הזה נמצא כעת
+   בסכנת קריסה 🚨 בלחץ הרשות הפלסטינית, החריב המנהל האזרחי לפני מספר שבועות את החווה והחרים בצעד
+   חסר תקדים את עדר הצאן שלה ששמר על האזור כולו! התחלנו כבר לשקם את החווה, אך כעת השטח עומד
+   מופקר ונמצא בסכנת השתלטות מיידית של ערביי האזור. אנחנו צריכים את עזרתכם להציל את השטח מהפקרה
+   לידי האויב! תרמו עכשיו להצלת החווה ועזרו לנו לנצח במערכה על ארץ אבותינו! >>>
+   https://givechak.co.il/NofHaMishkan?ref=ti
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000022  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121369
+👀 views=71,331  ↗ forwards=103  🕯️ published=2026-04-29T13:51:53+00:00
+💬 Message
+   לונדון: תיעוד ההשתלטות על המחבל המוסלמי שדקר שני יהודים בגולדרס גרין ופצע אותם באורח קשה
+   מוקדם יותר היום 7 תגובות
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000023  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121370
+👀 views=72,249  ↗ forwards=54  🕯️ published=2026-04-29T13:58:47+00:00
+💬 Message
+   תמונות של נשיא לבנון, ג'וזף עון ניתלו בדאחיה... 4 תגובות
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000024  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121371
+👀 views=66,030  ↗ forwards=60  🕯️ published=2026-04-29T14:36:53+00:00
+💬 Message
+   לא לפספס: רחפן FPV של צה"ל מחסל מחבל של חזבאללה שרוכב על אופנוע בדרום לבנון. כדי להגיב לכתבה
+   לחצו כאן
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000025  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121372
+👀 views=61,719  ↗ forwards=1  🕯️ published=2026-04-29T14:59:00+00:00
+💬 Message
+   °תוכן שיווקי
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000026  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121373
+👀 views=64,893  ↗ forwards=0  🕯️ published=2026-04-29T15:00:04+00:00
+💬 Message
+   🔥שתמיד תהיו בצד החוסך 😉 זה הזמן להתחבר לטריפל הכי משתלם בישראל 🔥🔥🔥 טריפל כולל הכל רק ב169
+   ש"ח בלבד!!! וכל זה במחיר שלא זז 🤚 הכל כלול בעסקה זו!!! ⚡ 1000 מגה סיבים אולטרה־מהיר 📡 תשתית
+   + ספק + ראוטר + מגדיל טווח 📺 140 ערוצים – כולל תכני פרימיום 🔋 עד 20% הנחה בחשבון החשמל
+   החודשי! 🏠 התקנה חינם בדירה 🎉 למצטרפים חדשים בלבד כולל מגדיל טווח ונקודת אינטרנט קווית במיוחד
+   לממ"ד ללא עלות! מצטרפים כאן בקלות ⬇️ 📞 להצטרפות: 0778039524 💬להצטרפות בוואטסאפ:
+   https://wa.me/972503695297?text=היי%2C+הגעתי+דרך+אבו+עלי+אשמח+להצעה+%3A%29 🌐 אתר:
+   tv-hot.co.il 🛑 למצטרפים חדשים בלבד | כפוף לתקנון
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000027  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121374
+👀 views=59,906  ↗ forwards=102  🕯️ published=2026-04-29T15:37:25+00:00
+💬 Message
+   כששואלים בעולם ובלבנון מדוע ישראל צריכה לשטח בתי אזרחים, תראו להם את הסרטון המצורף של דובר
+   צה"ל. הסרטון הזה הוא התשובה הכי טובה: פשוט כי חזבאללה מציב בתוכם אמל"ח ומשגרים שמסכנים את
+   ישראל. כדי להגיב לכתבה לחצו כאן
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000028  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121375
+👀 views=61,831  ↗ forwards=63  🕯️ published=2026-04-29T15:40:27+00:00
+💬 Message
+   מפקד המשטרה הבריטית על המחבל המוסלמי שדקר היום שני יהודים אורתודוקסים, בלונדון 👆: הוא סובל
+   מבעיות נפשיות... 12 תגובות
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000029  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121376
+👀 views=59,767  ↗ forwards=55  🕯️ published=2026-04-29T15:54:53+00:00
+💬 Message
+   חזבאללה משתמש בדברים של כתב ערוץ "כאן" כתעמולה נגד ישראל הערוץ הרשמי של חזבאללה פרסם הערב
+   כרזת תעמולה שמצטטת משפט שאמר אתמול כתב ערוץ "כאן" רובי המרשלג : "אנחנו היום במצב הגרוע ביותר
+   שחווה הגבול הצפוני מאז ימי רצועת הביטחון". 6 תגובות
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000030  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121377
+👀 views=57,571  ↗ forwards=30  🕯️ published=2026-04-29T16:10:16+00:00
+💬 Message
+   ערוצים לבנוניים מדווחים שצה"ל פוצץ את מסעדת א-ספינה ו"אמואג' אלביאצ'ה" באזור נאקורה בדרום
+   לבנון (גזרה מערבית). כדי להגיב לכתבה לחצו כאן
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000031  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121378
+👀 views=55,254  ↗ forwards=63  🕯️ published=2026-04-29T16:31:17+00:00
+💬 Message
+   הנשיא טראמפ על איראן: אמשיך במצור הימי על איראן עד שיושג הסכם גרעין. המצור יעיל יותר
+   מהתקיפות. הם נחנקים כמו חזיר ממולא. וזה הולך ונעשה גרוע יותר עבורם. כדי להגיב לכתבה לחצו כאן
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000032  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121379
+👀 views=51,840  ↗ forwards=1  🕯️ published=2026-04-29T16:45:48+00:00
+💬 Message
+   המסעדות בנאקורה👆 בדרום לבנון - לפני שפוצצו בידי צה"ל. תגובה אחת
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000033  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121381
+👀 views=47,586  ↗ forwards=39  🕯️ published=2026-04-29T17:05:11+00:00
+💬 Message
+   מחירי הנפט מתפוצצים למעלה אחרי הדיווחים כי טראמפ מתכנן מצור ארוך טווח על הורמוז: מחיר חבית
+   נפט מסוג ברנט מגיע ל 119$ כדי להגיב לכתבה לחצו כאן
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000034  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121382
+👀 views=42,380  ↗ forwards=15  🕯️ published=2026-04-29T17:18:46+00:00
+💬 Message
+   החשבון של ראש הממשלה נתניהו מפרסם את הסרטון המצורף עם הכיתוב: "לבנון - ממשיכים" 2 תגובות
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000035  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121383
+👀 views=36,684  ↗ forwards=0  🕯️ published=2026-04-29T17:29:00+00:00
+💬 Message
+   °תוכן שיווקי
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000036  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121384
+👀 views=39,288  ↗ forwards=0  🕯️ published=2026-04-29T17:30:00+00:00
+💬 Message
+   😴 שינה אחרת מתחילה כאן… הכירו את Quick Dream של אירופלקס – המיטה שתשנה לכם את הלילות 💙 🔥
+   מחיר מבצע: 2990 ש"ח בלבד במקום 4490 ש"ח ✔ בסיס מיטה יציב ומרופד ✔ ראש מיטה מעוצב ואלגנטי ✔
+   טופר ויסקו מפנק להתאמה מושלמת לגוף ולהפחתת לחצים הכל מגיע באריזה חכמה בוואקום – נפתח בקלות
+   ומוכן לשינה תוך דקות! 💤 יותר נוחות 💤 יותר איכות 💤 יותר אנרגיה בבוקר 🎁 קוד קופון: QUICK33 אל
+   תחכו – זו ההזדמנות לשדרג את השינה שלכם עכשיו! רכשו עכשיו 👇 https://did.li/FFtDN בתוקף עד
+   03.05.26 | מינימום יח' במלאי 74 | משלוח חינם | המחיר לפני מתייחס למידה 140/190 | תקף באתר
+   בלבד, בכפוף לתקנון
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000037  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121385
+👀 views=20,767  ↗ forwards=13  🕯️ published=2026-04-29T18:22:37+00:00
+💬 Message
+   סוכנות הידיעות בלומברג: איראן נאלצת למלא נפט במיכליות ישנות שכבר יצאו משימוש כדי לאחסן את מה
+   שהיא שואבת. מקום האחסון באיראן הולך ואוזל בשל הימשכותו של המצור ואי יכולתה של איראן לייצא
+   נפט. 2 תגובות
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000038  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @abualiexpress · Abu Ali Express
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/abualiexpress/121386
+👀 views=13,511  ↗ forwards=3  🕯️ published=2026-04-29T18:30:20+00:00
+💬 Message
+   מנהיג הקהילה היהודית באיראן הובא היום לכיכר המהפכה בטהרן כדי להביע אמונים במנהיג העליון החדש
+   מג'תבא ח'אמינאי, בשם הקהילה. ## שוב המשטר האיראני עושה שימוש בקהילה היהודית באיראן כדי לשפר
+   את תדמיתו - ליהודים אין ברירה אלא לקבל עליהם את דרישות המשטר. כדי להגיב לכתבה לחצו כאן
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000039  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4699
+👀 views=6,636  ↗ forwards=0  🕯️ published=2023-10-30T16:29:32+00:00
+💬 Message
+   Iran International English Iran’s Foreign Ministry spokesman has rejected the statements
+   made by Western officials about Tehran's involvement in Hamas's attack on Israel, telling
+   @POTUS and @VP “to stop”, repeating a similar request made by US officials to Iran’s regime.
+   tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000040  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4701
+👀 views=9,789  ↗ forwards=0  🕯️ published=2023-10-30T20:29:54+00:00
+💬 Message
+   Iran International English “We’re certainly going to act — if we have to— to continue to
+   protect our troops and our facilities. We have proven that we will strike and act to do
+   that. And that's a strong message that Iran needs to take away. We take those
+   responsibilities seriously,” White House National Security Council spokesman John Kirby said
+   Monday, amid increased Iran-backed attacks against US troops in Iraq and Syria. “We also
+   take our national security interest writ large in the region very seriously, which is why
+   the president has now employed two aircraft carrier strike groups … We've got to make sure
+   we send a signal to all actors, not just Iran, but all actors, certainly Iran included, that
+   we will take our national security interest very seriously. We will protect and defend ou
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000041  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4702
+👀 views=18,897  ↗ forwards=0  🕯️ published=2023-10-30T20:30:07+00:00
+💬 Message
+   Iran International English Iran's deputy foreign minister @Bagheri_Kani: In a message to
+   Iran on the recent developments, the Americans said they intended to prevent the expansion
+   of the scope of conflict in the region, but they are the one to blame for the war in the
+   region. tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000042  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4703
+👀 views=40,595  ↗ forwards=0  🕯️ published=2023-10-30T20:30:14+00:00
+💬 Message
+   Iran International English Iran's Foreign Minister @Amirabdolahian will once again travel to
+   Doha, Qatar, on Tuesday to discuss the latest developments in Gaza Strip, according to
+   Iranian media reports. tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000043  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4704
+👀 views=39,742  ↗ forwards=0  🕯️ published=2023-10-30T20:30:23+00:00
+💬 Message
+   Iran International English Iran's top military commander Mohammad Bagheri has bragged about
+   Hamas tunnels underneath Gaza, saying motorcycles and cars can pass through the tunnels
+   whose one end is inside the Gaza Strip and the other inside the Israeli territory.
+   iranintl.com/en/202310301314 tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000044  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4706
+👀 views=13,724  ↗ forwards=1  🕯️ published=2023-10-30T20:30:29+00:00
+💬 Message
+   Iran International English Mahsa Yazdani, the mother of Mohammad Javad Zahedi, one of the
+   victims of Iran’s nationwide protests in 2022, has been sentenced to 13 years in prison on
+   charges of insulting sanctities, endangering state security and insulting Supreme Leader
+   Khamenei. iranintl.com/en/202310304834 tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000045  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4707
+👀 views=15,711  ↗ forwards=3  🕯️ published=2023-10-30T20:30:35+00:00
+💬 Message
+   Iran International English Iran’s judiciary has urged law enforcers to begin punishment of
+   opponents of compulsory hijab while awaiting the approval of the contentious Chastity and
+   Hijab bill. iranintl.com/en/202310301823 tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000046  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4709
+👀 views=23,791  ↗ forwards=3  🕯️ published=2023-10-31T00:40:58+00:00
+💬 Message
+   Iran International English #BREAKING Israel's UN envoy @giladerdan1 told Security Council,
+   "Just like the Nazi regime, the Ayatollah's regime (in Iran) sows death and destruction
+   everywhere it touches. The Islamic Nazi regime of Iran is responsible for aiding terrorists
+   around the globe, and working toward destroying every value the civilized world holds dear.
+   Today the world is watching the rise of a Shiite Islamic Reich. Yet just like the rise of
+   Nazism, the world is deafeningly silent." tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000047  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4711
+👀 views=34,366  ↗ forwards=3  🕯️ published=2023-10-31T00:40:59+00:00
+💬 Message
+   Iran International English #BREAKING Israel's UN envoy @giladerdan1 told Security Council,
+   "Ismail Haniyeh is no Adolf Hitler or Führer. He's not the leader of this genocidal death
+   cult hell-bent on world domination. That role is held by Iran's Supreme Leader, the
+   bloodthirsty Ayatollah Khamenei. Just like what Hitler had in mind with his Third Reich,
+   Khamenei envisions his Shiite hegemony to stretch across the region and beyond. The
+   Ayatollah regime is the modern Nazi regime." tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000048  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4713
+👀 views=53,557  ↗ forwards=2  🕯️ published=2023-10-31T00:41:04+00:00
+💬 Message
+   Iran International English US national security adviser @JakeSullivan46 on Monday met with
+   Saudi Defense Minister and confirmed @POTUS Biden’s commitment to support the defense of US
+   partners against threats from state and non-state actors, including those backed by Iran,
+   the White House said. tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000049  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4714
+👀 views=64,429  ↗ forwards=2  🕯️ published=2023-10-31T00:41:06+00:00
+💬 Message
+   Iran International English In the upcoming Iranian Parliamentary elections in March, a mere
+   2 percent of the 24,000 registered candidates are former lawmakers, while just 13 percent
+   are women. iranintl.com/en/202310306531 tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000050  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4716
+👀 views=86,617  ↗ forwards=4  🕯️ published=2023-10-31T00:41:09+00:00
+💬 Message
+   Iran International English Republican Senator @tedcruz is expected to introduce the Hamas
+   Sanctions Act on Monday afternoon, sanctioning every Hamas member known to the US Treasury
+   Department within two weeks of its passage and freeze Iran’s assets overseas,
+   @FoxNewsDigital has learned. tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000051  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @IranIntl_En · Iran International EN
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/IranIntl_En/4718
+👀 views=101,600  ↗ forwards=34  🕯️ published=2023-10-31T00:41:11+00:00
+💬 Message
+   Iran International English Iran's Intelligence Minister Esmaeil Khatib has referred to the
+   October 7 attack launched by Hamas against Israel as a "new historical beginning for the
+   eradication of Israel", claiming it will lead to the collapse of the entire Israeli
+   government. iranintl.com/en/202310301799 tweet
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000052  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13826
+👀 views=2,535  ↗ forwards=0  🕯️ published=2022-06-26T04:21:55+00:00
+💬 Message
+   Footage of the aftermath of Russian cruise missile strikes on Kyiv this morning. 2/ link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000053  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13827
+👀 views=3,389  ↗ forwards=3  🕯️ published=2022-06-26T04:21:58+00:00
+💬 Message
+   Russian cruise missile flying towards Kyiv. 3/ link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000054  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13829
+👀 views=4,385  ↗ forwards=5  🕯️ published=2022-06-27T14:47:09+00:00
+💬 Message
+   ⚠️ Confirmed: Metrics show a disruption to government networks in #Lithuania as the National
+   Cyber Security Centre reports a denial-of-service cyberattack affecting secure networks used
+   by state institutions, also affecting public and private internet infrastructure 📉📈 link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000055  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13830
+👀 views=2,959  ↗ forwards=0  🕯️ published=2022-11-18T02:04:29+00:00
+💬 Message
+   Better test this works huh?
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000056  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13831
+👀 views=1,839  ↗ forwards=1  🕯️ published=2023-07-01T17:36:33+00:00
+💬 Message
+   Well hello there.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000057  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13832
+👀 views=2,477  ↗ forwards=3  🕯️ published=2023-07-01T18:07:01+00:00
+💬 Message
+   There is some beautiful irony in this.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000058  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13833
+👀 views=1,964  ↗ forwards=0  🕯️ published=2023-07-01T20:03:29+00:00
+💬 Message
+   @auroraintel.bsky.social
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000059  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13834
+👀 views=2,502  ↗ forwards=9  🕯️ published=2023-07-01T21:27:32+00:00
+💬 Message
+   MDA currently staged at Tel Aviv International Airport. United Flight UAL91 is currently
+   dumping fuel over the Mediterranean after declaring an emergency due to a broken window.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000060  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13835
+👀 views=2,275  ↗ forwards=2  🕯️ published=2023-07-01T21:36:16+00:00
+💬 Message
+   Initial reports of air defense activity reported over Homs, Syria
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000061  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13836
+👀 views=2,172  ↗ forwards=0  🕯️ published=2023-07-01T21:52:39+00:00
+💬 Message
+   Looks like a Syrian S-200 air defense missile special this evening caused the explosion
+   heard over Israel.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000062  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13837
+👀 views=2,768  ↗ forwards=1  🕯️ published=2023-07-01T21:59:10+00:00
+💬 Message
+   Multiple impacts reported in the vicinity of Homs, Syria
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000063  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13839
+👀 views=4,196  ↗ forwards=4  🕯️ published=2023-07-02T09:17:45+00:00
+💬 Message
+   During last nights reported airstrike in Syria an Air Defense battery belonging to the
+   Syrian Arab Army was targeted, Russian experts were present and injured in the airstrike
+   according to reports.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000064  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13840
+👀 views=4,730  ↗ forwards=4  🕯️ published=2023-07-02T09:52:49+00:00
+💬 Message
+   Two distinct AOI’s from last nights airstrike, one area has multiple warehouses, they other
+   is the suspected region from where an air defense battery is positioned. Assume this was
+   struck due to the S-200 exploding over Israel.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000065  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13841
+👀 views=5,084  ↗ forwards=0  🕯️ published=2023-07-02T11:56:08+00:00
+💬 Message
+   S-200 battery looks targeted, will post all images later today/tomorrow once full analysis
+   is done.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000066  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13842
+👀 views=5,557  ↗ forwards=0  🕯️ published=2023-07-04T17:32:28+00:00
+💬 Message
+   Not forgotten about here just trying to work out how best to keep everything updated etc,
+   hoping it’ll all come together over the coming weeks.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000067  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13844
+👀 views=5,683  ↗ forwards=2  🕯️ published=2023-07-18T20:09:08+00:00
+💬 Message
+   As a few people have asked in the DM’s on Twitter. Yes, we’ve been more quiet than normal,
+   this doesn’t mean we aren’t still here and not paying attention to what’s going on across
+   the ME. Balancing real life and this has become more of a challenge over the last few
+   months. Circumstances are ever moving and ever evolving, but when we can provide value add
+   input and analysis (or memes) on areas of knowledge, we will. We aren’t gone, just sitting
+   back and observing.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000068  2026-04-29T18:43:04+00:00  [BACKFILL]
+📣 @AuroraIntel · Aurora Intel
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/AuroraIntel/13847
+👀 views=3,027  ↗ forwards=1  🕯️ published=2025-06-15T16:39:11+00:00
+💬 Message
+   So how’s everyone doing?
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000069  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4049
+👀 views=1,818  ↗ forwards=9  🕯️ published=2025-12-15T04:02:59+00:00
+💬 Message
+   BREAKING: Person of interest in Brown University shooting being released by police, mayor
+   says. Gunman is still at large
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000070  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4050
+👀 views=2,574  ↗ forwards=13  🕯️ published=2025-12-15T04:38:01+00:00
+💬 Message
+   Rob Reiner, whose credits include All in the Family, Sleepless in Seattle, The Wolf of Wall
+   Street and When Harry Met Sally, is dead at 78. His family confirmed the deaths of Reiner
+   and his wife in a statement, saying: "We are heartbroken by this sudden loss."
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000071  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4051
+👀 views=2,615  ↗ forwards=13  🕯️ published=2025-12-15T16:08:00+00:00
+💬 Message
+   BREAKING: 5 members of pro-Palestinian group arrested in Los Angeles and New Orleans for
+   plotting bomb attacks on New Year's Eve, FBI says
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000072  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4052
+👀 views=2,969  ↗ forwards=11  🕯️ published=2025-12-15T22:16:36+00:00
+💬 Message
+   NEW: Photos released of suspected gunman at Brown University. If you recognize him, call 911
+   or 1-800-CALL-FBI
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000073  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4053
+👀 views=3,494  ↗ forwards=20  🕯️ published=2025-12-16T00:27:59+00:00
+💬 Message
+   BREAKING: Trump files $10 billion lawsuit against the BBC over Jan. 6 speech editing
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000074  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4054
+👀 views=3,446  ↗ forwards=18  🕯️ published=2025-12-16T18:32:28+00:00
+💬 Message
+   JUST IN: Donald Trump says he will address the nation at 9 PM ET on December 17
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000075  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4055
+👀 views=3,185  ↗ forwards=11  🕯️ published=2025-12-19T02:04:44+00:00
+💬 Message
+   BREAKING: Suspect in Brown University shooting found dead from self-inflicted gunshot wound
+   at New Hampshire storage facility - Fox
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000076  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4056
+👀 views=9,055  ↗ forwards=77  🕯️ published=2025-12-19T02:51:21+00:00
+💬 Message
+   UPDATE: Suspect in Brown University shooting ID'd as Claudio Neves-Valente, 48, a Miami
+   resident originally from Portugal. He was found dead tonight
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000077  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4057
+👀 views=5,050  ↗ forwards=36  🕯️ published=2025-12-19T04:51:40+00:00
+💬 Message
+   BREAKING: Trump suspends Diversity Visa program, also known as the green card lottery, which
+   was used by the Brown University gunman
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000078  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4058
+👀 views=4,029  ↗ forwards=6  🕯️ published=2025-12-22T15:05:15+00:00
+💬 Message
+   BREAKING: British singer Chris Rea, whose hits include 'Driving Home For Christmas,' has
+   died at 74 - BBC
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000079  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4059
+👀 views=2,947  ↗ forwards=26  🕯️ published=2026-01-03T07:34:06+00:00
+💬 Message
+   BREAKING: Trump has ordered airstrikes on sites in Venezuela, including military facilities,
+   U.S. officials confirm - CBS
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000080  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4060
+👀 views=4,500  ↗ forwards=28  🕯️ published=2026-01-03T07:39:07+00:00
+💬 Message
+   BREAKING: Venezuelan President Nicolás Maduro declares state of emergency, calls on people
+   to mobilize to defeat "imperialist aggression"
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000081  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4061
+👀 views=4,676  ↗ forwards=65  🕯️ published=2026-01-03T09:23:47+00:00
+💬 Message
+   FLASH: TRUMP SAYS U.S. HAS CAPTURED VENEZUELAN PRESIDENT NICOLAS MADURO AND HIS WIFE
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000082  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4062
+👀 views=2,449  ↗ forwards=38  🕯️ published=2026-01-03T16:32:46+00:00
+💬 Message
+   BREAKING: Trump releases photo of Maduro in U.S. custody
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000083  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4063
+👀 views=2,006  ↗ forwards=12  🕯️ published=2026-01-05T14:13:32+00:00
+💬 Message
+   BREAKING: Minnesota Governor Tim Walz announces he won't run for re-election - AP
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000084  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4064
+👀 views=2,419  ↗ forwards=27  🕯️ published=2026-01-05T14:27:24+00:00
+💬 Message
+   UPDATE: William DeFoor, 26, arrested after trying to break into Vice President JD Vance's
+   Ohio home. He was using a hammer to break the windows - WXIX
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000085  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4065
+👀 views=2,908  ↗ forwards=34  🕯️ published=2026-01-06T00:37:57+00:00
+💬 Message
+   BREAKING: Heavy gunfire near Venezuela's presidential palace, circumstances unclear
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000086  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4066
+👀 views=2,644  ↗ forwards=11  🕯️ published=2026-01-07T13:14:17+00:00
+💬 Message
+   BREAKING: U.S. forces board Venezuela-linked Marinera (Bella-1) oil tanker after two-week
+   pursuit - Reuters
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000087  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4067
+👀 views=21,216  ↗ forwards=229  🕯️ published=2026-01-07T18:07:05+00:00
+💬 Message
+   BREAKING: Woman shot and killed during ICE operation in Minneapolis. New video shows the
+   circumstances
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000088  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4068
+👀 views=5,673  ↗ forwards=33  🕯️ published=2026-01-07T18:44:51+00:00
+💬 Message
+   Minneapolis Mayor Jacob Frey after fatal shooting: "To ICE: Get the fuck out of Minneapolis.
+   We don't want you here"
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000089  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4069
+👀 views=4,904  ↗ forwards=22  🕯️ published=2026-01-08T04:04:57+00:00
+💬 Message
+   BREAKING: At least 8 people shot, 2 killed, after funeral at Mormon Church in Salt Lake
+   City, police say
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000090  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4070
+👀 views=4,881  ↗ forwards=12  🕯️ published=2026-01-09T00:30:39+00:00
+💬 Message
+   BREAKING: Portland, Oregon mayor calls on ICE to end operations in the city after 2 people
+   were shot by federal agents
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000091  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4071
+👀 views=3,349  ↗ forwards=36  🕯️ published=2026-02-28T07:37:59+00:00
+💬 Message
+   FLASH: TRUMP SAYS U.S. MILITARY HAS BEGUN MAJOR COMBAT OPERATIONS IN IRAN, SAYS OBJECTIVE IS
+   TO ELIMINATE IMMINENT THREATS FROM IRANIAN REGIME
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000092  2026-04-29T18:43:05+00:00  [BACKFILL]
+📣 @BNONews · BNO News
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/BNONews/4072
+👀 views=2,876  ↗ forwards=15  🕯️ published=2026-02-28T21:40:38+00:00
+💬 Message
+   FLASH: TRUMP SAYS IRANIAN SUPREME LEADER ALI KHAMENEI CONFIRMED DEAD
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000093  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60929
+👀 views=136,135  ↗ forwards=11  🕯️ published=2026-04-29T10:00:18+00:00
+💬 Message
+   🛵 БпЛА в напрямку м.Запоріжжя з півдня.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000094  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60930
+👀 views=149,571  ↗ forwards=58  🕯️ published=2026-04-29T10:05:38+00:00
+💬 Message
+   ☄️ Загроза застосування балістичного озброєння
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000095  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60931
+👀 views=140,033  ↗ forwards=137  🕯️ published=2026-04-29T10:08:07+00:00
+💬 Message
+   🚀Швидкісна ціль на Харківщині
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000096  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60932
+👀 views=115,772  ↗ forwards=1  🕯️ published=2026-04-29T11:33:40+00:00
+💬 Message
+   🛵 БпЛА на сході Запоріжжя, курс північно-західний.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000097  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60933
+👀 views=112,400  ↗ forwards=1  🕯️ published=2026-04-29T12:08:55+00:00
+💬 Message
+   🛵 БпЛА курсом на м.Дніпро з півдня.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000098  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60934
+👀 views=114,170  ↗ forwards=16  🕯️ published=2026-04-29T12:41:51+00:00
+💬 Message
+   ⚠ Увага! 🛫 Активність ворожої тактичної авіації на північно-східному та південно-східному
+   напрямках! 🚀Загроза застосування авіаційних засобів ураження для прифронтових областей!
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000099  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60935
+👀 views=116,564  ↗ forwards=14  🕯️ published=2026-04-29T12:47:09+00:00
+💬 Message
+   🛵 БпЛА в напрямку Одещини/Миколаївщини з акваторії Чорного моря.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000100  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60936
+👀 views=106,796  ↗ forwards=1  🕯️ published=2026-04-29T13:37:28+00:00
+💬 Message
+   🚀 Пуски КАБ на півночі Сумщини.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000101  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60937
+👀 views=107,686  ↗ forwards=1  🕯️ published=2026-04-29T13:42:55+00:00
+💬 Message
+   🛵 БпЛА курсом на м.Харків з півночі.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000102  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60938
+👀 views=106,688  ↗ forwards=1  🕯️ published=2026-04-29T13:58:05+00:00
+💬 Message
+   🛵 БпЛА в напрямку м.Одеса з акваторії Чорного моря.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000103  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60939
+👀 views=107,030  ↗ forwards=2  🕯️ published=2026-04-29T14:03:01+00:00
+💬 Message
+   🛵 БпЛА на Харківщині, курс південно-західний
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000104  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60940
+👀 views=151,042  ↗ forwards=10  🕯️ published=2026-04-29T14:35:36+00:00
+💬 Message
+   🛵 БпЛА в напрямку Миколаївщини з акваторії Чорного моря.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000105  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60941
+👀 views=100,495  ↗ forwards=11  🕯️ published=2026-04-29T15:13:42+00:00
+💬 Message
+   ☄️ Загроза застосування балістичного озброєння
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000106  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60942
+👀 views=103,103  ↗ forwards=70  🕯️ published=2026-04-29T15:16:22+00:00
+💬 Message
+   🚀Швидкісна ціль на Дніпро
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000107  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60943
+👀 views=89,833  ↗ forwards=1  🕯️ published=2026-04-29T15:36:37+00:00
+💬 Message
+   📢 Відбій
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000108  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60944
+👀 views=82,088  ↗ forwards=11  🕯️ published=2026-04-29T16:14:33+00:00
+💬 Message
+   🛵 БпЛА На Полтавщині, північніше Кременчука
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000109  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60945
+👀 views=118,413  ↗ forwards=1  🕯️ published=2026-04-29T16:17:04+00:00
+💬 Message
+   🛵 Група БпЛА в акваторії Чорного моря (Одещина, Миколаївщина), працює ППО
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000110  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60946
+👀 views=73,764  ↗ forwards=1  🕯️ published=2026-04-29T16:35:15+00:00
+💬 Message
+   🛵 Швидкісний БпЛА із Бєлгородської обл. ➡️ на Харківщину
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000111  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60947
+👀 views=53,694  ↗ forwards=1  🕯️ published=2026-04-29T17:21:32+00:00
+💬 Message
+   🛵 БпЛА на м.Запоріжжя з півдня.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000112  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @kpszsu · Air Force of the Armed Forces of Ukraine
+🏷️  topic=osint  tags=telegram, osint, ukraine
+🔗 https://t.me/kpszsu/60948
+👀 views=39,834  ↗ forwards=2  🕯️ published=2026-04-29T17:54:01+00:00
+💬 Message
+   🛵 Група БпЛА з акваторії Чорного моря курсом на Одещину.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000113  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81017
+👀 views=4,013  ↗ forwards=26  🕯️ published=2026-04-29T17:16:01+00:00
+💬 Message
+   Trump: I asked Netanyahu to act more cautiously in Lebanon and avoid destroying buildings,
+   as it harms Israel’s image. I love Lebanon and its leadership, but the problem is Hezbollah.
+   Source: N12
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000114  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81018
+👀 views=4,097  ↗ forwards=19  🕯️ published=2026-04-29T17:18:06+00:00
+💬 Message
+   Zelensky: Our union between the United States and Ukraine is the quickest way to make the
+   strongest forces in the world.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000115  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81019
+👀 views=4,256  ↗ forwards=21  🕯️ published=2026-04-29T17:21:23+00:00
+💬 Message
+   Meanwhile, Netanyahu just shared Israeli airstrikes in Lebanon.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000116  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81020
+👀 views=4,758  ↗ forwards=48  🕯️ published=2026-04-29T17:23:09+00:00
+💬 Message
+   Kremlin: Putin held a phone call with Trump that lasted more than 1.5 hours. Putin told
+   Trump he is ready to declare a ceasefire during the Victory Day period, and Trump supported
+   it.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000117  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81021
+👀 views=4,368  ↗ forwards=25  🕯️ published=2026-04-29T17:23:54+00:00
+💬 Message
+   Kremlin: Putin told Trump that he foresees extremely damaging consequences if the United
+   States and Israel resort to military actions again in the Middle East.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000118  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81022
+👀 views=4,537  ↗ forwards=29  🕯️ published=2026-04-29T17:24:20+00:00
+💬 Message
+   Kremlin: Trump told Putin that a deal to resolve the conflict in Ukraine is already close.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000119  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81023
+👀 views=4,420  ↗ forwards=11  🕯️ published=2026-04-29T17:26:55+00:00
+💬 Message
+   Zelensky: Russians are absolutely crazy to attack nuclear stations.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000120  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81024
+👀 views=4,588  ↗ forwards=21  🕯️ published=2026-04-29T17:28:17+00:00
+💬 Message
+   Kremlin: Putin and Trump said goodbye warmly at the end of the phone call.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000121  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81025
+👀 views=4,716  ↗ forwards=50  🕯️ published=2026-04-29T17:28:58+00:00
+💬 Message
+   Kremlin: Trump and Putin expressed similar assessments of the behavior of the government led
+   by Volodymyr Zelensky, which they said is prolonging the conflict.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000122  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81026
+👀 views=3,699  ↗ forwards=27  🕯️ published=2026-04-29T17:52:01+00:00
+💬 Message
+   WATCH: Rep. Pat Ryan confronts Pete Hegseth over the Iranian attack that killed six U.S.
+   service members in the Port Shuaiba drone attack on March 1. Ryan details failures in U.S.
+   defenses in the area, citing survivor testimony. Hegseth: Are you just going to monologue
+   falsehoods all over the place?
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000123  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81027
+👀 views=3,562  ↗ forwards=61  🕯️ published=2026-04-29T18:02:01+00:00
+💬 Message
+   NEW: The USS Gerald R. Ford is expected to leave the Middle East in the coming days after a
+   10-month deployment for needed repairs. Source: WaPo
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000124  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81028
+👀 views=3,126  ↗ forwards=18  🕯️ published=2026-04-29T18:05:58+00:00
+💬 Message
+   Q: Who are you beholden to, Trump or the Constitution? Hegseth: (Laughs)
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000125  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81029
+👀 views=3,025  ↗ forwards=9  🕯️ published=2026-04-29T18:06:47+00:00
+💬 Message
+   The Fed leaves its interest rates unchanged.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000126  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81030
+👀 views=3,104  ↗ forwards=18  🕯️ published=2026-04-29T18:08:52+00:00
+💬 Message
+   Pete Hegseth: I know that there is no country on planet Earth that takes more measures to
+   ensure that civilian harm or civilian casualties are minimized than the United States of
+   America and this War Department. That is a fact.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000127  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81031
+👀 views=2,994  ↗ forwards=17  🕯️ published=2026-04-29T18:11:13+00:00
+💬 Message
+   Six Iranian crew members from the Iranian-flagged container ship Touska have been freed
+   following its seizure by the U.S., while 22 others remain in custody. Source: Tasnim
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000128  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81032
+👀 views=2,867  ↗ forwards=20  🕯️ published=2026-04-29T18:13:52+00:00
+💬 Message
+   Trump meets with Artemis II Astronauts.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000129  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81033
+👀 views=2,623  ↗ forwards=30  🕯️ published=2026-04-29T18:17:28+00:00
+💬 Message
+   Reporter: Do you have an update on the UFO files? Trump: We are going to be releasing as
+   much as we can in the near future… I think some of it’s going to be pretty interesting.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000130  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81034
+👀 views=2,651  ↗ forwards=56  🕯️ published=2026-04-29T18:19:08+00:00
+💬 Message
+   Trump: I think Putin would like to see a solution on Ukraine. That is good.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000131  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81035
+👀 views=2,715  ↗ forwards=63  🕯️ published=2026-04-29T18:20:37+00:00
+💬 Message
+   Trump: Putin told me he would like to be involved in enrichment if he can help us get it; I
+   said I would rather have you involved with ending the war with Ukraine.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000132  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81036
+👀 views=2,602  ↗ forwards=44  🕯️ published=2026-04-29T18:21:33+00:00
+💬 Message
+   Trump: Putin doesn’t want to see Iran have a nuclear weapon either.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000133  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81037
+👀 views=2,751  ↗ forwards=55  🕯️ published=2026-04-29T18:22:39+00:00
+💬 Message
+   Trump: I suggested a little bit of a ceasefire to Putin; I think he might do that. Did he
+   announce it yet?
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000134  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81038
+👀 views=2,676  ↗ forwards=59  🕯️ published=2026-04-29T18:24:32+00:00
+💬 Message
+   Trump: I think Putin was ready to make a deal a while ago; I think “some people” made it
+   difficult for him to make a deal.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000135  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81039
+👀 views=2,567  ↗ forwards=41  🕯️ published=2026-04-29T18:26:30+00:00
+💬 Message
+   Trump on Iran: Their money—they call it their money; they don’t have a name for it. Their
+   money is valueless.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000136  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81040
+👀 views=2,886  ↗ forwards=137  🕯️ published=2026-04-29T18:28:55+00:00
+💬 Message
+   Trump confuses Iran with Ukraine: Ukraine, militarily, they’re defeated. You wouldn’t know
+   that by reading the fake news.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000137  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81041
+👀 views=2,116  ↗ forwards=20  🕯️ published=2026-04-29T18:31:45+00:00
+💬 Message
+   Trump: If it was up to King Charles, he would have probably helped us with Iran.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000138  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81042
+👀 views=1,700  ↗ forwards=29  🕯️ published=2026-04-29T18:34:35+00:00
+💬 Message
+   Reporter: The UAE pulled out of OPEC. What do you think about that? Trump: I think it’s
+   great. Mohamed is very smart and he probably wants go his own way.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000139  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81043
+👀 views=1,383  ↗ forwards=36  🕯️ published=2026-04-29T18:37:08+00:00
+💬 Message
+   Trump on Iran: They have to cry uncle—just say, “We give up.”
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000140  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81044
+👀 views=1,235  ↗ forwards=20  🕯️ published=2026-04-29T18:38:22+00:00
+💬 Message
+   Trump on Iran: They have come a long way; the question is whether or not they go far enough.
+   At this moment, there will never be a deal unless they agree that they won’t have nuclear
+   weapons.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000141  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81045
+👀 views=668  ↗ forwards=9  🕯️ published=2026-04-29T18:41:04+00:00
+💬 Message
+   Reporter: Do you really think James Comey was threatening your life? Trump: “86” is a mob
+   term that means “kill them.”
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000142  2026-04-29T18:43:06+00:00  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81046
+👀 views=426  ↗ forwards=11  🕯️ published=2026-04-29T18:41:54+00:00
+💬 Message
+   NEW: Germany will embed a senior U.S. colonel inside its Army Command (Operations Division)
+   starting October, an unusually deep level of military integration meant to strengthen NATO
+   coordination and joint planning. Source: Politico
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000143  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12063
+👀 views=642  ↗ forwards=1  🕯️ published=2026-04-07T22:49:39+00:00
+💬 Message
+   Trump says he will suspend strikes on Iran for two weeks following talks with Pakistan’s
+   leadership, contingent on Iran agreeing to immediately reopen the Strait of Hormuz, adding a
+   ceasefire deal is close
+   https://iran.liveuamap.com/en/2026/7-april-22-trump-says-he-will-suspend-strikes-on-iran-for
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000144  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12064
+👀 views=645  ↗ forwards=2  🕯️ published=2026-04-08T07:17:30+00:00
+💬 Message
+   Israeli Channel 12, citing sources: The Northern Command of the army informed the heads of
+   authorities that the ceasefire does not include Lebanon.
+   https://lebanon.liveuamap.com/en/2026/8-april-07-israeli-channel-12-citing-sources-the-northern
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000145  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12065
+👀 views=600  ↗ forwards=2  🕯️ published=2026-04-08T07:49:26+00:00
+💬 Message
+   Head of the Iraqi Civil Aviation Authority: Airspace and all airports in the country will be
+   open starting today.
+   https://iraq.liveuamap.com/en/2026/8-april-07-head-of-the-iraqi-civil-aviation-authority-airspace
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000146  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12066
+👀 views=623  ↗ forwards=1  🕯️ published=2026-04-08T07:50:54+00:00
+💬 Message
+   UAE: The fall of debris on the Habshan gas complex in Abu Dhabi caused a fire and injuries
+   to three injuries
+   https://iran.liveuamap.com/en/2026/8-april-07-uae-the-fall-of-debris-on-the-habshan-gas-complex
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000147  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12067
+👀 views=703  ↗ forwards=0  🕯️ published=2026-04-08T12:23:24+00:00
+💬 Message
+   The series of Israeli raids on Beirut and its surroundings targeted: Bir Hassan, Al-Rahab,
+   Hayy al-Salloum, Al-Manara, Ain al-Mreisseh, Corniche al-Mazraa, Musaytibeh, Al-Basta,
+   Choueifat, Aramoun, Al-Bayader, Kafrhoun, Ain al-Tineh, Bshamoun, and Al Mdars
+   https://lebanon.liveuamap.com/en/2026/8-april-12-the-series-of-israeli-raids-on-beirut-and-its
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000148  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12068
+👀 views=549  ↗ forwards=0  🕯️ published=2026-04-08T14:58:54+00:00
+💬 Message
+   Prime Minister of Pakistan: Violations of ceasefire have been reported at few places across
+   the conflict zone which undermine the spirit of peace process. I earnestly and sincerely
+   urge all parties to exercise restraint and respect the ceasefire for two weeks, as agreed
+   upon, so that diplomacy can take a lead role towards peaceful settlement of the conflict
+   https://iran.liveuamap.com/en/2026/8-april-14-prime-minister-of-pakistan-violations-of-ceasefire
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000149  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12069
+👀 views=724  ↗ forwards=2  🕯️ published=2026-04-08T15:01:06+00:00
+💬 Message
+   The Lebanese Ministry of Health announced that dozens of people have been killed and
+   hundreds more injured in Israel's recent airstrikes on Lebanon
+   https://lebanon.liveuamap.com/en/2026/8-april-14-the-lebanese-ministry-of-health-announced-that
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000150  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12070
+👀 views=838  ↗ forwards=2  🕯️ published=2026-04-08T18:56:40+00:00
+💬 Message
+   Lebanese Health Ministry: 112 dead and 837 wounded in the initial toll of Israeli raids on
+   Lebanon and other areas today
+   https://lebanon.liveuamap.com/en/2026/8-april-18-lebanese-health-ministry-112-dead-and-837-wounded
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000151  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12071
+👀 views=906  ↗ forwards=3  🕯️ published=2026-04-09T18:59:11+00:00
+💬 Message
+   Kuwait’s Defense Ministry says air defenses are intercepting hostile drones that breached
+   national airspace and targeted multiple vital facilities
+   https://iran.liveuamap.com/en/2026/9-april-18-kuwaits-defense-ministry-says-air-defenses-are
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000152  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12072
+👀 views=781  ↗ forwards=0  🕯️ published=2026-04-11T11:13:24+00:00
+💬 Message
+   Ukraine and Russia carried out a prisoner exchange, with 175 Ukrainians returning home,
+   President Volodymyr Zelenskyy said. Those freed include servicemen, National Guard members,
+   border guards, and seven civilians
+   https://liveuamap.com/en/2026/11-april-10-ukraine-and-russia-carried-out-a-prisoner-exchange
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000153  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12073
+👀 views=687  ↗ forwards=1  🕯️ published=2026-04-11T20:31:21+00:00
+💬 Message
+   The General Staff of the Armed Forces of Ukraine stated that after 4:00 PM, 469 cases of
+   ceasefire violations by the Russians were recorded.
+   https://liveuamap.com/en/2026/11-april-19-the-general-staff-of-the-armed-forces-of-ukraine
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000154  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12074
+👀 views=635  ↗ forwards=2  🕯️ published=2026-04-12T19:07:07+00:00
+💬 Message
+   On two occasions today, Israel Defense Forces (Israeli army) soldiers rammed UNIFIL vehicles
+   with a Merkava tank, in one case causing significant damage. The soldiers had blocked a road
+   in Bayada that is used to access UNIFIL positions
+   https://lebanon.liveuamap.com/en/2026/12-april-16-on-two-occasions-today-israeldefense-forces
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000155  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12075
+👀 views=692  ↗ forwards=1  🕯️ published=2026-04-12T19:08:01+00:00
+💬 Message
+   First results of the Hungarian parliamentary elections are in: with 14.72% counted, the
+   opposition leads with mandates nearing a two-thirds majority. Everything points to Viktor
+   Orbán’s defeat and Péter Magyar becoming Hungary’s next prime minister
+   https://hungary.liveuamap.com/en/2026/12-april-18-first-results-of-the-hungarian-parliamentary
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000156  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12076
+👀 views=667  ↗ forwards=1  🕯️ published=2026-04-13T08:41:37+00:00
+💬 Message
+   Turkish Foreign Minister: There are many difficulties that international forces could face
+   in the Strait of Hormuz, therefore it must be opened through diplomacy.
+   https://iran.liveuamap.com/en/2026/13-april-08-turkish-foreign-minister-there-are-many-difficulties
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000157  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12077
+👀 views=867  ↗ forwards=1  🕯️ published=2026-04-13T08:44:49+00:00
+💬 Message
+   One person was killed in an Israeli airstrike near a Red Cross center in the southern
+   Lebanese city of Tyre.
+   https://lebanon.liveuamap.com/en/2026/13-april-08-one-person-was-killed-in-an-israeli-airstrike
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000158  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12078
+👀 views=923  ↗ forwards=1  🕯️ published=2026-04-13T14:38:23+00:00
+💬 Message
+   The U.S. military has started a blockade of ships entering or leaving Iran's ports, after
+   weekend talks on ending the war broke down
+   https://iran.liveuamap.com/en/2026/13-april-14-the-us-military-has-started-a-blockade-of-ships
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000159  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12079
+👀 views=619  ↗ forwards=0  🕯️ published=2026-04-18T13:01:21+00:00
+💬 Message
+   Axios, citing a US military official: Iran's Revolutionary Guard launched three attacks on
+   commercial vessels in the Strait of Hormuz today.
+   https://iran.liveuamap.com/en/2026/18-april-12-axios-citing-a-us-military-official-irans-revolutionary
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000160  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12080
+👀 views=670  ↗ forwards=0  🕯️ published=2026-04-18T13:04:05+00:00
+💬 Message
+   The Israeli army: In the past 24 hours, we spotted armed men south of the Yellow Line and
+   carried out raids and shelling to eliminate the threat.
+   https://lebanon.liveuamap.com/en/2026/18-april-11-the-israeli-army-in-the-past-24-hours-we-spotted
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000161  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12081
+👀 views=652  ↗ forwards=1  🕯️ published=2026-04-18T15:41:52+00:00
+💬 Message
+   5 people killed, 10 wounded as result of shooting and hostage situation in Kyiv. Shooter
+   neutralized by police
+   https://liveuamap.com/en/2026/18-april-15-5-people-killed-10-wounded-as-result-of-shooting
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000162  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12082
+👀 views=773  ↗ forwards=1  🕯️ published=2026-04-19T19:51:43+00:00
+💬 Message
+   Trump: Today, an Iranian-flagged cargo ship named TOUSKA, nearly 900 feet long and weighing
+   almost as much as an aircraft carrier, tried to get past our Naval Blockade, and it did not
+   go well for them. The U.S. Navy Guided Missile Destroyer USS SPRUANCE intercepted the TOUSKA
+   in the Gulf of Oman, and gave them fair warning to stop. The Iranian crew refused to listen,
+   so our Navy ship stopped them right in their tracks by blowing a hole in the engineroom.
+   Right now, U.S. Marines have custody of the vessel. The TOUSKA is under U.S. Treasury
+   Sanctions because of their prior history of illegal activity. We have full custody of the
+   ship, and are seeing what's on board!
+   https://iran.liveuamap.com/en/2026/19-april-19-trump-today-an-iranianflagged-cargo-ship-namedtouska
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000163  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12083
+👀 views=891  ↗ forwards=2  🕯️ published=2026-04-20T07:54:43+00:00
+💬 Message
+   Iranian Foreign Ministry Spokesperson: Indicators confirm the lack of seriousness on the
+   part of the United States to proceed with the diplomatic track.
+   https://iran.liveuamap.com/en/2026/20-april-07-iranian-foreign-ministry-spokesperson-indicators
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000164  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12084
+👀 views=512  ↗ forwards=0  🕯️ published=2026-04-24T18:23:42+00:00
+💬 Message
+   Karoline Leavitt confirms Jared Kushner and Steve Witkoff will head back to Pakistan
+   tomorrow for peace talks with Iran
+   https://iran.liveuamap.com/en/2026/24-april-17-karoline-leavitt-confirms-jared-kushner-and-steve
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000165  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12085
+👀 views=491  ↗ forwards=0  🕯️ published=2026-04-25T06:30:12+00:00
+💬 Message
+   Overnight Russia launched 12 ballistic missiles Iskander-M/S-400, 29 cruise missiles Kh-101,
+   1 cruise missile Iskander-K, 5 cruise missiles Kaliber and 619 strike drones of different
+   types, - Ukrainian Air Force
+   https://liveuamap.com/en/2026/25-april-05-overnight-russia-launched-12-ballistic-missiles
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000166  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12086
+👀 views=481  ↗ forwards=0  🕯️ published=2026-04-25T17:11:25+00:00
+💬 Message
+   Lebanese Ministry of Health: Two dead and 17 wounded following an Israeli raid on the town
+   of Safad al-Batikh in the south of the country
+   https://lebanon.liveuamap.com/en/2026/25-april-16-lebanese-ministry-of-health-two-dead-and-17-wounded
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000167  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @LiveUAMap · LiveUAMap
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/LiveUAMap/12087
+👀 views=481  ↗ forwards=3  🕯️ published=2026-04-25T18:00:29+00:00
+💬 Message
+   Israeli Channel 12, quoting Netanyahu: I have ordered the army to launch a strong attack on
+   Hezbollah targets in Lebanon.
+   https://lebanon.liveuamap.com/en/2026/25-april-17-israeli-channel-12-quoting-netanyahu-i-have-ordered
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000168  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23436
+👀 views=226,441  ↗ forwards=468  🕯️ published=2026-04-24T13:30:17+00:00
+💬 Message
+   🇺🇦 Перші три місяці Михайла Федорова на посаді Міністра оборони 👥 Виклики та хвороби, які не
+   лікували десятками років. Тотальна відсутність цілей і відповідальності. Культура страху й
+   брехні і водночас героїзм, технології та асиметрія. 🛡 Повітряна оборона Відключення Starlink
+   для московитів кардинально змінило ситуацію з шахедами. Зростання рівня перехоплення всіх
+   видів цілей. Створення командування «малої» ППО. Рекордний контракт на ракети PAC для
+   Patriot. Розвиток спроможностей приватного ППО. 🔵 Дрони та технології Закупівлі дронів і
+   роботизованих платформ за квартал більші, ніж за весь минулий рік. Рекордні закупівлі дронів
+   на оптоволокні, НРК, mid-strike та розвідників. Mission Control для всіх екіпажів. Лінія
+   дронів знищує кожну четверту ціль на полі бою. 400 млн.грн додатково на
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000169  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23437
+👀 views=208,257  ↗ forwards=86  🕯️ published=2026-04-24T19:04:19+00:00
+💬 Message
+   🔄 Мапу оновлено ⚔️ Ворог просунувся у Родинському. 💬 У випадку неточностей, можете
+   повідомити нам про це через бот @newsdeepstatebot. 🗺 deepstatemap.live ☀️ Приєднуйтесь до
+   нового збору для 22 ОМБр: https://send.monobank.ua/jar/5MAfxQvJAX. Зібрано 1️⃣1️⃣%.
+   Мапа🛑Блог🛑Написати нам🛑 ЗСУHelp🛑Магазин🛑Донат.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000170  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23438
+👀 views=193,070  ↗ forwards=88  🕯️ published=2026-04-25T17:16:12+00:00
+💬 Message
+   🔄 Мапу оновлено ⚔️ Ворог просунувся поблизу Синьківки. 💬 У випадку неточностей, можете
+   повідомити нам про це через бот @newsdeepstatebot. 🗺 deepstatemap.live ☀️ Приєднуйтесь до
+   нового збору для 22 ОМБр: https://send.monobank.ua/jar/5MAfxQvJAX. Зібрано 1️⃣3️⃣%.
+   Мапа🛑Блог🛑Написати нам🛑 ЗСУHelp🛑Магазин🛑Донат.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000171  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23439
+👀 views=177,400  ↗ forwards=168  🕯️ published=2026-04-26T07:58:34+00:00
+💬 Message
+   ☢️ 40 років аварії на Чорнобильській АЕС 👥 Сьогодні минає 40 років від Чорнобильської
+   катастрофи, трагедії, яка назавжди змінила Україну і світ. 👥 Тисячі ліквідаторів, які
+   стримали невидимого ворога. Сотні тисяч евакуйованих, що втратили свої домівки. Зламані
+   долі, які не виміряти жодною статистикою. 🗒 "Чорнобиль" став уроком для всього світу. Про
+   ціну брехні, про безвідповідальність радянської влади. Про силу людей, які рятують інших
+   ціною власного життя. 🫡 Вічна памʼять ліквідаторам, які першими закрили собою реактор.
+   Міста, які залишились лише на карті. І правду, яку не можна знову приховати.
+   Мапа🛑Блог🛑Написати нам🛑 ЗСУHelp🛑Магазин🛑Донат
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000172  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23440
+👀 views=181,464  ↗ forwards=748  🕯️ published=2026-04-26T10:57:01+00:00
+💬 Message
+   🌜 "Таке бл*дство допустити за місяць-два неможливо." — новий комбриг 54 ОМБр про швидку
+   втрату Сіверська 📋 Вийшло дуже цікаве інтерв'ю 30-річного комбрига Вадима Чернія, в якому
+   він відкрито розповідає про те як прийняв бригаду та з яким букетом хвороб вона була і від
+   чого продовжує лікуватися. 👤 Зі слів командира бригади: На позиціях були піхотинці, які за
+   наявності лопат, мішків, зброї й боєприпасів не вміли використовувати зброю за призначенням.
+   Навіть не розуміли, як обладнати позицію. У піхоти не було навіть мінімального розуміння дій
+   при засідках, вступу в бій, алгоритму дій, якщо противник наближається. Вони не знали, як
+   противника треба ліквідувати. Бойова підготовка не проводилася або була лише на паперах. 🔄
+   Нагадаємо, що за два тижні до офіційної втрати Сіверська, інформацію
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000173  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23441
+👀 views=169,657  ↗ forwards=109  🕯️ published=2026-04-26T12:51:00+00:00
+💬 Message
+   🇺🇦 ББС 67 ОМБр "Залізні соколи" знищує особовий склад противника поблизу Березового ➕
+   Приєднуйтесь до нового збору для 22 ОМБр: https://send.monobank.ua/jar/5MAfxQvJAX. Зібрано
+   1️⃣5️⃣%. 📍 Локація — Березове. Мапа🛑Блог🛑Написати нам🛑 ЗСУHelp🛑Магазин🛑Донат
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000174  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23442
+👀 views=157,968  ↗ forwards=297  🕯️ published=2026-04-27T08:50:25+00:00
+💬 Message
+   🇳🇴 Україна та Норвегія запускають спільне виробництво дронів 👥 Україна та Норвегія
+   домовилися про створення першого спільного виробництва українських безпілотників. Йдеться
+   про виготовлення кількох тисяч дронів типу mid-strike на території Норвегії. Уся продукція в
+   межах проекту буде передана Силам оборони України. 💳 Ініціатива фінансується норвезькою
+   стороною за рахунок додаткових коштів понад уже передбачених $7 млрд оборонної допомоги
+   Україні у 2026 році. Загалом у 2026 році Норвегія планує спрямувати понад $1,5 млрд на
+   закупівлю українського озброєння для Сил оборони України. 🗒 Проект передбачає виробництво
+   дронів у безпечних умовах на території Норвегії. Масштабування українських технологій,
+   перевірених у бойових умовах. Розвиток спільних досліджень та оборонного виробництва ❗️ Пе
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000175  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23443
+👀 views=148,022  ↗ forwards=22  🕯️ published=2026-04-27T09:46:17+00:00
+💬 Message
+   📹 Канал DeepStateUA отримав табличку за 100 000 підписників у Youtube 🤝 Вдячні всім нашим
+   підписникам на платформі Youtube. Ми йшли до цього цілих 5 років і дуже цінуємо кожен ваш
+   коментар та вподобайку. ✅ Слідкуйте за нами та підтримуйте вихід нових відео —
+   youtube.com/@DeepStateUA. Мапа🛑Блог🛑Написати нам🛑 ЗСУHelp🛑Магазин🛑Донат
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000176  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23444
+👀 views=148,298  ↗ forwards=100  🕯️ published=2026-04-27T10:49:01+00:00
+💬 Message
+   🔄 Мапу оновлено ⚔️ Ворог просунувся поблизу Петропавлівки та Костянтинівки. 💬 У випадку
+   неточностей, можете повідомити нам про це через бот @newsdeepstatebot. 🗺 deepstatemap.live
+   ☀️ Приєднуйтесь до нового збору для 22 ОМБр: https://send.monobank.ua/jar/5MAfxQvJAX.
+   Зібрано 1️⃣6️⃣%. Мапа🛑Блог🛑Написати нам🛑 ЗСУHelp🛑Магазин🛑Донат
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000177  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23445
+👀 views=143,414  ↗ forwards=73  🕯️ published=2026-04-27T11:50:51+00:00
+💬 Message
+   ⛰ Робота роти ударних безпілотних авіаційних комплексів 2 ГШБ 128 ОГШБр ☠️ Кацапи
+   продовжують втрачати особовий склад, системи РЕБ, автомобільну техніку, мотоцикли, укриття
+   та інше майно. 📍 Локація — Степове. Мапа🛑Блог🛑Написати нам🛑 ЗСУHelp🛑Магазин🛑Донат
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000178  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23446
+👀 views=147,587  ↗ forwards=212  🕯️ published=2026-04-27T13:24:20+00:00
+💬 Message
+   🇺🇳 Членство в НАТО для України наразі недоступне 👥 Європейський комісар з питань оборони та
+   космосу Андрюс Кубілюс заявив, що найефективнішим союзом для України у найближчі роки може
+   стати не НАТО чи ЄС, а Європейський оборонний союз. 💳 Йдеться про створення об’єднання, яке
+   інтегрує оборонні можливості країн ЄС разом з Україною, Великою Британією та Норвегією Такий
+   формат дозволить швидше та ефективніше об’єднати військові ресурси без тривалих процедур
+   вступу до ЄС або НАТО Андрюс Кубілюс: "Членство в НАТО для України наразі недоступне.
+   Повноцінне членство у ЄС – це складний процес, який не може гарантувати швидку інтеграцію
+   оборонних можливостей" "Нам потрібен Європейський оборонний союз, який дозволить інтегрувати
+   оборонні можливості України, Британії та Норвегії з оборонними можлив
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000179  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23447
+👀 views=157,787  ↗ forwards=119  🕯️ published=2026-04-27T13:32:30+00:00
+💬 Message
+   🇺🇦 Україна розбудовує систему національного спротиву під час повномасштабної війни 👥 Україна
+   продовжує формування інфраструктури національного спротиву навіть в умовах повномасштабної
+   московитської агресії. Система вже доводить свою ефективність, вона дозволяє швидше
+   ухвалювати рішення та підвищує координацію у відповідь на загрози. 🗂Ключові зміни в системі
+   🛑Завдяки новим законодавчим рішенням у місцевих адміністраціях запроваджується посада
+   заступника голови з питань оборони. 🛑Ці посади обійматимуть чинні військовослужбовці, яких
+   відряджатиме Міністр оборони України. 🛑Очікується суттєве посилення взаємодії між цивільним
+   та військовим сектором. 🛑Важливо: ці посади залишаться навіть у разі переходу до умовно
+   мирного часу. Заступник Міністра оборони України генерал-лейтенант Євген Мойсюк
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000180  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23448
+👀 views=141,396  ↗ forwards=85  🕯️ published=2026-04-28T09:17:44+00:00
+💬 Message
+   🔄 Мапу оновлено ⚔️ Ворог просунувся поблизу Покровська та Мирнограда. 💬 У випадку
+   неточностей, можете повідомити нам про це через бот @newsdeepstatebot. 🗺 deepstatemap.live
+   ☀️ Приєднуйтесь до нового збору для 22 ОМБр: https://send.monobank.ua/jar/5MAfxQvJAX.
+   Зібрано 1️⃣8️⃣%. Мапа🛑Блог🛑Написати нам🛑 ЗСУHelp🛑Магазин🛑Донат
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000181  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23449
+👀 views=134,699  ↗ forwards=5  🕯️ published=2026-04-28T09:32:59+00:00
+💬 Message
+   🇺🇦 Друзі, продовжуємо великий розпродаж в нашому магазині з фірмовим мерчем від команди
+   DeepStateUA 🔥 Встигніть придбати за знижками асортимент з унікальними фірмовими принтами для
+   себе та своїх близьких і рідних, щоб потішити їх крутим подарунком! 📍 Розпродаж триває до 30
+   квітня! Встигніть зробити замовлення! ➡️ Скоріше переходьте за посиланням та обирайте
+   мега-круті мерчі DeepStateUA😎 🔗 Посилання на сайт магазину: Deepstateua.shop ❤️ Замовляйте!
+   Даруйте! Підтримуйте проект!
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000182  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23450
+👀 views=146,523  ↗ forwards=244  🕯️ published=2026-04-28T11:36:21+00:00
+💬 Message
+   🚩 Інженерні війська ЗСУ, нова роль на полі бою 👥 Бригадний генерал Василь Сиротенко,
+   начальник інженерних військ ЗСУ, виступив на форумі Combat Engineer & Logistics 2026. ➡️ Про
+   нову філософію оборони «Ми вийшли на формування не просто багатошарової ешелонованої
+   оборони, а на побудову стійкої оборони, яка одночасно і забезпечує маневр нашим військам, і
+   передусім сприятливі умови для безпілотних структур» ➡️ Про загородження як зброю «Інженерні
+   загородження на сьогодні розглядають як повноцінний чинник ураження противника, а не лише як
+   допоміжна система» 🛑Березень 2026: на загородженнях знищено 663 окупанти, 95 одиниць
+   техніки. 🛑У середньому щомісяця до 1000 ліквідованих московитів на інженерних загородженнях.
+   ➡️ Про малі позиції замість великих опорних пунктів «Неефективно робити
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000183  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23451
+👀 views=135,176  ↗ forwards=62  🕯️ published=2026-04-28T14:23:44+00:00
+💬 Message
+   🦅 Бійці підрозділу FOBOS 46 ОАеМБр ліквідовують особовий склад ворога у власній смузі
+   відповідальності Мапа🛑Блог🛑Написати нам🛑 ЗСУHelp🛑Магазин🛑Донат
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000184  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23452
+👀 views=134,579  ↗ forwards=107  🕯️ published=2026-04-28T17:04:22+00:00
+💬 Message
+   ✈️Українська індустрія безпілотних систем зростає швидше ніж будь-коли, а чим більша
+   індустрія — тим більше експертів вона потребує. Навчіться проєктувати UAV-системи як єдину
+   архітектуру: від платформи та сенсорів — до зв’язку, автономності й роботи в реальних
+   умовах, — на курсі «Архітектура безпілотних систем» від r_d. За 16 занять ви: → зрозумієте,
+   як поєднати hardware, software, зв’язок і AI → навчитеся розподіляти логіку між flight
+   controller, companion computer та cloud → опануєте роботу з ROS2, PX4, MAVLink і real-time
+   системами → закладете відмовостійкість, безпеку та QoS → перейдете від окремих компонентів
+   до цілісної UAV-архітектури Лектор: Сергій — CEO Acrontis, експерт із 20+ років досвіду в
+   розробці складних інженерних систем, практик із досвідом роботи з безпілотними систе
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000185  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23453
+👀 views=137,588  ↗ forwards=154  🕯️ published=2026-04-28T18:04:01+00:00
+💬 Message
+   🪖 «Експорт української зброї буде реальним. Ми погодили всі деталі на рівні наших державних
+   інституцій», — Зеленський 📱 Про це президент повідомив у своєму відеозверненні в Telegram. 💭
+   «Ми запропонували партнерам, які допомагають Україні, особливий формат співпраці Drone Deals
+   – спеціальні угоди щодо виробництва та постачання наших дронів, ракет, снарядів та інших
+   затребуваних видів зброї, бойової техніки, софту, інтеграції з оборонними системами
+   партнерів, а також забезпечення нашої експертизи та потрібного Україні технологічного
+   обміну. Сьогодні затвердив напрями такої міждержавної роботи та опрацювання автоматичних
+   дозволів для бізнесу щодо експорту зброї», — йдеться у дописі. ℹ️ Сам порядок такий: спершу
+   міждержавна угода за принципом взаємності, далі — робота на рівні інституцій
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000186  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23454
+👀 views=101,036  ↗ forwards=57  🕯️ published=2026-04-29T10:30:32+00:00
+💬 Message
+   🔄 Мапу оновлено ⚔️ Ворог просунувся поблизу Берестка. 💬 У випадку неточностей, можете
+   повідомити нам про це через бот @newsdeepstatebot. 🗺 deepstatemap.live ☀️ Приєднуйтесь до
+   нового збору для 22 ОМБр: https://send.monobank.ua/jar/5MAfxQvJAX. Зібрано 2️⃣0️⃣%.
+   Мапа🛑Блог🛑Написати нам🛑 ЗСУHelp🛑Магазин🛑Донат
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000187  2026-04-29T18:43:07+00:00  [BACKFILL]
+📣 @DeepStateUA · DeepState
+🏷️  topic=conflict  tags=telegram, conflict, ukraine
+🔗 https://t.me/DeepStateUA/23455
+👀 views=17,581  ↗ forwards=54  🕯️ published=2026-04-29T18:33:56+00:00
+💬 Message
+   🇩🇪 Німеччина збільшує витрати на оборону та підтримку України у бюджеті-2027 👥 Уряд
+   Німеччини затвердив ключові параметри федерального бюджету на 2027 рік. Документ передбачає
+   суттєве зростання державних витрат і боргового фінансування, головним чином через інвестиції
+   в оборону та інфраструктуру. 🗒 Основні показники бюджету: 🛑загальні витрати складуть 543,3
+   млрд євро (+3,6% рік до року); 🛑нові запозичення – 196,5 млрд євро (проти 50,5 млрд у 2024
+   році); 🛑інвестиції – 118,5 млрд євро, з акцентом на транспорт, цифровізацію та медицину. 💳
+   Витрати на оборону зростуть до 105,8 млрд євро у базовому бюджеті (з 82,7 млрд у 2026 році).
+   Загальні оборонні витрати (з урахуванням спецфондів і допомоги Україні) – 144,9 млрд євро.
+   Це становитиме близько 3,1% ВВП у 2027 році з перспективою 3,7% до
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000188  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20543
+👀 views=3,229  ↗ forwards=3  🕯️ published=2026-04-27T23:55:11+00:00
+💬 Message
+   The White House Correspondents’ Dinner shooting suspect, Cole Thomas Allen, has been charged
+   by federal authorities with three felony counts, to include attempting to assassinate
+   President Donald J. Trump.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000189  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20544
+👀 views=3,549  ↗ forwards=9  🕯️ published=2026-04-28T00:12:12+00:00
+💬 Message
+   The Arleigh Burke-class guided-missile destroyer, USS Rafael Peralta (DDG-115), enforces the
+   ongoing U.S. naval blockade against Iran, escorting the Iranian-flagged crude oil tanker M/T
+   STREAM through the Arabian Sea after it attempting to sail to a port in Iran, April 26,
+   2026.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000190  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20545
+👀 views=3,579  ↗ forwards=9  🕯️ published=2026-04-28T02:04:35+00:00
+💬 Message
+   U.S. President Donald J. Trump has told advisers he is not satisfied with Iran’s latest
+   proposal to reopen the Strait of Hormuz and end the Iran War, which calls on the United
+   States to lift its ongoing blockade and postpones nuclear talks till after the conflict is
+   over, according to multiple people briefed on discussions in the White House Situation Room
+   who spoke to The New York Times.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000191  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20546
+👀 views=2,519  ↗ forwards=5  🕯️ published=2026-04-29T04:41:19+00:00
+💬 Message
+   Iraq’s Coordination Framework has nominated Ali al-Zaidi, an Iraqi businessman, to the
+   position as prime minister designate today. Previously, the frontrunners were incumbent
+   Prime Minister Mohammed Shia al-Sudani and former Prime Minister Nouri al-Maliki, who the
+   Trump administration saw as a “red-line” candidate. Al-Zaidi is seen as a compromise
+   candidate, as Iraq’s ruling framework continues to struggle balancing competing U.S. and
+   Iranian interests within the country.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000192  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20547
+👀 views=2,484  ↗ forwards=7  🕯️ published=2026-04-29T04:44:02+00:00
+💬 Message
+   According to the United Arab Emirates (UAE) Ministry of Energy and Infrastructure, the UAE
+   is planning to withdraw from the Organization of the Petroleum Exporting Countries (OPEC)
+   and the OPEC+ frameworks, effective May 1. Per the release, the “decision comes following a
+   thorough review of the United Arab Emirates' production policy and its current and future
+   capabilities, and in light of what national interests require and the state's commitment to
+   contributing effectively to meeting the market's pressing needs.”
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000193  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20548
+👀 views=2,133  ↗ forwards=6  🕯️ published=2026-04-29T04:50:06+00:00
+💬 Message
+   U.S. Central Command (CENTCOM) has published video showing U.S. Marines with the 31st Marine
+   Expeditionary Unit (MEU) boarding the M/V Blue Star 3, which was suspected of attempting to
+   violate the U.S. naval blockade of Iran. Following the boarding, U.S. forces determined the
+   ship's itinerary would not include an Iranian port call and released the ship in the Arabian
+   Sea.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000194  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20549
+👀 views=2,027  ↗ forwards=3  🕯️ published=2026-04-29T05:41:05+00:00
+💬 Message
+   With both Iran and the United States still in a deadlock over peace negotiations to end the
+   ongoing conflict in the Middle East, citing issues surrounding the status of the Strait of
+   Hormuz. Traders on Polymarket are predicting that the issue will not be resolved soon, with
+   only a 36% chance that normal traffic will return to the Hormuz Strait by the end of May.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000195  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20550
+👀 views=2,085  ↗ forwards=6  🕯️ published=2026-04-29T05:42:47+00:00
+💬 Message
+   The U.S. Department of the Treasury has announced additional sanctions against Iranian
+   banking networks that fund the Iranian regime and the Islamic Revolutionary Guards Corps
+   (IRGC). Per the release, sanctions targeted private companies known as “Rahbars” that help
+   blacklisted banks employ shadow banking networks to help fund the regime, Iran’s Armed
+   Forces General Staff (AFGS), Iran’s National Iranian Oil Company (NIOC), and the IRGC.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000196  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20552
+👀 views=1,942  ↗ forwards=10  🕯️ published=2026-04-29T06:40:00+00:00
+💬 Message
+   U.S. State Department Deputy Spokesperson Tommy Pigott has confirmed earlier reporting by
+   the Bulwark, announcing that the U.S. is set to release limited numbers of new passports
+   with the visage of President Donald J. Trump to commemorate the United States’ 250th
+   Anniversary.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000197  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20553
+👀 views=2,000  ↗ forwards=5  🕯️ published=2026-04-29T06:41:15+00:00
+💬 Message
+   According to Reuters, citing two U.S. officials with knowledge on the matter, agencies
+   within the U.S. intelligence community have been given the direction of assessing the
+   likelihood that Iranian decision-makers will react adversely if U.S. President Donald J.
+   Trump declares a “unilateral” victory and moves to pull back from previous commitments to a
+   conflict with the Gulf Nation.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000198  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20554
+👀 views=1,957  ↗ forwards=4  🕯️ published=2026-04-29T06:43:42+00:00
+💬 Message
+   The White House has released a photo of King Charles III and U.S. President Donald J. Trump
+   with the caption “TWO KINGS.”
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000199  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20555
+👀 views=2,119  ↗ forwards=6  🕯️ published=2026-04-29T06:45:31+00:00
+💬 Message
+   According to the Wall Street Journal, citing U.S. officials, U.S. President Donald J. Trump
+   has told his aids to prepare for an extended U.S. blockade of the Strait of Hormuz. Per the
+   report, President Trump sees pulling out of the conflict or resuming combat operations
+   against Iran as far more risky than continuing to blockade vessels traveling to and from
+   Iranian ports. This news follows reporting that the intelligence community was given
+   direction to assess the risk of declaring a unilateral victory and pulling back from the
+   ongoing conflict with Iran.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000200  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20556
+👀 views=2,222  ↗ forwards=8  🕯️ published=2026-04-29T06:56:29+00:00
+💬 Message
+   The Pentagon is considering outsourcing warship design and building to Korea and Japan with
+   a proposed $1.85 billion feasibility study into the project within the proposed budget for
+   2027, with the study to look at the feasibility of adopting or co-producing advanced hulls
+   such as Japan’s Mogami-class and Korea’s Daegu-class frigates to supplement the U.S. Navy,
+   according to USNI News.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000201  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20557
+👀 views=2,440  ↗ forwards=16  🕯️ published=2026-04-29T07:05:21+00:00
+💬 Message
+   His Majesty, King Charles lll joked about the ongoing construction on the White House’ East
+   Wing during tonight State Dinner alongside President Trump, telling guests: “And if I may
+   say so, it is a particular pleasure to be back in this wonderful building, the heart of your
+   democracy. On this occasion, I cannot help noticing the readjustments to the East Wing, Mr.
+   President, following your visit to Windsor Castle last year. And I'm sorry to say that we
+   British, of course, made our own small attempt at real estate redevelopment of the White
+   House in 1814.”
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000202  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20558
+👀 views=2,576  ↗ forwards=20  🕯️ published=2026-04-29T07:10:07+00:00
+💬 Message
+   King Charles lll continues with his jokes during tonight’s White House State Dinner: “This
+   said, our French friends can feel equally at home with a glance at a map. Indeed, you
+   recently commented, Mr. President, that if it were not for the United States, European
+   countries would be speaking German. Dare I say that if it wasn't for us, you'd be speaking
+   French.”
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000203  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20559
+👀 views=1,504  ↗ forwards=4  🕯️ published=2026-04-29T16:26:53+00:00
+💬 Message
+   U.S. Central Command (CENTCOM) has prepared a plan for a wave of “short and powerful”
+   strikes against Iran in hopes of breaking the current deadlock in peace negotiations, though
+   President Trump had yet to order any kinetic action as of Tuesday, three sources with
+   knowledge told Axios.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000204  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20560
+👀 views=1,488  ↗ forwards=3  🕯️ published=2026-04-29T16:35:37+00:00
+💬 Message
+   U.S. President Donald J. Trump has told Axios that he's going to keep Iran under a naval
+   blockade until the regime agrees to a deal that addresses U.S. concerns about its nuclear
+   program, rejecting an Iranian proposal to first open the Strait of Hormuz and lift the
+   blockade, while postponing potential nuclear talks between Iran and the United States.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000205  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20561
+👀 views=1,448  ↗ forwards=6  🕯️ published=2026-04-29T16:37:26+00:00
+💬 Message
+   “The blockade is somewhat more effective than the bombing. They are choking like a stuffed
+   pig. And it is going to be worse for them. They can't have a nuclear weapon,” Trump told
+   Axios.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000206  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20562
+👀 views=1,314  ↗ forwards=5  🕯️ published=2026-04-29T17:04:54+00:00
+💬 Message
+   U.S. Secretary of Defense Pete Hegseth, in his opening remarks this morning in front of the
+   House Armed Services Committee for the administration’s requested $1.5 trillion defense
+   budget in 2027, attacked members of Congress, both Democrats and Republicans, for not
+   supporting the ongoing war against Iran: “President Trump, unlike other presidents, has had
+   the courage to ensure Iran never gets a nuclear weapon, and he's ironclad in that. We have
+   the best negotiator in the world driving that deal. The biggest challenge, the biggest
+   adversary we face at this point are the reckless, feckless, and defeatist words of
+   Congressional Democrats and some Republicans two months in, I remind you, two months in to a
+   conflict. Lest I remind you, and my generation understands how long we were in Iraq, ho
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000207  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20563
+👀 views=1,123  ↗ forwards=4  🕯️ published=2026-04-29T17:26:18+00:00
+💬 Message
+   Full opening remarks by U.S. Defense Secretary Pete Hegseth during today’s hearing in front
+   of the House Armed Services Committee on the $1.7 trillion defense budget requested by the
+   administration for 2027:
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000208  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20564
+👀 views=1,133  ↗ forwards=6  🕯️ published=2026-04-29T17:32:58+00:00
+💬 Message
+   U.S. President Donald J. Trump spoke with Russia’s Vladimir Putin in a roughly one and a
+   half hour long phone call this morning, according to the Kremlin, with discussions focusing
+   around Iran and the ongoing situation in the Middle East.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000209  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20565
+👀 views=1,056  ↗ forwards=5  🕯️ published=2026-04-29T17:39:50+00:00
+💬 Message
+   During today’s phone call, Russian President Vladimir Putin welcomed President Trump’s
+   decision to extend the ceasefire with Iran, while warning of “extremely harmful
+   consequences” if Israel and the United States resumed strikes against the Islamic Republic,
+   according to the Russian state-run news agency TASS.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000210  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20566
+👀 views=707  ↗ forwards=6  🕯️ published=2026-04-29T18:12:38+00:00
+💬 Message
+   The USS Gerald R. Ford (CVN-78) and her Carrier Strike Group, which have been deployed now
+   for over 300 days, far surpassing the record for the longest aircraft carrier deployment
+   since the Vietnam War, will depart from the Red Sea in the coming days to begin the journey
+   back to her homeport at Naval Station Norfolk in Virginia, following last week’s arrival of
+   the USS George H. W. Bush (CVN-77) in the Middle East near Iran, officials tell the
+   Washington Post.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000211  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @DefenderDome · The Defender Dome
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/DefenderDome/20567
+👀 views=346  ↗ forwards=2  🕯️ published=2026-04-29T18:30:18+00:00
+💬 Message
+   U.S. President Donald J. Trump meets with NASA Administrator Jared Isaacman and the crew of
+   Artemis ll, consisting of Commander Reid Wiseman, Pilot Victor Glover, and Mission
+   Specialist Christina Koch from NASA, and Mission Specialist Jeremy Hansen from the Canadian
+   Space Agency, this afternoon inside the White House Oval Office.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000212  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18739
+👀 views=628  ↗ forwards=4  🕯️ published=2026-04-27T06:23:07+00:00
+💬 Message
+   #USA President Trump claimed that Iran's oil infrastructure may explode in about three days
+   due to mechanical issues caused by the US blockade on its vessels. However, experts suggest
+   that while production may be affected, the likelihood of actual explosions is overstated.
+   Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000213  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18740
+👀 views=639  ↗ forwards=3  🕯️ published=2026-04-27T06:38:14+00:00
+💬 Message
+   #Oman Oman's Foreign Minister emphasized the need for intensified diplomacy to secure
+   freedom of navigation in the Strait of Hormuz and highlighted the urgent humanitarian need
+   to release detained seafarers. This reflects a shared responsibility among littoral states
+   to address these issues collaboratively. Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000214  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18741
+👀 views=668  ↗ forwards=2  🕯️ published=2026-04-27T07:14:49+00:00
+💬 Message
+   #NK #Russia Russia is displaying captured Western military hardware, including Abrams tanks.
+   The exhibition showcases over 30 NATO vehicles taken from Ukraine, emphasizing Russia's
+   narrative of strength and victory in the ongoing conflict. Subscribe to @OSINTdefender Chat
+   room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000215  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18744
+👀 views=688  ↗ forwards=1  🕯️ published=2026-04-27T17:26:06+00:00
+💬 Message
+   #Iran #Russia #USA Iran's foreign minister met with Russian President Vladimir Putin, who
+   pledged support for Iran's interests and offered mediation in the ongoing conflict.
+   Meanwhile, U.S. President Donald Trump canceled a planned trip to Pakistan for Iran war
+   talks, stating that Iran should come to the U.S. if they want to negotiate. Subscribe to
+   @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000216  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18745
+👀 views=696  ↗ forwards=0  🕯️ published=2026-04-27T17:48:36+00:00
+💬 Message
+   #EU #Russia #USA NATO is considering scaling back its annual summits to every two years or
+   potentially skipping 2028 altogether to reduce tensions, particularly with former President
+   Trump, and to enhance decision-making. A final decision is pending from Secretary General
+   Mark Rutte. Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000217  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18746
+👀 views=623  ↗ forwards=1  🕯️ published=2026-04-28T05:37:13+00:00
+💬 Message
+   #USA #Iran President Trump is not happy with Iran's negotiating stance regarding its nuclear
+   program, but he has not made a final decision on military action. Diplomatic efforts are
+   ongoing, with both sides planning to resume negotiations soon. Subscribe to @OSINTdefender
+   Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000218  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18747
+👀 views=480  ↗ forwards=2  🕯️ published=2026-04-28T16:55:09+00:00
+💬 Message
+   #USA #Iran Iran has offered to reopen the Strait of Hormuz in exchange for the U.S. lifting
+   its blockade and ending the war, according to recent reports. However, President Trump has
+   indicated he is blocking this move to maintain pressure on Iran for a broader agreement.
+   Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000219  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18748
+👀 views=463  ↗ forwards=1  🕯️ published=2026-04-28T16:57:16+00:00
+💬 Message
+   #Israel #Lebanon The Israeli Defense Minister has stated that the fate of southern Lebanon
+   will be similar to that of Rafah and Beit Hanoun in Gaza, indicating a strategy of extensive
+   destruction and displacement in the region. This approach has raised concerns about
+   potential war crimes and ethnic cleansing. Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000220  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18749
+👀 views=416  ↗ forwards=0  🕯️ published=2026-04-28T17:01:02+00:00
+💬 Message
+   #UAE The United Arab Emirates is leaving OPEC starting May 1, 2026, which significantly
+   impacts the oil cartel and its leadership under Saudi Arabia. This decision reflects the
+   UAE's strategic shift in energy policies amid regional tensions and market volatility.
+   Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000221  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18750
+👀 views=398  ↗ forwards=3  🕯️ published=2026-04-28T17:09:33+00:00
+💬 Message
+   #USA #Iran Vice President J.D. Vance has expressed concerns that Secretary of War Pete
+   Hegseth may be misleading President Trump about the U.S. military's situation in the war
+   with Iran. Vance is particularly worried about the accuracy of reports regarding weapon
+   stockpiles and the overall progress of the conflict. Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000222  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18751
+👀 views=415  ↗ forwards=1  🕯️ published=2026-04-28T17:13:50+00:00
+💬 Message
+   #Russia #Ukraine FPV drones are being used in coastal defense in Crimea, launched from
+   uncrewed surface vessels (USVs) that can carry multiple drones. These USVs enhance Ukraine's
+   ability to strike Russian military targets effectively from the sea. Subscribe to
+   @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000223  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18752
+👀 views=460  ↗ forwards=2  🕯️ published=2026-04-28T17:16:22+00:00
+💬 Message
+   #USA #Iran Trump is unhappy with Iran's latest proposal to end the war because it sets aside
+   discussions on Iran's nuclear program, which the U.S. insists must be addressed first. This
+   dissatisfaction dampens hopes for a resolution to the ongoing conflict. Subscribe to
+   @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000224  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18753
+👀 views=508  ↗ forwards=2  🕯️ published=2026-04-28T17:18:13+00:00
+💬 Message
+   #Israel #Iran Mossad chief David Barnea stated that Israel's operations against Iran will
+   only conclude once the extremist regime in Tehran is replaced. He emphasized that their
+   mission is not yet complete and will continue until this goal is achieved. Subscribe to
+   @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000225  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18754
+👀 views=541  ↗ forwards=2  🕯️ published=2026-04-28T17:20:57+00:00
+💬 Message
+   #Israel #Lebanon Israeli Foreign Minister Israel Katz emphasized that Lebanon must disarm
+   Hezbollah to prevent a return to the influence of its leader, Hassan Nasrallah. He warned
+   that continued support for Hezbollah by the Lebanese government could lead to catastrophic
+   consequences for Lebanon. Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000226  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18755
+👀 views=556  ↗ forwards=1  🕯️ published=2026-04-28T17:57:40+00:00
+💬 Message
+   #UAE The UAE is indeed doubling down on its support for the US amid ongoing tensions with
+   Iran, while also maintaining its strategic partnerships with Saudi Arabia and Qatar. This
+   approach reflects a commitment to resilience and confidence in future stability despite the
+   current challenges. Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000227  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18756
+👀 views=427  ↗ forwards=3  🕯️ published=2026-04-29T05:34:03+00:00
+💬 Message
+   #USA #Iran U.S. intelligence agencies are analyzing how Iran would react if President Trump
+   declared a unilateral victory in the ongoing war, with assessments indicating that such a
+   declaration could be viewed by Iran as a win. This analysis is part of broader efforts to
+   understand the implications of U.S. military actions and potential political outcomes.
+   Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000228  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18757
+👀 views=427  ↗ forwards=2  🕯️ published=2026-04-29T05:35:16+00:00
+💬 Message
+   #ME President Trump has ordered the extension of the blockade on the Strait of Hormuz, which
+   has significantly impacted shipping and trade in the region. This decision follows ongoing
+   tensions and military actions involving Iran. Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000229  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18758
+👀 views=329  ↗ forwards=1  🕯️ published=2026-04-29T10:24:43+00:00
+💬 Message
+   #USA #Germany #Iran Trump criticized German Chancellor Friedrich Merz, claiming that Merz's
+   stance on Iran's nuclear ambitions reflects poorly on Germany's overall competence and
+   economic situation. This response came after Merz expressed concerns about the U.S. strategy
+   in the Iran war. After German Chancellor Friedrich Merz sharply criticized the US war with
+   Iran, President Donald Trump struck back. Merz "has no idea what he's talking about," the
+   American president wrote, adding, "No wonder Germany is doing so badly." Trump writes in
+   Truth Social: "German Chancellor Friedrich Merz thinks it's okay for Iran to have nuclear
+   weapons. He has no idea! If Iran had nuclear weapons, the entire world would be held
+   hostage. I'm now doing to Iran what other countries or presidents should have d
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000230  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18759
+👀 views=328  ↗ forwards=2  🕯️ published=2026-04-29T10:28:21+00:00
+💬 Message
+   #NK North Korea's nuclear arsenal is expanding, potentially allowing it to overwhelm U.S.
+   missile defenses, which are currently designed to intercept about 20-25 incoming missiles.
+   The U.S. has invested approximately $65 billion in a system with 44 interceptors, typically
+   deploying two interceptors per target. Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000231  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18760
+👀 views=362  ↗ forwards=1  🕯️ published=2026-04-29T10:29:11+00:00
+💬 Message
+   #EU #Russia Ursula von der Leyen's statement reflects the EU's view that Russia's government
+   restricts its citizens' access to information, creating a digital iron curtain. This analogy
+   suggests that such barriers, like historical walls, are unsustainable in the long term.
+   Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000232  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18761
+👀 views=369  ↗ forwards=2  🕯️ published=2026-04-29T10:32:15+00:00
+💬 Message
+   #USA #Cuba The Republican-led U.S. Senate blocked a Democratic effort to prevent President
+   Trump from taking military action against Cuba without congressional approval, voting 51-47
+   along party lines. Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000233  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18762
+👀 views=146  ↗ forwards=0  🕯️ published=2026-04-29T17:16:33+00:00
+💬 Message
+   #USA #Iran The Pentagon has reported that the war with Iran has cost the United States
+   approximately $25 billion so far, primarily for munitions. This estimate was provided by a
+   senior Pentagon official during a House Armed Services Committee hearing on April 29, 2026.
+   Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000234  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @OSINTdefender · OSINTdefender
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/OSINTdefender/18764
+👀 views=135  ↗ forwards=0  🕯️ published=2026-04-29T17:20:08+00:00
+💬 Message
+   #USA #Iran Trump is demanding that Iran agree to a nuclear deal while simultaneously
+   preparing for an extended blockade of the country. This approach aims to pressure Iran into
+   compliance regarding its nuclear program. Subscribe to @OSINTdefender Chat room
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000235  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31577
+👀 views=50,938  ↗ forwards=457  🕯️ published=2026-04-28T13:16:58+00:00
+💬 Message
+   — 🇦🇪 Why did the UAE leave OPEC+? For those who want it simplified: > Oil prices are high,
+   Trump doesn’t like this at all — he needs a solution > By leaving OPEC, the UAE can produce
+   and export much more oil, as it is no longer bound by quotas > This increases the
+   circulating supply > More supply lowers the prices of oil globally, at least temporarily >
+   Lowering the price of oil is bad for countries like Saudi Arabia that aren’t able to offset
+   it by increasing production, so they get annoyed In short, this is Trump’s plan to manage
+   the oil price crisis he created as a result of the Strait of Hormuz being closed.
+   @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000236  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31578
+👀 views=47,508  ↗ forwards=115  🕯️ published=2026-04-28T13:26:39+00:00
+💬 Message
+   UAE has major ports outside the Strait of Hormuz, Fujairah and Khor Fakkan.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000237  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31579
+👀 views=50,983  ↗ forwards=166  🕯️ published=2026-04-28T13:59:45+00:00
+💬 Message
+   — 🇺🇸/🇮🇷 President Trump on Truth Social: ‘Iran has just informed us that they are in a
+   "State of Collapse." They want us to "Open the Hormuz Strait," as soon as possible, as they
+   try to figure out their leadership situation (Which I believe they will be able to do!).
+   Thank you for your attention to this matter! President DONALD J. TRUMP’
+   @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000238  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31580
+👀 views=50,375  ↗ forwards=213  🕯️ published=2026-04-28T15:11:05+00:00
+💬 Message
+   — 🇮🇷/🇺🇸/🇺🇳 Iran to the UN: ‘Iran is not a party to the 1982 UN Convention on the Law of the
+   Sea. Therefore, it is not bound by its treaty-based provisions. As the main coastal State
+   within whose territorial sea the Strait of Hormuz lies, Iran has the legitimate and legal
+   right to take necessary and proportionate measures to address emerging security threats,
+   ensure safe navigation, and prevent the misuse of the Strait of Hormuz for hostile or
+   military purposes. Any disruption to maritime transport in the Persian Gulf and the Strait
+   of Hormuz, and its consequences, lie with the U.S., whose unlawful actions endanger
+   international navigation.’ @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000239  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31581
+👀 views=50,054  ↗ forwards=65  🕯️ published=2026-04-28T15:14:12+00:00
+💬 Message
+   — 🇮🇱/🇮🇷 NEW: Hezbollah has carried out three operations so far today 1. Targeting an Israeli
+   army bulldozer that was destroying homes in Bint Jbeil, with an FPV drone achieving a
+   confirmed hit. 2. Targeting a gathering of Israeli soldiers in Qantara with an FPV drone,
+   achieving a confirmed hit. 3. Targeting an Israeli ‘Merkava’ tank in Qantara with an FPV
+   drone, achieving a confirmed hit. @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000240  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31582
+👀 views=52,988  ↗ forwards=83  🕯️ published=2026-04-28T15:20:04+00:00
+💬 Message
+   What a shameless person. Feel free to call him out. I’ve tried multiple times to make him
+   stop copying my posts, but unfortunately with no success.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000241  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31583
+👀 views=55,615  ↗ forwards=417  🕯️ published=2026-04-28T17:48:13+00:00
+💬 Message
+   — 🇺🇸/🇮🇷 NEW: Iran’s new Supreme Leader, Mojtaba Khamenei, is firmly in control and has met
+   in-person with high ranking officials in recent days, including President Pezeshkian. He can
+   move on his own, is mentally sharp, but has a noticeable scar on his face, after surviving
+   three assassination attempts. – Foreign Policy @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000242  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31584
+👀 views=53,796  ↗ forwards=423  🕯️ published=2026-04-28T18:33:36+00:00
+💬 Message
+   — 🇺🇸/🇬🇧 NEW: During his meeting with King Charles, President Trump showed a dead wasp he had
+   found to the King; ‘isn’t that interesting?’ @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000243  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31585
+👀 views=57,454  ↗ forwards=226  🕯️ published=2026-04-28T18:41:22+00:00
+💬 Message
+   — 🇺🇸/🇮🇷/🇩🇪 President Trump: ‘The Chancellor of Germany, Friedrich Merz, thinks it’s OK for
+   Iran to have a Nuclear Weapon. He doesn’t know what he’s talking about! If Iran had a
+   Nuclear Weapon, the whole World would be held hostage. I am doing something with Iran, right
+   now, that other Nations, or Presidents, should have done long ago. No wonder Germany is
+   doing so poorly, both Economically, and otherwise! President DONALD J. TRUMP.’
+   @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000244  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31586
+👀 views=51,638  ↗ forwards=506  🕯️ published=2026-04-29T00:54:01+00:00
+💬 Message
+   — 🇺🇸 NEW: The State Department confirms that Passports issued in 2026 will feature Trump’s
+   face These passports are reportedly a ‘commemorative batch’ as part of the 250-year
+   anniversary of the United States’ founding. @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000245  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31588
+👀 views=39,410  ↗ forwards=217  🕯️ published=2026-04-29T11:36:37+00:00
+💬 Message
+   — 🇺🇸/🇮🇷 President Trump on Truth Social: ‘Iran can’t get their act together. They don’t know
+   how to sign a nonnuclear deal. They better get smart soon! President DJT’
+   @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000246  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31589
+👀 views=35,274  ↗ forwards=52  🕯️ published=2026-04-29T12:37:27+00:00
+💬 Message
+   — 🇮🇱/🇮🇷 NEW: Hezbollah carried out two operations so far 1. Targeting two Israeli ‘Merkava’
+   tanks with FPV drones in the town of Qantara, confirming direct hits. 2. Targeting an
+   Israeli infantry force in the town of Qantara with a barrage of rockets.
+   @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000247  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31590
+👀 views=26,049  ↗ forwards=37  🕯️ published=2026-04-29T15:31:21+00:00
+💬 Message
+   Want your research to be cited in 190 countries? Do you have a research project you want to
+   share with the world? But so far, only your professors and a few lab friends know about it?
+   You know it is the beginning of your scientific journey. But for your idea to work, you need
+   a bigger scope. You need people who will understand. You need a platform where your ideas
+   can turn into an exciting project. The International Festival of Youth 2026 in Ekaterinburg
+   is your launch pad into the global scientific community. This is where you: 🔹 present your
+   discovery to the audience of 190 countries. 🔹 find colleagues for international research 🔹
+   receive mentorship from experts who are already changing the world 🔹 turn your academic
+   research into a practical project ✨ Follow your dream. Together w
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000248  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31592
+👀 views=25,293  ↗ forwards=120  🕯️ published=2026-04-29T15:52:35+00:00
+💬 Message
+   — 🇮🇷 A message by Iran’s Parliament Speaker, Mohammad Baqer Qalibaf, on the necessity of
+   national unity: ‌– From day one, the enemy sought to topple the Islamic Republic within 3
+   days by assassinating the Leader of the Revolution and military commanders, but they failed.
+   – Then they moved on to destroying the country's offensive capabilities, but as time went
+   on, they saw that the sound of our missiles and drones continued. – Then they tried to turn
+   Iran into Venezuela and failed, then they started activating separatists from the West of
+   the country, who were defeated by the grace of God and the efforts of the military and
+   intelligence forces. – After months of planning and attacking the country's security bases
+   during the war, they planned a coup for Chaharshanbe Souri (Iranian Fire F
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000249  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31593
+👀 views=21,355  ↗ forwards=52  🕯️ published=2026-04-29T16:39:01+00:00
+💬 Message
+   —❗️🇺🇸/🇮🇷 NEW: President Trump says the naval blockade against Iran will continue until a
+   deal is reached @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000250  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31594
+👀 views=24,265  ↗ forwards=303  🕯️ published=2026-04-29T16:42:04+00:00
+💬 Message
+   —❗️🇺🇸/🇮🇷 BREAKING: Brent Crude Oil has risen to $119, the highest since the 2008 financial
+   crisis @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000251  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31595
+👀 views=22,751  ↗ forwards=225  🕯️ published=2026-04-29T16:43:55+00:00
+💬 Message
+   —❗️🇺🇸/🇮🇷 NEW: CENTCOM has prepared a plan for a ‘short and powerful wave’ of strikes against
+   Iran, in order to pressure it to negotiate – Axios @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000252  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31596
+👀 views=15,325  ↗ forwards=94  🕯️ published=2026-04-29T17:29:56+00:00
+💬 Message
+   —❗️🇺🇸/🇷🇺/🇮🇷 NEW: President Putin held a phone call with President Trump about the war in
+   Iran The call lasted almost two hours. @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000253  2026-04-29T18:43:08+00:00  [BACKFILL]
+📣 @Middle_East_Spectator · Middle East Spectator
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/Middle_East_Spectator/31597
+👀 views=13,693  ↗ forwards=29  🕯️ published=2026-04-29T17:34:22+00:00
+💬 Message
+   — 🇮🇱/🇮🇷 NEW: Hezbollah carried out two additional operations, bringing the total today to
+   four (3) Targeting a gathering of Israeli soldiers in Al-Bayyadeh with two FPV drones,
+   achieving direct hits (4) Targeting two Merkava tanks in Qantara with two FPV drones, also
+   achieving direct hits. @Middle_East_Spectator
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000254  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72024
+👀 views=3,454  ↗ forwards=27  🕯️ published=2026-04-29T09:08:57+00:00
+💬 Message
+   Message to Politico journalists: “Anyone who is not comfortable with the State of Israel’s
+   right to exist can resign” The Jewish Insider reports that Mathias Döpfner, CEO of digital
+   media giant Axel Springer, clarified to employees of the American website Politico (the
+   leading online news site in the U.S. for politics) that anyone who is not comfortable with
+   the core principles, including the State of Israel’s right to exist, can leave the company.
+   As CEO of Axel Springer, Mathias Döpfner controls the following major media outlets: In
+   Germany: • Bild • Die Welt • B.Z. (Berlin) • Berliner Morgenpost In the UK: • The Daily
+   Telegraph • Sunday Telegraph • Telegraph.co.uk In the U.S. / International: • Politico
+   (including Politico Europe) • Business Insider (now Insider) • Morning Brew In
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000255  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72025
+👀 views=3,307  ↗ forwards=12  🕯️ published=2026-04-29T09:34:23+00:00
+💬 Message
+   IDF Spokesperson on the elimination yesterday in Gaza City👆: Iyad al-Shambari, Head of
+   Operations in the Hamas Intelligence Headquarters, was eliminated. He took part in planning
+   the October 7th massacre. To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000256  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72026
+👀 views=3,355  ↗ forwards=11  🕯️ published=2026-04-29T09:41:24+00:00
+💬 Message
+   President Trump in a creative post: Iran can't get their act together... they better get
+   smart soon! ## He knows how to make excellent use of digital media. To comment, follow this
+   link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000257  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72027
+👀 views=3,224  ↗ forwards=5  🕯️ published=2026-04-29T10:34:35+00:00
+💬 Message
+   Southern Lebanon: A series of strikes on motorcycles this morning in various villages in
+   southern Lebanon. As of now, there are reports of two fatalities—one in a UAV strike in the
+   village of Shaiteya and the other in Barj Qalawiyah. To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000258  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72029
+👀 views=3,313  ↗ forwards=6  🕯️ published=2026-04-29T10:36:48+00:00
+💬 Message
+   A Lebanese soldier and his brother were killed this morning in an Israeli UAV strike on a
+   motorcycle in the village of Khirbet Selm in southern Lebanon. ## At least 4 motorcycle
+   strikes in southern Lebanon since the morning hours, according to Lebanese sources. To
+   comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000259  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72030
+👀 views=3,310  ↗ forwards=14  🕯️ published=2026-04-29T11:18:59+00:00
+💬 Message
+   The Iranian currency continues to crash in morning trading, reaching an all-time low After
+   losing about ten percent of its value in recent days and closing trading yesterday at around
+   1.69 million rials to the dollar, the Iranian currency is trading this morning at over 1.8
+   million rials to the dollar, at an all-time low. ## It appears that the pace of currency
+   erosion is accelerating against the backdrop of the tightening blockade in Hormuz and the
+   new sanctions by the US Treasury Department. To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000260  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72031
+👀 views=3,148  ↗ forwards=13  🕯️ published=2026-04-29T12:14:43+00:00
+💬 Message
+   London: Reports of the arrest of a person who stabbed two Jews in the Golders Green area (an
+   area that is an important center of the Jewish community in the city). To comment, follow
+   this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000261  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72032
+👀 views=3,166  ↗ forwards=7  🕯️ published=2026-04-29T12:15:04+00:00
+💬 Message
+   The stabber was apprehended by members of the Shomrim organization of the Jewish community.
+   To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000262  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72033
+👀 views=3,157  ↗ forwards=12  🕯️ published=2026-04-29T12:22:12+00:00
+💬 Message
+   Ursula von der Leyen, President of the European Commission: Any agreement with Iran must
+   include safe and permanent passage through the Strait of Hormuz without fees, as well as
+   address Iran's nuclear program and missile program. To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000263  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72034
+👀 views=2,970  ↗ forwards=14  🕯️ published=2026-04-29T13:15:28+00:00
+💬 Message
+   London: The Jews who were stabbed in the attack are Orthodox Jews (visibly Jewish). The
+   terrorist is Muslim. According to the BBC, the two Jews were seriously injured. ## British
+   Prime Minister Keir Starmer on the incident: Very concerning. one comment
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000264  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72035
+👀 views=2,908  ↗ forwards=10  🕯️ published=2026-04-29T13:27:50+00:00
+💬 Message
+   Against the backdrop of the ongoing blockade in Hormuz, the price of a barrel of Brent crude
+   oil is rising today, reaching $115. To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000265  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72036
+👀 views=2,775  ↗ forwards=19  🕯️ published=2026-04-29T14:07:20+00:00
+💬 Message
+   London: Footage of the takedown of the Muslim terrorist who stabbed two Jews in Golders
+   Green and seriously wounded them earlier today To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000266  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72037
+👀 views=2,791  ↗ forwards=10  🕯️ published=2026-04-29T14:11:30+00:00
+💬 Message
+   Pictures of the President of Lebanon, Joseph Aoun, were hung in Dahieh... To comment, follow
+   this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000267  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72038
+👀 views=2,541  ↗ forwards=9  🕯️ published=2026-04-29T14:57:15+00:00
+💬 Message
+   Don’t miss this: An IDF FPV drone eliminates a Hezbollah terrorist riding a motorcycle in
+   southern Lebanon. one comment
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000268  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72039
+👀 views=2,255  ↗ forwards=17  🕯️ published=2026-04-29T15:48:00+00:00
+💬 Message
+   When people around the world and in Lebanon ask why Israel needs to flatten civilian homes,
+   show them the attached video from the IDF Spokesperson. This video is the best answer:
+   simply because Hezbollah places weapons and launchers inside them that endanger Israel. To
+   comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000269  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72040
+👀 views=2,249  ↗ forwards=10  🕯️ published=2026-04-29T15:51:21+00:00
+💬 Message
+   The commander of the British police on the Muslim terrorist who stabbed two Orthodox Jews in
+   London 👆: He suffers from mental health issues... 2 comments
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000270  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72041
+👀 views=2,018  ↗ forwards=4  🕯️ published=2026-04-29T16:19:42+00:00
+💬 Message
+   Hezbollah uses statements by a "Kan" channel reporter as propaganda against Israel
+   Hezbollah’s official channel published this evening a propaganda poster quoting a sentence
+   said yesterday by "Kan" channel reporter Roby Hamerschlag: "Today we are in the worst
+   situation the northern border has experienced since the days of the Security Zone" To
+   comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000271  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72042
+👀 views=2,045  ↗ forwards=6  🕯️ published=2026-04-29T16:21:54+00:00
+💬 Message
+   Lebanese channels report that the IDF blew up the Al-Safina restaurant and "Amwaj
+   Al-Bayacha" in the Naqoura area in southern Lebanon (western sector). To comment, follow
+   this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000272  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72043
+👀 views=1,461  ↗ forwards=5  🕯️ published=2026-04-29T17:20:05+00:00
+💬 Message
+   President Trump on Iran: I will continue the naval blockade on Iran until a nuclear
+   agreement is reached. The blockade is more effective than the strikes. They are choking like
+   a stuffed pig. And it’s only getting worse for them. To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000273  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72044
+👀 views=1,521  ↗ forwards=3  🕯️ published=2026-04-29T17:20:37+00:00
+💬 Message
+   Oil prices are skyrocketing after reports that Trump is planning a long-term blockade of
+   Hormuz: The price of a barrel of Brent crude reaches $119 To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000274  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72045
+👀 views=1,435  ↗ forwards=2  🕯️ published=2026-04-29T17:28:23+00:00
+💬 Message
+   Southern Lebanon: The restaurants in Naqoura👆 in southern Lebanon – before they were blown
+   up by the IDF. To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000275  2026-04-29T18:43:09+00:00  [BACKFILL]
+📣 @englishabuali · Abu Ali Express EN
+🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
+🔗 https://t.me/englishabuali/72047
+👀 views=1,339  ↗ forwards=4  🕯️ published=2026-04-29T17:36:28+00:00
+💬 Message
+   The account of Prime Minister Netanyahu posts the attached video with the caption: “Lebanon
+   – we continue” To comment, follow this link
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000276  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5911
+👀 views=2,914  ↗ forwards=4  🕯️ published=2025-08-05T11:59:53+00:00
+💬 Message
+   ⚡ A fresh cloudburst has been reported near Sukhi Top, nearby Army camp in Uttarkashi
+   district, following the massive disaster earlier in Dharali.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000277  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5912
+👀 views=1,678  ↗ forwards=3  🕯️ published=2025-08-05T12:14:37+00:00
+💬 Message
+   ⚡ Russia officially exits nuclear arms treaty with the USA
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000278  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5913
+👀 views=1,957  ↗ forwards=2  🕯️ published=2025-08-05T12:33:13+00:00
+💬 Message
+   ⚡ Former Bangladesh Army Chief Lt Gen Harun-ar-Rashid found dead inside his VIP Room no. 308
+   of Chattogram Guest House. He was to appear before a Chittagong court in a graft case. His
+   body was discovered after he missed the scheduled hearing and did not respond to phone
+   calls. Authorities have conducted a post-mortem to determine the cause of death.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000279  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5915
+👀 views=3,196  ↗ forwards=4  🕯️ published=2025-08-05T12:35:53+00:00
+💬 Message
+   ⚡ BREAKING: US President Donald Trump says he is not happy with India, will increase tariffs
+   on India in 24 hours
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000280  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5916
+👀 views=2,590  ↗ forwards=6  🕯️ published=2025-08-05T12:55:28+00:00
+💬 Message
+   ⚡ The situation of Harsil Army Camp in Uttarkashi after cloudburst. Prayers for all.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000281  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5917
+👀 views=2,359  ↗ forwards=3  🕯️ published=2025-08-05T13:34:17+00:00
+💬 Message
+   TKMKB
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000282  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5918
+👀 views=3,095  ↗ forwards=3  🕯️ published=2025-08-05T13:54:25+00:00
+💬 Message
+   ⚡ DRDO guest house manager detained for spying for Pakistan: Mahendra Prasad, manager of the
+   DRDO guest house in Pokhran, was arrested by security agencies on suspicion of spying for
+   Pakistan. Calls traced to Pakistan were found on his phone. Accused of leaking sensitive
+   information on army and scientists, he will be handed to the Joint Interrogation Committee.
+   Investigation is ongoing
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000283  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5919
+👀 views=3,750  ↗ forwards=5  🕯️ published=2025-08-05T14:36:57+00:00
+💬 Message
+   ⚡ Ittehad-ul-Mujahideen Pakistan (IMP) has released the latest footage of the quadcopter
+   drone attack on the Pakistani army camp in Dusli tehsil of North Waziristan. In footage,
+   Pakistani army soldiers are seen leaving the camp and running to save their lives, but the
+   drone chases them and attacks them.
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000284  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5920
+👀 views=3,188  ↗ forwards=0  🕯️ published=2025-08-05T14:44:51+00:00
+💬 Message
+   ⚡ NSA Ajit Doval and External Affairs Minister S Jaishankar likely to visit Russia this week
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000285  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5921
+👀 views=3,418  ↗ forwards=1  🕯️ published=2025-08-05T15:03:50+00:00
+💬 Message
+   ⚡ Multiple unconfirmed reports of ceasefire violations along the LoC in Krishna Ghati sector
+   of Poonch. No confirmation from authorities
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000286  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5925
+👀 views=3,654  ↗ forwards=3  🕯️ published=2025-08-05T16:05:03+00:00
+💬 Message
+   ⚡ Pakistan Air Force wasting fuel over Skardu, Shorkot and Bahawalpur
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000287  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5926
+👀 views=4,503  ↗ forwards=1  🕯️ published=2025-08-05T16:29:40+00:00
+💬 Message
+   Ok
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000288  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5928
+👀 views=5,067  ↗ forwards=3  🕯️ published=2025-08-05T16:33:49+00:00
+💬 Message
+   ⚡ BREAKING: Earthquake shakes the New York City and surrounding areas
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000289  2026-04-29T18:43:10+00:00  [BACKFILL]
+📣 @OsintUpdates · Osint Updates
+🏷️  topic=osint  tags=telegram, osint, global
+🔗 https://t.me/OsintUpdates/5929
+👀 views=5,330  ↗ forwards=3  🕯️ published=2025-08-05T17:15:28+00:00
+💬 Message
+   ⚡ 3 Pakistan Army soldiers including a Major were killed in an ambush by Baloch freedom
+   fighters near Kardagap, Nushki, Balochistan.
