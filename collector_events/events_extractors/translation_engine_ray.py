@@ -8,6 +8,9 @@ The engine keeps the Telegram relay and other collectors focused on collection.
 It consumes normalized ``IntelItem`` payloads from MQ, sends each payload to a
 Ray actor, detects the source language with GlotLID, translates non-English
 content when a local translator is configured, and republishes an enriched event.
+The MQ connection is created through ``MQFactory.create_async_from_env()`` so it
+uses the same ``EnvConfigManager`` and typed config classes as the rest of the
+forex_system services.
 
 Run:
 
@@ -58,19 +61,7 @@ DEFAULT_GLOTLID_MODEL = DEFAULT_MODELS_DIR / "glotlid" / "model.bin"
 if str(SERVICE_ROOT) not in sys.path:
     sys.path.insert(0, str(SERVICE_ROOT))
 
-try:
-    from forex_shared.logging.get_logger import get_logger, setup_logging
-    from forex_shared.providers.mq.rabbitmq_provider_async import RabbitMQProviderAsync
-except ImportError:  # pragma: no cover - direct execution fallback
-    get_logger = None  # type: ignore[assignment]
-    setup_logging = None  # type: ignore[assignment]
-    RabbitMQProviderAsync = None  # type: ignore[assignment]
-
-
-if setup_logging is not None:
-    setup_logging()
-
-log = get_logger(__name__) if get_logger is not None else logging.getLogger(__name__)
+log = logging.getLogger(__name__)
 
 
 DEFAULT_INPUT_TOPIC = "intel.events.#"
@@ -327,9 +318,7 @@ class TranslationWorkerActor:
     """Ray actor that owns one GlotLID detector and one optional translator."""
 
     def __init__(self, *, actor_id: str, config: dict[str, Any]) -> None:
-        if setup_logging is not None:
-            setup_logging()
-        self._log = get_logger(f"{__name__}.actor.{actor_id}") if get_logger is not None else logging.getLogger(actor_id)
+        self._log = logging.getLogger(f"{__name__}.actor.{actor_id}")
 
         self.actor_id = actor_id
         self.config = config
@@ -583,9 +572,9 @@ class TranslationWorkerActor:
             )
 
         try:
-            labels, probabilities = self._detector.predict(text.replace("\n", " "), k=1)
-            label = labels[0] if labels else ""
-            confidence = float(probabilities[0]) if probabilities else 0.0
+            labels, probabilities = self._detector.predict([text.replace("\n", " ")], k=1)
+            label = labels[0][0] if labels and labels[0] else ""
+            confidence = float(probabilities[0][0]) if probabilities and len(probabilities[0]) else 0.0
             language = _normalize_label(label)
             return DetectionResult(
                 language=language,
@@ -880,21 +869,11 @@ class TranslationEngineRay:
         log.info("Translation actor pool ready: %d actors", len(self._actors))
 
     async def _connect_mq(self) -> None:
-        if RabbitMQProviderAsync is None:
-            raise RuntimeError("RabbitMQProviderAsync could not be imported")
+        from forex_shared.providers.mq.mq_factory import MQFactory
 
-        host = os.getenv("MQ_HOST", os.getenv("RABBITMQ_HOST", "localhost"))
-        port = _int_env("MQ_PORT", int(os.getenv("RABBITMQ_PORT", "5672")), minimum=1)
-        username = os.getenv("MQ_USER", os.getenv("RABBITMQ_USER", "guest"))
-        password = os.getenv("MQ_PASSWORD", os.getenv("RABBITMQ_PASSWORD", "guest"))
-
-        provider = os.getenv("MQ_PROVIDER", "RABBITMQ_ASYNC").strip().upper()
-        if provider not in {"RABBITMQ", "RABBITMQ_ASYNC"}:
-            raise RuntimeError(f"TranslationEngineRay supports RabbitMQ async only; MQ_PROVIDER={provider!r}")
-
-        self._mq = RabbitMQProviderAsync(host=host, port=port, username=username, password=password)
+        self._mq = MQFactory.create_async_from_env()
         await self._mq.connect()
-        log.info("Translation MQ connected to %s:%s", host, port)
+        log.info("Translation MQ connected via MQFactory: %s", type(self._mq).__name__)
 
     async def _on_event(self, payload: dict[str, Any]) -> None:
         if self._stop_event.is_set():
@@ -972,19 +951,21 @@ class TranslationEngineRay:
                 log.warning("Translation health publish failed: %s", exc, exc_info=True)
 
 
-def _load_environment() -> None:
+def _load_dotenv_files() -> None:
     load_dotenv(SERVICE_ROOT / ".env")
     load_dotenv(PACKAGE_ROOT / ".env")
     load_dotenv(EXTRACTOR_DIR / "telegram_session.env")
     load_dotenv(EXTRACTOR_DIR / "translation_engine.env")
     load_dotenv()
 
+
+def _startup_env_config_manager() -> None:
     try:
         from forex_shared.env_config_manager import EnvConfigManager
 
         EnvConfigManager.startup()
     except Exception as exc:
-        log.warning("EnvConfigManager.startup() failed; using direct MQ env: %s", exc)
+        log.warning("EnvConfigManager.startup() failed during env preload: %s", exc)
 
 
 def _synthetic_payload(text: str) -> dict[str, Any]:
@@ -1080,8 +1061,12 @@ def main(argv: list[str] | None = None) -> None:
         level=os.getenv("LOG_LEVEL", "INFO"),
         format="%(asctime)s %(levelname)s %(name)s - %(message)s",
     )
-    _load_environment()
+    _load_dotenv_files()
     args = parse_args(argv)
+
+    if not args.download_glotlid and not args.dry_run_text:
+        _startup_env_config_manager()
+
     config = _config_from_args(args)
 
     if args.download_glotlid:

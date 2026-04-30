@@ -1770,3 +1770,12 @@ Traceback (most recent call last):
   File "C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\telethon\client\users.py", line 565, in _get_entity_from_string
     raise ValueError('No user has "{}" as username'
 ValueError: No user has "maboroshchuk" as username
+INFO → root → Logging system initialized
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 11
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 11
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao resolver secret para MONGO_URL: Timeout of 60.0s exceeded, last exception: 503 failed to connect to all addresses; last error: UNAVAILABLE: ipv4:172.217.172.138:443: WSAGetOverlappedResult: Permission denied (An attempt was made to access a socket in a way forbidden by its access permissions.
+ -- 10013)
+INFO → root → Logging system initialized
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 12
+WARNING → dotenv.main → python-dotenv could not parse statement starting at line 12
+INFO → __main__ → Ray initialized for translation engine namespace=osint_translation
