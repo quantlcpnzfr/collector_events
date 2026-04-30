@@ -852,3 +852,186 @@ INFO → collector_events.events_extractors.telegram_relay_ray → Ray runtime s
 INFO → collector_events.events_extractors.telegram_relay_ray → Telegram Ray relay stopped
 INFO → collector_events.events_extractors.telegram_relay_ray → Telegram Ray relay stopped
 INFO → __main__ → OSINT extractor shutdown requested
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Secret resolvido para MONGO_URL
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Bootstrap secret carregado para MONGO_URL
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Secret resolvido para SYSTEM_X25519_PRIVATE_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Bootstrap secret carregado para SYSTEM_X25519_PRIVATE_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Secret resolvido para SYSTEM_X25519_PUBLIC_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Bootstrap secret carregado para SYSTEM_X25519_PUBLIC_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 3 bootstrap secrets carregados do Secret Manager.
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 45 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 24 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 122 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 115 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 122 chaves recarregadas do MongoDB.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → collector_events.events_extractors.telegram_relay_ray → Ray initialized (address=local, namespace=telegram_relay)
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → __main__ → OSINT extractor shutdown requested
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Secret resolvido para MONGO_URL
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Bootstrap secret carregado para MONGO_URL
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Secret resolvido para SYSTEM_X25519_PRIVATE_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Bootstrap secret carregado para SYSTEM_X25519_PRIVATE_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Secret resolvido para SYSTEM_X25519_PUBLIC_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔐 Bootstrap secret carregado para SYSTEM_X25519_PUBLIC_KEY
+INFO → forex_shared.env_config_manager → [EnvConfig] 3 bootstrap secrets carregados do Secret Manager.
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 45 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 24 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 122 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 115 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 122 chaves recarregadas do MongoDB.
+INFO → forex_shared.env_config_manager → Ambiente de configuração já foi previamente carregado.
+INFO → collector_events.events_extractors.telegram_relay_ray → Ray initialized (address=local, namespace=telegram_relay)
