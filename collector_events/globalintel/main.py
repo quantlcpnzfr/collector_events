@@ -244,7 +244,7 @@ async def main(persist: bool = True, only_domain: str = "", json_path: str = "")
         await stop_event.wait()
     finally:
         logger.info("Stopping scheduler …")
-        await orch.stop_scheduler()
+        orch.stop_scheduler()
         logger.info("GlobalIntel daemon stopped")
 
     return 0
