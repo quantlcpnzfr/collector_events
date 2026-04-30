@@ -1,0 +1,96 @@
+globalintel/
+├── __init__.py
+├── advisories/
+│   ├── __init__.py
+│   └── advisory.py
+├── base.py
+├── cache.py
+├── config/
+│   ├── __init__.py
+│   ├── advisories.json
+│   ├── conflict.json
+│   ├── cyber.json
+│   ├── economic.json
+│   ├── environment.json
+│   ├── market.json
+│   ├── reference.json
+│   ├── sanctions.json
+│   ├── social.json
+│   ├── supply_chain.json
+│   └── trade.json
+├── config_env.py
+├── conflict/
+│   ├── __init__.py
+│   ├── acled.py
+│   ├── displacement.py
+│   ├── gdelt_intel.py
+│   ├── gdelt_unrest.py
+│   ├── ucdp.py
+│   └── unrest.py
+├── cyber/
+│   ├── __init__.py
+│   └── cyber_threats.py
+├── economic/
+│   ├── __init__.py
+│   ├── bis.py
+│   ├── bls.py
+│   ├── calendar.py
+│   ├── ecb.py
+│   ├── energy.py
+│   ├── prices.py
+│   └── world_bank.py
+├── environment/
+│   ├── __init__.py
+│   ├── earthquakes.py
+│   ├── eonet.py
+│   ├── fires.py
+│   └── gdacs.py
+├── extractor_factory.py
+├── feeds/
+│   ├── __init__.py
+│   └── rss_extractor.py
+├── global_tag_manager.py
+├── intel_dump.jsonl
+├── intel_store.py
+├── main.py
+├── market/
+│   ├── __init__.py
+│   ├── commodities.py
+│   ├── cot.py
+│   ├── country_index.py
+│   ├── crypto.py
+│   ├── etf.py
+│   ├── fear_greed.py
+│   ├── fx_rates.py
+│   ├── gulf.py
+│   ├── prediction_markets.py
+│   └── stocks.py
+├── orchestrator.py
+├── reference/
+│   └── __init__.py
+├── sanctions/
+│   ├── __init__.py
+│   └── ofac.py
+├── social/
+│   ├── __init__.py
+│   ├── reddit.py
+│   └── telegram.py
+├── structure.txt
+├── supply_chain/
+│   ├── __init__.py
+│   ├── chokepoints.py
+│   ├── minerals.py
+│   ├── shipping_rates.py
+│   └── shipping_stress.py
+├── tagging/
+│   ├── __init__.py
+│   ├── asset_resolver.py
+│   ├── llm_enricher.py
+│   ├── reference_data.py
+│   └── tag_manager.py
+├── trade/
+│   ├── __init__.py
+│   ├── comtrade.py
+│   ├── tariffs.py
+│   └── wto.py
+└── utils.py

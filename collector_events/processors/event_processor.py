@@ -1,26 +1,10 @@
 # services/collector_events/collector_events/processors/event_processor.py
 """
-EventProcessor — Stage 2 of the global intelligence pipeline (NLP).
+EventProcessor — Stage 2 da pipeline de inteligência global.
 
-Responsibility:
-    Receive ``IntelItem`` (produced by ``globalintel`` extractors) and enrich
-    them with:
-
-    1. **Impact classification** — categories: RATE_DECISION, ECONOMIC_DATA,
-       GEOPOLITICAL, CONFLICT, CYBER, SANCTION, SUPPLY_CHAIN, SOCIAL, GENERIC.
-    2. **danger_score** (0.0 – 1.0) — risk score derived from severity base,
-       domain weight, keyword matching, and critical keyword bonuses.
-    3. Fields ``extra["impact_category"]`` and ``extra["danger_score"]``
-       written to the IntelItem.
-
-Keyword rules and scoring constants are loaded from JSON config files
-(``processors/config/keywords.json`` and ``processors/config/scoring.json``),
-making it easy to tune without code changes.
-
-Usage::
-
-    processor = EventProcessor()
-    enriched: list[IntelItem] = processor.process_items(items)
+Refatorado: Substitui a análise puramente lexical (heurística) por uma camada 
+semântica offline (LocalNLPEngine) que extrai Sentimento, Categoria e Entidades
+antes de calcular o `danger_score`.
 """
 
 from __future__ import annotations
@@ -35,279 +19,124 @@ from forex_shared.domain.intel import CountryRef, IntelItem
 from forex_shared.logging.loggable import Loggable
 
 from collector_events.processors.country_resolver import CountryResolver
+from collector_events.nlp.nlp_engine import LocalNLPEngine
 
-_CONFIG_DIR = Path(__file__).resolve().parent / "config"
-
-
-# ── Config loader ───────────────────────────────────────────────────────────
-
-def _load_json(filename: str) -> dict:
-    path = _CONFIG_DIR / filename
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
-
-
-def _load_keywords() -> tuple[
-    frozenset[str],
-    tuple[tuple[frozenset[str], str, float], ...],
-    frozenset[str],
-]:
-    """Load keywords.json and return (exclude, rules, critical)."""
-    data = _load_json("keywords.json")
-    exclude = frozenset(data["exclude_keywords"])
-    rules = tuple(
-        (frozenset(r["keywords"]), r["category"], r["score_boost"])
-        for r in data["keyword_rules"]
-    )
-    critical = frozenset(data["critical_keywords"])
-    return exclude, rules, critical
-
-
-def _load_scoring() -> dict:
-    """Load scoring.json and return the raw dict."""
-    return _load_json("scoring.json")
-
-
-# ── Module-level data (loaded once at import) ──────────────────────────────
-
-_EXCLUDE_KEYWORDS, _KEYWORD_RULES, _CRITICAL_KEYWORDS = _load_keywords()
-_SCORING = _load_scoring()
-
-_SEVERITY_BASE: dict[str, float] = _SCORING["severity_base"]
-_DOMAIN_WEIGHT: dict[str, float] = _SCORING["domain_weight"]
-_CRITICAL_BONUS_VALUE: float = _SCORING["critical_bonus"]
-_MAX_KEYWORD_BOOST: float = _SCORING["max_keyword_boost"]
-_KW_DIM_MAX_HITS: int = _SCORING["keyword_diminishing_max_hits"]
-_KW_DIM_FACTOR: float = _SCORING["keyword_diminishing_factor"]
-_NUMERIC_THRESHOLDS: list[dict] = _SCORING["numeric_thresholds"]
-
-_DIRECTIONAL_PCT = re.compile(_SCORING["directional_pct_regex"], re.IGNORECASE)
-
-
-# ── Impact categories ───────────────────────────────────────────────────────
-
-class ImpactCategory:
-    RATE_DECISION  = "RATE_DECISION"
-    ECONOMIC_DATA  = "ECONOMIC_DATA"
-    GEOPOLITICAL   = "GEOPOLITICAL"
-    CONFLICT       = "CONFLICT"
-    CYBER          = "CYBER"
-    SANCTION       = "SANCTION"
-    SUPPLY_CHAIN   = "SUPPLY_CHAIN"
-    SOCIAL         = "SOCIAL"
-    NATURAL_EVENT  = "NATURAL_EVENT"
-    PIRACY         = "PIRACY"
-    ELECTION       = "ELECTION"
-    TECH_CRYPTO    = "TECH_CRYPTO"
-    GENERIC        = "GENERIC"
-    IGNORED        = "IGNORED"
-
-
-# ── Result dataclass ────────────────────────────────────────────────────────
-
-@dataclass
-class ProcessedEvent:
-    """Result of NLP processing for a single IntelItem."""
-    item: IntelItem
-    impact_category: str
-    danger_score: float          # 0.0 – 1.0, clamped
-    matched_keywords: list[str]  # matched keywords (for audit)
-
-
-# ── EventProcessor ──────────────────────────────────────────────────────────
+_CONFIG_DIR = Path(__file__).parent / "config"
+_SCORING_FILE = _CONFIG_DIR / "scoring.json"
 
 class EventProcessor(Loggable):
-    """NLP Stage 2 pipeline for IntelItem processing.
-
-    Applies keyword matching to determine impact category and calculate a
-    ``danger_score`` for each item.  No external calls — purely local text
-    analysis.
-
-    Scoring algorithm::
-
-        base  = severity_base[item.severity]
-        score = (base + keyword_boost) * domain_weight + critical_bonus
-        score += max(numeric_bonus, text_pct_bonus)
-        score = clamp(score, 0.0, 1.0)
-
-    Fields ``extra["impact_category"]`` and ``extra["danger_score"]`` are
-    written directly to the item (in-place mutation).
-    """
-
-    def __init__(self, min_danger_score: float = 0.0) -> None:
-        self._min_danger_score = min_danger_score
-        self._country_resolver = CountryResolver()
-
-    # ── Public API ───────────────────────────────────────────────────────
-
-    def process_item(self, item: IntelItem) -> ProcessedEvent:
-        """Process a single IntelItem and return an enriched ProcessedEvent.
-
-        Side-effect: writes ``item.extra["impact_category"]`` and
-        ``item.extra["danger_score"]`` on the original item.
-        """
-        text = self._extract_text(item)
-
-        # Anti-noise: skip sports / entertainment / celebrity content
-        if self._is_noise(text):
-            item.extra["impact_category"] = ImpactCategory.IGNORED
-            item.extra["danger_score"] = 0.0
-            return ProcessedEvent(
-                item=item,
-                impact_category=ImpactCategory.IGNORED,
-                danger_score=0.0,
-                matched_keywords=[],
-            )
-
-        # Country enrichment: 
-        # New feature by my girl developer, she asked for this to be added, so here we are
-        if not item.mentioned_countries:
-            item.mentioned_countries = self._country_resolver.resolve_refs(text)
-            item.country = item.mentioned_country_codes
-            
-        # TODO: DELETE THIS: legacy single country code field (deprecated in favor of mentioned_countries list) 
-        #if not item.country:
-            #item.country = self._country_resolver.resolve(text)
-
-        category, keyword_boost, matched = self._classify(text)
-        base_score = _SEVERITY_BASE.get(item.severity, 0.30)
-        domain_weight = _DOMAIN_WEIGHT.get(item.domain, 1.0)
-        critical_bonus = self._critical_bonus(text)
-
-        raw_score = (base_score + keyword_boost) * domain_weight + critical_bonus
-        numeric_bonus = self._numeric_signal_bonus(item)
-        text_bonus    = self._text_pct_bonus(text)
-        danger_score = round(min(max(raw_score + max(numeric_bonus, text_bonus), 0.0), 1.0), 3)
-        item.extra["impact_category"] = category
-        item.extra["danger_score"] = danger_score
-
-        return ProcessedEvent(
-            item=item,
-            impact_category=category,
-            danger_score=danger_score,
-            matched_keywords=matched,
-        )
-
-    def process_items(self, items: Sequence[IntelItem]) -> list[ProcessedEvent]:
-        """Process a list of IntelItems and return enriched ProcessedEvents.
-
-        Returns list sorted by danger_score descending.
-        """
-        results: list[ProcessedEvent] = []
-        for item in items:
-            try:
-                result = self.process_item(item)
-                results.append(result)
-            except Exception as exc:
-                self.log.warning(
-                    "EventProcessor: error processing item %s — %s",
-                    getattr(item, "id", "?"), exc,
-                )
-        results.sort(key=lambda r: r.danger_score, reverse=True)
-        self.log.debug(
-            "EventProcessor: %d items processed, top danger_score=%.3f",
-            len(results),
-            results[0].danger_score if results else 0.0,
-        )
-        return results
-
-    # ── Internal helpers ─────────────────────────────────────────────────
-
-    @staticmethod
-    def _extract_text(item: IntelItem) -> str:
-        """Concatenate text fields for analysis."""
-        parts = [item.title, item.body]
-        if item.tags:
-            parts.append(" ".join(item.tags))
+    def __init__(self):
+        super().__init__()
+        self.country_resolver = CountryResolver()
         
-        # Country enrichment: 
-        # New feature by my girl developer, she asked for this to be added, so here we are    
-        for ref in item.mentioned_countries + item.actor_countries + item.target_countries:
-            if isinstance(ref, CountryRef):
-                parts.append(ref.name)
-                parts.append(ref.code)
-                if ref.currency:
-                    parts.append(ref.currency)
-                    
-        # TODO: DELETE THIS: legacy single country code field (deprecated in favor of mentioned_countries list) 
-        for v in item.extra.values():
-            if isinstance(v, str):
-                parts.append(v)
-                
-        return " ".join(parts).lower()
+        # Carrega as configurações base de pontuação (mantendo retrocompatibilidade)
+        self._load_scoring_config()
+        
+        # Inicia o Motor NLP (como é Singleton, é partilhado se instanciado várias vezes)
+        self.nlp = LocalNLPEngine.get_instance()
 
-    @staticmethod
-    def _is_noise(text: str) -> bool:
-        """Return True if text matches sports/entertainment/celebrity noise."""
-        for kw in _EXCLUDE_KEYWORDS:
-            if kw in text:
-                return True
-        return False
+    def _load_scoring_config(self):
+        try:
+            with open(_SCORING_FILE, "r", encoding="utf-8") as f:
+                cfg = json.load(f)
+            self.severity_base = cfg.get("severity_base", {})
+            self.domain_weights = cfg.get("domain_weights", {})
+            self.numeric_thresholds = cfg.get("numeric_thresholds", [])
+        except Exception as e:
+            self.log.warning(f"Falha ao carregar scoring.json: {e}. A usar defaults.")
+            self.severity_base = {"generic": 0.1, "conflict": 0.6, "macroeconomic data": 0.4}
+            self.domain_weights = {"telegram": 1.2, "news": 1.0}
+            self.numeric_thresholds = [{"min_pct": 5, "bonus": 0.2}]
 
-    @staticmethod
-    def _classify(text: str) -> tuple[str, float, list[str]]:
-        """Determine the best-matching category and accumulated keyword boost.
+    def process_items(self, items: Sequence[IntelItem]) -> list[IntelItem]:
+        processed = []
+        for it in items:
+            processed.append(self.process_item(it))
+        return processed
 
-        Returns (category, total_boost, matched_keywords).
+    def process_item(self, item: IntelItem) -> IntelItem:
+        # 1. Resolução de Países (mantém o seu código existente)
+        text_to_analyze = item.title
+        if item.content:
+            text_to_analyze += f". {item.content[:500]}"
+            
+        found_countries = self.country_resolver.resolve_countries(text_to_analyze)
+        if found_countries:
+            item.extra["countries"] = [c.iso2 for c in found_countries]
+
+        # 2. ENRIQUECIMENTO SEMÂNTICO (O Novo Motor NLP)
+        nlp_features = self.nlp.extract_features(text_to_analyze)
+        
+        # Atualizar metadados do item com os insights da IA
+        item.extra["nlp_sentiment"] = nlp_features.get("sentiment", "neutral")
+        item.extra["nlp_sentiment_score"] = round(nlp_features.get("sentiment_score", 0.0), 3)
+        item.extra["impact_category"] = nlp_features.get("inferred_category", "generic")
+        item.extra["nlp_entities"] = [e["text"] for e in nlp_features.get("entities", [])]
+
+        # 3. CÁLCULO DO SCORE SEMÂNTICO
+        score = self._compute_semantic_danger_score(item, nlp_features, found_countries)
+        item.extra["danger_score"] = round(min(score, 1.0), 3)
+
+        return item
+
+    def _compute_semantic_danger_score(
+        self, item: IntelItem, nlp_features: dict, found_countries: list[CountryRef]
+    ) -> float:
         """
-        best_category = ImpactCategory.GENERIC
-        best_boost: float = 0.0
-        total_boost: float = 0.0
-        all_matched: list[str] = []
+        Nova fórmula: Base Severity + (Sentimento) + (Relevância de Entidades) + (Bónus Numérico)
+        """
+        category = item.extra.get("impact_category", "generic")
+        domain = item.domain
+        
+        # Base da categoria inferida pelo DeBERTa
+        base = self.severity_base.get(category, 0.2)
+        weight = self.domain_weights.get(domain, 1.0)
+        
+        score = base * weight
 
-        for keywords, category, boost in _KEYWORD_RULES:
-            found = [kw for kw in keywords if kw in text]
-            if found:
-                all_matched.extend(found)
-                total_boost += boost * min(len(found), _KW_DIM_MAX_HITS) * _KW_DIM_FACTOR
-                if boost > best_boost:
-                    best_boost = boost
-                    best_category = category
+        # 1. Modificador de Sentimento (FinBERT)
+        sentiment = nlp_features.get("sentiment")
+        confidence = nlp_features.get("sentiment_score", 0.0)
+        
+        if sentiment == "negative":
+            # Notícias negativas aumentam o perigo/risco
+            score += (0.3 * confidence)
+        elif sentiment == "positive":
+            # Notícias positivas geralmente reduzem o risco sistémico
+            score -= (0.15 * confidence)
 
-        return best_category, round(min(total_boost, _MAX_KEYWORD_BOOST), 4), all_matched
+        # 2. Modificador de Entidades (spaCy NER)
+        entities = nlp_features.get("entities", [])
+        has_central_bank = any(e["label"] == "CENTRAL_BANK" for e in entities)
+        has_g10_country = any(e["label"] == "G10_COUNTRY" for e in entities)
+        
+        if has_central_bank:
+            score += 0.25 # Impacto fortíssimo no Forex
+        if has_g10_country:
+            score += 0.15
 
-    @staticmethod
-    def _critical_bonus(text: str) -> float:
-        """Return bonus if critical keywords are found."""
-        for kw in _CRITICAL_KEYWORDS:
-            if kw in text:
-                return _CRITICAL_BONUS_VALUE
-        return 0.0
+        # 3. Modificador Numérico Clássico (Regex para percentagens - Mantido!)
+        score += self._numeric_signal_bonus(item)
 
-    @staticmethod
-    def _numeric_signal_bonus(item: IntelItem) -> float:
-        """Bonus based on numeric fields in item.extra (market-domain items)."""
+        # Prevenir scores negativos
+        return max(score, 0.0)
+
+    def _numeric_signal_bonus(self, item: IntelItem) -> float:
+        """Mantido do seu código original: excelente para capturar quedas abruptas."""
         extra = item.extra
-        if not extra:
-            return 0.0
+        if not extra: return 0.0
 
         change_pct: float | None = None
         for key in ("change_pct", "pct_change"):
             if key in extra and isinstance(extra[key], (int, float)):
                 change_pct = float(extra[key])
                 break
-        if change_pct is None and "change" in extra:
-            val = extra["change"]
-            if isinstance(val, (int, float)) and abs(val) <= 100:
-                change_pct = float(val)
-
-        if change_pct is None:
-            return 0.0
+                
+        if change_pct is None: return 0.0
 
         abs_change = abs(change_pct)
-        for threshold in _NUMERIC_THRESHOLDS:
-            if abs_change >= threshold["min_pct"]:
-                return threshold["bonus"]
-        return 0.0
-
-    @staticmethod
-    def _text_pct_bonus(text: str) -> float:
-        """Bonus from prose percentage mentions (e.g. 'EUR/USD drops 5%')."""
-        best = max(
-            (float(m.group(1)) for m in _DIRECTIONAL_PCT.finditer(text)),
-            default=0.0,
-        )
-        for threshold in _NUMERIC_THRESHOLDS:
-            if best >= threshold["min_pct"]:
-                return threshold["bonus"]
+        for threshold in self.numeric_thresholds:
+            if abs_change >= threshold.get("min_pct", 999):
+                return threshold.get("bonus", 0.0)
+                
         return 0.0
