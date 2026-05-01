@@ -88,6 +88,10 @@ class LocalNLPEngine:
             "civil unrest, massive protests or violent riots",
             "terrorist attack or mass casualty event",
             
+            # 🛑 Unknown and uncategorized disruptive events 
+            "unprecedented global crisis or major disruptive anomaly", 
+            "sudden market shock or black swan event",
+            
             # ⚪ RUIDO / EVENTOS NEUTROS (Para o modelo ter onde "jogar" o lixo)
             "generic news or daily politics",
             "sports, entertainment or celebrity gossip"
