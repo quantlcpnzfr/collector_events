@@ -1,22 +1,19 @@
 # services/collector_events/collector_events/processors/nlp_engine.py
 """
 Motor NLP Offline (Local) para extração semântica em tempo real.
-Utiliza modelos Small Language Models (SLMs) otimizados para CPU via ONNX.
+Utiliza modelos Small Language Models (SLMs) otimizados para CPU.
+Agora inclui GLiNER para extração tática e filtro de Cisnes Brancos.
 """
 
 import logging
 import spacy
 from typing import Dict, Any, List
 from transformers import pipeline
+from gliner import GLiNER  # <-- IMPORTAÇÃO DO GLINER
 
-# Configuração do Logger
 log = logging.getLogger("LocalNLPEngine")
 
 class LocalNLPEngine:
-    """
-    Singleton para garantir que os modelos pesam na RAM apenas uma vez 
-    por processo do Ray, evitando recarregamentos a cada evento.
-    """
     _instance = None
 
     @classmethod
@@ -28,98 +25,64 @@ class LocalNLPEngine:
     def __init__(self):
         log.info("A iniciar o carregamento dos modelos NLP offline...")
         
-        # 1. FinBERT - Análise de Sentimento Financeiro
-        log.info("A carregar FinBERT (ProsusAI/finbert)...")
-        self.finbert = pipeline(
-            "text-classification", 
-            model="ProsusAI/finbert",
-            device=-1 # Força a utilização da CPU
-        )
+        # 1. FinBERT - Sentimento Financeiro
+        self.finbert = pipeline("text-classification", model="ProsusAI/finbert", device=-1)
         
-        # 2. DeBERTa - Classificação Zero-Shot para Categorização de Impacto
-        log.info("A carregar DeBERTa (cross-encoder/nli-deberta-v3-small)...")
-        self.classifier = pipeline(
-            "zero-shot-classification", 
-            model="cross-encoder/nli-deberta-v3-small",
-            device=-1
-        )
-        
-        # Categorias financeiras e geopolíticas mapeadas para o seu sistema
+        # 2. DeBERTa - Classificação Zero-Shot
+        self.classifier = pipeline("zero-shot-classification", model="cross-encoder/nli-deberta-v3-small", device=-1)
         self.categories = [
-            # 🔴 WAR, CONFLICT & MILITARY (Extremo Risco Geopolítico)
-            "military drone or missile strike",
-            "declaration of war or armed conflict",
-            "nuclear threat or radioactive incident",
-            "troop mobilization or border skirmish",
-            "military coup or government overthrow",
-            "naval blockade or airspace closure",
-
-            # 🕵️ INTELLIGENCE & CYBER (Ameaças Invisíveis)
-            "intelligence agency report or espionage",
-            "covert operation or state-sponsored assassination",
-            "state-sponsored cyber attack or infrastructure hack",
-            "major data breach or institutional ransomware",
-
-            # 🏦 ECONOMICS, PRICES & WORLD BANKS (Política Monetária)
-            "central bank interest rate decision or monetary policy",
-            "macroeconomic data release or inflation report",
-            "currency intervention or severe devaluation",
-            "sudden price spike or hyperinflation warning",
-
-            # 🌋 ENVIRONMENT & DISASTERS (Força Maior / Atos de Deus)
-            "massive earthquake or tsunami",
-            "catastrophic explosion or industrial disaster",
-            "severe extreme weather or hurricane",
-            "global pandemic or biological hazard",
-
-            # 📉 MARKET & TRADING (Movimentos de Ativos)
-            "stock market crash or massive sell-off",
-            "commodity price surge or oil market disruption",
-            "crypto market flash crash or major exchange hack",
-            "institutional market downgrade or recession warning",
-            "major hedge fund collapse or massive margin call",
-            "insider trading scandal or massive financial fraud",
-
-            # 🛑 SANCTIONS, SOCIAL & SUPPLY CHAIN (Atrito e Logística)
-            "international economic sanctions or trade embargo",
-            "critical supply chain disruption or port strike",
-            "shipping route stress or maritime chokepoint closure",
-            "strategic mineral or semiconductor shortage",
-            "civil unrest, massive protests or violent riots",
-            "terrorist attack or mass casualty event",
-            
-            # 🛑 Unknown and uncategorized disruptive events 
-            "unprecedented global crisis or major disruptive anomaly", 
-            "sudden market shock or black swan event",
-            
-            # ⚪ RUIDO / EVENTOS NEUTROS (Para o modelo ter onde "jogar" o lixo)
-            "generic news or daily politics",
-            "sports, entertainment or celebrity gossip"
+            "military drone or missile strike", "military attack or action", "declaration of war or armed conflict",
+            "nuclear threat or radioactive incident", "troop mobilization or border skirmish",
+            "military coup or government overthrow", "naval blockade or airspace closure",
+            "intelligence agency report or espionage", "covert operation or state-sponsored assassination",
+            "state-sponsored cyber attack or infrastructure hack", "major data breach or institutional ransomware",
+            "central bank interest rate decision or monetary policy", "macroeconomic data release or inflation report",
+            "currency intervention or severe devaluation", "sudden price spike or hyperinflation warning",
+            "massive earthquake or tsunami", "catastrophic explosion or industrial disaster",
+            "severe extreme weather or hurricane", "global pandemic or biological hazard",
+            "stock market crash or massive sell-off", "commodity price surge or oil market disruption",
+            "crypto market flash crash or major exchange hack", "institutional market downgrade or recession warning",
+            "major hedge fund collapse or massive margin call", "insider trading scandal or massive financial fraud",
+            "international economic sanctions or trade embargo", "critical supply chain disruption or port strike",
+            "shipping route stress or maritime chokepoint closure", "strategic mineral or semiconductor shortage",
+            "civil unrest, massive protests or violent riots", "terrorist attack or mass casualty event",
+            "unprecedented global crisis or major disruptive anomaly", "sudden market shock or black swan event",
+            "generic news or daily politics", "sports, entertainment or celebrity gossip"
         ]
 
-        # 3. spaCy NER (Extração de Entidades) + EntityRuler
-        log.info("A carregar spaCy NER (en_core_web_sm)...")
+        # 3. spaCy NER (Entidades Core)
         self.nlp = spacy.load("en_core_web_sm")
-        
-        # Adiciona o Ruler ANTES do NER nativo para forçar as suas regras financeiras
         self.ruler = self.nlp.add_pipe("entity_ruler", before="ner")
         self._inject_market_entities()
+
+        # 4. GLiNER - Extração Tática e Filtro de Cisne Branco (Cruz Vermelha)
+        log.info("A carregar GLiNER (urchade/gliner_small-v2.1)...")
+        # Usa um modelo small para manter a latência baixa e não rebentar com a RAM no Ray
+        self.gliner = GLiNER.from_pretrained("urchade/gliner_small-v2.1", load_tokenizer=True)
+        
+        self.gliner_labels = [
+            # EIXO MILITAR
+            "military actor", 
+            "kinetic or military action", 
+            "weapon or military vehicle", 
+            
+            # EIXO CRISE / MAGNITUDE (O Ouro do Forex)
+            "macroeconomic infrastructure or strategic target", 
+            
+            # EIXO CISNE BRANCO / RUÍDO (O Lixo)
+            "civilian vehicle or local infrastructure", 
+            "localized accident or personal tragedy"
+        ]
         
         log.info("Motor NLP carregado e pronto para inferência.")
 
     def _inject_market_entities(self):
-        """
-        Injeta regras estritas (Bancos Centrais, Países do G10, etc.)
-        Pode expandir isto para ler do seu unified-countries_main.json.
-        """
         patterns = [
-            # Bancos Centrais Tier 1
             {"label": "CENTRAL_BANK", "pattern": [{"LOWER": "ecb"}]},
             {"label": "CENTRAL_BANK", "pattern": [{"LOWER": "fed"}]},
             {"label": "CENTRAL_BANK", "pattern": [{"LOWER": "federal"}, {"LOWER": "reserve"}]},
             {"label": "CENTRAL_BANK", "pattern": [{"LOWER": "boj"}]},
             {"label": "CENTRAL_BANK", "pattern": [{"LOWER": "boe"}]},
-            # G10 e potências
             {"label": "G10_COUNTRY", "pattern": [{"LOWER": "usa"}]},
             {"label": "G10_COUNTRY", "pattern": [{"LOWER": "uk"}]},
             {"label": "G10_COUNTRY", "pattern": [{"LOWER": "japan"}]},
@@ -128,14 +91,12 @@ class LocalNLPEngine:
         self.ruler.add_patterns(patterns)
 
     def extract_features(self, text: str) -> Dict[str, Any]:
-        """
-        Executa a pipeline completa (Sentimento, Contexto e Entidades).
-        """
         if not text or len(text.strip()) < 5:
-            return {"sentiment": "neutral", "sentiment_score": 0.0, "category": "generic", "entities": []}
+            return {"sentiment": "neutral", "sentiment_score": 0.0, "inferred_category": "generic", "entities": [], "gliner_graph": {}}
 
-        # Truncar para evitar peso computacional excessivo (500 chars é suficiente para o lead)
-        target_text = text[:500]
+        import textwrap
+        # Truncamento inteligente (não corta palavras no meio como text[:500])
+        target_text = textwrap.shorten(text, width=500, placeholder="...")
 
         try:
             # 1. FinBERT
@@ -150,14 +111,23 @@ class LocalNLPEngine:
             doc = self.nlp(target_text)
             entities = [{"text": ent.text, "label": ent.label_} for ent in doc.ents]
 
+            # 4. GLiNER (A Mágica Tática)
+            gliner_raw = self.gliner.predict_entities(target_text, self.gliner_labels)
+            
+            # Organiza os resultados do GLiNER num dicionário limpo para o EventProcessor
+            gliner_graph = {label: [] for label in self.gliner_labels}
+            for ent in gliner_raw:
+                gliner_graph[ent["label"]].append(ent["text"])
+
             return {
-                "sentiment": sentiment_res['label'], # 'positive', 'negative', 'neutral'
+                "sentiment": sentiment_res['label'],
                 "sentiment_score": sentiment_res['score'],
                 "inferred_category": top_category,
                 "category_confidence": confidence,
-                "entities": entities
+                "entities": entities,
+                "gliner_graph": gliner_graph # <- NOVO OUTPUT
             }
         except Exception as e:
             log.error(f"Erro no Motor NLP: {e}")
-            # Fallback seguro em caso de falha
-            return {"sentiment": "neutral", "sentiment_score": 0.0, "inferred_category": "generic", "entities": []}
+            return {"sentiment": "neutral", "sentiment_score": 0.0, "inferred_category": "generic", "entities": [], "gliner_graph": {}}
+        

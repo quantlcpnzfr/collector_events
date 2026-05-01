@@ -72,12 +72,35 @@ class EventProcessor(Loggable):
         item.extra["nlp_sentiment_score"] = round(nlp_features.get("sentiment_score", 0.0), 3)
         item.extra["impact_category"] = nlp_features.get("inferred_category", "generic")
         item.extra["nlp_entities"] = [e["text"] for e in nlp_features.get("entities", [])]
-
+        item.extra["gliner_graph"] = nlp_features.get("gliner_graph", {})
         # 3. CÁLCULO DO SCORE SEMÂNTICO
         score = self._compute_semantic_danger_score(item, nlp_features, found_countries)
         item.extra["danger_score"] = round(min(score, 1.0), 3)
 
         return item
+    
+    def _reverse_crisis_filter(self, gliner_graph: dict) -> float:
+        """
+        Avalia se o evento é um Cisne Branco (ruído) ou um choque macroeconómico, 
+        baseado na extração tática do GLiNER. Devolve um multiplicador para o score base.
+        """
+        if not gliner_graph:
+            return 1.0
+
+        has_macro_target = len(gliner_graph.get("macroeconomic infrastructure or strategic target", [])) > 0
+        has_white_swan = len(gliner_graph.get("civilian vehicle or local infrastructure", [])) > 0
+        has_local_tragedy = len(gliner_graph.get("localized accident or personal tragedy", [])) > 0
+
+        # Ouro para Forex: Infraestrutura Macroeconómica afetada
+        if has_macro_target:
+            return 1.5  
+
+        # Cisne Branco: Tragédia local sem impacto sistémico
+        if has_white_swan or has_local_tragedy:
+            return 0.1  
+
+        # Neutro
+        return 1.0
 
     def _compute_semantic_danger_score(
         self, item: IntelItem, nlp_features: dict, found_countries: list[CountryRef]
@@ -117,26 +140,34 @@ class EventProcessor(Loggable):
 
         # 3. Modificador Numérico Clássico (Regex para percentagens - Mantido!)
         score += self._numeric_signal_bonus(item)
+        
+        _reverse_crisis_filter = self._reverse_crisis_filter(nlp_features.get("gliner_graph", {}))
+        score *= _reverse_crisis_filter
 
         # Prevenir scores negativos
         return max(score, 0.0)
 
     def _numeric_signal_bonus(self, item: IntelItem) -> float:
-        """Mantido do seu código original: excelente para capturar quedas abruptas."""
-        extra = item.extra
-        if not extra: return 0.0
+        bonus = 0.0
+        text = (item.title + " " + item.body).lower()
+        
+        # 1. Tentar pegar de dados já estruturados (High Performance)
+        extra = item.extra or {}
+        change_pct = extra.get("change_pct") or extra.get("pct_change")
+        
+        # 2. Backup: Regex para capturar números no texto bruto
+        if change_pct is None:
+            # Procura por números seguidos de % (ex: 5.5%, -10%, 15 %)
+            matches = re.findall(r'([-+]?\d+(?:[\.,]\d+)?)\s*%', text)
+            if matches:
+                # Pega o maior valor absoluto encontrado
+                change_pct = max([abs(float(m.replace(',', '.'))) for m in matches])
 
-        change_pct: float | None = None
-        for key in ("change_pct", "pct_change"):
-            if key in extra and isinstance(extra[key], (int, float)):
-                change_pct = float(extra[key])
-                break
-                
-        if change_pct is None: return 0.0
-
-        abs_change = abs(change_pct)
-        for threshold in self.numeric_thresholds:
-            if abs_change >= threshold.get("min_pct", 999):
-                return threshold.get("bonus", 0.0)
-                
-        return 0.0
+        # 3. Cálculo do Bónus baseado na magnitude
+        if change_pct:
+            val = abs(float(change_pct))
+            if val >= 5.0: bonus = 0.25  # Impacto Crítico
+            elif val >= 2.0: bonus = 0.15 # Impacto Relevante
+            elif val >= 0.5: bonus = 0.05 # Ruído de Mercado
+            
+        return bonus

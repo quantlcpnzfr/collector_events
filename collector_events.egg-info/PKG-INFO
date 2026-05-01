@@ -13,3 +13,12 @@ Requires-Dist: fastapi<1,>=0.115
 Requires-Dist: uvicorn[standard]<1,>=0.30
 Requires-Dist: telethon<2,>=1.38
 Requires-Dist: ray[default]
+Provides-Extra: translation
+Requires-Dist: fasttext-wheel>=0.9.2; extra == "translation"
+Requires-Dist: huggingface-hub>=0.26; extra == "translation"
+Requires-Dist: lingua-language-detector>=2.1; extra == "translation"
+Requires-Dist: transformers>=4.45; extra == "translation"
+Requires-Dist: sentencepiece>=0.2; extra == "translation"
+Requires-Dist: accelerate>=0.34; extra == "translation"
+Requires-Dist: sacremoses>=0.1; extra == "translation"
+Requires-Dist: torch>=2.3; extra == "translation"

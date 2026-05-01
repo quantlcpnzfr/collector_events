@@ -1,11 +1,3 @@
-══════════════════════════════════════
-🛰️  FOREX_SYSTEM OSINT TELEGRAM DASHBOARD
-══════════════════════════════════════
-🕒 Started UTC: 2026-04-29 18:41
-
-📡 Sources isolated for Telegram MTProto collection
-⚡Topics: OSINT=16, CONFLICT=14, GEOPOLITICS=16, MIDDLEEAST=6, CYBER=10
-
 ──────────────────────────────────────────────────
 👀 views=271,667  ↗ forwards=1,118  🕯️ published=2026-04-28 20:51
 💬 Message

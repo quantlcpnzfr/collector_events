@@ -65,8 +65,18 @@ class IntelOrchestrator(Loggable):
         self._redis: RedisProvider | None = None
         self._cache: IntelCache | None = None
         self._tag_manager: GlobalTagManager | None = None
+        
+        # Instancia o scheduler APScheduler para rodar 
+        # os extratores em background
         self._scheduler: AsyncIOScheduler = AsyncIOScheduler()
+        
+        # Inicia o motor de IA que faz uso do NLP Engine para processar 
+        # os resultados e gerar insights adicionais
+        self._processor = EventProcessor() 
+        
         self._sources_filter = sources_filter
+        
+        # Callback para processar resultados, como a persistência MongoDB
         self._on_result = on_result
 
         factory = ExtractorFactory(config)
@@ -131,6 +141,32 @@ class IntelOrchestrator(Loggable):
             self._cache = IntelCache(redis_provider)
 
         return self._cache
+    
+    async def _enrich_and_store(self, result: ExtractionResult, extractor: BaseExtractor) -> None:
+        """
+        Processa os itens com os modelos SLM (CPU-bound) em threads separadas
+        e salva o resultado final no Redis.
+        """
+        if result.items:
+            for item in result.items:
+                try:
+                    # Envia a carga pesada de NLP para uma thread, mantendo o asyncio livre
+                    processed = await asyncio.to_thread(self._processor.process_item, item)
+                    
+                    # Injeta o Score e Categorias no item antes de ir para o banco
+                    item.extra["danger_score"] = processed.danger_score
+                    item.extra["impact_category"] = processed.impact_category
+                    
+                    # Opcional: Dados táticos do GLiNER para algoritmos avançados
+                    if processed.features:
+                        item.extra["gliner_tactical"] = processed.features.get("gliner_graph", {})
+                        
+                except Exception as e:
+                    self.log.error("Falha na IA para o item %s: %s", item.id, e)
+
+        # Agora que os dados estão enriquecidos, salvamos no Cache
+        cache = await self._get_cache()
+        await cache.store(result, key=extractor.REDIS_KEY, ttl=extractor.TTL_SECONDS)
 
     # ── One-shot methods ─────────────────────────────────────────────
 
@@ -167,37 +203,39 @@ class IntelOrchestrator(Loggable):
         return None
 
     async def _run_entry(
-        self,
-        entry: ScheduleEntry,
-        session: aiohttp.ClientSession | None = None,
-    ) -> ExtractionResult:
-        ext = entry.extractor
-        self.log.info("Running %s/%s ...", ext.DOMAIN, ext.SOURCE)
-        result = await ext.run(session=session)
-        if result.ok:
-            cache = await self._get_cache()
-            await cache.store(result, ext.REDIS_KEY, ext.TTL_SECONDS)
-            self.log.info(
-                "  ✓ %s: %d items in %.0fms → Redis %s (TTL %ds)",
-                ext.SOURCE, len(result.items), result.elapsed_ms,
-                ext.REDIS_KEY, ext.TTL_SECONDS,
-            )
-        else:
-            self.log.warning("  ✗ %s: %s", ext.SOURCE, result.error)
-        entry.last_run = datetime.now(timezone.utc).timestamp()
+            self, 
+            entry: ScheduleEntry, 
+            session: aiohttp.ClientSession | None = None) 
+    -> ExtractionResult:
+        """
+        Executa a extração para uma única entry, aplica IA e salva no Redis.
+        Centraliza a lógica para run_all, run_domain e start_scheduler.
+        """
+        extractor = entry.extractor
+        own_session = False
+        
+        if session is None:
+            session = aiohttp.ClientSession(timeout=DEFAULT_TIMEOUT, headers={"User-Agent": CHROME_UA})
+            own_session = True
 
-        # Publish items to MQ and process GlobalTags
-        if result.ok and self._mq is not None:
-            for item in result.items:
-                await self._mq.publish(IntelTopics.events(item.domain), item.to_mq_payload())
-            if self._tag_manager is not None:
-                await self._tag_manager.process_result(result)
+        try:
+            # 1. NETWORK I/O (Baixa os dados crus)
+            result = await extractor.extract(session)
 
-        # on_result callback (e.g. MongoDB persistence)
-        if self._on_result is not None:
-            asyncio.create_task(self._on_result(result))
+            # 2. IA / ENRIQUECIMENTO (Aplica NLP sem bloquear o event loop) e 3. REDIS I/O
+            await self._enrich_and_store(result, extractor)
 
-        return result
+            # Atualiza o timestamp da última execução
+            entry.last_run = datetime.now(timezone.utc).timestamp()
+            return result
+            
+        except Exception as e:
+            self.log.error("Falha ao executar %s: %s", extractor.SOURCE, e)
+            # Retorna um resultado vazio em caso de falha de rede
+            return ExtractionResult(source=extractor.SOURCE, domain=extractor.DOMAIN, error=str(e))
+        finally:
+            if own_session:
+                await session.close()
 
     # ── Scheduler loop ───────────────────────────────────────────────
 
