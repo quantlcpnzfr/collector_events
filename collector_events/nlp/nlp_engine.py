@@ -109,7 +109,7 @@ class LocalNLPEngine:
         spacy_model: str = DEFAULT_SPACY_MODEL,
         labels_set: Union[LabelSet, str] = LabelSet.FULL,
         device: int = -1,
-        use_fast_tokenizer: bool = True,
+        use_fast_tokenizer: bool = False,
         local_files_only: bool = False,
         deberta_chunk_tokens: int = 400,
         deberta_overlap_tokens: int = 60,
@@ -937,9 +937,10 @@ class LocalNLPEngine:
 
             if self.enable_timings:
                 log.info(
-                    "NLP timings | finbert=%.3fs | zero_shot=%.3fs | spacy=%.3fs | "
+                    "NLP timings | zero_shot_model=%s | finbert=%.3fs | zero_shot=%.3fs | spacy=%.3fs | "
                     "gliner=%.3fs | zero_shot_chunks=%s | gliner_chunks=%s | "
                     "candidate_labels=%s | labels_set=%s | top=%s | conf=%.4f",
+                    self.zero_shot_model,
                     timings["finbert"],
                     timings["zero_shot"],
                     timings["spacy"],
@@ -967,6 +968,7 @@ class LocalNLPEngine:
                 # Campos extras úteis para debug/observabilidade sem quebrar os existentes.
                 "zero_shot_labels": labels,
                 "zero_shot_scores": [float(score) for score in scores],
+                "zero_shot_model": self.zero_shot_model
             }
 
         except Exception as e:

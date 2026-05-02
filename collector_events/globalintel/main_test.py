@@ -49,36 +49,20 @@ class TestOrchestrator(IntelOrchestrator):
         # IMPORTANTE:
         # IntelOrchestrator.__init__ cria EventProcessor(), e EventProcessor.__init__ chama
         # LocalNLPEngine.get_instance(). Então o singleton precisa nascer aqui, antes do super().
-        # use_fast_tokenizer=False evita o warning do SentencePiece byte fallback no DeBERTa v3.
+        #
+        # Teste atual:
+        # - troca SOMENTE o modelo zero-shot
+        # - mantém sliding window
+        # - não trunca texto
+        # - mantém labels_set minimum
         LocalNLPEngine.get_instance(
             labels_set=labels_set,
+            zero_shot_model="cross-encoder/nli-deberta-v3-small",
             use_fast_tokenizer=False,
             local_files_only=False,
         )
 
         super().__init__()
-
-        self.input_filepath = Path(input_filepath)
-        self.output_filepath = Path(output_filepath)
-        self.partial_output_filepath = self.output_filepath.with_suffix(
-            self.output_filepath.suffix + ".partial"
-        )
-        self.interval_seconds = float(interval_seconds)
-        self.labels_set = labels_set
-        self.persist_to_redis = persist_to_redis
-        self.checkpoint_each_item = checkpoint_each_item
-
-        self.enriched_results: list[dict[str, Any]] = []
-        self._write_lock = asyncio.Lock()
-
-        # Substitui o schedule real por apenas o extrator de teste.
-        self.test_extractor = TestExtractor(filepath=self.input_filepath)
-        self._test_entry = ScheduleEntry(
-            extractor=self.test_extractor,
-            interval_seconds=int(self.interval_seconds),
-        )
-        self._schedule = [self._test_entry]
-        self.total_items = len(self.test_extractor.items_data)
 
     async def _enrich_and_store(self, result: ExtractionResult, extractor) -> None:
         """
