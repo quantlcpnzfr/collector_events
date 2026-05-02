@@ -362,5 +362,1618 @@
                 "localized accident or personal tragedy": []
             }
         }
+    },
+    {
+        "id": "0c9ee8bb-f89b-48e9-acb5-ffdb937da74f",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "'Falling trees on cars in Tehran Farmer's Blocks due to strong winds' captured on Wednesday, 9:30 pm...",
+        "url": "",
+        "body": "'Falling trees on cars in Tehran Farmer's Blocks due to strong winds' captured on Wednesday, 9:30 pm, the storm related to Tuesday's 8 pm, causing several trees to fall and some to break like today.",
+        "published_at": "2026-04-29 15:28",
+        "ts": "2026-05-01T21:34:18.110528Z",
+        "fetched_at": "2026-05-01T21:34:18.110533Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 130499,
+            "forwards": 615,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.06483421921730041,
+            "impact_category": "severe extreme weather or hurricane",
+            "nlp_features": {
+                "sentiment": "negative",
+                "sentiment_score": 0.9452912211418152,
+                "inferred_category": "severe extreme weather or hurricane",
+                "category_confidence": 0.09262031316757202,
+                "entities": [
+                    {
+                        "text": "Tehran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Wednesday",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "9:30 pm",
+                        "label": "TIME"
+                    },
+                    {
+                        "text": "Tehran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Wednesday",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "9:30 pm",
+                        "label": "TIME"
+                    },
+                    {
+                        "text": "Tuesday",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "8 pm",
+                        "label": "TIME"
+                    },
+                    {
+                        "text": "today",
+                        "label": "DATE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "b2b0f61e-6f09-47de-8cff-69fe3cef5c15",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "A senior U.S. Defense Department official said the cost of the war with Iran has so far reached $25 ...",
+        "url": "",
+        "body": "A senior U.S. Defense Department official said the cost of the war with Iran has so far reached $25 billion, the first official estimate of the cost of the conflict.",
+        "published_at": "2026-04-29 16:08",
+        "ts": "2026-05-01T21:34:18.110612Z",
+        "fetched_at": "2026-05-01T21:34:18.110617Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 108807,
+            "forwards": 91,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.06974468380212784,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.6117315888404846,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.13948936760425568,
+                "entities": [
+                    {
+                        "text": "U.S. Defense Department",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "25",
+                        "label": "MONEY"
+                    },
+                    {
+                        "text": "U.S. Defense Department",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "$25 billion",
+                        "label": "MONEY"
+                    },
+                    {
+                        "text": "first",
+                        "label": "ORDINAL"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "During the hearing of the House Armed Services Committee, U.S. Secretary of War Pete Haggett, in a m...",
+        "url": "",
+        "body": "During the hearing of the House Armed Services Committee, U.S. Secretary of War Pete Haggett, in a meeting with Adam Smith, defended the Trump administration's military strategy against Iran. Noting the success of Operation Pettak Midnight, Haggett said that Iran's nuclear facilities have been destroyed and buried underground and are now under daylight surveillance. In this controversial debate, Haggett likened Iran's approach to North Korean strategy, saying that Tehran intended to use its conventional missile shields to prevent Iran from slowly moving toward nuclear weapons; but President Trump saw its weakest moment and, with the cooperation of Israeli partners, took action that could only be taken by the United States.",
+        "published_at": "2026-04-29 16:11",
+        "ts": "2026-05-01T21:34:18.110755Z",
+        "fetched_at": "2026-05-01T21:34:18.110762Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 108479,
+            "forwards": 158,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.17504572868347168,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.6008106470108032,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.35009145736694336,
+                "entities": [
+                    {
+                        "text": "the House Armed Services Committee",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "U.S.",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Pete Haggett",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "the House Armed Services Committee",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "U.S.",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Pete Haggett",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Adam Smith",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Operation Pettak Midnight",
+                        "label": "EVENT"
+                    },
+                    {
+                        "text": "Haggett",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "19205a2d-9132-4457-b412-88293b9dc028",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "The following audio file was released by government sources: \"The message of the voice of Kalibaev a...",
+        "url": "",
+        "body": "The following audio file was released by government sources: \"The message of the voice of Kalibaev addressed to the people of Iran narration of the Speaker of the Parliament of 6 enemy defeats\" and sentences selected by government sources from this audio file: \"The Speaker of the Parliament in an audio file addressed the people of Iran on the most important issues of the day, in particular the new design of the enemy to surrender the people of Iran. The main parts of the dialogue are as follows:",
+        "published_at": "2026-04-29 16:24",
+        "ts": "2026-05-01T21:34:18.110865Z",
+        "fetched_at": "2026-05-01T21:34:18.110870Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 98975,
+            "forwards": 302,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.32706013321876526,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.9270661473274231,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.6541202664375305,
+                "entities": [
+                    {
+                        "text": "Kalibaev",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Kalibaev",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Parliament",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "6",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "The Speaker of the Parliament",
+                        "label": "WORK_OF_ART"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "the day",
+                        "label": "DATE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "648af931-a859-4059-b5a9-07321abc2e88",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Mohammadbaker Khalifaff, the chairman of the Islamic Council's parliament, said in a recent voice me...",
+        "url": "",
+        "body": "Mohammadbaker Khalifaff, the chairman of the Islamic Council's parliament, said in a recent voice message that the United States has taken a new step and wants to activate economic pressure and internal conflicts with naval sieges and media airstrikes to weaken or even collapse us from within. He went on to say that the best witness is Trump's positions that he is clearly dividing the country into two extreme and middle groups and then immediately speaks of a naval siege to force Iran to surrender through economic and internal pressure. Mohammadbaker Khalifaff in the voice file published on Wednesday, March 9, called for the preservation of Afghanistan and threatened that any political dispute is entirely in the hands of the new enemy.",
+        "published_at": "2026-04-29 16:30",
+        "ts": "2026-05-01T21:34:18.111003Z",
+        "fetched_at": "2026-05-01T21:34:18.111009Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 97480,
+            "forwards": 85,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.11954460442066192,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "negative",
+                "sentiment_score": 0.4476083815097809,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.17077800631523132,
+                "entities": [
+                    {
+                        "text": "Mohammadbaker Khalifaff",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "the Islamic Council's",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Mohammadbaker Khalifaff",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "the Islamic Council's",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "the United States",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Trump",
+                        "label": "ORG"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Donald Trump, speaking to Axis on Wednesday, emphasized that the Iranian naval blockade would contin...",
+        "url": "",
+        "body": "Donald Trump, speaking to Axis on Wednesday, emphasized that the Iranian naval blockade would continue until an agreement was agreed that would address U.S. nuclear concerns. He rejected Tehran's recent proposal to reopen the Strait of Hormuz and postpone nuclear negotiations, noting that he considered the blockade to be somewhat more effective than the bombing. At the same time, three sources familiar with the Axis conversation revealed that the U.S. Central Command (Sentcom) had developed a plan to disrupt negotiations to disrupt the wave of attacks on the nuclear power plants of the United States and Iran.",
+        "published_at": "2026-04-29 16:32",
+        "ts": "2026-05-01T21:34:18.111121Z",
+        "fetched_at": "2026-05-01T21:34:18.111128Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 109323,
+            "forwards": 252,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.06149561330676079,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.4213482141494751,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.12299122661352158,
+                "entities": [
+                    {
+                        "text": "Donald Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Wednesday",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Iranian",
+                        "label": "NORP"
+                    },
+                    {
+                        "text": "Donald Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Wednesday",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Iranian",
+                        "label": "NORP"
+                    },
+                    {
+                        "text": "U.S.",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Tehran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "the Strait of Hormuz",
+                        "label": "LOC"
+                    },
+                    {
+                        "text": "three",
+                        "label": "CARDINAL"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [
+                        "Donald Trump",
+                        "Donald Trump"
+                    ],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [
+                    "Donald Trump",
+                    "Donald Trump"
+                ],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "04c7dc17-f6ec-422a-aee9-92220b976020",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "U.S. Secretary of War Pete Haggett said the incident was still under investigation two months after ...",
+        "url": "",
+        "body": "U.S. Secretary of War Pete Haggett said the incident was still under investigation two months after the deadly attack on Minab Elementary School that killed more than 165 people. The comments were made in response to questions from Roe Kana, a California Democrat, who asked Haggett about the human costs and consequences of the attack. Haggett stressed that the incident could not be determined as a \"disgraceful event\". Last month, Haggett told reporters that an army general outside Central Command (CTC) was on duty to investigate the incident; however, he refused to answer questions about the cause of the attack and repeated that the U.S. official did not target civilians.",
+        "published_at": "2026-04-29 17:52",
+        "ts": "2026-05-01T21:34:18.111264Z",
+        "fetched_at": "2026-05-01T21:34:18.111269Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 61327,
+            "forwards": 75,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.08875060230493545,
+            "impact_category": "terrorist attack or mass casualty event",
+            "nlp_features": {
+                "sentiment": "negative",
+                "sentiment_score": 0.5316413044929504,
+                "inferred_category": "terrorist attack or mass casualty event",
+                "category_confidence": 0.12678657472133636,
+                "entities": [
+                    {
+                        "text": "U.S.",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Pete Haggett",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "two months",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "U.S.",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Pete Haggett",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "two months",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Minab Elementary School",
+                        "label": "WORK_OF_ART"
+                    },
+                    {
+                        "text": "more than 165",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "Roe Kana",
+                        "label": "LAW"
+                    },
+                    {
+                        "text": "California",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Democrat",
+                        "label": "NORP"
+                    },
+                    {
+                        "text": "Haggett",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Haggett",
+                        "label": "PERSON"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "91e05b6d-c44b-4e10-b413-bb75c8592299",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Oil prices have risen dramatically since President Donald Trump met with oil company executives to d...",
+        "url": "",
+        "body": "Oil prices have risen dramatically since President Donald Trump met with oil company executives to discuss a months-long extension of Iran's siege of ports and shipping.",
+        "published_at": "2026-04-29 17:54",
+        "ts": "2026-05-01T21:34:18.111333Z",
+        "fetched_at": "2026-05-01T21:34:18.111339Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 58968,
+            "forwards": 38,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.07839608564972878,
+            "impact_category": "commodity price surge or oil market disruption",
+            "nlp_features": {
+                "sentiment": "positive",
+                "sentiment_score": 0.9247560501098633,
+                "inferred_category": "commodity price surge or oil market disruption",
+                "category_confidence": 0.1493258774280548,
+                "entities": [
+                    {
+                        "text": "Donald Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Donald Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "months",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [
+                        "Oil prices"
+                    ],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [
+                    "Oil prices"
+                ],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "bf277486-ec31-4d74-bc91-b8d807973e29",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Yuri Oshakov, a Kremlin palace aide, reported on Wednesday, March 9, the 1.5 hour telephone conversa...",
+        "url": "",
+        "body": "Yuri Oshakov, a Kremlin palace aide, reported on Wednesday, March 9, the 1.5 hour telephone conversation between Vladimir Putin and Donald Trump, describing the atmosphere of the call as \"friendly and friendly\". In the speech, Putin also condemned the recent ill-intention towards John Trump, expressed support for his decision to extend the ceasefire with the Islamic Republic and presented ideas for a solution to the Tehran nuclear program. In another part of the conversation, Trump expressed hope that an agreement would be reached to end the conflict in Ukraine. Putin also proposed a ceasefire in his country at the same time as the celebrations of Victory Day in May, which was accompanied by a positive response from Trump.",
+        "published_at": "2026-04-29 17:55",
+        "ts": "2026-05-01T21:34:18.111464Z",
+        "fetched_at": "2026-05-01T21:34:18.111469Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 59148,
+            "forwards": 40,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.09600379317998886,
+            "impact_category": "intelligence agency report or espionage",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.5252860188484192,
+                "inferred_category": "intelligence agency report or espionage",
+                "category_confidence": 0.19200758635997772,
+                "entities": [
+                    {
+                        "text": "Yuri Oshakov",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Kremlin",
+                        "label": "FAC"
+                    },
+                    {
+                        "text": "Wednesday, March 9",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "the 1.5 hour",
+                        "label": "TIME"
+                    },
+                    {
+                        "text": "Yuri Oshakov",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Kremlin",
+                        "label": "FAC"
+                    },
+                    {
+                        "text": "Wednesday, March 9",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "the 1.5 hour",
+                        "label": "TIME"
+                    },
+                    {
+                        "text": "Vladimir Putin",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Donald Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Putin",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "John Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "the Islamic Republic",
+                        "label": "GPE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "074dd18a-6532-4a97-aaf7-9f8bd7f352af",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "The first three months of Mikhail Fedorov as Defense Minister Challenges and diseases that have not ...",
+        "url": "",
+        "body": "The first three months of Mikhail Fedorov as Defense Minister Challenges and diseases that have not been treated for decades. Total lack of goals and responsibilities. A culture of fear and lies and at the same time heroism, technology and asymmetry. The air defense of Starlink's disconnect for the Moscowers has radically changed the situation with the Shahd.",
+        "published_at": "2026-04-24 13:30",
+        "ts": "2026-05-01T21:34:18.111673Z",
+        "fetched_at": "2026-05-01T21:34:18.111679Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 229795,
+            "forwards": 471,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.18101405203342438,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "negative",
+                "sentiment_score": 0.7639037370681763,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.25859150290489197,
+                "entities": [
+                    {
+                        "text": "The first three months",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Mikhail Fedorov",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Defense",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Challenges",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "The first three months",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Mikhail Fedorov",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Defense",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Challenges",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "decades",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Starlink",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Moscowers",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Shahd",
+                        "label": "LAW"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [
+                        "Mikhail Fedorov",
+                        "Mikhail Fedorov"
+                    ],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [
+                    "Mikhail Fedorov",
+                    "Mikhail Fedorov"
+                ],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "0333721a-b122-4162-a234-31d8e3027d55",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Map updated ️ The enemy has advanced in the Rodensky. In case of inaccuracies, you can let us know a...",
+        "url": "",
+        "body": "Map updated ️ The enemy has advanced in the Rodensky. In case of inaccuracies, you can let us know about this via the bot @newsdeepstatebot. deepstatemap.live ☀️ Join the new collection for 22 MBr: https://send.monobank.ua/jar/5MAfxQvJAX.",
+        "published_at": "2026-04-24 19:04",
+        "ts": "2026-05-01T21:34:18.111751Z",
+        "fetched_at": "2026-05-01T21:34:18.111756Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 211019,
+            "forwards": 87,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.11722762882709503,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.9403368830680847,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.23445525765419006,
+                "entities": [
+                    {
+                        "text": "Rodensky",
+                        "label": "PRODUCT"
+                    },
+                    {
+                        "text": "Rodensky",
+                        "label": "PRODUCT"
+                    },
+                    {
+                        "text": "22",
+                        "label": "CARDINAL"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [
+                        "The enemy",
+                        "The enemy"
+                    ],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [
+                    "The enemy",
+                    "The enemy"
+                ],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "958b95ea-8c72-41a8-a93e-0b272dfca2d4",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Map updated ️ The enemy has advanced near Sinkovka. In case of any inaccuracies, you can tell us abo...",
+        "url": "",
+        "body": "Map updated ️ The enemy has advanced near Sinkovka. In case of any inaccuracies, you can tell us about this via the bot @newsdeepstatebot. deepstatemap.live ☀️ Join the new collection for 22 OMBr: https://send.monobank.ua/jar/5MAfxQvJAX.",
+        "published_at": "2026-04-25 17:16",
+        "ts": "2026-05-01T21:34:18.111808Z",
+        "fetched_at": "2026-05-01T21:34:18.111811Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 196082,
+            "forwards": 89,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.10987751185894012,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.9440131187438965,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.21975502371788025,
+                "entities": [
+                    {
+                        "text": "Sinkovka",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Sinkovka",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "22",
+                        "label": "CARDINAL"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [
+                        "The enemy",
+                        "The enemy"
+                    ],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [
+                    "The enemy",
+                    "The enemy"
+                ],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "02c639e6-3506-4289-9870-10753425d646",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "️ 40 years since the Chernobyl nuclear accident Today marks 40 years since the Chernobyl disaster, a...",
+        "url": "",
+        "body": "️ 40 years since the Chernobyl nuclear accident Today marks 40 years since the Chernobyl disaster, a tragedy that changed Ukraine and the world forever. Thousands of liquidators who have kept an invisible enemy out. Hundreds of thousands of evacuees who have lost their homes. Fates shattered that no statistics can measure. Chernobyl is a lesson for the whole world.",
+        "published_at": "2026-04-26 07:58",
+        "ts": "2026-05-01T21:34:18.111901Z",
+        "fetched_at": "2026-05-01T21:34:18.111906Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 181004,
+            "forwards": 168,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.019255562126636507,
+            "impact_category": "nuclear threat or radioactive incident",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.4940691888332367,
+                "inferred_category": "nuclear threat or radioactive incident",
+                "category_confidence": 0.3851112425327301,
+                "entities": [
+                    {
+                        "text": "40 years",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Chernobyl",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Today",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "40 years",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Chernobyl",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "40 years",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Chernobyl",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Today",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "40 years",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Chernobyl",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Ukraine",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Thousands",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "Hundreds of thousands",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "Chernobyl",
+                        "label": "GPE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": [
+                        "Chernobyl disaster",
+                        "Chernobyl nuclear accident",
+                        "Chernobyl disaster"
+                    ]
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": [
+                    "Chernobyl disaster",
+                    "Chernobyl nuclear accident",
+                    "Chernobyl disaster"
+                ]
+            }
+        }
+    },
+    {
+        "id": "eb98be08-1bdb-48c0-9f7a-c2a1b3aa1f92",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "\"Such bludgeoning is impossible to admit in a month or two\". New Combat 54 OMBr on the rapid loss of...",
+        "url": "",
+        "body": "\"Such bludgeoning is impossible to admit in a month or two\". New Combat 54 OMBr on the rapid loss of the Siverskaya A very interesting interview with the 30-year-old Combat was given by Vadim Chernias, in which he openly tells how he accepted the brigade and what kind of disease it was and what it continues to treat. In the words of the Brigade Commander: There were infantry in the positions who, in the presence of blades, bags, weapons and ammunition, could not use weapons for their purpose.",
+        "published_at": "2026-04-26 10:57",
+        "ts": "2026-05-01T21:34:18.112000Z",
+        "fetched_at": "2026-05-01T21:34:18.112005Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 186114,
+            "forwards": 751,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.1609906554222107,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.7742623686790466,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.3219813108444214,
+                "entities": [
+                    {
+                        "text": "a month",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "two",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "54",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "a month",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "two",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "54",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "30-year-old",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Combat",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Vadim Chernias",
+                        "label": "ORG"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [
+                        "Vadim Chernias"
+                    ],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [
+                        "Combat",
+                        "Combat"
+                    ],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [
+                    "Vadim Chernias"
+                ],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [
+                    "Combat",
+                    "Combat"
+                ],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "ff09d0ea-7f58-4c3b-8760-45c6b600c0b7",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "BBS 67 OMBr \"The Iron Falcon\" destroys the enemy's personal force near the Beroazov Join the new col...",
+        "url": "",
+        "body": "BBS 67 OMBr \"The Iron Falcon\" destroys the enemy's personal force near the Beroazov Join the new collection for 22 OMBr: https://send.monobank.ua/jar/5MAfxQvJAX.",
+        "published_at": "2026-04-26 12:51",
+        "ts": "2026-05-01T21:34:18.112071Z",
+        "fetched_at": "2026-05-01T21:34:18.112077Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 173241,
+            "forwards": 109,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.32579562067985535,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.9222397804260254,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.6515912413597107,
+                "entities": [
+                    {
+                        "text": "67",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "The Iron Falcon",
+                        "label": "WORK_OF_ART"
+                    },
+                    {
+                        "text": "the Beroazov Join",
+                        "label": "FAC"
+                    },
+                    {
+                        "text": "67",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "The Iron Falcon",
+                        "label": "WORK_OF_ART"
+                    },
+                    {
+                        "text": "the Beroazov Join",
+                        "label": "FAC"
+                    },
+                    {
+                        "text": "22",
+                        "label": "CARDINAL"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [
+                        "BBS 67 OMBr",
+                        "BBS 67 OMBr"
+                    ],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [
+                        "The Iron Falcon",
+                        "The Iron Falcon"
+                    ],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [
+                    "BBS 67 OMBr",
+                    "BBS 67 OMBr"
+                ],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [
+                    "The Iron Falcon",
+                    "The Iron Falcon"
+                ],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "e8e55238-a532-4cb5-b90e-37a0f14b6e2a",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Ukraine and Norway launch joint production of drones Ukraine and Norway agreed to create the first j...",
+        "url": "",
+        "body": "Ukraine and Norway launch joint production of drones Ukraine and Norway agreed to create the first joint production of Ukrainian drones. It is about the production of several thousand mid-strike drones on the territory of Norway. All products within the project will be transferred to the Ukrainian Defence Forces. The initiative is funded by the Norwegian side through additional funds of over $7 billion of already provided defense aid to Ukraine in 2026.",
+        "published_at": "2026-04-27 08:50",
+        "ts": "2026-05-01T21:34:18.112171Z",
+        "fetched_at": "2026-05-01T21:34:18.112177Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 162451,
+            "forwards": 299,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.06557798385620117,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.8164526224136353,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.13115596771240234,
+                "entities": [
+                    {
+                        "text": "Ukraine",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Norway",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Ukraine",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Norway",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "first",
+                        "label": "ORDINAL"
+                    },
+                    {
+                        "text": "Ukraine",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Norway",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Ukraine",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Norway",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "first",
+                        "label": "ORDINAL"
+                    },
+                    {
+                        "text": "Ukrainian",
+                        "label": "NORP"
+                    },
+                    {
+                        "text": "several thousand",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "Norway",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "the Ukrainian Defence Forces",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Norwegian",
+                        "label": "NORP"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [
+                        "Ukrainian Defence Forces"
+                    ],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [
+                        "mid-strike drones"
+                    ],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [
+                    "Ukrainian Defence Forces"
+                ],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [
+                    "mid-strike drones"
+                ],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "66a08f19-210d-481c-afcb-aa3e211a9d15",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "DeepStateUA has received a 100,000 subscriber countdown on Youtube Thank you to all our subscribers ...",
+        "url": "",
+        "body": "DeepStateUA has received a 100,000 subscriber countdown on Youtube Thank you to all our subscribers on Youtube. We've been doing this for five years and we really appreciate every comment and like. ✅ Follow us and support the release of new videos youtube.com/@DeepStateUA.",
+        "published_at": "2026-04-27 09:46",
+        "ts": "2026-05-01T21:34:18.112270Z",
+        "fetched_at": "2026-05-01T21:34:18.112275Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 153078,
+            "forwards": 23,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.03690449148416519,
+            "impact_category": "sports, entertainment or celebrity gossip",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.6556508541107178,
+                "inferred_category": "sports, entertainment or celebrity gossip",
+                "category_confidence": 0.07380898296833038,
+                "entities": [
+                    {
+                        "text": "DeepStateUA",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "100,000",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "Youtube",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "100,000",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "Youtube",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Youtube",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "five years",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Follow us",
+                        "label": "PERSON"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
     }
 ]
