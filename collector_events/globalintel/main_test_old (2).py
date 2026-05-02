@@ -18,37 +18,22 @@ from collector_events.globalintel.extractor_factory import ScheduleEntry
 from collector_events.globalintel.orchestrator import IntelOrchestrator
 from collector_events.globalintel.test_extractor import TestExtractor
 from collector_events.nlp.nlp_engine import LocalNLPEngine
-from collector_events.processors.tag_emitter import GlobalTagEmitter
 
 import aiohttp
 
 LabelSetName = Literal["minimum", "medium", "full"]
 
 
-class DummyMQ:
-    """MQ fake para teste local. Não publica nada fora do processo."""
-
-    def __init__(self) -> None:
-        self.messages: list[dict[str, Any]] = []
-
-    async def publish(self, queue_name: str, message: Any) -> None:
-        self.messages.append(
-            {
-                "queue_name": queue_name,
-                "message": message,
-            }
-        )
-
-
 class TestOrchestrator(IntelOrchestrator):
     """
-    Orquestrador de teste isolado para NLP + GlobalTag dry-run.
+    Orquestrador de teste isolado para NLP.
 
-    - Força LocalNLPEngine com labels_set/modelo antes do EventProcessor.
-    - Roda serial, sem APScheduler.
-    - Não grava Redis nem publica RabbitMQ por padrão.
-    - Grava JSON progressivo.
-    - Simula GlobalTagEmitter em dry-run e injeta o relatório no JSON.
+    Diferenças em relação ao fluxo normal:
+    - força LocalNLPEngine com labels_set="minimum" antes do EventProcessor ser criado;
+    - troca o schedule real por apenas um TestExtractor;
+    - roda em modo serial, sem APScheduler, para evitar overlap/max_instances;
+    - por padrão não publica MQ nem grava Redis, mantendo o teste focado em NLP;
+    - mantém os resultados em memória e grava JSON válido progressivamente de forma atômica.
     """
 
     def __init__(
@@ -59,9 +44,17 @@ class TestOrchestrator(IntelOrchestrator):
         *,
         labels_set: LabelSetName = "minimum",
         persist_to_redis: bool = False,
-        checkpoint_each_item: bool = True,
-        enable_global_tag_dry_run: bool = True,
+        checkpoint_each_item: bool = False,
     ) -> None:
+        # IMPORTANTE:
+        # IntelOrchestrator.__init__ cria EventProcessor(), e EventProcessor.__init__ chama
+        # LocalNLPEngine.get_instance(). Então o singleton precisa nascer aqui, antes do super().
+        #
+        # Teste atual:
+        # - troca SOMENTE o modelo zero-shot
+        # - mantém sliding window
+        # - não trunca texto
+        # - mantém labels_set minimum
         LocalNLPEngine.get_instance(
             labels_set=labels_set,
             zero_shot_model="cross-encoder/nli-deberta-v3-small",
@@ -71,33 +64,15 @@ class TestOrchestrator(IntelOrchestrator):
 
         super().__init__()
 
-        self.input_filepath = Path(input_filepath)
-        self.output_filepath = Path(output_filepath)
-        self.interval_seconds = float(interval_seconds)
-        self.labels_set = labels_set
-        self.persist_to_redis = persist_to_redis
-        self.checkpoint_each_item = checkpoint_each_item
-        self.enable_global_tag_dry_run = enable_global_tag_dry_run
-
-        self.enriched_results: list[dict[str, Any]] = []
-        self._write_lock = asyncio.Lock()
-
-        self.test_extractor = TestExtractor(filepath=self.input_filepath)
-        self._test_entry = ScheduleEntry(
-            extractor=self.test_extractor,
-            interval_seconds=int(self.interval_seconds),
-        )
-        self._schedule = [self._test_entry]
-        self.total_items = len(self.test_extractor.items_data)
-
-        self._dummy_mq = DummyMQ()
-        if self.enable_global_tag_dry_run:
-            self._tag_emitter = GlobalTagEmitter(
-                mq_provider=self._dummy_mq,
-                dry_run=True,
-            )
-
     async def _enrich_and_store(self, result: ExtractionResult, extractor) -> None:
+        """
+        Intercepta o enriquecimento para teste.
+
+        Default: não chama super(), porque o super salva Redis e pode disparar caminho MQ.
+        Para um teste de latência de NLP, isso é ruído.
+
+        Se persist_to_redis=True, usa o fluxo do orquestrador pai e depois captura os itens.
+        """
         if self.persist_to_redis:
             await super()._enrich_and_store(result, extractor)
         else:
@@ -117,6 +92,8 @@ class TestOrchestrator(IntelOrchestrator):
         )
 
         if self.checkpoint_each_item:
+            # Grava no próprio arquivo final a cada item, como no main_test antigo,
+            # mas com escrita atômica para nunca deixar JSON corrompido no meio.
             await self._write_json_atomic(
                 self.output_filepath,
                 self.enriched_results,
@@ -129,6 +106,14 @@ class TestOrchestrator(IntelOrchestrator):
             )
 
     async def _enrich_items_without_external_side_effects(self, result: ExtractionResult) -> None:
+        """
+        Replica só a parte útil do IntelOrchestrator._enrich_and_store para teste:
+        roda EventProcessor em thread e injeta danger_score/impact_category/GLiNER no item.
+
+        Não grava Redis.
+        Não publica RabbitMQ.
+        Não chama TagEmitter.
+        """
         if not result.items:
             return
 
@@ -148,41 +133,27 @@ class TestOrchestrator(IntelOrchestrator):
                         {},
                     )
 
-                if self.enable_global_tag_dry_run and self._tag_emitter:
-                    emission_report = await self._tag_emitter.emit_if_critical(item)
-                    item.extra["global_tag_emission"] = emission_report
-
-                    if emission_report.get("emitted"):
-                        self.log.info(
-                            "🏷️ TEST GlobalTag dry-run emitida | event=%s | count=%s | assets=%s",
-                            getattr(item, "id", "<sem-id>"),
-                            emission_report.get("emitted_count"),
-                            [tag.get("asset") for tag in emission_report.get("tags", [])],
-                        )
-                    else:
-                        self.log.info(
-                            "🏷️ TEST GlobalTag não emitida | event=%s | reason=%s | score=%.3f",
-                            getattr(item, "id", "<sem-id>"),
-                            emission_report.get("reason"),
-                            float(emission_report.get("danger_score", 0.0)),
-                        )
-
             except Exception as exc:
                 item_id = getattr(item, "id", "<sem-id>")
                 self.log.exception("Falha na IA para o item %s: %s", item_id, exc)
 
     async def run_serial_test(self) -> None:
+        """
+        Executa o TestExtractor item a item, de forma determinística.
+
+        Essa função substitui o APScheduler no teste justamente para evitar:
+        "maximum number of running instances reached" / "only one instance...".
+        """
         if self.total_items == 0:
             self.log.error("Nenhum item para processar. Arquivo existe? %s", self.input_filepath)
             return
 
         self.log.info(
-            "🚀 Teste NLP serial iniciado | itens=%s | intervalo=%.2fs | labels_set=%s | redis=%s | tag_dry_run=%s",
+            "🚀 Teste NLP serial iniciado | itens=%s | intervalo=%.2fs | labels_set=%s | redis=%s",
             self.total_items,
             self.interval_seconds,
             self.labels_set,
             self.persist_to_redis,
-            self.enable_global_tag_dry_run,
         )
 
         async with aiohttp.ClientSession(
@@ -217,6 +188,7 @@ class TestOrchestrator(IntelOrchestrator):
         await self._cleanup_connections()
 
     async def _cleanup_connections(self) -> None:
+        """Fecha conexões caso algum caminho opcional tenha aberto Redis/MQ."""
         try:
             await self.disconnect_mq()
         except Exception as exc:
@@ -228,6 +200,12 @@ class TestOrchestrator(IntelOrchestrator):
             self.log.warning("Falha ao desconectar Redis no cleanup: %s", exc)
 
     async def _write_json_atomic(self, filepath: Path, payload: Any) -> None:
+        """
+        Escrita atômica e protegida por lock.
+
+        Mesmo que no fluxo serial não exista concorrência real, isso deixa seguro caso
+        você ligue checkpoint ou reaproveite a classe com tarefas concorrentes depois.
+        """
         async with self._write_lock:
             filepath.parent.mkdir(parents=True, exist_ok=True)
             temp_filepath = filepath.with_suffix(filepath.suffix + ".tmp")
@@ -239,6 +217,7 @@ class TestOrchestrator(IntelOrchestrator):
             os.replace(temp_filepath, filepath)
 
     def _safe_to_dict(self, item: Any) -> dict[str, Any]:
+        """Converte dataclass/model simples para dict serializável."""
         if is_dataclass(item):
             return asdict(item)
 
@@ -260,11 +239,16 @@ async def run_test_pipeline() -> None:
     INPUT_JSON = current_dir / "mock_intel_items_big.json"
     OUTPUT_JSON = current_dir / "mock_intel_items_big_process_result.json"
 
-    INTERVALO_SEGUNDOS = 5
+    INTERVALO_SEGUNDOS = 1
     LABELS_SET: LabelSetName = "minimum"
+
+    # Para teste puro de NLP, deixe False.
+    # Se quiser manter comportamento antigo de gravar Redis, mude para True.
     PERSIST_TO_REDIS = False
+
+    # True = grava o arquivo de saída a cada item processado,
+    # com escrita atômica para você acompanhar o resultado em tempo real.
     CHECKPOINT_EACH_ITEM = True
-    ENABLE_GLOBAL_TAG_DRY_RUN = True
 
     logging.basicConfig(
         level=logging.INFO,
@@ -276,8 +260,7 @@ async def run_test_pipeline() -> None:
         f"| intervalo={INTERVALO_SEGUNDOS}s "
         f"| labels_set={LABELS_SET} "
         f"| redis={PERSIST_TO_REDIS} "
-        f"| checkpoint={CHECKPOINT_EACH_ITEM} "
-        f"| tag_dry_run={ENABLE_GLOBAL_TAG_DRY_RUN}\n"
+        f"| checkpoint={CHECKPOINT_EACH_ITEM}\n"
     )
 
     orch = TestOrchestrator(
@@ -287,7 +270,6 @@ async def run_test_pipeline() -> None:
         labels_set=LABELS_SET,
         persist_to_redis=PERSIST_TO_REDIS,
         checkpoint_each_item=CHECKPOINT_EACH_ITEM,
-        enable_global_tag_dry_run=ENABLE_GLOBAL_TAG_DRY_RUN,
     )
 
     await orch.run_serial_test()

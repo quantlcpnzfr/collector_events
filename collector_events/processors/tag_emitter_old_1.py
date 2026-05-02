@@ -6,48 +6,47 @@ import logging
 import re
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Sequence
+from typing import Any, Dict, Iterable, List, Sequence, Tuple
 
 from forex_shared.domain.intel import GlobalTag, IntelItem
+from collector_events.processors.country_resolver import CountryResolver
 
 try:
+    # Caminho mais genérico usado pelo orchestrator.
     from forex_shared.providers.mq.mq_provider_async import MQProviderAsync
 except Exception:  # pragma: no cover
+    # Fallback compatível com sua versão antiga.
     from forex_shared.providers.mq.rabbitmq_provider_async import MQProviderAsync
-
-from collector_events.processors.country_resolver import CountryResolver
 
 log = logging.getLogger("GlobalTagEmitter")
 
 _CONFIG_DIR = Path(__file__).parent / "config"
 _PREDICTION_FILE = _CONFIG_DIR / "prediction_assets.json"
 
-
 class GlobalTagEmitter:
     """
     Emissor de Global Tags.
 
-    Agora:
-    - retorna relatório de emissão;
-    - grava relatório em item.extra["global_tag_emission"];
-    - suporta dry_run=True para teste sem RabbitMQ;
-    - pode emitir múltiplas GlobalTags por evento crítico.
+    Papel correto:
+    - Recebe um IntelItem já enriquecido pelo EventProcessor.
+    - Usa danger_score + NLP/GLiNER + regex + config para inferir assets/pairs afetados.
+    - Publica uma GlobalTag por ativo/par detectado.
+
+    Observação arquitetural:
+    - Isso é o roteamento rápido/heurístico.
+    - O AI Trend Oracle ainda pode gerar directives mais refinadas depois.
     """
 
     def __init__(
         self,
-        mq_provider: MQProviderAsync | Any,
+        mq_provider: MQProviderAsync,
         prediction_file: str | Path = _PREDICTION_FILE,
-        *,
-        dry_run: bool = False,
     ):
         self.mq = mq_provider
         self.prediction_file = Path(prediction_file)
-        self.dry_run = dry_run
-        self.country_resolver = CountryResolver()
 
         self.config: dict[str, Any] = {}
-        self.threshold: float = 0.75
+        self.threshold: float = 0.65
         self.queue_name: str = "intel.global_tags"
         self.default_expiry_minutes: int = 240
         self.max_tags_per_event: int = 8
@@ -57,45 +56,22 @@ class GlobalTagEmitter:
         self.pair_universe: list[str] = []
         self.asset_keywords: dict[str, list[str]] = {}
         self.currency_synonyms: dict[str, list[str]] = {}
+        self.country_resolver = CountryResolver()
         self.exclude_keywords: list[str] = []
         self.risk_off_assets: dict[str, str] = {}
         self.asset_bias_rules: dict[str, Any] = {}
 
         self._load_prediction_config()
 
-    async def emit_if_critical(self, item: IntelItem) -> dict[str, Any]:
-        """
-        Emite GlobalTags se o item for crítico.
+    # ─────────────────────────────────────────────────────────────
+    # Public API
+    # ─────────────────────────────────────────────────────────────
 
-        Retorna sempre um relatório serializável, inclusive quando não emite.
-        Também injeta o relatório em item.extra["global_tag_emission"].
-        """
-        if item.extra is None:
-            item.extra = {}
-
-        score = self._safe_float(item.extra.get("danger_score", 0.0))
-        report: dict[str, Any] = {
-            "checked": True,
-            "dry_run": self.dry_run,
-            "threshold": self.threshold,
-            "danger_score": score,
-            "emitted": False,
-            "emitted_count": 0,
-            "queue_name": self.queue_name,
-            "tags": [],
-            "reason": "",
-        }
+    async def emit_if_critical(self, item: IntelItem) -> None:
+        score = self._safe_float((item.extra or {}).get("danger_score", 0.0))
 
         if score < self.threshold:
-            report["reason"] = "below_threshold"
-            item.extra["global_tag_emission"] = report
-            log.info(
-                "🏷️ GlobalTag NÃO emitida | score=%.3f < threshold=%.3f | event=%s",
-                score,
-                self.threshold,
-                getattr(item, "id", "<sem-id>"),
-            )
-            return report
+            return
 
         directives = self._predict_financial_directives(item)
 
@@ -112,9 +88,10 @@ class GlobalTagEmitter:
         directives = directives[: self.max_tags_per_event]
 
         for directive in directives:
-            asset = str(directive["asset"])
-            bias = str(directive.get("bias") or ("risk_off" if score > 0.85 else "neutral"))
+            asset = directive["asset"]
+            bias = directive.get("bias") or ("risk_off" if score > 0.85 else "neutral")
             confidence = self._safe_float(directive.get("confidence", 1.0), 1.0)
+
             risk_score = self._clamp(score * max(confidence, 0.35), 0.0, 1.0)
             expiry_minutes = int(directive.get("expiry_minutes", self.default_expiry_minutes))
 
@@ -130,72 +107,23 @@ class GlobalTagEmitter:
                 active=True,
             )
 
-            payload = tag.to_mq_payload()
-            tag_report = {
-                "asset": asset,
-                "bias": bias,
-                "risk_score": risk_score,
-                "confidence": confidence,
-                "reason": directive.get("reason", ""),
-                "expiry_minutes": expiry_minutes,
-                "payload": payload,
-                "published": False,
-            }
-
             try:
-                if self.dry_run:
-                    tag_report["published"] = False
-                    tag_report["dry_run"] = True
-                    log.info(
-                        "🧪 GLOBAL TAG DRY-RUN -> Asset=%s | Bias=%s | Risk=%.2f | "
-                        "Confidence=%.2f | Reason=%s | Evento=%s",
-                        asset,
-                        bias,
-                        risk_score,
-                        confidence,
-                        directive.get("reason", ""),
-                        item.id,
-                    )
-                else:
-                    await self.mq.publish(
-                        queue_name=self.queue_name,
-                        message=payload,
-                    )
-                    tag_report["published"] = True
-                    log.info(
-                        "🚀 GLOBAL TAG EMITIDA -> Asset=%s | Bias=%s | Risk=%.2f | "
-                        "Confidence=%.2f | Reason=%s | Evento=%s",
-                        asset,
-                        bias,
-                        risk_score,
-                        confidence,
-                        directive.get("reason", ""),
-                        item.id,
-                    )
-
-                report["tags"].append(tag_report)
-
+                await self.mq.publish(
+                    queue_name=self.queue_name,
+                    message=tag.to_mq_payload(),
+                )
+                log.info(
+                    "🚀 GLOBAL TAG EMITIDA -> Asset=%s | Bias=%s | Risk=%.2f | "
+                    "Confidence=%.2f | Reason=%s | Evento=%s",
+                    asset,
+                    bias,
+                    risk_score,
+                    confidence,
+                    directive.get("reason", ""),
+                    item.id,
+                )
             except Exception as e:
-                tag_report["error"] = str(e)
-                report["tags"].append(tag_report)
                 log.error("Erro ao publicar GlobalTag no MQ: %s", e)
-
-        report["emitted_count"] = len(report["tags"])
-        report["emitted"] = report["emitted_count"] > 0
-        report["reason"] = "emitted" if report["emitted"] else "no_directives"
-
-        item.extra["global_tag_emission"] = report
-
-        if report["emitted"]:
-            log.info(
-                "🏷️ GlobalTag report | emitted=%s | count=%s | assets=%s | event=%s",
-                report["emitted"],
-                report["emitted_count"],
-                [tag["asset"] for tag in report["tags"]],
-                getattr(item, "id", "<sem-id>"),
-            )
-
-        return report
 
     # ─────────────────────────────────────────────────────────────
     # Config
@@ -230,11 +158,10 @@ class GlobalTagEmitter:
             self.asset_bias_rules = self.config.get("asset_bias_rules", {})
 
             log.info(
-                "Roteador de ativos carregado | assets=%s | pairs=%s | currencies=%s | dry_run=%s",
+                "Roteador de ativos carregado | assets=%s | pairs=%s | currencies=%s",
                 len(self.asset_keywords),
                 len(self.pair_universe),
                 len(self.currencies),
-                self.dry_run,
             )
 
         except Exception as e:
@@ -242,12 +169,22 @@ class GlobalTagEmitter:
             self.config = self._normalize_config({})
 
     def _normalize_config(self, raw: dict[str, Any]) -> dict[str, Any]:
+        """
+        Aceita tanto o formato novo quanto o formato legado:
+        {
+          "XAU": [...],
+          "USD": [...],
+          "excludeKeywords": [...]
+        }
+        """
         if not raw:
             raw = {}
 
+        # Formato novo.
         if "asset_keywords" in raw or "pair_universe" in raw:
             return raw
 
+        # Formato legado.
         asset_keywords = {
             asset: keywords
             for asset, keywords in raw.items()
@@ -260,11 +197,22 @@ class GlobalTagEmitter:
             "default_expiry_minutes": 240,
             "max_tags_per_event": 8,
             "max_pairs_per_currency": 4,
-            "currencies": ["USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "NZD", "XAU", "XAG"],
+            "currencies": ["USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "NZD"],
             "pair_universe": [
-                "EUR/USD", "GBP/USD", "USD/JPY", "USD/CHF", "USD/CAD",
-                "AUD/USD", "NZD/USD", "EUR/GBP", "EUR/JPY", "EUR/NZD",
-                "GBP/JPY", "AUD/JPY", "XAU/USD", "XAG/USD",
+                "EUR/USD",
+                "GBP/USD",
+                "USD/JPY",
+                "USD/CHF",
+                "USD/CAD",
+                "AUD/USD",
+                "NZD/USD",
+                "EUR/GBP",
+                "EUR/JPY",
+                "EUR/NZD",
+                "GBP/JPY",
+                "AUD/JPY",
+                "XAU/USD",
+                "XAG/USD",
             ],
             "asset_keywords": asset_keywords,
             "currency_synonyms": {},
@@ -277,8 +225,6 @@ class GlobalTagEmitter:
                 "WTI": "bullish",
                 "NQ": "bearish",
                 "SPX": "bearish",
-                "JPY": "bullish",
-                "CHF": "bullish",
             },
             "asset_bias_rules": {},
         }
@@ -301,6 +247,7 @@ class GlobalTagEmitter:
         country_currencies = self._extract_country_currencies(item)
         keyword_assets = self._extract_keyword_assets(text)
 
+        # 1. Pares explícitos: EUR/USD signals bullish, USDJPY drops, XAU/USD spikes.
         for pair, context in explicit_pairs:
             bias = self._extract_bias_from_context(context, default="neutral")
             directives.append(
@@ -312,6 +259,7 @@ class GlobalTagEmitter:
                 )
             )
 
+        # 2. Assets/commodities/índices por keyword: oil refinery -> OIL/BRENT/WTI, war -> XAU etc.
         for asset, confidence, reason in keyword_assets:
             bias = self._infer_asset_bias(asset, text_lower)
             directives.append(
@@ -323,11 +271,14 @@ class GlobalTagEmitter:
                 )
             )
 
+        # 3. Moedas explícitas ou inferidas por país.
         currencies = self._dedupe_keep_order(explicit_currencies + country_currencies)
+
         for currency in currencies:
             currency_bias = self._extract_currency_bias(text, currency)
             directives.extend(self._currency_to_pair_directives(currency, currency_bias))
 
+        # 4. Regra macro/risk-off usando categoria e GLiNER.
         directives.extend(self._risk_off_directives(item, text_lower))
 
         return self._dedupe_directives(directives)
@@ -360,6 +311,7 @@ class GlobalTagEmitter:
         ccys = sorted(self.currencies, key=len, reverse=True)
         ccy_group = "|".join(re.escape(c) for c in ccys)
 
+        # EUR/USD, EUR-USD, EURUSD
         pattern = re.compile(
             rf"\b({ccy_group})\s*[/\-]?\s*({ccy_group})\b",
             flags=re.IGNORECASE,
@@ -401,7 +353,17 @@ class GlobalTagEmitter:
         return self._dedupe_keep_order(found)
 
     def _extract_country_currencies(self, item: IntelItem) -> list[str]:
-        countries: list[str] = []
+        """
+        Converte países detectados em moedas usando CountryResolver.
+
+        Fonte única de verdade:
+        - item.country / source_countries / actor_countries / target_countries / mentioned_countries
+        - fallback: resolve o texto bruto com CountryResolver.resolve()
+        - CountryResolver.get_currency() usa unified-countries_main.json
+
+        Isso evita duplicar country_to_currency dentro de prediction_assets.json.
+        """
+        country_codes: list[str] = []
 
         for attr in (
             "country",
@@ -412,14 +374,27 @@ class GlobalTagEmitter:
         ):
             values = getattr(item, attr, None)
             if isinstance(values, str):
-                countries.append(values)
+                country_codes.append(values)
             elif isinstance(values, list):
-                countries.extend(str(v) for v in values)
+                country_codes.extend(str(v) for v in values)
+
+        # Fallback importante: se o EventProcessor ainda não preencheu country
+        # ou se o item tem entidades textuais que não viraram códigos ISO.
+        if not country_codes:
+            text = f"{getattr(item, 'title', '')} {getattr(item, 'body', '')}"
+            country_codes.extend(self.country_resolver.resolve(text))
 
         currencies: list[str] = []
-        for country_code in countries:
-            currency = self.country_resolver.get_currency(str(country_code))
-            if currency and currency in self.currencies:
+        for country_code in self._dedupe_keep_order(country_codes):
+            currency = self.country_resolver.get_currency(country_code)
+            if not currency:
+                continue
+
+            currency = currency.upper().strip()
+
+            # Não emite moedas que não pertencem ao universo operável,
+            # a menos que estejam explícitas na config.
+            if currency in self.currencies:
                 currencies.append(currency)
 
         return self._dedupe_keep_order(currencies)
@@ -444,9 +419,6 @@ class GlobalTagEmitter:
         currency: str,
         currency_bias: str,
     ) -> list[dict[str, Any]]:
-        if currency not in self.currencies:
-            return []
-
         pairs = [
             pair
             for pair in self.pair_universe
@@ -468,6 +440,7 @@ class GlobalTagEmitter:
                 )
             )
 
+        # Também emite moeda isolada como estado macro, se downstream suportar sessão por moeda.
         directives.append(
             self._directive(
                 asset=currency,
@@ -540,16 +513,50 @@ class GlobalTagEmitter:
         )
 
         bullish_terms = [
-            "bullish", "buy", "long", "rally", "rallies", "rise", "rises",
-            "gain", "gains", "surge", "surges", "jump", "jumps", "climb",
-            "climbs", "soar", "soars", "up", "strengthen", "strengthens",
+            "bullish",
+            "buy",
+            "long",
+            "rally",
+            "rallies",
+            "rise",
+            "rises",
+            "gain",
+            "gains",
+            "surge",
+            "surges",
+            "jump",
+            "jumps",
+            "climb",
+            "climbs",
+            "soar",
+            "soars",
+            "up",
+            "strengthen",
+            "strengthens",
             "stronger",
         ]
 
         bearish_terms = [
-            "bearish", "sell", "short", "drop", "drops", "fall", "falls",
-            "plunge", "plunges", "slide", "slides", "tumble", "tumbles",
-            "dip", "dips", "down", "weaken", "weakens", "weaker", "crash",
+            "bearish",
+            "sell",
+            "short",
+            "drop",
+            "drops",
+            "fall",
+            "falls",
+            "plunge",
+            "plunges",
+            "slide",
+            "slides",
+            "tumble",
+            "tumbles",
+            "dip",
+            "dips",
+            "down",
+            "weaken",
+            "weakens",
+            "weaker",
+            "crash",
             "crashes",
         ]
 
@@ -565,6 +572,9 @@ class GlobalTagEmitter:
         return default
 
     def _extract_currency_bias(self, text: str, currency: str) -> str:
+        upper = text.upper()
+
+        # Contexto próximo da moeda explícita.
         pattern = re.compile(rf"\b{re.escape(currency)}\b", flags=re.IGNORECASE)
         contexts: list[str] = []
 
@@ -576,6 +586,7 @@ class GlobalTagEmitter:
         if not contexts:
             return "neutral"
 
+        # Se qualquer contexto tiver direção clara, usa.
         for ctx in contexts:
             bias = self._extract_bias_from_context(ctx, default="neutral")
             if bias != "neutral":
@@ -588,6 +599,7 @@ class GlobalTagEmitter:
         if explicit != "neutral":
             return explicit
 
+        # Commodities/porto/refinaria/ataque normalmente implicam alta de petróleo/ouro.
         if asset in {"XAU", "XAU/USD", "GOLD"}:
             return "bullish"
 
@@ -664,6 +676,7 @@ class GlobalTagEmitter:
             if not asset:
                 continue
 
+            # Preserva slash em pares.
             asset = asset.replace("-", "/") if "/" in asset or "-" in asset else asset
             directive = {**directive, "asset": asset}
 
@@ -689,6 +702,8 @@ class GlobalTagEmitter:
         return result
 
     def _prioritize_pairs(self, currency: str, pairs: Sequence[str]) -> list[str]:
+        # Ordem pensada para liquidez e utilidade macro.
+        quote_priority = ["USD", "JPY", "CHF", "GBP", "EUR", "CAD", "AUD", "NZD"]
         explicit_priority = {
             "EUR": ["EUR/USD", "EUR/JPY", "EUR/GBP", "EUR/NZD"],
             "GBP": ["GBP/USD", "EUR/GBP", "GBP/JPY"],
@@ -698,13 +713,19 @@ class GlobalTagEmitter:
             "AUD": ["AUD/USD", "AUD/JPY", "EUR/AUD"],
             "NZD": ["NZD/USD", "EUR/NZD", "AUD/NZD"],
             "USD": ["EUR/USD", "GBP/USD", "USD/JPY", "USD/CHF", "USD/CAD", "AUD/USD", "NZD/USD", "XAU/USD"],
-            "XAU": ["XAU/USD"],
-            "XAG": ["XAG/USD"],
         }
 
         preferred = [p for p in explicit_priority.get(currency, []) if p in pairs]
         remaining = [p for p in pairs if p not in preferred]
-        remaining.sort()
+
+        def sort_key(pair: str) -> tuple[int, int, str]:
+            base, quote = pair.split("/")
+            # Pares com USD primeiro, depois safe havens/liquidez.
+            usd_score = 0 if "USD" in (base, quote) else 1
+            quote_score = quote_priority.index(quote) if quote in quote_priority else 99
+            return (usd_score, quote_score, pair)
+
+        remaining.sort(key=sort_key)
         return preferred + remaining
 
     def _pair_contains_currency(self, pair: str, currency: str) -> bool:
