@@ -212,8 +212,7 @@ class IntelOrchestrator(Loggable):
     async def _run_entry(
             self, 
             entry: ScheduleEntry, 
-            session: aiohttp.ClientSession | None = None) 
-    -> ExtractionResult:
+            session: aiohttp.ClientSession | None = None) -> ExtractionResult:
         """
         Executa a extração para uma única entry, aplica IA e salva no Redis.
         Centraliza a lógica para run_all, run_domain e start_scheduler.
