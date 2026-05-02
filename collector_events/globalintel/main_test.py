@@ -10,7 +10,7 @@ from collector_events.globalintel.orchestrator import IntelOrchestrator
 from collector_events.globalintel.extractor_factory import ScheduleEntry
 
 # Ajuste o import abaixo para o caminho correto onde você salvou o test_extractor.py
-from collector_events.globalintel.extractors.test_extractor import TestExtractor 
+from collector_events.globalintel.test_extractor import TestExtractor 
 
 class TestOrchestrator(IntelOrchestrator):
     def __init__(self, input_filepath: str, output_filepath: str, interval_seconds: int = 1):

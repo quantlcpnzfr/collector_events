@@ -2,18 +2,28 @@
 import logging
 from datetime import datetime, timezone, timedelta
 from forex_shared.domain.intel import GlobalTag, IntelItem
-from forex_shared.providers.mq.rabbitmq_provider_async import MQProviderAsync # Seu provider de MQ
+from forex_shared.providers.mq.rabbitmq_provider_async import MQProviderAsync # Seu provider de MQimpor
+import json
+
 
 log = logging.getLogger("GlobalTagEmitter")
 
+_CONFIG_DIR = Path(__file__).parent / "config"
+_PREDICTION_FILE = _CONFIG_DIR / "prediction_assets.json"
+
 class GlobalTagEmitter:
-    def __init__(self, mq_provider: MQProviderAsync, prediction_file="processors/config/prediction_assets.json"):
+    def __init__(self, mq_provider: MQProviderAsync, prediction_file: str | Path = _PREDICTION_FILE):
         self.mq = mq_provider
         self.threshold = 0.75 # Score mínimo para gerar uma Tag global
         
-        # 1. Carrega o seu roteador de ativos na RAM
-        with open(prediction_file, "r", encoding="utf-8") as f:
-            self.prediction_tags = json.load(f)
+        # 1. Carrega o roteador de ativos do JSON
+        try:
+            with open(prediction_file, "r", encoding="utf-8") as f:
+                self.prediction_tags = json.load(f)
+            log.info(f"Roteador de ativos carregado: {len(self.prediction_tags)} categorias.")
+        except Exception as e:
+            log.error(f"Falha ao carregar {prediction_file}: {e}")
+            self.prediction_tags = {}
 
     async def emit_if_critical(self, item: IntelItem):
         score = item.extra.get("danger_score", 0.0)
@@ -34,13 +44,16 @@ class GlobalTagEmitter:
                 active=True
             )
             
-            # 3. Publica no RabbitMQ (Fila: intel.global_tags)
-            await self.mq.publish(
-                exchange="intel_exchange",
-                routing_key="intel.global_tags",
-                payload=tag.to_mq_payload()
-            )
-            log.info(f"🚀 GLOBAL TAG EMITIDA: {asset} com Score {score:.2f}")
+            # 3. Publica no RabbitMQ (Descomentado e configurado)
+            try:
+                await self.mq.publish(
+                    queue_name="intel.global_tags",
+                    message=tag.to_mq_payload()
+                )
+                log.info(f"🚀 GLOBAL TAG EMITIDA -> Asset: {asset} | Score: {score:.2f} | Evento: {item.id}")
+            except Exception as e:
+                log.error(f"Erro ao publicar GlobalTag no MQ: {e}")
+                
 
     def _predict_financial_asset(self, item: IntelItem) -> str:
         """
