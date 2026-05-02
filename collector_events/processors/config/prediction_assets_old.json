@@ -1,0 +1,8 @@
+{
+  "XAU": ["war", "missile", "strike", "geopolitics", "ukraine", "middle-east"],
+  "USD": ["fed", "inflation", "interest-rates", "recession", "economy", "bank"],
+  "OIL": ["refinery", "pipeline", "crude", "opec", "oil tanker"],
+  "BTC": ["crypto", "bitcoin", "halving", "exchange"],
+  "NQ":  ["ai", "tech", "science", "semiconductor"],
+  "excludeKeywords": ["nba", "nfl", "oscar", "kardashian"]
+}
