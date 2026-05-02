@@ -145,15 +145,21 @@ class LocalNLPEngine:
             self.device,
             self.local_files_only,
         )
+        
+        finbert_pipeline_kwargs = {
+            "task": "text-classification",
+            "model": self.finbert_model,
+            "device": self.device,
+        }
+        
+        if self.local_files_only:
+            finbert_pipeline_kwargs["model_kwargs"] = {
+                "local_files_only": True,
+            }
 
         # 1. FinBERT - Sentimento Financeiro
-        self.finbert = pipeline(
-            "text-classification",
-            model=self.finbert_model,
-            device=self.device,
-            model_kwargs={"local_files_only": self.local_files_only},
-            tokenizer_kwargs={"local_files_only": self.local_files_only},
-        )
+        self.finbert = pipeline(**finbert_pipeline_kwargs)
+        
 
         # 2. Zero-shot classifier - DeBERTa/ModernBERT
         # use_fast_tokenizer=True reduz overhead quando o modelo tiver tokenizer fast compatível.
@@ -164,13 +170,19 @@ class LocalNLPEngine:
             local_files_only=self.local_files_only,
         )
 
-        self.classifier = pipeline(
-            "zero-shot-classification",
-            model=self.zero_shot_model,
-            tokenizer=self._deberta_tokenizer,
-            device=self.device,
-            model_kwargs={"local_files_only": self.local_files_only},
-        )
+        zero_shot_pipeline_kwargs = {
+            "task": "zero-shot-classification",
+            "model": self.zero_shot_model,
+            "tokenizer": self._deberta_tokenizer,
+            "device": self.device,
+        }
+        
+        if self.local_files_only:
+            zero_shot_pipeline_kwargs["model_kwargs"] = {
+                "local_files_only": True,
+            }
+
+        self.classifier = pipeline(**zero_shot_pipeline_kwargs)
 
         self.categories = [
             "military drone or missile strike",

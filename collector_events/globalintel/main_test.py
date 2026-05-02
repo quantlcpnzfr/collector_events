@@ -33,7 +33,7 @@ class TestOrchestrator(IntelOrchestrator):
     - troca o schedule real por apenas um TestExtractor;
     - roda em modo serial, sem APScheduler, para evitar overlap/max_instances;
     - por padrão não publica MQ nem grava Redis, mantendo o teste focado em NLP;
-    - mantém os resultados em memória e grava JSON final de forma atômica.
+    - mantém os resultados em memória e grava JSON válido progressivamente de forma atômica.
     """
 
     def __init__(
@@ -49,7 +49,12 @@ class TestOrchestrator(IntelOrchestrator):
         # IMPORTANTE:
         # IntelOrchestrator.__init__ cria EventProcessor(), e EventProcessor.__init__ chama
         # LocalNLPEngine.get_instance(). Então o singleton precisa nascer aqui, antes do super().
-        LocalNLPEngine.get_instance(labels_set=labels_set)
+        # use_fast_tokenizer=False evita o warning do SentencePiece byte fallback no DeBERTa v3.
+        LocalNLPEngine.get_instance(
+            labels_set=labels_set,
+            use_fast_tokenizer=False,
+            local_files_only=False,
+        )
 
         super().__init__()
 
@@ -103,11 +108,18 @@ class TestOrchestrator(IntelOrchestrator):
         )
 
         if self.checkpoint_each_item:
+            # Grava no próprio arquivo final a cada item, como no main_test antigo,
+            # mas com escrita atômica para nunca deixar JSON corrompido no meio.
             await self._write_json_atomic(
-                self.partial_output_filepath,
+                self.output_filepath,
                 self.enriched_results,
             )
-            self.log.info("📝 Checkpoint parcial gravado em: %s", self.partial_output_filepath)
+            self.log.info(
+                "📝 Checkpoint progressivo gravado em: %s | itens=%s/%s",
+                self.output_filepath,
+                len(self.enriched_results),
+                self.total_items,
+            )
 
     async def _enrich_items_without_external_side_effects(self, result: ExtractionResult) -> None:
         """
@@ -184,7 +196,7 @@ class TestOrchestrator(IntelOrchestrator):
 
         await self._write_json_atomic(self.output_filepath, self.enriched_results)
         self.log.info(
-            "✅ Teste concluído. Gravados %s itens em %s",
+            "✅ Teste concluído. Arquivo final consolidado com %s itens em %s",
             len(self.enriched_results),
             self.output_filepath,
         )
@@ -243,16 +255,16 @@ async def run_test_pipeline() -> None:
     INPUT_JSON = current_dir / "mock_intel_items_big.json"
     OUTPUT_JSON = current_dir / "mock_intel_items_big_process_result.json"
 
-    INTERVALO_SEGUNDOS = 8
+    INTERVALO_SEGUNDOS = 1
     LABELS_SET: LabelSetName = "minimum"
 
     # Para teste puro de NLP, deixe False.
     # Se quiser manter comportamento antigo de gravar Redis, mude para True.
     PERSIST_TO_REDIS = False
 
-    # False = só grava JSON final, melhor para não ter disputa/IO pesado.
-    # True = também grava .partial atomicamente a cada item.
-    CHECKPOINT_EACH_ITEM = False
+    # True = grava o arquivo de saída a cada item processado,
+    # com escrita atômica para você acompanhar o resultado em tempo real.
+    CHECKPOINT_EACH_ITEM = True
 
     logging.basicConfig(
         level=logging.INFO,
@@ -263,7 +275,8 @@ async def run_test_pipeline() -> None:
         "\n🚀 Iniciando Pipeline de NLP Isolada "
         f"| intervalo={INTERVALO_SEGUNDOS}s "
         f"| labels_set={LABELS_SET} "
-        f"| redis={PERSIST_TO_REDIS}\n"
+        f"| redis={PERSIST_TO_REDIS} "
+        f"| checkpoint={CHECKPOINT_EACH_ITEM}\n"
     )
 
     orch = TestOrchestrator(
