@@ -1,0 +1,136 @@
+{
+  "severity_base": {
+    "HIGH": 0.62,
+    "MEDIUM": 0.4,
+    "LOW": 0.18,
+    "": 0.24
+  },
+  "domain_weight": {
+    "conflict": 1.18,
+    "sanctions": 1.16,
+    "cyber": 1.1,
+    "economic": 1.08,
+    "supply_chain": 1.08,
+    "environment": 1.0,
+    "trade": 1.06,
+    "social": 0.88,
+    "feeds": 0.8,
+    "market": 1.0,
+    "reference": 0.65,
+    "advisories": 1.05,
+    "geopolitical": 1.12,
+    "military": 1.15,
+    "natural_disaster": 1.03
+  },
+  "domain_aliases": {
+    "geo": "geopolitical",
+    "geopolitics": "geopolitical",
+    "war": "conflict",
+    "military_conflict": "conflict",
+    "natural_event": "environment",
+    "disaster": "environment",
+    "macro": "economic"
+  },
+  "category_weight": {
+    "military drone or missile strike": 1.22,
+    "military attack or action": 1.12,
+    "declaration of war or armed conflict": 1.28,
+    "nuclear threat or radioactive incident": 1.34,
+    "troop mobilization or border skirmish": 1.08,
+    "military coup or government overthrow": 1.16,
+    "naval blockade or airspace closure": 1.24,
+    "intelligence agency report or espionage": 1.0,
+    "covert operation or state-sponsored assassination": 1.2,
+    "state-sponsored cyber attack or infrastructure hack": 1.12,
+    "major data breach or institutional ransomware": 1.0,
+    "central bank interest rate decision or monetary policy": 1.08,
+    "macroeconomic data release or inflation report": 1.0,
+    "currency intervention or severe devaluation": 1.16,
+    "sudden price spike or hyperinflation warning": 1.18,
+    "massive earthquake or tsunami": 1.04,
+    "catastrophic explosion or industrial disaster": 1.08,
+    "severe extreme weather or hurricane": 0.86,
+    "global pandemic or biological hazard": 1.16,
+    "stock market crash or massive sell-off": 1.25,
+    "commodity price surge or oil market disruption": 1.14,
+    "crypto market flash crash or major exchange hack": 1.04,
+    "institutional market downgrade or recession warning": 1.12,
+    "major hedge fund collapse or massive margin call": 1.24,
+    "insider trading scandal or massive financial fraud": 1.02,
+    "international economic sanctions or trade embargo": 1.16,
+    "critical supply chain disruption or port strike": 1.1,
+    "shipping route stress or maritime chokepoint closure": 1.14,
+    "strategic mineral or semiconductor shortage": 1.08,
+    "civil unrest, massive protests or violent riots": 1.04,
+    "terrorist attack or mass casualty event": 1.22,
+    "unprecedented global crisis or major disruptive anomaly": 1.32,
+    "sudden market shock or black swan event": 1.24,
+    "generic news or daily politics": 0.22,
+    "sports, entertainment or celebrity gossip": 0.04
+  },
+  "critical_bonus": 0.08,
+  "max_keyword_boost": 0.22,
+  "keyword_diminishing_max_hits": 3,
+  "keyword_diminishing_factor": 0.35,
+  "localized_noise_multiplier": 0.25,
+  "directional_pct_regex": "(?:drop|fall|rise|gain|surge|plunge|jump|climb|crash|rally|slide|tumble|soar|spike|dip|down|up|grow|grew|grown|declin\\w*|devalu\\w*|depreciat\\w*)\\w{0,6}\\s+(\\d+(?:\\.\\d+)?)\\s*(?:%|percent)",
+  "numeric_thresholds": [
+    {
+      "min_pct": 20.0,
+      "bonus": 0.12
+    },
+    {
+      "min_pct": 10.0,
+      "bonus": 0.09
+    },
+    {
+      "min_pct": 5.0,
+      "bonus": 0.06
+    },
+    {
+      "min_pct": 1.0,
+      "bonus": 0.03
+    }
+  ],
+  "engagement_bonus": {
+    "max_bonus": 0.07,
+    "views_threshold": 15000,
+    "forwards_threshold": 75
+  },
+  "score_compression": {
+    "domain_weight_softening": 0.45,
+    "soft_cap_start": 0.8,
+    "soft_cap_max": 0.98,
+    "soft_cap_scale": 0.55
+  },
+  "context_filters": {
+    "local_incident_score_cap": 0.55,
+    "historical_reference_score_cap": 0.45,
+    "battlefield_micro_score_cap": 0.78
+  },
+  "keyword_weights": {
+    "nuclear": 0.15,
+    "radioactive": 0.135,
+    "invasion": 0.11,
+    "blockade": 0.1,
+    "missile": 0.09,
+    "terrorist": 0.1,
+    "recession": 0.095,
+    "flash crash": 0.12,
+    "strait of hormuz": 0.12,
+    "power grid": 0.1,
+    "oil refinery": 0.095,
+    "refinery": 0.08,
+    "refineries": 0.08,
+    "central bank": 0.07,
+    "inflation": 0.075,
+    "rate hike": 0.08,
+    "rate cut": 0.08,
+    "sanction": 0.07,
+    "sanctions": 0.07,
+    "devaluation": 0.09,
+    "currency collapsed": 0.1,
+    "lowest value ever": 0.1,
+    "highest recorded": 0.08
+  }
+}

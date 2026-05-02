@@ -1,0 +1,231 @@
+{
+  "danger_score_threshold": 0.85,
+  "oracle_review_threshold": 0.7,
+  "min_tag_risk_score": 0.5,
+  "emit_global_fallback": false,
+  "queue_name": "intel.global_tags",
+  "oracle_review_queue_name": "intel.oracle.review",
+  "default_expiry_minutes": 240,
+  "max_tags_per_event": 8,
+  "max_pairs_per_currency": 4,
+  "currencies": [
+    "USD",
+    "EUR",
+    "GBP",
+    "JPY",
+    "CHF",
+    "CAD",
+    "AUD",
+    "NZD",
+    "XAU",
+    "XAG"
+  ],
+  "pair_universe": [
+    "EUR/USD",
+    "GBP/USD",
+    "USD/JPY",
+    "USD/CHF",
+    "USD/CAD",
+    "AUD/USD",
+    "NZD/USD",
+    "EUR/GBP",
+    "EUR/JPY",
+    "EUR/CHF",
+    "EUR/CAD",
+    "EUR/AUD",
+    "EUR/NZD",
+    "GBP/JPY",
+    "GBP/CHF",
+    "GBP/CAD",
+    "GBP/AUD",
+    "GBP/NZD",
+    "AUD/JPY",
+    "AUD/NZD",
+    "AUD/CAD",
+    "AUD/CHF",
+    "NZD/JPY",
+    "NZD/CAD",
+    "NZD/CHF",
+    "CAD/JPY",
+    "CAD/CHF",
+    "CHF/JPY",
+    "XAU/USD",
+    "XAG/USD"
+  ],
+  "currency_synonyms": {
+    "USD": [
+      "dollar",
+      "greenback",
+      "buck",
+      "us dollar",
+      "u.s. dollar",
+      "federal reserve",
+      "treasury yields"
+    ],
+    "EUR": [
+      "euro",
+      "eurozone",
+      "ecb",
+      "european central bank"
+    ],
+    "GBP": [
+      "pound",
+      "sterling",
+      "cable",
+      "boe",
+      "bank of england"
+    ],
+    "JPY": [
+      "yen",
+      "boj",
+      "bank of japan"
+    ],
+    "CHF": [
+      "swiss franc",
+      "snb",
+      "safe haven franc"
+    ],
+    "CAD": [
+      "canadian dollar",
+      "loonie",
+      "boc",
+      "bank of canada"
+    ],
+    "AUD": [
+      "aussie dollar",
+      "rba",
+      "australian dollar"
+    ],
+    "NZD": [
+      "kiwi dollar",
+      "rbnz",
+      "new zealand dollar"
+    ],
+    "XAU": [
+      "gold",
+      "bullion",
+      "safe haven gold"
+    ],
+    "XAG": [
+      "silver"
+    ]
+  },
+  "asset_keywords": {
+    "XAU": [
+      "safe haven",
+      "nuclear threat",
+      "missile strike",
+      "invasion",
+      "major war"
+    ],
+    "XAU/USD": [
+      "gold",
+      "bullion",
+      "xau"
+    ],
+    "OIL": [
+      "oil",
+      "oil prices",
+      "refinery",
+      "refineries",
+      "pipeline",
+      "crude",
+      "opec",
+      "oil tanker",
+      "oil terminal",
+      "oil export",
+      "oil reserves"
+    ],
+    "BRENT": [
+      "brent",
+      "north sea crude"
+    ],
+    "WTI": [
+      "wti",
+      "cushing"
+    ],
+    "BTC": [
+      "crypto",
+      "bitcoin",
+      "halving",
+      "exchange hack",
+      "crypto exchange"
+    ],
+    "NQ": [
+      "artificial intelligence",
+      "tech stocks",
+      "semiconductor",
+      "nasdaq",
+      "nvidia",
+      "chipmaker"
+    ],
+    "SPX": [
+      "s&p 500",
+      "sp500",
+      "equities",
+      "stocks"
+    ]
+  },
+  "risk_off_asset_groups": {
+    "safe_haven": {
+      "XAU": "bullish",
+      "XAU/USD": "bullish",
+      "JPY": "bullish",
+      "CHF": "bullish"
+    },
+    "oil_shock": {
+      "OIL": "bullish",
+      "BRENT": "bullish",
+      "WTI": "bullish"
+    },
+    "equity_risk": {
+      "SPX": "bearish",
+      "NQ": "bearish"
+    }
+  },
+  "asset_bias_rules": {
+    "safe_haven_keywords": [
+      "war",
+      "attack",
+      "missile",
+      "invasion",
+      "nuclear",
+      "terrorist",
+      "black swan",
+      "market shock",
+      "blockade"
+    ],
+    "oil_shock_keywords": [
+      "oil",
+      "oil prices",
+      "refinery",
+      "refineries",
+      "pipeline",
+      "hormuz",
+      "opec",
+      "tanker",
+      "suez",
+      "red sea",
+      "chokepoint",
+      "oil terminal",
+      "oil export"
+    ],
+    "equity_risk_keywords": [
+      "global crisis",
+      "black swan",
+      "market shock",
+      "nuclear",
+      "invasion",
+      "recession",
+      "stock market crash",
+      "direct confrontation"
+    ]
+  },
+  "excludeKeywords": [
+    "nba",
+    "nfl",
+    "oscar",
+    "kardashian",
+    "celebrity gossip"
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "danger_score_threshold": 0.85,
+  "queue_name": "intel.global_tags",
+  "default_expiry_minutes": 240,
+  "max_tags_per_event": 8,
+  "max_pairs_per_currency": 4,
+  "currencies": [
+    "USD",
+    "EUR",
+    "GBP",
+    "JPY",
+    "CHF",
+    "CAD",
+    "AUD",
+    "NZD",
+    "XAU",
+    "XAG"
+  ],
+  "pair_universe": [
+    "EUR/USD",
+    "GBP/USD",
+    "USD/JPY",
+    "USD/CHF",
+    "USD/CAD",
+    "AUD/USD",
+    "NZD/USD",
+    "EUR/GBP",
+    "EUR/JPY",
+    "EUR/CHF",
+    "EUR/CAD",
+    "EUR/AUD",
+    "EUR/NZD",
+    "GBP/JPY",
+    "GBP/CHF",
+    "GBP/CAD",
+    "GBP/AUD",
+    "GBP/NZD",
+    "AUD/JPY",
+    "AUD/NZD",
+    "AUD/CAD",
+    "AUD/CHF",
+    "NZD/JPY",
+    "NZD/CAD",
+    "NZD/CHF",
+    "CAD/JPY",
+    "CAD/CHF",
+    "CHF/JPY",
+    "XAU/USD",
+    "XAG/USD"
+  ],
+  "currency_synonyms": {
+    "USD": [
+      "dollar",
+      "greenback",
+      "buck",
+      "us dollar",
+      "federal reserve",
+      "fed",
+      "treasury yields"
+    ],
+    "EUR": [
+      "euro",
+      "eurozone",
+      "ecb",
+      "european central bank"
+    ],
+    "GBP": [
+      "pound",
+      "sterling",
+      "cable",
+      "boe",
+      "bank of england"
+    ],
+    "JPY": [
+      "yen",
+      "boj",
+      "bank of japan"
+    ],
+    "CHF": [
+      "swiss franc",
+      "snb",
+      "safe haven franc"
+    ],
+    "CAD": [
+      "canadian dollar",
+      "loonie",
+      "boc",
+      "bank of canada"
+    ],
+    "AUD": [
+      "aussie dollar",
+      "rba",
+      "australian dollar"
+    ],
+    "NZD": [
+      "kiwi dollar",
+      "rbnz",
+      "new zealand dollar"
+    ],
+    "XAU": [
+      "gold",
+      "bullion",
+      "safe haven gold"
+    ],
+    "XAG": [
+      "silver"
+    ]
+  },
+  "asset_keywords": {
+    "XAU": [
+      "war",
+      "missile",
+      "strike",
+      "geopolitics",
+      "geopolitical",
+      "ukraine",
+      "middle east",
+      "middle-east",
+      "iran",
+      "nuclear",
+      "safe haven"
+    ],
+    "XAU/USD": [
+      "gold",
+      "bullion",
+      "xau"
+    ],
+    "OIL": [
+      "refinery",
+      "pipeline",
+      "crude",
+      "opec",
+      "oil tanker",
+      "oil terminal",
+      "oil export",
+      "oil reserves"
+    ],
+    "BRENT": [
+      "brent",
+      "north sea crude"
+    ],
+    "WTI": [
+      "wti",
+      "cushing"
+    ],
+    "BTC": [
+      "crypto",
+      "bitcoin",
+      "halving",
+      "exchange hack",
+      "crypto exchange"
+    ],
+    "NQ": [
+      "ai",
+      "tech",
+      "science",
+      "semiconductor",
+      "nasdaq",
+      "nvidia",
+      "chipmaker"
+    ],
+    "SPX": [
+      "s&p 500",
+      "sp500",
+      "equities",
+      "stocks"
+    ]
+  },
+  "risk_off_assets": {
+    "XAU": "bullish",
+    "XAU/USD": "bullish",
+    "OIL": "bullish",
+    "BRENT": "bullish",
+    "WTI": "bullish",
+    "NQ": "bearish",
+    "SPX": "bearish",
+    "JPY": "bullish",
+    "CHF": "bullish"
+  },
+  "asset_bias_rules": {
+    "risk_off_keywords": [
+      "war",
+      "attack",
+      "missile",
+      "strike",
+      "invasion",
+      "nuclear",
+      "terrorist",
+      "explosion",
+      "black swan",
+      "market shock"
+    ]
+  },
+  "excludeKeywords": [
+    "nba",
+    "nfl",
+    "oscar",
+    "kardashian",
+    "celebrity gossip"
+  ]
+}
