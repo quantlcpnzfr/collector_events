@@ -2,7 +2,9 @@ import asyncio
 import json
 import logging
 from dataclasses import asdict
+from pathlib import Path 
 
+from collector_events.processors.event_processor import _CONFIG_DIR
 from forex_shared.env_config_manager import EnvConfigManager
 EnvConfigManager.startup() 
 
@@ -56,16 +58,17 @@ class TestOrchestrator(IntelOrchestrator):
 
 async def run_test_pipeline():
     # Configurações do Teste
-    INPUT_JSON = "mock_intel_items_big.json"
-    OUTPUT_JSON = "mock_intel_items_big_process_result.json"
-    INTERVALO_SEGUNDOS = 1  # Dispara a cada 1 segundo
+    
+    INPUT_JSON = Path(__file__).parent / "mock_intel_items_big.json"
+    OUTPUT_JSON = Path(__file__).parent / "mock_intel_items_big_process_result.json"
+    INTERVALO_SEGUNDOS = 5  # Dispara a cada 5 segundos
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     print(f"\n🚀 Iniciando Pipeline de NLP Isolada (Intervalo: {INTERVALO_SEGUNDOS}s)...\n")
 
     orch = TestOrchestrator(
-        input_filepath=INPUT_JSON, 
-        output_filepath=OUTPUT_JSON, 
+        input_filepath=INPUT_JSON.as_posix(), 
+        output_filepath=OUTPUT_JSON.as_posix(), 
         interval_seconds=INTERVALO_SEGUNDOS
     )
     

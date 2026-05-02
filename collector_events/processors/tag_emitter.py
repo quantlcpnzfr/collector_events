@@ -4,7 +4,7 @@ from datetime import datetime, timezone, timedelta
 from forex_shared.domain.intel import GlobalTag, IntelItem
 from forex_shared.providers.mq.rabbitmq_provider_async import MQProviderAsync # Seu provider de MQimpor
 import json
-
+from pathlib import Path
 
 log = logging.getLogger("GlobalTagEmitter")
 

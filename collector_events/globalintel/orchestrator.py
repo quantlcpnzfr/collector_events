@@ -30,6 +30,8 @@ from collector_events.globalintel.extractor_factory import (
     ScheduleEntry,
 )
 from collector_events.globalintel.global_tag_manager import GlobalTagManager
+from collector_events.processors.tag_emitter import GlobalTagEmitter
+from collector_events.processors import EventProcessor
 
 from forex_shared.logging.get_logger import get_logger
 from forex_shared.logging.loggable import Loggable
@@ -59,12 +61,14 @@ class IntelOrchestrator(Loggable):
         on_result: Callable[[ExtractionResult], Awaitable[None]] | None = None,
     ) -> None:
         if config is None:
-            config = GlobalIntelConfig()
+            config = GlobalIntelConfig() # type: ignore
         self._config = config
         self._mq: MQProviderAsync | None = mq
         self._redis: RedisProvider | None = None
         self._cache: IntelCache | None = None
         self._tag_manager: GlobalTagManager | None = None
+        
+        self._tag_emitter = GlobalTagEmitter(redis_provider=self._cache, mq=self._mq) if self._mq else None # type: ignore
         
         # Instancia o scheduler APScheduler para rodar 
         # os extratores em background
@@ -89,7 +93,7 @@ class IntelOrchestrator(Loggable):
     def _get_redis_url(self) -> str:
         if isinstance(self._config, GlobalIntelConfig):
             return self._config.REDIS_URL
-        return self._config.redis_url
+        return self._config.redis_url # type: ignore
 
     # ── MQ helpers ───────────────────────────────────────────────────
 
@@ -166,7 +170,7 @@ class IntelOrchestrator(Loggable):
                         item.extra["gliner_tactical"] = processed.features.get("gliner_graph", {})
                     
                     # ⚡ 4. GATILHO DE GLOBAL TAG (Se o score for crítico, gera o sinal de trading)
-                    await self._tag_emitter.emit_if_critical(item)
+                    await self._tag_emitter.emit_if_critical(item)  # type: ignore
                         
                 except Exception as e:
                     self.log.error("Falha na IA para o item %s: %s", item.id, e)
@@ -226,7 +230,7 @@ class IntelOrchestrator(Loggable):
 
         try:
             # 1. NETWORK I/O (Baixa os dados crus)
-            result = await extractor.extract(session)
+            result = await extractor.run(session)
 
             # 2. IA / ENRIQUECIMENTO (Aplica NLP sem bloquear o event loop) e 3. REDIS I/O
             await self._enrich_and_store(result, extractor)

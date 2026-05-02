@@ -1,0 +1,366 @@
+[
+    {
+        "id": "4cbb823f-f8f0-4ce4-9eb1-86cb5d079a62",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Trump said his mother was a mistress of the British royal family and watched it on TV whenever a cer...",
+        "url": "",
+        "body": "Trump said his mother was a mistress of the British royal family and watched it on TV whenever a ceremony related to the royal family was held. He added that his mother repeatedly told him, referring to royal ceremonies: \"Baby, Donald is so beautiful\", and stressed that she really loved the royal family.",
+        "published_at": "2026-04-28 20:51",
+        "ts": "2026-05-01T21:34:18.109833Z",
+        "fetched_at": "2026-05-01T21:34:18.110078Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 271667,
+            "forwards": 1118,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.17754869163036346,
+            "impact_category": "sports, entertainment or celebrity gossip",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.9136559963226318,
+                "inferred_category": "sports, entertainment or celebrity gossip",
+                "category_confidence": 0.35509738326072693,
+                "entities": [
+                    {
+                        "text": "Trump",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "British",
+                        "label": "NORP"
+                    },
+                    {
+                        "text": "Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "British",
+                        "label": "NORP"
+                    },
+                    {
+                        "text": "Baby, Donald",
+                        "label": "WORK_OF_ART"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "18f62407-94ca-4832-9ed0-e901e05f17ff",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Trump warned the Islamic Republic: You don't know how to sign a non-binding agreement, you better be...",
+        "url": "",
+        "body": "Trump warned the Islamic Republic: You don't know how to sign a non-binding agreement, you better be smart early. Donald Trump, the president of the United States, issued a warning and threatening message to the Islamic Republic on Wednesday, the 9th of July. Trump posted a photo of himself with a gun and a picture of multiple explosions in the background, writing: \"Iran can't pull itself together. They don't know how to sign a non-binding agreement.",
+        "published_at": "2026-04-29 14:37",
+        "ts": "2026-05-01T21:34:18.110209Z",
+        "fetched_at": "2026-05-01T21:34:18.110215Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 155712,
+            "forwards": 291,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.05567590147256851,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.5159810781478882,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.11135180294513702,
+                "entities": [
+                    {
+                        "text": "Trump",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "the Islamic Republic:",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "the Islamic Republic:",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Donald Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "the United States",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "the Islamic Republic",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Wednesday",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "the 9th of July",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Trump",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "4cbe67bb-9eab-4865-8d91-64dc8d4ad072",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Scott Bassent, US Treasury Secretary, wrote on the social network X that following the US president'...",
+        "url": "",
+        "body": "Scott Bassent, US Treasury Secretary, wrote on the social network X that following the US president's \"maximum pressure\" policy, inflation rates in Iran doubled and the value of the country's national currency declined rapidly. Mr Bassent says the measures are targeting and sanctioning Iran's \"extreme economic crisis\" program, Iran's shadow banking infrastructure internationally, its access to crypto-currencies, hidden transport fleets, arms supply networks, the financing of proxy groups in the region, as well as Chinese independent refineries that support Iran's oil trade.",
+        "published_at": "2026-04-29 14:38",
+        "ts": "2026-05-01T21:34:18.110325Z",
+        "fetched_at": "2026-05-01T21:34:18.110331Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 147616,
+            "forwards": 124,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.645735928416252,
+            "impact_category": "macroeconomic data release or inflation report",
+            "nlp_features": {
+                "sentiment": "negative",
+                "sentiment_score": 0.8100683689117432,
+                "inferred_category": "macroeconomic data release or inflation report",
+                "category_confidence": 0.6149865984916687,
+                "entities": [
+                    {
+                        "text": "Scott Bassent",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "US Treasury",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "US",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Scott Bassent",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "US Treasury",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "US",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Bassent",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [
+                        "shadow banking infrastructure"
+                    ],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [
+                    "shadow banking infrastructure"
+                ],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    },
+    {
+        "id": "641db5d9-834b-44dd-a139-8c6e0d10a420",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "The government news agency Esna reported that the dollar's free-market price was recorded today at 1...",
+        "url": "",
+        "body": "The government news agency Esna reported that the dollar's free-market price was recorded today at 181,100 tomans. This is the highest recorded dollar price and the national currency of Iran has recorded its lowest value ever. The dollar has grown by 120 percent over ten months and more than doubled. @VahidOOnLine @VahidOnline",
+        "published_at": "2026-04-29 14:38",
+        "ts": "2026-05-01T21:34:18.110433Z",
+        "fetched_at": "2026-05-01T21:34:18.110438Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 151443,
+            "forwards": 455,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.1158229187130928,
+            "impact_category": "macroeconomic data release or inflation report",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.4828837513923645,
+                "inferred_category": "macroeconomic data release or inflation report",
+                "category_confidence": 0.2316458374261856,
+                "entities": [
+                    {
+                        "text": "Esna",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "today",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "1",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "Esna",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "today",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "181,100",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "120 percent",
+                        "label": "PERCENT"
+                    },
+                    {
+                        "text": "ten months",
+                        "label": "DATE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": []
+                }
+            },
+            "domain_weight": 1.0,
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": []
+            }
+        }
+    }
+]
