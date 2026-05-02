@@ -1,5 +1,5 @@
 {
-  "threshold": 0.75,
+  "danger_score_threshold": 0.85,
   "queue_name": "intel.global_tags",
   "default_expiry_minutes": 240,
   "max_tags_per_event": 8,

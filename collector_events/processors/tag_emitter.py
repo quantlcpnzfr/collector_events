@@ -207,7 +207,12 @@ class GlobalTagEmitter:
                 loaded = json.load(f)
 
             self.config = self._normalize_config(loaded)
-            self.threshold = float(self.config.get("threshold", self.threshold))
+            self.threshold = float(
+                self.config.get(
+                    "danger_score_threshold",
+                    self.config.get("threshold", self.threshold)
+                )
+            )
             self.queue_name = str(self.config.get("queue_name", self.queue_name))
             self.default_expiry_minutes = int(
                 self.config.get("default_expiry_minutes", self.default_expiry_minutes)
@@ -424,6 +429,17 @@ class GlobalTagEmitter:
 
         return self._dedupe_keep_order(currencies)
 
+    def _keyword_matches(self, text: str, keyword: str) -> bool:
+        kw = keyword.lower().strip()
+
+        if len(kw) <= 3:
+            return re.search(rf"\b{re.escape(kw)}\b", text) is not None
+
+        if " " in kw or "-" in kw:
+            return kw in text
+
+        return re.search(rf"\b{re.escape(kw)}\b", text) is not None
+
     def _extract_keyword_assets(self, text: str) -> list[tuple[str, float, str]]:
         lower = text.lower()
         results: list[tuple[str, float, str]] = []
@@ -433,7 +449,7 @@ class GlobalTagEmitter:
                 kw = str(keyword).lower().strip()
                 if not kw:
                     continue
-                if kw in lower:
+                if self._keyword_matches(lower, kw):
                     results.append((asset, 0.80, f"keyword:{kw}"))
                     break
 
