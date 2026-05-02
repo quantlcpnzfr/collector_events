@@ -150,16 +150,23 @@ class IntelOrchestrator(Loggable):
         if result.items:
             for item in result.items:
                 try:
+                    
+                    # 1. IA Processa (NLP) para extrair features, inferir categorias 
+                    # e calcular o score de risco:
                     # Envia a carga pesada de NLP para uma thread, mantendo o asyncio livre
                     processed = await asyncio.to_thread(self._processor.process_item, item)
                     
+                    # 2. Injeta resultado do Item: 
                     # Injeta o Score e Categorias no item antes de ir para o banco
                     item.extra["danger_score"] = processed.danger_score
                     item.extra["impact_category"] = processed.impact_category
                     
-                    # Opcional: Dados táticos do GLiNER para algoritmos avançados
+                    # ⚡ 3. DADOS TÁTICOS DO GLiNER PARA ALGORITMOS AVANÇADOS
                     if processed.features:
                         item.extra["gliner_tactical"] = processed.features.get("gliner_graph", {})
+                    
+                    # ⚡ 4. GATILHO DE GLOBAL TAG (Se o score for crítico, gera o sinal de trading)
+                    await self._tag_emitter.emit_if_critical(item)
                         
                 except Exception as e:
                     self.log.error("Falha na IA para o item %s: %s", item.id, e)

@@ -1,0 +1,202 @@
+collector_events/
+├── events_extractors/
+│   ├── Investor_Presentation_Log.md
+│   ├── Investor_Presentation_Log_Small.md
+│   ├── __init__.py
+│   ├── osint_extractor.log
+│   ├── osint_extractor.py
+│   ├── osint_extractor.stderr.log
+│   ├── osint_extractor.stdout.log
+│   ├── osint_log_cleaner.py
+│   ├── osint_log_translator-batch.py
+│   ├── osint_log_translator-process-pool.py
+│   ├── osint_log_translator-ray.py
+│   ├── osint_log_translator-threadpool.py
+│   ├── osint_log_translator.py
+│   ├── osint_log_translator_parallel_common.py
+│   ├── osint_telegram_channels.runtime.json
+│   ├── ray_telegram_stealth_actor.py
+│   ├── telegram_osint_dashboard-big.log
+│   ├── telegram_osint_dashboard-big_cleaned.log
+│   ├── telegram_osint_dashboard.log
+│   ├── telegram_osint_dashboard_cleaned-0.log
+│   ├── telegram_osint_dashboard_cleaned.log
+│   ├── telegram_relay.py
+│   ├── telegram_relay_ray.py
+│   ├── telegram_relay_ray_bkp.py
+│   ├── telegram_session.env
+│   ├── telegram_session_auth.py
+│   ├── translation_engine.env
+│   └── translation_engine_ray.py
+├── extractors/
+│   ├── __init__.py
+│   ├── factory.py
+│   ├── huggingface/
+│   │   ├── __init__.py
+│   │   ├── base_provider.py
+│   │   ├── bis_central_bank_speeches_extractor.py
+│   │   ├── bloomberg_financial_news_extractor.py
+│   │   ├── central_bank_communications_extractor.py
+│   │   ├── finance_tasks_extractor.py
+│   │   ├── forex_daily_price_extractor.py
+│   │   ├── forex_factory_calendar_extractor.py
+│   │   ├── forex_usdjpy_extractor.py
+│   │   ├── gtfintechlab_central_bank_extractors.py
+│   │   ├── ohlcv_1m_forex_extractor.py
+│   │   ├── sentiment_extractor.py
+│   │   ├── stock_market_tweets_extractor.py
+│   │   ├── twitter_financial_news_topic_extractor.py
+│   │   └── yahoo_finance_extractor.py
+│   └── provider.py
+├── full_sources.md
+├── globalintel/
+│   ├── __init__.py
+│   ├── advisories/
+│   │   ├── __init__.py
+│   │   └── advisory.py
+│   ├── base.py
+│   ├── cache.py
+│   ├── config/
+│   │   ├── __init__.py
+│   │   ├── advisories.json
+│   │   ├── conflict.json
+│   │   ├── cyber.json
+│   │   ├── economic.json
+│   │   ├── environment.json
+│   │   ├── market.json
+│   │   ├── reference.json
+│   │   ├── sanctions.json
+│   │   ├── social.json
+│   │   ├── supply_chain.json
+│   │   └── trade.json
+│   ├── config_env.py
+│   ├── conflict/
+│   │   ├── __init__.py
+│   │   ├── acled.py
+│   │   ├── displacement.py
+│   │   ├── gdelt_intel.py
+│   │   ├── gdelt_unrest.py
+│   │   ├── ucdp.py
+│   │   └── unrest.py
+│   ├── cyber/
+│   │   ├── __init__.py
+│   │   └── cyber_threats.py
+│   ├── economic/
+│   │   ├── __init__.py
+│   │   ├── bis.py
+│   │   ├── bls.py
+│   │   ├── calendar.py
+│   │   ├── ecb.py
+│   │   ├── energy.py
+│   │   ├── prices.py
+│   │   └── world_bank.py
+│   ├── environment/
+│   │   ├── __init__.py
+│   │   ├── earthquakes.py
+│   │   ├── eonet.py
+│   │   ├── fires.py
+│   │   └── gdacs.py
+│   ├── extractor_factory.py
+│   ├── feeds/
+│   │   ├── __init__.py
+│   │   └── rss_extractor.py
+│   ├── global_tag_manager.py
+│   ├── intel_dump.jsonl
+│   ├── intel_store.py
+│   ├── main.py
+│   ├── main_test.py
+│   ├── market/
+│   │   ├── __init__.py
+│   │   ├── commodities.py
+│   │   ├── cot.py
+│   │   ├── country_index.py
+│   │   ├── crypto.py
+│   │   ├── etf.py
+│   │   ├── fear_greed.py
+│   │   ├── fx_rates.py
+│   │   ├── gulf.py
+│   │   ├── prediction_markets.py
+│   │   └── stocks.py
+│   ├── mock_intel_items_big.json
+│   ├── orchestrator.py
+│   ├── reference/
+│   │   └── __init__.py
+│   ├── sanctions/
+│   │   ├── __init__.py
+│   │   └── ofac.py
+│   ├── social/
+│   │   ├── __init__.py
+│   │   ├── reddit.py
+│   │   └── telegram.py
+│   ├── supply_chain/
+│   │   ├── __init__.py
+│   │   ├── chokepoints.py
+│   │   ├── minerals.py
+│   │   ├── shipping_rates.py
+│   │   └── shipping_stress.py
+│   ├── tagging/
+│   │   ├── __init__.py
+│   │   ├── asset_resolver.py
+│   │   ├── llm_enricher.py
+│   │   ├── reference_data.py
+│   │   └── tag_manager.py
+│   ├── test_extractor.py
+│   ├── trade/
+│   │   ├── __init__.py
+│   │   ├── comtrade.py
+│   │   ├── tariffs.py
+│   │   └── wto.py
+│   └── utils.py
+├── images/
+│   ├── GlobalIntelligence-1.png
+│   └── GlobalIntelligence-2.png
+├── nlp/
+│   ├── __init__.py
+│   ├── nlp_engine-new.py
+│   └── nlp_engine.py
+├── osint/
+├── processors/
+│   ├── __init__.py
+│   ├── config/
+│   │   ├── keywords.json
+│   │   └── scoring.json
+│   ├── country_dictionary/
+│   │   ├── country-codes.json
+│   │   ├── country-names.json
+│   │   ├── country_dict_generator.py
+│   │   └── unified-countries_main.json
+│   ├── country_resolver.py
+│   ├── currency_strength_calculator.py
+│   ├── event_processor.py
+│   ├── event_processor_current copy.py
+│   ├── event_processor_old.py
+│   └── prediction_tags.json
+├── scrapers/
+│   ├── __init__.py
+│   ├── economic_calendar.py
+│   ├── instagram_scraper.py
+│   ├── news_scraper.py
+│   └── twitter_scraper.py
+├── share/
+│   ├── __init__.py
+│   ├── server.py
+│   ├── snapshots.py
+│   └── tokens.py
+├── sources/
+│   ├── advisory_sources.json
+│   ├── ai_prompts.json
+│   ├── all_sources.json
+│   ├── news_feeds_client.json
+│   ├── news_feeds_server.json
+│   ├── rss_allowed_domains.json
+│   ├── seed_endpoint_sources.json
+│   ├── sites.json
+│   ├── social_sources.json
+│   ├── source_manifest.json
+│   ├── source_metadata.json
+│   ├── sources.zip
+│   ├── telegram_channels.json
+│   └── telegram_relay_python_guide.json
+├── structure.txt
+├── telemetry.py
+└── worldmonitor_sources.md
