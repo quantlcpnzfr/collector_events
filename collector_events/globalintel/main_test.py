@@ -61,7 +61,7 @@ async def run_test_pipeline():
     
     INPUT_JSON = Path(__file__).parent / "mock_intel_items_big.json"
     OUTPUT_JSON = Path(__file__).parent / "mock_intel_items_big_process_result.json"
-    INTERVALO_SEGUNDOS = 5  # Dispara a cada 5 segundos
+    INTERVALO_SEGUNDOS = 8  # Dispara a cada 8 segundos
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
     print(f"\n🚀 Iniciando Pipeline de NLP Isolada (Intervalo: {INTERVALO_SEGUNDOS}s)...\n")

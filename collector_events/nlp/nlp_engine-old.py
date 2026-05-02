@@ -8,6 +8,7 @@ Agora inclui GLiNER para extração tática e filtro de Cisnes Brancos.
 import logging
 import spacy
 from typing import Dict, Any, List
+from transformers import pipeline
 from gliner import GLiNER  
 from transformers import AutoTokenizer, pipeline
 
@@ -35,16 +36,13 @@ class LocalNLPEngine:
         # - Melhor discriminação entre categorias semanticamente próximas (crítico para forex signals)
         # use_fast=False: ativa byte fallback do sentencepiece para texto multilíngue (árabe, russo, CJK)
         # Limite HARD de 512 tokens nas positional embeddings — sliding window implementada em _classify_with_sliding_window
-        
-        _ZERO_SHOT_MODEL = "MoritzLaurer/deberta-v3-base-zeroshot-v2.0"
-        
         self._deberta_tokenizer = AutoTokenizer.from_pretrained(
-            _ZERO_SHOT_MODEL,
-            use_fast=True 
+            "MoritzLaurer/deberta-v3-large-zeroshot-v2.0",
+            use_fast=False
         )
         self.classifier = pipeline(
             "zero-shot-classification",
-            model=_ZERO_SHOT_MODEL,
+            model="MoritzLaurer/deberta-v3-large-zeroshot-v2.0",
             tokenizer=self._deberta_tokenizer,
             device=-1
         )
@@ -143,7 +141,7 @@ class LocalNLPEngine:
 
         # Texto curto: inferência direta, sem overhead de chunking
         if len(tokens) <= self._DEBERTA_CHUNK_TOKENS:
-            return self.classifier(text, self.categories, multi_label=True)
+            return self.classifier(text, self.categories, multi_label=False)
 
         # Gera chunks com overlap
         chunks = []
@@ -174,37 +172,38 @@ class LocalNLPEngine:
             "labels": [label for label, _ in sorted_pairs],
             "scores": [score for _, score in sorted_pairs],
             "sequence": text,
-            "chunks_processed": len(chunks),
+            "chunks_processed": len(chunks),  # útil para debug/logging
         }
 
     def extract_features(self, text: str) -> Dict[str, Any]:
         if not text or len(text.strip()) < 5:
-            return {
-                "sentiment": "neutral",
-                "sentiment_score": 0.0,
-                "inferred_category": "generic",
-                "category_confidence": 0.0,
-                "entities": [],
-                "gliner_graph": {}
-            }
+            return {"sentiment": "neutral", "sentiment_score": 0.0, "inferred_category": "generic", "entities": [], "gliner_graph": {}}
+
+        import textwrap
+        # Truncamento inteligente (não corta palavras no meio como text[:500])
+        target_text = textwrap.shorten(text, width=500, placeholder="...")
 
         try:
-            # 1. FinBERT — truncation=True porque o modelo aceita no máximo 512 tokens
-            # e sentimento financeiro é capturado bem no início do texto
-            sentiment_res = self.finbert(text, truncation=True)[0]
+            # 1. FinBERT
+            sentiment_res = self.finbert(
+                target_text, 
+                truncation=False)[0]
+            
+            # 2. DeBERTa
+            context_res = self.classifier(
+                target_text, 
+                self.categories, 
+                truncation=False)
+            
+            top_category = context_res['labels'][0]
+            confidence = context_res['scores'][0]
 
-            # 2. DeBERTa via sliding window — SEM truncação, processa texto completo
-            # independente do tamanho (Telegram, RSS, páginas web, artigos longos)
-            context_res = self._classify_with_sliding_window(text)
-            top_category = context_res["labels"][0]
-            confidence = context_res["scores"][0]
-
-            # 3. spaCy NER — sem limite de tamanho nativo
-            doc = self.nlp(text)
+            # 3. spaCy NER
+            doc = self.nlp(target_text)
             entities = [{"text": ent.text, "label": ent.label_} for ent in doc.ents]
 
-            # 4. GLiNER — sem limite de tamanho nativo
-            gliner_raw = self.gliner.predict_entities(text, self.gliner_labels)
+            # 4. GLiNER (A Mágica Tática)
+            gliner_raw = self.gliner.predict_entities(target_text, self.gliner_labels)
             
             # Organiza os resultados do GLiNER num dicionário limpo para o EventProcessor
             gliner_graph = {label: [] for label in self.gliner_labels}
@@ -212,21 +211,14 @@ class LocalNLPEngine:
                 gliner_graph[ent["label"]].append(ent["text"])
 
             return {
-                "sentiment": sentiment_res["label"],
-                "sentiment_score": sentiment_res["score"],
+                "sentiment": sentiment_res['label'],
+                "sentiment_score": sentiment_res['score'],
                 "inferred_category": top_category,
                 "category_confidence": confidence,
                 "entities": entities,
-                "gliner_graph": gliner_graph,
-                "chunks_processed": context_res.get("chunks_processed", 1),
+                "gliner_graph": gliner_graph # <- NOVO OUTPUT
             }
         except Exception as e:
             log.error(f"Erro no Motor NLP: {e}")
-            return {
-                "sentiment": "neutral",
-                "sentiment_score": 0.0,
-                "inferred_category": "generic",
-                "category_confidence": 0.0,
-                "entities": [],
-                "gliner_graph": {}
-            }
+            return {"sentiment": "neutral", "sentiment_score": 0.0, "inferred_category": "generic", "entities": [], "gliner_graph": {}}
+        

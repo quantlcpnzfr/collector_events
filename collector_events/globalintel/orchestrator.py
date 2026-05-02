@@ -67,8 +67,7 @@ class IntelOrchestrator(Loggable):
         self._redis: RedisProvider | None = None
         self._cache: IntelCache | None = None
         self._tag_manager: GlobalTagManager | None = None
-        
-        self._tag_emitter = GlobalTagEmitter(redis_provider=self._cache, mq=self._mq) if self._mq else None # type: ignore
+        self._tag_emitter: GlobalTagEmitter | None = None
         
         # Instancia o scheduler APScheduler para rodar 
         # os extratores em background
@@ -108,9 +107,24 @@ class IntelOrchestrator(Loggable):
         if self._mq is None:
             self._mq = MQFactory.create_async_from_env()
         await self._mq.connect()
+        
         redis_provider = await self._get_redis_provider()
-        self._tag_manager = GlobalTagManager(redis_provider=redis_provider, mq=self._mq)
-        self.log.info("IntelOrchestrator MQ connected; GlobalTagManager ready")
+        
+        # Inicializa MQ apenas se houver configuração
+        if self._mq:
+            self._tag_emitter = GlobalTagEmitter(mq_provider=self._mq)
+        else:
+            self.log.warning("RabbitMQ não connectado. TagEmitter operando em modo SILENT.")
+            self._tag_emitter = None
+        self.log.info("GlobalTagEmitter conectado e pronto.")
+
+        if self._mq:
+            self._tag_manager = GlobalTagManager(redis_provider=redis_provider, mq=self._mq)
+        else:
+            self.log.warning("RabbitMQ não connectado. TagManager operando em modo SILENT.")
+            self._tag_manager = None
+        
+        self.log.info("IntelOrchestrator MQ connected; GlobalTagManager and GlobalTagEmitter ready.")
 
     async def disconnect_mq(self) -> None:
         """Gracefully disconnect MQ provider."""
@@ -170,7 +184,10 @@ class IntelOrchestrator(Loggable):
                         item.extra["gliner_tactical"] = processed.features.get("gliner_graph", {})
                     
                     # ⚡ 4. GATILHO DE GLOBAL TAG (Se o score for crítico, gera o sinal de trading)
-                    await self._tag_emitter.emit_if_critical(item)  # type: ignore
+                    if self._tag_emitter:
+                        await self._tag_emitter.emit_if_critical(item)
+                    else:
+                        self.log.warning("TagEmitter não inicializado. Ignorando emissão de tags.")
                         
                 except Exception as e:
                     self.log.error("Falha na IA para o item %s: %s", item.id, e)
@@ -245,13 +262,22 @@ class IntelOrchestrator(Loggable):
             return ExtractionResult(source=extractor.SOURCE, domain=extractor.DOMAIN, error=str(e))
         finally:
             if own_session:
-                await session.close()
+                try: 
+                    await session.close()
+                except (asyncio.CancelledError, Exception):
+                    pass
 
     # ── Scheduler loop ───────────────────────────────────────────────
 
     async def start_scheduler(self) -> None:
         """Start the APScheduler background loop — one job per extractor."""
         now = datetime.now(timezone.utc)
+        
+        try: 
+            if hasattr(self, 'connect_mq'):
+                await self.connect_mq()
+        except Exception as e:
+            self.log.error(f"Erro ao conectar MQ: {e}. Continuando sem MQ.")
 
         for index, entry in enumerate(self._schedule):
             self._scheduler.add_job(
