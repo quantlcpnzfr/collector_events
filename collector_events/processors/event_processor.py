@@ -700,7 +700,7 @@ class EventProcessor(Loggable):
         trade_score = mkt * route * dir_conf * (1.0 - noise)
         oracle_score = scores.get("oracle_review_score", 0.0)
         
-        emit = trade_score >= 0.75
+        emit = trade_score >= 0.65
         oracle = oracle_score >= 0.60 and not emit
         
         reason = "below_thresholds"

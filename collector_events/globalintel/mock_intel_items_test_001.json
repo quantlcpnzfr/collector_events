@@ -1,0 +1,1207 @@
+[
+        {
+        "id": "bd598fad-cfb5-5ac2-9bdd-fe398e518e2d",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Trump said his mother was a mistress of the British royal family and watched it on TV whenever a cer...",
+        "url": "",
+        "body": "Trump said his mother was a mistress of the British royal family and watched it on TV whenever a ceremony related to the royal family was held. He added that his mother repeatedly told him, referring to royal ceremonies: \"Baby, Donald is so beautiful\", and stressed that she really loved the royal family.",
+        "published_at": "2026-04-28 20:51",
+        "ts": "2026-05-03T05:41:04.277397Z",
+        "fetched_at": "2026-05-03T05:41:04.277397Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [
+            "US"
+        ],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 271667,
+            "forwards": 1118,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.012648000000000001,
+            "raw_danger_score": 0.012648000000000001,
+            "risk_bucket": "low",
+            "saturation": false,
+            "impact_category": "sports, entertainment or celebrity gossip",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.9136559963226318,
+                "inferred_category": "sports, entertainment or celebrity gossip",
+                "category_confidence": 0.19857542216777802,
+                "entities": [
+                    {
+                        "text": "Trump",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "British",
+                        "label": "NORP"
+                    },
+                    {
+                        "text": "Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Baby, Donald",
+                        "label": "WORK_OF_ART"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": [],
+                    "forex signal": [],
+                    "currency pair": [],
+                    "forex pair": [],
+                    "financial ticker": [],
+                    "currency mentioned": [],
+                    "central bank": [],
+                    "economic indicator": [],
+                    "monetary policy signal": [],
+                    "geopolitical event": [],
+                    "political leader": [
+                        "Trump"
+                    ],
+                    "commodity price action": [],
+                    "fiat currency": [],
+                    "market sentiment": [],
+                    "fiscal policy change": [],
+                    "strategic infrastructure": [],
+                    "institutional actor": []
+                },
+                "chunks_processed": 1,
+                "gliner_chunks_processed": 1,
+                "candidate_labels_used": 15,
+                "labels_set": "medium",
+                "nlp_timings": {
+                    "finbert": 0.9825975999992806,
+                    "zero_shot": 8.253002999997989,
+                    "spacy": 0.0653585000000021,
+                    "gliner": 0.6728866000012204
+                },
+                "zero_shot_labels": [
+                    "sports, entertainment or celebrity gossip",
+                    "military impact, cost or investigation report",
+                    "military production or defense cooperation report",
+                    "military organization or defense capability report",
+                    "military threat or escalation rhetoric",
+                    "unprecedented global crisis or major disruptive anomaly",
+                    "generic news or daily politics",
+                    "diplomatic negotiation or ceasefire agreement",
+                    "military propaganda or official wartime statement",
+                    "sudden market shock or black swan event",
+                    "international economic sanctions or trade embargo",
+                    "commodity price surge or oil market disruption",
+                    "macroeconomic data release or inflation report",
+                    "battlefield tactical report",
+                    "central bank interest rate decision or monetary policy"
+                ],
+                "zero_shot_scores": [
+                    0.19857542216777802,
+                    0.09706659615039825,
+                    0.007828287780284882,
+                    0.0025853647384792566,
+                    0.0004987522261217237,
+                    0.0003682775131892413,
+                    0.00022779058781452477,
+                    0.0001728976785670966,
+                    0.0001718367711873725,
+                    6.913413380971178e-05,
+                    6.8989276769571e-05,
+                    5.167312338016927e-05,
+                    4.719317439594306e-05,
+                    3.879687574226409e-05,
+                    2.7238516850047745e-05
+                ],
+                "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
+                "original_inferred_category": "sports, entertainment or celebrity gossip",
+                "original_category_confidence": 0.19857542216777802,
+                "category_corrections": []
+            },
+            "domain_weight": 1.12,
+            "score_breakdown": {
+                "version": "balanced_hard_quant_v3_multidimensional",
+                "inputs": {
+                    "category": "sports, entertainment or celebrity gossip",
+                    "original_category": "sports, entertainment or celebrity gossip",
+                    "confidence": 0.19857542216777802,
+                    "original_confidence": 0.19857542216777802,
+                    "sentiment": "neutral",
+                    "severity": "unknown",
+                    "severity_key": "",
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
+                },
+                "category_corrections": [],
+                "context_filters": {
+                    "historical_reference": false,
+                    "local_incident": false,
+                    "battlefield_micro": false,
+                    "self_promotion": false,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
+                    "macro_signal": false,
+                    "strategic_signal": false,
+                    "impact_report": false
+                },
+                "gliner_details": {
+                    "macro_target": false,
+                    "strategic_infra": false,
+                    "strategic_raw": false,
+                    "kinetic": false,
+                    "weapon": false,
+                    "military_actor": false,
+                    "geopolitical": false,
+                    "central_bank": false,
+                    "economic_indicator": false,
+                    "market_sentiment": false,
+                    "commodity_action": false,
+                    "institutional_actor": false,
+                    "political_leader": true,
+                    "localized_noise": false,
+                    "strong_tactical_signal": false,
+                    "bonus": 0.0,
+                    "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.04,
+                    "category_component": 0.0033360670924186702,
+                    "severity_component": 0.012,
+                    "base_score": 0.012
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.0,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.0,
+                    "critical_bonus": 0.0
+                },
+                "multipliers": {
+                    "domain_weight": 1.12,
+                    "effective_domain_weight": 1.054,
+                    "gliner_multiplier": 1.0,
+                    "context_multiplier": 1.0,
+                    "total_multiplier": 1.054
+                },
+                "caps": [],
+                "scores": {
+                    "additive_score": 0.012,
+                    "raw_score": 0.012648000000000001,
+                    "raw_after_context": 0.012648000000000001,
+                    "compressed_score": 0.012648000000000001,
+                    "final_score": 0.012648000000000001,
+                    "risk_bucket": "low",
+                    "saturation": false
+                },
+                "decision": {
+                    "send_to_oracle": false,
+                    "emit_global_tag": false,
+                    "trade_emit_score_estimated": 0.0,
+                    "reason": "below_thresholds"
+                }
+            },
+            "matched_keywords": [
+                "Trump",
+                "British",
+                "Baby, Donald"
+            ],
+            "numeric_features": {
+                "large_money_amount": null,
+                "casualty_count": null,
+                "percent_change": null
+            },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.0,
+                "noise_score": 0.7496438555419445,
+                "directional_confidence_score": 0.1390027955174446,
+                "asset_route_confidence_score": 0.0,
+                "oracle_review_score": 0.0,
+                "model_uncertainty_score": 0.801424577832222,
+                "asset_ambiguity_score": 0.5,
+                "danger_score_legacy": 0.012648000000000001
+            },
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": [],
+                "forex signal": [],
+                "currency pair": [],
+                "forex pair": [],
+                "financial ticker": [],
+                "currency mentioned": [],
+                "central bank": [],
+                "economic indicator": [],
+                "monetary policy signal": [],
+                "geopolitical event": [],
+                "political leader": [
+                    "Trump"
+                ],
+                "commodity price action": [],
+                "fiat currency": [],
+                "market sentiment": [],
+                "fiscal policy change": [],
+                "strategic infrastructure": [],
+                "institutional actor": []
+            },
+            "global_tag_emission": {
+                "checked": true,
+                "dry_run": true,
+                "threshold": 0.75,
+                "oracle_review_threshold": 0.6,
+                "danger_score": 0.012648000000000001,
+                "risk_bucket": "low",
+                "emitted": false,
+                "emitted_count": 0,
+                "oracle_review_requested": false,
+                "oracle_review_queue_name": "intel.oracle.review",
+                "queue_name": "intel.global_tags",
+                "tags": [],
+                "reason": "excluded_keyword",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.7496438555419445,
+                    "directional_confidence_score": 0.1390027955174446,
+                    "asset_route_confidence_score": 0.0,
+                    "oracle_review_score": 0.0,
+                    "model_uncertainty_score": 0.801424577832222,
+                    "asset_ambiguity_score": 0.5,
+                    "danger_score_legacy": 0.012648000000000001
+                }
+            }
+        }
+    },
+    {
+        "id": "0a94f65f-23f6-5f3e-8a44-c748fbb36d6e",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Trump warned the Islamic Republic: You don't know how to sign a non-binding agreement, you better be...",
+        "url": "",
+        "body": "Trump warned the Islamic Republic: You don't know how to sign a non-binding agreement, you better be smart early. Donald Trump, the president of the United States, issued a warning and threatening message to the Islamic Republic on Wednesday, the 9th of July. Trump posted a photo of himself with a gun and a picture of multiple explosions in the background, writing: \"Iran can't pull itself together. They don't know how to sign a non-binding agreement.",
+        "published_at": "2026-04-29 14:37",
+        "ts": "2026-05-03T05:41:04.277397Z",
+        "fetched_at": "2026-05-03T05:41:04.277397Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [
+            "US",
+            "IR"
+        ],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 155712,
+            "forwards": 291,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.4398759049302371,
+            "raw_danger_score": 0.4398759049302371,
+            "risk_bucket": "watch",
+            "saturation": false,
+            "impact_category": "military threat or escalation rhetoric",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.48022693395614624,
+                "inferred_category": "military threat or escalation rhetoric",
+                "category_confidence": 0.65,
+                "entities": [
+                    {
+                        "text": "Trump",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "the Islamic Republic:",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Donald Trump",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "the United States",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "the Islamic Republic",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Wednesday",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "the 9th of July",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [
+                        "gun"
+                    ],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": [],
+                    "forex signal": [],
+                    "currency pair": [],
+                    "forex pair": [],
+                    "financial ticker": [],
+                    "currency mentioned": [],
+                    "central bank": [],
+                    "economic indicator": [],
+                    "monetary policy signal": [],
+                    "geopolitical event": [],
+                    "political leader": [
+                        "Trump",
+                        "Donald Trump"
+                    ],
+                    "commodity price action": [],
+                    "fiat currency": [],
+                    "market sentiment": [],
+                    "fiscal policy change": [],
+                    "strategic infrastructure": [],
+                    "institutional actor": []
+                },
+                "chunks_processed": 1,
+                "gliner_chunks_processed": 1,
+                "candidate_labels_used": 15,
+                "labels_set": "medium",
+                "nlp_timings": {
+                    "finbert": 0.86194279999836,
+                    "zero_shot": 5.481809000000794,
+                    "spacy": 0.03415279999899212,
+                    "gliner": 0.9303456000016013
+                },
+                "zero_shot_labels": [
+                    "military threat or escalation rhetoric",
+                    "military organization or defense capability report",
+                    "military impact, cost or investigation report",
+                    "unprecedented global crisis or major disruptive anomaly",
+                    "military propaganda or official wartime statement",
+                    "battlefield tactical report",
+                    "military production or defense cooperation report",
+                    "sudden market shock or black swan event",
+                    "international economic sanctions or trade embargo",
+                    "diplomatic negotiation or ceasefire agreement",
+                    "commodity price surge or oil market disruption",
+                    "central bank interest rate decision or monetary policy",
+                    "sports, entertainment or celebrity gossip",
+                    "generic news or daily politics",
+                    "macroeconomic data release or inflation report"
+                ],
+                "zero_shot_scores": [
+                    0.5519976615905762,
+                    0.45381730794906616,
+                    0.3315746784210205,
+                    0.3309444785118103,
+                    0.2913239598274231,
+                    0.23263908922672272,
+                    0.20489642024040222,
+                    0.08467898517847061,
+                    0.0793805792927742,
+                    0.0513438954949379,
+                    0.04818956181406975,
+                    0.007342087104916573,
+                    0.006370406597852707,
+                    0.006063168868422508,
+                    0.0009712022147141397
+                ],
+                "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
+                "original_inferred_category": "military threat or escalation rhetoric",
+                "original_category_confidence": 0.5519976615905762,
+                "category_corrections": [
+                    {
+                        "rule": "threat_rhetoric_detection",
+                        "from": "military threat or escalation rhetoric",
+                        "to": "military threat or escalation rhetoric"
+                    }
+                ]
+            },
+            "domain_weight": 1.12,
+            "score_breakdown": {
+                "version": "balanced_hard_quant_v3_multidimensional",
+                "inputs": {
+                    "category": "military threat or escalation rhetoric",
+                    "original_category": "military threat or escalation rhetoric",
+                    "confidence": 0.65,
+                    "original_confidence": 0.5519976615905762,
+                    "sentiment": "neutral",
+                    "severity": "unknown",
+                    "severity_key": "",
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": true,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
+                },
+                "category_corrections": [
+                    {
+                        "rule": "threat_rhetoric_detection",
+                        "from": "military threat or escalation rhetoric",
+                        "to": "military threat or escalation rhetoric"
+                    }
+                ],
+                "context_filters": {
+                    "historical_reference": false,
+                    "local_incident": false,
+                    "battlefield_micro": false,
+                    "self_promotion": false,
+                    "active_escalation": false,
+                    "threat_rhetoric": true,
+                    "propaganda": false,
+                    "macro_signal": false,
+                    "strategic_signal": false,
+                    "impact_report": false
+                },
+                "gliner_details": {
+                    "macro_target": false,
+                    "strategic_infra": false,
+                    "strategic_raw": false,
+                    "kinetic": false,
+                    "weapon": true,
+                    "military_actor": false,
+                    "geopolitical": false,
+                    "central_bank": false,
+                    "economic_indicator": false,
+                    "market_sentiment": false,
+                    "commodity_action": false,
+                    "institutional_actor": false,
+                    "political_leader": true,
+                    "localized_noise": false,
+                    "strong_tactical_signal": true,
+                    "bonus": 0.06,
+                    "multiplier": 1.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "explosions",
+                        "root": "explosion",
+                        "weight": 0.06,
+                        "rank": 1,
+                        "contribution": 0.06
+                    }
+                ],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.95,
+                    "category_component": 0.25935,
+                    "severity_component": 0.22799999999999998,
+                    "base_score": 0.25935
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.06,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.06,
+                    "engagement_bonus": 0.03798956824500671,
+                    "critical_bonus": 0.0
+                },
+                "multipliers": {
+                    "domain_weight": 1.12,
+                    "effective_domain_weight": 1.054,
+                    "gliner_multiplier": 1.0,
+                    "context_multiplier": 1.0,
+                    "total_multiplier": 1.054
+                },
+                "caps": [],
+                "scores": {
+                    "additive_score": 0.41733956824500673,
+                    "raw_score": 0.4398759049302371,
+                    "raw_after_context": 0.4398759049302371,
+                    "compressed_score": 0.4398759049302371,
+                    "final_score": 0.4398759049302371,
+                    "risk_bucket": "watch",
+                    "saturation": false
+                },
+                "decision": {
+                    "send_to_oracle": false,
+                    "emit_global_tag": false,
+                    "trade_emit_score_estimated": 0.11678125,
+                    "reason": "below_thresholds"
+                }
+            },
+            "matched_keywords": [
+                "Trump",
+                "the Islamic Republic:",
+                "Donald Trump",
+                "the United States",
+                "the Islamic Republic",
+                "Wednesday",
+                "the 9th of July",
+                "Iran",
+                "gun",
+                "explosions"
+            ],
+            "numeric_features": {
+                "large_money_amount": null,
+                "casualty_count": null,
+                "percent_change": null
+            },
+            "scores": {
+                "geopolitical_severity_score": 0.6325,
+                "market_impact_score": 0.4625,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.505,
+                "asset_route_confidence_score": 0.5,
+                "oracle_review_score": 0.506,
+                "model_uncertainty_score": 0.35,
+                "asset_ambiguity_score": 0.5,
+                "danger_score_legacy": 0.4398759049302371
+            },
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [
+                    "gun"
+                ],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": [],
+                "forex signal": [],
+                "currency pair": [],
+                "forex pair": [],
+                "financial ticker": [],
+                "currency mentioned": [],
+                "central bank": [],
+                "economic indicator": [],
+                "monetary policy signal": [],
+                "geopolitical event": [],
+                "political leader": [
+                    "Trump",
+                    "Donald Trump"
+                ],
+                "commodity price action": [],
+                "fiat currency": [],
+                "market sentiment": [],
+                "fiscal policy change": [],
+                "strategic infrastructure": [],
+                "institutional actor": []
+            },
+            "global_tag_emission": {
+                "checked": true,
+                "dry_run": true,
+                "threshold": 0.75,
+                "oracle_review_threshold": 0.6,
+                "danger_score": 0.4398759049302371,
+                "risk_bucket": "watch",
+                "emitted": false,
+                "emitted_count": 0,
+                "oracle_review_requested": false,
+                "oracle_review_queue_name": "intel.oracle.review",
+                "queue_name": "intel.global_tags",
+                "tags": [],
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.11678125,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.6325,
+                    "market_impact_score": 0.4625,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.505,
+                    "asset_route_confidence_score": 0.5,
+                    "oracle_review_score": 0.506,
+                    "model_uncertainty_score": 0.35,
+                    "asset_ambiguity_score": 0.5,
+                    "danger_score_legacy": 0.4398759049302371
+                }
+            }
+        }
+    },
+    {
+        "id": "e51bee05-a564-5805-9b3b-bca2a2e22c75",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Scott Bassent, US Treasury Secretary, wrote on the social network X that following the US president'...",
+        "url": "",
+        "body": "Scott Bassent, US Treasury Secretary, wrote on the social network X that following the US president's \"maximum pressure\" policy, inflation rates in Iran doubled and the value of the country's national currency declined rapidly. Mr Bassent says the measures are targeting and sanctioning Iran's \"extreme economic crisis\" program, Iran's shadow banking infrastructure internationally, its access to crypto-currencies, hidden transport fleets, arms supply networks, the financing of proxy groups in the region, as well as Chinese independent refineries that support Iran's oil trade.",
+        "published_at": "2026-04-29 14:38",
+        "ts": "2026-05-03T05:41:04.277397Z",
+        "fetched_at": "2026-05-03T05:41:04.277397Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [
+            "IR"
+        ],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 147616,
+            "forwards": 124,
+            "translation_source": "⚡Translation from Persian (pes_Arab)",
+            "danger_score": 0.8675700531250303,
+            "raw_danger_score": 1.0588445847048356,
+            "risk_bucket": "critical",
+            "saturation": true,
+            "impact_category": "currency intervention or severe devaluation",
+            "nlp_features": {
+                "sentiment": "negative",
+                "sentiment_score": 0.8564707040786743,
+                "inferred_category": "currency intervention or severe devaluation",
+                "category_confidence": 0.9299411773681641,
+                "entities": [
+                    {
+                        "text": "Scott Bassent",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "US Treasury",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "US",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Iran",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Bassent",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Chinese",
+                        "label": "NORP"
+                    },
+                    {
+                        "text": "oil",
+                        "label": "COMMODITY"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": [],
+                    "forex signal": [],
+                    "currency pair": [],
+                    "forex pair": [],
+                    "financial ticker": [],
+                    "currency mentioned": [],
+                    "central bank": [],
+                    "economic indicator": [
+                        "inflation rates"
+                    ],
+                    "monetary policy signal": [],
+                    "geopolitical event": [],
+                    "political leader": [
+                        "Scott Bassent",
+                        "US president"
+                    ],
+                    "commodity price action": [],
+                    "fiat currency": [],
+                    "market sentiment": [],
+                    "fiscal policy change": [],
+                    "strategic infrastructure": [],
+                    "institutional actor": []
+                },
+                "chunks_processed": 1,
+                "gliner_chunks_processed": 1,
+                "candidate_labels_used": 22,
+                "labels_set": "medium",
+                "nlp_timings": {
+                    "finbert": 0.5516263999998046,
+                    "zero_shot": 6.346140800000285,
+                    "spacy": 0.03762600000118255,
+                    "gliner": 0.48289740000109305
+                },
+                "zero_shot_labels": [
+                    "currency intervention or severe devaluation",
+                    "unprecedented global crisis or major disruptive anomaly",
+                    "macroeconomic data release or inflation report",
+                    "commodity price surge or oil market disruption",
+                    "military threat or escalation rhetoric",
+                    "sudden price spike or hyperinflation warning",
+                    "international economic sanctions or trade embargo",
+                    "military impact, cost or investigation report",
+                    "crypto market flash crash or major exchange hack",
+                    "insider trading scandal or massive financial fraud",
+                    "battlefield tactical report",
+                    "military organization or defense capability report",
+                    "sudden market shock or black swan event",
+                    "military production or defense cooperation report",
+                    "central bank interest rate decision or monetary policy",
+                    "military propaganda or official wartime statement",
+                    "stock market crash or massive sell-off",
+                    "institutional market downgrade or recession warning",
+                    "major hedge fund collapse or massive margin call",
+                    "sports, entertainment or celebrity gossip",
+                    "generic news or daily politics",
+                    "diplomatic negotiation or ceasefire agreement"
+                ],
+                "zero_shot_scores": [
+                    0.9299411773681641,
+                    0.901406466960907,
+                    0.8802449107170105,
+                    0.8326769471168518,
+                    0.8139266967773438,
+                    0.7674892544746399,
+                    0.7425000071525574,
+                    0.6459753513336182,
+                    0.5915529131889343,
+                    0.49765875935554504,
+                    0.48834678530693054,
+                    0.4845358729362488,
+                    0.47373485565185547,
+                    0.09305335581302643,
+                    0.0691634863615036,
+                    0.005573675036430359,
+                    0.004250685218721628,
+                    0.0034932915586978197,
+                    0.002100518671795726,
+                    0.0003991633129771799,
+                    0.0002923910797107965,
+                    6.0386908444343135e-05
+                ],
+                "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
+                "original_inferred_category": "currency intervention or severe devaluation",
+                "original_category_confidence": 0.9299411773681641,
+                "category_corrections": []
+            },
+            "domain_weight": 1.12,
+            "score_breakdown": {
+                "version": "balanced_hard_quant_v3_multidimensional",
+                "inputs": {
+                    "category": "currency intervention or severe devaluation",
+                    "original_category": "currency intervention or severe devaluation",
+                    "confidence": 0.9299411773681641,
+                    "original_confidence": 0.9299411773681641,
+                    "sentiment": "negative",
+                    "severity": "unknown",
+                    "severity_key": "",
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": true,
+                        "strategic_signal": true,
+                        "impact_report": false
+                    }
+                },
+                "category_corrections": [],
+                "context_filters": {
+                    "historical_reference": false,
+                    "local_incident": false,
+                    "battlefield_micro": false,
+                    "self_promotion": false,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
+                    "macro_signal": true,
+                    "strategic_signal": true,
+                    "impact_report": false
+                },
+                "gliner_details": {
+                    "macro_target": false,
+                    "strategic_infra": false,
+                    "strategic_raw": false,
+                    "kinetic": false,
+                    "weapon": false,
+                    "military_actor": false,
+                    "geopolitical": false,
+                    "central_bank": false,
+                    "economic_indicator": true,
+                    "market_sentiment": false,
+                    "commodity_action": false,
+                    "institutional_actor": false,
+                    "political_leader": true,
+                    "localized_noise": false,
+                    "strong_tactical_signal": true,
+                    "bonus": 0.09,
+                    "multiplier": 1.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "refineries",
+                        "root": "refinery",
+                        "weight": 0.08,
+                        "rank": 1,
+                        "contribution": 0.08
+                    },
+                    {
+                        "keyword": "inflation",
+                        "root": "inflation",
+                        "weight": 0.075,
+                        "rank": 2,
+                        "contribution": 0.02625
+                    },
+                    {
+                        "keyword": "oil",
+                        "root": "oil",
+                        "weight": 0.065,
+                        "rank": 3,
+                        "contribution": 0.007962499999999999
+                    }
+                ],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 1.16,
+                    "category_component": 0.4530673416137695,
+                    "severity_component": 0.2784,
+                    "base_score": 0.4530673416137695
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.08090488243103026,
+                    "entity_bonus": 0.06,
+                    "gliner_bonus": 0.09,
+                    "numeric_bonus": 0.1,
+                    "keyword_bonus": 0.1142125,
+                    "engagement_bonus": 0.02641165613056588,
+                    "critical_bonus": 0.08
+                },
+                "multipliers": {
+                    "domain_weight": 1.12,
+                    "effective_domain_weight": 1.054,
+                    "gliner_multiplier": 1.0,
+                    "context_multiplier": 1.0,
+                    "total_multiplier": 1.054
+                },
+                "caps": [],
+                "scores": {
+                    "additive_score": 1.0045963801753657,
+                    "raw_score": 1.0588445847048356,
+                    "raw_after_context": 1.0588445847048356,
+                    "compressed_score": 0.8675700531250303,
+                    "final_score": 0.8675700531250303,
+                    "risk_bucket": "critical",
+                    "saturation": true
+                },
+                "decision": {
+                    "send_to_oracle": true,
+                    "emit_global_tag": false,
+                    "trade_emit_score_estimated": 0.6008012412486351,
+                    "reason": "elevated_oracle_score"
+                }
+            },
+            "matched_keywords": [
+                "Scott Bassent",
+                "US Treasury",
+                "US",
+                "Iran",
+                "Bassent",
+                "Chinese",
+                "oil",
+                "inflation rates",
+                "US president",
+                "refineries",
+                "inflation"
+            ],
+            "numeric_features": {
+                "large_money_amount": null,
+                "casualty_count": null,
+                "percent_change": null
+            },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.9719764709472657,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.9509588241577148,
+                "asset_route_confidence_score": 0.78,
+                "oracle_review_score": 0.7775811767578126,
+                "model_uncertainty_score": 0.07005882263183594,
+                "asset_ambiguity_score": 0.35,
+                "danger_score_legacy": 0.8675700531250303
+            },
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": [],
+                "forex signal": [],
+                "currency pair": [],
+                "forex pair": [],
+                "financial ticker": [],
+                "currency mentioned": [],
+                "central bank": [],
+                "economic indicator": [
+                    "inflation rates"
+                ],
+                "monetary policy signal": [],
+                "geopolitical event": [],
+                "political leader": [
+                    "Scott Bassent",
+                    "US president"
+                ],
+                "commodity price action": [],
+                "fiat currency": [],
+                "market sentiment": [],
+                "fiscal policy change": [],
+                "strategic infrastructure": [],
+                "institutional actor": []
+            },
+            "global_tag_emission": {
+                "checked": true,
+                "dry_run": true,
+                "threshold": 0.75,
+                "oracle_review_threshold": 0.6,
+                "danger_score": 0.8675700531250303,
+                "risk_bucket": "critical",
+                "emitted": false,
+                "emitted_count": 0,
+                "oracle_review_requested": true,
+                "oracle_review_queue_name": "intel.oracle.review",
+                "queue_name": "intel.global_tags",
+                "tags": [],
+                "reason": "below_trade_above_oracle_threshold",
+                "trade_emit_score": 0.7209614894983621,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.9719764709472657,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.9509588241577148,
+                    "asset_route_confidence_score": 0.78,
+                    "oracle_review_score": 0.7775811767578126,
+                    "model_uncertainty_score": 0.07005882263183594,
+                    "asset_ambiguity_score": 0.35,
+                    "danger_score_legacy": 0.8675700531250303
+                },
+                "oracle_review_reason": "elevated_oracle_review_score",
+                "oracle_review_payload": {
+                    "event_type": "ORACLE_REVIEW_REQUESTED",
+                    "trigger_event_id": "e51bee05-a564-5805-9b3b-bca2a2e22c75",
+                    "reason": "elevated_oracle_review_score",
+                    "title": "Scott Bassent, US Treasury Secretary, wrote on the social network X that following the US president'...",
+                    "body": "Scott Bassent, US Treasury Secretary, wrote on the social network X that following the US president's \"maximum pressure\" policy, inflation rates in Iran doubled and the value of the country's national currency declined rapidly. Mr Bassent says the measures are targeting and sanctioning Iran's \"extreme economic crisis\" program, Iran's shadow banking infrastructure internationally, its access to crypto-currencies, hidden transport fleets, arms supply networks, the financing of proxy groups in the region, as well as Chinese independent refineries that support Iran's oil trade.",
+                    "published_at": "2026-04-29 14:38",
+                    "source": "telegram_log",
+                    "domain": "geopolitical",
+                    "danger_score_legacy": 0.8675700531250303,
+                    "risk_bucket": "critical",
+                    "impact_category": "currency intervention or severe devaluation",
+                    "scores": {
+                        "geopolitical_severity_score": 0.0,
+                        "market_impact_score": 0.9719764709472657,
+                        "noise_score": 0.0,
+                        "directional_confidence_score": 0.9509588241577148,
+                        "asset_route_confidence_score": 0.78,
+                        "oracle_review_score": 0.7775811767578126,
+                        "model_uncertainty_score": 0.07005882263183594,
+                        "asset_ambiguity_score": 0.35,
+                        "danger_score_legacy": 0.8675700531250303
+                    },
+                    "trade_emit_score": 0.7209614894983621,
+                    "candidate_directives": [
+                        {
+                            "asset": "OIL",
+                            "bias": "strong_bullish",
+                            "confidence": 0.82,
+                            "reason": "keyword:oil"
+                        },
+                        {
+                            "asset": "BTC",
+                            "bias": "neutral",
+                            "confidence": 0.82,
+                            "reason": "keyword:crypto"
+                        },
+                        {
+                            "asset": "BRENT",
+                            "bias": "bullish",
+                            "confidence": 0.78,
+                            "reason": "oil_shock"
+                        },
+                        {
+                            "asset": "WTI",
+                            "bias": "bullish",
+                            "confidence": 0.78,
+                            "reason": "oil_shock"
+                        }
+                    ],
+                    "score_breakdown": {
+                        "version": "balanced_hard_quant_v3_multidimensional",
+                        "inputs": {
+                            "category": "currency intervention or severe devaluation",
+                            "original_category": "currency intervention or severe devaluation",
+                            "confidence": 0.9299411773681641,
+                            "original_confidence": 0.9299411773681641,
+                            "sentiment": "negative",
+                            "severity": "unknown",
+                            "severity_key": "",
+                            "domain": "geopolitical",
+                            "context": {
+                                "historical_reference": false,
+                                "local_incident": false,
+                                "battlefield_micro": false,
+                                "self_promotion": false,
+                                "active_escalation": false,
+                                "threat_rhetoric": false,
+                                "propaganda": false,
+                                "macro_signal": true,
+                                "strategic_signal": true,
+                                "impact_report": false
+                            }
+                        },
+                        "category_corrections": [],
+                        "context_filters": {
+                            "historical_reference": false,
+                            "local_incident": false,
+                            "battlefield_micro": false,
+                            "self_promotion": false,
+                            "active_escalation": false,
+                            "threat_rhetoric": false,
+                            "propaganda": false,
+                            "macro_signal": true,
+                            "strategic_signal": true,
+                            "impact_report": false
+                        },
+                        "gliner_details": {
+                            "macro_target": false,
+                            "strategic_infra": false,
+                            "strategic_raw": false,
+                            "kinetic": false,
+                            "weapon": false,
+                            "military_actor": false,
+                            "geopolitical": false,
+                            "central_bank": false,
+                            "economic_indicator": true,
+                            "market_sentiment": false,
+                            "commodity_action": false,
+                            "institutional_actor": false,
+                            "political_leader": true,
+                            "localized_noise": false,
+                            "strong_tactical_signal": true,
+                            "bonus": 0.09,
+                            "multiplier": 1.0
+                        },
+                        "keyword_hits": [
+                            {
+                                "keyword": "refineries",
+                                "root": "refinery",
+                                "weight": 0.08,
+                                "rank": 1,
+                                "contribution": 0.08
+                            },
+                            {
+                                "keyword": "inflation",
+                                "root": "inflation",
+                                "weight": 0.075,
+                                "rank": 2,
+                                "contribution": 0.02625
+                            },
+                            {
+                                "keyword": "oil",
+                                "root": "oil",
+                                "weight": 0.065,
+                                "rank": 3,
+                                "contribution": 0.007962499999999999
+                            }
+                        ],
+                        "base": {
+                            "severity_base": 0.24,
+                            "category_weight": 1.16,
+                            "category_component": 0.4530673416137695,
+                            "severity_component": 0.2784,
+                            "base_score": 0.4530673416137695
+                        },
+                        "additive_modifiers": {
+                            "sentiment_bonus": 0.08090488243103026,
+                            "entity_bonus": 0.06,
+                            "gliner_bonus": 0.09,
+                            "numeric_bonus": 0.1,
+                            "keyword_bonus": 0.1142125,
+                            "engagement_bonus": 0.02641165613056588,
+                            "critical_bonus": 0.08
+                        },
+                        "multipliers": {
+                            "domain_weight": 1.12,
+                            "effective_domain_weight": 1.054,
+                            "gliner_multiplier": 1.0,
+                            "context_multiplier": 1.0,
+                            "total_multiplier": 1.054
+                        },
+                        "caps": [],
+                        "scores": {
+                            "additive_score": 1.0045963801753657,
+                            "raw_score": 1.0588445847048356,
+                            "raw_after_context": 1.0588445847048356,
+                            "compressed_score": 0.8675700531250303,
+                            "final_score": 0.8675700531250303,
+                            "risk_bucket": "critical",
+                            "saturation": true
+                        },
+                        "decision": {
+                            "send_to_oracle": true,
+                            "emit_global_tag": false,
+                            "trade_emit_score_estimated": 0.6008012412486351,
+                            "reason": "elevated_oracle_score"
+                        }
+                    },
+                    "created_at": "2026-05-03T07:24:28.761444+00:00"
+                },
+                "oracle_review_published": false,
+                "oracle_review_dry_run": true
+            }
+        }
+    }
+]

@@ -599,6 +599,11 @@ class GlobalTagEmitter:
             if conf > best_conf:
                 best_conf = conf
                 
+        # Bônus por densidade de evidência: se encontrou mais de 1 ativo com boa confiança, aumenta a certeza do roteamento
+        good_directives = [d for d in directives if float(d.get("confidence", 0.0)) > 0.7]
+        if len(good_directives) > 1:
+            best_conf += 0.05
+            
         # Combina a estimativa do processador com a evidência do emissor
         refined = max(base_conf, best_conf)
         
