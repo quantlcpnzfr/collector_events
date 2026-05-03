@@ -83,24 +83,28 @@
                 },
                 "chunks_processed": 1,
                 "gliner_chunks_processed": 1,
-                "candidate_labels_used": 5,
+                "candidate_labels_used": 7,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 2.4997456000019156,
-                    "zero_shot": 1.9333082999983162,
-                    "spacy": 0.03901080000287038,
-                    "gliner": 0.4632984000018041
+                    "finbert": 0.2259931000007782,
+                    "zero_shot": 2.8666097000023,
+                    "spacy": 0.022436700000980636,
+                    "gliner": 0.34869119999711984
                 },
                 "zero_shot_labels": [
                     "sports, entertainment or celebrity gossip",
+                    "military threat or escalation rhetoric",
                     "generic news or daily politics",
+                    "military propaganda or official wartime statement",
                     "sudden market shock or black swan event",
                     "battlefield tactical report",
                     "troop mobilization or border skirmish"
                 ],
                 "zero_shot_scores": [
                     0.19857542216777802,
+                    0.0004987522261217237,
                     0.00022779058781452477,
+                    0.0001718367711873725,
                     6.913413380971178e-05,
                     3.879687574226409e-05,
                     3.027260027010925e-05
@@ -130,6 +134,8 @@
                     "battlefield_micro": false,
                     "self_promotion": false,
                     "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": false,
                     "impact_report": false
@@ -270,16 +276,16 @@
             "views": 155712,
             "forwards": 291,
             "translation_source": "⚡Translation from Persian (pes_Arab)",
-            "danger_score": 0.28035300493023707,
-            "raw_danger_score": 0.28035300493023707,
-            "risk_bucket": "low",
+            "danger_score": 0.4398759049302371,
+            "raw_danger_score": 0.4398759049302371,
+            "risk_bucket": "watch",
             "saturation": false,
-            "impact_category": "battlefield tactical report",
+            "impact_category": "military threat or escalation rhetoric",
             "nlp_features": {
                 "sentiment": "neutral",
                 "sentiment_score": 0.48022693395614624,
-                "inferred_category": "battlefield tactical report",
-                "category_confidence": 0.23263908922672272,
+                "inferred_category": "military threat or escalation rhetoric",
+                "category_confidence": 0.65,
                 "entities": [
                     {
                         "text": "Trump",
@@ -349,15 +355,17 @@
                 },
                 "chunks_processed": 1,
                 "gliner_chunks_processed": 1,
-                "candidate_labels_used": 5,
+                "candidate_labels_used": 7,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.5311239000002388,
-                    "zero_shot": 0.9216427000028489,
-                    "spacy": 0.02197580000211019,
-                    "gliner": 0.3143326999997953
+                    "finbert": 0.30213930000172695,
+                    "zero_shot": 1.927390299999388,
+                    "spacy": 0.029385900001216214,
+                    "gliner": 0.4586827999992238
                 },
                 "zero_shot_labels": [
+                    "military threat or escalation rhetoric",
+                    "military propaganda or official wartime statement",
                     "battlefield tactical report",
                     "troop mobilization or border skirmish",
                     "sudden market shock or black swan event",
@@ -365,6 +373,8 @@
                     "generic news or daily politics"
                 ],
                 "zero_shot_scores": [
+                    0.5519976615905762,
+                    0.2913239598274231,
                     0.23263908922672272,
                     0.0981292873620987,
                     0.08467898517847061,
@@ -372,40 +382,54 @@
                     0.006063168868422508
                 ],
                 "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
-                "original_inferred_category": "battlefield tactical report",
-                "original_category_confidence": 0.23263908922672272,
-                "category_corrections": []
+                "original_inferred_category": "military threat or escalation rhetoric",
+                "original_category_confidence": 0.5519976615905762,
+                "category_corrections": [
+                    {
+                        "rule": "threat_rhetoric_detection",
+                        "from": "military threat or escalation rhetoric",
+                        "to": "military threat or escalation rhetoric"
+                    }
+                ]
             },
             "domain_weight": 1.12,
             "score_breakdown": {
                 "version": "balanced_hard_quant_v2",
                 "inputs": {
-                    "category": "battlefield tactical report",
-                    "original_category": "battlefield tactical report",
-                    "confidence": 0.23263908922672272,
-                    "original_confidence": 0.23263908922672272,
+                    "category": "military threat or escalation rhetoric",
+                    "original_category": "military threat or escalation rhetoric",
+                    "confidence": 0.65,
+                    "original_confidence": 0.5519976615905762,
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
                     "domain": "geopolitical"
                 },
-                "category_corrections": [],
+                "category_corrections": [
+                    {
+                        "rule": "threat_rhetoric_detection",
+                        "from": "military threat or escalation rhetoric",
+                        "to": "military threat or escalation rhetoric"
+                    }
+                ],
                 "context_filters": {
                     "historical_reference": false,
                     "local_incident": false,
                     "battlefield_micro": false,
                     "self_promotion": false,
-                    "active_escalation": true,
+                    "active_escalation": false,
+                    "threat_rhetoric": true,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": false,
                     "impact_report": false
                 },
                 "base": {
                     "severity_base": 0.24,
-                    "category_weight": 0.45,
-                    "category_component": 0.04396878786385059,
-                    "severity_component": 0.108,
-                    "base_score": 0.108
+                    "category_weight": 0.95,
+                    "category_component": 0.25935,
+                    "severity_component": 0.22799999999999998,
+                    "base_score": 0.25935
                 },
                 "additive_modifiers": {
                     "sentiment_bonus": 0.0,
@@ -453,12 +477,12 @@
                 },
                 "caps": [],
                 "scores": {
-                    "additive_score": 0.2659895682450067,
-                    "raw_score": 0.28035300493023707,
-                    "raw_after_context": 0.28035300493023707,
-                    "compressed_score": 0.28035300493023707,
-                    "final_score": 0.28035300493023707,
-                    "risk_bucket": "low",
+                    "additive_score": 0.41733956824500673,
+                    "raw_score": 0.4398759049302371,
+                    "raw_after_context": 0.4398759049302371,
+                    "compressed_score": 0.4398759049302371,
+                    "final_score": 0.4398759049302371,
+                    "risk_bucket": "watch",
                     "saturation": false
                 }
             },
@@ -513,8 +537,8 @@
                 "dry_run": true,
                 "threshold": 0.75,
                 "oracle_review_threshold": 0.65,
-                "danger_score": 0.28035300493023707,
-                "risk_bucket": "low",
+                "danger_score": 0.4398759049302371,
+                "risk_bucket": "watch",
                 "emitted": false,
                 "emitted_count": 0,
                 "oracle_review_requested": false,
@@ -553,10 +577,10 @@
             "views": 147616,
             "forwards": 124,
             "translation_source": "⚡Translation from Persian (pes_Arab)",
-            "danger_score": 0.8489420719710828,
-            "raw_danger_score": 0.9745245847048354,
-            "risk_bucket": "high",
-            "saturation": false,
+            "danger_score": 0.8675700531250303,
+            "raw_danger_score": 1.0588445847048356,
+            "risk_bucket": "critical",
+            "saturation": true,
             "impact_category": "currency intervention or severe devaluation",
             "nlp_features": {
                 "sentiment": "negative",
@@ -627,10 +651,10 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.3527151000016602,
-                    "zero_shot": 2.3326109999979963,
-                    "spacy": 0.0417529000005743,
-                    "gliner": 0.39443459999893093
+                    "finbert": 0.5535135999998602,
+                    "zero_shot": 3.1993527000013273,
+                    "spacy": 0.03624639999907231,
+                    "gliner": 0.37433750000127475
                 },
                 "zero_shot_labels": [
                     "currency intervention or severe devaluation",
@@ -681,6 +705,8 @@
                     "battlefield_micro": false,
                     "self_promotion": false,
                     "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": true,
                     "strategic_signal": true,
                     "impact_report": false
@@ -699,7 +725,7 @@
                     "numeric_bonus": 0.1,
                     "keyword_bonus": 0.1142125,
                     "engagement_bonus": 0.02641165613056588,
-                    "critical_bonus": 0.0
+                    "critical_bonus": 0.08
                 },
                 "keyword_hits": [
                     {
@@ -752,13 +778,13 @@
                 },
                 "caps": [],
                 "scores": {
-                    "additive_score": 0.9245963801753656,
-                    "raw_score": 0.9745245847048354,
-                    "raw_after_context": 0.9745245847048354,
-                    "compressed_score": 0.8489420719710828,
-                    "final_score": 0.8489420719710828,
-                    "risk_bucket": "high",
-                    "saturation": false
+                    "additive_score": 1.0045963801753657,
+                    "raw_score": 1.0588445847048356,
+                    "raw_after_context": 1.0588445847048356,
+                    "compressed_score": 0.8675700531250303,
+                    "final_score": 0.8675700531250303,
+                    "risk_bucket": "critical",
+                    "saturation": true
                 }
             },
             "matched_keywords": [
@@ -813,8 +839,8 @@
                 "dry_run": true,
                 "threshold": 0.75,
                 "oracle_review_threshold": 0.65,
-                "danger_score": 0.8489420719710828,
-                "risk_bucket": "high",
+                "danger_score": 0.8675700531250303,
+                "risk_bucket": "critical",
                 "emitted": true,
                 "emitted_count": 4,
                 "oracle_review_requested": false,
@@ -824,17 +850,17 @@
                     {
                         "asset": "OIL",
                         "bias": "strong_bullish",
-                        "risk_score": 0.6961324990162879,
+                        "risk_score": 0.7114074435625248,
                         "confidence": 0.82,
                         "reason": "keyword:oil",
                         "expiry_minutes": 240,
                         "payload": {
                             "asset": "OIL",
                             "bias": "strong_bullish",
-                            "risk_score": 0.6961,
+                            "risk_score": 0.7114,
                             "trigger_event_id": "4cbe67bb-9eab-4865-8d91-64dc8d4ad072",
-                            "established_at": "2026-05-03T03:31:58.739176+00:00",
-                            "expires_at": "2026-05-03T07:31:58.739176+00:00",
+                            "established_at": "2026-05-03T03:55:32.616210+00:00",
+                            "expires_at": "2026-05-03T07:55:32.616210+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -844,17 +870,17 @@
                     {
                         "asset": "BTC",
                         "bias": "neutral",
-                        "risk_score": 0.6961324990162879,
+                        "risk_score": 0.7114074435625248,
                         "confidence": 0.82,
                         "reason": "keyword:crypto",
                         "expiry_minutes": 240,
                         "payload": {
                             "asset": "BTC",
                             "bias": "neutral",
-                            "risk_score": 0.6961,
+                            "risk_score": 0.7114,
                             "trigger_event_id": "4cbe67bb-9eab-4865-8d91-64dc8d4ad072",
-                            "established_at": "2026-05-03T03:31:58.739687+00:00",
-                            "expires_at": "2026-05-03T07:31:58.739687+00:00",
+                            "established_at": "2026-05-03T03:55:32.616210+00:00",
+                            "expires_at": "2026-05-03T07:55:32.616210+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -864,17 +890,17 @@
                     {
                         "asset": "BRENT",
                         "bias": "bullish",
-                        "risk_score": 0.6621748161374447,
+                        "risk_score": 0.6767046414375236,
                         "confidence": 0.78,
                         "reason": "oil_shock",
                         "expiry_minutes": 240,
                         "payload": {
                             "asset": "BRENT",
                             "bias": "bullish",
-                            "risk_score": 0.6622,
+                            "risk_score": 0.6767,
                             "trigger_event_id": "4cbe67bb-9eab-4865-8d91-64dc8d4ad072",
-                            "established_at": "2026-05-03T03:31:58.739687+00:00",
-                            "expires_at": "2026-05-03T07:31:58.739687+00:00",
+                            "established_at": "2026-05-03T03:55:32.616723+00:00",
+                            "expires_at": "2026-05-03T07:55:32.616723+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -884,17 +910,17 @@
                     {
                         "asset": "WTI",
                         "bias": "bullish",
-                        "risk_score": 0.6621748161374447,
+                        "risk_score": 0.6767046414375236,
                         "confidence": 0.78,
                         "reason": "oil_shock",
                         "expiry_minutes": 240,
                         "payload": {
                             "asset": "WTI",
                             "bias": "bullish",
-                            "risk_score": 0.6622,
+                            "risk_score": 0.6767,
                             "trigger_event_id": "4cbe67bb-9eab-4865-8d91-64dc8d4ad072",
-                            "established_at": "2026-05-03T03:31:58.739687+00:00",
-                            "expires_at": "2026-05-03T07:31:58.739687+00:00",
+                            "established_at": "2026-05-03T03:55:32.616723+00:00",
+                            "expires_at": "2026-05-03T07:55:32.616723+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -1005,13 +1031,13 @@
                 },
                 "chunks_processed": 1,
                 "gliner_chunks_processed": 1,
-                "candidate_labels_used": 9,
+                "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.2874621000009938,
-                    "zero_shot": 1.4595840000001772,
-                    "spacy": 0.01643300000068848,
-                    "gliner": 0.2669166999985464
+                    "finbert": 0.173085300000821,
+                    "zero_shot": 1.6056896000009147,
+                    "spacy": 0.017837300001701806,
+                    "gliner": 0.3046912000027078
                 },
                 "zero_shot_labels": [
                     "macroeconomic data release or inflation report",
@@ -1021,6 +1047,7 @@
                     "battlefield tactical report",
                     "sudden market shock or black swan event",
                     "central bank interest rate decision or monetary policy",
+                    "military threat or escalation rhetoric",
                     "sports, entertainment or celebrity gossip",
                     "generic news or daily politics"
                 ],
@@ -1032,6 +1059,7 @@
                     0.004454485606402159,
                     0.004064192529767752,
                     0.001749542192555964,
+                    0.0015430082567036152,
                     0.0010847997618839145,
                     0.0005584749742411077
                 ],
@@ -1071,7 +1099,9 @@
                     "local_incident": false,
                     "battlefield_micro": false,
                     "self_promotion": false,
-                    "active_escalation": true,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": true,
                     "strategic_signal": true,
                     "impact_report": false
@@ -1245,7 +1275,7 @@
                             "reason": "currency_index:USD"
                         }
                     ],
-                    "created_at": "2026-05-03T03:32:05.806269+00:00"
+                    "created_at": "2026-05-03T03:55:39.753411+00:00"
                 },
                 "oracle_review_published": false,
                 "oracle_review_dry_run": true
@@ -1344,18 +1374,20 @@
                 },
                 "chunks_processed": 1,
                 "gliner_chunks_processed": 1,
-                "candidate_labels_used": 5,
+                "candidate_labels_used": 7,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.13929120000102557,
-                    "zero_shot": 0.7198723000001337,
-                    "spacy": 0.014660799999546725,
-                    "gliner": 0.23699130000022706
+                    "finbert": 0.24886789999800385,
+                    "zero_shot": 1.2855535999988206,
+                    "spacy": 0.015689200001361314,
+                    "gliner": 0.26832550000108313
                 },
                 "zero_shot_labels": [
                     "battlefield tactical report",
                     "sports, entertainment or celebrity gossip",
                     "troop mobilization or border skirmish",
+                    "military propaganda or official wartime statement",
+                    "military threat or escalation rhetoric",
                     "generic news or daily politics",
                     "sudden market shock or black swan event"
                 ],
@@ -1363,6 +1395,8 @@
                     0.07372742146253586,
                     0.007452960591763258,
                     0.005855092778801918,
+                    0.0025473188143223524,
+                    0.002346172695979476,
                     0.001054902677424252,
                     0.0003368771867826581
                 ],
@@ -1402,7 +1436,9 @@
                     "local_incident": true,
                     "battlefield_micro": false,
                     "self_promotion": false,
-                    "active_escalation": true,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": false,
                     "impact_report": false
@@ -1609,34 +1645,34 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.2081880000005185,
-                    "zero_shot": 1.3700641999967047,
-                    "spacy": 0.009633499998017214,
-                    "gliner": 0.2631537000015669
+                    "finbert": 0.22008289999939734,
+                    "zero_shot": 1.4435713999992004,
+                    "spacy": 0.010383699998783413,
+                    "gliner": 0.2545834999982617
                 },
                 "zero_shot_labels": [
                     "military impact, cost or investigation report",
                     "military attack or action",
                     "military drone or missile strike",
+                    "military propaganda or official wartime statement",
                     "declaration of war or armed conflict",
                     "troop mobilization or border skirmish",
+                    "military threat or escalation rhetoric",
                     "battlefield tactical report",
                     "sudden market shock or black swan event",
-                    "naval blockade or airspace closure",
-                    "generic news or daily politics",
-                    "sports, entertainment or celebrity gossip"
+                    "naval blockade or airspace closure"
                 ],
                 "zero_shot_scores": [
                     0.594186007976532,
                     0.468477725982666,
                     0.06837243586778641,
+                    0.05108203738927841,
                     0.022047508507966995,
                     0.014546790160238743,
+                    0.012898667715489864,
                     0.00227260310202837,
                     0.0008728605462238193,
-                    0.0006126136286184192,
-                    0.0002959495468530804,
-                    0.0001629090402275324
+                    0.0006126136286184192
                 ],
                 "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
                 "original_inferred_category": "military impact, cost or investigation report",
@@ -1663,6 +1699,8 @@
                     "battlefield_micro": false,
                     "self_promotion": false,
                     "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": false,
                     "impact_report": true
@@ -1907,31 +1945,31 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.2239672999967297,
-                    "zero_shot": 2.1703343000008317,
-                    "spacy": 0.026384099997812882,
-                    "gliner": 0.3755423000002338
+                    "finbert": 0.2388176000022213,
+                    "zero_shot": 2.582598599998164,
+                    "spacy": 0.04211280000163242,
+                    "gliner": 0.47399099999893224
                 },
                 "zero_shot_labels": [
                     "military attack or action",
-                    "nuclear threat or radioactive incident",
+                    "military threat or escalation rhetoric",
+                    "military propaganda or official wartime statement",
                     "military drone or missile strike",
                     "declaration of war or armed conflict",
                     "battlefield tactical report",
                     "military impact, cost or investigation report",
-                    "unprecedented global crisis or major disruptive anomaly",
                     "troop mobilization or border skirmish",
                     "naval blockade or airspace closure",
                     "sudden market shock or black swan event"
                 ],
                 "zero_shot_scores": [
                     0.9595113396644592,
-                    0.7797315716743469,
+                    0.8728252053260803,
+                    0.6929548382759094,
                     0.5615577101707458,
                     0.5361545085906982,
                     0.5332242846488953,
                     0.4242459237575531,
-                    0.1543852537870407,
                     0.04810837656259537,
                     0.0005861509125679731,
                     0.00025129536516033113
@@ -1961,6 +1999,8 @@
                     "battlefield_micro": false,
                     "self_promotion": false,
                     "active_escalation": true,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": false,
                     "impact_report": false
@@ -2115,8 +2155,8 @@
                             "bias": "bullish",
                             "risk_score": 0.5763,
                             "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T03:32:26.710511+00:00",
-                            "expires_at": "2026-05-03T07:32:26.710511+00:00",
+                            "established_at": "2026-05-03T03:56:01.997857+00:00",
+                            "expires_at": "2026-05-03T07:56:01.997857+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -2135,8 +2175,8 @@
                             "bias": "bullish",
                             "risk_score": 0.5763,
                             "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T03:32:26.710511+00:00",
-                            "expires_at": "2026-05-03T07:32:26.710511+00:00",
+                            "established_at": "2026-05-03T03:56:01.998375+00:00",
+                            "expires_at": "2026-05-03T07:56:01.998375+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -2155,8 +2195,8 @@
                             "bias": "bullish",
                             "risk_score": 0.5763,
                             "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T03:32:26.710511+00:00",
-                            "expires_at": "2026-05-03T07:32:26.710511+00:00",
+                            "established_at": "2026-05-03T03:56:01.998375+00:00",
+                            "expires_at": "2026-05-03T07:56:01.998375+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -2175,8 +2215,8 @@
                             "bias": "bullish",
                             "risk_score": 0.5763,
                             "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T03:32:26.710511+00:00",
-                            "expires_at": "2026-05-03T07:32:26.710511+00:00",
+                            "established_at": "2026-05-03T03:56:01.998375+00:00",
+                            "expires_at": "2026-05-03T07:56:01.998375+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -2195,8 +2235,8 @@
                             "bias": "bearish",
                             "risk_score": 0.5434,
                             "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T03:32:26.710511+00:00",
-                            "expires_at": "2026-05-03T07:32:26.710511+00:00",
+                            "established_at": "2026-05-03T03:56:01.998375+00:00",
+                            "expires_at": "2026-05-03T07:56:01.998375+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -2215,8 +2255,8 @@
                             "bias": "bearish",
                             "risk_score": 0.5434,
                             "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T03:32:26.710511+00:00",
-                            "expires_at": "2026-05-03T07:32:26.710511+00:00",
+                            "established_at": "2026-05-03T03:56:01.998896+00:00",
+                            "expires_at": "2026-05-03T07:56:01.998896+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -2235,8 +2275,8 @@
                             "bias": "neutral",
                             "risk_score": 0.5269,
                             "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T03:32:26.710511+00:00",
-                            "expires_at": "2026-05-03T07:32:26.710511+00:00",
+                            "established_at": "2026-05-03T03:56:01.998896+00:00",
+                            "expires_at": "2026-05-03T07:56:01.998896+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -2255,8 +2295,8 @@
                             "bias": "neutral",
                             "risk_score": 0.5269,
                             "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T03:32:26.710511+00:00",
-                            "expires_at": "2026-05-03T07:32:26.710511+00:00",
+                            "established_at": "2026-05-03T03:56:01.998896+00:00",
+                            "expires_at": "2026-05-03T07:56:01.998896+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -2297,16 +2337,16 @@
             "views": 98975,
             "forwards": 302,
             "translation_source": "⚡Translation from Persian (pes_Arab)",
-            "danger_score": 0.5214429468108379,
-            "raw_danger_score": 0.5214429468108379,
+            "danger_score": 0.4490480497278891,
+            "raw_danger_score": 0.4490480497278891,
             "risk_bucket": "watch",
             "saturation": false,
-            "impact_category": "military attack or action",
+            "impact_category": "military propaganda or official wartime statement",
             "nlp_features": {
                 "sentiment": "neutral",
                 "sentiment_score": 0.9430872201919556,
-                "inferred_category": "military attack or action",
-                "category_confidence": 0.9782963395118713,
+                "inferred_category": "military propaganda or official wartime statement",
+                "category_confidence": 0.9812148809432983,
                 "entities": [
                     {
                         "text": "Kalibaev",
@@ -2364,70 +2404,84 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.2956262000006973,
-                    "zero_shot": 1.8130950999984634,
-                    "spacy": 0.024951399998826673,
-                    "gliner": 0.33859149999989313
+                    "finbert": 0.5437010000023292,
+                    "zero_shot": 2.885015799998655,
+                    "spacy": 0.06838369999968563,
+                    "gliner": 0.47755709999910323
                 },
                 "zero_shot_labels": [
+                    "military threat or escalation rhetoric",
                     "military attack or action",
+                    "military propaganda or official wartime statement",
                     "military impact, cost or investigation report",
                     "battlefield tactical report",
                     "declaration of war or armed conflict",
                     "troop mobilization or border skirmish",
                     "military drone or missile strike",
                     "naval blockade or airspace closure",
-                    "sudden market shock or black swan event",
-                    "generic news or daily politics",
-                    "sports, entertainment or celebrity gossip"
+                    "sudden market shock or black swan event"
                 ],
                 "zero_shot_scores": [
+                    0.9812148809432983,
                     0.9782963395118713,
+                    0.9565611481666565,
                     0.9487383961677551,
                     0.9008952975273132,
                     0.8219078779220581,
                     0.6366963982582092,
                     0.618281900882721,
                     0.2705332040786743,
-                    0.19076408445835114,
-                    0.1768893599510193,
-                    0.04191116616129875
+                    0.19076408445835114
                 ],
                 "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
-                "original_inferred_category": "military attack or action",
-                "original_category_confidence": 0.9782963395118713,
-                "category_corrections": []
+                "original_inferred_category": "military threat or escalation rhetoric",
+                "original_category_confidence": 0.9812148809432983,
+                "category_corrections": [
+                    {
+                        "rule": "propaganda_detection",
+                        "from": "military threat or escalation rhetoric",
+                        "to": "military propaganda or official wartime statement"
+                    }
+                ]
             },
             "domain_weight": 1.12,
             "score_breakdown": {
                 "version": "balanced_hard_quant_v2",
                 "inputs": {
-                    "category": "military attack or action",
-                    "original_category": "military attack or action",
-                    "confidence": 0.9782963395118713,
-                    "original_confidence": 0.9782963395118713,
+                    "category": "military propaganda or official wartime statement",
+                    "original_category": "military threat or escalation rhetoric",
+                    "confidence": 0.9812148809432983,
+                    "original_confidence": 0.9812148809432983,
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
                     "domain": "geopolitical"
                 },
-                "category_corrections": [],
+                "category_corrections": [
+                    {
+                        "rule": "propaganda_detection",
+                        "from": "military threat or escalation rhetoric",
+                        "to": "military propaganda or official wartime statement"
+                    }
+                ],
                 "context_filters": {
                     "historical_reference": false,
                     "local_incident": false,
                     "battlefield_micro": false,
                     "self_promotion": false,
                     "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": true,
                     "macro_signal": false,
                     "strategic_signal": true,
                     "impact_report": false
                 },
                 "base": {
                     "severity_base": 0.24,
-                    "category_weight": 1.12,
-                    "category_component": 0.4601905981063843,
-                    "severity_component": 0.26880000000000004,
-                    "base_score": 0.4601905981063843
+                    "category_weight": 0.95,
+                    "category_component": 0.391504737496376,
+                    "severity_component": 0.22799999999999998,
+                    "base_score": 0.391504737496376
                 },
                 "additive_modifiers": {
                     "sentiment_bonus": 0.0,
@@ -2467,11 +2521,11 @@
                 },
                 "caps": [],
                 "scores": {
-                    "additive_score": 0.494727653520719,
-                    "raw_score": 0.5214429468108379,
-                    "raw_after_context": 0.5214429468108379,
-                    "compressed_score": 0.5214429468108379,
-                    "final_score": 0.5214429468108379,
+                    "additive_score": 0.4260417929107107,
+                    "raw_score": 0.4490480497278891,
+                    "raw_after_context": 0.4490480497278891,
+                    "compressed_score": 0.4490480497278891,
+                    "final_score": 0.4490480497278891,
                     "risk_bucket": "watch",
                     "saturation": false
                 }
@@ -2521,7 +2575,7 @@
                 "dry_run": true,
                 "threshold": 0.75,
                 "oracle_review_threshold": 0.65,
-                "danger_score": 0.5214429468108379,
+                "danger_score": 0.4490480497278891,
                 "risk_bucket": "watch",
                 "emitted": false,
                 "emitted_count": 0,
@@ -2563,16 +2617,16 @@
             "views": 97480,
             "forwards": 85,
             "translation_source": "⚡Translation from Persian (pes_Arab)",
-            "danger_score": 0.6518005064005554,
-            "raw_danger_score": 0.6518005064005554,
+            "danger_score": 0.553994678294915,
+            "raw_danger_score": 0.553994678294915,
             "risk_bucket": "elevated",
             "saturation": false,
-            "impact_category": "military attack or action",
+            "impact_category": "military propaganda or official wartime statement",
             "nlp_features": {
                 "sentiment": "neutral",
                 "sentiment_score": 0.566364586353302,
-                "inferred_category": "military attack or action",
-                "category_confidence": 0.8620734214782715,
+                "inferred_category": "military propaganda or official wartime statement",
+                "category_confidence": 0.984271764755249,
                 "entities": [
                     {
                         "text": "Mohammadbaker Khalifaff",
@@ -2645,70 +2699,84 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.23532440000053612,
-                    "zero_shot": 2.051689699997951,
-                    "spacy": 0.04442619999827002,
-                    "gliner": 0.7932643000021926
+                    "finbert": 0.38086769999790704,
+                    "zero_shot": 3.7425112000019,
+                    "spacy": 0.03537309999956051,
+                    "gliner": 0.7777671000003465
                 },
                 "zero_shot_labels": [
+                    "military threat or escalation rhetoric",
                     "military attack or action",
                     "military impact, cost or investigation report",
+                    "military propaganda or official wartime statement",
                     "battlefield tactical report",
                     "declaration of war or armed conflict",
                     "military drone or missile strike",
                     "sudden market shock or black swan event",
                     "troop mobilization or border skirmish",
-                    "naval blockade or airspace closure",
-                    "generic news or daily politics",
-                    "sports, entertainment or celebrity gossip"
+                    "naval blockade or airspace closure"
                 ],
                 "zero_shot_scores": [
+                    0.984271764755249,
                     0.8620734214782715,
                     0.7125880122184753,
+                    0.7030265927314758,
                     0.5771689414978027,
                     0.4958488345146179,
                     0.3556331992149353,
                     0.31518638134002686,
                     0.24939820170402527,
-                    0.15326401591300964,
-                    0.0006457524141296744,
-                    0.00013439092435874045
+                    0.15326401591300964
                 ],
                 "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
-                "original_inferred_category": "military attack or action",
-                "original_category_confidence": 0.8620734214782715,
-                "category_corrections": []
+                "original_inferred_category": "military threat or escalation rhetoric",
+                "original_category_confidence": 0.984271764755249,
+                "category_corrections": [
+                    {
+                        "rule": "propaganda_detection",
+                        "from": "military threat or escalation rhetoric",
+                        "to": "military propaganda or official wartime statement"
+                    }
+                ]
             },
             "domain_weight": 1.12,
             "score_breakdown": {
                 "version": "balanced_hard_quant_v2",
                 "inputs": {
-                    "category": "military attack or action",
-                    "original_category": "military attack or action",
-                    "confidence": 0.8620734214782715,
-                    "original_confidence": 0.8620734214782715,
+                    "category": "military propaganda or official wartime statement",
+                    "original_category": "military threat or escalation rhetoric",
+                    "confidence": 0.984271764755249,
+                    "original_confidence": 0.984271764755249,
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
                     "domain": "geopolitical"
                 },
-                "category_corrections": [],
+                "category_corrections": [
+                    {
+                        "rule": "propaganda_detection",
+                        "from": "military threat or escalation rhetoric",
+                        "to": "military propaganda or official wartime statement"
+                    }
+                ],
                 "context_filters": {
                     "historical_reference": false,
                     "local_incident": false,
                     "battlefield_micro": false,
                     "self_promotion": false,
-                    "active_escalation": true,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": true,
                     "macro_signal": false,
                     "strategic_signal": false,
                     "impact_report": false
                 },
                 "base": {
                     "severity_base": 0.24,
-                    "category_weight": 1.12,
-                    "category_component": 0.4055193374633789,
-                    "severity_component": 0.26880000000000004,
-                    "base_score": 0.4055193374633789
+                    "category_weight": 0.95,
+                    "category_component": 0.3927244341373443,
+                    "severity_component": 0.22799999999999998,
+                    "base_score": 0.3927244341373443
                 },
                 "additive_modifiers": {
                     "sentiment_bonus": 0.0,
@@ -2717,7 +2785,7 @@
                     "numeric_bonus": 0.0,
                     "keyword_bonus": 0.0,
                     "engagement_bonus": 0.01788721509881789,
-                    "critical_bonus": 0.08
+                    "critical_bonus": 0.0
                 },
                 "keyword_hits": [],
                 "gliner_details": {
@@ -2748,11 +2816,11 @@
                 },
                 "caps": [],
                 "scores": {
-                    "additive_score": 0.6184065525621968,
-                    "raw_score": 0.6518005064005554,
-                    "raw_after_context": 0.6518005064005554,
-                    "compressed_score": 0.6518005064005554,
-                    "final_score": 0.6518005064005554,
+                    "additive_score": 0.5256116492361622,
+                    "raw_score": 0.553994678294915,
+                    "raw_after_context": 0.553994678294915,
+                    "compressed_score": 0.553994678294915,
+                    "final_score": 0.553994678294915,
                     "risk_bucket": "elevated",
                     "saturation": false
                 }
@@ -2807,95 +2875,15 @@
                 "dry_run": true,
                 "threshold": 0.75,
                 "oracle_review_threshold": 0.65,
-                "danger_score": 0.6518005064005554,
+                "danger_score": 0.553994678294915,
                 "risk_bucket": "elevated",
                 "emitted": false,
                 "emitted_count": 0,
-                "oracle_review_requested": true,
+                "oracle_review_requested": false,
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold",
-                "oracle_review_reason": "score_between_oracle_and_tag_threshold",
-                "oracle_review_payload": {
-                    "event_type": "ORACLE_REVIEW_REQUESTED",
-                    "trigger_event_id": "648af931-a859-4059-b5a9-07321abc2e88",
-                    "reason": "score_between_oracle_and_tag_threshold",
-                    "danger_score": 0.6518005064005554,
-                    "risk_bucket": "elevated",
-                    "impact_category": "military attack or action",
-                    "candidate_directives": [
-                        {
-                            "asset": "XAU",
-                            "bias": "bullish",
-                            "confidence": 0.7,
-                            "reason": "risk_off_safe_haven"
-                        },
-                        {
-                            "asset": "XAU/USD",
-                            "bias": "bullish",
-                            "confidence": 0.7,
-                            "reason": "risk_off_safe_haven"
-                        },
-                        {
-                            "asset": "JPY",
-                            "bias": "bullish",
-                            "confidence": 0.7,
-                            "reason": "risk_off_safe_haven"
-                        },
-                        {
-                            "asset": "CHF",
-                            "bias": "bullish",
-                            "confidence": 0.7,
-                            "reason": "risk_off_safe_haven"
-                        },
-                        {
-                            "asset": "SPX",
-                            "bias": "bearish",
-                            "confidence": 0.66,
-                            "reason": "equity_risk"
-                        },
-                        {
-                            "asset": "NQ",
-                            "bias": "bearish",
-                            "confidence": 0.66,
-                            "reason": "equity_risk"
-                        },
-                        {
-                            "asset": "EUR/USD",
-                            "bias": "neutral",
-                            "confidence": 0.64,
-                            "reason": "currency:USD"
-                        },
-                        {
-                            "asset": "GBP/USD",
-                            "bias": "neutral",
-                            "confidence": 0.64,
-                            "reason": "currency:USD"
-                        },
-                        {
-                            "asset": "USD/JPY",
-                            "bias": "neutral",
-                            "confidence": 0.64,
-                            "reason": "currency:USD"
-                        },
-                        {
-                            "asset": "USD/CHF",
-                            "bias": "neutral",
-                            "confidence": 0.64,
-                            "reason": "currency:USD"
-                        },
-                        {
-                            "asset": "USD",
-                            "bias": "neutral",
-                            "confidence": 0.52,
-                            "reason": "currency_index:USD"
-                        }
-                    ],
-                    "created_at": "2026-05-03T03:32:42.456692+00:00"
-                },
-                "oracle_review_published": false,
-                "oracle_review_dry_run": true
+                "reason": "below_global_tag_threshold"
             }
         }
     },
@@ -3019,18 +3007,18 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.20867989999896963,
-                    "zero_shot": 2.1720333000012033,
-                    "spacy": 0.024788499998976476,
-                    "gliner": 0.3381090000002587
+                    "finbert": 0.39792989999841666,
+                    "zero_shot": 3.295246699999552,
+                    "spacy": 0.025662400003056973,
+                    "gliner": 0.4905433999992965
                 },
                 "zero_shot_labels": [
                     "military attack or action",
-                    "nuclear threat or radioactive incident",
+                    "military threat or escalation rhetoric",
                     "battlefield tactical report",
+                    "military propaganda or official wartime statement",
                     "military impact, cost or investigation report",
                     "military drone or missile strike",
-                    "unprecedented global crisis or major disruptive anomaly",
                     "naval blockade or airspace closure",
                     "troop mobilization or border skirmish",
                     "declaration of war or armed conflict",
@@ -3038,11 +3026,11 @@
                 ],
                 "zero_shot_scores": [
                     0.7110656499862671,
-                    0.5410587191581726,
+                    0.434426873922348,
                     0.32506248354911804,
+                    0.3114166259765625,
                     0.3047538697719574,
                     0.2012711763381958,
-                    0.1830843687057495,
                     0.08634812384843826,
                     0.048925384879112244,
                     0.01919754222035408,
@@ -3072,7 +3060,9 @@
                     "local_incident": false,
                     "battlefield_micro": false,
                     "self_promotion": false,
-                    "active_escalation": true,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": true,
                     "strategic_signal": true,
                     "impact_report": false
@@ -3232,8 +3222,8 @@
                             "bias": "bullish",
                             "risk_score": 0.629,
                             "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T03:32:50.306711+00:00",
-                            "expires_at": "2026-05-03T07:32:50.306711+00:00",
+                            "established_at": "2026-05-03T03:56:30.362084+00:00",
+                            "expires_at": "2026-05-03T07:56:30.362084+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -3252,8 +3242,8 @@
                             "bias": "bullish",
                             "risk_score": 0.629,
                             "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T03:32:50.306711+00:00",
-                            "expires_at": "2026-05-03T07:32:50.306711+00:00",
+                            "established_at": "2026-05-03T03:56:30.362622+00:00",
+                            "expires_at": "2026-05-03T07:56:30.362622+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -3272,8 +3262,8 @@
                             "bias": "bullish",
                             "risk_score": 0.629,
                             "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T03:32:50.306711+00:00",
-                            "expires_at": "2026-05-03T07:32:50.306711+00:00",
+                            "established_at": "2026-05-03T03:56:30.362622+00:00",
+                            "expires_at": "2026-05-03T07:56:30.362622+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -3292,8 +3282,8 @@
                             "bias": "bullish",
                             "risk_score": 0.5645,
                             "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T03:32:50.306711+00:00",
-                            "expires_at": "2026-05-03T07:32:50.306711+00:00",
+                            "established_at": "2026-05-03T03:56:30.362622+00:00",
+                            "expires_at": "2026-05-03T07:56:30.362622+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -3312,8 +3302,8 @@
                             "bias": "bullish",
                             "risk_score": 0.5645,
                             "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T03:32:50.306711+00:00",
-                            "expires_at": "2026-05-03T07:32:50.306711+00:00",
+                            "established_at": "2026-05-03T03:56:30.362622+00:00",
+                            "expires_at": "2026-05-03T07:56:30.362622+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -3332,8 +3322,8 @@
                             "bias": "bullish",
                             "risk_score": 0.5645,
                             "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T03:32:50.308215+00:00",
-                            "expires_at": "2026-05-03T07:32:50.308215+00:00",
+                            "established_at": "2026-05-03T03:56:30.362622+00:00",
+                            "expires_at": "2026-05-03T07:56:30.362622+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -3352,8 +3342,8 @@
                             "bias": "bullish",
                             "risk_score": 0.5645,
                             "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T03:32:50.308215+00:00",
-                            "expires_at": "2026-05-03T07:32:50.308215+00:00",
+                            "established_at": "2026-05-03T03:56:30.362622+00:00",
+                            "expires_at": "2026-05-03T07:56:30.362622+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -3372,8 +3362,8 @@
                             "bias": "bearish",
                             "risk_score": 0.5322,
                             "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T03:32:50.308215+00:00",
-                            "expires_at": "2026-05-03T07:32:50.308215+00:00",
+                            "established_at": "2026-05-03T03:56:30.363150+00:00",
+                            "expires_at": "2026-05-03T07:56:30.363150+00:00",
                             "active": true,
                             "event_type": "GLOBAL_TAG_UPDATED"
                         },
@@ -3415,9 +3405,9 @@
             "views": 61327,
             "forwards": 75,
             "translation_source": "⚡Translation from Persian (pes_Arab)",
-            "danger_score": 0.5309997928506753,
+            "danger_score": 0.26549989642533767,
             "raw_danger_score": 0.5309997928506753,
-            "risk_bucket": "watch",
+            "risk_bucket": "low",
             "saturation": false,
             "impact_category": "military impact, cost or investigation report",
             "nlp_features": {
@@ -3510,33 +3500,33 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.4472027000010712,
-                    "zero_shot": 1.9880142000001797,
-                    "spacy": 0.02735939999911352,
-                    "gliner": 0.4017472000014095
+                    "finbert": 0.778768800002581,
+                    "zero_shot": 3.5535057000015513,
+                    "spacy": 0.03606500000023516,
+                    "gliner": 0.5432174999987183
                 },
                 "zero_shot_labels": [
                     "military impact, cost or investigation report",
                     "military attack or action",
+                    "military propaganda or official wartime statement",
                     "battlefield tactical report",
                     "military drone or missile strike",
+                    "military threat or escalation rhetoric",
                     "troop mobilization or border skirmish",
                     "declaration of war or armed conflict",
                     "sudden market shock or black swan event",
-                    "sports, entertainment or celebrity gossip",
-                    "generic news or daily politics",
                     "naval blockade or airspace closure"
                 ],
                 "zero_shot_scores": [
                     0.7422784566879272,
                     0.6673768162727356,
+                    0.39052727818489075,
                     0.12475935369729996,
                     0.09328888356685638,
+                    0.05853933468461037,
                     0.0031850540544837713,
                     0.002352080773562193,
                     0.0001882136712083593,
-                    0.00017554017540533096,
-                    0.00010757074051070958,
                     4.704139064415358e-05
                 ],
                 "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
@@ -3563,10 +3553,12 @@
                     "local_incident": false,
                     "battlefield_micro": false,
                     "self_promotion": false,
-                    "active_escalation": true,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": true,
-                    "impact_report": false
+                    "impact_report": true
                 },
                 "base": {
                     "severity_base": 0.24,
@@ -3623,17 +3615,17 @@
                     "domain_weight": 1.12,
                     "effective_domain_weight": 1.054,
                     "gliner_multiplier": 1.0,
-                    "context_multiplier": 1.0,
-                    "total_multiplier": 1.054
+                    "context_multiplier": 0.5,
+                    "total_multiplier": 0.527
                 },
                 "caps": [],
                 "scores": {
                     "additive_score": 0.503794869877301,
                     "raw_score": 0.5309997928506753,
-                    "raw_after_context": 0.5309997928506753,
-                    "compressed_score": 0.5309997928506753,
-                    "final_score": 0.5309997928506753,
-                    "risk_bucket": "watch",
+                    "raw_after_context": 0.26549989642533767,
+                    "compressed_score": 0.26549989642533767,
+                    "final_score": 0.26549989642533767,
+                    "risk_bucket": "low",
                     "saturation": false
                 }
             },
@@ -3695,8 +3687,8 @@
                 "dry_run": true,
                 "threshold": 0.75,
                 "oracle_review_threshold": 0.65,
-                "danger_score": 0.5309997928506753,
-                "risk_bucket": "watch",
+                "danger_score": 0.26549989642533767,
+                "risk_bucket": "low",
                 "emitted": false,
                 "emitted_count": 0,
                 "oracle_review_requested": false,
@@ -3736,8 +3728,8 @@
             "views": 58968,
             "forwards": 38,
             "translation_source": "⚡Translation from Persian (pes_Arab)",
-            "danger_score": 0.586941509932987,
-            "raw_danger_score": 0.586941509932987,
+            "danger_score": 0.618298009932987,
+            "raw_danger_score": 0.618298009932987,
             "risk_bucket": "elevated",
             "saturation": false,
             "impact_category": "commodity price surge or oil market disruption",
@@ -3795,34 +3787,34 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.12146439999924041,
-                    "zero_shot": 3.496458400000847,
-                    "spacy": 0.06264620000001742,
-                    "gliner": 0.21050330000070971
+                    "finbert": 0.21177700000043842,
+                    "zero_shot": 1.9578940999999759,
+                    "spacy": 0.05779320000146981,
+                    "gliner": 0.37153309999848716
                 },
                 "zero_shot_labels": [
                     "military impact, cost or investigation report",
-                    "commodity price surge or oil market disruption",
                     "military attack or action",
+                    "military threat or escalation rhetoric",
                     "battlefield tactical report",
                     "sudden market shock or black swan event",
                     "troop mobilization or border skirmish",
-                    "sudden price spike or hyperinflation warning",
                     "military drone or missile strike",
                     "declaration of war or armed conflict",
-                    "naval blockade or airspace closure"
+                    "naval blockade or airspace closure",
+                    "military propaganda or official wartime statement"
                 ],
                 "zero_shot_scores": [
                     0.5144435167312622,
-                    0.4767252504825592,
                     0.1552967131137848,
+                    0.1505461037158966,
                     0.07886037975549698,
                     0.034182868897914886,
                     0.032751068472862244,
-                    0.03264101594686508,
                     0.00485375477001071,
                     0.0013883038191124797,
-                    0.00031994187156669796
+                    0.00031994187156669796,
+                    0.0002759706403594464
                 ],
                 "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
                 "original_inferred_category": "military impact, cost or investigation report",
@@ -3861,6 +3853,8 @@
                     "battlefield_micro": false,
                     "self_promotion": false,
                     "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": true,
                     "strategic_signal": true,
                     "impact_report": false
@@ -3873,7 +3867,7 @@
                     "base_score": 0.40697999999999995
                 },
                 "additive_modifiers": {
-                    "sentiment_bonus": -0.029750000000000002,
+                    "sentiment_bonus": 0.0,
                     "entity_bonus": 0.06,
                     "gliner_bonus": 0.0,
                     "numeric_bonus": 0.0,
@@ -3925,11 +3919,11 @@
                 },
                 "caps": [],
                 "scores": {
-                    "additive_score": 0.5568705027827201,
-                    "raw_score": 0.586941509932987,
-                    "raw_after_context": 0.586941509932987,
-                    "compressed_score": 0.586941509932987,
-                    "final_score": 0.586941509932987,
+                    "additive_score": 0.58662050278272,
+                    "raw_score": 0.618298009932987,
+                    "raw_after_context": 0.618298009932987,
+                    "compressed_score": 0.618298009932987,
+                    "final_score": 0.618298009932987,
                     "risk_bucket": "elevated",
                     "saturation": false
                 }
@@ -3979,7 +3973,7 @@
                 "dry_run": true,
                 "threshold": 0.75,
                 "oracle_review_threshold": 0.65,
-                "danger_score": 0.586941509932987,
+                "danger_score": 0.618298009932987,
                 "risk_bucket": "elevated",
                 "emitted": false,
                 "emitted_count": 0,
@@ -4124,16 +4118,18 @@
                 },
                 "chunks_processed": 1,
                 "gliner_chunks_processed": 1,
-                "candidate_labels_used": 7,
+                "candidate_labels_used": 9,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.24269819999972242,
-                    "zero_shot": 1.7709116000005451,
-                    "spacy": 0.027798600000096485,
-                    "gliner": 0.41952300000048126
+                    "finbert": 0.3346765999995114,
+                    "zero_shot": 2.6357107000003452,
+                    "spacy": 0.029872099999920465,
+                    "gliner": 0.5164111000012781
                 },
                 "zero_shot_labels": [
                     "nuclear threat or radioactive incident",
+                    "military threat or escalation rhetoric",
+                    "military propaganda or official wartime statement",
                     "sports, entertainment or celebrity gossip",
                     "unprecedented global crisis or major disruptive anomaly",
                     "troop mobilization or border skirmish",
@@ -4143,6 +4139,8 @@
                 ],
                 "zero_shot_scores": [
                     0.2507852017879486,
+                    0.2015840858221054,
+                    0.15707238018512726,
                     0.0993855893611908,
                     0.05354324355721474,
                     0.01534086000174284,
@@ -4175,6 +4173,8 @@
                     "battlefield_micro": false,
                     "self_promotion": false,
                     "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": true,
                     "impact_report": true
@@ -4336,16 +4336,16 @@
             "views": 229795,
             "forwards": 471,
             "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
-            "danger_score": 0.2392732732600052,
-            "raw_danger_score": 0.2392732732600052,
-            "risk_bucket": "low",
+            "danger_score": 0.4199951214631669,
+            "raw_danger_score": 0.4199951214631669,
+            "risk_bucket": "watch",
             "saturation": false,
-            "impact_category": "battlefield tactical report",
+            "impact_category": "military propaganda or official wartime statement",
             "nlp_features": {
                 "sentiment": "negative",
                 "sentiment_score": 0.7639037370681763,
-                "inferred_category": "battlefield tactical report",
-                "category_confidence": 0.04061378166079521,
+                "inferred_category": "military propaganda or official wartime statement",
+                "category_confidence": 0.5972005724906921,
                 "entities": [
                     {
                         "text": "The first three months",
@@ -4410,15 +4410,17 @@
                 },
                 "chunks_processed": 1,
                 "gliner_chunks_processed": 1,
-                "candidate_labels_used": 5,
+                "candidate_labels_used": 7,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.2366083000015351,
-                    "zero_shot": 0.6880249000023468,
-                    "spacy": 0.01870999999664491,
-                    "gliner": 0.26288879999992787
+                    "finbert": 0.3274278000026243,
+                    "zero_shot": 1.4732848999992711,
+                    "spacy": 0.02247440000064671,
+                    "gliner": 0.34426259999963804
                 },
                 "zero_shot_labels": [
+                    "military propaganda or official wartime statement",
+                    "military threat or escalation rhetoric",
                     "battlefield tactical report",
                     "generic news or daily politics",
                     "sports, entertainment or celebrity gossip",
@@ -4426,6 +4428,8 @@
                     "sudden market shock or black swan event"
                 ],
                 "zero_shot_scores": [
+                    0.5972005724906921,
+                    0.5286220908164978,
                     0.04061378166079521,
                     0.0006985877407714725,
                     0.000561918132007122,
@@ -4433,18 +4437,18 @@
                     0.00013868602400179952
                 ],
                 "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
-                "original_inferred_category": "battlefield tactical report",
-                "original_category_confidence": 0.04061378166079521,
+                "original_inferred_category": "military propaganda or official wartime statement",
+                "original_category_confidence": 0.5972005724906921,
                 "category_corrections": []
             },
             "domain_weight": 1.12,
             "score_breakdown": {
                 "version": "balanced_hard_quant_v2",
                 "inputs": {
-                    "category": "battlefield tactical report",
-                    "original_category": "battlefield tactical report",
-                    "confidence": 0.04061378166079521,
-                    "original_confidence": 0.04061378166079521,
+                    "category": "military propaganda or official wartime statement",
+                    "original_category": "military propaganda or official wartime statement",
+                    "confidence": 0.5972005724906921,
+                    "original_confidence": 0.5972005724906921,
                     "sentiment": "negative",
                     "severity": "unknown",
                     "severity_key": "",
@@ -4457,19 +4461,21 @@
                     "battlefield_micro": false,
                     "self_promotion": false,
                     "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": false,
                     "impact_report": false
                 },
                 "base": {
                     "severity_base": 0.24,
-                    "category_weight": 0.45,
-                    "category_component": 0.007676004733890295,
-                    "severity_component": 0.108,
-                    "base_score": 0.108
+                    "category_weight": 0.95,
+                    "category_component": 0.23828302842378615,
+                    "severity_component": 0.22799999999999998,
+                    "base_score": 0.23828302842378615
                 },
                 "additive_modifiers": {
-                    "sentiment_bonus": 0.0013707151310518382,
+                    "sentiment_bonus": 0.04255054078996181,
                     "entity_bonus": 0.0,
                     "gliner_bonus": 0.07,
                     "numeric_bonus": 0.0,
@@ -4506,12 +4512,12 @@
                 },
                 "caps": [],
                 "scores": {
-                    "additive_score": 0.2270144907590182,
-                    "raw_score": 0.2392732732600052,
-                    "raw_after_context": 0.2392732732600052,
-                    "compressed_score": 0.2392732732600052,
-                    "final_score": 0.2392732732600052,
-                    "risk_bucket": "low",
+                    "additive_score": 0.3984773448417143,
+                    "raw_score": 0.4199951214631669,
+                    "raw_after_context": 0.4199951214631669,
+                    "compressed_score": 0.4199951214631669,
+                    "final_score": 0.4199951214631669,
+                    "risk_bucket": "watch",
                     "saturation": false
                 }
             },
@@ -4563,8 +4569,8 @@
                 "dry_run": true,
                 "threshold": 0.75,
                 "oracle_review_threshold": 0.65,
-                "danger_score": 0.2392732732600052,
-                "risk_bucket": "low",
+                "danger_score": 0.4199951214631669,
+                "risk_bucket": "watch",
                 "emitted": false,
                 "emitted_count": 0,
                 "oracle_review_requested": false,
@@ -4650,34 +4656,34 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.16759579999779817,
-                    "zero_shot": 2.960354800001369,
-                    "spacy": 0.019118600001093,
-                    "gliner": 0.32224700000006123
+                    "finbert": 0.24725100000068778,
+                    "zero_shot": 2.2091887000024144,
+                    "spacy": 0.021366099997976562,
+                    "gliner": 0.430861000000732
                 },
                 "zero_shot_labels": [
                     "military attack or action",
+                    "military propaganda or official wartime statement",
                     "military impact, cost or investigation report",
+                    "military threat or escalation rhetoric",
                     "military drone or missile strike",
                     "troop mobilization or border skirmish",
                     "declaration of war or armed conflict",
-                    "sports, entertainment or celebrity gossip",
                     "battlefield tactical report",
                     "naval blockade or airspace closure",
-                    "sudden market shock or black swan event",
-                    "generic news or daily politics"
+                    "sudden market shock or black swan event"
                 ],
                 "zero_shot_scores": [
                     0.8416011333465576,
+                    0.712367594242096,
                     0.619909942150116,
+                    0.5037463307380676,
                     0.47603878378868103,
                     0.23922710120677948,
                     0.1532229483127594,
-                    0.15220271050930023,
                     0.14607489109039307,
                     0.07405063509941101,
-                    0.051406409591436386,
-                    0.030347194522619247
+                    0.051406409591436386
                 ],
                 "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
                 "original_inferred_category": "military attack or action",
@@ -4716,6 +4722,8 @@
                     "battlefield_micro": true,
                     "self_promotion": false,
                     "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": false,
                     "impact_report": false
@@ -4901,34 +4909,34 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.16144679999706568,
-                    "zero_shot": 1.6476183999984642,
-                    "spacy": 0.009814100001676707,
-                    "gliner": 0.28308620000098017
+                    "finbert": 0.3785863999983121,
+                    "zero_shot": 2.041450000000623,
+                    "spacy": 0.020555399998556823,
+                    "gliner": 0.3654395999983535
                 },
                 "zero_shot_labels": [
                     "military attack or action",
+                    "military propaganda or official wartime statement",
                     "military impact, cost or investigation report",
                     "military drone or missile strike",
+                    "military threat or escalation rhetoric",
                     "troop mobilization or border skirmish",
                     "declaration of war or armed conflict",
-                    "sports, entertainment or celebrity gossip",
                     "battlefield tactical report",
                     "naval blockade or airspace closure",
-                    "sudden market shock or black swan event",
-                    "generic news or daily politics"
+                    "sudden market shock or black swan event"
                 ],
                 "zero_shot_scores": [
                     0.8533982038497925,
+                    0.7138755917549133,
                     0.5613465309143066,
                     0.4819594621658325,
+                    0.4376704692840576,
                     0.3276217579841614,
                     0.18239930272102356,
-                    0.1589941829442978,
                     0.13372674584388733,
                     0.08558870851993561,
-                    0.07616926729679108,
-                    0.04697314277291298
+                    0.07616926729679108
                 ],
                 "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
                 "original_inferred_category": "military attack or action",
@@ -4967,6 +4975,8 @@
                     "battlefield_micro": true,
                     "self_promotion": false,
                     "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": false,
                     "impact_report": false
@@ -5115,7 +5125,7 @@
                 "sentiment": "neutral",
                 "sentiment_score": 0.4940691888332367,
                 "inferred_category": "generic news or daily politics",
-                "category_confidence": 0.55,
+                "category_confidence": 0.3334043323993683,
                 "entities": [
                     {
                         "text": "40 years",
@@ -5175,42 +5185,42 @@
                 "candidate_labels_used": 10,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.15868549999868264,
-                    "zero_shot": 1.4943545999994967,
-                    "spacy": 0.018742700001894264,
-                    "gliner": 0.2463649000019359
+                    "finbert": 0.28542079999897396,
+                    "zero_shot": 1.929310200001055,
+                    "spacy": 0.02556170000025304,
+                    "gliner": 0.3854943000005733
                 },
                 "zero_shot_labels": [
-                    "nuclear threat or radioactive incident",
-                    "unprecedented global crisis or major disruptive anomaly",
                     "military impact, cost or investigation report",
                     "military attack or action",
                     "naval blockade or airspace closure",
                     "declaration of war or armed conflict",
+                    "military threat or escalation rhetoric",
                     "battlefield tactical report",
+                    "military propaganda or official wartime statement",
                     "military drone or missile strike",
                     "troop mobilization or border skirmish",
                     "sudden market shock or black swan event"
                 ],
                 "zero_shot_scores": [
-                    0.7550216317176819,
-                    0.5457080602645874,
                     0.3334043323993683,
                     0.024005088955163956,
                     0.021165847778320312,
                     0.005422437563538551,
+                    0.005086164455860853,
                     0.004159659147262573,
+                    0.0036447900347411633,
                     0.000931868446059525,
                     0.0008940357947722077,
                     0.0006368583417497575
                 ],
                 "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
-                "original_inferred_category": "nuclear threat or radioactive incident",
-                "original_category_confidence": 0.7550216317176819,
+                "original_inferred_category": "military impact, cost or investigation report",
+                "original_category_confidence": 0.3334043323993683,
                 "category_corrections": [
                     {
                         "rule": "historical_reference",
-                        "from": "nuclear threat or radioactive incident",
+                        "from": "military impact, cost or investigation report",
                         "to": "generic news or daily politics"
                     }
                 ]
@@ -5220,9 +5230,9 @@
                 "version": "balanced_hard_quant_v2",
                 "inputs": {
                     "category": "generic news or daily politics",
-                    "original_category": "nuclear threat or radioactive incident",
-                    "confidence": 0.55,
-                    "original_confidence": 0.7550216317176819,
+                    "original_category": "military impact, cost or investigation report",
+                    "confidence": 0.3334043323993683,
+                    "original_confidence": 0.3334043323993683,
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
@@ -5231,7 +5241,7 @@
                 "category_corrections": [
                     {
                         "rule": "historical_reference",
-                        "from": "nuclear threat or radioactive incident",
+                        "from": "military impact, cost or investigation report",
                         "to": "generic news or daily politics"
                     }
                 ],
@@ -5240,7 +5250,9 @@
                     "local_incident": false,
                     "battlefield_micro": false,
                     "self_promotion": false,
-                    "active_escalation": true,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
                     "macro_signal": false,
                     "strategic_signal": false,
                     "impact_report": false
@@ -5248,7 +5260,7 @@
                 "base": {
                     "severity_base": 0.24,
                     "category_weight": 0.22,
-                    "category_component": 0.050820000000000004,
+                    "category_component": 0.030806560313701627,
                     "severity_component": 0.0528,
                     "base_score": 0.0528
                 },
@@ -5364,6 +5376,1126 @@
                 "queue_name": "intel.global_tags",
                 "tags": [],
                 "reason": "below_global_tag_threshold"
+            }
+        }
+    },
+    {
+        "id": "eb98be08-1bdb-48c0-9f7a-c2a1b3aa1f92",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "\"Such bludgeoning is impossible to admit in a month or two\". New Combat 54 OMBr on the rapid loss of...",
+        "url": "",
+        "body": "\"Such bludgeoning is impossible to admit in a month or two\". New Combat 54 OMBr on the rapid loss of the Siverskaya A very interesting interview with the 30-year-old Combat was given by Vadim Chernias, in which he openly tells how he accepted the brigade and what kind of disease it was and what it continues to treat. In the words of the Brigade Commander: There were infantry in the positions who, in the presence of blades, bags, weapons and ammunition, could not use weapons for their purpose.",
+        "published_at": "2026-04-26 10:57",
+        "ts": "2026-05-01T21:34:18.112000Z",
+        "fetched_at": "2026-05-01T21:34:18.112005Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 186114,
+            "forwards": 751,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.21914018891898293,
+            "raw_danger_score": 0.27392523614872866,
+            "risk_bucket": "low",
+            "saturation": false,
+            "impact_category": "battlefield tactical report",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.7003600001335144,
+                "inferred_category": "battlefield tactical report",
+                "category_confidence": 0.55,
+                "entities": [
+                    {
+                        "text": "a month",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "two",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "54",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "30-year-old",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Combat",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Vadim Chernias",
+                        "label": "ORG"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [
+                        "Brigade Commander"
+                    ],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [
+                        "Combat"
+                    ],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": [],
+                    "forex signal": [],
+                    "currency pair": [],
+                    "forex pair": [],
+                    "financial ticker": [],
+                    "currency mentioned": [],
+                    "central bank": [],
+                    "economic indicator": [],
+                    "monetary policy signal": [],
+                    "geopolitical event": [],
+                    "political leader": [],
+                    "commodity price action": [],
+                    "fiat currency": [],
+                    "market sentiment": [],
+                    "fiscal policy change": [],
+                    "strategic infrastructure": [],
+                    "institutional actor": []
+                },
+                "chunks_processed": 1,
+                "gliner_chunks_processed": 1,
+                "candidate_labels_used": 10,
+                "labels_set": "minimum",
+                "nlp_timings": {
+                    "finbert": 0.37547579999954905,
+                    "zero_shot": 2.523760299998685,
+                    "spacy": 0.02870949999851291,
+                    "gliner": 0.4964709000014409
+                },
+                "zero_shot_labels": [
+                    "military attack or action",
+                    "military impact, cost or investigation report",
+                    "battlefield tactical report",
+                    "military threat or escalation rhetoric",
+                    "military propaganda or official wartime statement",
+                    "troop mobilization or border skirmish",
+                    "declaration of war or armed conflict",
+                    "sudden market shock or black swan event",
+                    "military drone or missile strike",
+                    "naval blockade or airspace closure"
+                ],
+                "zero_shot_scores": [
+                    0.5230241417884827,
+                    0.3956352472305298,
+                    0.3587265908718109,
+                    0.03448975086212158,
+                    0.015670234337449074,
+                    0.0016159865772351623,
+                    0.001104158814996481,
+                    0.00020625659090001136,
+                    0.00019720353884622455,
+                    3.9035294321365654e-05
+                ],
+                "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
+                "original_inferred_category": "military attack or action",
+                "original_category_confidence": 0.5230241417884827,
+                "category_corrections": [
+                    {
+                        "rule": "battlefield_micro_force_category",
+                        "from": "military attack or action",
+                        "to": "battlefield tactical report"
+                    }
+                ]
+            },
+            "domain_weight": 1.12,
+            "score_breakdown": {
+                "version": "balanced_hard_quant_v2",
+                "inputs": {
+                    "category": "battlefield tactical report",
+                    "original_category": "military attack or action",
+                    "confidence": 0.55,
+                    "original_confidence": 0.5230241417884827,
+                    "sentiment": "neutral",
+                    "severity": "unknown",
+                    "severity_key": "",
+                    "domain": "geopolitical"
+                },
+                "category_corrections": [
+                    {
+                        "rule": "battlefield_micro_force_category",
+                        "from": "military attack or action",
+                        "to": "battlefield tactical report"
+                    }
+                ],
+                "context_filters": {
+                    "historical_reference": false,
+                    "local_incident": false,
+                    "battlefield_micro": true,
+                    "self_promotion": false,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
+                    "macro_signal": false,
+                    "strategic_signal": false,
+                    "impact_report": false
+                },
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.45,
+                    "category_component": 0.10395,
+                    "severity_component": 0.108,
+                    "base_score": 0.108
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.1,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.051891115890634415,
+                    "critical_bonus": 0.0
+                },
+                "keyword_hits": [],
+                "gliner_details": {
+                    "macro_target": false,
+                    "strategic_infra": false,
+                    "strategic_raw": false,
+                    "kinetic": false,
+                    "weapon": true,
+                    "military_actor": true,
+                    "geopolitical": false,
+                    "central_bank": false,
+                    "economic_indicator": false,
+                    "market_sentiment": false,
+                    "commodity_action": false,
+                    "institutional_actor": false,
+                    "political_leader": false,
+                    "localized_noise": false,
+                    "strong_tactical_signal": true,
+                    "bonus": 0.1,
+                    "multiplier": 1.0
+                },
+                "multipliers": {
+                    "domain_weight": 1.12,
+                    "effective_domain_weight": 1.054,
+                    "gliner_multiplier": 1.0,
+                    "context_multiplier": 0.8,
+                    "total_multiplier": 0.8432000000000001
+                },
+                "caps": [],
+                "scores": {
+                    "additive_score": 0.2598911158906344,
+                    "raw_score": 0.27392523614872866,
+                    "raw_after_context": 0.21914018891898293,
+                    "compressed_score": 0.21914018891898293,
+                    "final_score": 0.21914018891898293,
+                    "risk_bucket": "low",
+                    "saturation": false
+                }
+            },
+            "matched_keywords": [
+                "a month",
+                "two",
+                "54",
+                "30-year-old",
+                "Combat",
+                "Vadim Chernias",
+                "Brigade Commander"
+            ],
+            "numeric_features": {
+                "large_money_amount": null,
+                "casualty_count": null,
+                "percent_change": null
+            },
+            "gliner_tactical": {
+                "military actor": [
+                    "Brigade Commander"
+                ],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [
+                    "Combat"
+                ],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": [],
+                "forex signal": [],
+                "currency pair": [],
+                "forex pair": [],
+                "financial ticker": [],
+                "currency mentioned": [],
+                "central bank": [],
+                "economic indicator": [],
+                "monetary policy signal": [],
+                "geopolitical event": [],
+                "political leader": [],
+                "commodity price action": [],
+                "fiat currency": [],
+                "market sentiment": [],
+                "fiscal policy change": [],
+                "strategic infrastructure": [],
+                "institutional actor": []
+            },
+            "global_tag_emission": {
+                "checked": true,
+                "dry_run": true,
+                "threshold": 0.75,
+                "oracle_review_threshold": 0.65,
+                "danger_score": 0.21914018891898293,
+                "risk_bucket": "low",
+                "emitted": false,
+                "emitted_count": 0,
+                "oracle_review_requested": false,
+                "oracle_review_queue_name": "intel.oracle.review",
+                "queue_name": "intel.global_tags",
+                "tags": [],
+                "reason": "below_global_tag_threshold"
+            }
+        }
+    },
+    {
+        "id": "ff09d0ea-7f58-4c3b-8760-45c6b600c0b7",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "BBS 67 OMBr \"The Iron Falcon\" destroys the enemy's personal force near the Beroazov Join the new col...",
+        "url": "",
+        "body": "BBS 67 OMBr \"The Iron Falcon\" destroys the enemy's personal force near the Beroazov Join the new collection for 22 OMBr: https://send.monobank.ua/jar/5MAfxQvJAX.",
+        "published_at": "2026-04-26 12:51",
+        "ts": "2026-05-01T21:34:18.112071Z",
+        "fetched_at": "2026-05-01T21:34:18.112077Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 173241,
+            "forwards": 109,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.22108884908076393,
+            "raw_danger_score": 0.2763610613509549,
+            "risk_bucket": "low",
+            "saturation": false,
+            "impact_category": "battlefield tactical report",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.9222397804260254,
+                "inferred_category": "battlefield tactical report",
+                "category_confidence": 0.72,
+                "entities": [
+                    {
+                        "text": "67",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "The Iron Falcon",
+                        "label": "WORK_OF_ART"
+                    },
+                    {
+                        "text": "the Beroazov Join",
+                        "label": "FAC"
+                    },
+                    {
+                        "text": "22",
+                        "label": "CARDINAL"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [
+                        "BBS 67 OMBr"
+                    ],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [
+                        "The Iron Falcon"
+                    ],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": [],
+                    "forex signal": [],
+                    "currency pair": [],
+                    "forex pair": [],
+                    "financial ticker": [],
+                    "currency mentioned": [],
+                    "central bank": [],
+                    "economic indicator": [],
+                    "monetary policy signal": [],
+                    "geopolitical event": [],
+                    "political leader": [],
+                    "commodity price action": [],
+                    "fiat currency": [],
+                    "market sentiment": [],
+                    "fiscal policy change": [],
+                    "strategic infrastructure": [],
+                    "institutional actor": []
+                },
+                "chunks_processed": 1,
+                "gliner_chunks_processed": 1,
+                "candidate_labels_used": 10,
+                "labels_set": "minimum",
+                "nlp_timings": {
+                    "finbert": 0.26257299999997485,
+                    "zero_shot": 1.9336781000019982,
+                    "spacy": 0.011950100000831299,
+                    "gliner": 0.35360790000049747
+                },
+                "zero_shot_labels": [
+                    "military attack or action",
+                    "military propaganda or official wartime statement",
+                    "military impact, cost or investigation report",
+                    "military drone or missile strike",
+                    "troop mobilization or border skirmish",
+                    "military threat or escalation rhetoric",
+                    "battlefield tactical report",
+                    "naval blockade or airspace closure",
+                    "declaration of war or armed conflict",
+                    "sudden market shock or black swan event"
+                ],
+                "zero_shot_scores": [
+                    0.9859716892242432,
+                    0.8231503963470459,
+                    0.7661208510398865,
+                    0.7458176016807556,
+                    0.6123460531234741,
+                    0.5584957003593445,
+                    0.5552834868431091,
+                    0.30301633477211,
+                    0.13791444897651672,
+                    0.049063824117183685
+                ],
+                "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
+                "original_inferred_category": "military attack or action",
+                "original_category_confidence": 0.9859716892242432,
+                "category_corrections": [
+                    {
+                        "rule": "battlefield_micro_force_category",
+                        "from": "military attack or action",
+                        "to": "battlefield tactical report"
+                    }
+                ]
+            },
+            "domain_weight": 1.12,
+            "score_breakdown": {
+                "version": "balanced_hard_quant_v2",
+                "inputs": {
+                    "category": "battlefield tactical report",
+                    "original_category": "military attack or action",
+                    "confidence": 0.72,
+                    "original_confidence": 0.9859716892242432,
+                    "sentiment": "neutral",
+                    "severity": "unknown",
+                    "severity_key": "",
+                    "domain": "geopolitical"
+                },
+                "category_corrections": [
+                    {
+                        "rule": "battlefield_micro_force_category",
+                        "from": "military attack or action",
+                        "to": "battlefield tactical report"
+                    }
+                ],
+                "context_filters": {
+                    "historical_reference": false,
+                    "local_incident": false,
+                    "battlefield_micro": true,
+                    "self_promotion": false,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
+                    "macro_signal": false,
+                    "strategic_signal": false,
+                    "impact_report": false
+                },
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.45,
+                    "category_component": 0.13608,
+                    "severity_component": 0.108,
+                    "base_score": 0.13608
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.1,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.02612214549426456,
+                    "critical_bonus": 0.0
+                },
+                "keyword_hits": [],
+                "gliner_details": {
+                    "macro_target": false,
+                    "strategic_infra": false,
+                    "strategic_raw": false,
+                    "kinetic": false,
+                    "weapon": true,
+                    "military_actor": true,
+                    "geopolitical": false,
+                    "central_bank": false,
+                    "economic_indicator": false,
+                    "market_sentiment": false,
+                    "commodity_action": false,
+                    "institutional_actor": false,
+                    "political_leader": false,
+                    "localized_noise": false,
+                    "strong_tactical_signal": true,
+                    "bonus": 0.1,
+                    "multiplier": 1.0
+                },
+                "multipliers": {
+                    "domain_weight": 1.12,
+                    "effective_domain_weight": 1.054,
+                    "gliner_multiplier": 1.0,
+                    "context_multiplier": 0.8,
+                    "total_multiplier": 0.8432000000000001
+                },
+                "caps": [],
+                "scores": {
+                    "additive_score": 0.26220214549426457,
+                    "raw_score": 0.2763610613509549,
+                    "raw_after_context": 0.22108884908076393,
+                    "compressed_score": 0.22108884908076393,
+                    "final_score": 0.22108884908076393,
+                    "risk_bucket": "low",
+                    "saturation": false
+                }
+            },
+            "matched_keywords": [
+                "67",
+                "The Iron Falcon",
+                "the Beroazov Join",
+                "22",
+                "BBS 67 OMBr"
+            ],
+            "numeric_features": {
+                "large_money_amount": null,
+                "casualty_count": null,
+                "percent_change": null
+            },
+            "gliner_tactical": {
+                "military actor": [
+                    "BBS 67 OMBr"
+                ],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [
+                    "The Iron Falcon"
+                ],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": [],
+                "forex signal": [],
+                "currency pair": [],
+                "forex pair": [],
+                "financial ticker": [],
+                "currency mentioned": [],
+                "central bank": [],
+                "economic indicator": [],
+                "monetary policy signal": [],
+                "geopolitical event": [],
+                "political leader": [],
+                "commodity price action": [],
+                "fiat currency": [],
+                "market sentiment": [],
+                "fiscal policy change": [],
+                "strategic infrastructure": [],
+                "institutional actor": []
+            },
+            "global_tag_emission": {
+                "checked": true,
+                "dry_run": true,
+                "threshold": 0.75,
+                "oracle_review_threshold": 0.65,
+                "danger_score": 0.22108884908076393,
+                "risk_bucket": "low",
+                "emitted": false,
+                "emitted_count": 0,
+                "oracle_review_requested": false,
+                "oracle_review_queue_name": "intel.oracle.review",
+                "queue_name": "intel.global_tags",
+                "tags": [],
+                "reason": "below_global_tag_threshold"
+            }
+        }
+    },
+    {
+        "id": "e8e55238-a532-4cb5-b90e-37a0f14b6e2a",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "Ukraine and Norway launch joint production of drones Ukraine and Norway agreed to create the first j...",
+        "url": "",
+        "body": "Ukraine and Norway launch joint production of drones Ukraine and Norway agreed to create the first joint production of Ukrainian drones. It is about the production of several thousand mid-strike drones on the territory of Norway. All products within the project will be transferred to the Ukrainian Defence Forces. The initiative is funded by the Norwegian side through additional funds of over $7 billion of already provided defense aid to Ukraine in 2026.",
+        "published_at": "2026-04-27 08:50",
+        "ts": "2026-05-01T21:34:18.112171Z",
+        "fetched_at": "2026-05-01T21:34:18.112177Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [
+            "UA",
+            "NO"
+        ],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 162451,
+            "forwards": 299,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.5254305100472179,
+            "raw_danger_score": 0.5254305100472179,
+            "risk_bucket": "watch",
+            "saturation": false,
+            "impact_category": "military attack or action",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.7682511210441589,
+                "inferred_category": "military attack or action",
+                "category_confidence": 0.36871057748794556,
+                "entities": [
+                    {
+                        "text": "Ukraine",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "Norway",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "first",
+                        "label": "ORDINAL"
+                    },
+                    {
+                        "text": "Ukrainian",
+                        "label": "NORP"
+                    },
+                    {
+                        "text": "several thousand",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "the Ukrainian Defence Forces",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "Norwegian",
+                        "label": "NORP"
+                    },
+                    {
+                        "text": "over $7 billion",
+                        "label": "MONEY"
+                    },
+                    {
+                        "text": "2026",
+                        "label": "DATE"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [
+                        "Ukrainian Defence Forces"
+                    ],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [
+                        "drones",
+                        "mid-strike drones"
+                    ],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": [],
+                    "forex signal": [],
+                    "currency pair": [],
+                    "forex pair": [],
+                    "financial ticker": [],
+                    "currency mentioned": [],
+                    "central bank": [],
+                    "economic indicator": [],
+                    "monetary policy signal": [],
+                    "geopolitical event": [],
+                    "political leader": [],
+                    "commodity price action": [],
+                    "fiat currency": [],
+                    "market sentiment": [],
+                    "fiscal policy change": [],
+                    "strategic infrastructure": [],
+                    "institutional actor": []
+                },
+                "chunks_processed": 1,
+                "gliner_chunks_processed": 1,
+                "candidate_labels_used": 10,
+                "labels_set": "minimum",
+                "nlp_timings": {
+                    "finbert": 0.3436351000018476,
+                    "zero_shot": 2.167387299999973,
+                    "spacy": 0.023157499999797437,
+                    "gliner": 0.3880910000007134
+                },
+                "zero_shot_labels": [
+                    "military attack or action",
+                    "battlefield tactical report",
+                    "military drone or missile strike",
+                    "military impact, cost or investigation report",
+                    "troop mobilization or border skirmish",
+                    "military threat or escalation rhetoric",
+                    "declaration of war or armed conflict",
+                    "sudden market shock or black swan event",
+                    "military propaganda or official wartime statement",
+                    "naval blockade or airspace closure"
+                ],
+                "zero_shot_scores": [
+                    0.36871057748794556,
+                    0.3542713224887848,
+                    0.2851264178752899,
+                    0.22130385041236877,
+                    0.057698626071214676,
+                    0.03516240417957306,
+                    0.009023740887641907,
+                    0.00793380569666624,
+                    0.005683993920683861,
+                    0.0011153516825288534
+                ],
+                "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
+                "original_inferred_category": "military attack or action",
+                "original_category_confidence": 0.36871057748794556,
+                "category_corrections": []
+            },
+            "domain_weight": 1.12,
+            "score_breakdown": {
+                "version": "balanced_hard_quant_v2",
+                "inputs": {
+                    "category": "military attack or action",
+                    "original_category": "military attack or action",
+                    "confidence": 0.36871057748794556,
+                    "original_confidence": 0.36871057748794556,
+                    "sentiment": "neutral",
+                    "severity": "unknown",
+                    "severity_key": "",
+                    "domain": "geopolitical"
+                },
+                "category_corrections": [],
+                "context_filters": {
+                    "historical_reference": false,
+                    "local_incident": false,
+                    "battlefield_micro": false,
+                    "self_promotion": false,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
+                    "macro_signal": false,
+                    "strategic_signal": false,
+                    "impact_report": false
+                },
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 1.12,
+                    "category_component": 0.17344145565032962,
+                    "severity_component": 0.26880000000000004,
+                    "base_score": 0.26880000000000004
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.1,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.091,
+                    "engagement_bonus": 0.03871092034840399,
+                    "critical_bonus": 0.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "strike",
+                        "root": "strike",
+                        "weight": 0.07,
+                        "rank": 1,
+                        "contribution": 0.07
+                    },
+                    {
+                        "keyword": "drones",
+                        "root": "drone",
+                        "weight": 0.06,
+                        "rank": 2,
+                        "contribution": 0.020999999999999998
+                    }
+                ],
+                "gliner_details": {
+                    "macro_target": false,
+                    "strategic_infra": false,
+                    "strategic_raw": false,
+                    "kinetic": false,
+                    "weapon": true,
+                    "military_actor": true,
+                    "geopolitical": false,
+                    "central_bank": false,
+                    "economic_indicator": false,
+                    "market_sentiment": false,
+                    "commodity_action": false,
+                    "institutional_actor": false,
+                    "political_leader": false,
+                    "localized_noise": false,
+                    "strong_tactical_signal": true,
+                    "bonus": 0.1,
+                    "multiplier": 1.0
+                },
+                "multipliers": {
+                    "domain_weight": 1.12,
+                    "effective_domain_weight": 1.054,
+                    "gliner_multiplier": 1.0,
+                    "context_multiplier": 1.0,
+                    "total_multiplier": 1.054
+                },
+                "caps": [],
+                "scores": {
+                    "additive_score": 0.498510920348404,
+                    "raw_score": 0.5254305100472179,
+                    "raw_after_context": 0.5254305100472179,
+                    "compressed_score": 0.5254305100472179,
+                    "final_score": 0.5254305100472179,
+                    "risk_bucket": "watch",
+                    "saturation": false
+                }
+            },
+            "matched_keywords": [
+                "Ukraine",
+                "Norway",
+                "first",
+                "Ukrainian",
+                "several thousand",
+                "the Ukrainian Defence Forces",
+                "Norwegian",
+                "over $7 billion",
+                "2026",
+                "Ukrainian Defence Forces",
+                "drones",
+                "mid-strike drones",
+                "strike"
+            ],
+            "numeric_features": {
+                "large_money_amount": 7000000000,
+                "casualty_count": null,
+                "percent_change": null
+            },
+            "gliner_tactical": {
+                "military actor": [
+                    "Ukrainian Defence Forces"
+                ],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [
+                    "drones",
+                    "mid-strike drones"
+                ],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": [],
+                "forex signal": [],
+                "currency pair": [],
+                "forex pair": [],
+                "financial ticker": [],
+                "currency mentioned": [],
+                "central bank": [],
+                "economic indicator": [],
+                "monetary policy signal": [],
+                "geopolitical event": [],
+                "political leader": [],
+                "commodity price action": [],
+                "fiat currency": [],
+                "market sentiment": [],
+                "fiscal policy change": [],
+                "strategic infrastructure": [],
+                "institutional actor": []
+            },
+            "global_tag_emission": {
+                "checked": true,
+                "dry_run": true,
+                "threshold": 0.75,
+                "oracle_review_threshold": 0.65,
+                "danger_score": 0.5254305100472179,
+                "risk_bucket": "watch",
+                "emitted": false,
+                "emitted_count": 0,
+                "oracle_review_requested": false,
+                "oracle_review_queue_name": "intel.oracle.review",
+                "queue_name": "intel.global_tags",
+                "tags": [],
+                "reason": "below_global_tag_threshold"
+            }
+        }
+    },
+    {
+        "id": "66a08f19-210d-481c-afcb-aa3e211a9d15",
+        "source": "telegram_log",
+        "domain": "geopolitical",
+        "title": "DeepStateUA has received a 100,000 subscriber countdown on Youtube Thank you to all our subscribers ...",
+        "url": "",
+        "body": "DeepStateUA has received a 100,000 subscriber countdown on Youtube Thank you to all our subscribers on Youtube. We've been doing this for five years and we really appreciate every comment and like. ✅ Follow us and support the release of new videos youtube.com/@DeepStateUA.",
+        "published_at": "2026-04-27 09:46",
+        "ts": "2026-05-01T21:34:18.112270Z",
+        "fetched_at": "2026-05-01T21:34:18.112275Z",
+        "source_media": "telegram",
+        "source_countries": [],
+        "actor_countries": [],
+        "target_countries": [],
+        "mentioned_countries": [],
+        "country": [],
+        "entities": [],
+        "event_images_urls": [],
+        "lat": null,
+        "lon": null,
+        "severity": "unknown",
+        "tags": [],
+        "extra": {
+            "views": 153078,
+            "forwards": 23,
+            "translation_source": "⚡Translation from Ukrainian (ukr_Cyrl)",
+            "danger_score": 0.0018972000000000001,
+            "raw_danger_score": 0.012648000000000001,
+            "risk_bucket": "low",
+            "saturation": false,
+            "impact_category": "sports, entertainment or celebrity gossip",
+            "nlp_features": {
+                "sentiment": "neutral",
+                "sentiment_score": 0.6556508541107178,
+                "inferred_category": "sports, entertainment or celebrity gossip",
+                "category_confidence": 0.05662885680794716,
+                "entities": [
+                    {
+                        "text": "DeepStateUA",
+                        "label": "ORG"
+                    },
+                    {
+                        "text": "100,000",
+                        "label": "CARDINAL"
+                    },
+                    {
+                        "text": "Youtube",
+                        "label": "PERSON"
+                    },
+                    {
+                        "text": "Youtube",
+                        "label": "GPE"
+                    },
+                    {
+                        "text": "five years",
+                        "label": "DATE"
+                    },
+                    {
+                        "text": "Follow us",
+                        "label": "PERSON"
+                    }
+                ],
+                "gliner_graph": {
+                    "military actor": [],
+                    "kinetic or military action": [],
+                    "weapon or military vehicle": [],
+                    "macroeconomic infrastructure or strategic target": [],
+                    "civilian vehicle or local infrastructure": [],
+                    "localized accident or personal tragedy": [],
+                    "forex signal": [],
+                    "currency pair": [],
+                    "forex pair": [],
+                    "financial ticker": [],
+                    "currency mentioned": [],
+                    "central bank": [],
+                    "economic indicator": [],
+                    "monetary policy signal": [],
+                    "geopolitical event": [],
+                    "political leader": [],
+                    "commodity price action": [],
+                    "fiat currency": [],
+                    "market sentiment": [],
+                    "fiscal policy change": [],
+                    "strategic infrastructure": [],
+                    "institutional actor": []
+                },
+                "chunks_processed": 1,
+                "gliner_chunks_processed": 1,
+                "candidate_labels_used": 7,
+                "labels_set": "minimum",
+                "nlp_timings": {
+                    "finbert": 0.21116450000045006,
+                    "zero_shot": 1.453057799997623,
+                    "spacy": 0.018349700003454927,
+                    "gliner": 0.38774910000211094
+                },
+                "zero_shot_labels": [
+                    "sports, entertainment or celebrity gossip",
+                    "troop mobilization or border skirmish",
+                    "battlefield tactical report",
+                    "military threat or escalation rhetoric",
+                    "military propaganda or official wartime statement",
+                    "sudden market shock or black swan event",
+                    "generic news or daily politics"
+                ],
+                "zero_shot_scores": [
+                    0.05662885680794716,
+                    0.02987300232052803,
+                    0.026928262785077095,
+                    0.007782075088471174,
+                    0.004622288979589939,
+                    0.0006855147075839341,
+                    0.00020952627528458834
+                ],
+                "zero_shot_model": "cross-encoder/nli-deberta-v3-small",
+                "original_inferred_category": "sports, entertainment or celebrity gossip",
+                "original_category_confidence": 0.05662885680794716,
+                "category_corrections": [
+                    {
+                        "rule": "self_promotion",
+                        "from": "sports, entertainment or celebrity gossip",
+                        "to": "sports, entertainment or celebrity gossip"
+                    }
+                ]
+            },
+            "domain_weight": 1.12,
+            "score_breakdown": {
+                "version": "balanced_hard_quant_v2",
+                "inputs": {
+                    "category": "sports, entertainment or celebrity gossip",
+                    "original_category": "sports, entertainment or celebrity gossip",
+                    "confidence": 0.05662885680794716,
+                    "original_confidence": 0.05662885680794716,
+                    "sentiment": "neutral",
+                    "severity": "unknown",
+                    "severity_key": "",
+                    "domain": "geopolitical"
+                },
+                "category_corrections": [
+                    {
+                        "rule": "self_promotion",
+                        "from": "sports, entertainment or celebrity gossip",
+                        "to": "sports, entertainment or celebrity gossip"
+                    }
+                ],
+                "context_filters": {
+                    "historical_reference": false,
+                    "local_incident": false,
+                    "battlefield_micro": false,
+                    "self_promotion": true,
+                    "active_escalation": false,
+                    "threat_rhetoric": false,
+                    "propaganda": false,
+                    "macro_signal": false,
+                    "strategic_signal": true,
+                    "impact_report": false
+                },
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.04,
+                    "category_component": 0.0009513647943735122,
+                    "severity_component": 0.012,
+                    "base_score": 0.012
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.0,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.0,
+                    "critical_bonus": 0.0
+                },
+                "keyword_hits": [],
+                "gliner_details": {
+                    "macro_target": false,
+                    "strategic_infra": false,
+                    "strategic_raw": false,
+                    "kinetic": false,
+                    "weapon": false,
+                    "military_actor": false,
+                    "geopolitical": false,
+                    "central_bank": false,
+                    "economic_indicator": false,
+                    "market_sentiment": false,
+                    "commodity_action": false,
+                    "institutional_actor": false,
+                    "political_leader": false,
+                    "localized_noise": false,
+                    "strong_tactical_signal": false,
+                    "bonus": 0.0,
+                    "multiplier": 1.0
+                },
+                "multipliers": {
+                    "domain_weight": 1.12,
+                    "effective_domain_weight": 1.054,
+                    "gliner_multiplier": 1.0,
+                    "context_multiplier": 0.15,
+                    "total_multiplier": 0.1581
+                },
+                "caps": [],
+                "scores": {
+                    "additive_score": 0.012,
+                    "raw_score": 0.012648000000000001,
+                    "raw_after_context": 0.0018972000000000001,
+                    "compressed_score": 0.0018972000000000001,
+                    "final_score": 0.0018972000000000001,
+                    "risk_bucket": "low",
+                    "saturation": false
+                }
+            },
+            "matched_keywords": [
+                "DeepStateUA",
+                "100,000",
+                "Youtube",
+                "five years",
+                "Follow us"
+            ],
+            "numeric_features": {
+                "large_money_amount": null,
+                "casualty_count": null,
+                "percent_change": null
+            },
+            "gliner_tactical": {
+                "military actor": [],
+                "kinetic or military action": [],
+                "weapon or military vehicle": [],
+                "macroeconomic infrastructure or strategic target": [],
+                "civilian vehicle or local infrastructure": [],
+                "localized accident or personal tragedy": [],
+                "forex signal": [],
+                "currency pair": [],
+                "forex pair": [],
+                "financial ticker": [],
+                "currency mentioned": [],
+                "central bank": [],
+                "economic indicator": [],
+                "monetary policy signal": [],
+                "geopolitical event": [],
+                "political leader": [],
+                "commodity price action": [],
+                "fiat currency": [],
+                "market sentiment": [],
+                "fiscal policy change": [],
+                "strategic infrastructure": [],
+                "institutional actor": []
+            },
+            "global_tag_emission": {
+                "checked": true,
+                "dry_run": true,
+                "threshold": 0.75,
+                "oracle_review_threshold": 0.65,
+                "danger_score": 0.0018972000000000001,
+                "risk_bucket": "low",
+                "emitted": false,
+                "emitted_count": 0,
+                "oracle_review_requested": false,
+                "oracle_review_queue_name": "intel.oracle.review",
+                "queue_name": "intel.global_tags",
+                "tags": [],
+                "reason": "excluded_keyword"
             }
         }
     }

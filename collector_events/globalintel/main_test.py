@@ -57,7 +57,7 @@ class TestOrchestrator(IntelOrchestrator):
         output_filepath: str | Path,
         interval_seconds: float = 1.0,
         *,
-        labels_set: LabelSetName = "minimum",
+        labels_set: LabelSetName = "medium'",
         persist_to_redis: bool = False,
         checkpoint_each_item: bool = True,
         enable_global_tag_dry_run: bool = True,
@@ -261,7 +261,7 @@ async def run_test_pipeline() -> None:
     OUTPUT_JSON = current_dir / "mock_intel_items_big_process_result.json"
 
     INTERVALO_SEGUNDOS = 5
-    LABELS_SET: LabelSetName = "minimum"
+    LABELS_SET: LabelSetName = "medium"
     PERSIST_TO_REDIS = False
     CHECKPOINT_EACH_ITEM = True
     ENABLE_GLOBAL_TAG_DRY_RUN = True

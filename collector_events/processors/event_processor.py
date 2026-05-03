@@ -138,6 +138,8 @@ class EventProcessor(Loggable):
         "terrorist attack or mass casualty event",
         "unprecedented global crisis or major disruptive anomaly",
         "sudden market shock or black swan event",
+        "commodity price surge or oil market disruption",
+        "currency intervention or severe devaluation",
     }
 
     NOISE_CATEGORIES = {
@@ -525,8 +527,20 @@ class EventProcessor(Loggable):
         battlefield_micro = self._contains_any(text_lower, self.BATTLEFIELD_MICRO_TERMS)
         self_promotion = self._contains_any(text_lower, self.SELF_PROMOTION_TERMS)
         active_escalation = self._contains_any(text_lower, [
-            "today", "breaking", "launches", "launched", "attack", "attacks", "strike", "strikes",
-            "missile", "drone", "invasion", "blockade", "threatened", "warned", "declared",
+            "breaking", "launches", "launched", "attack", "attacks", "strike", "strikes",
+            "missile", "drone", "invasion", "blockade", "declared", "war begins",
+        ]) and self._contains_any(text_lower, ["today", "now", "just", "breaking", "confirmed"])
+        
+        # Threat rhetoric (Item 2)
+        threat_rhetoric = self._contains_any(text_lower, [
+            "warned", "threatening message", "threatening voice", "photo of himself with a gun",
+            "explosions", "warning", "retaliate", "pay a heavy price", "do not know how to sign",
+        ])
+        
+        # Propaganda (Item 8/9)
+        propaganda = self._contains_any(text_lower, [
+            "audio file", "government sources", "speaker of the parliament", "enemy defeats",
+            "voice message", "voice of", "propaganda", "addressed the people",
         ])
         
         strong_historical = historical and self._contains_any(text_lower, [
@@ -561,6 +575,8 @@ class EventProcessor(Loggable):
             "battlefield_micro": battlefield_micro and not macro_signal,
             "self_promotion": self_promotion and not macro_signal and not active_escalation,
             "active_escalation": active_escalation,
+            "threat_rhetoric": threat_rhetoric and not historical_final,
+            "propaganda": propaganda and not active_escalation,
             "macro_signal": macro_signal,
             "strategic_signal": strategic_signal,
             "impact_report": impact_report and not active_escalation,
@@ -589,6 +605,16 @@ class EventProcessor(Loggable):
             new_confidence = min(confidence, 0.55)
             corrections.append({"rule": "local_incident", "from": category, "to": new_category})
 
+        elif context.get("threat_rhetoric"):
+            new_category = "military threat or escalation rhetoric"
+            new_confidence = max(confidence, 0.65)
+            corrections.append({"rule": "threat_rhetoric_detection", "from": category, "to": new_category})
+
+        elif context.get("propaganda"):
+            new_category = "military propaganda or official wartime statement"
+            new_confidence = max(confidence, 0.60)
+            corrections.append({"rule": "propaganda_detection", "from": category, "to": new_category})
+
         elif context.get("battlefield_micro"):
             # P6 Expansion: battlefield context should dismantle false macro classifications
             # P11: Force category 'battlefield tactical report' for micro events
@@ -601,6 +627,7 @@ class EventProcessor(Loggable):
             new_confidence = max(confidence, 0.75)
             corrections.append({"rule": "impact_report", "from": category, "to": new_category})
 
+        # Multi-pattern check for currency (Sprint 2)
         if self._contains_any(text_lower, ["dollar", "national currency", "free-market price", "lowest value", "declined rapidly", "devalu", "depreciat", "more than doubled"]):
             if category in {"macroeconomic data release or inflation report", "generic news or daily politics"} or confidence < 0.75:
                 prev = new_category
@@ -608,8 +635,8 @@ class EventProcessor(Loggable):
                 new_confidence = max(new_confidence, 0.72)
                 corrections.append({"rule": "currency_devaluation_signal", "from": prev, "to": new_category})
 
-        # P13: Oil price action detection
-        if "oil prices" in text_lower or "crude" in text_lower:
+        # P13: Oil price action detection (Sprint 2 optimization)
+        if "oil prices" in text_lower or "crude" in text_lower or "brent" in text_lower:
             if self._contains_any(text_lower, ["risen", "rose", "surged", "jumped", "dramatically", "soared", "skyrocket"]):
                 prev = new_category
                 new_category = "commodity price surge or oil market disruption"

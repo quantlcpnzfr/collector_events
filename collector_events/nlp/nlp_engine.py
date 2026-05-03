@@ -190,6 +190,8 @@ class LocalNLPEngine:
             "military attack or action",
             "battlefield tactical report",
             "military impact, cost or investigation report",
+            "military threat or escalation rhetoric",
+            "military propaganda or official wartime statement",
             "declaration of war or armed conflict",
             "nuclear threat or radioactive incident",
             "troop mobilization or border skirmish",
@@ -583,6 +585,7 @@ class LocalNLPEngine:
                     "battlefield tactical report",
                     "military impact, cost or investigation report",
                     "military threat or escalation rhetoric",
+                    "military propaganda or official wartime statement",
                     "declaration of war or armed conflict",
                     "troop mobilization or border skirmish",
                     "naval blockade or airspace closure",
@@ -747,6 +750,7 @@ class LocalNLPEngine:
                     "troop mobilization or border skirmish",
                     "battlefield tactical report",
                     "military threat or escalation rhetoric",
+                    "military propaganda or official wartime statement",
                     "generic news or daily politics",
                 ]
             )
