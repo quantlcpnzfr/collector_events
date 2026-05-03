@@ -6,13 +6,17 @@ if sys.platform == "win32":
     import codecs
     sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
-file_path = "c:/Projects/forex_system/services/collector_events/collector_events/globalintel/mock_intel_items_big_process_result.json"
+file_path = "c:/Projects/forex_system/services/collector_events/collector_events/globalintel/mock_intel_items_big_sprint_02.json"
 
-with open(file_path, "r", encoding="utf-8") as f:
-    data = json.load(f)
+try:
+    with open(file_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+except FileNotFoundError:
+    print(f"Error: {file_path} not found.")
+    sys.exit(1)
 
-print(f"{'Title':<50} | {'Category':<40} | {'Score':<10}")
-print("-" * 105)
+print(f"{'Title':<50} | {'Category':<40} | {'Score':<8} | {'Num Features'}")
+print("-" * 130)
 
 for item in data:
     title = item.get("title", "")[:50].replace('\n', ' ')
@@ -27,4 +31,16 @@ for item in data:
         nlp = extra.get("nlp_features", {})
         cat = nlp.get("inferred_category", "N/A")
     
-    print(f"{title:<50} | {cat:<40} | {score:<10.4f}")
+    num_features = extra.get("numeric_features", {})
+    feat_str = ""
+    if num_features:
+        parts = []
+        if num_features.get("large_money_amount"):
+            parts.append(f"${num_features['large_money_amount']:,}")
+        if num_features.get("casualty_count"):
+            parts.append(f"Casualties: {num_features['casualty_count']}")
+        if num_features.get("percent_change"):
+            parts.append(f"{num_features['percent_change']}%")
+        feat_str = ", ".join(parts)
+    
+    print(f"{title:<50} | {cat:<40} | {score:<8.4f} | {feat_str}")

@@ -414,13 +414,23 @@ class GlobalTagEmitter:
         return "neutral"
 
     def _infer_asset_bias(self, asset: str, text_lower: str) -> str:
+        # P7: Sanctions on oil-exporting countries (Iran, Russia) -> strong_bullish (supply restriction)
+        is_oil = asset in {"OIL", "BRENT", "WTI", "CRUDE OIL", "BRENT OIL"}
+        if is_oil:
+            has_sanctions = "sanction" in text_lower or "embargo" in text_lower
+            has_exporter = any(self._keyword_matches(text_lower, country) for country in ["iran", "russia", "russians", "iranian", "kremlin", "tehran"])
+            if has_sanctions and has_exporter:
+                return "strong_bullish"
+
         explicit = self._extract_bias_from_context(text_lower, default="neutral")
         if explicit != "neutral":
             return explicit
+            
         if asset in {"XAU", "XAU/USD", "GOLD"}:
             return "bullish"
-        if asset in {"OIL", "BRENT", "WTI", "CRUDE OIL", "BRENT OIL"}:
+        if is_oil:
             return "bullish"
+            
         if asset in {"NQ", "SPX", "NASDAQ", "US500"} and any(self._keyword_matches(text_lower, x) for x in ("war", "attack", "nuclear", "terrorist", "recession", "invasion")):
             return "bearish"
         return "neutral"

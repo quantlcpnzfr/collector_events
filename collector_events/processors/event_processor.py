@@ -42,6 +42,10 @@ class ProcessedEvent:
     raw_danger_score: float = 0.0
     risk_bucket: str = "low"
     saturation: bool = False
+    
+    # Novo campo agrupado (mantém o root limpo e legacy seguro)
+    scores: dict[str, float] = field(default_factory=dict)
+    numeric_features: dict[str, Any] = field(default_factory=dict)
 
 
 class EventProcessor(Loggable):
@@ -113,6 +117,10 @@ class EventProcessor(Loggable):
         "flash crash": 0.120,
         "plunge": 0.085,
         "surge": 0.065,
+        "oil prices surged": 0.090,
+        "crude jumps": 0.085,
+        "brent soared": 0.090,
+        "oil shock": 0.110,
         # Cyber
         "cyber attack": 0.090,
         "ransomware": 0.085,
@@ -181,6 +189,7 @@ class EventProcessor(Loggable):
         "map updated", "enemy has advanced", "enemy advanced", "near sinkovka",
         "frontline", "front line", "brigade", "destroys the enemy", "enemy force",
         "settlement", "village", "positions near", "advanced near",
+        "tactical gain", "firefight", "skirmish", "trench", "shelled positions",
     ]
 
     def __init__(self):
@@ -308,6 +317,10 @@ class EventProcessor(Loggable):
         item.extra["score_breakdown"] = score_breakdown
         item.extra["matched_keywords"] = matched_keywords
 
+        # Sprint 2: Numeric Features Extraction
+        numeric_features = self._extract_secure_numeric_features(text, item)
+        item.extra["numeric_features"] = numeric_features
+
         return ProcessedEvent(
             impact_category=impact_category,
             danger_score=danger_score,
@@ -318,6 +331,8 @@ class EventProcessor(Loggable):
             raw_danger_score=score_breakdown["scores"]["raw_score"],
             risk_bucket=score_breakdown["scores"]["risk_bucket"],
             saturation=score_breakdown["scores"]["saturation"],
+            scores=score_breakdown["scores"],
+            numeric_features=numeric_features,
         )
 
     def _compute_semantic_danger_score(self, item: IntelItem, nlp_features: Dict[str, Any], domain_weight: float) -> Tuple[float, Dict[str, Any]]:
@@ -556,10 +571,19 @@ class EventProcessor(Loggable):
             new_confidence = min(confidence, 0.55)
             corrections.append({"rule": "local_incident", "from": category, "to": new_category})
 
-        elif context.get("battlefield_micro") and category in {"macroeconomic data release or inflation report", "sudden market shock or black swan event"}:
-            new_category = "troop mobilization or border skirmish"
-            new_confidence = max(min(confidence, 0.72), 0.55)
-            corrections.append({"rule": "battlefield_micro", "from": category, "to": new_category})
+        elif context.get("battlefield_micro"):
+            # P6 Expansion: battlefield context should dismantle false macro classifications
+            macro_categories = {
+                "macroeconomic data release or inflation report",
+                "sudden market shock or black swan event",
+                "central bank interest rate decision or monetary policy",
+                "currency intervention or severe devaluation",
+                "commodity price surge or oil market disruption"
+            }
+            if category in macro_categories:
+                new_category = "troop mobilization or border skirmish"
+                new_confidence = max(min(confidence, 0.72), 0.55)
+                corrections.append({"rule": "battlefield_micro_macro_dismantle", "from": category, "to": new_category})
 
         elif context.get("impact_report") and category in {"military attack or action", "military drone or missile strike", "declaration of war or armed conflict"}:
             new_category = "military impact, cost or investigation report"
@@ -718,6 +742,51 @@ class EventProcessor(Loggable):
                     break
 
         return min(max(pct_bonus, phrase_bonus), 0.14)
+
+    def _extract_secure_numeric_features(self, text: str, item: IntelItem) -> dict[str, Any]:
+        """
+        P8: Extrai números absolutos (dinheiro, baixas, percentual) em um bloco semântico isolado.
+        """
+        text_lower = text.lower()
+        features = {
+            "large_money_amount": None,
+            "casualty_count": None,
+            "percent_change": None
+        }
+
+        # 1. Dinheiro (billions/millions)
+        money_pattern = r"\$?\s?(\d+(?:\.\d+)?)\s*(billion|million|bilhão|milhão|bi|mi|b|m)\b"
+        money_matches = re.findall(money_pattern, text_lower)
+        if money_matches:
+            val, unit = money_matches[0]
+            val = float(val)
+            if unit.startswith("b"):
+                features["large_money_amount"] = int(val * 1_000_000_000)
+            else:
+                features["large_money_amount"] = int(val * 1_000_000)
+
+        # 2. Baixas (casualty count)
+        casualty_pattern = r"(\d{1,6})\s*(?:people|civilians|soldiers|persons|individuals|lives|dead|killed|wounded|injured|fatalities|casualties)\b"
+        casualty_matches = re.findall(casualty_pattern, text_lower)
+        if casualty_matches:
+            features["casualty_count"] = int(casualty_matches[0])
+
+        # 3. Percentual
+        pct_pattern = r"(\d+(?:\.\d+)?)\s*%"
+        pct_matches = re.findall(pct_pattern, text_lower)
+        if pct_matches:
+            features["percent_change"] = float(pct_matches[0])
+        else:
+            # Fallback para extra se já existir
+            extra = item.extra or {}
+            for key in ("change_pct", "pct_change"):
+                if extra.get(key) is not None:
+                    try:
+                        features["percent_change"] = abs(float(str(extra[key]).replace(",", ".")))
+                        break
+                    except: pass
+
+        return features
 
     def _keyword_boost(self, text: str) -> Tuple[float, List[Dict[str, Any]]]:
         normalized = text.lower()

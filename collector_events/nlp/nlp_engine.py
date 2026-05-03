@@ -582,6 +582,7 @@ class LocalNLPEngine:
                     "military attack or action",
                     "battlefield tactical report",
                     "military impact, cost or investigation report",
+                    "military threat or escalation rhetoric",
                     "declaration of war or armed conflict",
                     "troop mobilization or border skirmish",
                     "naval blockade or airspace closure",
@@ -745,6 +746,7 @@ class LocalNLPEngine:
                     "sudden market shock or black swan event",
                     "troop mobilization or border skirmish",
                     "battlefield tactical report",
+                    "military threat or escalation rhetoric",
                     "generic news or daily politics",
                 ]
             )
