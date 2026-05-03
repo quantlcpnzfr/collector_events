@@ -39,7 +39,7 @@ logger = get_logger(__name__)
 _DICT_PATH = Path(__file__).parent / "country_dictionary" / "unified-countries_main.json"
 
 # Keywords shorter than this need word-boundary regex to avoid false positives
-_SHORT_KEYWORD_THRESHOLD = 4
+_SHORT_KEYWORD_THRESHOLD = 5
 
 
 class CountryResolver:
@@ -79,6 +79,7 @@ class CountryResolver:
         self._state_affiliation_map = {}
         self._currency_map = {}
         self._name_map: dict[str, str] = {}
+        self._false_positive_blacklist: dict[tuple[str, str], list[str]] = {}
         self._load()
 
     def _load(self) -> None:
@@ -110,6 +111,9 @@ class CountryResolver:
 
             # Add the country name itself as a keyword
             all_keywords = list(set([name.lower()] + [kw.lower() for kw in keywords]))
+            
+            if iso_code == "US":
+                all_keywords.extend(["u.s.", "u.s.a."])
 
             for kw in all_keywords:
                 if not kw:
@@ -124,6 +128,10 @@ class CountryResolver:
         # Sort: longer keywords first (more specific matches first)
         entries.sort(key=lambda e: len(e[1]), reverse=True)
         self._lookup = entries
+
+        self._false_positive_blacklist = {
+            ("OM", "oman"): ["toman", "tomans", "ottoman"],
+        }
 
         # Build state_affiliation → country code map (for RSS feeds)
         for iso_code, info in data.items():
@@ -159,6 +167,11 @@ class CountryResolver:
         for iso_code, kw, pattern in self._lookup:
             if iso_code in found:
                 continue
+                
+            fp_list = self._false_positive_blacklist.get((iso_code, kw))
+            if fp_list and any(fp in text_lower for fp in fp_list):
+                continue
+
             if pattern is not None:
                 # Short keyword — use regex word boundary
                 if pattern.search(text_lower):

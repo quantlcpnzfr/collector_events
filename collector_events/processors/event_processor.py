@@ -153,7 +153,29 @@ class EventProcessor(Loggable):
     HISTORICAL_REFERENCE_TERMS = [
         "years since", "anniversary", "commemorat", "memorial", "remembering",
         "on this day", "since the", "40 years since", "30 years since", "chernobyl nuclear accident",
+        "years ago", "decades since", "decades ago", "in memory of",
+        "looking back", "historic event", "marks the anniversary",
+        "this day in history", "nuclear disaster of",
     ]
+
+    SELF_PROMOTION_TERMS = [
+        "subscriber", "subscribers", "youtube", "countdown",
+        "channel milestone", "thank you subscribers", "follow us",
+        "like and subscribe", "join our channel", "100k", "1m followers",
+    ]
+
+    DEESCALATION_TERMS = [
+        "ceasefire", "peace", "agreement", "treaty", "friendly",
+        "support", "negotiate", "negotiation", "diplomatic",
+        "anniversary", "memorial", "commemorat", "years since", "years ago",
+    ]
+
+    GLINER_BLACKLIST: dict[str, set[str]] = {
+        "central bank": {"monobank", "monobank.ua", "mono bank"},
+        "fiat currency": {"rodensky", "sinkovka", "beroazov"},
+        "strategic infrastructure": {"farmer's blocks", "farmers blocks"},
+        "institutional actor": {"deepstateua", "deepstate"},
+    }
 
     BATTLEFIELD_MICRO_TERMS = [
         "map updated", "enemy has advanced", "enemy advanced", "near sinkovka",
@@ -438,12 +460,13 @@ class EventProcessor(Loggable):
     def _dedupe_gliner_graph(self, graph: Dict[str, list]) -> Dict[str, List[str]]:
         out: Dict[str, List[str]] = {}
         for label, values in (graph or {}).items():
+            blacklist = self.GLINER_BLACKLIST.get(label.lower(), set())
             seen = set()
             cleaned = []
             for value in values or []:
                 text = str(value).strip()
                 key = text.lower()
-                if text and key not in seen:
+                if text and key not in seen and key not in blacklist:
                     seen.add(key)
                     cleaned.append(text)
             out[label] = cleaned
@@ -453,10 +476,21 @@ class EventProcessor(Loggable):
         historical = self._contains_any(text_lower, self.HISTORICAL_REFERENCE_TERMS)
         local_noise = self._contains_any(text_lower, self.LOCAL_NOISE_TERMS)
         battlefield_micro = self._contains_any(text_lower, self.BATTLEFIELD_MICRO_TERMS)
+        self_promotion = self._contains_any(text_lower, self.SELF_PROMOTION_TERMS)
         active_escalation = self._contains_any(text_lower, [
             "today", "breaking", "launches", "launched", "attack", "attacks", "strike", "strikes",
             "missile", "drone", "invasion", "blockade", "threatened", "warned", "declared",
         ])
+        
+        strong_historical = historical and self._contains_any(text_lower, [
+            "years since", "years ago", "decades since", "anniversary",
+            "commemorat", "memorial", "in memory",
+        ])
+        import re
+        if not strong_historical and historical:
+            if re.search(r'\b(19|20)\d{2}\b', text_lower):
+                strong_historical = True
+
         macro_signal = self._contains_any(text_lower, [
             "central bank", "inflation", "currency", "dollar", "oil", "refinery", "pipeline", "hormuz",
             "suez", "red sea", "sanction", "market", "stock", "recession", "rate hike", "rate cut",
@@ -464,10 +498,16 @@ class EventProcessor(Loggable):
         ])
         strategic_signal = self._contains_any(text_lower, self.STRATEGIC_INFRA_TERMS)
 
+        if strong_historical:
+            historical_final = True
+        else:
+            historical_final = historical and not active_escalation
+
         return {
-            "historical_reference": historical and not active_escalation,
+            "historical_reference": historical_final,
             "local_incident": local_noise and not macro_signal,
             "battlefield_micro": battlefield_micro and not macro_signal,
+            "self_promotion": self_promotion and not macro_signal and not active_escalation,
             "active_escalation": active_escalation,
             "macro_signal": macro_signal,
             "strategic_signal": strategic_signal,
@@ -482,6 +522,11 @@ class EventProcessor(Loggable):
             new_category = "generic news or daily politics"
             new_confidence = min(confidence, 0.55)
             corrections.append({"rule": "historical_reference", "from": category, "to": new_category})
+
+        elif context.get("self_promotion"):
+            new_category = "sports, entertainment or celebrity gossip"
+            new_confidence = min(confidence, 0.15)
+            corrections.append({"rule": "self_promotion", "from": category, "to": new_category})
 
         elif context.get("local_incident"):
             if self._contains_any(text_lower, ["storm", "winds", "trees", "weather"]):
@@ -666,6 +711,13 @@ class EventProcessor(Loggable):
 
         if not hits:
             return 0.0, []
+            
+        deescalation = self._contains_any(normalized, self.DEESCALATION_TERMS)
+        if deescalation:
+            for i, (kw, weight, root) in enumerate(hits):
+                if kw in {"nuclear", "radioactive", "radiation"}:
+                    hits[i] = (kw, weight * 0.25, root)
+
         hits.sort(key=lambda x: x[1], reverse=True)
         hits = hits[: max(1, self.keyword_diminishing_max_hits)]
         total = 0.0
@@ -705,6 +757,9 @@ class EventProcessor(Loggable):
     def _context_score_adjustment(self, context: Dict[str, Any], category: str) -> Tuple[float, List[Tuple[str, float]]]:
         multiplier = 1.0
         caps: List[Tuple[str, float]] = []
+        if context.get("self_promotion"):
+            multiplier *= 0.15
+            caps.append(("self_promotion_score_cap", 0.10))
         if context.get("local_incident"):
             multiplier *= 0.35
             caps.append(("local_incident_score_cap", self.local_incident_score_cap))
