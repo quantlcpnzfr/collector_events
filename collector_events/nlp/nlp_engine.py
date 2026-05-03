@@ -14,6 +14,7 @@ Notas importantes:
 """
 
 import logging
+import re
 from enum import Enum
 from time import perf_counter
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple, Union
@@ -315,6 +316,27 @@ class LocalNLPEngine:
 
         return unique_values
 
+    def has_any(self, text: str, terms: Sequence[str]) -> bool:
+        """
+        Verifica se qualquer um dos termos est presente no texto (case-insensitive).
+        Utiliza word boundaries para evitar falsos positivos parciais (ex: 'fx' dentro de uma URL).
+        """
+        if not text or not terms:
+            return False
+
+        text_lower = text.lower()
+
+        for term in terms:
+            term_lower = term.lower().strip()
+            if not term_lower:
+                continue
+
+            # Usar regex com word boundary para evitar matches parciais indesejados
+            if re.search(rf"\b{re.escape(term_lower)}\b", text_lower):
+                return True
+
+        return False
+
     def _preselect_categories(self, text: str) -> List[str]:
         """
         Pré-seleciona labels para reduzir custo do zero-shot.
@@ -329,40 +351,45 @@ class LocalNLPEngine:
         t = f" {text.lower()} "
         selected: List[str] = []
 
-        import re
         def has_any(terms: Sequence[str]) -> bool:
-            pattern = r'\b(?:' + '|'.join(re.escape(term) for term in terms) + r')\b'
-            return bool(re.search(pattern, text.lower()))
+            return self.has_any(text, terms)
 
         military_terms = [
-            "missile",
-            "drone",
-            "airstrike",
-            "strike",
-            "attack",
-            "troop",
-            "troops",
-            "border",
-            "war",
+            "missile", "missiles",
+            "drone", "drones",
+            "airstrike", "airstrikes",
+            "strike", "strikes",
+            "attack", "attacks", "attacked",
+            "troop", "troops",
+            "border", "borders",
+            "war", "wars",
             "military",
-            "army",
-            "navy",
-            "blockade",
-            "invasion",
+            "army", "armies",
+            "navy", "navies",
+            "blockade", "blockades",
+            "invasion", "invasions",
             "shelling",
-            "bombardment",
-            "rocket",
-            "fighter jet",
+            "bombardment", "bombardments",
+            "rocket", "rockets",
+            "fighter jet", "fighter jets",
             "airspace",
-            "destroy",
-            "force",
-            "forces",
-            "enemy",
+            "destroy", "destroys", "destroyed", "destroying",
+            "force", "forces",
+            "enemy", "enemies",
             "combat",
-            "offensive",
+            "offensive", "offensives",
             "frontline",
-            "brigade",
-            "battalion",
+            "brigade", "brigades",
+            "battalion", "battalions",
+            "assault", "assaults", "assaulted",
+            "advance", "advanced", "advances", "advancing",
+            "positions",
+            "unit", "units",
+            "company", "companies",
+            "platoon", "platoons",
+            "regiment", "regiments",
+            "drone unit",
+            "artillery",
         ]
 
         nuclear_terms = [
