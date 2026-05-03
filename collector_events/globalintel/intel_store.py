@@ -142,12 +142,26 @@ class IntelMongoStore(Loggable):
         stats = StoreStats(source=result.source, domain=result.domain, total=len(result.items))
 
         if result.items:
-            # Run EventProcessor (Estágio 1 NLP) — process_items returns sorted by danger_score
-            processed_events = self._processor.process_items(result.items)
-            pe_by_id = {pe.item.id: pe for pe in processed_events}
-
             async def _upsert(item: IntelItem) -> str:
-                pe = pe_by_id.get(item.id) or self._processor.process_item(item)
+                # Se o item já foi processado (pelo Orchestrator), não re-processa
+                if item.extra and "danger_score" in item.extra and "scores" in item.extra:
+                    pe = ProcessedEvent(
+                        impact_category=item.extra.get("impact_category", "generic"),
+                        danger_score=item.extra.get("danger_score", 0.0),
+                        matched_keywords=item.extra.get("matched_keywords", []),
+                        domain_weight=item.extra.get("domain_weight", 1.0),
+                        features=item.extra.get("nlp_features", {}),
+                        score_breakdown=item.extra.get("score_breakdown", {}),
+                        raw_danger_score=item.extra.get("raw_danger_score", 0.0),
+                        risk_bucket=item.extra.get("risk_bucket", "low"),
+                        saturation=item.extra.get("saturation", False),
+                        scores=item.extra.get("scores", {}),
+                        numeric_features=item.extra.get("numeric_features", {}),
+                    )
+                else:
+                    # Fallback para caso o item não tenha sido enriquecido
+                    pe = self._processor.process_item(item)
+                
                 return await self._upsert_item(item, pe)
 
             outcomes = await asyncio.gather(

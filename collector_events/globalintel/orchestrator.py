@@ -174,10 +174,17 @@ class IntelOrchestrator(Loggable):
                     # Envia a carga pesada de NLP para uma thread, mantendo o asyncio livre
                     processed = await asyncio.to_thread(self._processor.process_item, item)
                     
-                    # 2. Injeta resultado do Item: 
+                    # 2. Injeta resultado do Item (Sprint 2 & 3): 
                     # Injeta o Score e Categorias no item antes de ir para o banco
                     item.extra["danger_score"] = processed.danger_score
                     item.extra["impact_category"] = processed.impact_category
+                    item.extra["risk_bucket"] = processed.risk_bucket
+                    
+                    # Sprint 3: Multidimensional scores axes
+                    item.extra["scores"] = processed.scores
+                    item.extra["score_breakdown"] = processed.score_breakdown
+                    item.extra["numeric_features"] = processed.numeric_features
+                    item.extra["nlp_features"] = processed.features
                     
                     # ⚡ 3. DADOS TÁTICOS DO GLiNER PARA ALGORITMOS AVANÇADOS
                     if processed.features:

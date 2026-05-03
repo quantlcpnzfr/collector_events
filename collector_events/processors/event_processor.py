@@ -323,15 +323,14 @@ class EventProcessor(Loggable):
         numeric_features = self._extract_secure_numeric_features(text, item)
         item.extra["numeric_features"] = numeric_features
 
-        # Sprint 2: Numeric Features Extraction
-        numeric_features = self._extract_secure_numeric_features(text, item)
-        item.extra["numeric_features"] = numeric_features
-
         # Sprint 3: Multidimensional Scoring Axis
         scores = self._compute_multidimensional_scores(
             item, nlp_features, numeric_features, score_breakdown
         )
         item.extra["scores"] = scores
+
+        # Injetar decisão no breakdown para auditoria (Sprint 3)
+        score_breakdown["decision"] = self._generate_audit_decision(scores)
 
         return ProcessedEvent(
             impact_category=impact_category,
@@ -425,7 +424,7 @@ class EventProcessor(Loggable):
         saturation = raw_after_context > 1.0 or final_score >= self.soft_cap_max
 
         breakdown: Dict[str, Any] = {
-            "version": "balanced_hard_quant_v2",
+            "version": "balanced_hard_quant_v3_multidimensional",
             "inputs": {
                 "category": corrected_category,
                 "original_category": original_category,
@@ -542,7 +541,13 @@ class EventProcessor(Loggable):
         """
         category = nlp_features.get("inferred_category", "generic news or daily politics")
         confidence = float(nlp_features.get("category_confidence", 0.0))
-        context = breakdown.get("context", {})
+        
+        # Correção Bug Sprint 3 Fix 01: Pega context do local correto
+        context = (
+            breakdown.get("context_filters") 
+            or breakdown.get("inputs", {}).get("context") 
+            or {}
+        )
         gliner = breakdown.get("gliner_details", {})
         
         # 1. Geopolitical Severity Score (Gravidade no mundo físico)
@@ -579,7 +584,8 @@ class EventProcessor(Loggable):
             "commodity price surge or oil market disruption",
             "stock market crash or massive sell-off",
             "international economic sanctions or trade embargo",
-            "sudden market shock or black swan event"
+            "sudden market shock or black swan event",
+            "shipping route stress or maritime chokepoint closure"
         }:
             market_impact = 0.50 + (confidence * 0.40)
         elif category in {
@@ -589,8 +595,7 @@ class EventProcessor(Loggable):
         }:
             market_impact = 0.40 + (confidence * 0.35)
         elif category in {
-            "military threat or escalation rhetoric", "nuclear threat or radioactive incident",
-            "shipping route stress or maritime chokepoint closure"
+            "military threat or escalation rhetoric", "nuclear threat or radioactive incident"
         }:
             market_impact = 0.30 + (confidence * 0.25)
         
@@ -653,13 +658,67 @@ class EventProcessor(Loggable):
             
         route_conf = self._clamp(route_conf, 0.0, 0.99)
 
+        # 6. Oracle Review Score (Decide se vai para o humano)
+        # Eventos graves físicos ou financeiros, mesmo com baixa confiança de ativo claro
+        oracle_score = max(geo_severity * 0.8, market_impact * 0.8)
+        if noise > 0.5:
+            oracle_score *= (1.0 - noise * 0.5)
+            
+        # Se for um sinal macro forte mas sem ativo claro (route_conf baixo), prioriza Oracle
+        if market_impact > 0.6 and route_conf < 0.6:
+            oracle_score = max(oracle_score, market_impact)
+
+        oracle_score = self._clamp(oracle_score, 0.0, 0.99)
+
+        # 7. Model Uncertainty e Asset Ambiguity (Placeholders Sprint 3)
+        uncertainty = 1.0 - confidence
+        ambiguity = 1.0 - route_conf
+
         return {
             "geopolitical_severity_score": geo_severity,
             "market_impact_score": market_impact,
             "noise_score": noise,
             "directional_confidence_score": dir_conf,
             "asset_route_confidence_score": route_conf,
+            "oracle_review_score": oracle_score,
+            "model_uncertainty_score": uncertainty,
+            "asset_ambiguity_score": ambiguity,
             "danger_score_legacy": breakdown["scores"]["final_score"]
+        }
+
+    def _generate_audit_decision(self, scores: Dict[str, float]) -> Dict[str, Any]:
+        """Gera o bloco de decisão para auditoria conforme o contrato da Sprint 3."""
+        # Nota: Estes thresholds são defaults, o TagEmitter aplicará os finais do config.
+        # Mas injetamos aqui uma 'previsão' para o log de processamento.
+        geo = scores.get("geopolitical_severity_score", 0.0)
+        mkt = scores.get("market_impact_score", 0.0)
+        noise = scores.get("noise_score", 0.0)
+        route = scores.get("asset_route_confidence_score", 0.0)
+        dir_conf = scores.get("directional_confidence_score", 0.0)
+        
+        # trade_emit_score real (calculado conforme TagEmitter)
+        trade_score = mkt * route * dir_conf * (1.0 - noise)
+        oracle_score = scores.get("oracle_review_score", 0.0)
+        
+        emit = trade_score >= 0.75
+        oracle = oracle_score >= 0.60 and not emit
+        
+        reason = "below_thresholds"
+        if emit:
+            reason = "high_trade_confidence"
+        elif oracle:
+            if mkt > 0.7 and route < 0.6:
+                reason = "high_market_impact_low_asset_confidence"
+            elif geo > 0.8:
+                reason = "critical_geopolitical_severity"
+            else:
+                reason = "elevated_oracle_score"
+                
+        return {
+            "send_to_oracle": oracle,
+            "emit_global_tag": emit,
+            "trade_emit_score_estimated": trade_score,
+            "reason": reason
         }
 
     def _detect_context_filters(self, text_lower: str, nlp_features: Dict[str, Any]) -> Dict[str, Any]:
@@ -942,27 +1001,30 @@ class EventProcessor(Loggable):
         }
 
         # 1. Dinheiro (billions/millions)
-        money_pattern = r"\$?\s?(\d+(?:\.\d+)?)\s*(billion|million|bilhão|milhão|bi|mi|b|m)\b"
+        # Bug fix: support US$ 25 billion, $25 billion, 25 billion
+        money_pattern = r"(?:us\$|[\$€£])?\s?(\d+(?:[.,]\d+)?)\s*(billion|million|bilhão|milhão|bi|mi|b|m)\b"
         money_matches = re.findall(money_pattern, text_lower)
         if money_matches:
-            val, unit = money_matches[0]
-            val = float(val)
-            if unit.startswith("b"):
+            val_str, unit = money_matches[0]
+            val = float(val_str.replace(",", "."))
+            if unit.lower().startswith(("b", "bi")):
                 features["large_money_amount"] = int(val * 1_000_000_000)
             else:
                 features["large_money_amount"] = int(val * 1_000_000)
 
         # 2. Baixas (casualty count)
-        casualty_pattern = r"(\d{1,6})\s*(?:people|civilians|soldiers|persons|individuals|lives|dead|killed|wounded|injured|fatalities|casualties)\b"
+        # Bug fix: support commas (1,200) and more terms
+        casualty_pattern = r"(\d{1,3}(?:,\d{3})*|\d{1,7})\s*(?:people|civilians|soldiers|persons|individuals|lives|dead|killed|wounded|injured|fatalities|casualties)\b"
         casualty_matches = re.findall(casualty_pattern, text_lower)
         if casualty_matches:
-            features["casualty_count"] = int(casualty_matches[0])
+            features["casualty_count"] = int(casualty_matches[0].replace(",", ""))
 
         # 3. Percentual
-        pct_pattern = r"(\d+(?:\.\d+)?)\s*%"
+        # Bug fix: support "percent", "percentage"
+        pct_pattern = r"(\d+(?:[.,]\d+)?)\s*(?:%|percent|percentage)"
         pct_matches = re.findall(pct_pattern, text_lower)
         if pct_matches:
-            features["percent_change"] = float(pct_matches[0])
+            features["percent_change"] = float(pct_matches[0].replace(",", "."))
         else:
             # Fallback para extra se já existir
             extra = item.extra or {}

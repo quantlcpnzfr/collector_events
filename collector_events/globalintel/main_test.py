@@ -57,7 +57,7 @@ class TestOrchestrator(IntelOrchestrator):
         output_filepath: str | Path,
         interval_seconds: float = 1.0,
         *,
-        labels_set: LabelSetName = "medium'",
+        labels_set: LabelSetName = "medium",
         persist_to_redis: bool = False,
         checkpoint_each_item: bool = True,
         enable_global_tag_dry_run: bool = True,
@@ -138,9 +138,14 @@ class TestOrchestrator(IntelOrchestrator):
                     item.extra = {}
 
                 processed = await asyncio.to_thread(self._processor.process_item, item)
-
+                
+                # Injeta resultado completo no extra (Sprint 2 & 3)
                 item.extra["danger_score"] = processed.danger_score
                 item.extra["impact_category"] = processed.impact_category
+                item.extra["risk_bucket"] = processed.risk_bucket
+                item.extra["scores"] = processed.scores
+                item.extra["score_breakdown"] = processed.score_breakdown
+                item.extra["numeric_features"] = processed.numeric_features
 
                 if processed.features:
                     item.extra["gliner_tactical"] = processed.features.get(
@@ -154,17 +159,20 @@ class TestOrchestrator(IntelOrchestrator):
 
                     if emission_report.get("emitted"):
                         self.log.info(
-                            "🏷️ TEST GlobalTag dry-run emitida | event=%s | count=%s | assets=%s",
+                            "🏷️ TEST GlobalTag dry-run emitida | event=%s | trade_emit=%.3f | count=%s | assets=%s",
                             getattr(item, "id", "<sem-id>"),
+                            float(emission_report.get("trade_emit_score", 0.0)),
                             emission_report.get("emitted_count"),
                             [tag.get("asset") for tag in emission_report.get("tags", [])],
                         )
                     else:
+                        oracle = emission_report.get("oracle_review_requested")
                         self.log.info(
-                            "🏷️ TEST GlobalTag não emitida | event=%s | reason=%s | score=%.3f",
+                            "🏷️ TEST GlobalTag não emitida | event=%s | reason=%s | trade_emit=%.3f | oracle=%s",
                             getattr(item, "id", "<sem-id>"),
                             emission_report.get("reason"),
-                            float(emission_report.get("danger_score", 0.0)),
+                            float(emission_report.get("trade_emit_score", 0.0)),
+                            oracle
                         )
 
             except Exception as exc:

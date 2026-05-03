@@ -1,7 +1,9 @@
 {
-  "danger_score_threshold": 0.75,
+  "trade_emit_threshold": 0.75,
   "oracle_review_threshold": 0.60,
   "min_tag_risk_score": 0.50,
+  "min_asset_route_confidence": 0.65,
+  "max_noise_for_trade_emit": 0.35,
   "emit_global_fallback": false,
   "queue_name": "intel.global_tags",
   "oracle_review_queue_name": "intel.oracle.review",
