@@ -272,7 +272,7 @@ async def run_test_pipeline() -> None:
     )
 
     print(
-        "\n🚀 Iniciando Pipeline de NLP Isolada "
+        "\n--- Iniciando Pipeline de NLP Isolada "
         f"| intervalo={INTERVALO_SEGUNDOS}s "
         f"| labels_set={LABELS_SET} "
         f"| redis={PERSIST_TO_REDIS} "
@@ -292,7 +292,7 @@ async def run_test_pipeline() -> None:
 
     await orch.run_serial_test()
 
-    print(f"\n✅ Teste concluído. Verifique o arquivo: {OUTPUT_JSON}")
+    print(f"\n--- Teste concluido. Verifique o arquivo: {OUTPUT_JSON}")
 
 
 if __name__ == "__main__":

@@ -86,10 +86,10 @@
                 "candidate_labels_used": 3,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 1.0613107000244781,
-                    "zero_shot": 4.430156699992949,
-                    "spacy": 0.38570770001388155,
-                    "gliner": 0.7588060999987647
+                    "finbert": 1.1870205999999826,
+                    "zero_shot": 2.3793541000000005,
+                    "spacy": 0.3495058999999401,
+                    "gliner": 0.8267925999999761
                 },
                 "zero_shot_labels": [
                     "sports, entertainment or celebrity gossip",
@@ -341,10 +341,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.2131193999957759,
-                    "zero_shot": 2.436098200007109,
-                    "spacy": 0.030467299977317452,
-                    "gliner": 0.4171719000150915
+                    "finbert": 0.2475385999999844,
+                    "zero_shot": 2.2119344000000183,
+                    "spacy": 0.03736880000008114,
+                    "gliner": 0.48178489999997964
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -615,10 +615,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.2429746999987401,
-                    "zero_shot": 1.9285814000177197,
-                    "spacy": 0.0718256999971345,
-                    "gliner": 0.42757759999949485
+                    "finbert": 0.2879619000000275,
+                    "zero_shot": 2.1854839000000084,
+                    "spacy": 0.05355880000001889,
+                    "gliner": 0.5663090000000466
                 },
                 "zero_shot_labels": [
                     "intelligence agency report or espionage",
@@ -833,7 +833,7 @@
                             "reason": "oil_shock"
                         }
                     ],
-                    "created_at": "2026-05-02T22:13:26.550133+00:00"
+                    "created_at": "2026-05-02T22:49:42.088840+00:00"
                 },
                 "oracle_review_published": false,
                 "oracle_review_dry_run": true
@@ -942,10 +942,10 @@
                 "candidate_labels_used": 7,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.18926590000046417,
-                    "zero_shot": 2.356013599986909,
-                    "spacy": 0.025119400001130998,
-                    "gliner": 0.2989717999880668
+                    "finbert": 0.19962169999996604,
+                    "zero_shot": 1.4518893999999136,
+                    "spacy": 0.025202699999908873,
+                    "gliner": 0.40862369999990733
                 },
                 "zero_shot_labels": [
                     "macroeconomic data release or inflation report",
@@ -1168,7 +1168,7 @@
                             "reason": "currency_index:USD"
                         }
                     ],
-                    "created_at": "2026-05-02T22:13:34.484971+00:00"
+                    "created_at": "2026-05-02T22:49:49.226999+00:00"
                 },
                 "oracle_review_published": false,
                 "oracle_review_dry_run": true
@@ -1270,10 +1270,10 @@
                 "candidate_labels_used": 3,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 1.2218882000015583,
-                    "zero_shot": 1.4397692999918945,
-                    "spacy": 0.03220449999207631,
-                    "gliner": 1.0148046999820508
+                    "finbert": 0.16933010000002469,
+                    "zero_shot": 0.5886007999999947,
+                    "spacy": 0.028448300000036397,
+                    "gliner": 0.336797899999965
                 },
                 "zero_shot_labels": [
                     "sports, entertainment or celebrity gossip",
@@ -1519,10 +1519,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.34693699999479577,
-                    "zero_shot": 1.6948285999824293,
-                    "spacy": 0.053409599990118295,
-                    "gliner": 0.3535934000101406
+                    "finbert": 0.15970230000004904,
+                    "zero_shot": 1.8506722000000764,
+                    "spacy": 0.013695699999971112,
+                    "gliner": 0.2776876000000357
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -1804,10 +1804,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.344657300011022,
-                    "zero_shot": 2.3448211000068113,
-                    "spacy": 0.07027610001387075,
-                    "gliner": 0.49518060000264086
+                    "finbert": 0.6056737000000112,
+                    "zero_shot": 2.243116799999939,
+                    "spacy": 0.04057860000000346,
+                    "gliner": 0.6185783000000811
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -2066,7 +2066,7 @@
                             "reason": "currency_index:USD"
                         }
                     ],
-                    "created_at": "2026-05-02T22:13:59.278171+00:00"
+                    "created_at": "2026-05-02T22:50:11.332154+00:00"
                 },
                 "oracle_review_published": false,
                 "oracle_review_dry_run": true
@@ -2168,10 +2168,10 @@
                 "candidate_labels_used": 7,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.31043810001574457,
-                    "zero_shot": 1.6548477999749593,
-                    "spacy": 0.03379370001493953,
-                    "gliner": 0.5229748999990989
+                    "finbert": 0.24243590000003223,
+                    "zero_shot": 1.7939072000000351,
+                    "spacy": 0.03918099999998503,
+                    "gliner": 0.4846259999999347
                 },
                 "zero_shot_labels": [
                     "currency intervention or severe devaluation",
@@ -2436,10 +2436,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.25293290000990964,
-                    "zero_shot": 2.066056799987564,
-                    "spacy": 0.11147499998332933,
-                    "gliner": 0.4411117999989074
+                    "finbert": 0.3763936000000285,
+                    "zero_shot": 2.30019470000002,
+                    "spacy": 0.03390329999990627,
+                    "gliner": 0.5558857000000899
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -2717,10 +2717,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.2319679000065662,
-                    "zero_shot": 1.917377600009786,
-                    "spacy": 0.03049009997630492,
-                    "gliner": 0.43220919999293983
+                    "finbert": 0.33463990000007016,
+                    "zero_shot": 2.1238731000000826,
+                    "spacy": 0.028822699999977885,
+                    "gliner": 0.4967326000000867
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -3000,7 +3000,7 @@
                             "reason": "currency_index:USD"
                         }
                     ],
-                    "created_at": "2026-05-02T22:14:22.614913+00:00"
+                    "created_at": "2026-05-02T22:50:35.347792+00:00"
                 },
                 "oracle_review_published": false,
                 "oracle_review_dry_run": true
@@ -3127,10 +3127,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.31811150000430644,
-                    "zero_shot": 2.0848761000088416,
-                    "spacy": 0.03175040002679452,
-                    "gliner": 0.4359056000248529
+                    "finbert": 0.29475639999998293,
+                    "zero_shot": 2.164365099999941,
+                    "spacy": 0.045443700000078024,
+                    "gliner": 0.591559400000051
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -3400,10 +3400,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.28282799999578856,
-                    "zero_shot": 4.479642099991906,
-                    "spacy": 0.030056499992497265,
-                    "gliner": 0.8023646000074223
+                    "finbert": 0.20827150000002348,
+                    "zero_shot": 1.4484793999999965,
+                    "spacy": 0.018758499999989908,
+                    "gliner": 0.41912749999994503
                 },
                 "zero_shot_labels": [
                     "commodity price surge or oil market disruption",
@@ -3709,10 +3709,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.408954199985601,
-                    "zero_shot": 2.7438908999902196,
-                    "spacy": 0.0395962999900803,
-                    "gliner": 0.6053562999877613
+                    "finbert": 0.33324849999996786,
+                    "zero_shot": 2.644830899999988,
+                    "spacy": 0.039813699999967866,
+                    "gliner": 0.5211682999999994
                 },
                 "zero_shot_labels": [
                     "nuclear threat or radioactive incident",
@@ -3988,10 +3988,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.1589531000063289,
-                    "zero_shot": 1.4420732999860775,
-                    "spacy": 0.024885899998480454,
-                    "gliner": 0.3142259999876842
+                    "finbert": 0.1858925999999883,
+                    "zero_shot": 1.5461056000000326,
+                    "spacy": 0.024594299999989744,
+                    "gliner": 0.3972468999999137
                 },
                 "zero_shot_labels": [
                     "generic news or daily politics",
@@ -4226,10 +4226,10 @@
                 "candidate_labels_used": 7,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.1836728999915067,
-                    "zero_shot": 1.8097173999994993,
-                    "spacy": 0.01967120001791045,
-                    "gliner": 0.32677480002166703
+                    "finbert": 0.31763619999992443,
+                    "zero_shot": 1.2746232000000646,
+                    "spacy": 0.018294299999979557,
+                    "gliner": 0.3899930999999697
                 },
                 "zero_shot_labels": [
                     "central bank interest rate decision or monetary policy",
@@ -4459,10 +4459,10 @@
                 "candidate_labels_used": 7,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.1670762999856379,
-                    "zero_shot": 1.1545624999853317,
-                    "spacy": 0.014094200014369562,
-                    "gliner": 0.2642552000179421
+                    "finbert": 0.25860880000004727,
+                    "zero_shot": 1.5602645999999822,
+                    "spacy": 0.015633600000001024,
+                    "gliner": 0.40306680000003325
                 },
                 "zero_shot_labels": [
                     "macroeconomic data release or inflation report",
@@ -4723,10 +4723,10 @@
                 "candidate_labels_used": 5,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.18170909999753349,
-                    "zero_shot": 0.8188287999946624,
-                    "spacy": 0.02480060001835227,
-                    "gliner": 0.2559299999848008
+                    "finbert": 0.1993477000000894,
+                    "zero_shot": 0.9414970999999923,
+                    "spacy": 0.026476999999999862,
+                    "gliner": 0.38282970000000205
                 },
                 "zero_shot_labels": [
                     "nuclear threat or radioactive incident",
@@ -4929,7 +4929,7 @@
                             "reason": "equity_risk"
                         }
                     ],
-                    "created_at": "2026-05-02T22:15:17.976876+00:00"
+                    "created_at": "2026-05-02T22:51:27.760464+00:00"
                 },
                 "oracle_review_published": false,
                 "oracle_review_dry_run": true
@@ -5033,10 +5033,10 @@
                 "candidate_labels_used": 3,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.20372359998873435,
-                    "zero_shot": 0.5358568000083324,
-                    "spacy": 0.029920599976321682,
-                    "gliner": 0.6772103999974206
+                    "finbert": 0.20795959999998104,
+                    "zero_shot": 0.5160344000000805,
+                    "spacy": 0.020902800000044408,
+                    "gliner": 0.3335892000000058
                 },
                 "zero_shot_labels": [
                     "sudden market shock or black swan event",
@@ -5282,10 +5282,10 @@
                 "candidate_labels_used": 7,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.1656805999809876,
-                    "zero_shot": 0.9788948000059463,
-                    "spacy": 0.013334599992958829,
-                    "gliner": 0.26571430001058616
+                    "finbert": 0.14248759999998128,
+                    "zero_shot": 1.0845151999999416,
+                    "spacy": 0.013189499999953114,
+                    "gliner": 0.3053140000000667
                 },
                 "zero_shot_labels": [
                     "currency intervention or severe devaluation",
@@ -5549,10 +5549,10 @@
                 "candidate_labels_used": 8,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.2073208999936469,
-                    "zero_shot": 2.022319699986838,
-                    "spacy": 0.1303487999830395,
-                    "gliner": 0.5690485999803059
+                    "finbert": 0.16995399999996152,
+                    "zero_shot": 1.3657951999999796,
+                    "spacy": 0.025099400000044625,
+                    "gliner": 0.33923269999991135
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -5824,10 +5824,10 @@
                 "candidate_labels_used": 5,
                 "labels_set": "minimum",
                 "nlp_timings": {
-                    "finbert": 0.16675520001444966,
-                    "zero_shot": 0.8024815999960992,
-                    "spacy": 0.017616800003452227,
-                    "gliner": 0.2343061999999918
+                    "finbert": 0.13607039999999415,
+                    "zero_shot": 0.6758558000000221,
+                    "spacy": 0.02060349999999289,
+                    "gliner": 0.26807829999995647
                 },
                 "zero_shot_labels": [
                     "intelligence agency report or espionage",
