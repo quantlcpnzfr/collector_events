@@ -34,6 +34,8 @@
   "category_weight": {
     "military drone or missile strike": 1.22,
     "military attack or action": 1.12,
+    "military impact, cost or investigation report": 0.85,
+    "battlefield tactical report": 0.45,
     "declaration of war or armed conflict": 1.28,
     "nuclear threat or radioactive incident": 1.34,
     "troop mobilization or border skirmish": 1.08,

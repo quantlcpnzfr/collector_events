@@ -438,8 +438,22 @@ class EventProcessor(Loggable):
 
     def _sanitize_nlp_features(self, features: Dict[str, Any]) -> Dict[str, Any]:
         features = dict(features or {})
-        features["entities"] = self._dedupe_entities(features.get("entities", []))
-        features["gliner_graph"] = self._dedupe_gliner_graph(features.get("gliner_graph", {}))
+        entities = self._dedupe_entities(features.get("entities", []))
+        gliner_graph = self._dedupe_gliner_graph(features.get("gliner_graph", {}))
+        
+        # Cross-pollinate SpaCy -> GLiNER for military actors
+        military_actors = set(gliner_graph.get("military actor", []))
+        for ent in entities:
+            if ent.get("label") == "ORG":
+                text_lower = ent["text"].lower()
+                if self._contains_any(text_lower, ["defense", "pentagon", "ministry", "command", "army", "military"]):
+                    military_actors.add(ent["text"])
+        
+        if military_actors:
+            gliner_graph["military actor"] = list(military_actors)
+            
+        features["entities"] = entities
+        features["gliner_graph"] = gliner_graph
         return features
 
     def _dedupe_entities(self, entities: Sequence[Dict[str, Any]]) -> List[Dict[str, str]]:
@@ -503,6 +517,11 @@ class EventProcessor(Loggable):
         else:
             historical_final = historical and not active_escalation
 
+        impact_report = self._contains_any(text_lower, [
+            "estimate", "cost", "billion", "investigation", "report", "reached",
+            "human costs", "consequences", "official said", "investigate"
+        ]) and self._contains_any(text_lower, ["war", "attack", "conflict", "incident"])
+
         return {
             "historical_reference": historical_final,
             "local_incident": local_noise and not macro_signal,
@@ -511,6 +530,7 @@ class EventProcessor(Loggable):
             "active_escalation": active_escalation,
             "macro_signal": macro_signal,
             "strategic_signal": strategic_signal,
+            "impact_report": impact_report and not active_escalation,
         }
 
     def _correct_category(self, category: str, confidence: float, text_lower: str, context: Dict[str, Any]) -> Tuple[str, float, List[Dict[str, Any]]]:
@@ -540,6 +560,11 @@ class EventProcessor(Loggable):
             new_category = "troop mobilization or border skirmish"
             new_confidence = max(min(confidence, 0.72), 0.55)
             corrections.append({"rule": "battlefield_micro", "from": category, "to": new_category})
+
+        elif context.get("impact_report") and category in {"military attack or action", "military drone or missile strike", "declaration of war or armed conflict"}:
+            new_category = "military impact, cost or investigation report"
+            new_confidence = max(confidence, 0.75)
+            corrections.append({"rule": "impact_report", "from": category, "to": new_category})
 
         if self._contains_any(text_lower, ["dollar", "national currency", "free-market price", "lowest value", "declined rapidly", "devalu", "depreciat", "more than doubled"]):
             if category in {"macroeconomic data release or inflation report", "generic news or daily politics"} or confidence < 0.75:
@@ -769,6 +794,9 @@ class EventProcessor(Loggable):
         if context.get("battlefield_micro") and not context.get("macro_signal"):
             multiplier *= 0.80
             caps.append(("battlefield_micro_score_cap", self.battlefield_micro_score_cap))
+        if context.get("impact_report"):
+            multiplier *= 0.50
+            caps.append(("impact_report_score_cap", 0.60))
         return multiplier, caps
 
     def _compress_score(self, raw_score: float) -> float:

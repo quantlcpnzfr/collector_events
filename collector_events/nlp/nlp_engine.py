@@ -187,6 +187,8 @@ class LocalNLPEngine:
         self.categories = [
             "military drone or missile strike",
             "military attack or action",
+            "battlefield tactical report",
+            "military impact, cost or investigation report",
             "declaration of war or armed conflict",
             "nuclear threat or radioactive incident",
             "troop mobilization or border skirmish",
@@ -327,8 +329,10 @@ class LocalNLPEngine:
         t = f" {text.lower()} "
         selected: List[str] = []
 
+        import re
         def has_any(terms: Sequence[str]) -> bool:
-            return any(term in t for term in terms)
+            pattern = r'\b(?:' + '|'.join(re.escape(term) for term in terms) + r')\b'
+            return bool(re.search(pattern, text.lower()))
 
         military_terms = [
             "missile",
@@ -350,6 +354,15 @@ class LocalNLPEngine:
             "rocket",
             "fighter jet",
             "airspace",
+            "destroy",
+            "force",
+            "forces",
+            "enemy",
+            "combat",
+            "offensive",
+            "frontline",
+            "brigade",
+            "battalion",
         ]
 
         nuclear_terms = [
@@ -540,6 +553,8 @@ class LocalNLPEngine:
                 [
                     "military drone or missile strike",
                     "military attack or action",
+                    "battlefield tactical report",
+                    "military impact, cost or investigation report",
                     "declaration of war or armed conflict",
                     "troop mobilization or border skirmish",
                     "naval blockade or airspace closure",
@@ -701,10 +716,12 @@ class LocalNLPEngine:
             selected.extend(
                 [
                     "sudden market shock or black swan event",
+                    "troop mobilization or border skirmish",
+                    "battlefield tactical report",
                     "generic news or daily politics",
                 ]
             )
-            max_labels = 8
+            max_labels = 10
 
         return self._unique_keep_order(selected)[:max_labels]
 
