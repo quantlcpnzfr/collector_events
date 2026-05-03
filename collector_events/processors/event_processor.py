@@ -327,6 +327,12 @@ class EventProcessor(Loggable):
         numeric_features = self._extract_secure_numeric_features(text, item)
         item.extra["numeric_features"] = numeric_features
 
+        # Sprint 3: Multidimensional Scoring Axis
+        scores = self._compute_multidimensional_scores(
+            item, nlp_features, numeric_features, score_breakdown
+        )
+        item.extra["scores"] = scores
+
         return ProcessedEvent(
             impact_category=impact_category,
             danger_score=danger_score,
@@ -337,7 +343,7 @@ class EventProcessor(Loggable):
             raw_danger_score=score_breakdown["scores"]["raw_score"],
             risk_bucket=score_breakdown["scores"]["risk_bucket"],
             saturation=score_breakdown["scores"]["saturation"],
-            scores=score_breakdown["scores"],
+            scores=scores,
             numeric_features=numeric_features,
         )
 
@@ -429,9 +435,12 @@ class EventProcessor(Loggable):
                 "severity": getattr(item, "severity", ""),
                 "severity_key": severity_key,
                 "domain": getattr(item, "domain", ""),
+                "context": context,
             },
             "category_corrections": corrections,
             "context_filters": context,
+            "gliner_details": gliner_details,
+            "keyword_hits": keyword_hits,
             "base": {
                 "severity_base": severity_base,
                 "category_weight": category_weight,
@@ -520,6 +529,138 @@ class EventProcessor(Loggable):
                     cleaned.append(text)
             out[label] = cleaned
         return out
+
+    def _compute_multidimensional_scores(
+        self,
+        item: IntelItem,
+        nlp_features: Dict[str, Any],
+        numeric_features: Dict[str, Any],
+        breakdown: Dict[str, Any]
+    ) -> Dict[str, float]:
+        """
+        Calcula os eixos multidimensionais da Sprint 3.
+        """
+        category = nlp_features.get("inferred_category", "generic news or daily politics")
+        confidence = float(nlp_features.get("category_confidence", 0.0))
+        context = breakdown.get("context", {})
+        gliner = breakdown.get("gliner_details", {})
+        
+        # 1. Geopolitical Severity Score (Gravidade no mundo físico)
+        geo_severity = 0.0
+        if category in {
+            "military drone or missile strike", "military attack or action",
+            "declaration of war or armed conflict", "nuclear threat or radioactive incident",
+            "terrorist attack or mass casualty event", "troop mobilization or border skirmish"
+        }:
+            geo_severity = 0.55 + (confidence * 0.35)
+        elif category in {
+            "military threat or escalation rhetoric", "military propaganda or official wartime statement",
+            "battlefield tactical report", "military impact, cost or investigation report"
+        }:
+            geo_severity = 0.35 + (confidence * 0.25)
+        
+        # Bônus por baixas
+        casualty_count = numeric_features.get("casualty_count")
+        if casualty_count is not None and casualty_count > 0:
+            geo_severity += min(0.15 * math.log10(casualty_count + 1), 0.35)
+            
+        # Bônus por ação cinética/armas
+        if gliner.get("kinetic") or gliner.get("weapon"):
+            geo_severity += 0.12
+            
+        geo_severity = self._clamp(geo_severity, 0.0, 0.99)
+
+        # 2. Market Impact Score (Potencial de volatilidade)
+        market_impact = 0.0
+        if category in {
+            "central bank interest rate decision or monetary policy",
+            "macroeconomic data release or inflation report",
+            "currency intervention or severe devaluation",
+            "commodity price surge or oil market disruption",
+            "stock market crash or massive sell-off",
+            "international economic sanctions or trade embargo",
+            "sudden market shock or black swan event"
+        }:
+            market_impact = 0.50 + (confidence * 0.40)
+        elif category in {
+            "military drone or missile strike", "military attack or action",
+            "unprecedented global crisis or major disruptive anomaly",
+            "declaration of war or armed conflict"
+        }:
+            market_impact = 0.40 + (confidence * 0.35)
+        elif category in {
+            "military threat or escalation rhetoric", "nuclear threat or radioactive incident",
+            "shipping route stress or maritime chokepoint closure"
+        }:
+            market_impact = 0.30 + (confidence * 0.25)
+        
+        # Bônus por movimento percentual
+        pct_change = numeric_features.get("percent_change")
+        if pct_change is not None and pct_change > 0:
+            market_impact += min(0.02 * pct_change, 0.25)
+            
+        # Bônus por grandes quantias de dinheiro
+        money_amount = numeric_features.get("large_money_amount")
+        if money_amount is not None and money_amount >= 1_000_000_000: # 1B+
+            market_impact += 0.12
+            
+        # Bônus por alvos estratégicos/macro
+        if context.get("macro_signal") or context.get("strategic_signal"):
+            market_impact += 0.10
+            
+        market_impact = self._clamp(market_impact, 0.0, 0.99)
+
+        # 3. Noise Score (Grau de irrelevância)
+        noise = 0.0
+        if category in self.NOISE_CATEGORIES:
+            noise = 0.70 + (confidence * 0.25)
+        
+        if context.get("self_promotion"):
+            noise = max(noise, 0.85)
+        if context.get("historical_reference"):
+            noise = max(noise, 0.75)
+        if context.get("local_incident") and not context.get("macro_signal"):
+            noise = max(noise, 0.65)
+            
+        noise = self._clamp(noise, 0.0, 0.99)
+
+        # 4. Directional Confidence Score (Qualidade do sinal de direção)
+        dir_conf = confidence * 0.70
+        
+        # Se o sentimento for forte (não neutro), aumenta a confiança na direção
+        sentiment = str(nlp_features.get("sentiment", "neutral")).lower()
+        if sentiment in {"negative", "positive"}:
+            dir_conf += 0.15
+            
+        # Bônus por hits de keywords fortes
+        kw_hits = breakdown.get("keyword_hits", [])
+        if kw_hits:
+            dir_conf += min(len(kw_hits) * 0.05, 0.15)
+            
+        dir_conf = self._clamp(dir_conf, 0.0, 0.99)
+
+        # 5. Asset Route Confidence (Baseado em entidades e mapeamento)
+        # Placeholder: No EventProcessor temos pouca info de roteamento final,
+        # mas podemos estimar pela densidade de entidades financeiras/G10
+        route_conf = 0.50
+        entities = nlp_features.get("entities", [])
+        g10_count = sum(1 for e in entities if e.get("label") == "G10_COUNTRY")
+        if g10_count > 0:
+            route_conf += min(g10_count * 0.10, 0.30)
+        
+        if any(e.get("label") in {"CENTRAL_BANK", "FOREX_PAIR", "COMMODITY"} for e in entities):
+            route_conf += 0.15
+            
+        route_conf = self._clamp(route_conf, 0.0, 0.99)
+
+        return {
+            "geopolitical_severity_score": geo_severity,
+            "market_impact_score": market_impact,
+            "noise_score": noise,
+            "directional_confidence_score": dir_conf,
+            "asset_route_confidence_score": route_conf,
+            "danger_score_legacy": breakdown["scores"]["final_score"]
+        }
 
     def _detect_context_filters(self, text_lower: str, nlp_features: Dict[str, Any]) -> Dict[str, Any]:
         historical = self._contains_any(text_lower, self.HISTORICAL_REFERENCE_TERMS)

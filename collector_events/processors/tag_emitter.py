@@ -73,7 +73,29 @@ class GlobalTagEmitter:
             "queue_name": self.queue_name,
             "tags": [],
             "reason": "",
+            "trade_emit_score": 0.0,
+            "multidimensional_scores": {},
         }
+
+        # Sprint 3: Multidimensional Scores
+        scores = item.extra.get("scores", {})
+        if scores:
+            m_impact = scores.get("market_impact_score", 0.0)
+            a_route = scores.get("asset_route_confidence_score", 0.5)
+            d_conf = scores.get("directional_confidence_score", 0.0)
+            noise = scores.get("noise_score", 0.0)
+            
+            # A GRANDE FÓRMULA (Sprint 3)
+            trade_emit_score = m_impact * a_route * d_conf * (1.0 - noise)
+            report["trade_emit_score"] = self._clamp(trade_emit_score, 0.0, 0.99)
+            report["multidimensional_scores"] = scores
+            
+            # Substituímos o score legado para a decisão de emissão se houver multidimensionalidade
+            decision_score = report["trade_emit_score"]
+        else:
+            decision_score = score
+            report["trade_emit_score"] = score
+            log.warning("Multidimensional scores not found for event %s. Using legacy danger_score.", item.id)
 
         if self._is_excluded(self._build_combined_text(item).lower()):
             report["reason"] = "excluded_keyword"
@@ -82,12 +104,12 @@ class GlobalTagEmitter:
 
         directives = self._predict_financial_directives(item)
 
-        if score < self.threshold:
+        if decision_score < self.threshold:
             report["reason"] = "below_global_tag_threshold"
-            if score >= self.oracle_review_threshold:
+            if decision_score >= self.oracle_review_threshold:
                 await self._request_oracle_review(item, report, reason="score_between_oracle_and_tag_threshold", directives=directives)
             item.extra["global_tag_emission"] = report
-            log.info("🏷️ GlobalTag NÃO emitida | score=%.3f < threshold=%.3f | review=%s | event=%s", score, self.threshold, report["oracle_review_requested"], getattr(item, "id", "<sem-id>"))
+            log.info("🏷️ GlobalTag NÃO emitida | trade_emit_score=%.3f < threshold=%.3f | review=%s | event=%s", decision_score, self.threshold, report["oracle_review_requested"], getattr(item, "id", "<sem-id>"))
             return report
 
         if not directives:
@@ -106,7 +128,7 @@ class GlobalTagEmitter:
             asset = str(directive["asset"])
             bias = str(directive.get("bias") or "neutral")
             confidence = self._safe_float(directive.get("confidence", 1.0), 1.0)
-            risk_score = self._clamp(score * max(confidence, 0.35), 0.0, 0.99)
+            risk_score = self._clamp(decision_score * max(confidence, 0.35), 0.0, 0.99)
             if risk_score < self.min_tag_risk_score:
                 skipped_low_risk.append({"asset": asset, "risk_score": risk_score, "reason": directive.get("reason", "")})
                 continue

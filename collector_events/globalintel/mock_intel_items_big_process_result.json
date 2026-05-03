@@ -86,10 +86,10 @@
                 "candidate_labels_used": 15,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.7245967000017117,
-                    "zero_shot": 5.237875900002109,
-                    "spacy": 0.08216349999929662,
-                    "gliner": 0.5412479999977222
+                    "finbert": 2.391542900000786,
+                    "zero_shot": 7.234921600000234,
+                    "spacy": 0.09755769999901531,
+                    "gliner": 0.7753488999987894
                 },
                 "zero_shot_labels": [
                     "sports, entertainment or celebrity gossip",
@@ -141,7 +141,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [],
                 "context_filters": {
@@ -156,23 +168,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.04,
-                    "category_component": 0.0033360670924186702,
-                    "severity_component": 0.012,
-                    "base_score": 0.012
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.0,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0,
-                    "engagement_bonus": 0.0,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -191,6 +186,23 @@
                     "strong_tactical_signal": false,
                     "bonus": 0.0,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.04,
+                    "category_component": 0.0033360670924186702,
+                    "severity_component": 0.012,
+                    "base_score": 0.012
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.0,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.0,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -219,6 +231,14 @@
                 "large_money_amount": null,
                 "casualty_count": null,
                 "percent_change": null
+            },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.0,
+                "noise_score": 0.7496438555419445,
+                "directional_confidence_score": 0.1390027955174446,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.012648000000000001
             },
             "gliner_tactical": {
                 "military actor": [],
@@ -250,7 +270,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.012648000000000001,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -259,7 +279,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "excluded_keyword"
+                "reason": "excluded_keyword",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.7496438555419445,
+                    "directional_confidence_score": 0.1390027955174446,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.012648000000000001
+                }
             }
         }
     },
@@ -374,10 +403,10 @@
                 "candidate_labels_used": 15,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.3189341000033892,
-                    "zero_shot": 4.560837999997602,
-                    "spacy": 0.026479399999516318,
-                    "gliner": 0.8308838000011747
+                    "finbert": 0.385964299999614,
+                    "zero_shot": 6.626383299997542,
+                    "spacy": 0.03016830000342452,
+                    "gliner": 0.40954729999793926
                 },
                 "zero_shot_labels": [
                     "military threat or escalation rhetoric",
@@ -435,7 +464,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": true,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -456,31 +497,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.95,
-                    "category_component": 0.25935,
-                    "severity_component": 0.22799999999999998,
-                    "base_score": 0.25935
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.06,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.06,
-                    "engagement_bonus": 0.03798956824500671,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [
-                    {
-                        "keyword": "explosions",
-                        "root": "explosion",
-                        "weight": 0.06,
-                        "rank": 1,
-                        "contribution": 0.06
-                    }
-                ],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -499,6 +515,31 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.06,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "explosions",
+                        "root": "explosion",
+                        "weight": 0.06,
+                        "rank": 1,
+                        "contribution": 0.06
+                    }
+                ],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.95,
+                    "category_component": 0.25935,
+                    "severity_component": 0.22799999999999998,
+                    "base_score": 0.25935
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.06,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.06,
+                    "engagement_bonus": 0.03798956824500671,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -535,6 +576,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.6325,
+                "market_impact_score": 0.4625,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.505,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.4398759049302371
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [],
@@ -568,7 +617,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.4398759049302371,
                 "risk_bucket": "watch",
                 "emitted": false,
@@ -577,7 +626,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.11678125,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.6325,
+                    "market_impact_score": 0.4625,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.505,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.4398759049302371
+                }
             }
         }
     },
@@ -683,10 +741,10 @@
                 "candidate_labels_used": 22,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.32585570000082953,
-                    "zero_shot": 7.585289400001784,
-                    "spacy": 0.08528070000102161,
-                    "gliner": 0.49867430000085733
+                    "finbert": 0.36315059999833466,
+                    "zero_shot": 5.8031463000006624,
+                    "spacy": 0.04012200000215671,
+                    "gliner": 0.473421500002587
                 },
                 "zero_shot_labels": [
                     "currency intervention or severe devaluation",
@@ -752,7 +810,19 @@
                     "sentiment": "negative",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": true,
+                        "strategic_signal": true,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [],
                 "context_filters": {
@@ -767,21 +837,24 @@
                     "strategic_signal": true,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 1.16,
-                    "category_component": 0.4530673416137695,
-                    "severity_component": 0.2784,
-                    "base_score": 0.4530673416137695
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.08090488243103026,
-                    "entity_bonus": 0.06,
-                    "gliner_bonus": 0.09,
-                    "numeric_bonus": 0.1,
-                    "keyword_bonus": 0.1142125,
-                    "engagement_bonus": 0.02641165613056588,
-                    "critical_bonus": 0.08
+                "gliner_details": {
+                    "macro_target": false,
+                    "strategic_infra": false,
+                    "strategic_raw": false,
+                    "kinetic": false,
+                    "weapon": false,
+                    "military_actor": false,
+                    "geopolitical": false,
+                    "central_bank": false,
+                    "economic_indicator": true,
+                    "market_sentiment": false,
+                    "commodity_action": false,
+                    "institutional_actor": false,
+                    "political_leader": true,
+                    "localized_noise": false,
+                    "strong_tactical_signal": true,
+                    "bonus": 0.09,
+                    "multiplier": 1.0
                 },
                 "keyword_hits": [
                     {
@@ -806,24 +879,21 @@
                         "contribution": 0.007962499999999999
                     }
                 ],
-                "gliner_details": {
-                    "macro_target": false,
-                    "strategic_infra": false,
-                    "strategic_raw": false,
-                    "kinetic": false,
-                    "weapon": false,
-                    "military_actor": false,
-                    "geopolitical": false,
-                    "central_bank": false,
-                    "economic_indicator": true,
-                    "market_sentiment": false,
-                    "commodity_action": false,
-                    "institutional_actor": false,
-                    "political_leader": true,
-                    "localized_noise": false,
-                    "strong_tactical_signal": true,
-                    "bonus": 0.09,
-                    "multiplier": 1.0
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 1.16,
+                    "category_component": 0.4530673416137695,
+                    "severity_component": 0.2784,
+                    "base_score": 0.4530673416137695
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.08090488243103026,
+                    "entity_bonus": 0.06,
+                    "gliner_bonus": 0.09,
+                    "numeric_bonus": 0.1,
+                    "keyword_bonus": 0.1142125,
+                    "engagement_bonus": 0.02641165613056588,
+                    "critical_bonus": 0.08
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -861,6 +931,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.8719764709472657,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.9509588241577148,
+                "asset_route_confidence_score": 0.65,
+                "danger_score_legacy": 0.8675700531250303
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [],
@@ -894,98 +972,25 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.8675700531250303,
                 "risk_bucket": "critical",
-                "emitted": true,
-                "emitted_count": 4,
+                "emitted": false,
+                "emitted_count": 0,
                 "oracle_review_requested": false,
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
-                "tags": [
-                    {
-                        "asset": "OIL",
-                        "bias": "strong_bullish",
-                        "risk_score": 0.7114074435625248,
-                        "confidence": 0.82,
-                        "reason": "keyword:oil",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "OIL",
-                            "bias": "strong_bullish",
-                            "risk_score": 0.7114,
-                            "trigger_event_id": "4cbe67bb-9eab-4865-8d91-64dc8d4ad072",
-                            "established_at": "2026-05-03T04:52:46.480938+00:00",
-                            "expires_at": "2026-05-03T08:52:46.480938+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "BTC",
-                        "bias": "neutral",
-                        "risk_score": 0.7114074435625248,
-                        "confidence": 0.82,
-                        "reason": "keyword:crypto",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "BTC",
-                            "bias": "neutral",
-                            "risk_score": 0.7114,
-                            "trigger_event_id": "4cbe67bb-9eab-4865-8d91-64dc8d4ad072",
-                            "established_at": "2026-05-03T04:52:46.480938+00:00",
-                            "expires_at": "2026-05-03T08:52:46.480938+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "BRENT",
-                        "bias": "bullish",
-                        "risk_score": 0.6767046414375236,
-                        "confidence": 0.78,
-                        "reason": "oil_shock",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "BRENT",
-                            "bias": "bullish",
-                            "risk_score": 0.6767,
-                            "trigger_event_id": "4cbe67bb-9eab-4865-8d91-64dc8d4ad072",
-                            "established_at": "2026-05-03T04:52:46.481458+00:00",
-                            "expires_at": "2026-05-03T08:52:46.481458+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "WTI",
-                        "bias": "bullish",
-                        "risk_score": 0.6767046414375236,
-                        "confidence": 0.78,
-                        "reason": "oil_shock",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "WTI",
-                            "bias": "bullish",
-                            "risk_score": 0.6767,
-                            "trigger_event_id": "4cbe67bb-9eab-4865-8d91-64dc8d4ad072",
-                            "established_at": "2026-05-03T04:52:46.481458+00:00",
-                            "expires_at": "2026-05-03T08:52:46.481458+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    }
-                ],
-                "reason": "emitted",
-                "skipped_low_risk_tags": []
+                "tags": [],
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.5389889176783836,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.8719764709472657,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.9509588241577148,
+                    "asset_route_confidence_score": 0.65,
+                    "danger_score_legacy": 0.8675700531250303
+                }
             }
         }
     },
@@ -1090,10 +1095,10 @@
                 "candidate_labels_used": 17,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.21604970000043977,
-                    "zero_shot": 3.6603885000004084,
-                    "spacy": 0.019413399997574743,
-                    "gliner": 0.37873970000146073
+                    "finbert": 0.3387254999979632,
+                    "zero_shot": 3.218523699997604,
+                    "spacy": 0.019350000002305023,
+                    "gliner": 0.28706980000060867
                 },
                 "zero_shot_labels": [
                     "military organization or defense capability report",
@@ -1155,7 +1160,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": true,
+                        "strategic_signal": true,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -1176,38 +1193,6 @@
                     "strategic_signal": true,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 1.16,
-                    "category_component": 0.350784,
-                    "severity_component": 0.2784,
-                    "base_score": 0.350784
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.075,
-                    "numeric_bonus": 0.1,
-                    "keyword_bonus": 0.128,
-                    "engagement_bonus": 0.04357166290021883,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [
-                    {
-                        "keyword": "lowest value ever",
-                        "root": "lowest value ever",
-                        "weight": 0.1,
-                        "rank": 1,
-                        "contribution": 0.1
-                    },
-                    {
-                        "keyword": "highest recorded",
-                        "root": "highest recorded",
-                        "weight": 0.08,
-                        "rank": 2,
-                        "contribution": 0.027999999999999997
-                    }
-                ],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -1226,6 +1211,38 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.075,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "lowest value ever",
+                        "root": "lowest value ever",
+                        "weight": 0.1,
+                        "rank": 1,
+                        "contribution": 0.1
+                    },
+                    {
+                        "keyword": "highest recorded",
+                        "root": "highest recorded",
+                        "weight": 0.08,
+                        "rank": 2,
+                        "contribution": 0.027999999999999997
+                    }
+                ],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 1.16,
+                    "category_component": 0.350784,
+                    "severity_component": 0.2784,
+                    "base_score": 0.350784
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.075,
+                    "numeric_bonus": 0.1,
+                    "keyword_bonus": 0.128,
+                    "engagement_bonus": 0.04357166290021883,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -1263,6 +1280,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.788,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.604,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.7350128686968307
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [],
@@ -1295,60 +1320,25 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.7350128686968307,
                 "risk_bucket": "high",
                 "emitted": false,
                 "emitted_count": 0,
-                "oracle_review_requested": true,
+                "oracle_review_requested": false,
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
                 "reason": "below_global_tag_threshold",
-                "oracle_review_reason": "score_between_oracle_and_tag_threshold",
-                "oracle_review_payload": {
-                    "event_type": "ORACLE_REVIEW_REQUESTED",
-                    "trigger_event_id": "641db5d9-834b-44dd-a139-8c6e0d10a420",
-                    "reason": "score_between_oracle_and_tag_threshold",
-                    "danger_score": 0.7350128686968307,
-                    "risk_bucket": "high",
-                    "impact_category": "currency intervention or severe devaluation",
-                    "candidate_directives": [
-                        {
-                            "asset": "EUR/USD",
-                            "bias": "neutral",
-                            "confidence": 0.64,
-                            "reason": "currency:USD"
-                        },
-                        {
-                            "asset": "GBP/USD",
-                            "bias": "neutral",
-                            "confidence": 0.64,
-                            "reason": "currency:USD"
-                        },
-                        {
-                            "asset": "USD/JPY",
-                            "bias": "neutral",
-                            "confidence": 0.64,
-                            "reason": "currency:USD"
-                        },
-                        {
-                            "asset": "USD/CHF",
-                            "bias": "neutral",
-                            "confidence": 0.64,
-                            "reason": "currency:USD"
-                        },
-                        {
-                            "asset": "USD",
-                            "bias": "neutral",
-                            "confidence": 0.52,
-                            "reason": "currency_index:USD"
-                        }
-                    ],
-                    "created_at": "2026-05-03T04:52:55.814524+00:00"
-                },
-                "oracle_review_published": false,
-                "oracle_review_dry_run": true
+                "trade_emit_score": 0.237976,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.788,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.604,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.7350128686968307
+                }
             }
         }
     },
@@ -1447,10 +1437,10 @@
                 "candidate_labels_used": 15,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.44585749999896507,
-                    "zero_shot": 2.726835800000117,
-                    "spacy": 0.017935100000613602,
-                    "gliner": 0.5787855999988096
+                    "finbert": 0.15304619999733404,
+                    "zero_shot": 2.262711000003037,
+                    "spacy": 0.014441799998166971,
+                    "gliner": 0.27090580000003683
                 },
                 "zero_shot_labels": [
                     "military organization or defense capability report",
@@ -1508,7 +1498,19 @@
                     "sentiment": "negative",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": true,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -1529,23 +1531,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.86,
-                    "category_component": 0.14619958223104476,
-                    "severity_component": 0.2064,
-                    "base_score": 0.2064
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.026107068255543705,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.0,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0,
-                    "engagement_bonus": 0.04620473406508757,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -1564,6 +1549,23 @@
                     "strong_tactical_signal": false,
                     "bonus": 0.0,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.86,
+                    "category_component": 0.14619958223104476,
+                    "severity_component": 0.2064,
+                    "base_score": 0.2064
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.026107068255543705,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.0,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.04620473406508757,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -1597,6 +1599,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.0,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.4333325237035751,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.10281678387608088
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [],
@@ -1627,7 +1637,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.10281678387608088,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -1636,7 +1646,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.4333325237035751,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.10281678387608088
+                }
             }
         }
     },
@@ -1731,10 +1750,10 @@
                 "candidate_labels_used": 20,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.15967639999871608,
-                    "zero_shot": 4.223197000002983,
-                    "spacy": 0.01446129999749246,
-                    "gliner": 0.37647260000085225
+                    "finbert": 0.20783720000326866,
+                    "zero_shot": 3.1498603000000003,
+                    "spacy": 0.011185999999725027,
+                    "gliner": 0.23471600000266335
                 },
                 "zero_shot_labels": [
                     "military impact, cost or investigation report",
@@ -1796,7 +1815,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": true
+                    }
                 },
                 "category_corrections": [],
                 "context_filters": {
@@ -1811,31 +1842,6 @@
                     "strategic_signal": false,
                     "impact_report": true
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.85,
-                    "category_component": 0.2121244048476219,
-                    "severity_component": 0.204,
-                    "base_score": 0.2121244048476219
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.055,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.09,
-                    "engagement_bonus": 0.019730715410846228,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [
-                    {
-                        "keyword": "war",
-                        "root": "war",
-                        "weight": 0.09,
-                        "rank": 1,
-                        "contribution": 0.09
-                    }
-                ],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -1854,6 +1860,31 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.055,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "war",
+                        "root": "war",
+                        "weight": 0.09,
+                        "rank": 1,
+                        "contribution": 0.09
+                    }
+                ],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.85,
+                    "category_component": 0.2121244048476219,
+                    "severity_component": 0.204,
+                    "base_score": 0.2121244048476219
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.055,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.09,
+                    "engagement_bonus": 0.019730715410846228,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -1886,6 +1917,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.498546501994133,
+                "market_impact_score": 0.12,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.46593020558357234,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.19860264837621272
+            },
             "gliner_tactical": {
                 "military actor": [
                     "U.S. Defense Department"
@@ -1916,7 +1955,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.19860264837621272,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -1925,7 +1964,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.02795581233501434,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.498546501994133,
+                    "market_impact_score": 0.12,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.46593020558357234,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.19860264837621272
+                }
             }
         }
     },
@@ -2051,10 +2099,10 @@
                 "candidate_labels_used": 21,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.46422639999946114,
-                    "zero_shot": 5.659230499997648,
-                    "spacy": 0.03964470000209985,
-                    "gliner": 0.5902294000006805
+                    "finbert": 0.31383650000134367,
+                    "zero_shot": 6.399150400000508,
+                    "spacy": 0.06227460000081919,
+                    "gliner": 1.189089800001966
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -2118,7 +2166,19 @@
                     "sentiment": "negative",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": true,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [],
                 "context_filters": {
@@ -2133,21 +2193,24 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 1.12,
-                    "category_component": 0.45135413417816167,
-                    "severity_component": 0.26880000000000004,
-                    "base_score": 0.45135413417816167
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.08059895253181458,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.0,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.192525,
-                    "engagement_bonus": 0.026892962986817114,
-                    "critical_bonus": 0.08
+                "gliner_details": {
+                    "macro_target": false,
+                    "strategic_infra": false,
+                    "strategic_raw": false,
+                    "kinetic": false,
+                    "weapon": false,
+                    "military_actor": false,
+                    "geopolitical": false,
+                    "central_bank": false,
+                    "economic_indicator": false,
+                    "market_sentiment": false,
+                    "commodity_action": false,
+                    "institutional_actor": false,
+                    "political_leader": true,
+                    "localized_noise": false,
+                    "strong_tactical_signal": false,
+                    "bonus": 0.0,
+                    "multiplier": 1.0
                 },
                 "keyword_hits": [
                     {
@@ -2172,24 +2235,21 @@
                         "contribution": 0.011024999999999998
                     }
                 ],
-                "gliner_details": {
-                    "macro_target": false,
-                    "strategic_infra": false,
-                    "strategic_raw": false,
-                    "kinetic": false,
-                    "weapon": false,
-                    "military_actor": false,
-                    "geopolitical": false,
-                    "central_bank": false,
-                    "economic_indicator": false,
-                    "market_sentiment": false,
-                    "commodity_action": false,
-                    "institutional_actor": false,
-                    "political_leader": true,
-                    "localized_noise": false,
-                    "strong_tactical_signal": false,
-                    "bonus": 0.0,
-                    "multiplier": 1.0
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 1.12,
+                    "category_component": 0.45135413417816167,
+                    "severity_component": 0.26880000000000004,
+                    "base_score": 0.45135413417816167
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.08059895253181458,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.0,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.192525,
+                    "engagement_bonus": 0.026892962986817114,
+                    "critical_bonus": 0.08
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -2232,6 +2292,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.8858289688825607,
+                "market_impact_score": 0.7358289688825608,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.9716579377651214,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.8233062822733395
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [],
@@ -2262,178 +2330,25 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.8233062822733395,
                 "risk_bucket": "high",
-                "emitted": true,
-                "emitted_count": 8,
+                "emitted": false,
+                "emitted_count": 0,
                 "oracle_review_requested": false,
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
-                "tags": [
-                    {
-                        "asset": "XAU",
-                        "bias": "bullish",
-                        "risk_score": 0.5763143975913376,
-                        "confidence": 0.7,
-                        "reason": "risk_off_safe_haven",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "XAU",
-                            "bias": "bullish",
-                            "risk_score": 0.5763,
-                            "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T04:53:26.459944+00:00",
-                            "expires_at": "2026-05-03T08:53:26.459944+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "XAU/USD",
-                        "bias": "bullish",
-                        "risk_score": 0.5763143975913376,
-                        "confidence": 0.7,
-                        "reason": "risk_off_safe_haven",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "XAU/USD",
-                            "bias": "bullish",
-                            "risk_score": 0.5763,
-                            "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T04:53:26.459944+00:00",
-                            "expires_at": "2026-05-03T08:53:26.459944+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "JPY",
-                        "bias": "bullish",
-                        "risk_score": 0.5763143975913376,
-                        "confidence": 0.7,
-                        "reason": "risk_off_safe_haven",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "JPY",
-                            "bias": "bullish",
-                            "risk_score": 0.5763,
-                            "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T04:53:26.460462+00:00",
-                            "expires_at": "2026-05-03T08:53:26.460462+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "CHF",
-                        "bias": "bullish",
-                        "risk_score": 0.5763143975913376,
-                        "confidence": 0.7,
-                        "reason": "risk_off_safe_haven",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "CHF",
-                            "bias": "bullish",
-                            "risk_score": 0.5763,
-                            "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T04:53:26.460462+00:00",
-                            "expires_at": "2026-05-03T08:53:26.460462+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "SPX",
-                        "bias": "bearish",
-                        "risk_score": 0.543382146300404,
-                        "confidence": 0.66,
-                        "reason": "equity_risk",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "SPX",
-                            "bias": "bearish",
-                            "risk_score": 0.5434,
-                            "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T04:53:26.460462+00:00",
-                            "expires_at": "2026-05-03T08:53:26.460462+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "NQ",
-                        "bias": "bearish",
-                        "risk_score": 0.543382146300404,
-                        "confidence": 0.66,
-                        "reason": "equity_risk",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "NQ",
-                            "bias": "bearish",
-                            "risk_score": 0.5434,
-                            "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T04:53:26.460462+00:00",
-                            "expires_at": "2026-05-03T08:53:26.460462+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "EUR/USD",
-                        "bias": "neutral",
-                        "risk_score": 0.5269160206549373,
-                        "confidence": 0.64,
-                        "reason": "currency:USD",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "EUR/USD",
-                            "bias": "neutral",
-                            "risk_score": 0.5269,
-                            "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T04:53:26.460462+00:00",
-                            "expires_at": "2026-05-03T08:53:26.460462+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "GBP/USD",
-                        "bias": "neutral",
-                        "risk_score": 0.5269160206549373,
-                        "confidence": 0.64,
-                        "reason": "currency:USD",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "GBP/USD",
-                            "bias": "neutral",
-                            "risk_score": 0.5269,
-                            "trigger_event_id": "faf5a411-6a82-4f5f-a0b5-daa337ec7edc",
-                            "established_at": "2026-05-03T04:53:26.460978+00:00",
-                            "expires_at": "2026-05-03T08:53:26.460978+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    }
-                ],
-                "reason": "emitted",
-                "skipped_low_risk_tags": []
+                "tags": [],
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.35748702922613235,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.8858289688825607,
+                    "market_impact_score": 0.7358289688825608,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.9716579377651214,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.8233062822733395
+                }
             }
         }
     },
@@ -2532,10 +2447,10 @@
                 "candidate_labels_used": 20,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.5735754000015731,
-                    "zero_shot": 5.050222999998368,
-                    "spacy": 0.07642699999996694,
-                    "gliner": 0.42944899999929476
+                    "finbert": 0.2240782999979274,
+                    "zero_shot": 3.9011511000026076,
+                    "spacy": 0.023360700000921497,
+                    "gliner": 0.4126189000016893
                 },
                 "zero_shot_labels": [
                     "military threat or escalation rhetoric",
@@ -2603,7 +2518,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": true,
+                        "macro_signal": false,
+                        "strategic_signal": true,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -2624,23 +2551,6 @@
                     "strategic_signal": true,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.95,
-                    "category_component": 0.391504737496376,
-                    "severity_component": 0.22799999999999998,
-                    "base_score": 0.391504737496376
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.0,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0,
-                    "engagement_bonus": 0.03453705541433474,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -2659,6 +2569,23 @@
                     "strong_tactical_signal": false,
                     "bonus": 0.0,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.95,
+                    "category_component": 0.391504737496376,
+                    "severity_component": 0.22799999999999998,
+                    "base_score": 0.391504737496376
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.0,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.03453705541433474,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -2692,6 +2619,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.5953037202358246,
+                "market_impact_score": 0.0,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.6868504166603088,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.4490480497278891
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [],
@@ -2722,7 +2657,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.4490480497278891,
                 "risk_bucket": "watch",
                 "emitted": false,
@@ -2731,7 +2666,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.5953037202358246,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.6868504166603088,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.4490480497278891
+                }
             }
         }
     },
@@ -2847,10 +2791,10 @@
                 "candidate_labels_used": 20,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.46609170000010636,
-                    "zero_shot": 6.305709199998091,
-                    "spacy": 0.035838600000715815,
-                    "gliner": 0.529522699998779
+                    "finbert": 0.3522061000003305,
+                    "zero_shot": 5.880581499997788,
+                    "spacy": 0.046640299999126,
+                    "gliner": 0.7031203000005917
                 },
                 "zero_shot_labels": [
                     "military threat or escalation rhetoric",
@@ -2918,7 +2862,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": true,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -2939,23 +2895,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.95,
-                    "category_component": 0.3927244341373443,
-                    "severity_component": 0.22799999999999998,
-                    "base_score": 0.3927244341373443
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.115,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0,
-                    "engagement_bonus": 0.01788721509881789,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -2974,6 +2913,23 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.115,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.95,
+                    "category_component": 0.3927244341373443,
+                    "severity_component": 0.22799999999999998,
+                    "base_score": 0.3927244341373443
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.115,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.01788721509881789,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -3009,6 +2965,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.7160679411888122,
+                "market_impact_score": 0.0,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.6889902353286743,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.553994678294915
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [
@@ -3042,7 +3006,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.553994678294915,
                 "risk_bucket": "elevated",
                 "emitted": false,
@@ -3051,7 +3015,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.7160679411888122,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.6889902353286743,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.553994678294915
+                }
             }
         }
     },
@@ -3175,10 +3148,10 @@
                 "candidate_labels_used": 25,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.4101245999991079,
-                    "zero_shot": 6.8832818000009866,
-                    "spacy": 0.029257700000016484,
-                    "gliner": 0.4815675999998348
+                    "finbert": 0.5538168999992195,
+                    "zero_shot": 6.706497800001671,
+                    "spacy": 0.032796999999845866,
+                    "gliner": 0.45152479999887873
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -3250,7 +3223,19 @@
                     "sentiment": "negative",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": true,
+                        "strategic_signal": true,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [],
                 "context_filters": {
@@ -3265,21 +3250,24 @@
                     "strategic_signal": true,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 1.12,
-                    "category_component": 0.3344852817535401,
-                    "severity_component": 0.26880000000000004,
-                    "base_score": 0.3344852817535401
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.05972951459884644,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.12000000000000001,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.17075,
-                    "engagement_bonus": 0.03304258395912971,
-                    "critical_bonus": 0.06
+                "gliner_details": {
+                    "macro_target": false,
+                    "strategic_infra": false,
+                    "strategic_raw": false,
+                    "kinetic": false,
+                    "weapon": false,
+                    "military_actor": true,
+                    "geopolitical": true,
+                    "central_bank": false,
+                    "economic_indicator": false,
+                    "market_sentiment": false,
+                    "commodity_action": false,
+                    "institutional_actor": false,
+                    "political_leader": true,
+                    "localized_noise": false,
+                    "strong_tactical_signal": true,
+                    "bonus": 0.12000000000000001,
+                    "multiplier": 1.0
                 },
                 "keyword_hits": [
                     {
@@ -3304,24 +3292,21 @@
                         "contribution": 0.012249999999999999
                     }
                 ],
-                "gliner_details": {
-                    "macro_target": false,
-                    "strategic_infra": false,
-                    "strategic_raw": false,
-                    "kinetic": false,
-                    "weapon": false,
-                    "military_actor": true,
-                    "geopolitical": true,
-                    "central_bank": false,
-                    "economic_indicator": false,
-                    "market_sentiment": false,
-                    "commodity_action": false,
-                    "institutional_actor": false,
-                    "political_leader": true,
-                    "localized_noise": false,
-                    "strong_tactical_signal": true,
-                    "bonus": 0.12000000000000001,
-                    "multiplier": 1.0
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 1.12,
+                    "category_component": 0.3344852817535401,
+                    "severity_component": 0.26880000000000004,
+                    "base_score": 0.3344852817535401
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.05972951459884644,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.12000000000000001,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.17075,
+                    "engagement_bonus": 0.03304258395912971,
+                    "critical_bonus": 0.06
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -3365,6 +3350,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.7988729774951935,
+                "market_impact_score": 0.6488729774951935,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.7977459549903869,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.8064341175954266
+            },
             "gliner_tactical": {
                 "military actor": [
                     "the U.S. Central Command"
@@ -3399,178 +3392,25 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.8064341175954266,
                 "risk_bucket": "high",
-                "emitted": true,
-                "emitted_count": 8,
+                "emitted": false,
+                "emitted_count": 0,
                 "oracle_review_requested": false,
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
-                "tags": [
-                    {
-                        "asset": "OIL",
-                        "bias": "bullish",
-                        "risk_score": 0.6290186117244327,
-                        "confidence": 0.78,
-                        "reason": "oil_shock",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "OIL",
-                            "bias": "bullish",
-                            "risk_score": 0.629,
-                            "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T04:54:03.109023+00:00",
-                            "expires_at": "2026-05-03T08:54:03.109023+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "BRENT",
-                        "bias": "bullish",
-                        "risk_score": 0.6290186117244327,
-                        "confidence": 0.78,
-                        "reason": "oil_shock",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "BRENT",
-                            "bias": "bullish",
-                            "risk_score": 0.629,
-                            "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T04:54:03.109023+00:00",
-                            "expires_at": "2026-05-03T08:54:03.109023+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "WTI",
-                        "bias": "bullish",
-                        "risk_score": 0.6290186117244327,
-                        "confidence": 0.78,
-                        "reason": "oil_shock",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "WTI",
-                            "bias": "bullish",
-                            "risk_score": 0.629,
-                            "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T04:54:03.109835+00:00",
-                            "expires_at": "2026-05-03T08:54:03.109835+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "XAU",
-                        "bias": "bullish",
-                        "risk_score": 0.5645038823167986,
-                        "confidence": 0.7,
-                        "reason": "risk_off_safe_haven",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "XAU",
-                            "bias": "bullish",
-                            "risk_score": 0.5645,
-                            "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T04:54:03.109835+00:00",
-                            "expires_at": "2026-05-03T08:54:03.109835+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "XAU/USD",
-                        "bias": "bullish",
-                        "risk_score": 0.5645038823167986,
-                        "confidence": 0.7,
-                        "reason": "risk_off_safe_haven",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "XAU/USD",
-                            "bias": "bullish",
-                            "risk_score": 0.5645,
-                            "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T04:54:03.109835+00:00",
-                            "expires_at": "2026-05-03T08:54:03.109835+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "JPY",
-                        "bias": "bullish",
-                        "risk_score": 0.5645038823167986,
-                        "confidence": 0.7,
-                        "reason": "risk_off_safe_haven",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "JPY",
-                            "bias": "bullish",
-                            "risk_score": 0.5645,
-                            "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T04:54:03.109835+00:00",
-                            "expires_at": "2026-05-03T08:54:03.109835+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "CHF",
-                        "bias": "bullish",
-                        "risk_score": 0.5645038823167986,
-                        "confidence": 0.7,
-                        "reason": "risk_off_safe_haven",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "CHF",
-                            "bias": "bullish",
-                            "risk_score": 0.5645,
-                            "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T04:54:03.109835+00:00",
-                            "expires_at": "2026-05-03T08:54:03.109835+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    },
-                    {
-                        "asset": "SPX",
-                        "bias": "bearish",
-                        "risk_score": 0.5322465176129816,
-                        "confidence": 0.66,
-                        "reason": "equity_risk",
-                        "expiry_minutes": 240,
-                        "payload": {
-                            "asset": "SPX",
-                            "bias": "bearish",
-                            "risk_score": 0.5322,
-                            "trigger_event_id": "a7f95de4-012f-46a4-80b3-d4f9cd2d97d1",
-                            "established_at": "2026-05-03T04:54:03.110345+00:00",
-                            "expires_at": "2026-05-03T08:54:03.110345+00:00",
-                            "active": true,
-                            "event_type": "GLOBAL_TAG_UPDATED"
-                        },
-                        "published": false,
-                        "dry_run": true
-                    }
-                ],
-                "reason": "emitted",
-                "skipped_low_risk_tags": []
+                "tags": [],
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.25881789654967946,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.7988729774951935,
+                    "market_impact_score": 0.6488729774951935,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.7977459549903869,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.8064341175954266
+                }
             }
         }
     },
@@ -3698,10 +3538,10 @@
                 "candidate_labels_used": 20,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.34847660000014,
-                    "zero_shot": 5.991417500001262,
-                    "spacy": 0.03175140000166721,
-                    "gliner": 0.6033250000000407
+                    "finbert": 0.37439870000162045,
+                    "zero_shot": 5.166935900000681,
+                    "spacy": 0.025296399999206187,
+                    "gliner": 0.4084508000014466
                 },
                 "zero_shot_labels": [
                     "military impact, cost or investigation report",
@@ -3763,7 +3603,19 @@
                     "sentiment": "negative",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": true,
+                        "impact_report": true
+                    }
                 },
                 "category_corrections": [],
                 "context_filters": {
@@ -3778,38 +3630,6 @@
                     "strategic_signal": true,
                     "impact_report": true
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.85,
-                    "category_component": 0.26499340903759,
-                    "severity_component": 0.204,
-                    "base_score": 0.26499340903759
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.047320251613855356,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.07,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.10925,
-                    "engagement_bonus": 0.01223120922585571,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [
-                    {
-                        "keyword": "war",
-                        "root": "war",
-                        "weight": 0.09,
-                        "rank": 1,
-                        "contribution": 0.09
-                    },
-                    {
-                        "keyword": "attack",
-                        "root": "attack",
-                        "weight": 0.055,
-                        "rank": 2,
-                        "contribution": 0.01925
-                    }
-                ],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -3828,6 +3648,38 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.07,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "war",
+                        "root": "war",
+                        "weight": 0.09,
+                        "rank": 1,
+                        "contribution": 0.09
+                    },
+                    {
+                        "keyword": "attack",
+                        "root": "attack",
+                        "weight": 0.055,
+                        "rank": 2,
+                        "contribution": 0.01925
+                    }
+                ],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.85,
+                    "category_component": 0.26499340903759,
+                    "severity_component": 0.204,
+                    "base_score": 0.26499340903759
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.047320251613855356,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.07,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.10925,
+                    "engagement_bonus": 0.01223120922585571,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -3870,6 +3722,14 @@
                 "casualty_count": 165,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.8685858273779901,
+                "market_impact_score": 0.0,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.769594919681549,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.26549989642533767
+            },
             "gliner_tactical": {
                 "military actor": [
                     "army general",
@@ -3904,7 +3764,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.26549989642533767,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -3913,7 +3773,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.8685858273779901,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.769594919681549,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.26549989642533767
+                }
             }
         }
     },
@@ -4005,10 +3874,10 @@
                 "candidate_labels_used": 21,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.30360949999885634,
-                    "zero_shot": 3.78801790000216,
-                    "spacy": 0.07172110000101384,
-                    "gliner": 0.30309499999930267
+                    "finbert": 0.13267099999939092,
+                    "zero_shot": 2.6970478000002913,
+                    "spacy": 0.012740599999233382,
+                    "gliner": 0.20272919999842998
                 },
                 "zero_shot_labels": [
                     "military impact, cost or investigation report",
@@ -4078,7 +3947,19 @@
                     "sentiment": "positive",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": true,
+                        "strategic_signal": true,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -4099,38 +3980,6 @@
                     "strategic_signal": true,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 1.14,
-                    "category_component": 0.40697999999999995,
-                    "severity_component": 0.27359999999999995,
-                    "base_score": 0.40697999999999995
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.06,
-                    "gliner_bonus": 0.0,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.10775000000000001,
-                    "engagement_bonus": 0.011890502782720113,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [
-                    {
-                        "keyword": "oil price",
-                        "root": "oil price",
-                        "weight": 0.085,
-                        "rank": 1,
-                        "contribution": 0.085
-                    },
-                    {
-                        "keyword": "oil",
-                        "root": "oil",
-                        "weight": 0.065,
-                        "rank": 2,
-                        "contribution": 0.02275
-                    }
-                ],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -4149,6 +3998,38 @@
                     "strong_tactical_signal": false,
                     "bonus": 0.0,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "oil price",
+                        "root": "oil price",
+                        "weight": 0.085,
+                        "rank": 1,
+                        "contribution": 0.085
+                    },
+                    {
+                        "keyword": "oil",
+                        "root": "oil",
+                        "weight": 0.065,
+                        "rank": 2,
+                        "contribution": 0.02275
+                    }
+                ],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 1.14,
+                    "category_component": 0.40697999999999995,
+                    "severity_component": 0.27359999999999995,
+                    "base_score": 0.40697999999999995
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.06,
+                    "gliner_bonus": 0.0,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.10775000000000001,
+                    "engagement_bonus": 0.011890502782720113,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -4182,6 +4063,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.8400000000000001,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.845,
+                "asset_route_confidence_score": 0.65,
+                "danger_score_legacy": 0.618298009932987
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [],
@@ -4212,7 +4101,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.618298009932987,
                 "risk_bucket": "elevated",
                 "emitted": false,
@@ -4221,7 +4110,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.46137,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.8400000000000001,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.845,
+                    "asset_route_confidence_score": 0.65,
+                    "danger_score_legacy": 0.618298009932987
+                }
             }
         }
     },
@@ -4361,10 +4259,10 @@
                 "candidate_labels_used": 16,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.5795739999994112,
-                    "zero_shot": 4.712310200000502,
-                    "spacy": 0.0303593999997247,
-                    "gliner": 0.5347105000000738
+                    "finbert": 0.4413074999974924,
+                    "zero_shot": 3.8773292000005313,
+                    "spacy": 0.02798330000223359,
+                    "gliner": 0.3965886000005412
                 },
                 "zero_shot_labels": [
                     "diplomatic negotiation or ceasefire agreement",
@@ -4418,7 +4316,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": true,
+                        "impact_report": true
+                    }
                 },
                 "category_corrections": [],
                 "context_filters": {
@@ -4433,31 +4343,6 @@
                     "strategic_signal": true,
                     "impact_report": true
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.7,
-                    "category_component": 0.18507994866371152,
-                    "severity_component": 0.16799999999999998,
-                    "base_score": 0.18507994866371152
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.0,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0375,
-                    "engagement_bonus": 0.011916976102933354,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [
-                    {
-                        "keyword": "nuclear",
-                        "root": "nuclear",
-                        "weight": 0.0375,
-                        "rank": 1,
-                        "contribution": 0.0375
-                    }
-                ],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -4476,6 +4361,31 @@
                     "strong_tactical_signal": false,
                     "bonus": 0.0,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "nuclear",
+                        "root": "nuclear",
+                        "weight": 0.0375,
+                        "rank": 1,
+                        "contribution": 0.0375
+                    }
+                ],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.7,
+                    "category_component": 0.18507994866371152,
+                    "severity_component": 0.16799999999999998,
+                    "base_score": 0.18507994866371152
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.0,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0375,
+                    "engagement_bonus": 0.011916976102933354,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -4517,6 +4427,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.0,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.4906665444374084,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.12357987935202186
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [],
@@ -4549,7 +4467,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.12357987935202186,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -4558,7 +4476,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.4906665444374084,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.12357987935202186
+                }
             }
         }
     },
@@ -4667,10 +4594,10 @@
                 "candidate_labels_used": 15,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.5944357000007585,
-                    "zero_shot": 3.143685800001549,
-                    "spacy": 0.02554289999898174,
-                    "gliner": 0.3878599000017857
+                    "finbert": 0.25464739999733865,
+                    "zero_shot": 2.6334782999983872,
+                    "spacy": 0.01742229999945266,
+                    "gliner": 0.2768462999993062
                 },
                 "zero_shot_labels": [
                     "military organization or defense capability report",
@@ -4722,7 +4649,19 @@
                     "sentiment": "negative",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [],
                 "context_filters": {
@@ -4737,23 +4676,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.9,
-                    "category_component": 0.28455393433570864,
-                    "severity_component": 0.216,
-                    "base_score": 0.28455393433570864
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.05081320255994797,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.07,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0,
-                    "engagement_bonus": 0.04764377562796635,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -4772,6 +4694,23 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.07,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.9,
+                    "category_component": 0.28455393433570864,
+                    "severity_component": 0.216,
+                    "base_score": 0.28455393433570864
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.05081320255994797,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.07,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.04764377562796635,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -4806,6 +4745,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.0,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.6769517302513123,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.4774735017998986
+            },
             "gliner_tactical": {
                 "military actor": [
                     "Defense"
@@ -4838,7 +4785,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.4774735017998986,
                 "risk_bucket": "watch",
                 "emitted": false,
@@ -4847,7 +4794,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.6769517302513123,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.4774735017998986
+                }
             }
         }
     },
@@ -4926,10 +4882,10 @@
                 "candidate_labels_used": 20,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.669193699999596,
-                    "zero_shot": 4.34398180000062,
-                    "spacy": 0.0667728000007628,
-                    "gliner": 0.38266460000158986
+                    "finbert": 0.2553732999986096,
+                    "zero_shot": 3.331195900002058,
+                    "spacy": 0.013310100002854597,
+                    "gliner": 0.2914650000020629
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -4997,7 +4953,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": true,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -5018,23 +4986,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.45,
-                    "category_component": 0.13608,
-                    "severity_component": 0.108,
-                    "base_score": 0.13608
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.0,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0,
-                    "engagement_bonus": 0.024898345708155946,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -5053,6 +5004,23 @@
                     "strong_tactical_signal": false,
                     "bonus": 0.0,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.45,
+                    "category_component": 0.13608,
+                    "severity_component": 0.108,
+                    "base_score": 0.13608
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.0,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.024898345708155946,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -5080,6 +5048,14 @@
                 "large_money_amount": null,
                 "casualty_count": null,
                 "percent_change": null
+            },
+            "scores": {
+                "geopolitical_severity_score": 0.53,
+                "market_impact_score": 0.0,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.504,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.1357369411011171
             },
             "gliner_tactical": {
                 "military actor": [],
@@ -5109,7 +5085,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.1357369411011171,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -5118,7 +5094,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.53,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.504,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.1357369411011171
+                }
             }
         }
     },
@@ -5199,10 +5184,10 @@
                 "candidate_labels_used": 20,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.4223904999998922,
-                    "zero_shot": 4.170369899999059,
-                    "spacy": 0.016380600001866696,
-                    "gliner": 0.377497499997844
+                    "finbert": 0.8844509000009566,
+                    "zero_shot": 3.416166399998474,
+                    "spacy": 0.013073699999949895,
+                    "gliner": 0.2727950000007695
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -5270,7 +5255,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": true,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -5291,23 +5288,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.45,
-                    "category_component": 0.13608,
-                    "severity_component": 0.108,
-                    "base_score": 0.13608
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.055,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0,
-                    "engagement_bonus": 0.024556791676276907,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -5326,6 +5306,23 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.055,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.45,
+                    "category_component": 0.13608,
+                    "severity_component": 0.108,
+                    "base_score": 0.13608
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.055,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.024556791676276907,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -5354,6 +5351,14 @@
                 "large_money_amount": null,
                 "casualty_count": null,
                 "percent_change": null
+            },
+            "scores": {
+                "geopolitical_severity_score": 0.53,
+                "market_impact_score": 0.0,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.504,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.1818249427414367
             },
             "gliner_tactical": {
                 "military actor": [
@@ -5385,7 +5390,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.1818249427414367,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -5394,7 +5399,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.53,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.504,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.1818249427414367
+                }
             }
         }
     },
@@ -5495,10 +5509,10 @@
                 "candidate_labels_used": 21,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.33991810000225087,
-                    "zero_shot": 4.422431099999812,
-                    "spacy": 0.024117900000419468,
-                    "gliner": 0.3757508000016969
+                    "finbert": 0.3157517999970878,
+                    "zero_shot": 3.552139100000204,
+                    "spacy": 0.022935900000447873,
+                    "gliner": 0.2867938999988837
                 },
                 "zero_shot_labels": [
                     "nuclear threat or radioactive incident",
@@ -5568,7 +5582,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": true,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -5589,31 +5615,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.22,
-                    "category_component": 0.050820000000000004,
-                    "severity_component": 0.0528,
-                    "base_score": 0.0528
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.05,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0375,
-                    "engagement_bonus": 0.0,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [
-                    {
-                        "keyword": "nuclear",
-                        "root": "nuclear",
-                        "weight": 0.0375,
-                        "rank": 1,
-                        "contribution": 0.0375
-                    }
-                ],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -5632,6 +5633,31 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.05,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "nuclear",
+                        "root": "nuclear",
+                        "weight": 0.0375,
+                        "rank": 1,
+                        "contribution": 0.0375
+                    }
+                ],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.22,
+                    "category_component": 0.050820000000000004,
+                    "severity_component": 0.0528,
+                    "base_score": 0.0528
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.05,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0375,
+                    "engagement_bonus": 0.0,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -5666,6 +5692,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.0,
+                "noise_score": 0.8374999999999999,
+                "directional_confidence_score": 0.435,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.06654429
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [],
@@ -5698,7 +5732,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.06654429,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -5707,7 +5741,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.8374999999999999,
+                    "directional_confidence_score": 0.435,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.06654429
+                }
             }
         }
     },
@@ -5806,10 +5849,10 @@
                 "candidate_labels_used": 20,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.3722866999996768,
-                    "zero_shot": 3.829302499998448,
-                    "spacy": 0.02008199999909266,
-                    "gliner": 0.3634630999986257
+                    "finbert": 0.35259660000156146,
+                    "zero_shot": 3.9512485999985074,
+                    "spacy": 0.022579399999813177,
+                    "gliner": 0.36214209999889135
                 },
                 "zero_shot_labels": [
                     "military organization or defense capability report",
@@ -5877,7 +5920,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": true,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -5898,23 +5953,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.45,
-                    "category_component": 0.12856125479936598,
-                    "severity_component": 0.108,
-                    "base_score": 0.12856125479936598
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.1,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0,
-                    "engagement_bonus": 0.051891115890634415,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -5933,6 +5971,23 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.1,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.45,
+                    "category_component": 0.12856125479936598,
+                    "severity_component": 0.108,
+                    "base_score": 0.12856125479936598
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.1,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.051891115890634415,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -5966,6 +6021,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.6400545698404312,
+                "market_impact_score": 0.0,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.4761527955532074,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.23647743896580833
+            },
             "gliner_tactical": {
                 "military actor": [
                     "Brigade Commander"
@@ -5998,7 +6061,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.23647743896580833,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -6007,7 +6070,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.6400545698404312,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.4761527955532074,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.23647743896580833
+                }
             }
         }
     },
@@ -6098,10 +6170,10 @@
                 "candidate_labels_used": 20,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.19817350000084843,
-                    "zero_shot": 3.249945799998386,
-                    "spacy": 0.010724799998570234,
-                    "gliner": 0.2650467999992543
+                    "finbert": 0.3464218000008259,
+                    "zero_shot": 4.6064134999978705,
+                    "spacy": 0.022243200000957586,
+                    "gliner": 0.3438241999974707
                 },
                 "zero_shot_labels": [
                     "military attack or action",
@@ -6169,7 +6241,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": true,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -6190,23 +6274,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.45,
-                    "category_component": 0.13608,
-                    "severity_component": 0.108,
-                    "base_score": 0.13608
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.1,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0,
-                    "engagement_bonus": 0.02612214549426456,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -6225,6 +6292,23 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.1,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.45,
+                    "category_component": 0.13608,
+                    "severity_component": 0.108,
+                    "base_score": 0.13608
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.1,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.02612214549426456,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -6255,6 +6339,14 @@
                 "large_money_amount": null,
                 "casualty_count": null,
                 "percent_change": null
+            },
+            "scores": {
+                "geopolitical_severity_score": 0.65,
+                "market_impact_score": 0.0,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.504,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.22108884908076393
             },
             "gliner_tactical": {
                 "military actor": [
@@ -6288,7 +6380,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.22108884908076393,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -6297,7 +6389,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.65,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.504,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.22108884908076393
+                }
             }
         }
     },
@@ -6412,10 +6513,10 @@
                 "candidate_labels_used": 20,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.26982889999999315,
-                    "zero_shot": 3.4850837999983924,
-                    "spacy": 0.01704260000042268,
-                    "gliner": 0.2781514000016614
+                    "finbert": 0.28866779999952996,
+                    "zero_shot": 5.129762499997014,
+                    "spacy": 0.03589110000029905,
+                    "gliner": 0.38104110000131186
                 },
                 "zero_shot_labels": [
                     "military production or defense cooperation report",
@@ -6477,7 +6578,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": false,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": false,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [],
                 "context_filters": {
@@ -6492,38 +6605,6 @@
                     "strategic_signal": false,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.85,
-                    "category_component": 0.19995247238874433,
-                    "severity_component": 0.204,
-                    "base_score": 0.204
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.1,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.091,
-                    "engagement_bonus": 0.03871092034840399,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [
-                    {
-                        "keyword": "strike",
-                        "root": "strike",
-                        "weight": 0.07,
-                        "rank": 1,
-                        "contribution": 0.07
-                    },
-                    {
-                        "keyword": "drones",
-                        "root": "drone",
-                        "weight": 0.06,
-                        "rank": 2,
-                        "contribution": 0.020999999999999998
-                    }
-                ],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -6542,6 +6623,38 @@
                     "strong_tactical_signal": true,
                     "bonus": 0.1,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [
+                    {
+                        "keyword": "strike",
+                        "root": "strike",
+                        "weight": 0.07,
+                        "rank": 1,
+                        "contribution": 0.07
+                    },
+                    {
+                        "keyword": "drones",
+                        "root": "drone",
+                        "weight": 0.06,
+                        "rank": 2,
+                        "contribution": 0.020999999999999998
+                    }
+                ],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.85,
+                    "category_component": 0.19995247238874433,
+                    "severity_component": 0.204,
+                    "base_score": 0.204
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.1,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.091,
+                    "engagement_bonus": 0.03871092034840399,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -6581,6 +6694,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.12,
+                "market_impact_score": 0.12,
+                "noise_score": 0.0,
+                "directional_confidence_score": 0.4920636713504791,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.45713131004721785
+            },
             "gliner_tactical": {
                 "military actor": [
                     "Ukrainian Defence Forces"
@@ -6614,7 +6735,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.45713131004721785,
                 "risk_bucket": "watch",
                 "emitted": false,
@@ -6623,7 +6744,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "below_global_tag_threshold"
+                "reason": "below_global_tag_threshold",
+                "trade_emit_score": 0.029523820281028748,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.12,
+                    "market_impact_score": 0.12,
+                    "noise_score": 0.0,
+                    "directional_confidence_score": 0.4920636713504791,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.45713131004721785
+                }
             }
         }
     },
@@ -6718,10 +6848,10 @@
                 "candidate_labels_used": 15,
                 "labels_set": "medium",
                 "nlp_timings": {
-                    "finbert": 0.24207450000176323,
-                    "zero_shot": 2.1830886999996437,
-                    "spacy": 0.052593600001273444,
-                    "gliner": 0.4092659000016283
+                    "finbert": 0.24961650000113877,
+                    "zero_shot": 3.5915810000005877,
+                    "spacy": 0.016393199999583885,
+                    "gliner": 0.3514660999971966
                 },
                 "zero_shot_labels": [
                     "military organization or defense capability report",
@@ -6779,7 +6909,19 @@
                     "sentiment": "neutral",
                     "severity": "unknown",
                     "severity_key": "",
-                    "domain": "geopolitical"
+                    "domain": "geopolitical",
+                    "context": {
+                        "historical_reference": false,
+                        "local_incident": false,
+                        "battlefield_micro": false,
+                        "self_promotion": true,
+                        "active_escalation": false,
+                        "threat_rhetoric": false,
+                        "propaganda": false,
+                        "macro_signal": false,
+                        "strategic_signal": true,
+                        "impact_report": false
+                    }
                 },
                 "category_corrections": [
                     {
@@ -6800,23 +6942,6 @@
                     "strategic_signal": true,
                     "impact_report": false
                 },
-                "base": {
-                    "severity_base": 0.24,
-                    "category_weight": 0.04,
-                    "category_component": 0.00252,
-                    "severity_component": 0.012,
-                    "base_score": 0.012
-                },
-                "additive_modifiers": {
-                    "sentiment_bonus": 0.0,
-                    "entity_bonus": 0.0,
-                    "gliner_bonus": 0.0,
-                    "numeric_bonus": 0.0,
-                    "keyword_bonus": 0.0,
-                    "engagement_bonus": 0.0,
-                    "critical_bonus": 0.0
-                },
-                "keyword_hits": [],
                 "gliner_details": {
                     "macro_target": false,
                     "strategic_infra": false,
@@ -6835,6 +6960,23 @@
                     "strong_tactical_signal": false,
                     "bonus": 0.0,
                     "multiplier": 1.0
+                },
+                "keyword_hits": [],
+                "base": {
+                    "severity_base": 0.24,
+                    "category_weight": 0.04,
+                    "category_component": 0.00252,
+                    "severity_component": 0.012,
+                    "base_score": 0.012
+                },
+                "additive_modifiers": {
+                    "sentiment_bonus": 0.0,
+                    "entity_bonus": 0.0,
+                    "gliner_bonus": 0.0,
+                    "numeric_bonus": 0.0,
+                    "keyword_bonus": 0.0,
+                    "engagement_bonus": 0.0,
+                    "critical_bonus": 0.0
                 },
                 "multipliers": {
                     "domain_weight": 1.12,
@@ -6866,6 +7008,14 @@
                 "casualty_count": null,
                 "percent_change": null
             },
+            "scores": {
+                "geopolitical_severity_score": 0.0,
+                "market_impact_score": 0.0,
+                "noise_score": 0.7374999999999999,
+                "directional_confidence_score": 0.105,
+                "asset_route_confidence_score": 0.5,
+                "danger_score_legacy": 0.0018972000000000001
+            },
             "gliner_tactical": {
                 "military actor": [],
                 "kinetic or military action": [],
@@ -6894,7 +7044,7 @@
                 "checked": true,
                 "dry_run": true,
                 "threshold": 0.75,
-                "oracle_review_threshold": 0.65,
+                "oracle_review_threshold": 0.6,
                 "danger_score": 0.0018972000000000001,
                 "risk_bucket": "low",
                 "emitted": false,
@@ -6903,7 +7053,16 @@
                 "oracle_review_queue_name": "intel.oracle.review",
                 "queue_name": "intel.global_tags",
                 "tags": [],
-                "reason": "excluded_keyword"
+                "reason": "excluded_keyword",
+                "trade_emit_score": 0.0,
+                "multidimensional_scores": {
+                    "geopolitical_severity_score": 0.0,
+                    "market_impact_score": 0.0,
+                    "noise_score": 0.7374999999999999,
+                    "directional_confidence_score": 0.105,
+                    "asset_route_confidence_score": 0.5,
+                    "danger_score_legacy": 0.0018972000000000001
+                }
             }
         }
     }
