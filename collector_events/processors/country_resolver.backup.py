@@ -95,16 +95,14 @@ class CountryResolver:
         """Build lookup tables from a countries dictionary."""
 
         entries: list[tuple[str, str, re.Pattern | None]] = []
-
-        # Cache code → name once. The previous version rebuilt this map inside
-        # the country loop, which worked but was O(n²) and noisy.
-        self._name_map = {
-            iso_code.upper(): info.get("name", "")
-            for iso_code, info in data.items()
-        }
-
         for iso_code, info in data.items():
             iso_code = iso_code.upper()
+            
+            # My girl deverloper asked for this to be added to the country ref output, 
+            # so here we are
+            for iso_code, info in data.items():
+                self._name_map[iso_code.upper()] = info.get("name", "")
+                
             name = info.get("name", "")
             keywords = info.get("keywords", [])
 

@@ -81,7 +81,7 @@ class LocalNLPEngine:
     DEFAULT_SPACY_MODEL = "en_core_web_sm"
 
     ZERO_SHOT_HYPOTHESIS_TEMPLATE = (
-        "This market-relevant news report is about {}."
+        "This intelligence report is about {}."
     )
 
     @classmethod
@@ -896,6 +896,41 @@ class LocalNLPEngine:
 
         return gliner_graph
 
+
+    def _dedupe_entities(self, entities: Sequence[Dict[str, Any]]) -> List[Dict[str, str]]:
+        """Remove duplicatas exatas do spaCy/EntityRuler preservando ordem."""
+        cleaned: List[Dict[str, str]] = []
+        seen = set()
+
+        for ent in entities:
+            text = str(ent.get("text", "")).strip()
+            label = str(ent.get("label", "")).strip()
+            if not text or not label:
+                continue
+            key = (text.lower(), label.upper())
+            if key in seen:
+                continue
+            seen.add(key)
+            cleaned.append({"text": text, "label": label})
+
+        return cleaned
+
+    def _dedupe_gliner_graph_values(self, graph: Dict[str, List[str]]) -> Dict[str, List[str]]:
+        """Normaliza listas do GLiNER para não repetir a mesma entidade várias vezes."""
+        normalized: Dict[str, List[str]] = {}
+        for label, values in graph.items():
+            out: List[str] = []
+            seen = set()
+            for value in values or []:
+                text = str(value).strip()
+                key = text.lower()
+                if not text or key in seen:
+                    continue
+                seen.add(key)
+                out.append(text)
+            normalized[label] = out
+        return normalized
+
     def extract_features(self, text: str) -> Dict[str, Any]:
         if not text or len(text.strip()) < 5:
             return self._empty_response()
@@ -905,7 +940,7 @@ class LocalNLPEngine:
         try:
             # 1. FinBERT — truncation=True porque o modelo aceita no máximo 512 tokens.
             t0 = perf_counter()
-            sentiment_res = self.finbert(text, truncation=True)[0]
+            sentiment_res = self.finbert(text, truncation=True, max_length=512)[0]
             timings["finbert"] = perf_counter() - t0
 
             # 2. Zero-shot via sliding window — sem truncar o texto completo.
@@ -921,13 +956,17 @@ class LocalNLPEngine:
             # 3. spaCy NER — mantido completo porque está rápido no teu cenário.
             t0 = perf_counter()
             doc = self.nlp(text)
-            entities = [{"text": ent.text, "label": ent.label_} for ent in doc.ents]
+            entities = self._dedupe_entities(
+                {"text": ent.text, "label": ent.label_} for ent in doc.ents
+            )
             timings["spacy"] = perf_counter() - t0
 
             # 4. GLiNER com sliding window para não perder entidades no final do texto.
             t0 = perf_counter()
             gliner_raw, gliner_chunks = self._predict_gliner_with_sliding_window(text)
-            gliner_graph = self._build_gliner_graph(gliner_raw)
+            gliner_graph = self._dedupe_gliner_graph_values(
+                self._build_gliner_graph(gliner_raw)
+            )
             timings["gliner"] = perf_counter() - t0
 
             chunks_processed = int(context_res.get("chunks_processed", 1))

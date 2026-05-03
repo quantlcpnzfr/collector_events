@@ -1,0 +1,12 @@
+# Pyrefly type checker config — extra search paths for editable packages
+[tool.pyrefly]
+search_path = [
+    "../../shared_lib",
+    "../../cryptor",
+    "../trading_session",
+    "../session_manager",
+    "../signal_generator",
+    "../collector_history",
+    "../executor_trading",
+    "../risk_manager",
+]

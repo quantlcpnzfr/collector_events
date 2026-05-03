@@ -1,6 +1,10 @@
 {
-  "danger_score_threshold": 0.85,
+  "danger_score_threshold": 0.75,
+  "oracle_review_threshold": 0.65,
+  "min_tag_risk_score": 0.50,
+  "emit_global_fallback": false,
   "queue_name": "intel.global_tags",
+  "oracle_review_queue_name": "intel.oracle.review",
   "default_expiry_minutes": 240,
   "max_tags_per_event": 8,
   "max_pairs_per_currency": 4,
@@ -54,8 +58,8 @@
       "greenback",
       "buck",
       "us dollar",
+      "u.s. dollar",
       "federal reserve",
-      "fed",
       "treasury yields"
     ],
     "EUR": [
@@ -108,17 +112,11 @@
   },
   "asset_keywords": {
     "XAU": [
-      "war",
-      "missile",
-      "strike",
-      "geopolitics",
-      "geopolitical",
-      "ukraine",
-      "middle east",
-      "middle-east",
-      "iran",
-      "nuclear",
-      "safe haven"
+      "safe haven",
+      "nuclear threat",
+      "missile strike",
+      "invasion",
+      "major war"
     ],
     "XAU/USD": [
       "gold",
@@ -126,7 +124,10 @@
       "xau"
     ],
     "OIL": [
+      "oil",
+      "oil prices",
       "refinery",
+      "refineries",
       "pipeline",
       "crude",
       "opec",
@@ -151,9 +152,8 @@
       "crypto exchange"
     ],
     "NQ": [
-      "ai",
-      "tech",
-      "science",
+      "artificial intelligence",
+      "tech stocks",
       "semiconductor",
       "nasdaq",
       "nvidia",
@@ -166,29 +166,59 @@
       "stocks"
     ]
   },
-  "risk_off_assets": {
-    "XAU": "bullish",
-    "XAU/USD": "bullish",
-    "OIL": "bullish",
-    "BRENT": "bullish",
-    "WTI": "bullish",
-    "NQ": "bearish",
-    "SPX": "bearish",
-    "JPY": "bullish",
-    "CHF": "bullish"
+  "risk_off_asset_groups": {
+    "safe_haven": {
+      "XAU": "bullish",
+      "XAU/USD": "bullish",
+      "JPY": "bullish",
+      "CHF": "bullish"
+    },
+    "oil_shock": {
+      "OIL": "bullish",
+      "BRENT": "bullish",
+      "WTI": "bullish"
+    },
+    "equity_risk": {
+      "SPX": "bearish",
+      "NQ": "bearish"
+    }
   },
   "asset_bias_rules": {
-    "risk_off_keywords": [
+    "safe_haven_keywords": [
       "war",
       "attack",
       "missile",
-      "strike",
       "invasion",
       "nuclear",
       "terrorist",
-      "explosion",
       "black swan",
-      "market shock"
+      "market shock",
+      "blockade"
+    ],
+    "oil_shock_keywords": [
+      "oil",
+      "oil prices",
+      "refinery",
+      "refineries",
+      "pipeline",
+      "hormuz",
+      "opec",
+      "tanker",
+      "suez",
+      "red sea",
+      "chokepoint",
+      "oil terminal",
+      "oil export"
+    ],
+    "equity_risk_keywords": [
+      "global crisis",
+      "black swan",
+      "market shock",
+      "nuclear",
+      "invasion",
+      "recession",
+      "stock market crash",
+      "direct confrontation"
     ]
   },
   "excludeKeywords": [

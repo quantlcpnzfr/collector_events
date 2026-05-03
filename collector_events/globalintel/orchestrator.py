@@ -252,6 +252,16 @@ class IntelOrchestrator(Loggable):
             # 2. IA / ENRIQUECIMENTO (Aplica NLP sem bloquear o event loop) e 3. REDIS I/O
             await self._enrich_and_store(result, extractor)
 
+            # 4. PERSISTÊNCIA (MongoDB via on_result callback, ex: IntelMongoStore.store_result)
+            if self._on_result is not None:
+                try:
+                    await self._on_result(result)
+                except Exception as cb_exc:
+                    self.log.error(
+                        "on_result callback falhou para %s: %s",
+                        extractor.SOURCE, cb_exc,
+                    )
+
             # Atualiza o timestamp da última execução
             entry.last_run = datetime.now(timezone.utc).timestamp()
             return result
