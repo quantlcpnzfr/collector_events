@@ -321,6 +321,10 @@ class EventProcessor(Loggable):
         numeric_features = self._extract_secure_numeric_features(text, item)
         item.extra["numeric_features"] = numeric_features
 
+        # Sprint 2: Numeric Features Extraction
+        numeric_features = self._extract_secure_numeric_features(text, item)
+        item.extra["numeric_features"] = numeric_features
+
         return ProcessedEvent(
             impact_category=impact_category,
             danger_score=danger_score,
@@ -393,6 +397,20 @@ class EventProcessor(Loggable):
             if compressed_score > cap_value:
                 compressed_score = cap_value
                 applied_caps.append({"name": cap_name, "value": cap_value})
+
+        # P12: Stronger cap for isolated battlefield micro
+        if context.get("battlefield_micro"):
+            # Major amplifiers that remove the cap
+            amplifiers = [
+                "front collapse", "major offensive", "strategic city", "nuclear plant",
+                "port", "oil depot", "power grid", "nato", "russia escalation",
+                "black sea", "grain corridor"
+            ]
+            has_amplifier = self._contains_any(text_lower, amplifiers)
+            if not has_amplifier:
+                if compressed_score > 0.35:
+                    compressed_score = 0.35
+                    applied_caps.append({"rule": "isolated_battlefield_micro_cap", "value": 0.35})
 
         final_score = self._clamp(compressed_score, 0.0, 0.99)
         risk_bucket = self._risk_bucket(final_score)
@@ -573,17 +591,10 @@ class EventProcessor(Loggable):
 
         elif context.get("battlefield_micro"):
             # P6 Expansion: battlefield context should dismantle false macro classifications
-            macro_categories = {
-                "macroeconomic data release or inflation report",
-                "sudden market shock or black swan event",
-                "central bank interest rate decision or monetary policy",
-                "currency intervention or severe devaluation",
-                "commodity price surge or oil market disruption"
-            }
-            if category in macro_categories:
-                new_category = "troop mobilization or border skirmish"
-                new_confidence = max(min(confidence, 0.72), 0.55)
-                corrections.append({"rule": "battlefield_micro_macro_dismantle", "from": category, "to": new_category})
+            # P11: Force category 'battlefield tactical report' for micro events
+            new_category = "battlefield tactical report"
+            new_confidence = max(min(confidence, 0.72), 0.55)
+            corrections.append({"rule": "battlefield_micro_force_category", "from": category, "to": new_category})
 
         elif context.get("impact_report") and category in {"military attack or action", "military drone or missile strike", "declaration of war or armed conflict"}:
             new_category = "military impact, cost or investigation report"
@@ -596,6 +607,14 @@ class EventProcessor(Loggable):
                 new_category = "currency intervention or severe devaluation"
                 new_confidence = max(new_confidence, 0.72)
                 corrections.append({"rule": "currency_devaluation_signal", "from": prev, "to": new_category})
+
+        # P13: Oil price action detection
+        if "oil prices" in text_lower or "crude" in text_lower:
+            if self._contains_any(text_lower, ["risen", "rose", "surged", "jumped", "dramatically", "soared", "skyrocket"]):
+                prev = new_category
+                new_category = "commodity price surge or oil market disruption"
+                new_confidence = max(new_confidence, 0.85)
+                corrections.append({"rule": "oil_price_surge_detection", "from": prev, "to": new_category})
 
         return new_category, new_confidence, corrections
 

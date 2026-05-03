@@ -417,10 +417,15 @@ class GlobalTagEmitter:
         # P7: Sanctions on oil-exporting countries (Iran, Russia) -> strong_bullish (supply restriction)
         is_oil = asset in {"OIL", "BRENT", "WTI", "CRUDE OIL", "BRENT OIL"}
         if is_oil:
-            has_sanctions = "sanction" in text_lower or "embargo" in text_lower
+            has_sanctions = any(x in text_lower for x in ["sanction", "embargo", "maximum pressure", "economic pressure"])
             has_exporter = any(self._keyword_matches(text_lower, country) for country in ["iran", "russia", "russians", "iranian", "kremlin", "tehran"])
             if has_sanctions and has_exporter:
                 return "strong_bullish"
+
+        # P15: BTC Sanctions Evasion context
+        if asset == "BTC" and any(x in text_lower for x in ["sanction", "evasion", "pressure"]):
+             # If it's just about using crypto for evasion, don't be bearish
+             return "neutral"
 
         explicit = self._extract_bias_from_context(text_lower, default="neutral")
         if explicit != "neutral":

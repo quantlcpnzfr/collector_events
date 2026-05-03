@@ -113,7 +113,9 @@ class CountryResolver:
             all_keywords = list(set([name.lower()] + [kw.lower() for kw in keywords]))
             
             if iso_code == "US":
-                all_keywords.extend(["u.s.", "u.s.a."])
+                all_keywords.extend(["u.s.", "u.s.a.", "usa", "united states", "america", "california", "washington"])
+            elif iso_code == "IR":
+                all_keywords.extend(["minab", "tehran", "toman", "tomans"])
 
             for kw in all_keywords:
                 if not kw:
