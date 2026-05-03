@@ -192,6 +192,9 @@ class LocalNLPEngine:
             "military impact, cost or investigation report",
             "military threat or escalation rhetoric",
             "military propaganda or official wartime statement",
+            "military organization or defense capability report",
+            "military production or defense cooperation report",
+            "diplomatic negotiation or ceasefire agreement",
             "declaration of war or armed conflict",
             "nuclear threat or radioactive incident",
             "troop mobilization or border skirmish",
@@ -739,9 +742,16 @@ class LocalNLPEngine:
                     "macroeconomic data release or inflation report",
                     "commodity price surge or oil market disruption",
                     "international economic sanctions or trade embargo",
+                    "military threat or escalation rhetoric",
+                    "military propaganda or official wartime statement",
+                    "battlefield tactical report",
+                    "military impact, cost or investigation report",
+                    "military organization or defense capability report",
+                    "military production or defense cooperation report",
+                    "diplomatic negotiation or ceasefire agreement",
                 ]
             )
-            max_labels = 18
+            max_labels = 25
         else:
             # MINIMUM é mais agressivo: baixa latência, menor cobertura.
             selected.extend(
