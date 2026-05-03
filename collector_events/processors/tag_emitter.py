@@ -111,43 +111,59 @@ class GlobalTagEmitter:
             item.extra["global_tag_emission"] = report
             return report
 
-        # 3. Decision Tree (Contrato Sprint 3)
+        # P8: Detect non-operable local currencies (IRR/Toman) - Sprint 3
+        text_lower = self._build_combined_text(item).lower()
+        if "irr" in text_lower or "toman" in text_lower or "rial" in text_lower:
+            item.extra["asset_route_note"] = "non_operable_local_currency_pair"
+
+        # 3. Decision Tree (Contrato Sprint 3 - Refinado)
         if trade_emit_score >= self.trade_emit_threshold:
             # Prossiga para emissão abaixo
             pass
         elif oracle_review_score >= self.oracle_review_threshold:
-            report["reason"] = "below_trade_above_oracle_threshold"
+            report["reason"] = "sent_to_oracle_review"
             await self._request_oracle_review(item, report, reason="elevated_oracle_review_score", directives=directives)
-            item.extra["global_tag_emission"] = report
+            item.extra["final_decision"] = self._create_final_decision(report, sent_to_oracle=True)
+            item.extra["global_tag_emission"] = report # Backward compatibility
             log.info("🧠 Oracle Review solicitado | trade_emit=%.3f | oracle_score=%.3f | event=%s", trade_emit_score, oracle_review_score, item.id)
             return report
         elif geo_severity >= 0.85:
             # Fallback para eventos geopolíticos críticos sem ativo claro
-            report["reason"] = "critical_geopolitical_severity_no_trade"
+            report["reason"] = "critical_geopolitical_severity_sent_to_oracle"
             await self._request_oracle_review(item, report, reason="critical_geopolitical_severity", directives=directives)
+            item.extra["final_decision"] = self._create_final_decision(report, sent_to_oracle=True)
             item.extra["global_tag_emission"] = report
             return report
         else:
-            report["reason"] = "below_global_tag_threshold"
+            report["reason"] = "below_trade_and_oracle_thresholds"
+            item.extra["final_decision"] = self._create_final_decision(report)
             item.extra["global_tag_emission"] = report
-            log.info("🏷️ GlobalTag NÃO emitida | trade_emit_score=%.3f < threshold=%.3f | danger_score=%.3f | event=%s", trade_emit_score, self.trade_emit_threshold, score, item.id)
+            log.info("🏷️ GlobalTag NÃO emitida | trade_emit_score=%.3f < threshold=%.3f | event=%s", trade_emit_score, self.trade_emit_threshold, item.id)
             return report
 
         if not directives:
             if self.emit_global_fallback:
                 directives = [self._directive(asset="GLOBAL", bias="risk_off" if score >= 0.85 else "neutral", confidence=0.25, reason="fallback_global_no_asset_detected")]
             else:
-                report["reason"] = "no_asset_directives_oracle_review"
+                report["reason"] = "no_asset_directives_sent_to_oracle"
                 await self._request_oracle_review(item, report, reason="critical_score_without_operational_asset", directives=[])
+                item.extra["final_decision"] = self._create_final_decision(report, sent_to_oracle=True)
                 item.extra["global_tag_emission"] = report
                 return report
 
         directives = directives[: self.max_tags_per_event]
         skipped_low_risk = []
+        skipped_neutral = []
 
         for directive in directives:
             asset = str(directive["asset"])
             bias = str(directive.get("bias") or "neutral")
+            
+            # P1: Filtro de Neutros (Sprint 3) - Não emitir BTC neutral etc.
+            if bias == "neutral":
+                skipped_neutral.append({"asset": asset, "reason": "neutral_bias_filtered"})
+                continue
+                
             confidence = self._safe_float(directive.get("confidence", 1.0), 1.0)
             # trade_emit_score já é modulado por route_confidence e noise
             risk_score = self._clamp(trade_emit_score * max(confidence, 0.35), 0.0, 0.99)
@@ -192,19 +208,35 @@ class GlobalTagEmitter:
                 log.error("Erro ao publicar GlobalTag no MQ: %s", e)
 
         report["skipped_low_risk_tags"] = skipped_low_risk
+        report["skipped_neutral_tags"] = skipped_neutral
         report["emitted_count"] = len(report["tags"])
         report["emitted"] = report["emitted_count"] > 0
 
         if report["emitted"]:
-            report["reason"] = "emitted"
+            report["reason"] = "emitted_global_tag"
         else:
-            report["reason"] = "directives_below_min_tag_risk"
-            await self._request_oracle_review(item, report, reason="directives_below_min_tag_risk", directives=directives)
+            # Se filtramos tudo e sobrou nada, e o oracle score era alto, talvez devesse ter ido pro Oracle?
+            # Mas aqui a lógica de trade_emit já venceu o threshold, se filtramos neutros, o evento era "ruído informativo"
+            report["reason"] = "neutral_signals_filtered_no_emission"
 
+        item.extra["final_decision"] = self._create_final_decision(report)
         item.extra["global_tag_emission"] = report
-        if report["emitted"]:
-            log.info("🏷️ GlobalTag report | emitted=%s | count=%s | assets=%s | event=%s", report["emitted"], report["emitted_count"], [tag["asset"] for tag in report["tags"]], getattr(item, "id", "<sem-id>"))
         return report
+
+    def _create_final_decision(self, report: dict[str, Any], sent_to_oracle: bool = False) -> dict[str, Any]:
+        """Cria o bloco de decisão final unificado para o JSON."""
+        m_scores = report.get("multidimensional_scores", {})
+        return {
+            "emitted": report.get("emitted", False),
+            "sent_to_oracle": sent_to_oracle or report.get("oracle_review_requested", False),
+            "trade_emit_score": round(report.get("trade_emit_score", 0.0), 4),
+            "oracle_review_score": round(m_scores.get("oracle_review_score", 0.0), 4),
+            "trade_emit_threshold": report.get("threshold", 0.65),
+            "oracle_review_threshold": report.get("oracle_review_threshold", 0.60),
+            "reason": report.get("reason", "unknown"),
+            "tags_count": report.get("emitted_count", 0),
+            "active_assets": [t["asset"] for t in report.get("tags", [])]
+        }
 
     def _load_prediction_config(self) -> None:
         try:
@@ -577,7 +609,7 @@ class GlobalTagEmitter:
         return result
 
     def _refine_asset_route_confidence(self, base_conf: float, directives: list[dict[str, Any]], item: IntelItem) -> float:
-        """Refina a confiança do roteamento com base nas diretrizes reais encontradas."""
+        """Refina a confiança do roteamento com base nas diretrizes reais encontradas e locais estratégicos."""
         if not directives:
             return 0.0
         
@@ -607,10 +639,11 @@ class GlobalTagEmitter:
         # Combina a estimativa do processador com a evidência do emissor
         refined = max(base_conf, best_conf)
         
-        # P15: Especial para Oil Shock / Hormuz
+        # P15: Especial para Oil Shock / Hormuz / Bloqueios (Sprint 3)
         text_lower = self._build_combined_text(item).lower()
-        if "hormuz" in text_lower or ("oil" in text_lower and "blockade" in text_lower):
-            refined = max(refined, 0.85)
+        strategic_keywords = ["hormuz", "strait of hormuz", "naval blockade", "shipping chokepoint", "port blockade"]
+        if any(sk in text_lower for sk in strategic_keywords):
+            refined = max(refined, 0.88)
             
         return self._clamp(refined, 0.0, 0.99)
 

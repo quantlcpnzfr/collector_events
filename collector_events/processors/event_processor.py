@@ -324,14 +324,26 @@ class EventProcessor(Loggable):
         item.extra["numeric_features"] = numeric_features
 
         # Sprint 3: Multidimensional Scoring Axis
-        scores = self._compute_multidimensional_scores(
+        scores_map = self._compute_multidimensional_scores(
             item, nlp_features, numeric_features, score_breakdown
         )
-        item.extra["scores"] = scores
+        item.extra["scores"] = scores_map
 
-        # Injetar decisão no breakdown para auditoria (Sprint 3)
-        score_breakdown["decision"] = self._generate_audit_decision(scores)
-
+        # 10. Audit Decision (Sprint 3 Unification)
+        score_breakdown["audit_prediction"] = self._generate_audit_decision(scores_map)
+        
+        # 11. Secondary Categories (Sprint 3 - Item 7)
+        # Capture top 3 alternative categories from zero-shot
+        zero_shot_scores = nlp_features.get("zero_shot_scores", [])
+        zero_shot_labels = nlp_features.get("zero_shot_labels", [])
+        secondary = []
+        for i in range(1, min(4, len(zero_shot_scores))):
+            if zero_shot_scores[i] > 0.5:
+                secondary.append(zero_shot_labels[i])
+        
+        item.extra["secondary_impact_categories"] = secondary
+        
+        # 12. Final Construction
         return ProcessedEvent(
             impact_category=impact_category,
             danger_score=danger_score,
@@ -342,7 +354,7 @@ class EventProcessor(Loggable):
             raw_danger_score=score_breakdown["scores"]["raw_score"],
             risk_bucket=score_breakdown["scores"]["risk_bucket"],
             saturation=score_breakdown["scores"]["saturation"],
-            scores=scores,
+            scores=scores_map,
             numeric_features=numeric_features,
         )
 
@@ -687,9 +699,7 @@ class EventProcessor(Loggable):
         }
 
     def _generate_audit_decision(self, scores: Dict[str, float]) -> Dict[str, Any]:
-        """Gera o bloco de decisão para auditoria conforme o contrato da Sprint 3."""
-        # Nota: Estes thresholds são defaults, o TagEmitter aplicará os finais do config.
-        # Mas injetamos aqui uma 'previsão' para o log de processamento.
+        """Gera o bloco de estimativa para auditoria (Audit Prediction)."""
         geo = scores.get("geopolitical_severity_score", 0.0)
         mkt = scores.get("market_impact_score", 0.0)
         noise = scores.get("noise_score", 0.0)
@@ -700,13 +710,14 @@ class EventProcessor(Loggable):
         trade_score = mkt * route * dir_conf * (1.0 - noise)
         oracle_score = scores.get("oracle_review_score", 0.0)
         
-        emit = trade_score >= 0.65
-        oracle = oracle_score >= 0.60 and not emit
+        # Propostas de decisão (Estimativas)
+        propose_emit = trade_score >= 0.65
+        propose_oracle = oracle_score >= 0.60 and not propose_emit
         
-        reason = "below_thresholds"
-        if emit:
-            reason = "high_trade_confidence"
-        elif oracle:
+        reason = "below_trade_and_oracle_thresholds"
+        if propose_emit:
+            reason = "propose_emit_high_confidence"
+        elif propose_oracle:
             if mkt > 0.7 and route < 0.6:
                 reason = "high_market_impact_low_asset_confidence"
             elif geo > 0.8:
@@ -715,9 +726,10 @@ class EventProcessor(Loggable):
                 reason = "elevated_oracle_score"
                 
         return {
-            "send_to_oracle": oracle,
-            "emit_global_tag": emit,
-            "trade_emit_score_estimated": trade_score,
+            "propose_oracle": propose_oracle,
+            "propose_emit": propose_emit,
+            "audit_trade_score": round(trade_score, 4),
+            "audit_oracle_score": round(oracle_score, 4),
             "reason": reason
         }
 
