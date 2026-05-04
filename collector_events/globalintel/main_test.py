@@ -90,12 +90,17 @@ class TestOrchestrator(IntelOrchestrator):
         self._schedule = [self._test_entry]
         self.total_items = len(self.test_extractor.items_data)
 
-        self._dummy_mq = DummyMQ()
         if self.enable_global_tag_dry_run:
+            self._dummy_mq = DummyMQ()
             self._tag_emitter = GlobalTagEmitter(
                 mq_provider=self._dummy_mq,
                 dry_run=True,
             )
+        else:
+            # We don't instantiate GlobalTagEmitter here anymore.
+            # When connect_mq() is called on IntelOrchestrator, it will set up the
+            # GlobalTagEmitter with the real MQ connection and dry_run=False.
+            pass
 
     async def _enrich_and_store(self, result: ExtractionResult, extractor) -> None:
         if self.persist_to_redis:
@@ -272,7 +277,7 @@ async def run_test_pipeline() -> None:
     LABELS_SET: LabelSetName = "medium"
     PERSIST_TO_REDIS = False
     CHECKPOINT_EACH_ITEM = True
-    ENABLE_GLOBAL_TAG_DRY_RUN = True
+    ENABLE_GLOBAL_TAG_DRY_RUN = False # SET TO FALSE TO TEST REAL MQ EMISSION
 
     logging.basicConfig(
         level=logging.INFO,
@@ -297,6 +302,10 @@ async def run_test_pipeline() -> None:
         checkpoint_each_item=CHECKPOINT_EACH_ITEM,
         enable_global_tag_dry_run=ENABLE_GLOBAL_TAG_DRY_RUN,
     )
+    
+    # In live mode (not dry run), the tag_emitter expects MQ to be connected
+    if not ENABLE_GLOBAL_TAG_DRY_RUN:
+        await orch.connect_mq()
 
     await orch.run_serial_test()
 
