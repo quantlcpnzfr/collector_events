@@ -11,6 +11,7 @@ INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas
 INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
 INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
 INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
 INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
 INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
 INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
@@ -25,12 +26,18 @@ INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSes
 INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
 INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
 INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/5
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81424 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81425 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81426 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81427 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81428 in globalintel
 INFO → collector_events.extractors.osint_telegram.session → Message limit reached (5). Stopping session.
 INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
 INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
 INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
 INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
 INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81429 in globalintel
 INFO → collector_events.extractors.osint_telegram.session → Message limit reached (5). Stopping session.
 INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
 INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)

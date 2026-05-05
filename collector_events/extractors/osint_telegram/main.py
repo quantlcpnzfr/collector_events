@@ -51,6 +51,8 @@ async def run_bootstrapper():
         "backfill_days": 1,
         "max_messages_limit": 100, # Teste com limite de 100 mensagens
         "log_to_file": True,
+        "log_to_json": True,
+        "validate_db_storage": True,
         "backfill_interval": 30.0
     }
 

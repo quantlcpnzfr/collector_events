@@ -2,66 +2,71 @@
 ════════════════════════════════════════════════════════════════════════════════════════════════
 🛰️  FOREX_SYSTEM OSINT TELEGRAM FEED DASHBOARD
 ════════════════════════════════════════════════════════════════════════════════════════════════
-🕒 Started UTC: 2026-05-05 16:44
+🕒 Started UTC: 2026-05-05 17:00
 📁 Log file: C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
 🎯 Session ID: default
 🎯 Channel set: all
 ════════════════════════════════════════════════════════════════════════════════════════════════
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000001  2026-05-05 16:45  [BACKFILL]
-📣 @abualiexpress · Abu Ali Express
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/abualiexpress/121732
-👀 views=37,393  ↗ forwards=3  🕯️ published=2026-05-05 15:52
-💬 Message
-   תיעוד של שתי המשחתות האמריקאיות עליהן דווח אתמול👆 כי שברו את המצור האיראני על הורמוז.
-   האיראנים לא יוכלו להכחיש כעת - וזאת אחרי ההכרזות הפומביות שלהם שיטביעו כל כלי שיט צבאי שיגיע
-   לאזור. המשחתות ממוקמות בצד השני של הורומוז... קרוב לחופי איחוד האמירויות. כדי להגיב לכתבה
-   לחצו כאן
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000002  2026-05-05 16:45  [BACKFILL]
-📣 @abualiexpress · Abu Ali Express
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/abualiexpress/121736
-👀 views=29,115  ↗ forwards=4  🕯️ published=2026-05-05 16:06
-💬 Message
-   טראמפ על איראן: עליהם להניף את דגל הכניעה הלבן. 2 תגובות
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000003  2026-05-05 16:45  [BACKFILL]
-📣 @abualiexpress · Abu Ali Express
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/abualiexpress/121737
-👀 views=9,399  ↗ forwards=3  🕯️ published=2026-05-05 16:35
-💬 Message
-   צה"ל תוקף כעת בכפר חבוש - מצפון לליטאני בדרום לבנון. כדי להגיב לכתבה לחצו כאן
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000004  2026-05-05 16:45  [BACKFILL]
+🟢 #000001  2026-05-05 17:01  [BACKFILL]
 📣 @ClashReport · Clash Report
 🏷️  topic=conflict  tags=telegram, conflict, global
-🔗 https://t.me/ClashReport/81421
-👀 views=9,656  ↗ forwards=56  🕯️ published=2026-05-04 19:57
+🔗 https://t.me/ClashReport/81424
+👀 views=9,598  ↗ forwards=28  🕯️ published=2026-05-04 20:08
 💬 Message
-   Trump jokes: When I get out of office in, let’s say, 8 or 9 years from now…
+   Senator Graham to WSJ: Iran has ‘absolutely’ violated the cease-fire. These actions merit a
+   ‘big, strong, painful and short’ response. The actions today are inconsistent with a regime
+   that wants a diplomatic solution.
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000005  2026-05-05 16:45  [BACKFILL]
+🟢 #000002  2026-05-05 17:01  [BACKFILL]
 📣 @ClashReport · Clash Report
 🏷️  topic=conflict  tags=telegram, conflict, global
-🔗 https://t.me/ClashReport/81422
-👀 views=9,946  ↗ forwards=37  🕯️ published=2026-05-04 20:03
+🔗 https://t.me/ClashReport/81425
+👀 views=10,155  ↗ forwards=29  🕯️ published=2026-05-04 20:09
 💬 Message
-   Senior Iranian official to Drop Site News: Based on current assessments, another military
-   attack seems likely.
+   Trump: Polls say, “32% of the people are against President Trump.” When you explain it like,
+   “Is it okay for Iran to have a nuclear weapon?” it wouldn’t be 32%. But even if you said
+   that, there would be a 32% because the polls are totally fake.
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000006  2026-05-05 16:45  [BACKFILL]
+🟢 #000003  2026-05-05 17:01  [BACKFILL]
 📣 @ClashReport · Clash Report
 🏷️  topic=conflict  tags=telegram, conflict, global
-🔗 https://t.me/ClashReport/81423
-👀 views=9,549  ↗ forwards=19  🕯️ published=2026-05-04 20:05
+🔗 https://t.me/ClashReport/81426
+👀 views=10,439  ↗ forwards=51  🕯️ published=2026-05-04 20:11
 💬 Message
-   New demands from Chancellor Merz:
+   Trump: I am not a senior; I am far younger than a senior. I feel the same as I felt 50 years
+   ago.
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000004  2026-05-05 17:01  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81427
+👀 views=10,818  ↗ forwards=70  🕯️ published=2026-05-04 20:13
+💬 Message
+   Trump: Cognitive tests are hard. The first question is very easy. You have a lion, a bear,
+   an alligator, and a squirrel. “Which is the squirrel?”
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000005  2026-05-05 17:01  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81428
+👀 views=11,235  ↗ forwards=36  🕯️ published=2026-05-04 20:15
+💬 Message
+   NEW: U.S. Secret Service says they were involved shooting near 15th St & Independence Ave
+   (close to White House/National Mall). One person shot by law enforcement, condition unknown.
+   Details still unclear (no info yet on motive, suspect, or injuries to officers).
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000006  2026-05-05 17:01  [BACKFILL]
+📣 @ClashReport · Clash Report
+🏷️  topic=conflict  tags=telegram, conflict, global
+🔗 https://t.me/ClashReport/81429
+👀 views=11,716  ↗ forwards=31  🕯️ published=2026-05-04 20:15
+💬 Message
+   Trump: I could, with one swipe of the pen, I can say, “Let’s have no employment, and I will
+   hire a million people.”

@@ -81,12 +81,12 @@ class OsintTelegramSession(BaseSession):
         self.processed_messages_count = 0
         self.last_poll_at: Optional[datetime] = None
 
-    def _resolve_log_path(self) -> Path:
+    def _resolve_log_path(self, filename: str) -> Path:
         """Resolve the log path relative to this file."""
         base_dir = Path(__file__).resolve().parent
         log_dir = base_dir / "logs"
         log_dir.mkdir(parents=True, exist_ok=True)
-        return log_dir / "osint_feed.log"
+        return log_dir / filename
 
     def _init_feed_log(self) -> None:
         """Initialize the feed log with a startup header."""
@@ -109,6 +109,42 @@ class OsintTelegramSession(BaseSession):
             log.info(f"Initialized feed log at {self.log_path}")
         except Exception as e:
             log.warning(f"Failed to initialize feed log: {e}")
+
+    def _init_json_log(self) -> None:
+        """Initialize the JSON log with an empty array."""
+        try:
+            self.json_log_path.parent.mkdir(parents=True, exist_ok=True)
+            self.json_log_path.write_text("[]", encoding="utf-8")
+            log.info(f"Initialized JSON log at {self.json_log_path}")
+        except Exception as e:
+            log.warning(f"Failed to initialize JSON log: {e}")
+
+    async def _write_intel_to_json(self, intel_item: IntelItem) -> None:
+        """Append an IntelItem to the JSON log array."""
+        if not self.log_to_json:
+            return
+            
+        async with self._json_lock:
+            try:
+                # Read current
+                content = "[]"
+                if self.json_log_path.exists():
+                    content = self.json_log_path.read_text(encoding="utf-8")
+                
+                try:
+                    items = json.loads(content)
+                except:
+                    items = []
+                
+                items.append(intel_item.to_dict())
+                
+                # Write back
+                self.json_log_path.write_text(
+                    json.dumps(items, indent=2, ensure_ascii=False), 
+                    encoding="utf-8"
+                )
+            except Exception as e:
+                log.warning(f"Failed to write IntelItem to JSON log: {e}")
 
     def _write_to_feed_log(self, text: str) -> None:
         """Append a message to the feed log (legacy fallback)."""
@@ -393,7 +429,17 @@ class OsintTelegramSession(BaseSession):
         
         # 1. Logging and Save to MongoDB
         self._write_message_to_log(item, source)
+        await self._write_intel_to_json(intel_item)
+        
         await self.store.save_intel_item(intel_item.to_dict())
+        
+        # 1.1 Optional Validation
+        if self.validate_db_storage:
+            found = await self.store.get_item("globalintel", {"id": intel_item.id})
+            if found:
+                log.info(f"✅ Verified storage for {intel_item.id} in globalintel")
+            else:
+                log.warning(f"❌ Storage validation FAILED for {intel_item.id}")
         
         # 2. Publish to MQ
         topic = f"intel.events.{domain}"
