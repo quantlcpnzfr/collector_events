@@ -49,7 +49,7 @@ async def run_bootstrapper():
         "channels_file": str(channels_file) if channels_file.exists() else None,
         "channel_set": "all",
         "backfill_days": 1,
-        "max_messages_limit": 5, # Teste com limite de 5 mensagens
+        "max_messages_limit": 100, # Teste com limite de 100 mensagens
         "log_to_file": True,
         "backfill_interval": 30.0
     }
@@ -67,7 +67,7 @@ async def run_bootstrapper():
         }
         await worker.handle_command(command)
 
-    log.info("Worker aguardando processamento... (Limite de 5 mensagens configurado)")
+    log.info("Worker aguardando processamento... (Limite de 100 mensagens configurado)")
     
     # 5. Loop de monitoramento para o teste
     try:
