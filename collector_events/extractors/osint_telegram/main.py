@@ -69,15 +69,14 @@ async def run_bootstrapper():
 
     log.info("Worker aguardando processamento... (Limite de 100 mensagens configurado)")
     
-    # 5. Loop de monitoramento para o teste
     try:
         while True:
-            active_sessions = list(worker.sessions.keys())
+            active_sessions = {sid: s for sid, s in worker.sessions.items() if s.status == "RUNNING"}
             if not active_sessions:
-                log.info("Nenhuma sessão ativa. O pipeline pode ter encerrado pelo limite de mensagens.")
+                log.info("Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...")
                 break
                 
-            for sid, session in worker.sessions.items():
+            for sid, session in active_sessions.items():
                 log.info(f"Status [{sid}]: Recv={session.received_count}, Accepted={session.accepted_count}, Limit={session.processed_messages_count}/{session.max_messages_limit}")
             
             await asyncio.sleep(10)

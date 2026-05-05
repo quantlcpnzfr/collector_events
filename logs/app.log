@@ -23,22 +23,19 @@ WARNING → collector_events.extractors.osint_telegram.session → Failed to res
 WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel thecyberwire: No user has "thecyberwire" as username
 INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 42 active channels
 INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
-INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 100 mensagens configurado)
-INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/100
-INFO → OsintBootstrapper → Status [default]: Recv=50, Accepted=49, Limit=49/100
-INFO → OsintBootstrapper → Status [default]: Recv=92, Accepted=91, Limit=91/100
-INFO → collector_events.extractors.osint_telegram.session → Message limit reached (100). Stopping session.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/5
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (5). Stopping session.
 INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
 INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
 INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
 INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
 INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
-INFO → collector_events.extractors.osint_telegram.session → Message limit reached (100). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (5). Stopping session.
 INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
 INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
-INFO → OsintBootstrapper → Status [default]: Recv=101, Accepted=101, Limit=101/100
-INFO → OsintBootstrapper → Status [default]: Recv=101, Accepted=101, Limit=101/100
-INFO → OsintBootstrapper → Status [default]: Recv=101, Accepted=101, Limit=101/100
-INFO → OsintBootstrapper → Status [default]: Recv=101, Accepted=101, Limit=101/100
-INFO → OsintBootstrapper → Status [default]: Recv=101, Accepted=101, Limit=101/100
-INFO → OsintBootstrapper → Status [default]: Recv=101, Accepted=101, Limit=101/100
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.

@@ -50,11 +50,17 @@ class OsintTelegramSession(BaseSession):
         self.backfill_days = config.get("backfill_days", 1)
         self.max_messages_limit = config.get("max_messages_limit", 0)
         self.log_to_file = config.get("log_to_file", False)
+        self.log_to_json = config.get("log_to_json", False)
+        self.validate_db_storage = config.get("validate_db_storage", False)
         
         # Logging setup
-        self.log_path = self._resolve_log_path()
+        self.log_path = self._resolve_log_path("osint_feed.log")
+        self.json_log_path = self._resolve_log_path("osint_feed_intel.json")
+        
         if self.log_to_file:
             self._init_feed_log()
+        if self.log_to_json:
+            self._init_json_log()
 
         # State
         self.channels: List[TelegramChannel] = []
@@ -66,6 +72,7 @@ class OsintTelegramSession(BaseSession):
         self._flood_lock = asyncio.Lock()
         self._request_lock = asyncio.Lock()
         self._stop_event = asyncio.Event()
+        self._json_lock = asyncio.Lock()
         
         # Stats
         self.received_count = 0
@@ -220,6 +227,7 @@ class OsintTelegramSession(BaseSession):
         """Gracefully stop session."""
         log.info(f"Stopping OsintTelegramSession '{self.session_id}'")
         self._stop_event.set()
+        self.status = "STOPPED"
         
         if self.client:
             await self.client.disconnect()
@@ -383,9 +391,11 @@ class OsintTelegramSession(BaseSession):
             }
         )
         
-        # Logging
+        # 1. Logging and Save to MongoDB
         self._write_message_to_log(item, source)
+        await self.store.save_intel_item(intel_item.to_dict())
         
+        # 2. Publish to MQ
         topic = f"intel.events.{domain}"
         if self.publisher:
             ok = await self.publisher.publish(topic, intel_item.to_mq_payload())

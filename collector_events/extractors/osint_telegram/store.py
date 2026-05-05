@@ -75,3 +75,10 @@ class OsintTelegramStore(BaseStore):
             },
             {"key": f"cursor:{handle.lower()}"}
         )
+    async def save_intel_item(self, item: Dict[str, Any]) -> None:
+        """Save normalized IntelItem to 'globalintel' collection."""
+        await self.store_item(
+            "globalintel",
+            item,
+            {"id": item.get("id")}
+        )
