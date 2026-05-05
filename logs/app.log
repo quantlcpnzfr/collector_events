@@ -3035,3 +3035,4 @@ INFO → OsintBootstrapper → Status [default]: Recv=407, Accepted=370, Limit=3
 INFO → OsintBootstrapper → Status [default]: Recv=27, Accepted=17, Limit=17/100
 INFO → OsintBootstrapper → Status [default]: Recv=407, Accepted=370, Limit=370/500
 INFO → OsintBootstrapper → Status [default]: Recv=27, Accepted=17, Limit=17/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69211 in globalintel
