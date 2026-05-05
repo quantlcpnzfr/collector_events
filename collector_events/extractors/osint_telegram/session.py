@@ -416,7 +416,7 @@ class OsintTelegramSession(BaseSession):
             published_at=ts,
             ts=ts,
             fetched_at=datetime.now(timezone.utc).isoformat(),
-            source_media="telegram",
+            source_media="OSINT Telegram Feed",
             tags=item.tags,
             extra={
                 "relay_source": source,

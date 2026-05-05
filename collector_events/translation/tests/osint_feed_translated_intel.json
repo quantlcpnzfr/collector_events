@@ -3,7 +3,7 @@
     "id": "telegram:Middle_East_Spectator:31794",
     "source": "telegram",
     "domain": "social",
-    "title": "— 🇺🇸/🇮🇷 U.S. Secretary of State, Marco Rubio: ‘The leaders of Iran still haven’t made the rational choice and surrendered. That’s because they’re insane in the brain.’\n\n@Middle_East_Spectator",
+    "title": "— 🇺🇸/🇮🇷 U.S. Secretary of State, Marco Rubio: ‘The leaders of Iran still haven’t made the rational choice and surrendered. That’s because they’re insane in the brain.’ @Middle_East_Spectator",
     "url": "https://t.me/Middle_East_Spectator/31794",
     "body": "— 🇺🇸/🇮🇷 U.S. Secretary of State, Marco Rubio: ‘The leaders of Iran still haven’t made the rational choice and surrendered. That’s because they’re insane in the brain.’\n\n@Middle_East_Spectator",
     "published_at": "2026-05-05T20:11:10+00:00",
@@ -22,7 +22,9 @@
       "channel": "Middle_East_Spectator",
       "channel_title": "Middle East Spectator",
       "views": 1031,
-      "forwards": 9
+      "forwards": 9,
+      "source_body": "— 🇺🇸/🇮🇷 U.S. Secretary of State, Marco Rubio: ‘The leaders of Iran still haven’t made the rational choice and surrendered. That’s because they’re insane in the brain.’\n\n@Middle_East_Spectator",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
@@ -48,16 +50,18 @@
       "channel": "thecradlemedia",
       "channel_title": "The Cradle",
       "views": 96,
-      "forwards": 1
+      "forwards": 1,
+      "source_body": "BREAKING | UKMTO reports an incident in the Strait of Hormuz — cargo vessel struck by unknown projectile.",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:abualiexpress:121752",
     "source": "telegram",
     "domain": "social",
-    "title": "שר החוץ הגרמני (במהלך ביקורו של שר החוץ גדעון סער בגרמניה): \n\nגרמניה מחויבת לביטחונה של ישראל - מחויבות איתנה שאינה נתונה לשינוי.\n\nשיהיה ברור תמיד: לא נאפשר כל איום על עצם קיומה של מדינת ישראל.\n\nזהו עקרון יסוד במדיניותה של גרמניה.",
+    "title": "Germany's Foreign Minister (during Foreign Minister Gideon Sa'ar's visit to Germany): Germany is committed to Israel's security - a steadfast commitment that is not subject to change. Let it always...",
     "url": "https://t.me/abualiexpress/121752",
-    "body": "שר החוץ הגרמני (במהלך ביקורו של שר החוץ גדעון סער בגרמניה): \n\nגרמניה מחויבת לביטחונה של ישראל - מחויבות איתנה שאינה נתונה לשינוי.\n\nשיהיה ברור תמיד: לא נאפשר כל איום על עצם קיומה של מדינת ישראל.\n\nזהו עקרון יסוד במדיניותה של גרמניה.",
+    "body": "Germany's Foreign Minister (during Foreign Minister Gideon Sa'ar's visit to Germany): \n\nGermany is committed to Israel's security - a steadfast commitment that is not subject to change.\n\nLet it always be clear: we will not allow any threat to the very existence of the State of Israel.\n\nThis is a fundamental principle of Germany's policy.",
     "published_at": "2026-05-05T20:13:10+00:00",
     "ts": "2026-05-05T20:13:10+00:00",
     "fetched_at": "2026-05-05T20:13:15.648101+00:00",
@@ -74,14 +78,16 @@
       "channel": "abualiexpress",
       "channel_title": "Abu Ali Express",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "שר החוץ הגרמני (במהלך ביקורו של שר החוץ גדעון סער בגרמניה): \n\nגרמניה מחויבת לביטחונה של ישראל - מחויבות איתנה שאינה נתונה לשינוי.\n\nשיהיה ברור תמיד: לא נאפשר כל איום על עצם קיומה של מדינת ישראל.\n\nזהו עקרון יסוד במדיניותה של גרמניה.",
+      "translation_source": "⚡Translation from Hebrew (heb_Hebr)"
     }
   },
   {
     "id": "telegram:ClashReport:81515",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Germany's Chancellor Merz continues to demand:\n\nIran must come to the negotiating table.\n\nIt must stop playing for time.\n\nIt must no longer take the region and the entire world hostage.\n\nIts military nuclear program must be ended completely and forever, and there must be no further strikes against I",
+    "title": "Germany's Chancellor Merz continues to demand: Iran must come to the negotiating table. It must stop playing for time. It must no longer take the region and the entire world hostage. Its military n...",
     "url": "https://t.me/ClashReport/81515",
     "body": "Germany's Chancellor Merz continues to demand:\n\nIran must come to the negotiating table.\n\nIt must stop playing for time.\n\nIt must no longer take the region and the entire world hostage.\n\nIts military nuclear program must be ended completely and forever, and there must be no further strikes against Israel and our partners in the region.",
     "published_at": "2026-05-05T20:12:53+00:00",
@@ -100,14 +106,16 @@
       "channel": "ClashReport",
       "channel_title": "Clash Report",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "Germany's Chancellor Merz continues to demand:\n\nIran must come to the negotiating table.\n\nIt must stop playing for time.\n\nIt must no longer take the region and the entire world hostage.\n\nIts military nuclear program must be ended completely and forever, and there must be no further strikes against Israel and our partners in the region.",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:ClashReport:81516",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Iran has launched a new system regulating vessel passage through the Strait of Hormuz, according to state TV.\n\nShips must first notify Iranian authorities, then receive an electronic message outlining navigation rules. After accepting these terms, they are granted a transit permit.\n\nPermits will be ",
+    "title": "Iran has launched a new system regulating vessel passage through the Strait of Hormuz, according to state TV. Ships must first notify Iranian authorities, then receive an electronic message outlini...",
     "url": "https://t.me/ClashReport/81516",
     "body": "Iran has launched a new system regulating vessel passage through the Strait of Hormuz, according to state TV.\n\nShips must first notify Iranian authorities, then receive an electronic message outlining navigation rules. After accepting these terms, they are granted a transit permit.\n\nPermits will be issued by a newly established government body.",
     "published_at": "2026-05-05T20:16:43+00:00",
@@ -126,14 +134,16 @@
       "channel": "ClashReport",
       "channel_title": "Clash Report",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "Iran has launched a new system regulating vessel passage through the Strait of Hormuz, according to state TV.\n\nShips must first notify Iranian authorities, then receive an electronic message outlining navigation rules. After accepting these terms, they are granted a transit permit.\n\nPermits will be issued by a newly established government body.",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:RezistanceTrench1:64825",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Another attack on UAE.\n\nQuick! Get to the mall\n\n🚩 ResistanceTrench | Boost",
+    "title": "Another attack on UAE. Quick! Get to the mall 🚩 ResistanceTrench | Boost",
     "url": "https://t.me/RezistanceTrench1/64825",
     "body": "Another attack on UAE.\n\nQuick! Get to the mall\n\n🚩 ResistanceTrench | Boost",
     "published_at": "2026-05-05T20:18:05+00:00",
@@ -152,14 +162,16 @@
       "channel": "RezistanceTrench1",
       "channel_title": "Resistance Trench",
       "views": 92,
-      "forwards": 1
+      "forwards": 1,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531657",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nRubio on Iran:\n\nI don't know of any country in the world where there's a bigger difference between the people and the people who run the country. https://twitter.com/Osint613/status/2051753436186567105/video/1\ntweet",
+    "title": "Open Source Intel Rubio on Iran: I don't know of any country in the world where there's a bigger difference between the people and the people who run the country. https://twitter.com/Osint613/statu...",
     "url": "https://t.me/osintlive/531657",
     "body": "Open Source Intel\nRubio on Iran:\n\nI don't know of any country in the world where there's a bigger difference between the people and the people who run the country. https://twitter.com/Osint613/status/2051753436186567105/video/1\ntweet",
     "published_at": "2026-05-05T20:29:45+00:00",
@@ -178,14 +190,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 2,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "Open Source Intel\nRubio on Iran:\n\nI don't know of any country in the world where there's a bigger difference between the people and the people who run the country. https://twitter.com/Osint613/status/2051753436186567105/video/1\ntweet",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:osintlive:531658",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nSecretary of State Rubio on Operation Project Freedom: \"This is a defensive operation. There's no shooting unless we're shot at first. We are only responding if attacked first.\" https://twitter.com/Osint613/status/2051753592562819448/video/1\ntweet",
+    "title": "Open Source Intel Secretary of State Rubio on Operation Project Freedom: \"This is a defensive operation. There's no shooting unless we're shot at first. We are only responding if attacked first.\" h...",
     "url": "https://t.me/osintlive/531658",
     "body": "Open Source Intel\nSecretary of State Rubio on Operation Project Freedom: \"This is a defensive operation. There's no shooting unless we're shot at first. We are only responding if attacked first.\" https://twitter.com/Osint613/status/2051753592562819448/video/1\ntweet",
     "published_at": "2026-05-05T20:29:48+00:00",
@@ -204,14 +218,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 2,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531659",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nRubio:\n\n\"The operation is OVER. Epic Fury...the president notified Congress. We're done with that stage of it. We're now on to this Project Freedom.\" https://twitter.com/Osint613/status/2051753841977102348/video/1\ntweet",
+    "title": "Open Source Intel Rubio: \"The operation is OVER. Epic Fury...the president notified Congress. We're done with that stage of it. We're now on to this Project Freedom.\" https://twitter.com/Osint613/s...",
     "url": "https://t.me/osintlive/531659",
     "body": "Open Source Intel\nRubio:\n\n\"The operation is OVER. Epic Fury...the president notified Congress. We're done with that stage of it. We're now on to this Project Freedom.\" https://twitter.com/Osint613/status/2051753841977102348/video/1\ntweet",
     "published_at": "2026-05-05T20:29:50+00:00",
@@ -230,14 +246,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531660",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nSecretary of State Marco Rubio: \"Right now you have a country who is unlawfully, criminally, and illegally taking possession of an International waterway and blowing up commercial vessels. I don't know if people appreciate how outrageous this is.\" https://twitter.com/Osint613/statu",
+    "title": "Open Source Intel Secretary of State Marco Rubio: \"Right now you have a country who is unlawfully, criminally, and illegally taking possession of an International waterway and blowing up commercial...",
     "url": "https://t.me/osintlive/531660",
     "body": "Open Source Intel\nSecretary of State Marco Rubio: \"Right now you have a country who is unlawfully, criminally, and illegally taking possession of an International waterway and blowing up commercial vessels. I don't know if people appreciate how outrageous this is.\" https://twitter.com/Osint613/status/2051754196207067247/video/1\ntweet",
     "published_at": "2026-05-05T20:29:52+00:00",
@@ -256,14 +274,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531661",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Disclose.tv\nNOW - Rubio on his hope for America: \"We want it to continue to be the place where anyone from anywhere can achieve anything, where you're not limited by the circumstances of your birth, by the colour of your skin, by your ethnicity.\" https://twitter.com/disclosetv/status/205175442295118",
+    "title": "Disclose.tv NOW - Rubio on his hope for America: \"We want it to continue to be the place where anyone from anywhere can achieve anything, where you're not limited by the circumstances of your birth...",
     "url": "https://t.me/osintlive/531661",
     "body": "Disclose.tv\nNOW - Rubio on his hope for America: \"We want it to continue to be the place where anyone from anywhere can achieve anything, where you're not limited by the circumstances of your birth, by the colour of your skin, by your ethnicity.\" https://twitter.com/disclosetv/status/2051754422951182633/video/1\ntweet",
     "published_at": "2026-05-05T20:29:54+00:00",
@@ -282,14 +302,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531662",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Visioner\n🇮🇷🇺🇲 Iranians attacked a Cargo ship in the Persian Gulf.\n\nBeforehand, Iran issued a special authorization email, where confirmation messages had to be sent to ships passing through the Strait of Hormuz; otherwise, they threatened to attack them.\n\nVideo is made Grok AI https://twitter.com/vi",
+    "title": "Visioner 🇮🇷🇺🇲 Iranians attacked a Cargo ship in the Persian Gulf. Beforehand, Iran issued a special authorization email, where confirmation messages had to be sent to ships passing through the Stra...",
     "url": "https://t.me/osintlive/531662",
     "body": "Visioner\n🇮🇷🇺🇲 Iranians attacked a Cargo ship in the Persian Gulf.\n\nBeforehand, Iran issued a special authorization email, where confirmation messages had to be sent to ships passing through the Strait of Hormuz; otherwise, they threatened to attack them.\n\nVideo is made Grok AI https://twitter.com/visionergeo/status/2051755028591907162/video/1\ntweet",
     "published_at": "2026-05-05T20:29:56+00:00",
@@ -308,14 +330,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "Visioner\n🇮🇷🇺🇲 Iranians attacked a Cargo ship in the Persian Gulf.\n\nBeforehand, Iran issued a special authorization email, where confirmation messages had to be sent to ships passing through the Strait of Hormuz; otherwise, they threatened to attack them.\n\nVideo is made Grok AI https://twitter.com/visionergeo/status/2051755028591907162/video/1\ntweet",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:osintlive:531663",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Status-6 (War & Military News)\nThe United States has approved the sale of JDAM-ER guidance kits and related equipment to Ukraine for the estimated total cost of $373.6 million.\n\nThe request of the Ukrainian government includes 332 KMU-556 JDAM tail kits (for 2000 pound bomb) and 1,200 KMU-572 JDAM t",
+    "title": "Status-6 (War & Military News) The United States has approved the sale of JDAM-ER guidance kits and related equipment to Ukraine for the estimated total cost of $373.6 million. The request of the U...",
     "url": "https://t.me/osintlive/531663",
     "body": "Status-6 (War & Military News)\nThe United States has approved the sale of JDAM-ER guidance kits and related equipment to Ukraine for the estimated total cost of $373.6 million.\n\nThe request of the Ukrainian government includes 332 KMU-556 JDAM tail kits (for 2000 pound bomb) and 1,200 KMU-572 JDAM tail kits (for 500 pound bomb).\ntweet",
     "published_at": "2026-05-05T20:29:58+00:00",
@@ -334,14 +358,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531665",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nFOX NEWS: Many people want to know what is your DJ name?\n\nMARCO RUBIO: You're not ready for my DJ name https://twitter.com/Osint613/status/2051756122294403388/video/1\n\nAdditional footage of Marco Rubio DJing at a family wedding last night. https://twitter.com/Osint613/status/205101",
+    "title": "Open Source Intel FOX NEWS: Many people want to know what is your DJ name? MARCO RUBIO: You're not ready for my DJ name https://twitter.com/Osint613/status/2051756122294403388/video/1 Additional fo...",
     "url": "https://t.me/osintlive/531665",
     "body": "Open Source Intel\nFOX NEWS: Many people want to know what is your DJ name?\n\nMARCO RUBIO: You're not ready for my DJ name https://twitter.com/Osint613/status/2051756122294403388/video/1\n\nAdditional footage of Marco Rubio DJing at a family wedding last night. https://twitter.com/Osint613/status/2051015854171529553/video/1 - Open Source Intel\ntweet",
     "published_at": "2026-05-05T20:30:03+00:00",
@@ -360,14 +386,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531667",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nMarco Rubio says Iran should check themselves before they wreck themselves. https://twitter.com/Osint613/status/2051756687703359674/video/1\ntweet",
+    "title": "Open Source Intel Marco Rubio says Iran should check themselves before they wreck themselves. https://twitter.com/Osint613/status/2051756687703359674/video/1 tweet",
     "url": "https://t.me/osintlive/531667",
     "body": "Open Source Intel\nMarco Rubio says Iran should check themselves before they wreck themselves. https://twitter.com/Osint613/status/2051756687703359674/video/1\ntweet",
     "published_at": "2026-05-05T20:30:06+00:00",
@@ -386,14 +414,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 4,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "Open Source Intel\nMarco Rubio says Iran should check themselves before they wreck themselves. https://twitter.com/Osint613/status/2051756687703359674/video/1\ntweet",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:osintlive:531668",
     "source": "telegram",
     "domain": "conflict",
-    "title": "U.S. Central Command\nAmerica's men and women in uniform serving across the Middle East represent the strongest fighting force the world has ever known. https://twitter.com/CENTCOM/status/2051756715360538948/video/1\ntweet",
+    "title": "U.S. Central Command America's men and women in uniform serving across the Middle East represent the strongest fighting force the world has ever known. https://twitter.com/CENTCOM/status/2051756715...",
     "url": "https://t.me/osintlive/531668",
     "body": "U.S. Central Command\nAmerica's men and women in uniform serving across the Middle East represent the strongest fighting force the world has ever known. https://twitter.com/CENTCOM/status/2051756715360538948/video/1\ntweet",
     "published_at": "2026-05-05T20:30:10+00:00",
@@ -412,16 +442,18 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 4,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531669",
     "source": "telegram",
     "domain": "conflict",
-    "title": "OSINTdefender\nFollowing a reporter’s question pertaining to the acronym of Immigration and Customs Enforcement (ICE) from last week, suggesting it should be turned to the National Immigration and Customs Enforcement (NICE), U.S. President Donald J. Trump has put out a mockup of just that on his Trut",
+    "title": "This text was successfully translated into English by the mock engine.",
     "url": "https://t.me/osintlive/531669",
-    "body": "OSINTdefender\nFollowing a reporter’s question pertaining to the acronym of Immigration and Customs Enforcement (ICE) from last week, suggesting it should be turned to the National Immigration and Customs Enforcement (NICE), U.S. President Donald J. Trump has put out a mockup of just that on his Truth Social app.\ntweet",
+    "body": "This text was successfully translated into English by the mock engine.",
     "published_at": "2026-05-05T20:30:11+00:00",
     "ts": "2026-05-05T20:30:11+00:00",
     "fetched_at": "2026-05-05T20:30:58.310729+00:00",
@@ -438,14 +470,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 4,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "OSINTdefender\nFollowing a reporter’s question pertaining to the acronym of Immigration and Customs Enforcement (ICE) from last week, suggesting it should be turned to the National Immigration and Customs Enforcement (NICE), U.S. President Donald J. Trump has put out a mockup of just that on his Truth Social app.\ntweet",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:osintlive:531670",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nGerman Foreign Minister Wadephul: \"Germany stands for Israel's security. We will not allow this state's existence to be threatened.\" https://twitter.com/Osint613/status/2051757053375332851/video/1\ntweet",
+    "title": "Open Source Intel German Foreign Minister Wadephul: \"Germany stands for Israel's security. We will not allow this state's existence to be threatened.\" https://twitter.com/Osint613/status/2051757053...",
     "url": "https://t.me/osintlive/531670",
     "body": "Open Source Intel\nGerman Foreign Minister Wadephul: \"Germany stands for Israel's security. We will not allow this state's existence to be threatened.\" https://twitter.com/Osint613/status/2051757053375332851/video/1\ntweet",
     "published_at": "2026-05-05T20:30:13+00:00",
@@ -464,14 +498,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 4,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531671",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Nuno Felix\nhttps://x.com/FrenchResponse/status/2051726945675571399/video/1\ntweet",
+    "title": "Nuno Felix https://x.com/FrenchResponse/status/2051726945675571399/video/1 tweet",
     "url": "https://t.me/osintlive/531671",
     "body": "Nuno Felix\nhttps://x.com/FrenchResponse/status/2051726945675571399/video/1\ntweet",
     "published_at": "2026-05-05T20:30:45+00:00",
@@ -490,14 +526,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531672",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nMarco Rubio: Operation Epic Fury is concluded https://twitter.com/Osint613/status/2051757123311210977/video/1\ntweet",
+    "title": "Open Source Intel Marco Rubio: Operation Epic Fury is concluded https://twitter.com/Osint613/status/2051757123311210977/video/1 tweet",
     "url": "https://t.me/osintlive/531672",
     "body": "Open Source Intel\nMarco Rubio: Operation Epic Fury is concluded https://twitter.com/Osint613/status/2051757123311210977/video/1\ntweet",
     "published_at": "2026-05-05T20:30:47+00:00",
@@ -516,14 +554,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 3,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531673",
     "source": "telegram",
     "domain": "conflict",
-    "title": "WarTranslated\nDuring an operation in April 2026, drones from the GUR's \"Ghosts\" unit struck a Be-12 \"Chayka\" aircraft, three boats, and a Russian supply vessel in Crimea.\nhttps://t.me/c/1606301574/8351 https://twitter.com/wartranslated/status/2051757133817954486/video/1\ntweet",
+    "title": "WarTranslated During an operation in April 2026, drones from the GUR's \"Ghosts\" unit struck a Be-12 \"Chayka\" aircraft, three boats, and a Russian supply vessel in Crimea. https://t.me/c/1606301574/...",
     "url": "https://t.me/osintlive/531673",
     "body": "WarTranslated\nDuring an operation in April 2026, drones from the GUR's \"Ghosts\" unit struck a Be-12 \"Chayka\" aircraft, three boats, and a Russian supply vessel in Crimea.\nhttps://t.me/c/1606301574/8351 https://twitter.com/wartranslated/status/2051757133817954486/video/1\ntweet",
     "published_at": "2026-05-05T20:30:50+00:00",
@@ -542,14 +582,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 4,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531674",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Nuno Felix\nImpeccable response. https://twitter.com/Felix_Nuno/status/2051757298557600180/photo/1\n\n\"Dumbest nationalism\"? \nIt’s called faith. Check out the vibe 🪩 #FaithInDemocracy https://twitter.com/FrenchResponse/status/2051726945675571399/video/1 - French Response\ntweet",
+    "title": "Nuno Felix Impeccable response. https://twitter.com/Felix_Nuno/status/2051757298557600180/photo/1 \"Dumbest nationalism\"? It’s called faith. Check out the vibe 🪩 #FaithInDemocracy https://twitter.co...",
     "url": "https://t.me/osintlive/531674",
     "body": "Nuno Felix\nImpeccable response. https://twitter.com/Felix_Nuno/status/2051757298557600180/photo/1\n\n\"Dumbest nationalism\"? \nIt’s called faith. Check out the vibe 🪩 #FaithInDemocracy https://twitter.com/FrenchResponse/status/2051726945675571399/video/1 - French Response\ntweet",
     "published_at": "2026-05-05T20:30:56+00:00",
@@ -568,14 +610,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 4,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531676",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nSecretary of State Rubio on Iran: \n\n\"They don't care that their people are suffering. There's a difference between, 'We can withstand pressure,' and 'We actually don't care.' Now, I think there are people in their system that care more than others.\" https://twitter.com/Osint613/sta",
+    "title": "Open Source Intel Secretary of State Rubio on Iran: \"They don't care that their people are suffering. There's a difference between, 'We can withstand pressure,' and 'We actually don't care.' Now, I...",
     "url": "https://t.me/osintlive/531676",
     "body": "Open Source Intel\nSecretary of State Rubio on Iran: \n\n\"They don't care that their people are suffering. There's a difference between, 'We can withstand pressure,' and 'We actually don't care.' Now, I think there are people in their system that care more than others.\" https://twitter.com/Osint613/status/2051757576723845539/video/1\ntweet",
     "published_at": "2026-05-05T20:30:58+00:00",
@@ -594,14 +638,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 4,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "Open Source Intel\nSecretary of State Rubio on Iran: \n\n\"They don't care that their people are suffering. There's a difference between, 'We can withstand pressure,' and 'We actually don't care.' Now, I think there are people in their system that care more than others.\" https://twitter.com/Osint613/status/2051757576723845539/video/1\ntweet",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:osintlive:531677",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nGerman Chancellor Merz:\n\n\"Iran must come to the negotiating table. It must stop playing for time. It must no longer take the region and the entire world hostage. Its military nuclear program must be ended completely and forever, and there must be no further strikes against Israel a",
+    "title": "Open Source Intel German Chancellor Merz: \"Iran must come to the negotiating table. It must stop playing for time. It must no longer take the region and the entire world hostage. Its military nucle...",
     "url": "https://t.me/osintlive/531677",
     "body": "Open Source Intel\nGerman Chancellor Merz:\n\n\"Iran must come to the negotiating table. It must stop playing for time. It must no longer take the region and the entire world hostage. Its military nuclear program must be ended completely and forever, and there must be no further strikes against Israel and our partners in the region.\"\ntweet",
     "published_at": "2026-05-05T20:31:04+00:00",
@@ -620,14 +666,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 4,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "Open Source Intel\nGerman Chancellor Merz:\n\n\"Iran must come to the negotiating table. It must stop playing for time. It must no longer take the region and the entire world hostage. Its military nuclear program must be ended completely and forever, and there must be no further strikes against Israel and our partners in the region.\"\ntweet",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:osintlive:531678",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Visioner\nRT @NSTRIKE1231: 🇺🇸🇮🇷 U.S. Secretary of State Marco Rubio:\n“The operation is over — ‘Epic Fury’. We have completed this phase.\nWe are now transitioning to Project ‘Freedom’ — the escorting of vessels through the Strait of Hormuz.\nThe negotiation process must cover not only the issue of uran",
+    "title": "Visioner RT @NSTRIKE1231: 🇺🇸🇮🇷 U.S. Secretary of State Marco Rubio: “The operation is over — ‘Epic Fury’. We have completed this phase. We are now transitioning to Project ‘Freedom’ — the escorting...",
     "url": "https://t.me/osintlive/531678",
     "body": "Visioner\nRT @NSTRIKE1231: 🇺🇸🇮🇷 U.S. Secretary of State Marco Rubio:\n“The operation is over — ‘Epic Fury’. We have completed this phase.\nWe are now transitioning to Project ‘Freedom’ — the escorting of vessels through the Strait of Hormuz.\nThe negotiation process must cover not only the issue of uranium enrichment, but also the fate of the material that is currently buried deep underground — material they could still access if they ever choose to bring it out.\nThis question must be resolved, and it will be part of the discussions in the negotiations.”\n\nVideo is generated by grok AI\ntweet",
     "published_at": "2026-05-05T20:31:07+00:00",
@@ -646,14 +694,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 5,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "Visioner\nRT @NSTRIKE1231: 🇺🇸🇮🇷 U.S. Secretary of State Marco Rubio:\n“The operation is over — ‘Epic Fury’. We have completed this phase.\nWe are now transitioning to Project ‘Freedom’ — the escorting of vessels through the Strait of Hormuz.\nThe negotiation process must cover not only the issue of uranium enrichment, but also the fate of the material that is currently buried deep underground — material they could still access if they ever choose to bring it out.\nThis question must be resolved, and it will be part of the discussions in the negotiations.”\n\nVideo is generated by grok AI\ntweet",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:osintlive:531679",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nSecretary of State Rubio: \n\n\"The War Powers Act is unconstitutional, 100%. This is not the position of me, not the position of POTUS now, this is the position of every single president that has occupied this position since the day that law passed... We comply with it in terms of no",
+    "title": "Open Source Intel Secretary of State Rubio: \"The War Powers Act is unconstitutional, 100%. This is not the position of me, not the position of POTUS now, this is the position of every single presid...",
     "url": "https://t.me/osintlive/531679",
     "body": "Open Source Intel\nSecretary of State Rubio: \n\n\"The War Powers Act is unconstitutional, 100%. This is not the position of me, not the position of POTUS now, this is the position of every single president that has occupied this position since the day that law passed... We comply with it in terms of notification because we want to preserve good relations with Congress... but even as a senator, I would say that the War Powers Act is 100% unconstitutional.\"\ntweet",
     "published_at": "2026-05-05T20:31:09+00:00",
@@ -672,14 +722,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 5,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531680",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nSecretary of State Rubio says multiple countries have requested U.S. assistance to secure the release of their vessels in the Strait of Hormuz. https://twitter.com/Osint613/status/2051759588932731198/video/1\ntweet",
+    "title": "Open Source Intel Secretary of State Rubio says multiple countries have requested U.S. assistance to secure the release of their vessels in the Strait of Hormuz. https://twitter.com/Osint613/status...",
     "url": "https://t.me/osintlive/531680",
     "body": "Open Source Intel\nSecretary of State Rubio says multiple countries have requested U.S. assistance to secure the release of their vessels in the Strait of Hormuz. https://twitter.com/Osint613/status/2051759588932731198/video/1\ntweet",
     "published_at": "2026-05-05T20:31:11+00:00",
@@ -698,14 +750,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 6,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "Open Source Intel\nSecretary of State Rubio says multiple countries have requested U.S. assistance to secure the release of their vessels in the Strait of Hormuz. https://twitter.com/Osint613/status/2051759588932731198/video/1\ntweet",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:osintlive:531681",
     "source": "telegram",
     "domain": "conflict",
-    "title": "OSINTdefender\nOn the status of Operation Epic Fury, U.S. Secretary of State Marco Rubio has said that “Operation Epic Fury has concluded,” saying the now ongoing Project Freedom is working to ensure a safe framework for passage through the Strait of Hormuz, he hopes that other nations, including Eur",
+    "title": "OSINTdefender On the status of Operation Epic Fury, U.S. Secretary of State Marco Rubio has said that “Operation Epic Fury has concluded,” saying the now ongoing Project Freedom is working to ensur...",
     "url": "https://t.me/osintlive/531681",
     "body": "OSINTdefender\nOn the status of Operation Epic Fury, U.S. Secretary of State Marco Rubio has said that “Operation Epic Fury has concluded,” saying the now ongoing Project Freedom is working to ensure a safe framework for passage through the Strait of Hormuz, he hopes that other nations, including Europe, get involved in these efforts, and that resuming combat operations is not the goal, but will be considered so Iran can pay a price for their actions to this point.\ntweet",
     "published_at": "2026-05-05T20:31:13+00:00",
@@ -724,14 +778,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 6,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "OSINTdefender\nOn the status of Operation Epic Fury, U.S. Secretary of State Marco Rubio has said that “Operation Epic Fury has concluded,” saying the now ongoing Project Freedom is working to ensure a safe framework for passage through the Strait of Hormuz, he hopes that other nations, including Europe, get involved in these efforts, and that resuming combat operations is not the goal, but will be considered so Iran can pay a price for their actions to this point.\ntweet",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:osintlive:531682",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nGerman Foreign Minister Wadephul:\n\n\"Germany stands for Israel's security, and that commitment stands. And it will always be clear: we will not allow this state's existence to be threatened. That is what Germany stands for.\" https://twitter.com/Osint613/status/2051760275599114603/vi",
+    "title": "Open Source Intel German Foreign Minister Wadephul: \"Germany stands for Israel's security, and that commitment stands. And it will always be clear: we will not allow this state's existence to be th...",
     "url": "https://t.me/osintlive/531682",
     "body": "Open Source Intel\nGerman Foreign Minister Wadephul:\n\n\"Germany stands for Israel's security, and that commitment stands. And it will always be clear: we will not allow this state's existence to be threatened. That is what Germany stands for.\" https://twitter.com/Osint613/status/2051760275599114603/video/1\ntweet",
     "published_at": "2026-05-05T20:31:16+00:00",
@@ -750,14 +806,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 4,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:osintlive:531683",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Open Source Intel\nRubio on his hope for America: \"We want it to continue to be the place where anyone from anywhere can achieve anything, where you're not limited by the circumstances of your birth, by the colour of your skin, by your ethnicity.\" https://twitter.com/Osint613/status/20517608191011885",
+    "title": "Open Source Intel Rubio on his hope for America: \"We want it to continue to be the place where anyone from anywhere can achieve anything, where you're not limited by the circumstances of your birth...",
     "url": "https://t.me/osintlive/531683",
     "body": "Open Source Intel\nRubio on his hope for America: \"We want it to continue to be the place where anyone from anywhere can achieve anything, where you're not limited by the circumstances of your birth, by the colour of your skin, by your ethnicity.\" https://twitter.com/Osint613/status/2051760819101188500/video/1\ntweet",
     "published_at": "2026-05-05T20:31:18+00:00",
@@ -776,14 +834,16 @@
       "channel": "osintlive",
       "channel_title": "OSINT Live",
       "views": 4,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:FotrosResistancee:21441",
     "source": "telegram",
     "domain": "conflict",
-    "title": "🇮🇷🇦🇪🇺🇸| Iran’s Foreign Ministry condemns Abu Dhabi for cooperating with US/Israel against Iran, especially by hosting military bases and equipment.\n\nThe MFA now also officially rejects UAE claims that Iran launched missiles or drones at the Emirates, saying Iran’s actions are only aimed at repelling",
+    "title": "🇮🇷🇦🇪🇺🇸| Iran’s Foreign Ministry condemns Abu Dhabi for cooperating with US/Israel against Iran, especially by hosting military bases and equipment. The MFA now also officially rejects UAE claims th...",
     "url": "https://t.me/FotrosResistancee/21441",
     "body": "🇮🇷🇦🇪🇺🇸| Iran’s Foreign Ministry condemns Abu Dhabi for cooperating with US/Israel against Iran, especially by hosting military bases and equipment.\n\nThe MFA now also officially rejects UAE claims that Iran launched missiles or drones at the Emirates, saying Iran’s actions are only aimed at repelling US aggression.\n\nTehran warns that continued military/logistical cooperation against Iran is unacceptable and says Iran will take any necessary measures to defend its national security.\n\n@FotrosResistancee",
     "published_at": "2026-05-05T20:32:16+00:00",
@@ -802,14 +862,16 @@
       "channel": "FotrosResistancee",
       "channel_title": "Fotros Resistance",
       "views": 1,
-      "forwards": 1
+      "forwards": 1,
+      "source_body": "🇮🇷🇦🇪🇺🇸| Iran’s Foreign Ministry condemns Abu Dhabi for cooperating with US/Israel against Iran, especially by hosting military bases and equipment.\n\nThe MFA now also officially rejects UAE claims that Iran launched missiles or drones at the Emirates, saying Iran’s actions are only aimed at repelling US aggression.\n\nTehran warns that continued military/logistical cooperation against Iran is unacceptable and says Iran will take any necessary measures to defend its national security.\n\n@FotrosResistancee",
+      "translation_source": "⚡Translation from Persian (pes_Arab)"
     }
   },
   {
     "id": "telegram:RezistanceTrench1:64826",
     "source": "telegram",
     "domain": "conflict",
-    "title": "Hegseth: “And I can’t confirm or deny whether we have kamikaze dolphins…. But I can confirm they don’t.”\n\n🚩 ResistanceTrench | Boost",
+    "title": "Hegseth: “And I can’t confirm or deny whether we have kamikaze dolphins…. But I can confirm they don’t.” 🚩 ResistanceTrench | Boost",
     "url": "https://t.me/RezistanceTrench1/64826",
     "body": "Hegseth: “And I can’t confirm or deny whether we have kamikaze dolphins…. But I can confirm they don’t.”\n\n🚩 ResistanceTrench | Boost",
     "published_at": "2026-05-05T20:33:07+00:00",
@@ -828,14 +890,16 @@
       "channel": "RezistanceTrench1",
       "channel_title": "Resistance Trench",
       "views": 1,
-      "forwards": 0
+      "forwards": 0,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:MiddleEastEye_TG:21390",
     "source": "telegram",
     "domain": "conflict",
-    "title": "The chairman of the American-Arab Anti-Discrimination Committee (ADC) told Middle East Eye that the board will not resign amid growing calls for an overhaul, because doing so would be based on \"a campaign of misleading statements circulating on social media\".\n\nHe added that it \"would be a disservice",
+    "title": "The chairman of the American-Arab Anti-Discrimination Committee (ADC) told Middle East Eye that the board will not resign amid growing calls for an overhaul, because doing so would be based on \"a c...",
     "url": "https://t.me/MiddleEastEye_TG/21390",
     "body": "The chairman of the American-Arab Anti-Discrimination Committee (ADC) told Middle East Eye that the board will not resign amid growing calls for an overhaul, because doing so would be based on \"a campaign of misleading statements circulating on social media\".\n\nHe added that it \"would be a disservice to the organization's mission at this critical time\".\n\nThe nearly 80-year-old Safa Rifka, an infertility and reproductive endocrinologist by trade, responded to questions from MEE through email on Saturday, via the public relations firm Poston Communications.\n\n✍️ Yasmine El-Sabawi in Washington\n\n🔗 https://www.middleeasteye.net/news/adc-board-refuses-resignation",
     "published_at": "2026-05-05T20:34:36+00:00",
@@ -854,14 +918,16 @@
       "channel": "MiddleEastEye_TG",
       "channel_title": "Middle East Eye",
       "views": 48,
-      "forwards": 2
+      "forwards": 2,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   },
   {
     "id": "telegram:DDGeopolitics:183531",
     "source": "telegram",
     "domain": "conflict",
-    "title": "🇺🇸🤡🎪Secretary of failed State Narco Rubio:\n\nOperation Epstein's Fury is over - it's Epstein's failure now.\n\n🐻And his DJ name is, of course, DJ Gusano.\n\n🔴 @DDGeopolitics | Socials | Donate | Advertising",
+    "title": "🇺🇸🤡🎪Secretary of failed State Narco Rubio: Operation Epstein's Fury is over - it's Epstein's failure now. 🐻And his DJ name is, of course, DJ Gusano. 🔴 @DDGeopolitics | Socials | Donate | Advertising",
     "url": "https://t.me/DDGeopolitics/183531",
     "body": "🇺🇸🤡🎪Secretary of failed State Narco Rubio:\n\nOperation Epstein's Fury is over - it's Epstein's failure now.\n\n🐻And his DJ name is, of course, DJ Gusano.\n\n🔴 @DDGeopolitics | Socials | Donate | Advertising",
     "published_at": "2026-05-05T20:36:30+00:00",
@@ -880,59 +946,9 @@
       "channel": "DDGeopolitics",
       "channel_title": "DD Geopolitics",
       "views": 222,
-      "forwards": 4
-    }
-  },
-  {
-    "id": "telegram:kpszsu:61402",
-    "source": "telegram",
-    "domain": "social",
-    "title": "🚀Пуски КАБ на Запоріжжі.",
-    "url": "https://t.me/kpszsu/61402",
-    "body": "🚀Пуски КАБ на Запоріжжі.",
-    "published_at": "2026-05-05T20:40:09+00:00",
-    "ts": "2026-05-05T20:40:09+00:00",
-    "fetched_at": "2026-05-05T20:42:17.873856+00:00",
-    "country": [],
-    "severity": "",
-    "tags": [
-      "telegram",
-      "breaking",
-      "ukraine"
-    ],
-    "source_media": "OSINT Telegram Feed",
-    "extra": {
-      "relay_source": "backfill",
-      "channel": "kpszsu",
-      "channel_title": "Air Force of the Armed Forces of Ukraine",
-      "views": 3073,
-      "forwards": 1
-    }
-  },
-  {
-    "id": "telegram:geopolitics_prime:69211",
-    "source": "telegram",
-    "domain": "conflict",
-    "title": "🤡 ‘There’s no oil blockade on Cuba’ — Rubio does a 180 on Trump’s Cuba blockade\n\nEarlier, Trump proudly bragged that the island had “no oil,” “no money,” and “no anything” under the US embargo.\n\n🚫 For months, the Epstein regime has prevented deliveries of critical supplies to Cuba — pressuring shipm",
-    "url": "https://t.me/geopolitics_prime/69211",
-    "body": "🤡 ‘There’s no oil blockade on Cuba’ — Rubio does a 180 on Trump’s Cuba blockade\n\nEarlier, Trump proudly bragged that the island had “no oil,” “no money,” and “no anything” under the US embargo.\n\n🚫 For months, the Epstein regime has prevented deliveries of critical supplies to Cuba — pressuring shipments, threatening supply routes, and calling economic collapse a strategy.\n\n🚢🇷🇺 Remarkable how sharply the rhetoric changed after a Russian oil tanker reached Cuba in late March.\n\n👍 Boost us | Chat | @geopolitics_prime",
-    "published_at": "2026-05-05T20:42:02+00:00",
-    "ts": "2026-05-05T20:42:02+00:00",
-    "fetched_at": "2026-05-05T20:42:39.083636+00:00",
-    "country": [],
-    "severity": "",
-    "tags": [
-      "telegram",
-      "geopolitics",
-      "global"
-    ],
-    "source_media": "OSINT Telegram Feed",
-    "extra": {
-      "relay_source": "backfill",
-      "channel": "geopolitics_prime",
-      "channel_title": "Geopolitics Prime",
-      "views": 1,
-      "forwards": 0
+      "forwards": 4,
+      "source_body": "",
+      "translation_source": "➡️ No translation needed"
     }
   }
 ]
