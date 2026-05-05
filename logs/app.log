@@ -1076,3 +1076,942 @@ INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-3 �
 INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
 INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
 INFO → collector_events.events_extractors.telegram_relay_ray.actor.tg-proc-0 → Telegram processor actor tg-proc-0 ready
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+WARNING → forex_shared.env_config_manager → [EnvConfig] Crypto engine não inicializado: No module named 'azure'
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+WARNING → forex_shared.env_config_manager → [EnvConfig] MongoDB indisponível no startup: No module named 'azure'
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar TELEGRAM_PRODUCTION_PUBLIC_KEY: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar MQ_PORT: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar MQ_USER: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar MQ_PASSWORD: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar MONGO_URL: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar DATABASE_URL: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar REDIS_HOST: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar TELEGRAM_TEST_SERVER: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar MQ_HOST: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar CONTEXT7_API_KEY: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar MASSIVE_DATA_API_KEY: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar TAVILY_API_KEY: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar TAVILY_MCP_URL: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar OPENAI_API_KEY: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar PROVIDER_PASSWORD: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar TELEGRAM_TEST_PUBLIC_KEY: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar TELEGRAM_PRODUCTION_SERVER: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar REDIS_PORT: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar REDIS_PASSWORD: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar REDIS_DB: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar DEEPSEEK_API_KEY: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar CLAUDE_API_KEY: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar TELEGRAM_API_ID: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar TELEGRAM_API_HASH: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar GEMINI_API_KEY: No module named 'azure'
+ERROR → forex_shared.env_config_manager → [EnvConfig] Falha ao descriptografar AZURE_OPENAI_API_KEY: No module named 'azure'
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'telegram-osint-global'
+ERROR → collector_events.extractors.osint_telegram.worker → Failed to create session 'telegram-osint-global': object.__init__() takes exactly one argument (the instance to initialize)
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\worker.py", line 91, in create_session
+    session = OsintTelegramSession(config, self.store)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\session.py", line 29, in __init__
+    super().__init__(config)
+TypeError: object.__init__() takes exactly one argument (the instance to initialize)
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Nenhuma sessão ativa. O pipeline pode ter encerrado pelo limite de mensagens.
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 0 active sessions...
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'telegram-osint-global'
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'telegram-osint-global'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+WARNING → collector_events.extractors.osint_telegram.session → No Telegram session found in store or env; interactive auth may be required.
+INFO → telethon.network.mtprotosender → Connecting to 149.154.167.51:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.167.51:443/TcpFull complete!
+ERROR → collector_events.extractors.osint_telegram.session → Telegram client NOT authorized. Please run session_auth script.
+INFO → collector_events.extractors.osint_telegram.worker → Session 'telegram-osint-global' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'telegram-osint-global'
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'telegram-osint-global'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+WARNING → collector_events.extractors.osint_telegram.session → No Telegram session found in store or env; interactive auth may be required.
+INFO → telethon.network.mtprotosender → Connecting to 149.154.167.51:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.167.51:443/TcpFull complete!
+ERROR → collector_events.extractors.osint_telegram.session → Telegram client NOT authorized. Please run session_auth script.
+INFO → collector_events.extractors.osint_telegram.worker → Session 'telegram-osint-global' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+WARNING → forex_shared.mongo_manager → [MongoManager] create_index(telegram): fc-ec6e802b8303-000.global.mongocluster.cosmos.azure.com:10260: timed out (configured timeouts: socketTimeoutMS: 10000.0ms, connectTimeoutMS: 10000.0ms)
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'relay_01'
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'relay_01'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+WARNING → collector_events.extractors.osint_telegram.session → No Telegram session found in store or env; interactive auth may be required.
+INFO → telethon.network.mtprotosender → Connecting to 149.154.167.51:443/TcpFull...
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → telethon.network.mtprotosender → Connection to 149.154.167.51:443/TcpFull complete!
+ERROR → collector_events.extractors.osint_telegram.session → Telegram client NOT authorized. Please run session_auth script.
+INFO → collector_events.extractors.osint_telegram.worker → Session 'relay_01' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'relay_01'
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'relay_01'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+WARNING → collector_events.extractors.osint_telegram.session → No Telegram session found in store or env; interactive auth may be required.
+INFO → telethon.network.mtprotosender → Connecting to 149.154.167.51:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.167.51:443/TcpFull complete!
+ERROR → collector_events.extractors.osint_telegram.session → Telegram client NOT authorized. Please run session_auth script.
+INFO → collector_events.extractors.osint_telegram.worker → Session 'relay_01' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+ERROR → collector_events.extractors.osint_telegram.worker → Failed to create session 'default': 'MongoManager' object has no attribute 'get_utc_now'
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\worker.py", line 94, in create_session
+    await session.start()
+  File "C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\session.py", line 137, in start
+    await self.store.save_session(self.session_key, self.client.session.save())
+  File "C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\store.py", line 57, in save_session
+    "updated_at": self._mongo.get_utc_now()
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MongoManager' object has no attribute 'get_utc_now'
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Nenhuma sessão ativa. O pipeline pode ter encerrado pelo limite de mensagens.
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 0 active sessions...
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel RezistanceTrench1: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel geopolitics_prime: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel thecradlemedia: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel LebUpdate: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel middleeastobserver: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel MiddleEastEye_TG: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel dragonwatch: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel thehackernews: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel cybersecboardrm: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel securelist: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel DarkWebInformer: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel CYBERWARCOM: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel thecyberwire: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel vxunderground: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel falconfeeds: A wait of 32 seconds is required (caused by ResolveUsernameRequest)
+ERROR → collector_events.extractors.osint_telegram.worker → Failed to create session 'default': 'OsintTelegramSession' object has no attribute '_create_background_task'
+Traceback (most recent call last):
+  File "C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\worker.py", line 94, in create_session
+    await session.start()
+  File "C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\session.py", line 146, in start
+    self._create_background_task(self._backfill_loop(), name="backfill")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'OsintTelegramSession' object has no attribute '_create_background_task'
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Nenhuma sessão ativa. O pipeline pode ter encerrado pelo limite de mensagens.
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 0 active sessions...
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel cybersecboardrm: No user has "cybersecboardrm" as username
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel CYBERWARCOM: No user has "cyberwarcom" as username
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel thecyberwire: No user has "thecyberwire" as username
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 42 active channels
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (5). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (5). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel cybersecboardrm: No user has "cybersecboardrm" as username
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel CYBERWARCOM: No user has "cyberwarcom" as username
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel thecyberwire: No user has "thecyberwire" as username
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 42 active channels
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/5
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (5). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (5). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel cybersecboardrm: No user has "cybersecboardrm" as username
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel CYBERWARCOM: No user has "cyberwarcom" as username
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+WARNING → collector_events.extractors.osint_telegram.session → Failed to resolve channel thecyberwire: No user has "thecyberwire" as username
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 42 active channels
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 5 mensagens configurado)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/5
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (5). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (5). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
