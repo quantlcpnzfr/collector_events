@@ -2015,3 +2015,8 @@ INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
 INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
 INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
 INFO → OsintBootstrapper → Status [telegram-osint-global]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [default]: Recv=6, Accepted=6, Limit=6/5
+INFO → OsintBootstrapper → Status [relay_01]: Recv=0, Accepted=0, Limit=0/5
