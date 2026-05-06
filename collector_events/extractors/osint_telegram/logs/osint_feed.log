@@ -2,1162 +2,528 @@
 ════════════════════════════════════════════════════════════════════════════════════════════════
 🛰️  FOREX_SYSTEM OSINT TELEGRAM FEED DASHBOARD
 ════════════════════════════════════════════════════════════════════════════════════════════════
-🕒 Started UTC: 2026-05-06 13:57
+🕒 Started UTC: 2026-05-06 20:06
 📁 Log file: C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
 🎯 Session ID: default
 🎯 Channel set: all
 ════════════════════════════════════════════════════════════════════════════════════════════════
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000001  2026-05-06 13:58  [BACKFILL]
-📣 @operativnoZSU · Operativno ZSU
-🏷️  topic=conflict  tags=telegram, conflict, ukraine
-🔗 https://t.me/operativnoZSU/210289
-👀 views=8,405  ↗ forwards=11  🕯️ published=2026-05-06 13:49
+🟢 #000001  2026-05-06 20:06  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75274
+👀 views=146,651  ↗ forwards=119  🕯️ published=2026-05-06 15:33
 💬 Message
-   Готуємося протидіяти: на південних українських землях, які перебувають зараз під окупацією,
-   росія планує фактично такі ж процеси грабунку й деіндустріалізації, які провела на території
-   захопленого Донбасу, — Зеленський за результатами доповіді ГУР Планується здійснення
-   геологічної розвідки, швидкий видобуток і вивезення цінної сировини зі щонайменше 18
-   родовищ, а саме: титану, літію, танталу, ніобію, циркону, молібдену та графіту. Окупанти
-   планують і подальші заходи щодо захоплення та вивезення цьогорічного врожаю зерна.
-   🫡https://t.me/operativnoZSU/
+   دونالد ترامپ، رییس‌جمهوری آمریکا، در گفت‌وگو با شبکه پی‌بی‌اس نیوز اعلام کرد جنگ با ایران
+   «شانس بسیار خوبی برای پایان یافتن» دارد و ابراز امیدواری کرد واشینگتن به توافقی با تهران
+   نزدیک شده باشد. او گفت این توافق می‌تواند شامل صادرات اورانیوم با غنای بالا از سوی ایران به
+   آمریکا باشد. ترامپ با اشاره به روند مذاکرات افزود: «احساس می‌کنم به توافق نزدیک شده‌ایم، اما
+   قبلاً هم چنین احساسی داشتم، بنابراین باید دید چه می‌شود.» او احتمال اعزام استیو ویتکاف و جرد
+   کوشنر به مذاکرات را بعید دانست و گفت ممکن است پیش از سفر هفته آینده‌اش به چین، توافقی برای
+   پایان جنگ حاصل شود. رییس‌جمهوری آمریکا هشدار داد در صورت شکست مذاکرات، گزینه نظامی همچنان
+   روی میز خواهد بود. او گفت اگر جنگ پایان نیابد «باید دوباره آن‌ها را به‌شدت بمباران کنیم.»
+   این اظهارات ساعاتی پس از آن مطرح شد که ترامپ در شبکه تروث سوشال اعلام
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000002  2026-05-06 13:58  [BACKFILL]
-📣 @operativnoZSU · Operativno ZSU
-🏷️  topic=conflict  tags=telegram, conflict, ukraine
-🔗 https://t.me/operativnoZSU/210290
-👀 views=5,091  ↗ forwards=1  🕯️ published=2026-05-06 13:53
+🟢 #000002  2026-05-06 20:06  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75275
+👀 views=146,690  ↗ forwards=106  🕯️ published=2026-05-06 15:36
 💬 Message
-   Це відкриває додаткові можливості для наших далекобійних санкцій: кацапи для захисту москви
-   на день перемоги стягнули більше ППО з регіонів, — Зеленський Це свідчить, що російське
-   керівництво не готується до припинення вогню, про яке було зроблено стільки заяв, і
-   переживає за свій парад у москві більше, ніж за всю іншу росію, — додав президент
-   🫡https://t.me/operativnoZSU/
+   خواهر علی محمدی: Sahar38433 📡 @VahidOnline
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000003  2026-05-06 13:58  [BACKFILL]
+🟢 #000003  2026-05-06 20:06  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75276
+👀 views=144,005  ↗ forwards=170  🕯️ published=2026-05-06 16:17
+💬 Message
+   ♦️ دونالد ترامپ، رئیس‌جمهوری ایالات متحده روز چهارشنبه ۱۶ اردیبهشت، در تماس تلفنی با شبکه
+   پی‌بی‌اس اعلام کرد ایالات متحده به توافقی برای پایان جنگ با ایران نزدیک شده است. او اشاره
+   کرد که این توافق ممکن است شامل انتقال ذخیره اورانیوم با غنای بالای ایران به آمریکا باشد.
+   ترامپ با ابراز خوش‌بینی نسبت به توقف جنگ پیش از سفر هفته آینده‌اش به چین، هشدار داد که در
+   صورت شکست مذاکرات، حملات سنگین هوایی از سر گرفته خواهد شد. @VahidOOnLine 📡 @VahidOnline
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000004  2026-05-06 20:06  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75277
+👀 views=136,909  ↗ forwards=195  🕯️ published=2026-05-06 16:47
+💬 Message
+   محمدباقر قالیباف، رئیس‌ مجلس شورای اسلامی و مذاکره‌کننده ارشد ایران در مذاکرات با آمریکا،
+   می‌گوید واشینگتن با اجرای محاصره دریایی و فشار اقتصادی قصد دارد «ما را تسلیم کند» و درباره
+   تأثیر این فشارها بر وضعیت جامعه ابراز نگرانی کرد. او در یک فایل صوتی که رسانه‌های ایران روز
+   چهارشنبه منتشر کردند، گفت: «ما احتمال حمله نظامی و مخصوصاً حملات تروریستی را کم نمی‌دانیم
+   اما آن بخشی از طراحی دشمن که به جامعه باز می‌گردد، ضعیف‌کردن ایران از درون است.» وزیر
+   خزانه‌داری آمریکا روز یکشنبه اعلام کرد که دولت دونالد ترامپ همزمان با جنگ، «محاصره اقتصادی»
+   علیه ایران را ترتیب داده و در حال «خفه کردن» حکومت ایران است. او مدعی شد که جمهوری اسلامی
+   حتی قادر نیست حقوق سربازان خود را بپردازد. قالیباف در فایل صوتی خود جنگ اخیر را «یکی از
+   بزرگ‌ترین جنگ‌های معاصر ایران» خواند و با طرح این ادعا که پیروزی در این جنگ، «ایر
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000005  2026-05-06 20:06  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75282
+👀 views=129,111  ↗ forwards=744  🕯️ published=2026-05-06 17:15
+💬 Message
+   'یکشنبه ۱۰ اسفند' ویدیوی دریافتی با شرح: 'انفجار حمله به سپاه کهنز #شهریار از دوربین ماشین.
+   تازه تونستم به اینترنت وصل بشم.' Vahid 📡 @VahidOnline
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000006  2026-05-06 20:06  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75283
+👀 views=117,382  ↗ forwards=77  🕯️ published=2026-05-06 17:38
+💬 Message
+   خواهر مصطفی حیدری‌تبار: Akitakii731 📡 @VahidOnline
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000007  2026-05-06 20:06  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75285
+👀 views=127,388  ↗ forwards=208  🕯️ published=2026-05-06 17:41
+💬 Message
+   سنتکام در بیانیه‌ای اعلام کرده نیروهای آمریکایی در دریای عمان «در چارچوب اجرای محاصره»، یک
+   نفتکش خالی با پرچم ایران را که در حال حرکت به سمت یکی از بنادر ایران بود، از کار انداختند.
+   سنتکام اعلام کرد پیش از این اقدام، چندین هشدار به این نفتکش داده شده، اما خدمه از دستورات
+   تبعیت نکرده‌اند. در ادامه آمده است که نیروهای آمریکایی با شلیک چند گلوله از توپ ۲۰ میلی‌متری
+   یک جنگنده اف/ای-۱۸ سوپر هورنت سکان نفتکش را از کار انداختند. @VahidOOnLine فکر کنم ترامپ
+   قانون گذاشته از یه حدی بیشتر نباید خرج محاصره دریایی بشه. نفتکش قبلی را با توپ ناوشکن متوقف
+   کردند این یکی را با تیربار اف-۱۸ زدند به سکانش. _KhodaBiamorz 📡 @VahidOnline
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000008  2026-05-06 20:06  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75286
+👀 views=120,611  ↗ forwards=797  🕯️ published=2026-05-06 17:59
+💬 Message
+   1000pa2 📡 @VahidOnline
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000009  2026-05-06 20:09  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75287
+👀 views=121,415  ↗ forwards=109  🕯️ published=2026-05-06 18:09
+💬 Message
+   بنیامین نتانیاهو، نخست‌وزیر اسرائیل در آغاز جلسه کابینه خود امروز(چهارشنبه) به موضوع ایران و
+   همکاری با آمریکا در این زمینه اشاره کرده است. آقای نتانیاهو درباره ارتباط با ایالات متحده
+   گفته است: «هماهنگی کاملی بین ما وجود دارد؛ هیچ غافلگیری وجود ندارد. ما اهداف مشترکی داریم و
+   مهمترین هدف، خارج کردن تمام مواد غنی‌شده از ایران و برچیدن قابلیت‌های غنی‌سازی ایران است.»
+   نخست وزیر اسرائیل گفته است:«رئیس جمهور ترامپ معتقد است که می‌تواند به هر طریقی به این هدف
+   دست یابد. با این حال، ما برای هر سناریویی آماده هستیم و این دستورالعملی است که من به ارتش
+   اسرائیل و سازمان‌های امنیتی‌مان داده‌ام. اسرائیل از همیشه قوی‌تر است؛ ایران و نیروهای نیابتی
+   آن از همیشه ضعیف‌تر هستند.» او گفته است: «ما در حال حفظ ارتباط مداوم با دوستانمان در ایالات
+   متحده هستیم. من تقریبا هر روز با رئیس جمهور ترامپ صحبت می‌کنم. مردم م
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000010  2026-05-06 20:09  [BACKFILL]
+📣 @VahidOnline · Vahid Online
+🏷️  topic=geopolitics  tags=telegram, geopolitics, iran
+🔗 https://t.me/VahidOnline/75289
+👀 views=76,947  ↗ forwards=84  🕯️ published=2026-05-06 19:08
+💬 Message
+   ارتش اسرائیل عصر روز چهارشنبه در حمله هوایی به منطقه ضاحیه، حومه جنوبی بیروت، که تحت نفوذ
+   حزب‌الله است، فرمانده یگان نخبه «رضوان» این گروه را هدف قرار داد. این نخستین حمله به حومه
+   بیروت از زمان آتش‌بسی بود که روز ۲۷ فروردین بین اسرائیل و حزب‌الله برقرار شد، هرچند
+   درگیری‌ها در جنوب لبنان متوقف نشده است. در بیانیه مشترک بنیامین نتانیاهو، نخست‌وزیر اسرائیل،
+   و یسرائیل کاتس، وزیر دفاع، آمده است: «عوامل رضوان به رهبری این فرمانده مسئول شلیک به مناطق
+   مسکونی اسرائیل و آسیب رساندن به نیروهای ارتش اسرائیل بودند.» خبرگزاری فرانسه به نقل از یک
+   منبع نزدیک به حزب‌الله اعلام کرد که «مالک بلّوط، فرمانده عملیات در یگان رضوان» در این حمله
+   کشته شده است. @VahidHeadline 📡 @VahidOnline
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000011  2026-05-06 20:09  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131823
-👀 views=162  ↗ forwards=1  🕯️ published=2026-05-05 20:01
+🔗 https://t.me/firstsquaw/131864
+👀 views=174  ↗ forwards=1  🕯️ published=2026-05-05 23:15
 💬 Message
-   DOW JONES UNOFFICIALLY CLOSES UP 356.32 POINTS, OR 0.73 PERCENT, AT 49,298.22 S&P 500
-   UNOFFICIALLY CLOSES UP 59.21 POINTS, OR 0.82 PERCENT, AT 7,259.96 NASDAQ UNOFFICIALLY CLOSES
-   UP 257.82 POINTS, OR 1.03 PERCENT, AT 25,325.62 (@FirstSquaw)
+   US SEC OF STATE RUBIO: WE DON'T NEED ANY DESTABILIZING EVENTS TO OCCUR WITH REGARDS TO
+   TAIWAN (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000004  2026-05-06 13:58  [BACKFILL]
+🟢 #000012  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131824
-👀 views=165  ↗ forwards=2  🕯️ published=2026-05-05 20:09
+🔗 https://t.me/firstsquaw/131865
+👀 views=172  ↗ forwards=1  🕯️ published=2026-05-05 23:25
 💬 Message
-   Strategy Q1 2026 Earnings Currently Holds 818,334 BTC Rev. $124.3M (est $120M) Cash & Cash
-   Equivalents $2.21B (est $3.42B) (@FirstSquaw)
+   FITCH REVISES GOLDMAN SACHS OUTLOOK TO POSITIVE; AFFIRMS LONG TERM IDR AT ‘A’ (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000005  2026-05-06 13:58  [BACKFILL]
+🟢 #000013  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131825
-👀 views=154  ↗ forwards=2  🕯️ published=2026-05-05 20:16
+🔗 https://t.me/firstsquaw/131866
+👀 views=174  ↗ forwards=1  🕯️ published=2026-05-05 23:34
 💬 Message
-   AMD OUTLOOK Q2 REVENUE USD 11,200 MILLION VS. IBES ESTIMATE USD 10,516 MILLION || Q1 REVENUE
-   USD 10,253 MILLION VS. IBES ESTIMATE USD 9,892 MILLION || Q1 EPS USD 0.84 || Q1 GROSS MARGIN
-   53% || Q1 NET INCOME USD 1,383 MILLION || Q1 ADJUSTED EPS USD 1.37 VS. IBES ESTIMATE USD
-   1.29 || Q1 ADJUSTED NET INCOME USD 2,265 MILLION VS. IBES ESTIMATE USD 2,114 MILLION
+   ALJAZEERA TEHRAN BUREAU CHIEF ON X: ACCORDING TO SOME INFORMATION, THE IRANIAN RESPONSE TO
+   THE LATEST AMERICAN AMENDMENTS MAY BE ON ITS WAY TO WASHINGTON (@FirstSquaw)
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000014  2026-05-06 20:10  [BACKFILL]
+📣 @firstsquaw · First Squawk (Financial Feeds)
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/firstsquaw/131867
+👀 views=180  ↗ forwards=1  🕯️ published=2026-05-05 23:48
+💬 Message
+   IRAN FM ARRIVES IN BEIJING FOR TALKS WITH CHINESE COUNTERPART – TASNIM ON TELEGRAM
    (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000006  2026-05-06 13:58  [BACKFILL]
+🟢 #000015  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131826
-👀 views=146  ↗ forwards=2  🕯️ published=2026-05-05 20:20
+🔗 https://t.me/firstsquaw/131868
+👀 views=184  ↗ forwards=1  🕯️ published=2026-05-05 23:48
 💬 Message
-   AMD Q1 2026 Earnings - Adj EPS $1.37 (est $1.28) - Rev. $10.25B (est $9.89B) - Expenses
-   $2.40B (est $2.26B) - Adj. Oper Income $2.54B (est $2.41B) - Adj. Oper Margin 25% (est
-   24.3%) - CAPEX $389M (est $215.2M) - Sees Q2 Rev. $10.90B To $11.50B (est $10.52B) - Sees Q2
-   Adj Gross Margin About 56% (est 55.3%) - Expect Server Growth To Accelerate Meaningfully -
-   Data Center Primary Driver Of Revenue Earnings Growth (@FirstSquaw)
+   VIVEK RAMASWAMY WINS OHIO REPUBLICAN GOVERNOR PRIMARY – AP PROJECTS (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000007  2026-05-06 13:58  [BACKFILL]
+🟢 #000016  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131827
-👀 views=144  ↗ forwards=2  🕯️ published=2026-05-05 20:23
+🔗 https://t.me/firstsquaw/131869
+👀 views=182  ↗ forwards=1  🕯️ published=2026-05-05 23:59
 💬 Message
-   IRANIAN FOREIGN MINISTRY SPOKESPERSON DENIES UAE ACCUSATION THAT IRAN FIRED MISSILES AND
-   DRONES AGAINST IT, SAYS IRAN'S DEFENSIVE ACTIONS WERE EXCLUSIVELY DIRECTED AT THE U.S. -
-   STATEMENT (@FirstSquaw)
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000008  2026-05-06 13:58  [BACKFILL]
-📣 @firstsquaw · First Squawk (Financial Feeds)
-🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131828
-👀 views=140  ↗ forwards=2  🕯️ published=2026-05-05 20:27
-💬 Message
-   OCCIDENTAL PETROLEUM Q1 2026 EARNINGS ADJ NET $1.07B (EST $600.3M) - ADJ EPS $1.06 (EST 64C)
-   - REALIZED OIL PRICE/BBL $69.91 - TOTAL AVG. GLOBAL PRODUCTION 1,426 MBOED - REALIZED US NAT
-   GAS PRICE/MCF $1.01 - STILL SEES FY CAPEX $5.5B TO $5.9B (EST $5.78B) - SEES FY PRODUCTION
-   1,410 TO 1,460 MBOED, SAW 1,420 TO 1,480 (@FirstSquaw)
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000009  2026-05-06 13:58  [BACKFILL]
-📣 @firstsquaw · First Squawk (Financial Feeds)
-🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131829
-👀 views=150  ↗ forwards=2  🕯️ published=2026-05-05 20:27
-💬 Message
-   SUPER MICRO COMPUTER Q1 2026 EARNINGS ADJ EPS 84C (EST 63C) - NET SALES $10.24B (EST
-   $12.45B) - ADJ GROSS MARGIN 10.1% (EST 6.15%) - SEES Q4 ADJ FPS 65C TO 79C (EST 57C) - SEES
-   Q4 NET SALES $11.08 TO $12.58 (EST $11.16B) - SEES FY SALES $38.9B TO $40.4B, SAW AT LEAST
-   $40.0B (@FirstSquaw)
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000010  2026-05-06 13:58  [BACKFILL]
-📣 @firstsquaw · First Squawk (Financial Feeds)
-🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131830
-👀 views=157  ↗ forwards=1  🕯️ published=2026-05-05 20:27
-💬 Message
-   EMERSON Q1 2026 EARNINGS ADJ EPS $1.54 (EST $1.53) - UNDERLYING SALES +0.5% (EST +1.73%) -
-   NET SALES $4.56B (EST $4.6B) - SEES FY EPS $4.79 TO $4.89, SAW $4.78 TO $4.93 - SEES FY ADJ
-   EPS $6.45 TO $6.55, SAW $6.40 TO $6.55 - SEES FY UNDERLYING SALES ABOUT +3% (EST +3.83%)
+   GOLD RISES; TRUMP PAUSES ‘PROJECT FREEDOM’ TO SEE IF IRAN DEAL CAN BE FINALIZED
    (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000011  2026-05-06 13:58  [BACKFILL]
+🟢 #000017  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131831
-👀 views=164  ↗ forwards=1  🕯️ published=2026-05-05 20:27
+🔗 https://t.me/firstsquaw/131870
+👀 views=180  ↗ forwards=1  🕯️ published=2026-05-06 00:02
 💬 Message
-   EA Q4 2026 EARNINGS ADJ EPS $1.59 (EST $2.37) - REV $2.12B (EST $1.997B) - NET BOOKINGS
-   $1.86B (EST $2B) (@FirstSquaw)
+   BRENT OIL FALLS 2% AT OPEN AS TRUMP SIGNALS IRAN PROGRESS (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000012  2026-05-06 13:58  [BACKFILL]
+🟢 #000018  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131832
-👀 views=166  ↗ forwards=2  🕯️ published=2026-05-05 20:27
+🔗 https://t.me/firstsquaw/131871
+👀 views=179  ↗ forwards=1  🕯️ published=2026-05-06 00:02
 💬 Message
-   ANTHROPIC COMMITS TO SPENDING $200 BILLION ON GOOGLE’S CLOUD AND CHIPS - THEINFORMATION
+   SOUTH KOREA'S KOSPI INDEX RISES 2.2% TO 7,093.01 AT OPEN (@FirstSquaw)
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000019  2026-05-06 20:10  [BACKFILL]
+📣 @firstsquaw · First Squawk (Financial Feeds)
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/firstsquaw/131872
+👀 views=181  ↗ forwards=1  🕯️ published=2026-05-06 00:03
+💬 Message
+   SAMSUNG SEES A 9.5% INCREASE, REACHING A $1 TRILLION MARKET CAP DUE TO MEMORY CHIP DEMAND.
    (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000013  2026-05-06 13:58  [BACKFILL]
+🟢 #000020  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131833
-👀 views=165  ↗ forwards=1  🕯️ published=2026-05-05 20:27
+🔗 https://t.me/firstsquaw/131873
+👀 views=180  ↗ forwards=1  🕯️ published=2026-05-06 00:06
 💬 Message
-   ALPHABET INC FILES FOR SIX PART NOTES OFFERING OF UP TO EUR 9 BLN - SEC FILING (@FirstSquaw)
+   US STATE DEPT: CLOSURE OF US CONSULATE GENERAL IN PESHAWAR PAKISTAN (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000014  2026-05-06 13:58  [BACKFILL]
+🟢 #000021  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131834
-👀 views=170  ↗ forwards=1  🕯️ published=2026-05-05 20:27
+🔗 https://t.me/firstsquaw/131874
+👀 views=182  ↗ forwards=1  🕯️ published=2026-05-06 00:11
 💬 Message
-   APPLE REACHES $250MN SETTLEMENT OVER DELAYED ‘AI SIRI’ - FT (@FirstSquaw)
+   BILLIONAIRE SAYS MAMDANI’S 'TAX THE RICH' VIDEO OUTSIDE HIS NYC APARTMENT WAS ‘CREEPY’ AND
+   ‘FRIGHTENING’ (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000015  2026-05-06 13:58  [BACKFILL]
+🟢 #000022  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131835
-👀 views=169  ↗ forwards=1  🕯️ published=2026-05-05 20:34
+🔗 https://t.me/firstsquaw/131875
+👀 views=176  ↗ forwards=1  🕯️ published=2026-05-06 00:15
 💬 Message
-   IRAN SAYS UAE IS COOPERATING WITH US, ISRAEL AGAINST TEHRAN (@FirstSquaw)
+   EUROSTOXX 50 FUTURES RISE 0.6%, DAX FUTURES UP 0.6%, FTSE FUTURES GAIN 0.9% (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000016  2026-05-06 13:58  [BACKFILL]
+🟢 #000023  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131836
-👀 views=169  ↗ forwards=1  🕯️ published=2026-05-05 20:50
+🔗 https://t.me/firstsquaw/131876
+👀 views=174  ↗ forwards=1  🕯️ published=2026-05-06 00:19
 💬 Message
-   US COMMERCIAL SHIPS HAD MILITARY SECURITY ABOARD DURING HORMUZ TRANSIT, SOURCES SAY - NBC
+   BOK EXPECTS CPI TO RISE FURTHER IN MAY (@FirstSquaw)
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000024  2026-05-06 20:10  [BACKFILL]
+📣 @firstsquaw · First Squawk (Financial Feeds)
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/firstsquaw/131877
+👀 views=169  ↗ forwards=1  🕯️ published=2026-05-06 00:24
+💬 Message
+   SPOT GOLD RISES NEARLY 1% TO $4,599.59/OZ (@FirstSquaw)
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000025  2026-05-06 20:10  [BACKFILL]
+📣 @firstsquaw · First Squawk (Financial Feeds)
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/firstsquaw/131878
+👀 views=165  ↗ forwards=1  🕯️ published=2026-05-06 00:40
+💬 Message
+   Asia-Pacific stocks rose at the open, tracking strong gains in U.S. markets overnight
    (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000017  2026-05-06 13:58  [BACKFILL]
+🟢 #000026  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131837
-👀 views=167  ↗ forwards=2  🕯️ published=2026-05-05 21:11
+🔗 https://t.me/firstsquaw/131879
+👀 views=164  ↗ forwards=1  🕯️ published=2026-05-06 00:45
 💬 Message
-   AMD SEES CPU MARKET GROWING MORE THAN 35% ANNUALLY TO 2030 (@FirstSquaw)
+   ASIAN CURRENCIES MOSTLY STRENGTHEN AMID RISK-ON SENTIMENT-WSJ (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000018  2026-05-06 13:58  [BACKFILL]
+🟢 #000027  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131838
-👀 views=168  ↗ forwards=1  🕯️ published=2026-05-05 21:13
+🔗 https://t.me/firstsquaw/131880
+👀 views=169  ↗ forwards=1  🕯️ published=2026-05-06 00:45
 💬 Message
-   ARGENTINA UPGRADED TO B- BY FITCH (@FirstSquaw)
+   OIL FALLS ON HOPES OF U.S.-IRAN PEACE DEAL-WSJ (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000019  2026-05-06 13:58  [BACKFILL]
+🟢 #000028  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131839
-👀 views=165  ↗ forwards=2  🕯️ published=2026-05-05 21:20
+🔗 https://t.me/firstsquaw/131881
+👀 views=166  ↗ forwards=1  🕯️ published=2026-05-06 00:45
 💬 Message
-   AMD EXPECTS TO BEAT 80% LONG TERM TARGET IN DATA CENTERS (@FirstSquaw)
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000020  2026-05-06 13:58  [BACKFILL]
-📣 @firstsquaw · First Squawk (Financial Feeds)
-🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131840
-👀 views=164  ↗ forwards=1  🕯️ published=2026-05-05 21:25
-💬 Message
-   ALPHABET FILES FOR FOUR-PART NOTES OFFERING OF C$8.5 BLN - SEC FILING (@FirstSquaw)
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000021  2026-05-06 13:58  [BACKFILL]
-📣 @firstsquaw · First Squawk (Financial Feeds)
-🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131841
-👀 views=168  ↗ forwards=1  🕯️ published=2026-05-05 21:31
-💬 Message
-   MICROSOFT, GOOGLE AND XAI COLLABORATE WITH US GOVERNMENT ON EARLY AI MODEL RISK EVALUATIONS.
+   GOLD RISES; TRUMP PAUSES ‘PROJECT FREEDOM’ TO SEE IF IRAN DEAL CAN BE FINALIZED-WSJ
    (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000022  2026-05-06 13:58  [BACKFILL]
+🟢 #000029  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131842
-👀 views=168  ↗ forwards=1  🕯️ published=2026-05-05 21:31
+🔗 https://t.me/firstsquaw/131882
+👀 views=168  ↗ forwards=1  🕯️ published=2026-05-06 00:49
 💬 Message
-   JAPAN DENIES PLANS FOR EXTRA BUDGET AS YEN, BOND MARKETS REMAIN VOLATILE (@FirstSquaw)
+   Canadian Solar elevates Hong Kong role amid industry slump, geopolitical strain-scmp
+   (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000023  2026-05-06 13:58  [BACKFILL]
+🟢 #000030  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131843
-👀 views=165  ↗ forwards=1  🕯️ published=2026-05-05 21:33
+🔗 https://t.me/firstsquaw/131883
+👀 views=164  ↗ forwards=1  🕯️ published=2026-05-06 00:50
 💬 Message
-   US: RUBIO SPOKE WIT RUSSIAN FORMIN LAVROV (@FirstSquaw)
+   Market cap of Samsung Electronics exceeds $1 trillion milestone (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000024  2026-05-06 13:58  [BACKFILL]
+🟢 #000031  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131844
-👀 views=159  ↗ forwards=1  🕯️ published=2026-05-05 21:47
+🔗 https://t.me/firstsquaw/131884
+👀 views=162  ↗ forwards=1  🕯️ published=2026-05-06 00:51
 💬 Message
-   SAUDI CABINET CHAIRED BY THE CROWN PRINCE: SHIPS' PASSAGE THROUGH THE STRAIT OF HORMUZ MUST
-   BE ENSURED WITHOUT RESTRICTIONS (@FirstSquaw)
+   Global equities gauge MSCI All-Country World Index rises 0.2% to a record level
+   (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000025  2026-05-06 13:58  [BACKFILL]
+🟢 #000032  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131845
-👀 views=155  ↗ forwards=1  🕯️ published=2026-05-05 21:56
+🔗 https://t.me/firstsquaw/131885
+👀 views=162  ↗ forwards=1  🕯️ published=2026-05-06 00:51
 💬 Message
-   AMD SHARES EXTEND GAIN TO 11% AFTER RESULTS, UPBEAT FORECAST (@FirstSquaw)
+   Emerging market equities surge as MSCI EM Index gains 1.5% to a record level (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000026  2026-05-06 13:58  [BACKFILL]
+🟢 #000033  2026-05-06 20:10  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131846
-👀 views=151  ↗ forwards=2  🕯️ published=2026-05-05 22:10
+🔗 https://t.me/firstsquaw/131886
+👀 views=164  ↗ forwards=1  🕯️ published=2026-05-06 00:54
 💬 Message
-   UAE PRESIDENT, NETANYAHU SPEAK ON THE PHONE - WAM (@FirstSquaw)
+   Australian dollar strengthens 0.53% to $0.7221 (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000027  2026-05-06 13:58  [BACKFILL]
+🟢 #000034  2026-05-06 20:11  [BACKFILL]
 📣 @firstsquaw · First Squawk (Financial Feeds)
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/firstsquaw/131847
-👀 views=153  ↗ forwards=1  🕯️ published=2026-05-05 22:10
+🔗 https://t.me/firstsquaw/131887
+👀 views=157  ↗ forwards=1  🕯️ published=2026-05-06 00:55
 💬 Message
-   PRUDENTIAL PROFIT RISES EVEN AS FIRM GRAPPLES WITH JAPAN PAUSE - BBG (@FirstSquaw)
+   NZD gains 0.51%, trading at $0.5917 (@FirstSquaw)
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000028  2026-05-06 13:58  [BACKFILL]
+🟢 #000035  2026-05-06 20:11  [BACKFILL]
+📣 @firstsquaw · First Squawk (Financial Feeds)
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/firstsquaw/131888
+👀 views=155  ↗ forwards=1  🕯️ published=2026-05-06 01:00
+💬 Message
+   Australian PM Albanese announces package worth more than A$10 billion (@FirstSquaw)
+
+────────────────────────────────────────────────────────────────────────────────────────────────
+🟢 #000036  2026-05-06 20:11  [BACKFILL]
 📣 @zerohedge · ZeroHedge
 🏷️  topic=finance  tags=telegram, finance, global
-🔗 https://t.me/zerohedge/172092
-👀 views=103  ↗ forwards=0  🕯️ published=2026-05-06 13:44
+🔗 https://t.me/zerohedge/172093
+👀 views=504  ↗ forwards=0  🕯️ published=2026-05-06 14:19
 💬 Message
-   U.S. Gasoline Tops $4.50 As "Shock & Awe" Level Approaches
-   https://www.zerohedge.com/energy/us-gasoline-top-450-shock-awe-level-approaches
+   Israel Says Preparing For Escalation With Iran, Didn't Know Deal Was Close: 'Series Of
+   Targets Ready'
+   https://www.zerohedge.com/geopolitical/israel-says-preparing-escalation-iran-didnt-know-deal-was-close-series-targets-ready
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000029  2026-05-06 13:58  [BACKFILL]
-📣 @whale_alert_io · Whale Alert
-🏷️  topic=crypto  tags=telegram, crypto, global
-🔗 https://t.me/whale_alert_io/100216
-👀 views=441  ↗ forwards=7  🕯️ published=2026-05-06 13:56
+🟢 #000037  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172094
+👀 views=492  ↗ forwards=0  🕯️ published=2026-05-06 14:31
 💬 Message
-   📈 📈 📈 Telegram to replace TON Foundation, become largest validator and cut fees ~6x —
-   Toncoin jumps ~69% in 3 days Read Analysis
+   UBS Says Transport Stock Rout Is "Overdone" After Amazon News
+   https://www.zerohedge.com/markets/ubs-says-transport-stock-rout-overdone-after-amazon-news
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000030  2026-05-06 13:58  [BACKFILL]
-📣 @thehackernews · The Hacker News
-🏷️  topic=cyber  tags=telegram, cyber, global
-🔗 https://t.me/thehackernews/8948
-👀 views=569  ↗ forwards=6  🕯️ published=2026-05-06 13:50
+🟢 #000038  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172095
+👀 views=480  ↗ forwards=0  🕯️ published=2026-05-06 14:48
 💬 Message
-   ✅ GRC Leader’s Checklist: MCP Server Deployment. MCP gives your existing LLM direct,
-   governed access to your live GRC data. No custom builds required. ✨ Get the GRC leader’s
-   checklist for steps to deploy your server and start querying live data today:
-   https://thn.news/grc-mcp-checklist
+   WTI Holds Rebound Gains As US Fuel Exports Hit Record High, Production Dips, Huge SPR Drain
+   https://www.zerohedge.com/markets/wti-xxxx-us-oil-exports-hit-record-100mm-barrels-last-week-huge-spr-drain
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000031  2026-05-06 13:59  [BACKFILL]
-📣 @thehackernews · The Hacker News
-🏷️  topic=cyber  tags=telegram, cyber, global
-🔗 https://t.me/thehackernews/8949
-👀 views=395  ↗ forwards=7  🕯️ published=2026-05-06 13:52
+🟢 #000039  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172096
+👀 views=490  ↗ forwards=0  🕯️ published=2026-05-06 14:53
 💬 Message
-   🚨 Iran-linked MuddyWater ran a false flag ransomware attack in early 2026. Attackers used
-   Microsoft Teams social engineering to steal credentials and bypass MFA, prioritizing data
-   exfiltration and persistent access over encryption. Read the full story:
-   https://thehackernews.com/2026/05/muddywater-uses-microsoft-teams-to.html
+   ABC Reporter Fabricated Trump Call, Made Himself The Focus After Assassination Attempt
+   https://www.zerohedge.com/political/abc-reporter-fabricated-trump-call-made-himself-focus-after-assassination-attempt
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000032  2026-05-06 13:59  [BACKFILL]
-📣 @abualiexpress · Abu Ali Express
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/abualiexpress/121798
-👀 views=1,082  ↗ forwards=1  🕯️ published=2026-05-06 13:57
+🟢 #000040  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172097
+👀 views=490  ↗ forwards=0  🕯️ published=2026-05-06 15:21
 💬 Message
-   כלי תקשורת לבנוניים : 4 הרוגים בתקיפות של צה"ל על הכפר סכסכיה בדרום לבנון (קו החוף הלבנוני
-   בין צור לצידון). כדי להגיב לכתבה לחצו כאן
+   China Wants Iran War End, Pushes 'Immediate' Hormuz Reopening During Araghchi Visit Ahead Of
+   Trump-Xi Summit
+   https://www.zerohedge.com/geopolitical/china-wants-iran-war-end-pushes-immediate-hormuz-reopening-during-araghchi-visit-ahead
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000033  2026-05-06 13:59  [BACKFILL]
-📣 @casusbellilive · Casus Belli
-🏷️  topic=conflict  tags=telegram, conflict, global
-🔗 https://t.me/casusbellilive/254840
-👀 views=183  ↗ forwards=1  🕯️ published=2026-05-06 13:54
+🟢 #000041  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172098
+👀 views=451  ↗ forwards=0  🕯️ published=2026-05-06 15:58
 💬 Message
-   ZRPZ «Pancir-S1» VKS RF s novými štvoritými štartovacími blokmi TKB-1056 pre protiletadlové
-   riadené strely blízkeho dosahu TKB-1055 «Gvozd» na streche budovy Ministerstva obrany RF v
-   Moskve, 5. mája 2026. 🌐 Zdroj: @infomil_live 🔗 Link: https://t.me/infomil_live/29607
-   https://t.me/casusbellilive Truth over narrative 24/7 WEB | CONTACT | SHOP 📅 Vytvorené:
-   2026-05-06 15:45:53
+   Lutnick Testifying Today On Epstein Ties After Dems Demand Subpoena
+   https://www.zerohedge.com/political/lutnick-testifying-today-epstein-ties-after-dems-demand-subpoena
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000034  2026-05-06 13:59  [BACKFILL]
-📣 @casusbellilive · Casus Belli
-🏷️  topic=conflict  tags=telegram, conflict, global
-🔗 https://t.me/casusbellilive/254841
-👀 views=182  ↗ forwards=0  🕯️ published=2026-05-06 13:54
+🟢 #000042  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172099
+👀 views=440  ↗ forwards=0  🕯️ published=2026-05-06 16:19
 💬 Message
-   ‼️🇮🇷🇺🇸Obsahujú neprijateľné požiadavky: Irán zatiaľ nedal odpoveď na posledný návrh USA, —
-   Tasnim ▪️Napriek tvrdeniam amerických médií o približovaní sa Iránu a USA k dohode, Teherán
-   ešte nedal oficiálnu odpoveď na posledný americký text, ktorý obsahuje niektoré neprijateľné
-   body. ▪️Dnešná propaganda amerických médií je zameraná na ospravedlnenie ústupu Trumpa od
-   jeho nedávnych nepriateľských krokov. ➖"Nie je jasné, koľkokrát sa USA musia udrieť hlavou o
-   stenu, aby pochopili skutočné okolnosti na mieste. Skúsenosť by však mala ukázať Američanom,
-   že jazyk sily a hrozieb nie je len neúčinný proti Iránu, ale aj zhoršuje situáciu pre
-   samotných Američanov a ďalších nepriateľov," píše vydanie. ▪️Irán odovzdal USA svoj plán zo
-   14 bodov, Washington poslal svoju verziu. Irán ju študoval, no potom
+   Give Peace A Chance https://www.zerohedge.com/economics/give-peace-chance
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000035  2026-05-06 13:59  [BACKFILL]
-📣 @casusbellilive · Casus Belli
-🏷️  topic=conflict  tags=telegram, conflict, global
-🔗 https://t.me/casusbellilive/254842
-👀 views=122  ↗ forwards=1  🕯️ published=2026-05-06 13:56
+🟢 #000043  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172100
+👀 views=433  ↗ forwards=0  🕯️ published=2026-05-06 16:39
 💬 Message
-   Svetové zásoby ropných produktov, ako je benzín, nafta a letecké palivo, zostávajú len na 45
-   dní, informuje Financial Times s odvolaním sa na údaje Goldman Sachs. Obzvlášť výrazné
-   zníženie zásob prebieha v Ázii a Afrike. https://t.me/casusbellilive Truth over narrative
-   24/7 WEB | CONTACT | SHOP 📅 Vytvorené: 2026-05-06 15:34:08
+   "Data Centers Require Reliable And Predictable Energy": Riot Partners With Terrestrial
+   Energy
+   https://www.zerohedge.com/energy/data-centers-require-reliable-and-predictable-energy-riot-partners-terrestrial-energy
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000036  2026-05-06 13:59  [BACKFILL]
-📣 @kpszsu · Air Force of the Armed Forces of Ukraine
-🏷️  topic=breaking  tags=telegram, breaking, ukraine
-🔗 https://t.me/kpszsu/61447
-👀 views=20,182  ↗ forwards=1  🕯️ published=2026-05-06 13:47
+🟢 #000044  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172101
+👀 views=443  ↗ forwards=0  🕯️ published=2026-05-06 16:49
 💬 Message
-   🛵 Чернігівщина: БпЛА - в районі Холмів.
+   It Just Keeps Happening Over And Over Again...
+   https://www.zerohedge.com/political/it-just-keeps-happening-over-and-over-again
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000037  2026-05-06 13:59  [BACKFILL]
-📣 @kpszsu · Air Force of the Armed Forces of Ukraine
-🏷️  topic=breaking  tags=telegram, breaking, ukraine
-🔗 https://t.me/kpszsu/61448
-👀 views=8,073  ↗ forwards=1  🕯️ published=2026-05-06 13:56
+🟢 #000045  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172102
+👀 views=389  ↗ forwards=0  🕯️ published=2026-05-06 17:29
 💬 Message
-   🛵 Чернігівщина: група БпЛА у напрямку Батурина.
+   Ken Griffin "Doubles Down On Miami" After Mamdani's "Creepy And Weird" Video Vilifying Him
+   https://www.zerohedge.com/markets/ken-griffin-doubles-down-miami-after-mamdanis-creepy-and-weird-video-vilifying-him
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000038  2026-05-06 13:59  [BACKFILL]
-📣 @CIG_telegram · CIG / Conflict Intelligence
-🏷️  topic=conflict  tags=telegram, conflict, global
-🔗 https://t.me/CIG_telegram/74937
-👀 views=245  ↗ forwards=10  🕯️ published=2026-05-06 13:57
+🟢 #000046  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172103
+👀 views=339  ↗ forwards=0  🕯️ published=2026-05-06 18:08
 💬 Message
-   🔽 🇺🇸 🛢 US oil prices crash below $90/barrel, falling over -12%, on reports that the US and
-   Iran are on the verge of a deal to end the war. 📎 KobeissiLetter
+   Blue Energy & GE Vernova Bet On Gas Bridge-To-Nuclear For AI Power
+   https://www.zerohedge.com/energy/blue-energy-and-ge-vernova-bet-gas-bridge-nuclear-ai-power
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000039  2026-05-06 13:59  [BACKFILL]
-📣 @CIG_telegram · CIG / Conflict Intelligence
-🏷️  topic=conflict  tags=telegram, conflict, global
-🔗 https://t.me/CIG_telegram/74938
-👀 views=62  ↗ forwards=2  🕯️ published=2026-05-06 13:58
+🟢 #000047  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172104
+👀 views=314  ↗ forwards=0  🕯️ published=2026-05-06 18:28
 💬 Message
-   🔼 🇺🇸 🛢 US oil prices are experiencing a sharp reversal, now up +8% in 60 minutes, as doubts
-   grow over an Axios-reported potential deal to end the Iran War. This comes as Iran has
-   launched a new website called the "Persian Gulf Strait Authority." 📎 KobeissiLetter
+   'Don't Even Think About Selling': Mr. Gold Warns US 'Officially A Banana Republic'
+   https://www.zerohedge.com/precious-metals/dont-even-think-about-selling-mr-gold-warns-us-officially-banana-republic
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000040  2026-05-06 13:59  [BACKFILL]
-📣 @FotrosResistancee · Fotros Resistance
-🏷️  topic=conflict  tags=telegram, conflict, iran
-🔗 https://t.me/FotrosResistancee/21450
-👀 views=1,267  ↗ forwards=16  🕯️ published=2026-05-06 13:45
+🟢 #000048  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172105
+👀 views=299  ↗ forwards=0  🕯️ published=2026-05-06 18:43
 💬 Message
-   🇮🇷🇺🇸| BREAKING: According to Iranian think tank Meshkat, the wreckage belongs to a MQ-9A
-   Extended Range USAF drone. This means that Iran shot down a hostile MQ-9 Reaper drone during
-   a joint UAE-US operation near the Strait of Hormoz, this week. Meshkat analysed and came to
-   the conclusion that the wreckage belongs to a MQ-9A Extended Range, which is a newer
-   US-operated version with longer endurance. This would be 25th visual proof of a downed MQ-9
-   in Iran. @FotrosResistancee
+   'Still So Early On This Journey': Morgan Stanley Launches Lower-Cost Crypto Trading
+   https://www.zerohedge.com/crypto/still-so-early-journey-morgan-stanley-launches-lower-cost-crypto-trading
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000041  2026-05-06 13:59  [BACKFILL]
-📣 @FotrosResistancee · Fotros Resistance
-🏷️  topic=conflict  tags=telegram, conflict, iran
-🔗 https://t.me/FotrosResistancee/21452
-👀 views=747  ↗ forwards=4  🕯️ published=2026-05-06 13:53
+🟢 #000049  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172106
+👀 views=239  ↗ forwards=0  🕯️ published=2026-05-06 19:02
 💬 Message
-   🇮🇷🇺🇸| Footage reportedly is said to belong to the downing of the MQ-9A drone by Iranian air
-   defenses. @FotrosResistancee
+   'We Need People To Come Back': Dubai's Tourism Industry Reels As Foreigners Flee
+   https://www.zerohedge.com/geopolitical/we-need-people-come-back-dubais-tourism-industry-reels-foreigners-flee
 
 ────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000042  2026-05-06 14:00  [BACKFILL]
-📣 @LebUpdate · Lebanon Update
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/LebUpdate/60660
-👀 views=4,086  ↗ forwards=11  🕯️ published=2026-05-06 07:05
+🟢 #000050  2026-05-06 20:11  [BACKFILL]
+📣 @zerohedge · ZeroHedge
+🏷️  topic=finance  tags=telegram, finance, global
+🔗 https://t.me/zerohedge/172107
+👀 views=190  ↗ forwards=0  🕯️ published=2026-05-06 19:22
 💬 Message
-   ❗️The evil Jew targeted a building in Zelaya in West Bekaa where the mayor and his family
-   were present. The whole family was killed
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000043  2026-05-06 14:00  [BACKFILL]
-📣 @LebUpdate · Lebanon Update
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/LebUpdate/60661
-👀 views=3,976  ↗ forwards=16  🕯️ published=2026-05-06 07:18
-💬 Message
-   A wave of displacement from the towns of Al-Kousayrieh, Al-Ghassanieh, and Ansariyeh in
-   Saida district following the Israeli threat. 12 towns north the Litani are being evacuated
-   after Israeli threats of mass murder
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000044  2026-05-06 14:00  [BACKFILL]
-📣 @Middle_East_Spectator · Middle East Spectator
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/Middle_East_Spectator/31816
-👀 views=5,700  ↗ forwards=39  🕯️ published=2026-05-06 13:47
-💬 Message
-   — 🇮🇷 WATCH: Iran’s new Supreme Leader, Seyyed Mojtaba Khamenei, as a volunteer soldier at
-   the frontlines of the Iran-Iraq war in the mid 1980s @Middle_East_Spectator
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000045  2026-05-06 14:00  [BACKFILL]
-📣 @RezistanceTrench1 · Resistance Trench
-🏷️  topic=conflict  tags=telegram, conflict, middleeast
-🔗 https://t.me/RezistanceTrench1/64839
-👀 views=1,769  ↗ forwards=5  🕯️ published=2026-05-06 11:00
-💬 Message
-   🇮🇷 IRGC Navy's Command Center: We thank captains & shipowners in Persian Gulf & Gulf of Oman
-   for complying with Iran’s Strait of Hormuz regulations & contributing to regional maritime
-   security. With aggressor's threats neutralized & new protocols in place, safe, stable
-   passage through SOH will be ensured. 🚩 ResistanceTrench | Boost
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000046  2026-05-06 14:00  [BACKFILL]
-📣 @RezistanceTrench1 · Resistance Trench
-🏷️  topic=conflict  tags=telegram, conflict, middleeast
-🔗 https://t.me/RezistanceTrench1/64840
-👀 views=1,405  ↗ forwards=3  🕯️ published=2026-05-06 11:31
-💬 Message
-   🇮🇷📉🛢️🇺🇸Due to a possible deal to end the immoral war on Iran. Brent crude futures declined
-   more than 6 percent to about $100 a barrel, while US oil prices slid nearly 7 percent to $95
-   a barrel. Both benchmarks had shed about 4 percent in the previous session. Traders are
-   closely monitoring the situation in the Strait of Hormuz, after Trump paused his bogus
-   “Project Freedom” initiative to force ships navigate the waterway. 🔴 @DDGeopolitics |
-   Socials | Donate | Advertising
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000047  2026-05-06 14:00  [BACKFILL]
-📣 @RezistanceTrench1 · Resistance Trench
-🏷️  topic=conflict  tags=telegram, conflict, middleeast
-🔗 https://t.me/RezistanceTrench1/64841
-👀 views=345  ↗ forwards=3  🕯️ published=2026-05-06 13:46
-💬 Message
-   🇮🇱 A photo shows an Israeli soldier mocking a statue of Saint Mary by placing a cigarette at
-   its mouth, as the desecration of Christian symbols by Israeli occupation forces continues in
-   southern Lebanon. 🚩 ResistanceTrench | Boost
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000048  2026-05-06 14:00  [BACKFILL]
-📣 @RezistanceTrench1 · Resistance Trench
-🏷️  topic=conflict  tags=telegram, conflict, middleeast
-🔗 https://t.me/RezistanceTrench1/64842
-👀 views=289  ↗ forwards=2  🕯️ published=2026-05-06 13:48
-💬 Message
-   🇮🇷⚡️🇮🇱🇺🇸Footage captures the wreckage of an enemy spy drone that had been shot down over the
-   Strait of Hormuz by the Iranian Armed Forces last night. 🚩 ResistanceTrench | Boost
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000049  2026-05-06 14:00  [BACKFILL]
-📣 @RezistanceTrench1 · Resistance Trench
-🏷️  topic=conflict  tags=telegram, conflict, middleeast
-🔗 https://t.me/RezistanceTrench1/64843
-👀 views=239  ↗ forwards=1  🕯️ published=2026-05-06 13:50
-💬 Message
-   🇮🇷⚡️🇺🇸🇮🇱 Axios is a Zionist tool. 🚩 ResistanceTrench | Boost
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000050  2026-05-06 14:00  [BACKFILL]
-📣 @RezistanceTrench1 · Resistance Trench
-🏷️  topic=conflict  tags=telegram, conflict, middleeast
-🔗 https://t.me/RezistanceTrench1/64844
-👀 views=2  ↗ forwards=0  🕯️ published=2026-05-06 13:59
-💬 Message
-   🇮🇷 🇨🇳 Iran’s FM Araghchi on his trip to China. 🚩 ResistanceTrench | Boost
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000051  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58971
-👀 views=2,674  ↗ forwards=14  🕯️ published=2026-05-06 07:16
-💬 Message
-   ❗️Iran denies UAE attacks, warns of “decisive and regret-inducing” response Iran’s armed
-   forces denied carrying out any recent missile or drone attacks against the UAE, with state
-   media IRIB citing a spokesman for the Khatam al-Anbiya Central Headquarters who said no such
-   operations had taken place and that any action would have been “clearly and officially
-   announced.” The spokesman dismissed UAE Defense Ministry accusations as “baseless,” while
-   warning that any attack launched against Iran from UAE territory would trigger a “decisive
-   and regret-inducing” retaliation, and urged Abu Dhabi not to allow its territory to be used
-   by US or Israeli forces.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000052  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58972
-👀 views=2,394  ↗ forwards=10  🕯️ published=2026-05-06 07:23
-💬 Message
-   ❗️Iranian Foreign Ministry condemns UAE for cooperating with US & Israel: "The Ministry of
-   Foreign Affairs of the Islamic Republic of Iran, while condemning the destructive actions of
-   the rulers of Abu Dhabi in coordination with hostile parties against Iran—including the
-   continued hosting of their bases and military equipment—warns them of the dangerous
-   consequences of this situation for regional peace and stability. Over the past two days,
-   alongside the intensification of unlawful actions and provocative movements by US forces in
-   the region and their maritime activities under the pretext of “freedom of navigation,”
-   officials in Abu Dhabi have also taken positions contrary to the principles of good
-   neighborliness and the Charter of the United Nations by cooperating with hostile sides and
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000053  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58973
-👀 views=2,123  ↗ forwards=3  🕯️ published=2026-05-06 07:47
-💬 Message
-   ❗️Hezbollah announced three additional operations on 5 May 2026 in response to Israeli
-   violations, bringing the total to 18 • Targeted a gathering of Israeli soldiers in Rashaf at
-   16:30 using an attack drone. • Targeted the newly established Blat position in south Lebanon
-   at 18:00 with a rocket barrage. • Targeted Israeli military vehicles in Wadi al-Jamal,
-   between Mays al-Jabal and Houla, at 18:15 with artillery shells.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000054  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58974
-👀 views=3,722  ↗ forwards=26  🕯️ published=2026-05-06 08:07
-💬 Message
-   ❗️China calls US-Israeli war on Iran illegitimate, urges ceasefire and talks China said the
-   US–Israeli war against Iran is illegitimate during talks in Beijing between Foreign Minister
-   Wang Yi and his Iranian counterpart Abbas Araghchi, stressing the need to reduce tensions,
-   achieve a full ceasefire, and move toward direct negotiations. Araghchi welcomed China’s
-   stance condemning the war and said cooperation between Tehran and Beijing will grow
-   stronger.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000055  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58975
-👀 views=1,925  ↗ forwards=6  🕯️ published=2026-05-06 08:15
-💬 Message
-   ⭕️ This morning, the Israeli army issued new forced displacement orders for residents in
-   south Lebanon and the Bekaa in east Lebanon, including the towns of Kfar Shuba al-Siyad,
-   Ghassaniyeh, Mazraat al-Daoudiyeh, Bedias, Rihan, Bazourieh, Harouf, Haboush, Zalayeh,
-   Ansariya, Qlaileh, and Deir al-Zahrani.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000056  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58976
-👀 views=1,861  ↗ forwards=8  🕯️ published=2026-05-06 08:24
-💬 Message
-   ⭕️ LEBANON: Overnight and into the morning, Israeli attacks intensified across multiple
-   areas in southern Lebanon and the western Bekaa, alongside continued exchanges of fire.
-   Shortly after midnight, an airstrike targeted the town of Baraachit. At dawn, a strike in
-   Deir Kifa hit paramedics from the Islamic Health Authority, wounding three. By early
-   morning, the escalation expanded geographically. At approximately 08:18 AM, an Israeli
-   airstrike struck Zilaya in the western Bekaa. Minutes later, a drone strike targeted
-   Mayfadoun. Around the same time, the Israeli military reported intercepting a suspicious
-   aerial target over southern Lebanon and launching an interceptor toward another target. The
-   army also said that Hezbollah had launched rockets, explosive drones, and mortar shells,
-   some
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000057  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58977
-👀 views=1,843  ↗ forwards=9  🕯️ published=2026-05-06 08:28
-💬 Message
-   ⭕️ Two days in, Trump temporarily suspends "Project Freedom," allegedly at the request of
-   Pakistan, and to "see whether or not an agreement [with Iran] can be finalized and signed."
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000058  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58978
-👀 views=1,869  ↗ forwards=7  🕯️ published=2026-05-06 08:31
-💬 Message
-   ❗️Australia invests billions in fuel security as Hormuz blockade threatens supplies
-   Australian Prime Minister Anthony Albanese has unveiled a 10 billion dollar package designed
-   to fortify the country’s energy sovereignty against growing maritime instability. The
-   initiative establishes a government-owned reserve of approximately one billion liters,
-   ensuring the nation maintains at least 50 days of fuel supplies on its own shores. This move
-   seeks to insulate the domestic economy from the volatility of international energy markets
-   and the precarious nature of global shipping lanes. The decision follows mounting pressure
-   on Australia’s energy infrastructure, which currently relies on imports for 80 percent of
-   its fuel needs. Localized shortages have already begun to surface across the contin
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000059  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58979
-👀 views=1,655  ↗ forwards=2  🕯️ published=2026-05-06 08:57
-💬 Message
-   BREAKING | Israeli army reports a Hezbollah drone crossed over and made impact near the
-   border moments ago.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000060  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58980
-👀 views=1,734  ↗ forwards=9  🕯️ published=2026-05-06 08:57
-💬 Message
-   ❗️Iranian Foreign Minister Abbas Araghchi, who is currently in Beijing for meetings and
-   consultations with Chinese officials, held a phone call today with Saudi Foreign Minister
-   Faisal bin Farhan. During the conversation, both sides reviewed the latest regional
-   developments and emphasized the importance of continuing diplomatic efforts and cooperation
-   among regional countries to prevent and de-escalate tensions.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000061  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58981
-👀 views=1,792  ↗ forwards=11  🕯️ published=2026-05-06 08:58
-💬 Message
-   ❗️Spain urges EU to shield ICC, UN as Gaza genocide continues Spanish Prime Minister Pedro
-   Sanchez called on the European Commission on 6 May to activate the Anti-Coercion Instrument
-   to protect the independence of the International Criminal Court (ICC) and the UN, as well as
-   their efforts to end the genocide in Gaza. “We ask the Commission to activate the
-   Anti-Coercion Instrument, to protect the independence of the International Criminal Court
-   and the United Nations, and their actions to end the genocide in Gaza,” Sanchez said on X.
-   Sanchez said Spain would “not look the other way,” warning that punitive measures against
-   those who defend international justice threaten the wider human rights system. The Spanish
-   premier added that the EU cannot remain a bystander “in the face of this per
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000062  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58982
-👀 views=1,679  ↗ forwards=12  🕯️ published=2026-05-06 09:11
-💬 Message
-   VIDEO | Israeli bulldozers uproot olive trees at the northern entrance to the village of
-   Deir Istiya, northwest of Salfit in the occupied West Bank.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000063  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58983
-👀 views=1,826  ↗ forwards=6  🕯️ published=2026-05-06 09:11
-💬 Message
-   ❗️US petrol prices surge 50% amid Hormuz disruption and war on Iran Petrol prices in the
-   United States have climbed sharply, reaching an average of $4.48 per gallon, according to
-   the American Automobile Association (AAA), after rising 31 cents in the past week alone.
-   Prices are now 50 percent higher than before the US–Israel war on Iran, reflecting mounting
-   pressure on global energy markets. The spike is tied directly to disruptions in the Strait
-   of Hormuz, where a significant share of the world’s oil supply normally passes. Ongoing
-   hostilities and blockages in the waterway have left tankers stranded, tightening supply and
-   driving crude prices higher. Analysts warn that as long as flows remain constrained, upward
-   pressure on fuel prices will persist, with a “fundamental shortfall” in gl
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000064  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58984
-👀 views=1,745  ↗ forwards=11  🕯️ published=2026-05-06 09:20
-💬 Message
-   ❗️US struggles to curb flow of Chinese drone components to Iran & Russia Small Chinese firms
-   are openly exporting dual-use drone parts, such as engines, batteries, fiber-optic cables,
-   and microchips, to both countries, often bypassing or ignoring US restrictions. One company,
-   Xiamen Victory Technology, has reportedly marketed German-designed L550 drone engines linked
-   to Iran’s Shahed-136 attack drones during recent regional conflicts. US officials say
-   curbing this trade is challenging, as drones rely on widely available commercial components
-   that move easily through global supply chains. Many of these suppliers are small businesses
-   with limited exposure to US penalties and are increasingly operating in the open. (WSJ)
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000065  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58985
-👀 views=1,667  ↗ forwards=5  🕯️ published=2026-05-06 09:35
-💬 Message
-   BREAKING | Israeli forces set fire to a house in the neighborhood of Al-Maslakh in Nour
-   Shams refugee camp, in the occupied West Bank.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000066  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58986
-👀 views=1,801  ↗ forwards=15  🕯️ published=2026-05-06 09:35
-💬 Message
-   ❗️Poll shows US public rejecting Trump war on Iran A new PBS News/NPR/Marist poll shows
-   Trump’s war on Iran is becoming a serious political liability, with 60 percent of US
-   citizens disapproving of his handling of Iran and 61 percent saying US military action has
-   done more harm than good. The backlash is being fueled by soaring gas prices, wider economic
-   strain, and growing anger over the cost of the war at home. Sixty-three percent blame Trump
-   for high gas prices, while 62 percent say he has weakened the US role on the world stage.
-   The findings point to deep trouble for Republicans ahead of the midterms, with Democrats
-   leading on the generic ballot and showing stronger voter enthusiasm.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000067  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58987
-👀 views=1,711  ↗ forwards=11  🕯️ published=2026-05-06 10:05
-💬 Message
-   ❗️Netanyahu appoints Israeli settler who called for ethnic cleansing of Palestinians to lead
-   state land authority Israeli Prime Minister Benjamin Netanyahu has finalized the appointment
-   of Yehuda Eliyahu, a hardline settler and long-time ally of Finance Minister Bezalel
-   Smotrich, to head the Israel Land Authority. Eliyahu, the co-founder of the settler
-   organization Regavim, will now manage 92 percent of state land and a multi-billion shekel
-   budget. The move has been hailed by cabinet ministers as a strategic shift aimed at altering
-   the demographic balance in the Galilee and Negev, signaling towards unprecedented escalation
-   in the dispossession of Palestinian citizens within the 1948 territories. The appointment
-   comes despite significant legal opposition and warnings regarding Eliyahu’s h
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000068  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58988
-👀 views=1,781  ↗ forwards=5  🕯️ published=2026-05-06 10:08
-💬 Message
-   ❗️According to reports from Israeli Channel 15, two Israeli soldiers were wounded after a
-   pair of Hezbollah kamikaze drones detonated in close proximity to their position. The
-   injured personnel were evacuated to a hospital for medical treatment, and their families
-   have been notified of the incident. The network further noted that within the last hour,
-   Hezbollah has launched a series of explosive drones and rocket salvos targeting occupation
-   forces in southern Lebanon. In a separate engagement during the same period, the Israeli Air
-   Force reportedly intercepted a "hostile aerial target" over the region.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000069  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58989
-👀 views=1,651  ↗ forwards=4  🕯️ published=2026-05-06 10:16
-💬 Message
-   UPDATE | An Israeli airstrike from earlier today on the town of Zilaya, located in Lebanon's
-   western Bekaa, has resulted in the deaths of 4 people and at least 5 others wounded.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000070  2026-05-06 14:00  [BACKFILL]
-📣 @thecradlemedia · The Cradle
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/thecradlemedia/58990
-👀 views=1,613  ↗ forwards=3  🕯️ published=2026-05-06 10:28
-💬 Message
-   ❗️Gaza Ministry of Health: – “Total number of cases received at Gaza Strip hospitals over
-   the past 24 hours: • Martyrs: 4 (including 3 newly reported and 1 recovered from under the
-   rubble) • Injuries: 16” – “Since the ceasefire (11 October): • Total martyrs: 837 • Total
-   injuries: 2,381 • Total bodies recovered: 769”
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000071  2026-05-06 14:00  [BACKFILL]
-📣 @war_monitor · monitor
-🏷️  topic=breaking  tags=telegram, breaking, ukraine
-🔗 https://t.me/war_monitor/39549
-👀 views=48,601  ↗ forwards=3  🕯️ published=2026-05-06 13:29
-💬 Message
-   🇺🇦Там, де їхній крок — там наша свобода. Вони стоять там, де плавиться метал та замерзає
-   кров. Вони завжди попереду. Вони пишуть історію своїми кроками. Вони — це піхота! 🔫
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000072  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128815
-👀 views=47,415  ↗ forwards=34  🕯️ published=2026-05-06 05:07
-💬 Message
-   התקשורת באיראן על השהיית ״פרוייקט החירות״ של טראמפ: בסוכנות הידיעות האיראנית ״איסנא״ תיארו
-   את הכרזתו של טראמפ כ״כישלון אמריקני בהשגת יעדיהם בפרויקט״. לפי הדיווח, החלטתו של טראמפ הגיעה
-   לאחר ״עמדות נחרצות ואזהרות מצד איראן״. בסוכנות הידיעות תסנים פרסמו ברשת X: ״טראמפ נסוג״.
-   https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000073  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128816
-👀 views=42,893  ↗ forwards=31  🕯️ published=2026-05-06 05:17
-💬 Message
-   איחוד האמירויות: ראש הממשלה נתניהו שוחח עם נשיא איחוד האמירויות ביום שלישי וגינה את הירי
-   האיראני לעבר המדינה https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000074  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128817
-👀 views=39,521  ↗ forwards=21  🕯️ published=2026-05-06 05:38
-💬 Message
-   משטרת בריטניה עצרה גבר שיידה אבנים לעבר אמבולנס של הקהילה היהודית בלונדון
-   https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000075  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128818
-👀 views=40,201  ↗ forwards=31  🕯️ published=2026-05-06 05:40
-💬 Message
-   גל תקיפות בלבנון: דיווחים על תקיפה ישראלית באזור העיירה זלאיא בבקעת הלבנון - מספר הרוגים
-   בזירה https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000076  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128819
-👀 views=37,466  ↗ forwards=34  🕯️ published=2026-05-06 05:53
-💬 Message
-   צה"ל תקף מבנים ששימשו את ארגון הטרור חיזבאללה לצרכים צבאיים ומהם פעלו מחבלי הארגון בדרום
-   לבנון. בתקיפות חוסלו מספר מחבלים, אין נפגעים לכוחותינו. https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000077  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128820
-👀 views=35,365  ↗ forwards=23  🕯️ published=2026-05-06 06:37
-💬 Message
-   בלגיה הודיעה על הגשת כתב אישום נגד שלושה מוהלים שנעצרו בפברואר לאחר שביצעו ברית מילה ללא
-   נוכחות רופא שר החוץ סער: ״במעשה זה, היא מצטרפת לרשימה קצרה ומבישה, יחד עם אירלנד, של מדינות
-   המשתמשות בחוק הפלילי כדי לרדוף יהודים על שמירת היהדות״ https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000078  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128821
-👀 views=36,820  ↗ forwards=30  🕯️ published=2026-05-06 06:38
-💬 Message
-   אזעקות בקו העימות: שתולה https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000079  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128822
-👀 views=35,844  ↗ forwards=20  🕯️ published=2026-05-06 06:42
-💬 Message
-   דיווחים על יירוטים במרחב שתולה https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000080  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128823
-👀 views=34,825  ↗ forwards=19  🕯️ published=2026-05-06 06:48
-💬 Message
-   ניתן לצאת מהמרחב המוגן https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000081  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128824
-👀 views=35,869  ↗ forwards=31  🕯️ published=2026-05-06 07:04
-💬 Message
-   כוחות צה"ל סיכלו אמש ניסיון הברחה של 4 נשקים מסוג M-16 בגבול המערבי - באמצעות רחפן. הנשקים
-   שאותרו הועברו להמשך טיפול כוחות הביטחון. https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000082  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128825
-👀 views=36,495  ↗ forwards=28  🕯️ published=2026-05-06 07:56
-💬 Message
-   בתחנת המשטרה לב תל אביב מתקיים כעת מפגן תמיכה בנעמה שחר שהגיעה לעימות מול החשוד שפגע בה
-   מנכ״לית איגוד מרכזי הסיוע לנפגעות ולנפגעי תקיפה מינית, אורית סוליציאנו: ״הסרת צו איסור
-   הפרסום על שמו של החשוד בפגיעה של נעמה שחר ובאונס של שי לי עטרי הוא קריטי, בייחוד לנוכח
-   העובדה שכבר עתה ידוע על עדויות נוספות נגד החשוד - וחשיפת שמו נועדה להקל מאוד על הנפגעת, אך
-   גם לאפשר לאחרות להשמיע את קולן.״ קרדיט צילום: דוברות איגוד מרכזי הסיוע לנפגעות ולנפגעי תקיפה
-   מינית https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000083  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128827
-👀 views=35,576  ↗ forwards=31  🕯️ published=2026-05-06 08:26
-💬 Message
-   ליברמן: ״שיתהפך העולם - לא אשב עם נתניהו״ ״זו לא פסילה אישית. מי שמנסה לגלגל אחריות ומונע
-   ועדת חקירה ממלכתית - אינו ראוי לשבת בשום ממשלה. גם לא כשר לשיתוף פעולה אזורי״
-   https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000084  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128828
-👀 views=35,670  ↗ forwards=20  🕯️ published=2026-05-06 08:42
-💬 Message
-   רחפן נפץ התפוצץ סמוך למוצב צה״לי ברכס רמים: לפני זמן קצר רחפן נפץ התפוצץ על גדר המערכת ברכס
-   רמים סמוך למוצב צה"לי. ללא נפגעים. דובר צה"ל: זוהי הפרה נוספת של הבנות הפסקת האש על ידי
-   ארגון הטרור חיזבאללה. https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000085  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128829
-👀 views=34,989  ↗ forwards=46  🕯️ published=2026-05-06 09:09
-💬 Message
-   ארה״ב ואיראן מתקרבות למזכר הבנות לסיום המלחמה דיווח באתר ״אקסיוס״ מפי מספר גורמים אמריקנים
-   ומקורות נוספים על כך שהבית הלבן מאמין שהוא מתקרב להסכם עם איראן על מזכר הבנות. מטרת המזכר
-   היא לסיים את המלחמה ולהציב מסגרת למשא ומתן מפורט על תוכנית הגרעין ונושאים נוספים.
-   https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000086  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128830
-👀 views=34,947  ↗ forwards=35  🕯️ published=2026-05-06 09:29
-💬 Message
-   כוחות צה"ל חיסלו חוליית מחבלים חמושים של חמאס שפעלה סמוך לכוחות בצפון רצועת עזה והיוותה איום
-   מיידי. באירוע נוסף חוסלו שני מחבלים שהתקרבו לכוחות באזור הקו הצהוב.
-   https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000087  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128831
-👀 views=37,709  ↗ forwards=34  🕯️ published=2026-05-06 09:35
-💬 Message
-   ראש הממשלה נתניהו שוחח בימים האחרונים עם בכירים במפלגות החרדיות וביקש מהם להוריד מסדר היום
-   את חוק הגיוס, ולהמתין עם זה עד לאחר הבחירות. נתניהו הבהיר בשיחות כי "אין רוב במליאת הכנסת
-   להעביר את החוק רגע לפני הפריימריז והבחירות". על רקע הימים הביטחוניים המורכבים, אמר נתניהו:
-   "זה לא צריך להיות על סדר היום עכשיו". החרדים בשלב זה טרם אישרו לנתניהו את הבקשה. (אברהם
-   פריינד) https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000088  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128832
-👀 views=35,591  ↗ forwards=32  🕯️ published=2026-05-06 09:56
-💬 Message
-   שני לוחמי צה״ל נפצעו בינוני וקל בלבנון מפיצוץ רחפני נפץ של חיזבאללה
-   https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000089  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128833
-👀 views=33,653  ↗ forwards=24  🕯️ published=2026-05-06 10:16
-💬 Message
-   אחרי פגיעת רחפני הנפץ בכוחות: צה״ל תוקף מטרות חיזבאללה בדרום לבנון https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000090  2026-05-06 14:00  [BACKFILL]
-📣 @yediotnews25 · Yedioth News
-🏷️  topic=breaking  tags=telegram, breaking, middleeast
-🔗 https://t.me/yediotnews25/128834
-👀 views=28,185  ↗ forwards=30  🕯️ published=2026-05-06 11:20
-💬 Message
-   החל ממחר בשעה 16:00 - יוארך זמן ההתגוננות ב-49 יישובים נוספים בצפון הארץ
-   https://t.me/yediotnews25
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000091  2026-05-06 14:00  [BACKFILL]
-📣 @MiddleEastNow_Breaking · Middle East Now Breaking
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/MiddleEastNow_Breaking/23542
-👀 views=12  ↗ forwards=0  🕯️ published=2026-05-06 05:26
-💬 Message
-   Early this morning, Israeli occupation forces shut down with earth mounds all roads leading
-   to the town of Turmus Ayya in the occupied West Bank, blocking access to the town.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000092  2026-05-06 14:00  [BACKFILL]
-📣 @MiddleEastNow_Breaking · Middle East Now Breaking
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/MiddleEastNow_Breaking/23544
-👀 views=85  ↗ forwards=2  🕯️ published=2026-05-06 05:26
-💬 Message
-   🇮🇷 🇨🇳 Iranian FM Abbas Araghchi meets his Chinese counterpart Wang Yi in Beijing
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000093  2026-05-06 14:00  [BACKFILL]
-📣 @MiddleEastNow_Breaking · Middle East Now Breaking
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/MiddleEastNow_Breaking/23546
-👀 views=14  ↗ forwards=0  🕯️ published=2026-05-06 05:27
-💬 Message
-   NEW | U.S. Democrats demand transparency over Israel’s undeclared nuclear arsenal -AlJazeera
-   Thirty U.S. House Democrats have called for an end to Washington’s “official ambiguity”
-   regarding Israel’s nuclear weapons program, urging Secretary of State Marco Rubio to provide
-   full transparency. In a joint statement, lawmakers said the U.S. is effectively aligned with
-   a country whose nuclear capabilities it refuses to acknowledge, warning that this double
-   standard undermines non-proliferation efforts in the Middle East. They stressed that
-   Congress has a constitutional duty to understand the region’s nuclear balance and risks of
-   escalation, noting that Iran’s nuclear pursuit does not occur in a vacuum but is influenced
-   by the perceived capabilities of others, including Israel. The lawmakers
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000094  2026-05-06 14:00  [BACKFILL]
-📣 @MiddleEastNow_Breaking · Middle East Now Breaking
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/MiddleEastNow_Breaking/23547
-👀 views=11  ↗ forwards=0  🕯️ published=2026-05-06 08:13
-💬 Message
-   🇮🇷 Iran denies UAE attacks, warns of “decisive and regret-inducing” response Iran’s armed
-   forces denied carrying out any recent missile or drone attacks against the UAE, with state
-   media IRIB citing a spokesman for the Khatam al-Anbiya Central Headquarters who said no such
-   operations had taken place and that any action would have been “clearly and officially
-   announced.” The spokesman dismissed UAE Defense Ministry accusations as “baseless,” while
-   warning that any attack launched against Iran from UAE territory would trigger a “decisive
-   and regret-inducing” retaliation, and urged Abu Dhabi not to allow its territory to be used
-   by US or Israeli forces.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000095  2026-05-06 14:00  [BACKFILL]
-📣 @MiddleEastNow_Breaking · Middle East Now Breaking
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/MiddleEastNow_Breaking/23548
-👀 views=12  ↗ forwards=0  🕯️ published=2026-05-06 08:13
-💬 Message
-   🇮🇷 Iranian Foreign Ministry condemns UAE for cooperating with US & Israel: "The Ministry of
-   Foreign Affairs of the Islamic Republic of Iran, while condemning the destructive actions of
-   the rulers of Abu Dhabi in coordination with hostile parties against Iran—including the
-   continued hosting of their bases and military equipment—warns them of the dangerous
-   consequences of this situation for regional peace and stability. Over the past two days,
-   alongside the intensification of unlawful actions and provocative movements by US forces in
-   the region and their maritime activities under the pretext of “freedom of navigation,”
-   officials in Abu Dhabi have also taken positions contrary to the principles of good
-   neighborliness and the Charter of the United Nations by cooperating with hostile sides an
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000096  2026-05-06 14:00  [BACKFILL]
-📣 @MiddleEastNow_Breaking · Middle East Now Breaking
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/MiddleEastNow_Breaking/23549
-👀 views=17  ↗ forwards=2  🕯️ published=2026-05-06 08:14
-💬 Message
-   China calls US-Israeli war on Iran illegitimate, urges ceasefire and talks China said the
-   US–Israeli war against Iran is illegitimate during talks in Beijing between Foreign Minister
-   Wang Yi and his Iranian counterpart Abbas Araghchi, stressing the need to reduce tensions,
-   achieve a full ceasefire, and move toward direct negotiations. Araghchi welcomed China’s
-   stance condemning the war and said cooperation between Tehran and Beijing will grow
-   stronger.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000097  2026-05-06 14:00  [BACKFILL]
-📣 @MiddleEastNow_Breaking · Middle East Now Breaking
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/MiddleEastNow_Breaking/23550
-👀 views=12  ↗ forwards=0  🕯️ published=2026-05-06 08:15
-💬 Message
-   More than 30 House Democrats sent a letter to Secretary of State Marco Rubio demanding the
-   Trump administration publicly acknowledge Israel’s undeclared nuclear weapons program amid
-   the stalled US-Israel war with Iran ▪️ Lawmakers say decades-long US policy of ambiguity
-   undermines coherent nonproliferation policy in the Middle East ▪️ Democrats ask Rubio to
-   brief Congress on Israel’s nuclear arsenal, doctrine, launch systems, and Dimona facility by
-   May 18.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000098  2026-05-06 14:00  [BACKFILL]
-📣 @MiddleEastNow_Breaking · Middle East Now Breaking
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/MiddleEastNow_Breaking/23551
-👀 views=18  ↗ forwards=1  🕯️ published=2026-05-06 08:16
-💬 Message
-   ⚡️Protesters gathered outside the European Commission headquarters in Barcelona to protest
-   the continued detention of Freedom Flotilla activists by Israeli authorities
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000099  2026-05-06 14:00  [BACKFILL]
-📣 @MiddleEastNow_Breaking · Middle East Now Breaking
-🏷️  topic=middleeast  tags=telegram, middleeast, middleeast
-🔗 https://t.me/MiddleEastNow_Breaking/23552
-👀 views=12  ↗ forwards=0  🕯️ published=2026-05-06 11:24
-💬 Message
-   A little girl from Gaza carries a bottle of water after waiting in line for a long time, in
-   a scene that reflects the difficulty in obtaining the most basic daily necessities.
-
-────────────────────────────────────────────────────────────────────────────────────────────────
-🟢 #000100  2026-05-06 14:00  [BACKFILL]
-📣 @nexta_tv · NEXTA
-🏷️  topic=geopolitics  tags=telegram, geopolitics, europe
-🔗 https://t.me/nexta_tv/26794
-👀 views=143,560  ↗ forwards=812  🕯️ published=2026-05-06 06:21
-💬 Message
-   Россияне массово прутся в Беларусь, чтобы пожить как люди Радуются: можно посидеть в
-   соцсетях без VPN, одеться в Zara и Bershka, вкусно покушать и даже оформить в белорусском
-   банке карточку, чтобы оплачивать зарубежные подписки. Фу 🤮
+   World Starts To "Build" Around Hormuz; Japan Buying UAE Oil Bypassing Strait As ADNOC To
+   Spend $55 Billion On Pipelines
+   https://www.zerohedge.com/energy/world-starts-build-around-hormuz-japan-buying-uae-oil-bypassing-strait-adnoc-spend-55

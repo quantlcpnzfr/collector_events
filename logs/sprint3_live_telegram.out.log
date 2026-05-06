@@ -1,0 +1,260 @@
+INFO     👀 Logging system initialized                     logger_config.py:182
+INFO     👀 Iniciando Bootstrapper de OSINT Telegram...              main.py:28
+INFO     👀 [EnvConfig] 🔏 47 chaves marcadas como   env_config_manager.py:1072
+         Secret no arquivo.                                                    
+INFO     👀 [EnvConfig] 5 chaves bootstrap           env_config_manager.py:1025
+         carregadas do arquivo.                                                
+INFO     👀 [EnvConfig] 1 bootstrap secrets           env_config_manager.py:690
+         carregados.                                                           
+INFO     👀 [MongoManager] Conectado via connection string mongo_manager.py:143
+         | db=forex_system                                                     
+INFO     👀 [MongoManager] bulk_sync(env_config): 0 novos, mongo_manager.py:208
+         26 atualizados.                                                       
+INFO     👀 [EnvConfig] 150 chaves sincronizadas com  env_config_manager.py:951
+         MongoDB.                                                              
+INFO     👀 [EnvConfig] 143 novas chaves setadas em   env_config_manager.py:886
+         os.environ.                                                           
+INFO     👀 [EnvConfig] 150 chaves recarregadas do    env_config_manager.py:965
+         MongoDB.                                                              
+INFO     👀 Worker resources (MongoDB store) initialized.          worker.py:47
+INFO     👀 Enviando comando SESSION_CREATE para sessão 'default'    main.py:65
+INFO     👀 Initialized feed log at                              session.py:138
+         C:\Projects\forex_system\services\collector_events\coll               
+         ector_events\extractors\osint_telegram\logs\osint_feed.               
+         log                                                                   
+INFO     👀 Initialized JSON log at                              session.py:147
+         C:\Projects\forex_system\services\collector_events\coll               
+         ector_events\extractors\osint_telegram\logs\osint_feed_               
+         intel.json                                                            
+INFO     👀 Starting OsintTelegramSession 'default'              session.py:247
+INFO     👀 [RabbitMQ Async] Conectando:          rabbitmq_provider_async.py:53
+         amqp://guest:guest@localhost:5672/                                    
+INFO     👀 [RabbitMQ Async] Conectando:          rabbitmq_provider_async.py:62
+         amqp://guest:guest@localhost:5672/                                    
+INFO     👀 [RabbitMQ Async] Conectado. Exchange  rabbitmq_provider_async.py:85
+         'forex_market_events' ativo.                                          
+INFO     👀 [MQEventPublisher] started with 8 workers    event_publisher.py:136
+INFO     👀 Connecting to 149.154.175.55:443/TcpFull...    mtprotosender.py:234
+INFO     👀 Connection to 149.154.175.55:443/TcpFull       mtprotosender.py:285
+         complete!                                                             
+INFO     👀 Resolution summary: resolved=78 cache_hits=78        session.py:455
+         cache_misses=0 skipped=0 failures=0 flood_waits=0                     
+         live_resolves=0 duration=22.78s                                       
+INFO     👀 OsintTelegramSession 'default' started with 78       session.py:291
+         active channels in 34.34s                                             
+INFO     👀 Session 'default' created and started.                 worker.py:97
+INFO     👀 Worker aguardando processamento... (backfill_days=1,     main.py:74
+         max_messages_limit=50)                                                
+INFO     👀 Status : Recv=0, Accepted=0, Limit=0/50                  main.py:88
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210291 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210294 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210295 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210296 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210297 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210301 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210302 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210303 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210304 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210305 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210306 in globalintel                          
+INFO     👀 Status : Recv=12, Accepted=11, Limit=11/50               main.py:88
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210307 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210308 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210309 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210310 in globalintel                          
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75254   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75255   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75256   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75257   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75258   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75259   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75260   session.py:718
+         in globalintel                                                        
+INFO     👀 Status : Recv=23, Accepted=22, Limit=22/50               main.py:88
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75261   session.py:718
+         in globalintel                                                        
+INFO     👀 Status : Recv=24, Accepted=23, Limit=23/50               main.py:88
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75268   session.py:718
+         in globalintel                                                        
+WARNING  ⚠️ Failed to write IntelItem to JSON log: [Errno 22]    session.py:176
+         Invalid argument:                                                     
+         'C:\\Projects\\forex_system\\services\\collector_events               
+         \\collector_events\\extractors\\osint_telegram\\logs\\o               
+         sint_feed_intel.json'                                                 
+INFO     👀 Status : Recv=25, Accepted=24, Limit=24/50               main.py:88
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75269   session.py:718
+         in globalintel                                                        
+WARNING  ⚠️ Failed to write IntelItem to JSON log: [Errno 22]    session.py:176
+         Invalid argument:                                                     
+         'C:\\Projects\\forex_system\\services\\collector_events               
+         \\collector_events\\extractors\\osint_telegram\\logs\\o               
+         sint_feed_intel.json'                                                 
+INFO     👀 Status : Recv=26, Accepted=25, Limit=25/50               main.py:88
+INFO     👀 ✅ Verified storage for telegram:VahidOnline:75273   session.py:718
+         in globalintel                                                        
+INFO     👀 Status : Recv=26, Accepted=26, Limit=26/50               main.py:88
+WARNING  ⚠️ Failed to write IntelItem to JSON log: [Errno 22]    session.py:176
+         Invalid argument:                                                     
+         'C:\\Projects\\forex_system\\services\\collector_events               
+         \\collector_events\\extractors\\osint_telegram\\logs\\o               
+         sint_feed_intel.json'                                                 
+INFO     👀 ✅ Verified storage for telegram:rybar:80055 in      session.py:718
+         globalintel                                                           
+WARNING  ⚠️ Failed to write IntelItem to JSON log: [Errno 22]    session.py:176
+         Invalid argument:                                                     
+         'C:\\Projects\\forex_system\\services\\collector_events               
+         \\collector_events\\extractors\\osint_telegram\\logs\\o               
+         sint_feed_intel.json'                                                 
+INFO     👀 Status : Recv=28, Accepted=27, Limit=27/50               main.py:88
+WARNING  ⚠️ Server closed the connection: 0 bytes read on a   connection.py:345
+         total of 8 expected bytes                                             
+INFO     👀 Status : Recv=28, Accepted=27, Limit=27/50               main.py:88
+INFO     👀 Connection closed while receiving data: 0      mtprotosender.py:517
+         bytes read on a total of 8 expected bytes                             
+INFO     👀 Closing current connection to begin            mtprotosender.py:358
+         reconnect...                                                          
+INFO     👀 Status : Recv=28, Accepted=27, Limit=27/50               main.py:88
+INFO     👀 Connecting to 149.154.175.55:443/TcpFull...    mtprotosender.py:234
+INFO     👀 Status : Recv=28, Accepted=27, Limit=27/50               main.py:88
+WARNING  ⚠️ Attempt 1 at connecting failed: TimeoutError:  mtprotosender.py:294
+INFO     👀 ✅ Verified storage for telegram:rybar:80056 in      session.py:718
+         globalintel                                                           
+INFO     👀 Status : Recv=29, Accepted=28, Limit=28/50               main.py:88
+INFO     👀 Connection to 149.154.175.55:443/TcpFull       mtprotosender.py:285
+         complete!                                                             
+ERROR    ❌ [RabbitMQ Async] Erro ao publicar    rabbitmq_provider_async.py:162
+         evento 'intel.events.conflict': Server                                
+         connection reset:                                                     
+         ConnectionResetError(10054, 'Foi                                      
+         forçado o cancelamento de uma conexão                                 
+         existente pelo host remoto', None,                                    
+         10054, None)                                                          
+WARNING  ⚠️ [MQEventPublisher] publish failed            event_publisher.py:304
+         topic=intel.events.conflict attempt=1/5:                              
+         publish_event returned False                                          
+ERROR    ❌ Callback <OneShotCallback: cb=<bound method            tools.py:324
+         RobustChannel._on_close of                                            
+         <aio_pika.robust_channel.RobustChannel object at                      
+         0x000001F3D1FD4A40>>> error: RuntimeError: <Connection:               
+         "amqp://guest:******@localhost:5672/" at 0x1f3d1ba2710>               
+         closed                                                                
+WARNING  ⚠️ Security error while unpacking a received      mtprotosender.py:545
+         message: Server replied with a wrong session ID                       
+         (see FAQ for details)                                                 
+ERROR    ❌ [RabbitMQ Async] Erro ao publicar    rabbitmq_provider_async.py:162
+         evento 'intel.events.conflict':                                       
+         <aio_pika.robust_channel.RobustChannel                                
+         object at 0x000001F3D1FD4A40> closed                                  
+WARNING  ⚠️ [MQEventPublisher] publish failed            event_publisher.py:304
+         topic=intel.events.conflict attempt=2/5:                              
+         publish_event returned False                                          
+ERROR    ❌ [RabbitMQ Async] Erro ao publicar    rabbitmq_provider_async.py:162
+         evento 'intel.events.conflict':                                       
+         <aio_pika.robust_channel.RobustChannel                                
+         object at 0x000001F3D1FD4A40> closed                                  
+WARNING  ⚠️ [MQEventPublisher] publish failed            event_publisher.py:304
+         topic=intel.events.conflict attempt=3/5:                              
+         publish_event returned False                                          
+INFO     👀 Status : Recv=29, Accepted=28, Limit=28/50               main.py:88
+INFO     👀 ✅ Verified storage for telegram:rybar:80057 in      session.py:718
+         globalintel                                                           
+ERROR    ❌ [RabbitMQ Async] Erro ao publicar    rabbitmq_provider_async.py:162
+         evento 'intel.events.conflict':                                       
+         <aio_pika.robust_channel.RobustChannel                                
+         object at 0x000001F3D1FD4A40> closed                                  
+WARNING  ⚠️ [MQEventPublisher] publish failed            event_publisher.py:304
+         topic=intel.events.conflict attempt=1/5:                              
+         publish_event returned False                                          
+INFO     👀 ✅ Verified storage for telegram:rybar:80058 in      session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:rybar:80059 in      session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:rybar:80060 in      session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:rybar:80061 in      session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:rybar:80062 in      session.py:718
+         globalintel                                                           
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/50               main.py:88
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/50               main.py:88
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/50               main.py:88
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/50               main.py:88
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/50               main.py:88
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/50               main.py:88
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/50               main.py:88
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/50               main.py:88
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/50               main.py:88
+INFO     👀 Closing current connection to begin            mtprotosender.py:358
+         reconnect...                                                          
+INFO     👀 Connecting to 149.154.175.55:443/TcpFull...    mtprotosender.py:234
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/50               main.py:88
+INFO     👀 Connection to 149.154.175.55:443/TcpFull       mtprotosender.py:285
+         complete!                                                             
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131848   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131849   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131850   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131851   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131852   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131853   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131854   session.py:718
+         in globalintel                                                        
+INFO     👀 Status : Recv=42, Accepted=41, Limit=41/50               main.py:88
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131855   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131856   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131857   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131858   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131859   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131860   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131861   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131862   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131863   session.py:718
+         in globalintel                                                        
+INFO     👀 Message limit reached (50). Stopping session.        session.py:732
+INFO     👀 Stopping OsintTelegramSession 'default'              session.py:300
+INFO     👀 Disconnecting from                             mtprotosender.py:325
+         149.154.175.55:443/TcpFull...                                         
+INFO     👀 Disconnection from 149.154.175.55:443/TcpFull  mtprotosender.py:345
+         complete!                                                             
+INFO     👀 [RabbitMQ Async] Conexão encerrada.   rabbitmq_provider_async.py:94
+INFO     👀 [MQEventPublisher] stopped                   event_publisher.py:183
+INFO     👀 Nenhuma sessão ativa (todas STOPPED). Encerrando         main.py:84
+         bootstrapper...                                                       
+INFO     👀 Stopping 1 active sessions...                          worker.py:57
+INFO     👀 Stopping OsintTelegramSession 'default'              session.py:300
+INFO     👀 Not disconnecting (already have no connection) mtprotosender.py:322
+INFO     👀 Bootstrapper encerrado.                                  main.py:95

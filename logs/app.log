@@ -5590,3 +5590,394 @@ INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync
 INFO → collector_events.nlp.session → NLPEnrichmentSession 'mq-smoke-nlp' stopped.
 INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo encerrado.
 INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.translation.worker → TranslationWorker initializing...
+INFO → collector_events.translation.worker → TranslationWorker 'translation-default' started.
+INFO → collector_events.translation.engine → Language detector (GlotLID) loaded from C:\Projects\forex_system\services\collector_events\.models\lid\lid.176.bin
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.translation.engine → NLLB translator loaded: .models/nllb-200-distilled-600M on cpu
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.events.#' → fila 'amq_efcba9b49ff047af8c642ca4fa89931d'
+INFO → collector_events.translation.session → TranslationSession 'default' started. Listening on intel.events.#
+INFO → collector_events.translation.worker → Translation session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 352 keyword entries
+INFO → collector_events.processors.event_processor.EventProcessor → Scoring config carregada com sucesso.
+INFO → LocalNLPEngine → A iniciar o carregamento dos modelos NLP offline...
+INFO → LocalNLPEngine → A carregar GLiNER (urchade/gliner_small-v2.1)...
+INFO → gliner.model → Loading the following GLiNER type: <class 'gliner.model.UniEncoderSpanGLiNER'>...
+INFO → collector_events.extractors.osint_telegram.session → Resolution summary: resolved=78 cache_hits=78 cache_misses=0 skipped=0 failures=0 flood_waits=0 live_resolves=0 duration=22.78s
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 78 active channels in 34.34s
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (backfill_days=1, max_messages_limit=50)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210291 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210294 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210295 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210296 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210297 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210301 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210302 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210303 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210304 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210305 in globalintel
+INFO → LocalNLPEngine → Motor NLP carregado e pronto para inferência.
+INFO → collector_events.nlp.worker → NLPWorker initialized shared EventProcessor.
+INFO → collector_events.nlp.worker → NLPWorker 'nlp-default' started.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.translated.#' → fila 'amq_2962b0d09a3d4cbe97024ed445b955cc'
+INFO → collector_events.nlp.session → NLPEnrichmentSession 'default' started. Listening on intel.translated.# and publishing to intel.enriched.<domain>
+INFO → collector_events.nlp.worker → NLP session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210306 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=12, Accepted=11, Limit=11/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210307 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210308 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210309 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210310 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75254 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75255 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75256 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75257 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75258 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75259 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75260 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=23, Accepted=22, Limit=22/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75261 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=24, Accepted=23, Limit=23/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75268 in globalintel
+WARNING → collector_events.extractors.osint_telegram.session → Failed to write IntelItem to JSON log: [Errno 22] Invalid argument: 'C:\\Projects\\forex_system\\services\\collector_events\\collector_events\\extractors\\osint_telegram\\logs\\osint_feed_intel.json'
+INFO → OsintBootstrapper → Status [default]: Recv=25, Accepted=24, Limit=24/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75269 in globalintel
+WARNING → collector_events.extractors.osint_telegram.session → Failed to write IntelItem to JSON log: [Errno 22] Invalid argument: 'C:\\Projects\\forex_system\\services\\collector_events\\collector_events\\extractors\\osint_telegram\\logs\\osint_feed_intel.json'
+INFO → OsintBootstrapper → Status [default]: Recv=26, Accepted=25, Limit=25/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75273 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=26, Accepted=26, Limit=26/50
+WARNING → collector_events.extractors.osint_telegram.session → Failed to write IntelItem to JSON log: [Errno 22] Invalid argument: 'C:\\Projects\\forex_system\\services\\collector_events\\collector_events\\extractors\\osint_telegram\\logs\\osint_feed_intel.json'
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80055 in globalintel
+WARNING → collector_events.extractors.osint_telegram.session → Failed to write IntelItem to JSON log: [Errno 22] Invalid argument: 'C:\\Projects\\forex_system\\services\\collector_events\\collector_events\\extractors\\osint_telegram\\logs\\osint_feed_intel.json'
+INFO → OsintBootstrapper → Status [default]: Recv=28, Accepted=27, Limit=27/50
+WARNING → telethon.network.connection.connection → Server closed the connection: 0 bytes read on a total of 8 expected bytes
+INFO → OsintBootstrapper → Status [default]: Recv=28, Accepted=27, Limit=27/50
+INFO → telethon.network.mtprotosender → Connection closed while receiving data: 0 bytes read on a total of 8 expected bytes
+INFO → telethon.network.mtprotosender → Closing current connection to begin reconnect...
+INFO → OsintBootstrapper → Status [default]: Recv=28, Accepted=27, Limit=27/50
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → OsintBootstrapper → Status [default]: Recv=28, Accepted=27, Limit=27/50
+WARNING → telethon.network.mtprotosender → Attempt 1 at connecting failed: TimeoutError: 
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80056 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=29, Accepted=28, Limit=28/50
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+ERROR → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Erro ao publicar evento 'intel.events.conflict': Server connection reset: ConnectionResetError(10054, 'Foi forçado o cancelamento de uma conexão existente pelo host remoto', None, 10054, None)
+WARNING → forex_shared.worker_api.event_publisher → [MQEventPublisher] publish failed topic=intel.events.conflict attempt=1/5: publish_event returned False
+ERROR → aio_pika.tools → Callback <OneShotCallback: cb=<bound method RobustChannel._on_close of <aio_pika.robust_channel.RobustChannel object at 0x000001F3D1FD4A40>>> error: RuntimeError: <Connection: "amqp://guest:******@localhost:5672/" at 0x1f3d1ba2710> closed
+WARNING → telethon.network.mtprotosender → Security error while unpacking a received message: Server replied with a wrong session ID (see FAQ for details)
+ERROR → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Erro ao publicar evento 'intel.events.conflict': <aio_pika.robust_channel.RobustChannel object at 0x000001F3D1FD4A40> closed
+WARNING → forex_shared.worker_api.event_publisher → [MQEventPublisher] publish failed topic=intel.events.conflict attempt=2/5: publish_event returned False
+ERROR → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Erro ao publicar evento 'intel.events.conflict': <aio_pika.robust_channel.RobustChannel object at 0x000001F3D1FD4A40> closed
+WARNING → forex_shared.worker_api.event_publisher → [MQEventPublisher] publish failed topic=intel.events.conflict attempt=3/5: publish_event returned False
+INFO → OsintBootstrapper → Status [default]: Recv=29, Accepted=28, Limit=28/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80057 in globalintel
+ERROR → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Erro ao publicar evento 'intel.events.conflict': <aio_pika.robust_channel.RobustChannel object at 0x000001F3D1FD4A40> closed
+WARNING → forex_shared.worker_api.event_publisher → [MQEventPublisher] publish failed topic=intel.events.conflict attempt=1/5: publish_event returned False
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80058 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80059 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80060 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80061 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80062 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/50
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/50
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/50
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/50
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/50
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/50
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/50
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/50
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/50
+INFO → telethon.network.mtprotosender → Closing current connection to begin reconnect...
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/50
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131848 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131849 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131850 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131851 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131852 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131853 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131854 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=42, Accepted=41, Limit=41/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131855 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131856 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131857 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131858 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131859 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131860 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131861 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131862 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131863 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (50). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.translation.worker → TranslationWorker initializing...
+INFO → collector_events.translation.worker → TranslationWorker 'translation-default' started.
+INFO → collector_events.translation.engine → Language detector (GlotLID) loaded from C:\Projects\forex_system\services\collector_events\.models\lid\lid.176.bin
+INFO → collector_events.translation.engine → NLLB translator loaded: .models/nllb-200-distilled-600M on cpu
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.events.#' → fila 'amq_0c616a0680fe4cff8d85c23578a07018'
+INFO → collector_events.translation.session → TranslationSession 'default' started. Listening on intel.events.#
+INFO → collector_events.translation.worker → Translation session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 352 keyword entries
+INFO → collector_events.processors.event_processor.EventProcessor → Scoring config carregada com sucesso.
+INFO → LocalNLPEngine → A iniciar o carregamento dos modelos NLP offline...
+INFO → LocalNLPEngine → A carregar GLiNER (urchade/gliner_small-v2.1)...
+INFO → gliner.model → Loading the following GLiNER type: <class 'gliner.model.UniEncoderSpanGLiNER'>...
+INFO → LocalNLPEngine → Motor NLP carregado e pronto para inferência.
+INFO → collector_events.nlp.worker → NLPWorker initialized shared EventProcessor.
+INFO → collector_events.nlp.worker → NLPWorker 'nlp-default' started.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.translated.#' → fila 'amq_91f7f1ec71664c8ea4a2c79708d39f55'
+INFO → collector_events.nlp.session → NLPEnrichmentSession 'default' started. Listening on intel.translated.# and publishing to intel.enriched.<domain>
+INFO → collector_events.nlp.worker → NLP session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → Resolution summary: resolved=78 cache_hits=78 cache_misses=0 skipped=0 failures=0 flood_waits=0 live_resolves=0 duration=18.12s
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 78 active channels in 20.86s
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (backfill_days=1, max_messages_limit=50)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75274 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75275 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75276 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75275 source=telegram topic=intel.translated.conflict count=1 translation_source=⚡Translation from Iranian Persian (pes_Arab)
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75277 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=5, Accepted=4, Limit=4/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75282 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75283 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75285 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75283 source=telegram topic=intel.translated.conflict count=2 translation_source=⚡Translation from Iranian Persian (pes_Arab)
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75282 source=telegram topic=intel.translated.conflict count=3 translation_source=⚡Translation from Iranian Persian (pes_Arab)
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75276 source=telegram topic=intel.translated.conflict count=4 translation_source=⚡Translation from Iranian Persian (pes_Arab)
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75274 source=telegram topic=intel.translated.conflict count=5 translation_source=⚡Translation from Iranian Persian (pes_Arab)
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75277 source=telegram topic=intel.translated.conflict count=6 translation_source=⚡Translation from Iranian Persian (pes_Arab)
+INFO → OsintBootstrapper → Status [default]: Recv=8, Accepted=7, Limit=7/50
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75285 source=telegram topic=intel.translated.conflict count=7 translation_source=⚡Translation from Iranian Persian (pes_Arab)
+WARNING → telethon.network.connection.connection → Server closed the connection: 0 bytes read on a total of 8 expected bytes
+INFO → OsintBootstrapper → Status [default]: Recv=8, Accepted=7, Limit=7/50
+INFO → telethon.network.mtprotosender → Connection closed while receiving data: 0 bytes read on a total of 8 expected bytes
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75286 source=telegram topic=intel.translated.conflict count=8 translation_source=⚠️ Detection: Spanish (spa_Latn) - No translation
+INFO → telethon.network.mtprotosender → Closing current connection to begin reconnect...
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75286 in globalintel
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75287 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75289 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=10, Accepted=10, Limit=10/50
+INFO → OsintBootstrapper → Status [default]: Recv=10, Accepted=10, Limit=10/50
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75287 source=telegram topic=intel.translated.conflict count=9 translation_source=⚡Translation from Iranian Persian (pes_Arab)
+INFO → OsintBootstrapper → Status [default]: Recv=11, Accepted=10, Limit=10/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131864 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131864 source=telegram topic=intel.translated.social count=10 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131865 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131865 source=telegram topic=intel.translated.social count=11 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131866 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131866 source=telegram topic=intel.translated.social count=12 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131867 source=telegram topic=intel.translated.social count=13 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=14, Accepted=13, Limit=13/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131867 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131868 source=telegram topic=intel.translated.social count=14 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131868 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131869 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131869 source=telegram topic=intel.translated.social count=15 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=17, Accepted=16, Limit=16/50
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131870 source=telegram topic=intel.translated.social count=16 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131870 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131871 source=telegram topic=intel.translated.social count=17 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131871 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131872 source=telegram topic=intel.translated.social count=18 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131872 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75289 source=telegram topic=intel.translated.conflict count=19 translation_source=⚡Translation from Iranian Persian (pes_Arab)
+INFO → OsintBootstrapper → Status [default]: Recv=20, Accepted=19, Limit=19/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131873 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131873 source=telegram topic=intel.translated.social count=20 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131874 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131874 source=telegram topic=intel.translated.social count=21 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131875 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131875 source=telegram topic=intel.translated.social count=22 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131876 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131876 source=telegram topic=intel.translated.social count=23 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131877 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131877 source=telegram topic=intel.translated.social count=24 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131878 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131879 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131878 source=telegram topic=intel.translated.social count=25 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131879 source=telegram topic=intel.translated.social count=26 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131880 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131880 source=telegram topic=intel.translated.social count=27 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131881 source=telegram topic=intel.translated.social count=28 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131881 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131882 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=30, Accepted=29, Limit=29/50
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131882 source=telegram topic=intel.translated.social count=29 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131883 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131883 source=telegram topic=intel.translated.social count=30 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131884 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131884 source=telegram topic=intel.translated.social count=31 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131885 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131885 source=telegram topic=intel.translated.social count=32 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131886 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131886 source=telegram topic=intel.translated.social count=33 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131887 source=telegram topic=intel.translated.social count=34 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131887 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131888 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131888 source=telegram topic=intel.translated.social count=35 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172093 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172093 source=telegram topic=intel.translated.social count=36 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=37, Accepted=36, Limit=36/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172094 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172094 source=telegram topic=intel.translated.social count=37 translation_source=➡️No translation needed
+ERROR → LocalNLPEngine → Erro no Motor NLP: Already borrowed
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:VahidOnline:75283 source=telegram topic=intel.enriched.conflict processed=1 published=1 danger_score=0.15119 oracle_review_candidate=False
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172095 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172095 source=telegram topic=intel.translated.social count=38 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172096 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172096 source=telegram topic=intel.translated.social count=39 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172097 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172097 source=telegram topic=intel.translated.social count=40 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172098 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172098 source=telegram topic=intel.translated.social count=41 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172099 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172099 source=telegram topic=intel.translated.social count=42 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172100 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172100 source=telegram topic=intel.translated.social count=43 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172101 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172101 source=telegram topic=intel.translated.social count=44 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172102 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172102 source=telegram topic=intel.translated.social count=45 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172103 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172103 source=telegram topic=intel.translated.social count=46 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=47, Accepted=46, Limit=46/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172104 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172104 source=telegram topic=intel.translated.social count=47 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172105 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172105 source=telegram topic=intel.translated.social count=48 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172106 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172106 source=telegram topic=intel.translated.social count=49 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172107 source=telegram topic=intel.translated.social count=50 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172107 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (50). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:VahidOnline:75286 source=telegram topic=intel.enriched.conflict processed=2 published=2 danger_score=0.22435801249980925 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:VahidOnline:75277 source=telegram topic=intel.enriched.conflict processed=3 published=3 danger_score=0.2311418299102783 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:VahidOnline:75276 source=telegram topic=intel.enriched.conflict processed=5 published=4 danger_score=0.4024473364015579 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:VahidOnline:75287 source=telegram topic=intel.enriched.conflict processed=5 published=5 danger_score=0.18771865216135977 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:VahidOnline:75275 source=telegram topic=intel.enriched.conflict processed=6 published=6 danger_score=0.21167930138349533 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:VahidOnline:75274 source=telegram topic=intel.enriched.conflict processed=7 published=7 danger_score=0.2189565527909994 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:VahidOnline:75285 source=telegram topic=intel.enriched.conflict processed=8 published=8 danger_score=0.6859324184593201 oracle_review_candidate=True
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:VahidOnline:75282 source=telegram topic=intel.enriched.conflict processed=9 published=9 danger_score=0.688807427110672 oracle_review_candidate=True
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131866 source=telegram topic=intel.enriched.social processed=10 published=10 danger_score=0.2036798777496815 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131864 source=telegram topic=intel.enriched.social processed=11 published=11 danger_score=0.18645467781186106 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131867 source=telegram topic=intel.enriched.social processed=12 published=12 danger_score=0.2660803774809838 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131868 source=telegram topic=intel.enriched.social processed=13 published=13 danger_score=0.1947665317422152 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131865 source=telegram topic=intel.enriched.social processed=14 published=14 danger_score=0.18201925628542903 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131869 source=telegram topic=intel.enriched.social processed=15 published=15 danger_score=0.18109533921539786 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131870 source=telegram topic=intel.enriched.social processed=16 published=16 danger_score=0.2760511998152734 oracle_review_candidate=False

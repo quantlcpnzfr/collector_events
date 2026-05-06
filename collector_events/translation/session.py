@@ -35,6 +35,9 @@ class TranslationSession(BaseSession):
         self.engine = engine or TranslationEngine(config)
         self._mq = None
         self._is_running = False
+        self.processed_count = 0
+        self.published_count = 0
+        self.error_count = 0
 
     async def start(self) -> None:
         """Initialize MQ and start consuming."""
@@ -83,9 +86,18 @@ class TranslationSession(BaseSession):
                 domain = str(enriched.get("domain", "social")).lower()
                 output_topic = f"{self.output_prefix}.{domain}"
                 await self._mq.publish_event(output_topic, enriched)
-                log.debug(f"Published translated event to {output_topic}")
+                self.published_count += 1
+                log.info(
+                    "Translated event id=%s source=%s topic=%s count=%s translation_source=%s",
+                    enriched.get("id"),
+                    enriched.get("source"),
+                    output_topic,
+                    self.published_count,
+                    enriched.get("extra", {}).get("translation_source"),
+                )
                 
         except Exception as e:
+            self.error_count += 1
             log.error(f"Error processing translation for event {payload.get('id')}: {e}")
 
     def _process_payload(self, payload: Dict[str, Any]) -> Optional[Dict[str, Any]]:
@@ -142,6 +154,7 @@ class TranslationSession(BaseSession):
                 enriched["extra"]["original_body"] = raw_body
         enriched["extra"]["translation_source"] = translation_source
         enriched["event_type"] = "INTEL_ITEM_TRANSLATED"
+        self.processed_count += 1
 
         return enriched
 
@@ -166,5 +179,8 @@ class TranslationSession(BaseSession):
             "is_running": self._is_running,
             "input_topic": self.input_topic,
             "provider": self.engine.translation_provider,
-            "target_language": self.engine.target_language
+            "target_language": self.engine.target_language,
+            "processed_count": self.processed_count,
+            "published_count": self.published_count,
+            "error_count": self.error_count,
         }

@@ -44,6 +44,7 @@ class NLPEnrichmentSession(BaseSession):
         self.processed_count = 0
         self.published_count = 0
         self.error_count = 0
+        self._process_lock = asyncio.Lock()
 
     async def start(self) -> None:
         if self._is_running:
@@ -82,7 +83,8 @@ class NLPEnrichmentSession(BaseSession):
             return
 
         try:
-            enriched = await asyncio.to_thread(self._process_payload, payload)
+            async with self._process_lock:
+                enriched = await asyncio.to_thread(self._process_payload, payload)
             if not enriched:
                 return
 
@@ -90,7 +92,16 @@ class NLPEnrichmentSession(BaseSession):
             output_topic = f"{self.output_prefix}.{domain}"
             await self._mq.publish_event(output_topic, enriched)
             self.published_count += 1
-            log.debug("Published NLP-enriched event to %s", output_topic)
+            log.info(
+                "NLP-enriched event id=%s source=%s topic=%s processed=%s published=%s danger_score=%s oracle_review_candidate=%s",
+                enriched.get("id"),
+                enriched.get("source"),
+                output_topic,
+                self.processed_count,
+                self.published_count,
+                enriched.get("extra", {}).get("danger_score"),
+                enriched.get("extra", {}).get("oracle_review_candidate"),
+            )
         except Exception as exc:
             self.error_count += 1
             log.error("Error processing NLP enrichment for event %s: %s", payload.get("id"), exc)

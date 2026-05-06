@@ -1,0 +1,198 @@
+INFO     👀 Logging system initialized                     logger_config.py:182
+INFO     👀 [EnvConfig] 🔏 47 chaves marcadas como   env_config_manager.py:1072
+         Secret no arquivo.                                                    
+INFO     👀 [EnvConfig] 5 chaves bootstrap           env_config_manager.py:1025
+         carregadas do arquivo.                                                
+INFO     👀 [EnvConfig] 1 bootstrap secrets           env_config_manager.py:690
+         carregados.                                                           
+INFO     👀 [MongoManager] Conectado via connection string mongo_manager.py:143
+         | db=forex_system                                                     
+INFO     👀 [MongoManager] bulk_sync(env_config): 0 novos, mongo_manager.py:208
+         26 atualizados.                                                       
+INFO     👀 [EnvConfig] 150 chaves sincronizadas com  env_config_manager.py:951
+         MongoDB.                                                              
+INFO     👀 [EnvConfig] 143 novas chaves setadas em   env_config_manager.py:886
+         os.environ.                                                           
+INFO     👀 [EnvConfig] 150 chaves recarregadas do    env_config_manager.py:965
+         MongoDB.                                                              
+INFO     👀 TranslationWorker initializing...                      worker.py:45
+INFO     👀 TranslationWorker 'translation-default' started.       worker.py:40
+INFO     👀 Language detector (GlotLID) loaded from                engine.py:89
+         C:\Projects\forex_system\services\collector_events\.model             
+         s\lid\lid.176.bin                                                     
+INFO     👀 NLLB translator loaded:                               engine.py:115
+         .models/nllb-200-distilled-600M on cpu                                
+INFO     👀 [RabbitMQ Async] Conectando:          rabbitmq_provider_async.py:53
+         amqp://guest:guest@localhost:5672/                                    
+INFO     👀 [RabbitMQ Async] Conectando:          rabbitmq_provider_async.py:62
+         amqp://guest:guest@localhost:5672/                                    
+INFO     👀 [RabbitMQ Async] Conectado. Exchange  rabbitmq_provider_async.py:85
+         'forex_market_events' ativo.                                          
+INFO     👀 [RabbitMQ Async] Inscrito:           rabbitmq_provider_async.py:218
+         'intel.events.#' → fila                                               
+         'amq_0c616a0680fe4cff8d85c23578a07018'                                
+INFO     👀 TranslationSession 'default' started. Listening on    session.py:58
+         intel.events.#                                                        
+INFO     👀 Translation session 'default' created.                 worker.py:89
+INFO     👀 [RabbitMQ Async] Consumo ativo.      rabbitmq_provider_async.py:231
+         Aguardando eventos...                                                 
+INFO     👀 Translated event id=telegram:VahidOnline:75275        session.py:90
+         source=telegram topic=intel.translated.conflict count=1               
+         translation_source=⚡Translation from Iranian Persian                 
+         (pes_Arab)                                                            
+INFO     👀 Translated event id=telegram:VahidOnline:75283        session.py:90
+         source=telegram topic=intel.translated.conflict count=2               
+         translation_source=⚡Translation from Iranian Persian                 
+         (pes_Arab)                                                            
+INFO     👀 Translated event id=telegram:VahidOnline:75282        session.py:90
+         source=telegram topic=intel.translated.conflict count=3               
+         translation_source=⚡Translation from Iranian Persian                 
+         (pes_Arab)                                                            
+INFO     👀 Translated event id=telegram:VahidOnline:75276        session.py:90
+         source=telegram topic=intel.translated.conflict count=4               
+         translation_source=⚡Translation from Iranian Persian                 
+         (pes_Arab)                                                            
+INFO     👀 Translated event id=telegram:VahidOnline:75274        session.py:90
+         source=telegram topic=intel.translated.conflict count=5               
+         translation_source=⚡Translation from Iranian Persian                 
+         (pes_Arab)                                                            
+INFO     👀 Translated event id=telegram:VahidOnline:75277        session.py:90
+         source=telegram topic=intel.translated.conflict count=6               
+         translation_source=⚡Translation from Iranian Persian                 
+         (pes_Arab)                                                            
+INFO     👀 Translated event id=telegram:VahidOnline:75285        session.py:90
+         source=telegram topic=intel.translated.conflict count=7               
+         translation_source=⚡Translation from Iranian Persian                 
+         (pes_Arab)                                                            
+INFO     👀 Translated event id=telegram:VahidOnline:75286        session.py:90
+         source=telegram topic=intel.translated.conflict count=8               
+         translation_source=⚠️ Detection: Spanish (spa_Latn) - No              
+         translation                                                           
+INFO     👀 Translated event id=telegram:VahidOnline:75287        session.py:90
+         source=telegram topic=intel.translated.conflict count=9               
+         translation_source=⚡Translation from Iranian Persian                 
+         (pes_Arab)                                                            
+INFO     👀 Translated event id=telegram:firstsquaw:131864        session.py:90
+         source=telegram topic=intel.translated.social count=10                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131865        session.py:90
+         source=telegram topic=intel.translated.social count=11                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131866        session.py:90
+         source=telegram topic=intel.translated.social count=12                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131867        session.py:90
+         source=telegram topic=intel.translated.social count=13                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131868        session.py:90
+         source=telegram topic=intel.translated.social count=14                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131869        session.py:90
+         source=telegram topic=intel.translated.social count=15                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131870        session.py:90
+         source=telegram topic=intel.translated.social count=16                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131871        session.py:90
+         source=telegram topic=intel.translated.social count=17                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131872        session.py:90
+         source=telegram topic=intel.translated.social count=18                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:VahidOnline:75289        session.py:90
+         source=telegram topic=intel.translated.conflict count=19              
+         translation_source=⚡Translation from Iranian Persian                 
+         (pes_Arab)                                                            
+INFO     👀 Translated event id=telegram:firstsquaw:131873        session.py:90
+         source=telegram topic=intel.translated.social count=20                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131874        session.py:90
+         source=telegram topic=intel.translated.social count=21                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131875        session.py:90
+         source=telegram topic=intel.translated.social count=22                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131876        session.py:90
+         source=telegram topic=intel.translated.social count=23                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131877        session.py:90
+         source=telegram topic=intel.translated.social count=24                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131878        session.py:90
+         source=telegram topic=intel.translated.social count=25                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131879        session.py:90
+         source=telegram topic=intel.translated.social count=26                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131880        session.py:90
+         source=telegram topic=intel.translated.social count=27                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131881        session.py:90
+         source=telegram topic=intel.translated.social count=28                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131882        session.py:90
+         source=telegram topic=intel.translated.social count=29                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131883        session.py:90
+         source=telegram topic=intel.translated.social count=30                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131884        session.py:90
+         source=telegram topic=intel.translated.social count=31                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131885        session.py:90
+         source=telegram topic=intel.translated.social count=32                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131886        session.py:90
+         source=telegram topic=intel.translated.social count=33                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131887        session.py:90
+         source=telegram topic=intel.translated.social count=34                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131888        session.py:90
+         source=telegram topic=intel.translated.social count=35                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172093         session.py:90
+         source=telegram topic=intel.translated.social count=36                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172094         session.py:90
+         source=telegram topic=intel.translated.social count=37                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172095         session.py:90
+         source=telegram topic=intel.translated.social count=38                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172096         session.py:90
+         source=telegram topic=intel.translated.social count=39                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172097         session.py:90
+         source=telegram topic=intel.translated.social count=40                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172098         session.py:90
+         source=telegram topic=intel.translated.social count=41                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172099         session.py:90
+         source=telegram topic=intel.translated.social count=42                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172100         session.py:90
+         source=telegram topic=intel.translated.social count=43                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172101         session.py:90
+         source=telegram topic=intel.translated.social count=44                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172102         session.py:90
+         source=telegram topic=intel.translated.social count=45                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172103         session.py:90
+         source=telegram topic=intel.translated.social count=46                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172104         session.py:90
+         source=telegram topic=intel.translated.social count=47                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172105         session.py:90
+         source=telegram topic=intel.translated.social count=48                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172106         session.py:90
+         source=telegram topic=intel.translated.social count=49                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172107         session.py:90
+         source=telegram topic=intel.translated.social count=50                
+         translation_source=➡️No translation needed                            

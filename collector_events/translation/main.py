@@ -27,7 +27,8 @@ async def run_worker():
             "input_topic": os.getenv("TRANSLATION_INPUT_TOPIC", "intel.events.#"),
             "output_prefix": os.getenv("TRANSLATION_OUTPUT_PREFIX", "intel.translated"),
             "translation_provider": os.getenv("TRANSLATION_PROVIDER", "nllb"), # default to nllb
-            "detector_model_path": os.getenv("GLOTLID_MODEL_PATH", ".models/translation/glotlid/model.bin"),
+            "detector_model_path": os.getenv("GLOTLID_MODEL_PATH", ".models/lid/lid.176.bin"),
+            "translation_model_path": os.getenv("TRANSLATION_MODEL_PATH", ".models/nllb-200-distilled-600M"),
             "device": os.getenv("TRANSLATION_DEVICE", "auto"),
         }
         await worker.create_session({"session_id": "default", "config": config})

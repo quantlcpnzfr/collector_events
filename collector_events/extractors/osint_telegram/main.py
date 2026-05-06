@@ -45,15 +45,17 @@ async def run_bootstrapper():
     
     session_config = {
         "session_id": "default",
-        "api_id": 24274368,
+        "api_id": int(os.getenv("TELEGRAM_API_ID", "24274368")),
+        "api_hash": os.getenv("TELEGRAM_API_HASH", ""),
         "channels_file": str(channels_file) if channels_file.exists() else None,
-        "channel_set": "all",
-        "backfill_days": 1,
-        "max_messages_limit": 100, # Teste com limite de 100 mensagens
+        "channel_set": os.getenv("TELEGRAM_CHANNEL_SET", "all"),
+        "backfill_days": int(os.getenv("TELEGRAM_BACKFILL_DAYS", "1")),
+        "max_messages_limit": int(os.getenv("TELEGRAM_MAX_MESSAGES_LIMIT", "50")),
         "log_to_file": True,
         "log_to_json": True,
         "validate_db_storage": True,
-        "backfill_interval": 30.0
+        "backfill_interval": float(os.getenv("TELEGRAM_BACKFILL_INTERVAL", "30.0")),
+        "startup_channel_limit": int(os.getenv("TELEGRAM_STARTUP_CHANNEL_LIMIT", "0")),
     }
 
     # 4. Verifica se a sessão já existe no worker (idempotência)
@@ -69,7 +71,11 @@ async def run_bootstrapper():
         }
         await worker.handle_command(command)
 
-    log.info("Worker aguardando processamento... (Limite de 100 mensagens configurado)")
+    log.info(
+        "Worker aguardando processamento... (backfill_days=%s, max_messages_limit=%s)",
+        session_config["backfill_days"],
+        session_config["max_messages_limit"],
+    )
     
     try:
         while True:
