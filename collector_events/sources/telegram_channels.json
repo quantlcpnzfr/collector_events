@@ -50,10 +50,10 @@
     }
   },
   "counts": {
-    "totalChannelOccurrences": 45,
-    "enabled": 45,
+    "totalChannelOccurrences": 87,
+    "enabled": 87,
     "bySet": {
-      "full": 37,
+      "full": 79,
       "tech": 8
     },
     "byTopic": {
@@ -1022,6 +1022,849 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_faytuks",
+      "handle": "Faytuks",
+      "label": "Faytuks News",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "breaking",
+      "region": "global",
+      "tier": 1,
+      "enabled": true,
+      "maxMessages": 25,
+      "publicUrl": "https://t.me/Faytuks",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_bellumactanews",
+      "handle": "BellumActaNews",
+      "label": "Bellum Acta News",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "geopolitics",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/BellumActaNews",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_intelrepublic",
+      "handle": "IntelRepublic",
+      "label": "Intel Republic",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "geopolitics",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/IntelRepublic",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_intel_slava",
+      "handle": "intel_slava",
+      "label": "Intel Slava Z",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "ukraine",
+      "tier": 3,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/intel_slava",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_rybar",
+      "handle": "rybar",
+      "label": "Rybar",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "ukraine",
+      "tier": 1,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/rybar",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_milinfolive",
+      "handle": "milinfolive",
+      "label": "Military Informant",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "ukraine",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/milinfolive",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_operativnozsu",
+      "handle": "operativnoZSU",
+      "label": "Operativno ZSU",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "ukraine",
+      "tier": 1,
+      "enabled": true,
+      "maxMessages": 25,
+      "publicUrl": "https://t.me/operativnoZSU",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_ukrainenow",
+      "handle": "UkraineNow",
+      "label": "Ukraine NOW",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "breaking",
+      "region": "ukraine",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/UkraineNow",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_pravdagerashchenko_en",
+      "handle": "pravdaGerashchenko_en",
+      "label": "Anton Gerashchenko EN",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "geopolitics",
+      "region": "ukraine",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/pravdaGerashchenko_en",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_israelwarroom",
+      "handle": "israelwarroom",
+      "label": "Israel War Room",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "middleeast",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/israelwarroom",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_cig_telegram",
+      "handle": "CIG_telegram",
+      "label": "CIG / Conflict Intelligence",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/CIG_telegram",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_atlasnewstelegram",
+      "handle": "atlasnewstelegram",
+      "label": "Atlas News",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "geopolitics",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 20,
+      "publicUrl": "https://t.me/atlasnewstelegram",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_casusbellilive",
+      "handle": "casusbellilive",
+      "label": "Casus Belli",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 20,
+      "publicUrl": "https://t.me/casusbellilive",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_caucasuswar",
+      "handle": "CaucasusWar",
+      "label": "Caucasus War Report",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "middleeast",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 20,
+      "publicUrl": "https://t.me/CaucasusWar",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_disclosetv",
+      "handle": "disclosetv",
+      "label": "Disclose.tv",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "breaking",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 20,
+      "publicUrl": "https://t.me/disclosetv",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_citeam",
+      "handle": "citeam",
+      "label": "Conflict Intelligence Team (CIT)",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "military_intel",
+      "region": "ukraine",
+      "tier": 1,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/citeam",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_ukrainewarreport",
+      "handle": "ukrainewarreport",
+      "label": "Ukraine War Reports",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "ukraine",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/ukrainewarreport",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_syriatracker",
+      "handle": "syriatracker",
+      "label": "Syria Tracker",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "middleeast",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/syriatracker",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_middleeastmonitor",
+      "handle": "middleeastmonitor",
+      "label": "Middle East Monitor",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "geopolitics",
+      "region": "middleeast",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/middleeastmonitor",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_firstsquawk",
+      "handle": "firstsquawk",
+      "label": "First Squawk (Financial Feeds)",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "finance",
+      "region": "global",
+      "tier": 1,
+      "enabled": true,
+      "maxMessages": 25,
+      "publicUrl": "https://t.me/firstsquawk",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_tradingview",
+      "handle": "tradingview",
+      "label": "TradingView",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "markets",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/tradingview",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_forexsignalfactory",
+      "handle": "forexsignalfactory",
+      "label": "Forex Signal Factory",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "forex",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/forexsignalfactory",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_whale_alert_io",
+      "handle": "whale_alert_io",
+      "label": "Whale Alert",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "crypto",
+      "region": "global",
+      "tier": 1,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/whale_alert_io",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_glassnode",
+      "handle": "glassnode",
+      "label": "Glassnode Alerts",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "crypto",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/glassnode",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_crypto_pump_alerts",
+      "handle": "crypto_pump_alerts",
+      "label": "Crypto Pump Alerts",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "crypto",
+      "region": "global",
+      "tier": 3,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/crypto_pump_alerts",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_etherdrops_bot",
+      "handle": "etherdrops_bot",
+      "label": "EtherDrops (Blockchain Feeds)",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "crypto",
+      "region": "global",
+      "tier": 3,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/etherdrops_bot",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_coindesk",
+      "handle": "coindesk",
+      "label": "CoinDesk",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "crypto",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/coindesk",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_binance_announcements",
+      "handle": "binance_announcements",
+      "label": "Binance Announcements",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "crypto",
+      "region": "global",
+      "tier": 1,
+      "enabled": true,
+      "maxMessages": 25,
+      "publicUrl": "https://t.me/binance_announcements",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_disclosewt",
+      "handle": "disclosewt",
+      "label": "Disclose WT",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "breaking",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/disclosewt",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk"
+      ]
+    },
+    {
+      "id": "telegram_full_bell_geo",
+      "handle": "bell_geo",
+      "label": "Bell Geopolitics",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "geopolitics",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/bell_geo",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk"
+      ]
+    },
+    {
+      "id": "telegram_full_geopolitics_live",
+      "handle": "geopolitics_live",
+      "label": "Geopolitics Live",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "geopolitics",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/geopolitics_live",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk"
+      ]
+    },
+    {
+      "id": "telegram_full_asbmil",
+      "handle": "asbmil",
+      "label": "ASB Military News",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "military_intel",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/asbmil",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk"
+      ]
+    },
+    {
+      "id": "telegram_full_military_wave",
+      "handle": "military_wave",
+      "label": "Military Wave",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "global",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/military_wave",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk"
+      ]
+    },
+    {
+      "id": "telegram_full_financialjuice",
+      "handle": "financialjuice",
+      "label": "Financial Juice",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "finance",
+      "region": "global",
+      "tier": 1,
+      "enabled": true,
+      "maxMessages": 25,
+      "publicUrl": "https://t.me/financialjuice",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_zerohedge",
+      "handle": "zerohedge",
+      "label": "ZeroHedge",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "finance",
+      "region": "global",
+      "tier": 1,
+      "enabled": true,
+      "maxMessages": 25,
+      "publicUrl": "https://t.me/zerohedge",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_deita",
+      "handle": "deita",
+      "label": "Deita",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "finance",
+      "region": "europe",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/deita",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "market_sentiment"
+      ]
+    },
+    {
+      "id": "telegram_full_lebanon24",
+      "handle": "lebanon24",
+      "label": "Lebanon 24",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "conflict",
+      "region": "middleeast",
+      "tier": 2,
+      "enabled": true,
+      "maxMessages": 15,
+      "publicUrl": "https://t.me/lebanon24",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk"
+      ]
+    },
+    {
+      "id": "telegram_full_intel_sky",
+      "handle": "intel_sky",
+      "label": "Intel Sky",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "military_alert",
+      "region": "middleeast",
+      "tier": 1,
+      "enabled": true,
+      "maxMessages": 25,
+      "publicUrl": "https://t.me/intel_sky",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "early_signal",
+        "geopolitical_risk",
+        "conflict_risk"
+      ]
+    },
+    {
+      "id": "telegram_full_altsignals",
+      "handle": "altsignals",
+      "label": "AltSignals (Free)",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "forex_signals",
+      "region": "global",
+      "tier": 3,
+      "enabled": true,
+      "maxMessages": 10,
+      "publicUrl": "https://t.me/altsignals",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "retail_sentiment",
+        "contrarian_signal"
+      ]
+    },
+    {
+      "id": "telegram_full_forexgdp",
+      "handle": "forexgdp",
+      "label": "Forex GDP (Free)",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "forex_signals",
+      "region": "global",
+      "tier": 3,
+      "enabled": true,
+      "maxMessages": 10,
+      "publicUrl": "https://t.me/forexgdp",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "retail_sentiment",
+        "contrarian_signal"
+      ]
+    },
+    {
+      "id": "telegram_full_unitedsignals",
+      "handle": "unitedsignals",
+      "label": "United Signals (Free)",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "forex_signals",
+      "region": "global",
+      "tier": 3,
+      "enabled": true,
+      "maxMessages": 10,
+      "publicUrl": "https://t.me/unitedsignals",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "retail_sentiment",
+        "contrarian_signal"
+      ]
+    },
+    {
+      "id": "telegram_full_prosignalsfx",
+      "handle": "prosignalsfx",
+      "label": "ProSignalsFX (Free)",
+      "sourceGroup": "telegram",
+      "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
+      "channelSet": "full",
+      "topic": "forex_signals",
+      "region": "global",
+      "tier": 3,
+      "enabled": true,
+      "maxMessages": 10,
+      "publicUrl": "https://t.me/prosignalsfx",
+      "captureMethod": "telegram_mtproto_relay",
+      "decisionUse": [
+        "retail_sentiment",
+        "contrarian_signal"
       ]
     }
   ]
