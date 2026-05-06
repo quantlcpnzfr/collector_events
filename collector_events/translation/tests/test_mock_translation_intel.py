@@ -78,8 +78,9 @@ class TestTranslationIntelEnrichment(unittest.IsolatedAsyncioTestCase):
             if "שר החוץ הגרמני" in text:
                 eng = "Germany's Foreign Minister (during Foreign Minister Gideon Sa'ar's visit to Germany): \n\nGermany is committed to Israel's security - a steadfast commitment that is not subject to change.\n\nLet it always be clear: we will not allow any threat to the very existence of the State of Israel.\n\nThis is a fundamental principle of Germany's policy."
                 return eng, "translated", ""
-                
-            return "This text was successfully translated into English by the mock engine.", "translated", ""
+
+            compact = " ".join(str(text).split())
+            return f"[MOCK TRANSLATED from {lang}] {compact}", "translated", ""
         engine.translate = MagicMock(side_effect=mock_translate)
         
         session = TranslationSession(self.config, engine=engine)

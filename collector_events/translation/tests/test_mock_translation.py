@@ -11,14 +11,19 @@ from collector_events.translation.session import TranslationSession
 class TestMockTranslation(unittest.IsolatedAsyncioTestCase):
     async def asyncSetUp(self):
         self.test_dir = Path(r"C:\Projects\forex_system\services\collector_events\collector_events\translation\tests")
-        self.source_json = Path(r"C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json")
+        self.source_json = self.test_dir / "osint_feed_intel.json"
         self.output_json = self.test_dir / "osint_feed_translated.json"
         
         # Mock Config
         self.config = {
             "session_id": "test-session",
             "detector_model_path": ".models/translation/glotlid/model.bin",
-            "translation_provider": "none", # Use 'none' for testing unless models are present
+            "translation_provider": os.getenv("TRANSLATION_TEST_PROVIDER", "opus_mt"),
+            "translation_model_path": os.getenv(
+                "TRANSLATION_TEST_MODEL",
+                "Helsinki-NLP/opus-mt-mul-en",
+            ),
+            "device": os.getenv("TRANSLATION_TEST_DEVICE", "cpu"),
             "min_detection_confidence": 0.1, # Low for testing
         }
         
@@ -37,23 +42,23 @@ class TestMockTranslation(unittest.IsolatedAsyncioTestCase):
             items = json.load(f)
             
         # 2. Setup Session
-        # We'll mock the engine's translation to avoid needing the heavy models for this test
         engine = TranslationEngine(self.config)
+        engine.load()
         
-        # Mock detection to return something non-English if needed
+        # Mock detection only because the GlotLID detector model is not present locally.
+        # Translation itself must go through the real engine.
         original_detect = engine.detect_language
         def mock_detect(text):
-            if "ترامپ" in text or "ایران" in text: # Simple Persian check
+            if any('\u0600' <= c <= '\u06FF' for c in text):
                 return MagicMock(language="pes_Arab", language_name="Persian", confidence=0.9, status="detected", error="")
+            if any('\u0590' <= c <= '\u05FF' for c in text):
+                return MagicMock(language="heb_Hebr", language_name="Hebrew", confidence=0.9, status="detected", error="")
+            if any('\u0400' <= c <= '\u04FF' for c in text):
+                return MagicMock(language="ukr_Cyrl", language_name="Ukrainian", confidence=0.9, status="detected", error="")
             return original_detect(text)
         
         engine.detect_language = MagicMock(side_effect=mock_detect)
-        
-        # Mock translate
-        def mock_translate(text, lang):
-            return f"[TRANSLATED from {lang}] {text}", "translated", ""
-        engine.translate = MagicMock(side_effect=mock_translate)
-        
+
         session = TranslationSession(self.config, engine=engine)
         session._mq = self.mock_mq
         
