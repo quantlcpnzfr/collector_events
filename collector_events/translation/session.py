@@ -140,6 +140,7 @@ class TranslationSession(BaseSession):
                 translation_source = f"⚠️ Detection: {detection.language_name} ({detection.language}) - No translation"
                 enriched["extra"]["original_body"] = raw_body
         enriched["extra"]["translation_source"] = translation_source
+        enriched["event_type"] = "INTEL_ITEM_TRANSLATED"
 
         return enriched
 

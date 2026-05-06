@@ -5072,3 +5072,460 @@ INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active
 INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
 INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
 INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → Resolution summary: resolved=78 cache_hits=78 cache_misses=0 skipped=0 failures=0 flood_waits=0 live_resolves=0 duration=27.28s
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 78 active channels in 28.47s
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 100 mensagens configurado)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131773 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131774 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131775 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=4, Accepted=3, Limit=3/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131776 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131777 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131778 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131779 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131780 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131781 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131782 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131783 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131784 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131785 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131786 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131787 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=16, Accepted=15, Limit=15/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131788 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131789 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131790 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131791 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131792 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131793 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=22, Accepted=21, Limit=21/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131794 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131795 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131796 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=25, Accepted=24, Limit=24/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131797 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172091 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=26, Accepted=26, Limit=26/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DefenderDome:20606 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=28, Accepted=27, Limit=27/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254829 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254830 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254831 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254832 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254835 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254836 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254837 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254838 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254839 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:disclosetv:21081 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=37, Accepted=37, Limit=37/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:kpszsu:61446 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=38, Accepted=38, Limit=38/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172256 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172257 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172258 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172259 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172260 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172261 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172262 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172263 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172264 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172265 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172269 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172270 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=50, Accepted=50, Limit=50/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:902 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:903 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:904 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:906 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:907 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=56, Accepted=55, Limit=55/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:908 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:909 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:910 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:911 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:912 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:913 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:914 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:milinfolive:171804 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:milinfolive:171812 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:milinfolive:171815 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=65, Accepted=65, Limit=65/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:UkraineNow:80995 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:UkraineNow:80996 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:UkraineNow:80997 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:UkraineNow:80998 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:UkraineNow:80999 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=70, Accepted=70, Limit=70/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183539 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183540 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183541 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183542 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183543 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183544 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183545 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183546 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183547 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183557 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=81, Accepted=80, Limit=80/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183558 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:FotrosResistancee:21442 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:FotrosResistancee:21443 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:FotrosResistancee:21444 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:FotrosResistancee:21445 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:FotrosResistancee:21446 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:FotrosResistancee:21447 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:FotrosResistancee:21448 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:FotrosResistancee:21449 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=89, Accepted=89, Limit=89/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69213 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69214 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69215 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69216 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=94, Accepted=93, Limit=93/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69217 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69219 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69220 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69223 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69224 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69225 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69226 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (100). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → Resolution summary: resolved=78 cache_hits=78 cache_misses=0 skipped=0 failures=0 flood_waits=0 live_resolves=0 duration=27.49s
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 78 active channels in 29.02s
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 100 mensagens configurado)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210288 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131798 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131799 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131800 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=5, Accepted=4, Limit=4/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131801 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131802 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131803 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131804 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131805 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131806 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131807 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131808 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131809 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131810 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131811 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131812 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131813 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131814 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131815 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131816 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131817 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131818 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=23, Accepted=22, Limit=22/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131819 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131820 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131821 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131822 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100215 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81543 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121793 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=30, Accepted=29, Limit=29/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121794 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121797 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=31, Accepted=31, Limit=31/100
+INFO → OsintBootstrapper → Status [default]: Recv=31, Accepted=31, Limit=31/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172271 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:BellumActaNews:172276 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:israelwarroom:915 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=34, Accepted=34, Limit=34/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:milinfolive:171816 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:milinfolive:171817 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:milinfolive:171818 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:milinfolive:171819 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:milinfolive:171820 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:milinfolive:171821 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:milinfolive:171824 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:pravdaGerashchenko_en:47107 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=42, Accepted=42, Limit=42/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183559 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183561 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183562 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183564 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183566 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183567 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=49, Accepted=48, Limit=48/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183568 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183569 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DDGeopolitics:183570 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=51, Accepted=51, Limit=51/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69227 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69228 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69231 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69232 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69233 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69235 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69236 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:geopolitics_prime:69237 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=59, Accepted=59, Limit=59/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60640 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60641 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60642 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60643 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60644 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60645 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60646 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60647 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60648 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60649 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60650 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=71, Accepted=70, Limit=70/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60651 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60652 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60653 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60654 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60655 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60656 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=77, Accepted=76, Limit=76/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60657 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60658 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31801 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31802 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31803 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31804 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31805 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31806 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=85, Accepted=84, Limit=84/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31808 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31809 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31810 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31811 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31815 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=90, Accepted=89, Limit=89/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64827 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64828 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64829 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=93, Accepted=92, Limit=92/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64830 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64831 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64832 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64833 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64834 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64836 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=99, Accepted=98, Limit=98/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64837 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64838 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (100). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → Resolution summary: resolved=78 cache_hits=78 cache_misses=0 skipped=0 failures=0 flood_waits=0 live_resolves=0 duration=33.05s
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 78 active channels in 34.33s
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (Limite de 100 mensagens configurado)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210289 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210290 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=2, Accepted=2, Limit=2/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131823 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131824 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131825 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131826 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131827 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131828 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131829 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131830 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131831 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=12, Accepted=11, Limit=11/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131832 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131833 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131834 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131835 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131836 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131837 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131838 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131839 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131840 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131841 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131842 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131843 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131844 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131845 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=26, Accepted=25, Limit=25/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131846 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131847 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172092 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100216 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thehackernews:8948 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=31, Accepted=30, Limit=30/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thehackernews:8949 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121798 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=32, Accepted=32, Limit=32/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254840 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254841 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=35, Accepted=34, Limit=34/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:casusbellilive:254842 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:kpszsu:61447 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=37, Accepted=36, Limit=36/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:kpszsu:61448 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=37, Accepted=37, Limit=37/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:CIG_telegram:74937 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:CIG_telegram:74938 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=39, Accepted=39, Limit=39/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:FotrosResistancee:21450 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:FotrosResistancee:21452 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=41, Accepted=41, Limit=41/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60660 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:LebUpdate:60661 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:Middle_East_Spectator:31816 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64839 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64840 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64841 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=48, Accepted=47, Limit=47/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64842 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64843 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:RezistanceTrench1:64844 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58971 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58972 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58973 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58974 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58975 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58976 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58977 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58978 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58979 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58980 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58981 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=62, Accepted=61, Limit=61/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58982 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58983 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58984 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58985 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58986 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58987 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58988 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58989 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thecradlemedia:58990 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:war_monitor:39549 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128815 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=73, Accepted=72, Limit=72/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128816 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128817 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128818 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128819 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128820 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128821 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128822 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128823 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128824 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128825 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128827 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128828 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128829 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=86, Accepted=85, Limit=85/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128830 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128831 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128832 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128833 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:yediotnews25:128834 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:MiddleEastNow_Breaking:23542 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:MiddleEastNow_Breaking:23544 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:MiddleEastNow_Breaking:23546 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=94, Accepted=93, Limit=93/100
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:MiddleEastNow_Breaking:23547 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:MiddleEastNow_Breaking:23548 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:MiddleEastNow_Breaking:23549 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:MiddleEastNow_Breaking:23550 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:MiddleEastNow_Breaking:23551 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:MiddleEastNow_Breaking:23552 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:nexta_tv:26794 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (100). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.

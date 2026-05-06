@@ -43,6 +43,7 @@ class EventProcessor(Loggable):
         # Estruturas de calibração recuperadas da versão antiga
         self.domain_weights: dict[str, float] = {}
         self.numeric_thresholds: list[dict] = []
+        self.source_signal_weights: dict[str, float] = {}
         self._load_scoring_config()
         
         # Motor NLP Singleton (Carrega na RAM apenas 1x)
@@ -59,12 +60,28 @@ class EventProcessor(Loggable):
                     {"min_pct": 2.0, "bonus": 0.15},
                     {"min_pct": 0.5, "bonus": 0.05}
                 ])
+                self.source_signal_weights = config.get("source_signal_weights", {
+                    "source_score_scale": 0.18,
+                    "cluster_channel_count_weight": 0.03,
+                    "cluster_emit_count_weight": 0.012,
+                    "cluster_weighted_attention_weight": 0.035,
+                    "cluster_velocity_weight": 0.02,
+                    "verification_required_penalty": 0.08,
+                    "high_bias_penalty": 0.06,
+                    "medium_bias_penalty": 0.03,
+                    "retail_signal_penalty": 0.20,
+                    "narrative_partisan_penalty": 0.12,
+                    "official_brand_bonus": 0.04,
+                    "independent_reporter_bonus": 0.03,
+                    "exact_duplicate_penalty": 0.02
+                })
                 # Ordena os limiares do maior para o menor para a lógica de bónus
                 self.numeric_thresholds.sort(key=lambda x: x["min_pct"], reverse=True)
                 self.log.info("Scoring config carregada com sucesso.")
         except Exception as e:
             self.log.warning(f"Aviso: Não foi possível carregar {_SCORING_FILE}. Usando defaults. Erro: {e}")
             self.domain_weights = {}
+            self.source_signal_weights = {}
 
     def process_items(self, items: Sequence[IntelItem]) -> list[IntelItem]:
         """Reintegrado: Permite processamento em lote pelo Orquestrador."""
@@ -107,6 +124,10 @@ class EventProcessor(Loggable):
         item.extra["impact_category"] = impact_category
         item.extra["nlp_features"] = nlp_features
         item.extra["domain_weight"] = domain_weight
+        source_adj, cluster_adj, attention_score = self._source_cluster_adjustments(item)
+        item.extra["source_signal_adjustment"] = round(source_adj, 3)
+        item.extra["cluster_signal_adjustment"] = round(cluster_adj, 3)
+        item.extra["attention_score"] = round(attention_score, 3)
         
         return ProcessedEvent(
             impact_category=impact_category,
@@ -131,12 +152,75 @@ class EventProcessor(Loggable):
         if any(e["label"] == "G10_COUNTRY" for e in entities): score += 0.15
 
         score += self._numeric_signal_bonus(item)
+        source_adj, cluster_adj, _attention_score = self._source_cluster_adjustments(item)
+        score += source_adj + cluster_adj
         
         # Multiplicadores de Escala
         score *= domain_weight # Reintegrado: Aplica peso do domínio (ex: Geopolítica tem mais impacto que Clima)
         score *= self._reverse_crisis_filter(nlp_features.get("gliner_graph", {}))
 
         return max(min(score, 1.0), 0.0)
+
+    def _source_cluster_adjustments(self, item: IntelItem) -> tuple[float, float, float]:
+        extra = item.extra or {}
+        weights = self.source_signal_weights or {}
+
+        def _wf(key: str, default: float) -> float:
+            try:
+                return float(weights.get(key, default))
+            except Exception:
+                return default
+
+        def _float(value: Any, default: float = 0.0) -> float:
+            try:
+                return float(value)
+            except Exception:
+                return default
+
+        def _int(value: Any, default: int = 0) -> int:
+            try:
+                return int(value)
+            except Exception:
+                return default
+
+        source_score = _float(extra.get("source_score"), 0.5)
+        source_adj = (source_score - 0.5) * _wf("source_score_scale", 0.18)
+
+        authenticity = str(extra.get("source_authenticity_class", "") or "").lower()
+        if authenticity == "official_brand":
+            source_adj += _wf("official_brand_bonus", 0.04)
+        elif authenticity == "independent_reporter":
+            source_adj += _wf("independent_reporter_bonus", 0.03)
+        elif authenticity == "retail_signal":
+            source_adj -= _wf("retail_signal_penalty", 0.20)
+        elif authenticity == "narrative_partisan":
+            source_adj -= _wf("narrative_partisan_penalty", 0.12)
+
+        bias_risk = str(extra.get("source_bias_risk", "") or "").lower()
+        if bias_risk == "high":
+            source_adj -= _wf("high_bias_penalty", 0.06)
+        elif bias_risk == "medium":
+            source_adj -= _wf("medium_bias_penalty", 0.03)
+
+        if bool(extra.get("verification_required", False)):
+            source_adj -= _wf("verification_required_penalty", 0.08)
+
+        if bool(extra.get("exact_duplicate", False)):
+            source_adj -= _wf("exact_duplicate_penalty", 0.02)
+
+        cluster_channels = max(1, _int(extra.get("cluster_channel_count"), 1))
+        cluster_emits = max(1, _int(extra.get("cluster_emit_count"), 1))
+        cluster_attention = max(0.0, _float(extra.get("cluster_weighted_attention"), 0.0))
+        cluster_velocity = max(0.0, _float(extra.get("cluster_velocity_per_hour"), 0.0))
+
+        cluster_adj = 0.0
+        cluster_adj += min(cluster_channels - 1, 5) * _wf("cluster_channel_count_weight", 0.03)
+        cluster_adj += min(cluster_emits - 1, 6) * _wf("cluster_emit_count_weight", 0.012)
+        cluster_adj += min(cluster_attention, 4.0) * _wf("cluster_weighted_attention_weight", 0.035)
+        cluster_adj += min(cluster_velocity / 10.0, 3.0) * _wf("cluster_velocity_weight", 0.02)
+
+        attention_score = max(0.0, source_score + cluster_adj)
+        return source_adj, cluster_adj, attention_score
 
     def _numeric_signal_bonus(self, item: IntelItem) -> float:
         """Reintegrado: Captura quedas usando limiares configuráveis no JSON."""

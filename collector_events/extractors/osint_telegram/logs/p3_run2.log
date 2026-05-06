@@ -1,0 +1,280 @@
+INFO     👀 Logging system initialized                     logger_config.py:182
+INFO     👀 Iniciando Bootstrapper de OSINT Telegram...              main.py:28
+INFO     👀 [EnvConfig] 🔏 47 chaves marcadas como   env_config_manager.py:1072
+         Secret no arquivo.                                                    
+INFO     👀 [EnvConfig] 5 chaves bootstrap           env_config_manager.py:1025
+         carregadas do arquivo.                                                
+INFO     👀 [EnvConfig] 1 bootstrap secrets           env_config_manager.py:690
+         carregados.                                                           
+C:\Projects\forex_system\shared_lib\forex_shared\mongo_manager.py:128: UserWarning: You appear to be connected to a CosmosDB cluster. For more information regarding feature compatibility and support please visit https://www.mongodb.com/supportability/cosmosdb
+  self.client = MongoClient(
+INFO     👀 [MongoManager] Conectado via connection string mongo_manager.py:143
+         | db=forex_system                                                     
+INFO     👀 [MongoManager] bulk_sync(env_config): 0 novos, mongo_manager.py:208
+         26 atualizados.                                                       
+INFO     👀 [EnvConfig] 150 chaves sincronizadas com  env_config_manager.py:951
+         MongoDB.                                                              
+INFO     👀 [EnvConfig] 143 novas chaves setadas em   env_config_manager.py:886
+         os.environ.                                                           
+INFO     👀 [EnvConfig] 150 chaves recarregadas do    env_config_manager.py:965
+         MongoDB.                                                              
+INFO     👀 Worker resources (MongoDB store) initialized.          worker.py:47
+INFO     👀 Enviando comando SESSION_CREATE para sessão 'default'    main.py:63
+INFO     👀 Initialized feed log at                              session.py:138
+         C:\Projects\forex_system\services\collector_events\coll               
+         ector_events\extractors\osint_telegram\logs\osint_feed.               
+         log                                                                   
+INFO     👀 Initialized JSON log at                              session.py:147
+         C:\Projects\forex_system\services\collector_events\coll               
+         ector_events\extractors\osint_telegram\logs\osint_feed_               
+         intel.json                                                            
+INFO     👀 Starting OsintTelegramSession 'default'              session.py:247
+INFO     👀 [RabbitMQ Async] Conectando:          rabbitmq_provider_async.py:53
+         amqp://guest:guest@localhost:5672/                                    
+INFO     👀 [RabbitMQ Async] Conectando:          rabbitmq_provider_async.py:62
+         amqp://guest:guest@localhost:5672/                                    
+INFO     👀 [RabbitMQ Async] Conectado. Exchange  rabbitmq_provider_async.py:85
+         'forex_market_events' ativo.                                          
+INFO     👀 [MQEventPublisher] started with 8 workers    event_publisher.py:136
+INFO     👀 Connecting to 149.154.175.55:443/TcpFull...    mtprotosender.py:234
+INFO     👀 Connection to 149.154.175.55:443/TcpFull       mtprotosender.py:285
+         complete!                                                             
+INFO     👀 Resolution summary: resolved=78 cache_hits=78        session.py:455
+         cache_misses=0 skipped=0 failures=0 flood_waits=0                     
+         live_resolves=0 duration=27.49s                                       
+INFO     👀 OsintTelegramSession 'default' started with 78       session.py:291
+         active channels in 29.02s                                             
+INFO     👀 Session 'default' created and started.                 worker.py:97
+INFO     👀 Worker aguardando processamento... (Limite de 100        main.py:72
+         mensagens configurado)                                                
+INFO     👀 Status : Recv=0, Accepted=0, Limit=0/100                 main.py:82
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:operativnoZSU:210288 in globalintel                          
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131798   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131799   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131800   session.py:718
+         in globalintel                                                        
+INFO     👀 Status : Recv=5, Accepted=4, Limit=4/100                 main.py:82
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131801   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131802   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131803   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131804   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131805   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131806   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131807   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131808   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131809   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131810   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131811   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131812   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131813   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131814   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131815   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131816   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131817   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131818   session.py:718
+         in globalintel                                                        
+INFO     👀 Status : Recv=23, Accepted=22, Limit=22/100              main.py:82
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131819   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131820   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131821   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:firstsquaw:131822   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:whale_alert_io:100215 in globalintel                         
+INFO     👀 ✅ Verified storage for telegram:ClashReport:81543   session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:abualiexpress:121793 in globalintel                          
+INFO     👀 Status : Recv=30, Accepted=29, Limit=29/100              main.py:82
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:abualiexpress:121794 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:abualiexpress:121797 in globalintel                          
+INFO     👀 Status : Recv=31, Accepted=31, Limit=31/100              main.py:82
+INFO     👀 Status : Recv=31, Accepted=31, Limit=31/100              main.py:82
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:BellumActaNews:172271 in globalintel                         
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:BellumActaNews:172276 in globalintel                         
+INFO     👀 ✅ Verified storage for telegram:israelwarroom:915   session.py:718
+         in globalintel                                                        
+INFO     👀 Status : Recv=34, Accepted=34, Limit=34/100              main.py:82
+INFO     👀 ✅ Verified storage for telegram:milinfolive:171816  session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:milinfolive:171817  session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:milinfolive:171818  session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:milinfolive:171819  session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:milinfolive:171820  session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:milinfolive:171821  session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for telegram:milinfolive:171824  session.py:718
+         in globalintel                                                        
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:pravdaGerashchenko_en:47107 in globalintel                   
+INFO     👀 Status : Recv=42, Accepted=42, Limit=42/100              main.py:82
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:DDGeopolitics:183559 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:DDGeopolitics:183561 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:DDGeopolitics:183562 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:DDGeopolitics:183564 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:DDGeopolitics:183566 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:DDGeopolitics:183567 in globalintel                          
+INFO     👀 Status : Recv=49, Accepted=48, Limit=48/100              main.py:82
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:DDGeopolitics:183568 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:DDGeopolitics:183569 in globalintel                          
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:DDGeopolitics:183570 in globalintel                          
+INFO     👀 Status : Recv=51, Accepted=51, Limit=51/100              main.py:82
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:geopolitics_prime:69227 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:geopolitics_prime:69228 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:geopolitics_prime:69231 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:geopolitics_prime:69232 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:geopolitics_prime:69233 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:geopolitics_prime:69235 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:geopolitics_prime:69236 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:geopolitics_prime:69237 in globalintel                       
+INFO     👀 Status : Recv=59, Accepted=59, Limit=59/100              main.py:82
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60640 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60641 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60642 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60643 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60644 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60645 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60646 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60647 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60648 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60649 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60650 in  session.py:718
+         globalintel                                                           
+INFO     👀 Status : Recv=71, Accepted=70, Limit=70/100              main.py:82
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60651 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60652 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60653 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60654 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60655 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60656 in  session.py:718
+         globalintel                                                           
+INFO     👀 Status : Recv=77, Accepted=76, Limit=76/100              main.py:82
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60657 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for telegram:LebUpdate:60658 in  session.py:718
+         globalintel                                                           
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31801 in globalintel                   
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31802 in globalintel                   
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31803 in globalintel                   
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31804 in globalintel                   
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31805 in globalintel                   
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31806 in globalintel                   
+INFO     👀 Status : Recv=85, Accepted=84, Limit=84/100              main.py:82
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31808 in globalintel                   
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31809 in globalintel                   
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31810 in globalintel                   
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31811 in globalintel                   
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:Middle_East_Spectator:31815 in globalintel                   
+INFO     👀 Status : Recv=90, Accepted=89, Limit=89/100              main.py:82
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64827 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64828 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64829 in globalintel                       
+INFO     👀 Status : Recv=93, Accepted=92, Limit=92/100              main.py:82
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64830 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64831 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64832 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64833 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64834 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64836 in globalintel                       
+INFO     👀 Status : Recv=99, Accepted=98, Limit=98/100              main.py:82
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64837 in globalintel                       
+INFO     👀 ✅ Verified storage for                              session.py:718
+         telegram:RezistanceTrench1:64838 in globalintel                       
+INFO     👀 Message limit reached (100). Stopping session.       session.py:732
+INFO     👀 Stopping OsintTelegramSession 'default'              session.py:300
+INFO     👀 Disconnecting from                             mtprotosender.py:325
+         149.154.175.55:443/TcpFull...                                         
+INFO     👀 Disconnection from 149.154.175.55:443/TcpFull  mtprotosender.py:345
+         complete!                                                             
+INFO     👀 [RabbitMQ Async] Conexão encerrada.   rabbitmq_provider_async.py:94
+INFO     👀 [MQEventPublisher] stopped                   event_publisher.py:183
+INFO     👀 Nenhuma sessão ativa (todas STOPPED). Encerrando         main.py:78
+         bootstrapper...                                                       
+INFO     👀 Stopping 1 active sessions...                          worker.py:57
+INFO     👀 Stopping OsintTelegramSession 'default'              session.py:300
+INFO     👀 Not disconnecting (already have no connection) mtprotosender.py:322
+INFO     👀 Bootstrapper encerrado.                                  main.py:89

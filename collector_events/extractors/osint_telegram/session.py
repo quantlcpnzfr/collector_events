@@ -2,6 +2,8 @@ from __future__ import annotations
 import asyncio
 import os
 import json
+import hashlib
+import re
 from datetime import datetime, timezone, timedelta
 from typing import Any, Dict, List, Optional, Set
 from pathlib import Path
@@ -53,6 +55,12 @@ class OsintTelegramSession(BaseSession):
         self.priority_startup = bool(config.get("priority_startup", True))
         self.cache_hit_delay = float(config.get("cache_hit_delay", 0.05))
         self.resolve_failure_cooldown_hours = int(config.get("resolve_failure_cooldown_hours", 24))
+        self.enable_content_dedupe = bool(config.get("enable_content_dedupe", True))
+        self.dedupe_window_hours = int(config.get("dedupe_window_hours", 6))
+        self.enable_similarity_clustering = bool(config.get("enable_similarity_clustering", True))
+        self.cluster_window_hours = int(config.get("cluster_window_hours", 6))
+        self.cluster_similarity_threshold = float(config.get("cluster_similarity_threshold", 0.62))
+        self.max_cluster_candidates = int(config.get("max_cluster_candidates", 40))
         
         # New Parameters
         self.backfill_days = config.get("backfill_days", 1)
@@ -87,6 +95,9 @@ class OsintTelegramSession(BaseSession):
         self.received_count = 0
         self.accepted_count = 0
         self.duplicate_count = 0
+        self.content_duplicate_count = 0
+        self.clustered_message_count = 0
+        self.new_cluster_count = 0
         self.processed_messages_count = 0
         self.last_poll_at: Optional[datetime] = None
         self.resolved_count = 0
@@ -620,8 +631,40 @@ class OsintTelegramSession(BaseSession):
             forwards=int(getattr(message, "forwards", 0) or 0),
         )
         
-        # Build IntelItem payload
+        source_score = self._source_score(channel)
         domain = self._domain_for_topic(channel.topic)
+        fingerprint_key = self._fingerprint_key(domain, item.text)
+        fingerprint_info = await self._track_content_fingerprint(
+            fingerprint_key=fingerprint_key,
+            channel=channel,
+            item_id=item_id,
+            published_at=ts,
+            domain=domain,
+            source_score=source_score,
+        )
+        if fingerprint_info["exact_duplicate"]:
+            self.duplicate_count += 1
+            self.content_duplicate_count += 1
+            await self.store.save_channel_state(
+                channel.handle,
+                {
+                    "lastDuplicateAt": datetime.now(timezone.utc).isoformat(),
+                    "lastDuplicateFingerprint": fingerprint_key,
+                },
+            )
+
+        cluster_info = await self._upsert_similarity_cluster(
+            domain=domain,
+            channel=channel,
+            item_id=item_id,
+            published_at=ts,
+            text=item.text,
+            source_score=source_score,
+            fingerprint_key=fingerprint_key,
+            exact_duplicate=fingerprint_info["exact_duplicate"],
+        )
+
+        # Build IntelItem payload
         intel_item = IntelItem(
             id=f"telegram:{item.id}",
             source="telegram",
@@ -640,6 +683,26 @@ class OsintTelegramSession(BaseSession):
                 "channel_title": item.channelTitle,
                 "views": item.views,
                 "forwards": item.forwards,
+                "source_score": source_score,
+                "source_authenticity_class": channel.authenticity_class,
+                "source_bias_risk": channel.bias_risk,
+                "source_role": channel.source_role,
+                "routing_family": channel.routing_family,
+                "deployment_priority": channel.deployment_priority,
+                "verification_required": channel.verification_required,
+                "fingerprint_key": fingerprint_key,
+                "exact_duplicate": fingerprint_info["exact_duplicate"],
+                "exact_emit_count": fingerprint_info["emit_count"],
+                "exact_channel_count": fingerprint_info["channel_count"],
+                "cluster_id": cluster_info["cluster_id"],
+                "cluster_emit_count": cluster_info["emit_count"],
+                "cluster_channel_count": cluster_info["channel_count"],
+                "cluster_weighted_attention": cluster_info["weighted_attention"],
+                "cluster_first_seen_at": cluster_info["first_seen_at"],
+                "cluster_last_seen_at": cluster_info["last_seen_at"],
+                "cluster_velocity_per_hour": cluster_info["velocity_per_hour"],
+                "cluster_similarity": cluster_info["similarity"],
+                "cluster_is_new": cluster_info["is_new_cluster"],
             }
         )
         
@@ -648,7 +711,6 @@ class OsintTelegramSession(BaseSession):
         await self._write_intel_to_json(intel_item)
         
         await self.store.save_intel_item(intel_item.to_dict())
-        
         # 1.1 Optional Validation
         if self.validate_db_storage:
             found = await self.store.get_item("globalintel", {"id": intel_item.id})
@@ -669,6 +731,274 @@ class OsintTelegramSession(BaseSession):
                 if self.max_messages_limit > 0 and self.processed_messages_count >= self.max_messages_limit:
                     log.info(f"Message limit reached ({self.max_messages_limit}). Stopping session.")
                     self._create_background_task(self.stop(), name="limit-stop")
+
+    def _normalize_for_fingerprint(self, text: str) -> str:
+        cleaned = re.sub(r"https?://\S+", "", str(text or "").lower())
+        cleaned = re.sub(r"\s+", " ", cleaned).strip()
+        return cleaned[:4000]
+
+    def _fingerprint_key(self, domain: str, text: str) -> str:
+        normalized = self._normalize_for_fingerprint(text)
+        digest = hashlib.sha1(normalized.encode("utf-8")).hexdigest()
+        return f"{domain}:{digest}"
+
+    async def _track_content_fingerprint(
+        self,
+        *,
+        fingerprint_key: str,
+        channel: TelegramChannel,
+        item_id: str,
+        published_at: str,
+        domain: str,
+        source_score: float,
+    ) -> Dict[str, Any]:
+        if not self.enable_content_dedupe:
+            return {
+                "exact_duplicate": False,
+                "emit_count": 1,
+                "channel_count": 1,
+            }
+
+        existing = await self.store.get_content_fingerprint(fingerprint_key)
+        exact_duplicate = False
+        duplicate_count = 0
+        first_seen = published_at
+        seen_channels = [channel.handle]
+
+        if existing:
+            first_seen = existing.get("first_seen_at") or existing.get("published_at") or published_at
+            within_window = False
+            try:
+                first_seen_dt = datetime.fromisoformat(str(first_seen).replace("Z", "+00:00"))
+                published_dt = datetime.fromisoformat(str(published_at).replace("Z", "+00:00"))
+                within_window = published_dt - first_seen_dt <= timedelta(hours=self.dedupe_window_hours)
+            except Exception:
+                within_window = False
+
+            seen_channels = list(existing.get("channels") or [])
+            seen_channels = list(dict.fromkeys([*seen_channels, channel.handle]))
+            duplicate_count = int(existing.get("duplicate_count", 0))
+            exact_duplicate = within_window
+
+        await self.store.save_content_fingerprint(
+            fingerprint_key,
+            {
+                "fingerprint_key": fingerprint_key,
+                "domain": domain,
+                "first_seen_at": first_seen,
+                "last_seen_at": published_at,
+                "published_at": first_seen,
+                "first_item_id": existing.get("first_item_id", item_id) if existing else item_id,
+                "last_item_id": item_id,
+                "channels": seen_channels,
+                "duplicate_count": duplicate_count + (1 if exact_duplicate else 0),
+                "source_score": max(float(existing.get("source_score", 0.0)), source_score) if existing else source_score,
+            },
+        )
+        return {
+            "exact_duplicate": exact_duplicate,
+            "emit_count": duplicate_count + 1,
+            "channel_count": len(seen_channels),
+        }
+
+    def _cluster_tokens(self, text: str) -> set[str]:
+        stopwords = {
+            "the", "and", "for", "with", "this", "that", "from", "into", "over",
+            "under", "about", "after", "before", "were", "have", "has", "had",
+            "will", "would", "could", "should", "their", "there", "them", "they",
+            "you", "your", "ours", "our", "but", "not", "are", "was", "been",
+            "than", "then", "just", "also", "more", "less", "very", "what", "when",
+            "where", "which", "while", "breaking", "telegram",
+        }
+        tokens = re.findall(r"[a-z0-9_]{3,}", self._normalize_for_fingerprint(text))
+        return {token for token in tokens if token not in stopwords}
+
+    def _cluster_chargrams(self, text: str, n: int = 4) -> set[str]:
+        normalized = self._normalize_for_fingerprint(text)
+        collapsed = re.sub(r"[^a-z0-9]+", " ", normalized)
+        compact = collapsed.replace(" ", "")
+        if len(compact) < n:
+            return {compact} if compact else set()
+        return {compact[i : i + n] for i in range(0, len(compact) - n + 1)}
+
+    def _cluster_similarity(
+        self,
+        left_tokens: set[str],
+        right_tokens: set[str],
+        left_chargrams: set[str],
+        right_chargrams: set[str],
+    ) -> float:
+        token_intersection = len(left_tokens & right_tokens)
+        token_union = len(left_tokens | right_tokens)
+        token_jaccard = (token_intersection / token_union) if token_union > 0 else 0.0
+        token_containment = (
+            token_intersection / max(1, min(len(left_tokens), len(right_tokens)))
+            if left_tokens and right_tokens
+            else 0.0
+        )
+
+        char_intersection = len(left_chargrams & right_chargrams)
+        char_union = len(left_chargrams | right_chargrams)
+        char_jaccard = (char_intersection / char_union) if char_union > 0 else 0.0
+        char_containment = (
+            char_intersection / max(1, min(len(left_chargrams), len(right_chargrams)))
+            if left_chargrams and right_chargrams
+            else 0.0
+        )
+
+        similarity = (
+            0.35 * token_jaccard
+            + 0.20 * token_containment
+            + 0.25 * char_jaccard
+            + 0.20 * char_containment
+        )
+        return round(similarity, 4)
+
+    async def _upsert_similarity_cluster(
+        self,
+        *,
+        domain: str,
+        channel: TelegramChannel,
+        item_id: str,
+        published_at: str,
+        text: str,
+        source_score: float,
+        fingerprint_key: str,
+        exact_duplicate: bool,
+    ) -> Dict[str, Any]:
+        tokens = self._cluster_tokens(text)
+        chargrams = self._cluster_chargrams(text)
+        normalized_text = self._normalize_for_fingerprint(text)
+        if not self.enable_similarity_clustering:
+            cluster_id = f"cluster:{domain}:{hashlib.sha1(normalized_text.encode('utf-8')).hexdigest()[:24]}"
+            return {
+                "cluster_id": cluster_id,
+                "emit_count": 1,
+                "channel_count": 1,
+                "weighted_attention": round(source_score, 3),
+                "first_seen_at": published_at,
+                "last_seen_at": published_at,
+                "velocity_per_hour": 1.0,
+                "similarity": 1.0,
+                "is_new_cluster": True,
+            }
+
+        since_iso = (datetime.fromisoformat(published_at.replace("Z", "+00:00")) - timedelta(hours=self.cluster_window_hours)).isoformat()
+        candidates = await self.store.find_cluster_candidates(
+            domain,
+            since_iso=since_iso,
+            topic=channel.topic,
+            routing_family=channel.routing_family,
+            limit=self.max_cluster_candidates,
+        )
+
+        best: Dict[str, Any] | None = None
+        best_similarity = 0.0
+        for candidate in candidates:
+            candidate_tokens = set(candidate.get("representative_tokens") or [])
+            candidate_chargrams = set(candidate.get("representative_chargrams") or [])
+            similarity = self._cluster_similarity(tokens, candidate_tokens, chargrams, candidate_chargrams)
+            if similarity >= self.cluster_similarity_threshold and similarity > best_similarity:
+                best = candidate
+                best_similarity = similarity
+
+        is_new_cluster = best is None
+        if is_new_cluster:
+            cluster_id = f"cluster:{domain}:{hashlib.sha1(normalized_text.encode('utf-8')).hexdigest()[:24]}"
+            emit_count = 1
+            channels = [channel.handle]
+            weighted_attention = round(source_score, 3)
+            first_seen_at = published_at
+            representative_text = normalized_text[:600]
+            exact_duplicate_count = 1 if exact_duplicate else 0
+            self.new_cluster_count += 1
+        else:
+            cluster_id = str(best["_id"])
+            emit_count = int(best.get("emit_count", 0)) + 1
+            channels = list(dict.fromkeys([*(best.get("channels") or []), channel.handle]))
+            weighted_attention = round(float(best.get("weighted_attention", 0.0)) + source_score, 3)
+            first_seen_at = str(best.get("first_seen_at") or published_at)
+            representative_text = str(best.get("representative_text") or normalized_text[:600])
+            exact_duplicate_count = int(best.get("exact_duplicate_count", 0)) + (1 if exact_duplicate else 0)
+            self.clustered_message_count += 1
+
+        last_seen_at = published_at
+        try:
+            first_dt = datetime.fromisoformat(first_seen_at.replace("Z", "+00:00"))
+            last_dt = datetime.fromisoformat(last_seen_at.replace("Z", "+00:00"))
+            elapsed_hours = max((last_dt - first_dt).total_seconds() / 3600.0, 1 / 60.0)
+        except Exception:
+            elapsed_hours = 1 / 60.0
+        velocity = round(emit_count / elapsed_hours, 3)
+
+        await self.store.save_content_cluster(
+            cluster_id,
+            {
+                "domain": domain,
+                "first_seen_at": first_seen_at,
+                "last_seen_at": last_seen_at,
+                "first_item_id": best.get("first_item_id", item_id) if best else item_id,
+                "last_item_id": item_id,
+                "emit_count": emit_count,
+                "channels": channels,
+                "channel_count": len(channels),
+                "weighted_attention": weighted_attention,
+                "topic": channel.topic,
+                "routing_family": channel.routing_family,
+                "representative_text": representative_text,
+                "representative_tokens": sorted(tokens)[:80],
+                "representative_chargrams": sorted(chargrams)[:160],
+                "recent_fingerprint_keys": list(dict.fromkeys([*((best or {}).get("recent_fingerprint_keys") or []), fingerprint_key]))[-20:],
+                "exact_duplicate_count": exact_duplicate_count,
+            },
+        )
+
+        return {
+            "cluster_id": cluster_id,
+            "emit_count": emit_count,
+            "channel_count": len(channels),
+            "weighted_attention": weighted_attention,
+            "first_seen_at": first_seen_at,
+            "last_seen_at": last_seen_at,
+            "velocity_per_hour": velocity,
+            "similarity": round(best_similarity if best else 1.0, 3),
+            "is_new_cluster": is_new_cluster,
+        }
+
+    def _source_score(self, channel: TelegramChannel) -> float:
+        priority_base = {
+            "p0": 0.88,
+            "p1": 0.72,
+            "p2": 0.46,
+            "disabled": 0.10,
+        }.get(channel.deployment_priority.lower(), 0.60)
+
+        authenticity_adj = {
+            "official_brand": 0.06,
+            "independent_reporter": 0.04,
+            "osint_aggregator": 0.00,
+            "market_tape": 0.01,
+            "retail_signal": -0.18,
+            "unofficial_mirror": -0.12,
+            "narrative_partisan": -0.20,
+            "unknown": -0.05,
+        }.get(channel.authenticity_class.lower(), -0.03)
+
+        bias_adj = {
+            "low": 0.03,
+            "medium": -0.03,
+            "high": -0.10,
+            "unknown": -0.05,
+        }.get(channel.bias_risk.lower(), -0.05)
+
+        score = priority_base + authenticity_adj + bias_adj
+        if channel.verification_required:
+            score -= 0.04
+        if not channel.send_to_oracle:
+            score = min(score, 0.35)
+        if channel.can_trigger_trade:
+            score += 0.04
+        return round(max(0.05, min(score, 0.99)), 3)
 
     def _domain_for_topic(self, topic: str) -> str:
         topic = topic.lower()
@@ -701,6 +1031,9 @@ class OsintTelegramSession(BaseSession):
             "received_count": self.received_count,
             "accepted_count": self.accepted_count,
             "duplicate_count": self.duplicate_count,
+            "content_duplicate_count": self.content_duplicate_count,
+            "clustered_message_count": self.clustered_message_count,
+            "new_cluster_count": self.new_cluster_count,
             "processed_messages_count": self.processed_messages_count,
             "last_poll_at": self.last_poll_at.isoformat() if self.last_poll_at else None,
             "resolution_failures": self.resolution_failures,

@@ -28,5 +28,20 @@
     {"min_pct": 5.0, "bonus": 0.15},
     {"min_pct": 3.0, "bonus": 0.10},
     {"min_pct": 1.0, "bonus": 0.05}
-  ]
+  ],
+  "source_signal_weights": {
+    "source_score_scale": 0.18,
+    "cluster_channel_count_weight": 0.03,
+    "cluster_emit_count_weight": 0.012,
+    "cluster_weighted_attention_weight": 0.035,
+    "cluster_velocity_weight": 0.02,
+    "verification_required_penalty": 0.08,
+    "high_bias_penalty": 0.06,
+    "medium_bias_penalty": 0.03,
+    "retail_signal_penalty": 0.20,
+    "narrative_partisan_penalty": 0.12,
+    "official_brand_bonus": 0.04,
+    "independent_reporter_bonus": 0.03,
+    "exact_duplicate_penalty": 0.02
+  }
 }

@@ -12,6 +12,8 @@ class OsintTelegramStore(BaseStore):
         self.session_collection = "telegram"
         self.entity_cache_collection = "telegram_entity_cache"
         self.channel_state_collection = "telegram_channel_state"
+        self.fingerprint_collection = "telegram_content_fingerprint"
+        self.cluster_collection = "telegram_content_cluster"
 
     async def ensure_indexes(self) -> None:
         """Create indexes for performance and uniqueness."""
@@ -32,6 +34,14 @@ class OsintTelegramStore(BaseStore):
         await self._mongo.async_ensure_indexes(
             self.channel_state_collection,
             [[("handle", 1)]]
+        )
+        await self._mongo.async_ensure_indexes(
+            self.fingerprint_collection,
+            [[("_id", 1)]]
+        )
+        await self._mongo.async_ensure_indexes(
+            self.cluster_collection,
+            [[("_id", 1)], [("domain", 1), ("last_seen_at", -1)]]
         )
 
     async def store_item(self, collection: str, item: Any, filter_: Dict[str, Any]) -> Any:
@@ -123,4 +133,60 @@ class OsintTelegramStore(BaseStore):
             self.channel_state_collection,
             current,
             {"handle": handle.lower()}
+        )
+
+    async def get_content_fingerprint(self, fingerprint_key: str) -> Optional[Dict[str, Any]]:
+        """Load a stored content fingerprint entry."""
+        return await self.get_item(self.fingerprint_collection, {"_id": fingerprint_key})
+
+    async def save_content_fingerprint(self, fingerprint_key: str, updates: Dict[str, Any]) -> None:
+        """Upsert a content fingerprint entry."""
+        current = await self.get_content_fingerprint(fingerprint_key) or {}
+        current.update(updates)
+        current["_id"] = fingerprint_key
+        current["updated_at"] = datetime.now(timezone.utc)
+        await self.store_item(
+            self.fingerprint_collection,
+            current,
+            {"_id": fingerprint_key}
+        )
+
+    async def get_content_cluster(self, cluster_id: str) -> Optional[Dict[str, Any]]:
+        """Load a stored content cluster entry."""
+        return await self.get_item(self.cluster_collection, {"_id": cluster_id})
+
+    async def save_content_cluster(self, cluster_id: str, updates: Dict[str, Any]) -> None:
+        """Upsert a content cluster entry."""
+        current = await self.get_content_cluster(cluster_id) or {}
+        current.update(updates)
+        current["_id"] = cluster_id
+        current["updated_at"] = datetime.now(timezone.utc)
+        await self.store_item(
+            self.cluster_collection,
+            current,
+            {"_id": cluster_id}
+        )
+
+    async def find_cluster_candidates(
+        self,
+        domain: str,
+        *,
+        since_iso: str,
+        topic: str,
+        routing_family: str,
+        limit: int = 40,
+    ) -> list[Dict[str, Any]]:
+        """Load recent cluster candidates for similarity matching."""
+        return await self._mongo.async_find_many(
+            self.cluster_collection,
+            filter_={
+                "domain": domain,
+                "last_seen_at": {"$gte": since_iso},
+                "$or": [
+                    {"topic": topic},
+                    {"routing_family": routing_family},
+                ],
+            },
+            sort=[("last_seen_at", -1)],
+            limit=limit,
         )

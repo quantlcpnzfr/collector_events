@@ -254,9 +254,9 @@ Deliver scored and clustered events instead of raw Telegram posts.
 
 ### Deliverables
 
-- [ ] Source scoring model
-- [ ] Dedupe layer
-- [ ] Cross-source event clustering
+- [x] Source scoring model
+- [x] Dedupe layer
+- [x] Cross-source event clustering
 - [ ] Translation-aware enrichment
 - [ ] Entity/country/asset resolution before Oracle
 
@@ -287,6 +287,63 @@ Deliver scored and clustered events instead of raw Telegram posts.
 
 - Oracle receives enriched, deduped, scored events
 - Source score influences downstream routing
+
+### P3 Progress Notes
+
+- Implemented first-pass source scoring directly in the Telegram extractor.
+- `IntelItem.extra` now carries:
+  - `source_score`
+  - `source_authenticity_class`
+  - `source_bias_risk`
+  - `source_role`
+  - `routing_family`
+  - `deployment_priority`
+  - `verification_required`
+  - `fingerprint_key`
+- Implemented exact-content dedupe using normalized text fingerprints stored in MongoDB collection:
+  - `telegram_content_fingerprint`
+- Implemented first-pass similarity clustering using rolling MongoDB-backed cluster state:
+  - `telegram_content_cluster`
+- Improved clustering quality beyond raw token overlap:
+  - composite similarity uses token overlap, token containment, character n-gram overlap, and character containment
+  - candidate search is narrowed by rolling time window, topic, and routing family
+- Dedupe behavior is intentionally conservative for this phase:
+  - exact normalized-text match only
+  - scoped by domain fingerprint key
+  - bounded by configurable dedupe window
+- Clustering behavior for this phase:
+  - near-identical posts are kept, not suppressed
+  - each post is enriched with cluster metrics
+  - attention grows with repeated emits and accumulated source score
+- `IntelItem.extra` now also carries:
+  - `cluster_id`
+  - `cluster_emit_count`
+  - `cluster_channel_count`
+  - `cluster_weighted_attention`
+  - `cluster_first_seen_at`
+  - `cluster_last_seen_at`
+  - `cluster_velocity_per_hour`
+  - `cluster_similarity`
+  - `cluster_is_new`
+  - `exact_duplicate`
+  - `exact_emit_count`
+  - `exact_channel_count`
+- Runtime validation on 2026-05-06:
+  - extractor completed a 100-message run successfully
+  - output file contained the new scoring metadata
+  - fingerprint collection populated with 100 entries during the run
+  - cluster collection populated with 99 entries during the run
+  - at least 1 cluster reached `emit_count > 1`
+  - warm-cache startup remained healthy with `0` failures and `0` flood waits
+- Improved clustering validation on 2026-05-06:
+  - extractor completed another 100-message run successfully
+  - multi-channel attention clusters appeared with `channel_count > 1`
+  - confirmed examples included overlap between:
+    - `thecradlemedia` and `MiddleEastNow_Breaking`
+  - top multi-channel clusters showed:
+    - `emit_count = 2`
+    - `channel_count = 2`
+    - `weighted_attention ≈ 1.13`
 
 ## P4 - Quality Metrics and Source Feedback Loop
 
