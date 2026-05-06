@@ -51,6 +51,19 @@ All pipelines, legacy or worker-api, should converge on the same normalized item
   - `osint_telegram`
   - future worker-api extractors
 
+## NLP Core Rule
+
+`EventProcessor` remains the shared NLP/scoring core.
+
+Do not fork Telegram-only NLP logic, and do not move the classic orchestrator onto the worker-api path in one jump. The correct migration shape is:
+
+- legacy `globalintel` orchestrator calls `EventProcessor` directly, as it does today
+- worker-api NLP consumes MQ payloads, converts them to `IntelItem`, then calls the same `EventProcessor`
+- scoring config remains shared in `processors/config/scoring.json`
+- `LocalNLPEngine` remains the model host used by `EventProcessor`
+
+This keeps the existing extractor fleet stable while allowing worker-api services to enter the same NLP model and scoring contract.
+
 ## Contract Layers
 
 ### Base fields
@@ -152,11 +165,14 @@ Notes:
 
 - This does not replace the orchestrator NLP path
 - It supplements it for message-driven extractors, especially Telegram
+- It must call the shared `EventProcessor`; it must not duplicate NLP/scoring logic
+- The `collector_events.nlp` package initializer must stay lightweight so legacy imports of `collector_events.nlp.nlp_engine` do not import worker/session code or trigger circular imports
 
 Exit criteria:
 
 - translated Telegram items can be consumed by worker-api NLP
 - enriched items retain source/clustering/translation metadata
+- `globalintel.intel_store` can still call `EventProcessor.process_items()` and receive `ProcessedEvent` objects
 
 ### P2 - Make `EventProcessor` source-aware
 
@@ -235,6 +251,8 @@ If translation not needed in a future worker-api extractor:
 3. Prefer carrying computed metadata in `IntelItem.extra` over re-querying Mongo on the hot path.
 4. Use Mongo lookups only as fallback or offline analytics, not as mandatory per-message runtime logic.
 5. Keep the orchestrator path alive while the worker-api path matures.
+6. Keep `EventProcessor` as shared domain logic; worker-api sessions are transport adapters around it.
+7. Migrate the rest of `globalintel` into worker-api incrementally, after the shared contract is stable.
 
 ## Immediate Next Steps
 

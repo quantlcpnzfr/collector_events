@@ -5529,3 +5529,64 @@ INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active
 INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
 INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
 INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.events.#' → fila 'amq_bb66835684ba42af9ca7e33be32faa77'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.translated.#' → fila 'amq_4d83efbdb7a94139a375286a542fdef0'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.enriched.#' → fila 'amq_aa9609a8be18406a955ea78274312b78'
+WARNING → collector_events.translation.engine → Language detector model not found: C:\Projects\forex_system\services\collector_events\.models\translation\glotlid\model.bin
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.events.#' → fila 'amq_47469ffb9f9a4bbfb97d1e1164839a9f'
+INFO → collector_events.translation.session → TranslationSession 'mq-smoke-translation' started. Listening on intel.events.#
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 352 keyword entries
+INFO → collector_events.processors.event_processor.EventProcessor → Scoring config carregada com sucesso.
+INFO → LocalNLPEngine → A iniciar o carregamento dos modelos NLP offline...
+INFO → LocalNLPEngine → A carregar GLiNER (urchade/gliner_small-v2.1)...
+INFO → gliner.model → Loading the following GLiNER type: <class 'gliner.model.UniEncoderSpanGLiNER'>...
+INFO → LocalNLPEngine → Motor NLP carregado e pronto para inferência.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.translated.#' → fila 'amq_319f01d5c37444eda969c7da01f3f344'
+INFO → collector_events.nlp.session → NLPEnrichmentSession 'mq-smoke-nlp' started. Listening on intel.translated.# and publishing to intel.enriched.<domain>
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'mq-smoke-osint'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+WARNING → collector_events.extractors.osint_telegram.session → No Telegram session found in store or env; interactive auth may be required.
+INFO → telethon.network.mtprotosender → Connecting to 149.154.167.51:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.167.51:443/TcpFull complete!
+ERROR → collector_events.extractors.osint_telegram.session → Telegram client NOT authorized. Please run session_auth script.
+INFO → collector_events.extractors.osint_telegram.worker → Session 'mq-smoke-osint' created and started.
+INFO → mq_smoke → OSINT create result: {'status': 'success', 'session_id': 'mq-smoke-osint'}
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'mq-smoke-osint'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.167.51:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.167.51:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo encerrado.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → collector_events.translation.session → TranslationSession 'mq-smoke-translation' stopped.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo encerrado.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → collector_events.nlp.session → NLPEnrichmentSession 'mq-smoke-nlp' stopped.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo encerrado.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.

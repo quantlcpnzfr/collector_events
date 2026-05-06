@@ -51,6 +51,7 @@ class NLPEnrichmentSession(BaseSession):
 
         self.status = SessionStatus.STARTING.value
         self._mq = MQFactory.create_async_from_env()
+        await self._mq.connect()
         await self._mq.subscribe_event(self.input_topic, self._on_event)
 
         self._is_running = True

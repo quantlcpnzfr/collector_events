@@ -33,6 +33,7 @@ class ProcessedEvent:
     matched_keywords: List[str]
     domain_weight: float = 1.0
     features: Dict[str, Any] = field(default_factory=dict)
+    item: IntelItem | None = None
 
 
 class EventProcessor(Loggable):
@@ -83,15 +84,15 @@ class EventProcessor(Loggable):
             self.domain_weights = {}
             self.source_signal_weights = {}
 
-    def process_items(self, items: Sequence[IntelItem]) -> list[IntelItem]:
+    def process_items(self, items: Sequence[IntelItem]) -> list[ProcessedEvent]:
         """Reintegrado: Permite processamento em lote pelo Orquestrador."""
-        processed_list = []
+        processed_list: list[ProcessedEvent] = []
         for item in items:
             try:
-                self.process_item(item)
-                processed_list.append(item)
+                processed_list.append(self.process_item(item))
             except Exception as e:
                 self.log.error(f"Erro ao processar item {item.id}: {e}")
+        processed_list.sort(key=lambda event: event.danger_score, reverse=True)
         return processed_list
 
     def process_item(self, item: IntelItem) -> ProcessedEvent:
@@ -134,7 +135,8 @@ class EventProcessor(Loggable):
             danger_score=danger_score,
             matched_keywords=matched_keywords,
             domain_weight=domain_weight,
-            features=nlp_features
+            features=nlp_features,
+            item=item,
         )
 
     def _compute_semantic_danger_score(self, item: IntelItem, nlp_features: Dict[str, Any], domain_weight: float) -> float:
