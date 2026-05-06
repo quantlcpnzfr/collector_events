@@ -1,0 +1,189 @@
+INFO     👀 Logging system initialized                     logger_config.py:182
+INFO     👀 [EnvConfig] 🔏 47 chaves marcadas como   env_config_manager.py:1072
+         Secret no arquivo.                                                    
+INFO     👀 [EnvConfig] 5 chaves bootstrap           env_config_manager.py:1025
+         carregadas do arquivo.                                                
+INFO     👀 [EnvConfig] 1 bootstrap secrets           env_config_manager.py:690
+         carregados.                                                           
+INFO     👀 [MongoManager] Conectado via connection string mongo_manager.py:143
+         | db=forex_system                                                     
+INFO     👀 [MongoManager] bulk_sync(env_config): 0 novos, mongo_manager.py:208
+         26 atualizados.                                                       
+INFO     👀 [EnvConfig] 150 chaves sincronizadas com  env_config_manager.py:951
+         MongoDB.                                                              
+INFO     👀 [EnvConfig] 143 novas chaves setadas em   env_config_manager.py:886
+         os.environ.                                                           
+INFO     👀 [EnvConfig] 150 chaves recarregadas do    env_config_manager.py:965
+         MongoDB.                                                              
+INFO     👀 TranslationWorker initializing...                      worker.py:45
+INFO     👀 TranslationWorker 'translation-default' started.       worker.py:40
+INFO     👀 Language detector (GlotLID) loaded from                engine.py:89
+         C:\Projects\forex_system\services\collector_events\.model             
+         s\lid\lid.176.bin                                                     
+INFO     👀 NLLB translator loaded:                               engine.py:115
+         .models/nllb-200-distilled-600M on cpu                                
+INFO     👀 [RabbitMQ Async] Conectando:          rabbitmq_provider_async.py:53
+         amqp://guest:guest@localhost:5672/                                    
+INFO     👀 [RabbitMQ Async] Conectando:          rabbitmq_provider_async.py:62
+         amqp://guest:guest@localhost:5672/                                    
+INFO     👀 [RabbitMQ Async] Conectado. Exchange  rabbitmq_provider_async.py:85
+         'forex_market_events' ativo.                                          
+INFO     👀 [RabbitMQ Async] Inscrito:           rabbitmq_provider_async.py:218
+         'intel.events.#' → fila                                               
+         'amq_33eda520bc42498c81a4b5fa7225a680'                                
+INFO     👀 TranslationSession 'default' started. Listening on    session.py:58
+         intel.events.#                                                        
+INFO     👀 Translation session 'default' created.                 worker.py:89
+INFO     👀 [RabbitMQ Async] Consumo ativo.      rabbitmq_provider_async.py:231
+         Aguardando eventos...                                                 
+INFO     👀 Translated event id=telegram:firstsquaw:131914        session.py:90
+         source=telegram topic=intel.translated.social count=1                 
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131915        session.py:90
+         source=telegram topic=intel.translated.social count=2                 
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131916        session.py:90
+         source=telegram topic=intel.translated.social count=3                 
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131917        session.py:90
+         source=telegram topic=intel.translated.social count=4                 
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131918        session.py:90
+         source=telegram topic=intel.translated.social count=5                 
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131919        session.py:90
+         source=telegram topic=intel.translated.social count=6                 
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131920        session.py:90
+         source=telegram topic=intel.translated.social count=7                 
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131921        session.py:90
+         source=telegram topic=intel.translated.social count=8                 
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131922        session.py:90
+         source=telegram topic=intel.translated.social count=9                 
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131923        session.py:90
+         source=telegram topic=intel.translated.social count=10                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131924        session.py:90
+         source=telegram topic=intel.translated.social count=11                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131925        session.py:90
+         source=telegram topic=intel.translated.social count=12                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131926        session.py:90
+         source=telegram topic=intel.translated.social count=13                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131927        session.py:90
+         source=telegram topic=intel.translated.social count=14                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131928        session.py:90
+         source=telegram topic=intel.translated.social count=15                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131929        session.py:90
+         source=telegram topic=intel.translated.social count=16                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131930        session.py:90
+         source=telegram topic=intel.translated.social count=17                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131931        session.py:90
+         source=telegram topic=intel.translated.social count=18                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131932        session.py:90
+         source=telegram topic=intel.translated.social count=19                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131933        session.py:90
+         source=telegram topic=intel.translated.social count=20                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131934        session.py:90
+         source=telegram topic=intel.translated.social count=21                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131935        session.py:90
+         source=telegram topic=intel.translated.social count=22                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131936        session.py:90
+         source=telegram topic=intel.translated.social count=23                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131937        session.py:90
+         source=telegram topic=intel.translated.social count=24                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:firstsquaw:131938        session.py:90
+         source=telegram topic=intel.translated.social count=25                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:zerohedge:172110         session.py:90
+         source=telegram topic=intel.translated.social count=26                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:whale_alert_io:100229    session.py:90
+         source=telegram topic=intel.translated.social count=27                
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81553        session.py:90
+         source=telegram topic=intel.translated.conflict count=28              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81554        session.py:90
+         source=telegram topic=intel.translated.conflict count=29              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81555        session.py:90
+         source=telegram topic=intel.translated.conflict count=30              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81556        session.py:90
+         source=telegram topic=intel.translated.conflict count=31              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81557        session.py:90
+         source=telegram topic=intel.translated.conflict count=32              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81558        session.py:90
+         source=telegram topic=intel.translated.conflict count=33              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81560        session.py:90
+         source=telegram topic=intel.translated.conflict count=34              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81561        session.py:90
+         source=telegram topic=intel.translated.conflict count=35              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81562        session.py:90
+         source=telegram topic=intel.translated.conflict count=36              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81563        session.py:90
+         source=telegram topic=intel.translated.conflict count=37              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81564        session.py:90
+         source=telegram topic=intel.translated.conflict count=38              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81565        session.py:90
+         source=telegram topic=intel.translated.conflict count=39              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81566        session.py:90
+         source=telegram topic=intel.translated.conflict count=40              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81567        session.py:90
+         source=telegram topic=intel.translated.conflict count=41              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81568        session.py:90
+         source=telegram topic=intel.translated.conflict count=42              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81569        session.py:90
+         source=telegram topic=intel.translated.conflict count=43              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81570        session.py:90
+         source=telegram topic=intel.translated.conflict count=44              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81571        session.py:90
+         source=telegram topic=intel.translated.conflict count=45              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81572        session.py:90
+         source=telegram topic=intel.translated.conflict count=46              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81573        session.py:90
+         source=telegram topic=intel.translated.conflict count=47              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:ClashReport:81574        session.py:90
+         source=telegram topic=intel.translated.conflict count=48              
+         translation_source=➡️No translation needed                            
+INFO     👀 Translated event id=telegram:VahidOnline:75290        session.py:90
+         source=telegram topic=intel.translated.conflict count=49              
+         translation_source=⚡Translation from Iranian Persian                 
+         (pes_Arab)                                                            
+INFO     👀 Translated event id=telegram:rybar:80063              session.py:90
+         source=telegram topic=intel.translated.conflict count=50              
+         translation_source=⚡Translation from Russian (rus_Cyrl)              

@@ -5981,3 +5981,1206 @@ INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsq
 INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131865 source=telegram topic=intel.enriched.social processed=14 published=14 danger_score=0.18201925628542903 oracle_review_candidate=False
 INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131869 source=telegram topic=intel.enriched.social processed=15 published=15 danger_score=0.18109533921539786 oracle_review_candidate=False
 INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131870 source=telegram topic=intel.enriched.social processed=16 published=16 danger_score=0.2760511998152734 oracle_review_candidate=False
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.translation.worker → TranslationWorker initializing...
+INFO → collector_events.translation.worker → TranslationWorker 'translation-default' started.
+INFO → collector_events.translation.engine → Language detector (GlotLID) loaded from C:\Projects\forex_system\services\collector_events\.models\lid\lid.176.bin
+INFO → collector_events.translation.engine → NLLB translator loaded: .models/nllb-200-distilled-600M on cpu
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.events.#' → fila 'amq_2893ae263ffc4c689481f6c49cd5af0d'
+INFO → collector_events.translation.session → TranslationSession 'default' started. Listening on intel.events.#
+INFO → collector_events.translation.worker → Translation session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 352 keyword entries
+INFO → collector_events.processors.event_processor.EventProcessor → Scoring config carregada com sucesso.
+INFO → LocalNLPEngine → A iniciar o carregamento dos modelos NLP offline...
+INFO → LocalNLPEngine → A carregar GLiNER (urchade/gliner_small-v2.1)...
+INFO → gliner.model → Loading the following GLiNER type: <class 'gliner.model.UniEncoderSpanGLiNER'>...
+INFO → LocalNLPEngine → Motor NLP carregado e pronto para inferência.
+INFO → collector_events.nlp.worker → NLPWorker initialized shared EventProcessor.
+INFO → collector_events.nlp.worker → NLPWorker 'nlp-default' started.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.translated.#' → fila 'amq_6f60fddfaaae451492f469c386ca1b94'
+INFO → collector_events.nlp.session → NLPEnrichmentSession 'default' started. Listening on intel.translated.# and publishing to intel.enriched.<domain>
+INFO → collector_events.nlp.worker → NLP session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → Resolution summary: resolved=78 cache_hits=78 cache_misses=0 skipped=0 failures=0 flood_waits=0 live_resolves=0 duration=17.72s
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 78 active channels in 19.03s
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (backfill_days=1, max_messages_limit=50)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:operativnoZSU:210311 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=1, Accepted=1, Limit=1/50
+INFO → OsintBootstrapper → Status [default]: Recv=1, Accepted=1, Limit=1/50
+INFO → OsintBootstrapper → Status [default]: Recv=1, Accepted=1, Limit=1/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131889 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131890 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131891 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131889 source=telegram topic=intel.translated.social count=1 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131890 source=telegram topic=intel.translated.social count=2 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131891 source=telegram topic=intel.translated.social count=3 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131892 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131892 source=telegram topic=intel.translated.social count=4 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131893 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131893 source=telegram topic=intel.translated.social count=5 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=7, Accepted=6, Limit=6/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131894 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131894 source=telegram topic=intel.translated.social count=6 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131895 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131895 source=telegram topic=intel.translated.social count=7 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=9, Accepted=8, Limit=8/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131896 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131896 source=telegram topic=intel.translated.social count=8 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131897 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131897 source=telegram topic=intel.translated.social count=9 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=11, Accepted=10, Limit=10/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131898 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131898 source=telegram topic=intel.translated.social count=10 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=12, Accepted=11, Limit=11/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131899 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131899 source=telegram topic=intel.translated.social count=11 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131900 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131900 source=telegram topic=intel.translated.social count=12 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131901 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131901 source=telegram topic=intel.translated.social count=13 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131902 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131902 source=telegram topic=intel.translated.social count=14 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131903 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=17, Accepted=16, Limit=16/50
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131903 source=telegram topic=intel.translated.social count=15 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131904 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131904 source=telegram topic=intel.translated.social count=16 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131905 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131905 source=telegram topic=intel.translated.social count=17 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131906 source=telegram topic=intel.translated.social count=18 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131906 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131907 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131907 source=telegram topic=intel.translated.social count=19 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131908 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131908 source=telegram topic=intel.translated.social count=20 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131909 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131909 source=telegram topic=intel.translated.social count=21 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131910 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131910 source=telegram topic=intel.translated.social count=22 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=24, Accepted=23, Limit=23/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131911 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131911 source=telegram topic=intel.translated.social count=23 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131912 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131912 source=telegram topic=intel.translated.social count=24 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131913 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131913 source=telegram topic=intel.translated.social count=25 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172108 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172108 source=telegram topic=intel.translated.social count=26 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172109 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172109 source=telegram topic=intel.translated.social count=27 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=29, Accepted=28, Limit=28/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100217 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100217 source=telegram topic=intel.translated.social count=28 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100218 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100218 source=telegram topic=intel.translated.social count=29 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100219 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100220 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100221 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100222 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=35, Accepted=34, Limit=34/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100223 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100219 source=telegram topic=intel.translated.social count=30 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100220 source=telegram topic=intel.translated.social count=31 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100221 source=telegram topic=intel.translated.social count=32 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100222 source=telegram topic=intel.translated.social count=33 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100223 source=telegram topic=intel.translated.social count=34 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100224 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100224 source=telegram topic=intel.translated.social count=35 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100225 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100225 source=telegram topic=intel.translated.social count=36 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100226 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100226 source=telegram topic=intel.translated.social count=37 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100227 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100227 source=telegram topic=intel.translated.social count=38 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100228 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100228 source=telegram topic=intel.translated.social count=39 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=40, Accepted=40, Limit=40/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:thehackernews:8950 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:thehackernews:8950 source=telegram topic=intel.translated.cyber count=40 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81544 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81545 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=44, Accepted=43, Limit=43/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81546 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81544 source=telegram topic=intel.translated.conflict count=41 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81546 source=telegram topic=intel.translated.conflict count=42 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81545 source=telegram topic=intel.translated.conflict count=43 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81547 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81547 source=telegram topic=intel.translated.conflict count=44 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81548 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81548 source=telegram topic=intel.translated.conflict count=45 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81549 in globalintel
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131889 source=telegram topic=intel.enriched.social processed=1 published=1 danger_score=0.20197598435640338 oracle_review_candidate=False
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81549 source=telegram topic=intel.translated.conflict count=46 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81550 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81550 source=telegram topic=intel.translated.conflict count=47 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=49, Accepted=48, Limit=48/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81551 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81551 source=telegram topic=intel.translated.conflict count=48 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81552 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (50). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81552 source=telegram topic=intel.translated.conflict count=49 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131890 source=telegram topic=intel.enriched.social processed=2 published=2 danger_score=0.1851772673866153 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131891 source=telegram topic=intel.enriched.social processed=3 published=3 danger_score=0.18141062617957596 oracle_review_candidate=False
+INFO → collector_events.translation.session → Translated event id=telegram:operativnoZSU:210311 source=telegram topic=intel.translated.conflict count=50 translation_source=⚡Translation from Ukrainian (ukr_Cyrl)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131892 source=telegram topic=intel.enriched.social processed=4 published=4 danger_score=0.42627071090698243 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131893 source=telegram topic=intel.enriched.social processed=5 published=5 danger_score=0.3143656402891875 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131894 source=telegram topic=intel.enriched.social processed=6 published=6 danger_score=0.2247498050397635 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131895 source=telegram topic=intel.enriched.social processed=7 published=7 danger_score=0.20407145679652694 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131896 source=telegram topic=intel.enriched.social processed=8 published=8 danger_score=0.22481305488109593 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131897 source=telegram topic=intel.enriched.social processed=9 published=9 danger_score=0.2017446029251814 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131898 source=telegram topic=intel.enriched.social processed=10 published=10 danger_score=0.28460961480349306 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131899 source=telegram topic=intel.enriched.social processed=11 published=11 danger_score=0.2929079230606556 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131900 source=telegram topic=intel.enriched.social processed=12 published=12 danger_score=0.27683076676636936 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131901 source=telegram topic=intel.enriched.social processed=13 published=13 danger_score=0.20251588956177238 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131902 source=telegram topic=intel.enriched.social processed=14 published=14 danger_score=0.27333333451956515 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131903 source=telegram topic=intel.enriched.social processed=15 published=15 danger_score=0.33833264299392707 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131904 source=telegram topic=intel.enriched.social processed=16 published=16 danger_score=0.23033268429994588 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131905 source=telegram topic=intel.enriched.social processed=17 published=17 danger_score=0.19015428424537184 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131906 source=telegram topic=intel.enriched.social processed=18 published=18 danger_score=0.41144319125175477 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131907 source=telegram topic=intel.enriched.social processed=19 published=19 danger_score=0.1911527727609873 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131908 source=telegram topic=intel.enriched.social processed=20 published=20 danger_score=0.18993443765401843 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131909 source=telegram topic=intel.enriched.social processed=21 published=21 danger_score=0.2104350178009272 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131910 source=telegram topic=intel.enriched.social processed=22 published=22 danger_score=0.18992034901589158 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131911 source=telegram topic=intel.enriched.social processed=23 published=23 danger_score=0.1844112573257089 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131912 source=telegram topic=intel.enriched.social processed=24 published=24 danger_score=0.32676033937096605 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131913 source=telegram topic=intel.enriched.social processed=25 published=25 danger_score=0.46144595899343493 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:zerohedge:172108 source=telegram topic=intel.enriched.social processed=26 published=26 danger_score=0.15065551744937897 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:zerohedge:172109 source=telegram topic=intel.enriched.social processed=27 published=27 danger_score=0.12311215715646745 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100217 source=telegram topic=intel.enriched.social processed=28 published=28 danger_score=0.05968807748526335 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100218 source=telegram topic=intel.enriched.social processed=29 published=29 danger_score=0.06883762049496174 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100219 source=telegram topic=intel.enriched.social processed=30 published=30 danger_score=0.49869585688233375 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100220 source=telegram topic=intel.enriched.social processed=31 published=31 danger_score=0.06402961666703225 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100221 source=telegram topic=intel.enriched.social processed=32 published=32 danger_score=0.07143121938228607 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100222 source=telegram topic=intel.enriched.social processed=33 published=33 danger_score=0.10716485195159914 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100223 source=telegram topic=intel.enriched.social processed=34 published=34 danger_score=0.061284694252610204 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100224 source=telegram topic=intel.enriched.social processed=35 published=35 danger_score=0.07140319029808044 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100225 source=telegram topic=intel.enriched.social processed=36 published=36 danger_score=0.06634745429277421 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100226 source=telegram topic=intel.enriched.social processed=37 published=37 danger_score=0.0664902852755785 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100227 source=telegram topic=intel.enriched.social processed=38 published=38 danger_score=0.16457098978579046 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100228 source=telegram topic=intel.enriched.social processed=39 published=39 danger_score=0.06815693954944611 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:thehackernews:8950 source=telegram topic=intel.enriched.cyber processed=40 published=40 danger_score=0.18082771082043647 oracle_review_candidate=False
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.translation.worker → TranslationWorker initializing...
+INFO → collector_events.translation.worker → TranslationWorker 'translation-default' started.
+INFO → collector_events.translation.engine → Language detector (GlotLID) loaded from C:\Projects\forex_system\services\collector_events\.models\lid\lid.176.bin
+INFO → collector_events.translation.engine → NLLB translator loaded: .models/nllb-200-distilled-600M on cpu
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.events.#' → fila 'amq_33eda520bc42498c81a4b5fa7225a680'
+INFO → collector_events.translation.session → TranslationSession 'default' started. Listening on intel.events.#
+INFO → collector_events.translation.worker → Translation session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 352 keyword entries
+INFO → collector_events.processors.event_processor.EventProcessor → Scoring config carregada com sucesso.
+INFO → LocalNLPEngine → A iniciar o carregamento dos modelos NLP offline...
+INFO → LocalNLPEngine → A carregar GLiNER (urchade/gliner_small-v2.1)...
+INFO → gliner.model → Loading the following GLiNER type: <class 'gliner.model.UniEncoderSpanGLiNER'>...
+INFO → LocalNLPEngine → Motor NLP carregado e pronto para inferência.
+INFO → collector_events.nlp.worker → NLPWorker initialized shared EventProcessor.
+INFO → collector_events.nlp.worker → NLPWorker 'nlp-default' started.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.translated.#' → fila 'amq_c773f76684374f489744913e61067efe'
+INFO → collector_events.nlp.session → NLPEnrichmentSession 'default' started. Listening on intel.translated.# and publishing to intel.enriched.<domain>
+INFO → collector_events.nlp.worker → NLP session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → Resolution summary: resolved=78 cache_hits=78 cache_misses=0 skipped=0 failures=0 flood_waits=0 live_resolves=0 duration=17.12s
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 78 active channels in 18.20s
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (backfill_days=1, max_messages_limit=50)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:VahidOnline:75290 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80063 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131914 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131914 source=telegram topic=intel.translated.social count=1 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=4, Accepted=3, Limit=3/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131915 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131915 source=telegram topic=intel.translated.social count=2 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131916 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131916 source=telegram topic=intel.translated.social count=3 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131917 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131917 source=telegram topic=intel.translated.social count=4 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131918 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131918 source=telegram topic=intel.translated.social count=5 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131919 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131919 source=telegram topic=intel.translated.social count=6 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131920 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131920 source=telegram topic=intel.translated.social count=7 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131921 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131921 source=telegram topic=intel.translated.social count=8 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131922 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131922 source=telegram topic=intel.translated.social count=9 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131923 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131923 source=telegram topic=intel.translated.social count=10 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131924 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131924 source=telegram topic=intel.translated.social count=11 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131925 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131925 source=telegram topic=intel.translated.social count=12 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131926 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131926 source=telegram topic=intel.translated.social count=13 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131927 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131927 source=telegram topic=intel.translated.social count=14 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131928 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131928 source=telegram topic=intel.translated.social count=15 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=18, Accepted=17, Limit=17/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131929 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131929 source=telegram topic=intel.translated.social count=16 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131930 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131930 source=telegram topic=intel.translated.social count=17 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131931 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131931 source=telegram topic=intel.translated.social count=18 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131932 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131932 source=telegram topic=intel.translated.social count=19 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131933 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131933 source=telegram topic=intel.translated.social count=20 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131934 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131934 source=telegram topic=intel.translated.social count=21 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131935 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131935 source=telegram topic=intel.translated.social count=22 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131936 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131936 source=telegram topic=intel.translated.social count=23 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131937 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131937 source=telegram topic=intel.translated.social count=24 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131938 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131938 source=telegram topic=intel.translated.social count=25 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172110 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172110 source=telegram topic=intel.translated.social count=26 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100229 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100229 source=telegram topic=intel.translated.social count=27 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=29, Accepted=29, Limit=29/50
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131914 source=telegram topic=intel.enriched.social processed=1 published=1 danger_score=0.18331439007729297 oracle_review_candidate=False
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81553 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81553 source=telegram topic=intel.translated.conflict count=28 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81554 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81554 source=telegram topic=intel.translated.conflict count=29 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81555 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81555 source=telegram topic=intel.translated.conflict count=30 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81556 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81556 source=telegram topic=intel.translated.conflict count=31 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81557 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81557 source=telegram topic=intel.translated.conflict count=32 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81558 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81558 source=telegram topic=intel.translated.conflict count=33 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81560 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81560 source=telegram topic=intel.translated.conflict count=34 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81561 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81561 source=telegram topic=intel.translated.conflict count=35 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81562 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81562 source=telegram topic=intel.translated.conflict count=36 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=39, Accepted=38, Limit=38/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81563 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81563 source=telegram topic=intel.translated.conflict count=37 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81564 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81564 source=telegram topic=intel.translated.conflict count=38 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81565 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81565 source=telegram topic=intel.translated.conflict count=39 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81566 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81566 source=telegram topic=intel.translated.conflict count=40 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81567 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81567 source=telegram topic=intel.translated.conflict count=41 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81568 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81568 source=telegram topic=intel.translated.conflict count=42 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81569 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81569 source=telegram topic=intel.translated.conflict count=43 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81570 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81570 source=telegram topic=intel.translated.conflict count=44 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81571 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81571 source=telegram topic=intel.translated.conflict count=45 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81572 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81572 source=telegram topic=intel.translated.conflict count=46 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81573 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81573 source=telegram topic=intel.translated.conflict count=47 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=50, Accepted=49, Limit=49/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81574 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (50). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81574 source=telegram topic=intel.translated.conflict count=48 translation_source=➡️No translation needed
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131915 source=telegram topic=intel.enriched.social processed=2 published=2 danger_score=0.18021329377502207 oracle_review_candidate=False
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131916 source=telegram topic=intel.enriched.social processed=3 published=3 danger_score=0.21381273367166523 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131917 source=telegram topic=intel.enriched.social processed=4 published=4 danger_score=0.20958625019252305 oracle_review_candidate=False
+INFO → collector_events.translation.session → Translated event id=telegram:VahidOnline:75290 source=telegram topic=intel.translated.conflict count=49 translation_source=⚡Translation from Iranian Persian (pes_Arab)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131918 source=telegram topic=intel.enriched.social processed=5 published=5 danger_score=0.23938073956131936 oracle_review_candidate=False
+INFO → collector_events.translation.session → Translated event id=telegram:rybar:80063 source=telegram topic=intel.translated.conflict count=50 translation_source=⚡Translation from Russian (rus_Cyrl)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131919 source=telegram topic=intel.enriched.social processed=6 published=6 danger_score=0.20223245517075064 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131920 source=telegram topic=intel.enriched.social processed=7 published=7 danger_score=0.2788361716336012 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131921 source=telegram topic=intel.enriched.social processed=8 published=8 danger_score=0.32539867740780115 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131922 source=telegram topic=intel.enriched.social processed=9 published=9 danger_score=0.21589861721456055 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131923 source=telegram topic=intel.enriched.social processed=10 published=10 danger_score=0.2303342352873087 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131924 source=telegram topic=intel.enriched.social processed=11 published=11 danger_score=0.34205253765642646 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131925 source=telegram topic=intel.enriched.social processed=12 published=12 danger_score=0.36117693134307866 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131926 source=telegram topic=intel.enriched.social processed=13 published=13 danger_score=0.4502558350288869 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131927 source=telegram topic=intel.enriched.social processed=14 published=14 danger_score=0.1850459330222011 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131928 source=telegram topic=intel.enriched.social processed=15 published=15 danger_score=0.21223962478995326 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131929 source=telegram topic=intel.enriched.social processed=16 published=16 danger_score=0.19917095363795762 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131930 source=telegram topic=intel.enriched.social processed=17 published=17 danger_score=0.18432043336987497 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131931 source=telegram topic=intel.enriched.social processed=18 published=18 danger_score=0.1846618675133586 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131932 source=telegram topic=intel.enriched.social processed=19 published=19 danger_score=0.5318790698862077 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131933 source=telegram topic=intel.enriched.social processed=20 published=20 danger_score=0.35719570168018344 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131934 source=telegram topic=intel.enriched.social processed=21 published=21 danger_score=0.2105676811999083 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131935 source=telegram topic=intel.enriched.social processed=22 published=22 danger_score=0.18524515309095388 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131936 source=telegram topic=intel.enriched.social processed=23 published=23 danger_score=0.1809259986197949 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131937 source=telegram topic=intel.enriched.social processed=24 published=24 danger_score=0.23744906359076504 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131938 source=telegram topic=intel.enriched.social processed=25 published=25 danger_score=0.2059475372797251 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:zerohedge:172110 source=telegram topic=intel.enriched.social processed=26 published=26 danger_score=0.13295194821596146 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100229 source=telegram topic=intel.enriched.social processed=27 published=27 danger_score=0.07713138963103294 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81553 source=telegram topic=intel.enriched.conflict processed=28 published=28 danger_score=0.22727442718625068 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81554 source=telegram topic=intel.enriched.conflict processed=29 published=29 danger_score=0.1840990468817949 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81555 source=telegram topic=intel.enriched.conflict processed=30 published=30 danger_score=0.5273077437984943 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81556 source=telegram topic=intel.enriched.conflict processed=31 published=31 danger_score=0.934724720339775 oracle_review_candidate=True
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81557 source=telegram topic=intel.enriched.conflict processed=32 published=32 danger_score=0.31944649107337 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81558 source=telegram topic=intel.enriched.conflict processed=33 published=33 danger_score=0.6001911636400222 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81560 source=telegram topic=intel.enriched.conflict processed=34 published=34 danger_score=0.630328273396492 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81561 source=telegram topic=intel.enriched.conflict processed=35 published=35 danger_score=0.19777257024824618 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81562 source=telegram topic=intel.enriched.conflict processed=36 published=36 danger_score=0.163931634645462 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81563 source=telegram topic=intel.enriched.conflict processed=37 published=37 danger_score=0.17624123133301733 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81564 source=telegram topic=intel.enriched.conflict processed=38 published=38 danger_score=0.8422302254247667 oracle_review_candidate=True
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81565 source=telegram topic=intel.enriched.conflict processed=39 published=39 danger_score=0.4436310999798775 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81566 source=telegram topic=intel.enriched.conflict processed=40 published=40 danger_score=0.25920557312250136 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81567 source=telegram topic=intel.enriched.conflict processed=41 published=41 danger_score=0.22883995510220526 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81568 source=telegram topic=intel.enriched.conflict processed=42 published=42 danger_score=0.3612050052690506 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81569 source=telegram topic=intel.enriched.conflict processed=43 published=43 danger_score=0.46544166467666626 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81570 source=telegram topic=intel.enriched.conflict processed=44 published=44 danger_score=0.8222906967210769 oracle_review_candidate=True
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81571 source=telegram topic=intel.enriched.conflict processed=45 published=45 danger_score=0.1604928526985645 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81572 source=telegram topic=intel.enriched.conflict processed=46 published=46 danger_score=0.19805515892386436 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81573 source=telegram topic=intel.enriched.conflict processed=47 published=47 danger_score=0.2115925800013542 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81574 source=telegram topic=intel.enriched.conflict processed=48 published=48 danger_score=0.2426448870408535 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:VahidOnline:75290 source=telegram topic=intel.enriched.conflict processed=49 published=49 danger_score=0.2390086425566673 oracle_review_candidate=False
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:rybar:80063 source=telegram topic=intel.enriched.conflict processed=50 published=50 danger_score=0.0775492880153656 oracle_review_candidate=False
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.translation.worker → TranslationWorker initializing...
+INFO → collector_events.translation.worker → TranslationWorker 'translation-default' started.
+INFO → collector_events.translation.engine → Language detector (GlotLID) loaded from C:\Projects\forex_system\services\collector_events\.models\lid\lid.176.bin
+INFO → collector_events.translation.engine → NLLB translator loaded: .models/nllb-200-distilled-600M on cpu
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.events.#' → fila 'amq_0b4b88b4cc8943a7891cdc36a0086eef'
+INFO → collector_events.translation.session → TranslationSession 'default' started. Listening on intel.events.#
+INFO → collector_events.translation.worker → Translation session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.translation.worker → TranslationWorker initializing...
+INFO → collector_events.translation.worker → TranslationWorker 'translation-default' started.
+INFO → collector_events.translation.engine → Language detector (GlotLID) loaded from C:\Projects\forex_system\services\collector_events\.models\lid\lid.176.bin
+INFO → collector_events.translation.engine → NLLB translator loaded: .models/nllb-200-distilled-600M on cpu
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.events.#' → fila 'amq_4cc87e25eb9349a1aa2ab4a95a1bb1ef'
+INFO → collector_events.translation.session → TranslationSession 'default' started. Listening on intel.events.#
+INFO → collector_events.translation.worker → Translation session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 352 keyword entries
+INFO → collector_events.processors.event_processor.EventProcessor → Scoring config carregada com sucesso.
+INFO → LocalNLPEngine → A iniciar o carregamento dos modelos NLP offline...
+INFO → LocalNLPEngine → A carregar GLiNER (urchade/gliner_small-v2.1)...
+INFO → gliner.model → Loading the following GLiNER type: <class 'gliner.model.UniEncoderSpanGLiNER'>...
+INFO → LocalNLPEngine → Motor NLP carregado e pronto para inferência.
+INFO → collector_events.nlp.worker → NLPWorker initialized shared EventProcessor.
+INFO → collector_events.nlp.worker → NLPWorker 'nlp-default' started.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.translated.#' → fila 'amq_a9aadd7424194e7da568af9e93352f72'
+INFO → collector_events.nlp.session → NLPEnrichmentSession 'default' started. Listening on intel.translated.# and publishing to intel.enriched.<domain>
+INFO → collector_events.nlp.worker → NLP session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → Resolution summary: resolved=78 cache_hits=78 cache_misses=0 skipped=0 failures=0 flood_waits=0 live_resolves=0 duration=23.47s
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 78 active channels in 25.16s
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (backfill_days=1, max_messages_limit=50)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80066 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131939 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131939 source=telegram topic=intel.translated.social count=1 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131940 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131940 source=telegram topic=intel.translated.social count=2 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=4, Accepted=3, Limit=3/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131941 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131941 source=telegram topic=intel.translated.social count=3 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131942 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131942 source=telegram topic=intel.translated.social count=4 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131943 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131943 source=telegram topic=intel.translated.social count=5 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131944 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131944 source=telegram topic=intel.translated.social count=6 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131945 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131945 source=telegram topic=intel.translated.social count=7 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131946 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131946 source=telegram topic=intel.translated.social count=8 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131947 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131948 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131947 source=telegram topic=intel.translated.social count=9 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131948 source=telegram topic=intel.translated.social count=10 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131949 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131949 source=telegram topic=intel.translated.social count=11 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131950 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131950 source=telegram topic=intel.translated.social count=12 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131951 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131951 source=telegram topic=intel.translated.social count=13 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131952 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131952 source=telegram topic=intel.translated.social count=14 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131953 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131953 source=telegram topic=intel.translated.social count=15 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131954 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131954 source=telegram topic=intel.translated.social count=16 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131955 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131955 source=telegram topic=intel.translated.social count=17 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131956 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131956 source=telegram topic=intel.translated.social count=18 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=20, Accepted=19, Limit=19/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131957 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131957 source=telegram topic=intel.translated.social count=19 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131958 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131958 source=telegram topic=intel.translated.social count=20 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131959 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131959 source=telegram topic=intel.translated.social count=21 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131960 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131960 source=telegram topic=intel.translated.social count=22 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131961 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131961 source=telegram topic=intel.translated.social count=23 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131962 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131962 source=telegram topic=intel.translated.social count=24 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131963 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131963 source=telegram topic=intel.translated.social count=25 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=27, Accepted=26, Limit=26/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81575 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81575 source=telegram topic=intel.translated.conflict count=26 translation_source=⚠️ Detection: Italian (ita_Latn) - No translation
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81576 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81576 source=telegram topic=intel.translated.conflict count=27 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81577 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81577 source=telegram topic=intel.translated.conflict count=28 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81578 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81578 source=telegram topic=intel.translated.conflict count=29 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81579 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81579 source=telegram topic=intel.translated.conflict count=30 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81580 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81580 source=telegram topic=intel.translated.conflict count=31 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81581 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81581 source=telegram topic=intel.translated.conflict count=32 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81582 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81582 source=telegram topic=intel.translated.conflict count=33 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81583 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81583 source=telegram topic=intel.translated.conflict count=34 translation_source=➡️No translation needed
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131939 source=telegram topic=intel.enriched.social processed=1 published=1 danger_score=0.2075730042225123 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81584 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81584 source=telegram topic=intel.translated.conflict count=35 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81585 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81585 source=telegram topic=intel.translated.conflict count=36 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81586 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81586 source=telegram topic=intel.translated.conflict count=37 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=39, Accepted=38, Limit=38/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81587 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81587 source=telegram topic=intel.translated.conflict count=38 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81588 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81588 source=telegram topic=intel.translated.conflict count=39 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81589 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81589 source=telegram topic=intel.translated.conflict count=40 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81590 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81590 source=telegram topic=intel.translated.conflict count=41 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81591 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81591 source=telegram topic=intel.translated.conflict count=42 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81592 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81592 source=telegram topic=intel.translated.conflict count=43 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81593 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81593 source=telegram topic=intel.translated.conflict count=44 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81594 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81594 source=telegram topic=intel.translated.conflict count=45 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81595 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81595 source=telegram topic=intel.translated.conflict count=46 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81596 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81596 source=telegram topic=intel.translated.conflict count=47 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81597 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81597 source=telegram topic=intel.translated.conflict count=48 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81598 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (50). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81598 source=telegram topic=intel.translated.conflict count=49 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131940 source=telegram topic=intel.enriched.social processed=2 published=2 danger_score=0.3283120965278149 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131941 source=telegram topic=intel.enriched.social processed=3 published=3 danger_score=0.20351382420122627 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131942 source=telegram topic=intel.enriched.social processed=4 published=4 danger_score=0.21136069842338565 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131943 source=telegram topic=intel.enriched.social processed=5 published=5 danger_score=0.2503885025596619 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131944 source=telegram topic=intel.enriched.social processed=6 published=6 danger_score=0.18320295300990344 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:rybar:80066 source=telegram topic=intel.translated.conflict count=50 translation_source=⚡Translation from Russian (rus_Cyrl)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131945 source=telegram topic=intel.enriched.social processed=7 published=7 danger_score=0.18775029875993732 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131946 source=telegram topic=intel.enriched.social processed=8 published=8 danger_score=0.22969824646711354 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131947 source=telegram topic=intel.enriched.social processed=9 published=9 danger_score=0.35670010388553147 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131948 source=telegram topic=intel.enriched.social processed=10 published=10 danger_score=0.4547772819614411 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131949 source=telegram topic=intel.enriched.social processed=11 published=11 danger_score=0.1942191565847397 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131950 source=telegram topic=intel.enriched.social processed=12 published=12 danger_score=0.21614701323866847 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131951 source=telegram topic=intel.enriched.social processed=13 published=13 danger_score=0.32639240164965394 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131952 source=telegram topic=intel.enriched.social processed=14 published=14 danger_score=0.18078945641130212 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131953 source=telegram topic=intel.enriched.social processed=15 published=15 danger_score=0.18463871032655244 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131954 source=telegram topic=intel.enriched.social processed=16 published=16 danger_score=0.19905166239202027 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131955 source=telegram topic=intel.enriched.social processed=17 published=17 danger_score=0.24857321300268176 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131956 source=telegram topic=intel.enriched.social processed=18 published=18 danger_score=0.19272395045220855 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131957 source=telegram topic=intel.enriched.social processed=19 published=19 danger_score=0.19255998902678492 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131958 source=telegram topic=intel.enriched.social processed=20 published=20 danger_score=0.19125290834069256 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131959 source=telegram topic=intel.enriched.social processed=21 published=21 danger_score=0.1902128750896454 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131960 source=telegram topic=intel.enriched.social processed=22 published=22 danger_score=0.1929976732349396 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131961 source=telegram topic=intel.enriched.social processed=23 published=23 danger_score=0.19450028226435187 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131962 source=telegram topic=intel.enriched.social processed=24 published=24 danger_score=0.24599219434618952 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131963 source=telegram topic=intel.enriched.social processed=25 published=25 danger_score=0.2895850536704064 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81575 source=telegram topic=intel.enriched.conflict processed=26 published=26 danger_score=0.2105215679812431 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → Oracle review requested id=telegram:ClashReport:81576 topic=intel.oracle.review count=1 danger_score=0.8758737488794327 trade_emit_score=0.8758737488794327
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81576 source=telegram topic=intel.enriched.conflict processed=27 published=27 danger_score=0.8758737488794327 oracle_review_candidate=True oracle_review_published=True
+INFO → collector_events.nlp.session → Oracle review requested id=telegram:ClashReport:81577 topic=intel.oracle.review count=2 danger_score=0.9440670569944382 trade_emit_score=0.9440670569944382
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81577 source=telegram topic=intel.enriched.conflict processed=28 published=28 danger_score=0.9440670569944382 oracle_review_candidate=True oracle_review_published=True
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81578 source=telegram topic=intel.enriched.conflict processed=29 published=29 danger_score=0.372612650911808 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81579 source=telegram topic=intel.enriched.conflict processed=30 published=30 danger_score=0.35528171293020244 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81580 source=telegram topic=intel.enriched.conflict processed=31 published=31 danger_score=0.352921706135869 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81581 source=telegram topic=intel.enriched.conflict processed=32 published=32 danger_score=0.3755257733869552 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81582 source=telegram topic=intel.enriched.conflict processed=33 published=33 danger_score=0.3536964260745048 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81583 source=telegram topic=intel.enriched.conflict processed=34 published=34 danger_score=0.37745616852819913 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81584 source=telegram topic=intel.enriched.conflict processed=35 published=35 danger_score=0.3416518074232339 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81585 source=telegram topic=intel.enriched.conflict processed=36 published=36 danger_score=0.19477008506238458 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81586 source=telegram topic=intel.enriched.conflict processed=37 published=37 danger_score=0.17242285981357097 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81587 source=telegram topic=intel.enriched.conflict processed=38 published=38 danger_score=0.282853893558979 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81588 source=telegram topic=intel.enriched.conflict processed=39 published=39 danger_score=0.2163838158506155 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81589 source=telegram topic=intel.enriched.conflict processed=40 published=40 danger_score=0.27982087693691254 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81590 source=telegram topic=intel.enriched.conflict processed=41 published=41 danger_score=0.2093124496895075 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81591 source=telegram topic=intel.enriched.conflict processed=42 published=42 danger_score=0.16997084803462026 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81592 source=telegram topic=intel.enriched.conflict processed=43 published=43 danger_score=0.22392350472092626 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81593 source=telegram topic=intel.enriched.conflict processed=44 published=44 danger_score=0.18248523063540456 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81594 source=telegram topic=intel.enriched.conflict processed=45 published=45 danger_score=0.5363453724193573 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81595 source=telegram topic=intel.enriched.conflict processed=46 published=46 danger_score=0.15915709849029777 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81596 source=telegram topic=intel.enriched.conflict processed=47 published=47 danger_score=0.23428626939028502 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81597 source=telegram topic=intel.enriched.conflict processed=48 published=48 danger_score=0.32629028074026106 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81598 source=telegram topic=intel.enriched.conflict processed=49 published=49 danger_score=0.25942537970423696 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:rybar:80066 source=telegram topic=intel.enriched.conflict processed=50 published=50 danger_score=0.40280057136297226 oracle_review_candidate=False oracle_review_published=None
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.translation.worker → TranslationWorker initializing...
+INFO → collector_events.translation.worker → TranslationWorker 'translation-default' started.
+INFO → collector_events.translation.engine → Language detector (GlotLID) loaded from C:\Projects\forex_system\services\collector_events\.models\lid\lid.176.bin
+INFO → collector_events.translation.engine → NLLB translator loaded: .models/nllb-200-distilled-600M on cpu
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.events.#' → fila 'amq_0b26c3b248c04ac7962a946a7d3a1db0'
+INFO → collector_events.translation.session → TranslationSession 'default' started. Listening on intel.events.#
+INFO → collector_events.translation.worker → Translation session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 352 keyword entries
+INFO → collector_events.processors.event_processor.EventProcessor → Scoring config carregada com sucesso.
+INFO → LocalNLPEngine → A iniciar o carregamento dos modelos NLP offline...
+INFO → LocalNLPEngine → A carregar GLiNER (urchade/gliner_small-v2.1)...
+INFO → gliner.model → Loading the following GLiNER type: <class 'gliner.model.UniEncoderSpanGLiNER'>...
+INFO → LocalNLPEngine → Motor NLP carregado e pronto para inferência.
+INFO → collector_events.nlp.worker → NLPWorker initialized shared EventProcessor.
+INFO → collector_events.nlp.worker → NLPWorker 'nlp-default' started.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.translated.#' → fila 'amq_83c8019406304b40842ed1193dfdffab'
+INFO → collector_events.nlp.session → NLPEnrichmentSession 'default' started. Listening on intel.translated.# and publishing to intel.enriched.<domain>
+INFO → collector_events.nlp.worker → NLP session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → Resolution summary: resolved=78 cache_hits=78 cache_misses=0 skipped=0 failures=0 flood_waits=0 live_resolves=0 duration=18.58s
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 78 active channels in 19.78s
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (backfill_days=1, max_messages_limit=50)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131964 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131964 source=telegram topic=intel.translated.social count=1 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131965 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131965 source=telegram topic=intel.translated.social count=2 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131966 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131966 source=telegram topic=intel.translated.social count=3 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=4, Accepted=3, Limit=3/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131967 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131967 source=telegram topic=intel.translated.social count=4 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131968 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131968 source=telegram topic=intel.translated.social count=5 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131969 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131969 source=telegram topic=intel.translated.social count=6 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131970 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131970 source=telegram topic=intel.translated.social count=7 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131971 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131971 source=telegram topic=intel.translated.social count=8 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131972 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131972 source=telegram topic=intel.translated.social count=9 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131973 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131973 source=telegram topic=intel.translated.social count=10 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131974 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131974 source=telegram topic=intel.translated.social count=11 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131975 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131975 source=telegram topic=intel.translated.social count=12 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131976 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131976 source=telegram topic=intel.translated.social count=13 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131977 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131977 source=telegram topic=intel.translated.social count=14 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131978 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131978 source=telegram topic=intel.translated.social count=15 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131979 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131979 source=telegram topic=intel.translated.social count=16 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131980 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131980 source=telegram topic=intel.translated.social count=17 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131981 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131981 source=telegram topic=intel.translated.social count=18 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131982 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131982 source=telegram topic=intel.translated.social count=19 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131983 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131983 source=telegram topic=intel.translated.social count=20 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=21, Accepted=20, Limit=20/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131984 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131984 source=telegram topic=intel.translated.social count=21 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131985 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131985 source=telegram topic=intel.translated.social count=22 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131986 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131986 source=telegram topic=intel.translated.social count=23 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131987 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131987 source=telegram topic=intel.translated.social count=24 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131988 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131988 source=telegram topic=intel.translated.social count=25 translation_source=➡️No translation needed
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131964 source=telegram topic=intel.enriched.social processed=1 published=1 danger_score=0.2760055593466759 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172111 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172111 source=telegram topic=intel.translated.social count=26 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=26, Accepted=26, Limit=26/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81599 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81599 source=telegram topic=intel.translated.conflict count=27 translation_source=➡️No translation needed
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131965 source=telegram topic=intel.enriched.social processed=2 published=2 danger_score=0.28008805562853817 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81600 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81600 source=telegram topic=intel.translated.conflict count=28 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81601 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81601 source=telegram topic=intel.translated.conflict count=29 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81602 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81602 source=telegram topic=intel.translated.conflict count=30 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=31, Accepted=30, Limit=30/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81603 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81603 source=telegram topic=intel.translated.conflict count=31 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121799 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121800 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121801 in globalintel
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131966 source=telegram topic=intel.enriched.social processed=3 published=3 danger_score=0.3435869720721245 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121805 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=36, Accepted=35, Limit=35/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121806 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121807 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121808 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=39, Accepted=38, Limit=38/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121809 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121810 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121811 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121812 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121813 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121814 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121815 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121816 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121818 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121819 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121823 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=49, Accepted=49, Limit=49/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DefenderDome:20609 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (50). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121805 source=telegram topic=intel.translated.social count=32 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131967 source=telegram topic=intel.enriched.social processed=4 published=4 danger_score=0.3430153395044804 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131968 source=telegram topic=intel.enriched.social processed=5 published=5 danger_score=0.19110443298429253 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121800 source=telegram topic=intel.translated.social count=33 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121807 source=telegram topic=intel.translated.social count=34 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131969 source=telegram topic=intel.enriched.social processed=6 published=6 danger_score=0.28058789350748065 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131970 source=telegram topic=intel.enriched.social processed=7 published=7 danger_score=0.21943329998016362 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121809 source=telegram topic=intel.translated.social count=35 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121810 source=telegram topic=intel.translated.social count=36 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131971 source=telegram topic=intel.enriched.social processed=8 published=8 danger_score=0.19068481311857705 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121799 source=telegram topic=intel.translated.social count=37 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121812 source=telegram topic=intel.translated.social count=38 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131972 source=telegram topic=intel.enriched.social processed=9 published=9 danger_score=0.2431095934724808 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121813 source=telegram topic=intel.translated.social count=39 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121808 source=telegram topic=intel.translated.social count=40 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131973 source=telegram topic=intel.enriched.social processed=10 published=10 danger_score=0.20916714095234873 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121811 source=telegram topic=intel.translated.social count=41 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121819 source=telegram topic=intel.translated.social count=42 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:DefenderDome:20609 source=telegram topic=intel.translated.conflict count=43 translation_source=➡️No translation needed
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131974 source=telegram topic=intel.enriched.social processed=11 published=11 danger_score=0.3702263853764534 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121816 source=telegram topic=intel.translated.social count=44 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121801 source=telegram topic=intel.translated.social count=45 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121814 source=telegram topic=intel.translated.social count=46 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121823 source=telegram topic=intel.translated.social count=47 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131975 source=telegram topic=intel.enriched.social processed=12 published=12 danger_score=0.55030374833107 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121815 source=telegram topic=intel.translated.social count=48 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131976 source=telegram topic=intel.enriched.social processed=13 published=13 danger_score=0.3234569636052847 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121818 source=telegram topic=intel.translated.social count=49 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131977 source=telegram topic=intel.enriched.social processed=14 published=14 danger_score=0.20345208444356921 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131978 source=telegram topic=intel.enriched.social processed=15 published=15 danger_score=0.21616067909359934 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131979 source=telegram topic=intel.enriched.social processed=16 published=16 danger_score=0.24494328968882564 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131980 source=telegram topic=intel.enriched.social processed=17 published=17 danger_score=0.5065226192092896 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131981 source=telegram topic=intel.enriched.social processed=18 published=18 danger_score=0.22419514902591708 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131982 source=telegram topic=intel.enriched.social processed=19 published=19 danger_score=0.23454255082368852 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131983 source=telegram topic=intel.enriched.social processed=20 published=20 danger_score=0.23560799111723904 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131984 source=telegram topic=intel.enriched.social processed=21 published=21 danger_score=0.2348061549729109 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121806 source=telegram topic=intel.translated.social count=50 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131985 source=telegram topic=intel.enriched.social processed=22 published=22 danger_score=0.2765148295193911 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131986 source=telegram topic=intel.enriched.social processed=23 published=23 danger_score=0.40673353531122214 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131987 source=telegram topic=intel.enriched.social processed=24 published=24 danger_score=0.19459412504643206 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131988 source=telegram topic=intel.enriched.social processed=25 published=25 danger_score=0.3671676994925738 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:zerohedge:172111 source=telegram topic=intel.enriched.social processed=26 published=26 danger_score=0.12001844698727132 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81599 source=telegram topic=intel.enriched.conflict processed=27 published=27 danger_score=0.1866245541679859 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81600 source=telegram topic=intel.enriched.conflict processed=28 published=28 danger_score=0.16592032834470272 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81601 source=telegram topic=intel.enriched.conflict processed=29 published=29 danger_score=0.1582661078456044 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81602 source=telegram topic=intel.enriched.conflict processed=30 published=30 danger_score=0.3740534747350216 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81603 source=telegram topic=intel.enriched.conflict processed=31 published=31 danger_score=0.17263076453983783 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121805 source=telegram topic=intel.enriched.social processed=32 published=32 danger_score=0.01266959094285966 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121800 source=telegram topic=intel.enriched.social processed=33 published=33 danger_score=0.16212399654865264 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121807 source=telegram topic=intel.enriched.social processed=34 published=34 danger_score=0.41375451796531676 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121809 source=telegram topic=intel.enriched.social processed=35 published=35 danger_score=0.24432741039276124 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121810 source=telegram topic=intel.enriched.social processed=36 published=36 danger_score=0.4674465596008301 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121799 source=telegram topic=intel.enriched.social processed=37 published=37 danger_score=0.3014058642911911 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121812 source=telegram topic=intel.enriched.social processed=38 published=38 danger_score=0.47020876818180085 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121813 source=telegram topic=intel.enriched.social processed=39 published=39 danger_score=0.0 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121808 source=telegram topic=intel.enriched.social processed=40 published=40 danger_score=0.0 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121811 source=telegram topic=intel.enriched.social processed=41 published=41 danger_score=0.20559706323623658 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121819 source=telegram topic=intel.enriched.social processed=42 published=42 danger_score=0.002276312642097483 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:DefenderDome:20609 source=telegram topic=intel.enriched.conflict processed=43 published=43 danger_score=0.36131753362417224 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121816 source=telegram topic=intel.enriched.social processed=44 published=44 danger_score=0.014759911530017858 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121801 source=telegram topic=intel.enriched.social processed=45 published=45 danger_score=0.36986349337577823 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121814 source=telegram topic=intel.enriched.social processed=46 published=46 danger_score=0.014787402831316005 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121823 source=telegram topic=intel.enriched.social processed=47 published=47 danger_score=0.0018202365267276867 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121815 source=telegram topic=intel.enriched.social processed=48 published=48 danger_score=0.31178775661468505 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121818 source=telegram topic=intel.enriched.social processed=49 published=49 danger_score=0.3193765305805206 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121806 source=telegram topic=intel.enriched.social processed=50 published=50 danger_score=0.10970820394188167 oracle_review_candidate=False oracle_review_published=None
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.translation.worker → TranslationWorker initializing...
+INFO → collector_events.translation.worker → TranslationWorker 'translation-default' started.
+INFO → collector_events.translation.engine → Language detector (GlotLID) loaded from C:\Projects\forex_system\services\collector_events\.models\lid\lid.176.bin
+INFO → collector_events.translation.engine → NLLB translator loaded: .models/nllb-200-distilled-600M on cpu
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.events.#' → fila 'amq_0e7d4daf6c344164b731d1818f445a99'
+INFO → collector_events.translation.session → TranslationSession 'default' started. Listening on intel.events.#
+INFO → collector_events.translation.worker → Translation session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.processors.country_resolver → CountryResolver: loaded 176 countries, 352 keyword entries
+INFO → collector_events.processors.event_processor.EventProcessor → Scoring config carregada com sucesso.
+INFO → LocalNLPEngine → A iniciar o carregamento dos modelos NLP offline...
+INFO → LocalNLPEngine → A carregar GLiNER (urchade/gliner_small-v2.1)...
+INFO → gliner.model → Loading the following GLiNER type: <class 'gliner.model.UniEncoderSpanGLiNER'>...
+INFO → LocalNLPEngine → Motor NLP carregado e pronto para inferência.
+INFO → collector_events.nlp.worker → NLPWorker initialized shared EventProcessor.
+INFO → collector_events.nlp.worker → NLPWorker 'nlp-default' started.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Inscrito: 'intel.translated.#' → fila 'amq_776385cee47242e393282b0719ba7492'
+INFO → collector_events.nlp.session → NLPEnrichmentSession 'default' started. Listening on intel.translated.# and publishing to intel.enriched.<domain>
+INFO → collector_events.nlp.worker → NLP session 'default' created.
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Consumo ativo. Aguardando eventos...
+INFO → root → Logging system initialized
+INFO → OsintBootstrapper → Iniciando Bootstrapper de OSINT Telegram...
+INFO → forex_shared.env_config_manager → [EnvConfig] 🔏 47 chaves marcadas como Secret no arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 5 chaves bootstrap carregadas do arquivo.
+INFO → forex_shared.env_config_manager → [EnvConfig] 1 bootstrap secrets carregados.
+INFO → forex_shared.mongo_manager → [MongoManager] Conectado via connection string | db=forex_system
+INFO → forex_shared.mongo_manager → [MongoManager] bulk_sync(env_config): 0 novos, 26 atualizados.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves sincronizadas com MongoDB.
+INFO → forex_shared.env_config_manager → [EnvConfig] 143 novas chaves setadas em os.environ.
+INFO → forex_shared.env_config_manager → [EnvConfig] 150 chaves recarregadas do MongoDB.
+INFO → collector_events.extractors.osint_telegram.worker → Worker resources (MongoDB store) initialized.
+INFO → OsintBootstrapper → Enviando comando SESSION_CREATE para sessão 'default'
+INFO → collector_events.extractors.osint_telegram.session → Initialized feed log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed.log
+INFO → collector_events.extractors.osint_telegram.session → Initialized JSON log at C:\Projects\forex_system\services\collector_events\collector_events\extractors\osint_telegram\logs\osint_feed_intel.json
+INFO → collector_events.extractors.osint_telegram.session → Starting OsintTelegramSession 'default'
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectando: amqp://guest:guest@localhost:5672/
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conectado. Exchange 'forex_market_events' ativo.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] started with 8 workers
+INFO → telethon.network.mtprotosender → Connecting to 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Connection to 149.154.175.55:443/TcpFull complete!
+INFO → collector_events.extractors.osint_telegram.session → Resolution summary: resolved=78 cache_hits=78 cache_misses=0 skipped=0 failures=0 flood_waits=0 live_resolves=0 duration=17.12s
+INFO → collector_events.extractors.osint_telegram.session → OsintTelegramSession 'default' started with 78 active channels in 18.19s
+INFO → collector_events.extractors.osint_telegram.worker → Session 'default' created and started.
+INFO → OsintBootstrapper → Worker aguardando processamento... (backfill_days=1, max_messages_limit=50)
+INFO → OsintBootstrapper → Status [default]: Recv=0, Accepted=0, Limit=0/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:rybar:80070 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131989 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131989 source=telegram topic=intel.translated.social count=1 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131990 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131990 source=telegram topic=intel.translated.social count=2 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=4, Accepted=3, Limit=3/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131991 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131991 source=telegram topic=intel.translated.social count=3 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131992 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131992 source=telegram topic=intel.translated.social count=4 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131993 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131993 source=telegram topic=intel.translated.social count=5 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131994 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131994 source=telegram topic=intel.translated.social count=6 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131995 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131995 source=telegram topic=intel.translated.social count=7 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131996 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131996 source=telegram topic=intel.translated.social count=8 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131997 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131997 source=telegram topic=intel.translated.social count=9 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131998 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131998 source=telegram topic=intel.translated.social count=10 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:131999 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:131999 source=telegram topic=intel.translated.social count=11 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132000 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132000 source=telegram topic=intel.translated.social count=12 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132001 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132001 source=telegram topic=intel.translated.social count=13 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132002 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132002 source=telegram topic=intel.translated.social count=14 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132003 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132003 source=telegram topic=intel.translated.social count=15 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132004 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132004 source=telegram topic=intel.translated.social count=16 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132005 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132005 source=telegram topic=intel.translated.social count=17 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=19, Accepted=18, Limit=18/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132006 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132006 source=telegram topic=intel.translated.social count=18 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132007 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132007 source=telegram topic=intel.translated.social count=19 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132008 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132008 source=telegram topic=intel.translated.social count=20 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132009 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132009 source=telegram topic=intel.translated.social count=21 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132010 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132010 source=telegram topic=intel.translated.social count=22 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132011 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132011 source=telegram topic=intel.translated.social count=23 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132012 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132012 source=telegram topic=intel.translated.social count=24 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:firstsquaw:132013 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:firstsquaw:132013 source=telegram topic=intel.translated.social count=25 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172112 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172112 source=telegram topic=intel.translated.social count=26 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:zerohedge:172113 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:zerohedge:172113 source=telegram topic=intel.translated.social count=27 translation_source=➡️No translation needed
+INFO → OsintBootstrapper → Status [default]: Recv=29, Accepted=28, Limit=28/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100230 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100230 source=telegram topic=intel.translated.social count=28 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:whale_alert_io:100231 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:whale_alert_io:100231 source=telegram topic=intel.translated.social count=29 translation_source=➡️No translation needed
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131989 source=telegram topic=intel.enriched.social processed=1 published=1 danger_score=0.1965288503533602 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81604 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81604 source=telegram topic=intel.translated.conflict count=30 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81605 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81605 source=telegram topic=intel.translated.conflict count=31 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:ClashReport:81606 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:ClashReport:81606 source=telegram topic=intel.translated.conflict count=32 translation_source=➡️No translation needed
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121824 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121827 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121830 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121831 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121832 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=39, Accepted=38, Limit=38/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121833 in globalintel
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121833 source=telegram topic=intel.translated.social count=33 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121834 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121835 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121836 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121837 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121838 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121839 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:abualiexpress:121840 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:DefenderDome:20613 in globalintel
+INFO → OsintBootstrapper → Status [default]: Recv=47, Accepted=47, Limit=47/50
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:englishabuali:72385 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:englishabuali:72386 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → ✅ Verified storage for telegram:englishabuali:72387 in globalintel
+INFO → collector_events.extractors.osint_telegram.session → Message limit reached (50). Stopping session.
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Disconnecting from 149.154.175.55:443/TcpFull...
+INFO → telethon.network.mtprotosender → Disconnection from 149.154.175.55:443/TcpFull complete!
+INFO → forex_shared.providers.mq.rabbitmq_provider_async.RabbitMQProviderAsync → [RabbitMQ Async] Conexão encerrada.
+INFO → forex_shared.worker_api.event_publisher → [MQEventPublisher] stopped
+INFO → OsintBootstrapper → Nenhuma sessão ativa (todas STOPPED). Encerrando bootstrapper...
+INFO → collector_events.extractors.osint_telegram.worker → Stopping 1 active sessions...
+INFO → collector_events.extractors.osint_telegram.session → Stopping OsintTelegramSession 'default'
+INFO → telethon.network.mtprotosender → Not disconnecting (already have no connection)
+INFO → OsintBootstrapper → Bootstrapper encerrado.
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121830 source=telegram topic=intel.translated.social count=34 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131990 source=telegram topic=intel.enriched.social processed=2 published=2 danger_score=0.18875974812269214 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121835 source=telegram topic=intel.translated.social count=35 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121824 source=telegram topic=intel.translated.social count=36 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121834 source=telegram topic=intel.translated.social count=37 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131991 source=telegram topic=intel.enriched.social processed=3 published=3 danger_score=0.1914069643682242 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121827 source=telegram topic=intel.translated.social count=38 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131992 source=telegram topic=intel.enriched.social processed=4 published=4 danger_score=0.18383534312903885 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121836 source=telegram topic=intel.translated.social count=39 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:DefenderDome:20613 source=telegram topic=intel.translated.conflict count=40 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:englishabuali:72385 source=telegram topic=intel.translated.social count=41 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:englishabuali:72386 source=telegram topic=intel.translated.social count=42 translation_source=➡️No translation needed
+INFO → collector_events.translation.session → Translated event id=telegram:englishabuali:72387 source=telegram topic=intel.translated.social count=43 translation_source=➡️No translation needed
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131993 source=telegram topic=intel.enriched.social processed=5 published=5 danger_score=0.20608279839813712 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121840 source=telegram topic=intel.translated.social count=44 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121837 source=telegram topic=intel.translated.social count=45 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131994 source=telegram topic=intel.enriched.social processed=6 published=6 danger_score=0.18971234135985376 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131995 source=telegram topic=intel.enriched.social processed=7 published=7 danger_score=0.23777024470925334 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121838 source=telegram topic=intel.translated.social count=46 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121832 source=telegram topic=intel.translated.social count=47 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131996 source=telegram topic=intel.enriched.social processed=8 published=8 danger_score=0.20602344446539883 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.translation.session → Translated event id=telegram:rybar:80070 source=telegram topic=intel.translated.conflict count=48 translation_source=⚡Translation from Russian (rus_Cyrl)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121839 source=telegram topic=intel.translated.social count=49 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.translation.session → Translated event id=telegram:abualiexpress:121831 source=telegram topic=intel.translated.social count=50 translation_source=⚡Translation from Hebrew (heb_Hebr)
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131997 source=telegram topic=intel.enriched.social processed=9 published=9 danger_score=0.20376988597869877 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131998 source=telegram topic=intel.enriched.social processed=10 published=10 danger_score=0.19047598638296132 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:131999 source=telegram topic=intel.enriched.social processed=11 published=11 danger_score=0.18643694505751135 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → Oracle review requested id=telegram:firstsquaw:132000 topic=intel.oracle.review count=1 danger_score=0.6144315678691864 trade_emit_score=0.6144315678691864
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132000 source=telegram topic=intel.enriched.social processed=12 published=12 danger_score=0.6144315678691864 oracle_review_candidate=True oracle_review_published=True
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132001 source=telegram topic=intel.enriched.social processed=13 published=13 danger_score=0.26710769948601726 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132002 source=telegram topic=intel.enriched.social processed=14 published=14 danger_score=0.20233361474211217 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132003 source=telegram topic=intel.enriched.social processed=15 published=15 danger_score=0.1885869415008545 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132004 source=telegram topic=intel.enriched.social processed=16 published=16 danger_score=0.1931713851606846 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132005 source=telegram topic=intel.enriched.social processed=17 published=17 danger_score=0.18183910337001088 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132006 source=telegram topic=intel.enriched.social processed=18 published=18 danger_score=0.22857125469195844 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132007 source=telegram topic=intel.enriched.social processed=19 published=19 danger_score=0.22302376454021935 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132008 source=telegram topic=intel.enriched.social processed=20 published=20 danger_score=0.4061742741455555 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132009 source=telegram topic=intel.enriched.social processed=21 published=21 danger_score=0.4022131945778847 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132010 source=telegram topic=intel.enriched.social processed=22 published=22 danger_score=0.29377077239105703 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132011 source=telegram topic=intel.enriched.social processed=23 published=23 danger_score=0.2920847522449494 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132012 source=telegram topic=intel.enriched.social processed=24 published=24 danger_score=0.19067734651923182 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:firstsquaw:132013 source=telegram topic=intel.enriched.social processed=25 published=25 danger_score=0.3250203157693148 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:zerohedge:172112 source=telegram topic=intel.enriched.social processed=26 published=26 danger_score=0.12127302544355394 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:zerohedge:172113 source=telegram topic=intel.enriched.social processed=27 published=27 danger_score=0.1414298342370987 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100230 source=telegram topic=intel.enriched.social processed=28 published=28 danger_score=0.053377580508470523 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:whale_alert_io:100231 source=telegram topic=intel.enriched.social processed=29 published=29 danger_score=0.06568960565149784 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81604 source=telegram topic=intel.enriched.conflict processed=30 published=30 danger_score=0.1582874935078621 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81605 source=telegram topic=intel.enriched.conflict processed=31 published=31 danger_score=0.16039364151239394 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:ClashReport:81606 source=telegram topic=intel.enriched.conflict processed=32 published=32 danger_score=0.230784996073246 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121833 source=telegram topic=intel.enriched.social processed=33 published=33 danger_score=0.0 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121830 source=telegram topic=intel.enriched.social processed=34 published=34 danger_score=0.0 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121835 source=telegram topic=intel.enriched.social processed=35 published=35 danger_score=0.005635407276749621 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121824 source=telegram topic=intel.enriched.social processed=36 published=36 danger_score=0.005116584234237681 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121834 source=telegram topic=intel.enriched.social processed=37 published=37 danger_score=0.0 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121827 source=telegram topic=intel.enriched.social processed=38 published=38 danger_score=0.08492170491099359 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121836 source=telegram topic=intel.enriched.social processed=39 published=39 danger_score=0.0 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:DefenderDome:20613 source=telegram topic=intel.enriched.conflict processed=40 published=40 danger_score=0.0476523297995329 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:englishabuali:72385 source=telegram topic=intel.enriched.social processed=41 published=41 danger_score=0.05975800313830377 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:englishabuali:72386 source=telegram topic=intel.enriched.social processed=42 published=42 danger_score=0.0 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:englishabuali:72387 source=telegram topic=intel.enriched.social processed=43 published=43 danger_score=0.021194925241470347 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121840 source=telegram topic=intel.enriched.social processed=44 published=44 danger_score=0.44635919862270357 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121837 source=telegram topic=intel.enriched.social processed=45 published=45 danger_score=0.030651482276916515 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121838 source=telegram topic=intel.enriched.social processed=46 published=46 danger_score=0.014885598503351222 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121832 source=telegram topic=intel.enriched.social processed=47 published=47 danger_score=0.2159162723350525 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:rybar:80070 source=telegram topic=intel.enriched.conflict processed=48 published=48 danger_score=0.03703840198898316 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121839 source=telegram topic=intel.enriched.social processed=49 published=49 danger_score=0.11607048989117147 oracle_review_candidate=False oracle_review_published=None
+INFO → collector_events.nlp.session → NLP-enriched event id=telegram:abualiexpress:121831 source=telegram topic=intel.enriched.social processed=50 published=50 danger_score=0.003299162991642962 oracle_review_candidate=False oracle_review_published=None

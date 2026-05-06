@@ -1,0 +1,343 @@
+INFO     👀 Logging system initialized                     logger_config.py:182
+INFO     👀 [EnvConfig] 🔏 47 chaves marcadas como   env_config_manager.py:1072
+         Secret no arquivo.                                                    
+INFO     👀 [EnvConfig] 5 chaves bootstrap           env_config_manager.py:1025
+         carregadas do arquivo.                                                
+INFO     👀 [EnvConfig] 1 bootstrap secrets           env_config_manager.py:690
+         carregados.                                                           
+C:\Projects\forex_system\shared_lib\forex_shared\mongo_manager.py:128: UserWarning: You appear to be connected to a CosmosDB cluster. For more information regarding feature compatibility and support please visit https://www.mongodb.com/supportability/cosmosdb
+  self.client = MongoClient(
+INFO     👀 [MongoManager] Conectado via connection string mongo_manager.py:143
+         | db=forex_system                                                     
+INFO     👀 [MongoManager] bulk_sync(env_config): 0 novos, mongo_manager.py:208
+         26 atualizados.                                                       
+INFO     👀 [EnvConfig] 150 chaves sincronizadas com  env_config_manager.py:951
+         MongoDB.                                                              
+INFO     👀 [EnvConfig] 143 novas chaves setadas em   env_config_manager.py:886
+         os.environ.                                                           
+INFO     👀 [EnvConfig] 150 chaves recarregadas do    env_config_manager.py:965
+         MongoDB.                                                              
+INFO     👀 CountryResolver: loaded 176 countries, 352  country_resolver.py:136
+         keyword entries                                                       
+INFO     👀 Scoring config carregada com sucesso.         event_processor.py:81
+INFO     👀 A iniciar o carregamento dos modelos NLP           nlp_engine.py:26
+         offline...                                                            
+Device set to use cpu
+Device set to use cpu
+INFO     👀 A carregar GLiNER (urchade/gliner_small-v2.1)...   nlp_engine.py:59
+C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\huggingface_hub\file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<?, ?it/s]
+INFO     👀 Loading the following GLiNER type: <class             model.py:3190
+         'gliner.model.UniEncoderSpanGLiNER'>...                               
+C:\Projects\forex_system\services\collector_events\.venv\Lib\site-packages\transformers\convert_slow_tokenizer.py:566: UserWarning: The sentencepiece tokenizer that you are converting to a fast tokenizer uses the byte fallback option which is not implemented in the fast tokenizers. In practice this means that the fast version of the tokenizer can produce unknown tokens whereas the sentencepiece version would have converted these unknown tokens into a sequence of byte tokens matching the original piece of text.
+  warnings.warn(
+INFO     👀 Motor NLP carregado e pronto para inferência.      nlp_engine.py:77
+INFO     👀 NLPWorker initialized shared EventProcessor.           worker.py:44
+INFO     👀 NLPWorker 'nlp-default' started.                       worker.py:39
+INFO     👀 [RabbitMQ Async] Conectando:          rabbitmq_provider_async.py:53
+         amqp://guest:guest@localhost:5672/                                    
+INFO     👀 [RabbitMQ Async] Conectando:          rabbitmq_provider_async.py:62
+         amqp://guest:guest@localhost:5672/                                    
+INFO     👀 [RabbitMQ Async] Conectado. Exchange  rabbitmq_provider_async.py:85
+         'forex_market_events' ativo.                                          
+INFO     👀 [RabbitMQ Async] Inscrito:           rabbitmq_provider_async.py:218
+         'intel.translated.#' → fila                                           
+         'amq_776385cee47242e393282b0719ba7492'                                
+INFO     👀 NLPEnrichmentSession 'default' started. Listening on  session.py:67
+         intel.translated.# and publishing to                                  
+         intel.enriched.<domain>                                               
+INFO     👀 NLP session 'default' created.                         worker.py:82
+INFO     👀 [RabbitMQ Async] Consumo ativo.      rabbitmq_provider_async.py:231
+         Aguardando eventos...                                                 
+Asking to truncate to max_length but no maximum length is provided and the model has no predefined maximum length. Default to no truncation.
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131989     session.py:102
+         source=telegram topic=intel.enriched.social processed=1               
+         published=1 danger_score=0.1965288503533602                           
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131990     session.py:102
+         source=telegram topic=intel.enriched.social processed=2               
+         published=2 danger_score=0.18875974812269214                          
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131991     session.py:102
+         source=telegram topic=intel.enriched.social processed=3               
+         published=3 danger_score=0.1914069643682242                           
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131992     session.py:102
+         source=telegram topic=intel.enriched.social processed=4               
+         published=4 danger_score=0.18383534312903885                          
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131993     session.py:102
+         source=telegram topic=intel.enriched.social processed=5               
+         published=5 danger_score=0.20608279839813712                          
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131994     session.py:102
+         source=telegram topic=intel.enriched.social processed=6               
+         published=6 danger_score=0.18971234135985376                          
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131995     session.py:102
+         source=telegram topic=intel.enriched.social processed=7               
+         published=7 danger_score=0.23777024470925334                          
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131996     session.py:102
+         source=telegram topic=intel.enriched.social processed=8               
+         published=8 danger_score=0.20602344446539883                          
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131997     session.py:102
+         source=telegram topic=intel.enriched.social processed=9               
+         published=9 danger_score=0.20376988597869877                          
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131998     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=10 published=10                                             
+         danger_score=0.19047598638296132                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:131999     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=11 published=11                                             
+         danger_score=0.18643694505751135                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 Oracle review requested                              session.py:165
+         id=telegram:firstsquaw:132000 topic=intel.oracle.review               
+         count=1 danger_score=0.6144315678691864                               
+         trade_emit_score=0.6144315678691864                                   
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132000     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=12 published=12                                             
+         danger_score=0.6144315678691864                                       
+         oracle_review_candidate=True                                          
+         oracle_review_published=True                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132001     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=13 published=13                                             
+         danger_score=0.26710769948601726                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132002     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=14 published=14                                             
+         danger_score=0.20233361474211217                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132003     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=15 published=15                                             
+         danger_score=0.1885869415008545                                       
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132004     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=16 published=16                                             
+         danger_score=0.1931713851606846                                       
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132005     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=17 published=17                                             
+         danger_score=0.18183910337001088                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132006     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=18 published=18                                             
+         danger_score=0.22857125469195844                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132007     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=19 published=19                                             
+         danger_score=0.22302376454021935                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132008     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=20 published=20                                             
+         danger_score=0.4061742741455555                                       
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132009     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=21 published=21                                             
+         danger_score=0.4022131945778847                                       
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132010     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=22 published=22                                             
+         danger_score=0.29377077239105703                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132011     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=23 published=23                                             
+         danger_score=0.2920847522449494                                       
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132012     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=24 published=24                                             
+         danger_score=0.19067734651923182                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:firstsquaw:132013     session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=25 published=25                                             
+         danger_score=0.3250203157693148                                       
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:zerohedge:172112      session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=26 published=26                                             
+         danger_score=0.12127302544355394                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:zerohedge:172113      session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=27 published=27                                             
+         danger_score=0.1414298342370987                                       
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:whale_alert_io:100230 session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=28 published=28                                             
+         danger_score=0.053377580508470523                                     
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:whale_alert_io:100231 session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=29 published=29                                             
+         danger_score=0.06568960565149784                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:ClashReport:81604     session.py:102
+         source=telegram topic=intel.enriched.conflict                         
+         processed=30 published=30                                             
+         danger_score=0.1582874935078621                                       
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:ClashReport:81605     session.py:102
+         source=telegram topic=intel.enriched.conflict                         
+         processed=31 published=31                                             
+         danger_score=0.16039364151239394                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:ClashReport:81606     session.py:102
+         source=telegram topic=intel.enriched.conflict                         
+         processed=32 published=32                                             
+         danger_score=0.230784996073246                                        
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121833  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=33 published=33 danger_score=0.0                            
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121830  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=34 published=34 danger_score=0.0                            
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121835  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=35 published=35                                             
+         danger_score=0.005635407276749621                                     
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121824  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=36 published=36                                             
+         danger_score=0.005116584234237681                                     
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121834  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=37 published=37 danger_score=0.0                            
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121827  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=38 published=38                                             
+         danger_score=0.08492170491099359                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121836  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=39 published=39 danger_score=0.0                            
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:DefenderDome:20613    session.py:102
+         source=telegram topic=intel.enriched.conflict                         
+         processed=40 published=40                                             
+         danger_score=0.0476523297995329                                       
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:englishabuali:72385   session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=41 published=41                                             
+         danger_score=0.05975800313830377                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:englishabuali:72386   session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=42 published=42 danger_score=0.0                            
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:englishabuali:72387   session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=43 published=43                                             
+         danger_score=0.021194925241470347                                     
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121840  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=44 published=44                                             
+         danger_score=0.44635919862270357                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121837  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=45 published=45                                             
+         danger_score=0.030651482276916515                                     
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121838  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=46 published=46                                             
+         danger_score=0.014885598503351222                                     
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121832  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=47 published=47                                             
+         danger_score=0.2159162723350525                                       
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:rybar:80070           session.py:102
+         source=telegram topic=intel.enriched.conflict                         
+         processed=48 published=48                                             
+         danger_score=0.03703840198898316                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121839  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=49 published=49                                             
+         danger_score=0.11607048989117147                                      
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
+INFO     👀 NLP-enriched event id=telegram:abualiexpress:121831  session.py:102
+         source=telegram topic=intel.enriched.social                           
+         processed=50 published=50                                             
+         danger_score=0.003299162991642962                                     
+         oracle_review_candidate=False                                         
+         oracle_review_published=None                                          
