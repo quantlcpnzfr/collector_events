@@ -2,13 +2,15 @@ from __future__ import annotations
 import asyncio
 import os
 import json
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from typing import Any, Dict, List, Optional, Set
 from pathlib import Path
 
 from telethon import TelegramClient, events
 from telethon.sessions import StringSession
 from telethon.errors import FloodWaitError
+from telethon.tl.types import InputPeerChannel, InputPeerChat, InputPeerUser
+from telethon import utils
 
 from forex_shared.worker_api import BaseSession, MQEventPublisher
 from forex_shared.domain.intel import IntelDomain, IntelItem
@@ -45,6 +47,12 @@ class OsintTelegramSession(BaseSession):
         self.backfill_interval = config.get("backfill_interval", 60.0)
         self.per_channel_delay = config.get("per_channel_delay", 0.8)
         self.request_timeout = config.get("request_timeout", 15.0)
+        self.resolve_batch_size = int(config.get("resolve_batch_size", 8))
+        self.resolve_batch_pause = float(config.get("resolve_batch_pause", 3.0))
+        self.startup_channel_limit = int(config.get("startup_channel_limit", 0))
+        self.priority_startup = bool(config.get("priority_startup", True))
+        self.cache_hit_delay = float(config.get("cache_hit_delay", 0.05))
+        self.resolve_failure_cooldown_hours = int(config.get("resolve_failure_cooldown_hours", 24))
         
         # New Parameters
         self.backfill_days = config.get("backfill_days", 1)
@@ -67,6 +75,7 @@ class OsintTelegramSession(BaseSession):
         self.entities: Dict[str, Any] = {}
         self.client: Optional[TelegramClient] = None
         self.publisher: Optional[MQEventPublisher] = None
+        self._backfill_task: Optional[asyncio.Task] = None
         
         self._flood_wait_until = 0.0
         self._flood_lock = asyncio.Lock()
@@ -80,6 +89,15 @@ class OsintTelegramSession(BaseSession):
         self.duplicate_count = 0
         self.processed_messages_count = 0
         self.last_poll_at: Optional[datetime] = None
+        self.resolved_count = 0
+        self.resolution_failures = 0
+        self.cache_hit_count = 0
+        self.cache_miss_count = 0
+        self.skipped_resolution_count = 0
+        self.flood_wait_count = 0
+        self.live_resolve_count = 0
+        self.startup_duration_seconds = 0.0
+        self.resolution_duration_seconds = 0.0
 
     def _resolve_log_path(self, filename: str) -> Path:
         """Resolve the log path relative to this file."""
@@ -216,6 +234,7 @@ class OsintTelegramSession(BaseSession):
     async def start(self) -> None:
         """Initialize Telethon, resolve channels and start loops."""
         log.info(f"Starting OsintTelegramSession '{self.session_id}'")
+        started_at = asyncio.get_event_loop().time()
         
         # 1. Load channels config
         await self._load_channels_config()
@@ -255,23 +274,29 @@ class OsintTelegramSession(BaseSession):
         self._register_handlers()
         
         # 6. Start backfill loop
-        self._create_background_task(self._backfill_loop(), name="backfill")
+        self._backfill_task = self._create_background_task(self._backfill_loop(), name="backfill")
+        self.startup_duration_seconds = asyncio.get_event_loop().time() - started_at
         
-        log.info(f"OsintTelegramSession '{self.session_id}' started with {len(self.entities)} active channels")
+        log.info(
+            "OsintTelegramSession '%s' started with %s active channels in %.2fs",
+            self.session_id,
+            len(self.entities),
+            self.startup_duration_seconds,
+        )
 
     async def stop(self) -> None:
         """Gracefully stop session."""
         log.info(f"Stopping OsintTelegramSession '{self.session_id}'")
         self._stop_event.set()
         self.status = "STOPPED"
+        if self._backfill_task and not self._backfill_task.done():
+            self._backfill_task.cancel()
         
         if self.client:
             await self.client.disconnect()
             
         if self.publisher:
             await self.publisher.stop()
-            
-        await super().stop()
 
     async def _load_channels_config(self) -> None:
         """Load channels from file or config payload."""
@@ -293,22 +318,186 @@ class OsintTelegramSession(BaseSession):
             for rc in self.config["channels"]:
                 self.channels.append(TelegramChannel.from_dict(rc))
 
+        self.channels = self._prioritize_channels(self.channels)
+
+    def _prioritize_channels(self, channels: List[TelegramChannel]) -> List[TelegramChannel]:
+        prioritized = list(channels)
+        if self.priority_startup:
+            prioritized.sort(
+                key=lambda channel: (
+                    channel.tier if channel.tier is not None else 999,
+                    0 if channel.send_to_oracle else 1,
+                    0 if channel.send_to_translator else 1,
+                    channel.max_messages * -1,
+                    channel.handle.lower(),
+                )
+            )
+        if self.startup_channel_limit > 0:
+            return prioritized[: self.startup_channel_limit]
+        return prioritized
+
+    def _serialize_entity_ref(self, entity: Any) -> Optional[Dict[str, Any]]:
+        try:
+            input_peer = utils.get_input_peer(entity)
+        except Exception:
+            return None
+
+        if isinstance(input_peer, InputPeerChannel):
+            return {
+                "peer_type": "channel",
+                "channel_id": int(input_peer.channel_id),
+                "access_hash": int(input_peer.access_hash),
+            }
+        if isinstance(input_peer, InputPeerUser):
+            return {
+                "peer_type": "user",
+                "user_id": int(input_peer.user_id),
+                "access_hash": int(input_peer.access_hash),
+            }
+        if isinstance(input_peer, InputPeerChat):
+            return {
+                "peer_type": "chat",
+                "chat_id": int(input_peer.chat_id),
+            }
+        return None
+
+    def _deserialize_entity_ref(self, payload: Dict[str, Any]) -> Optional[Any]:
+        peer_type = str(payload.get("peer_type") or "")
+        try:
+            if peer_type == "channel":
+                return InputPeerChannel(
+                    channel_id=int(payload["channel_id"]),
+                    access_hash=int(payload["access_hash"]),
+                )
+            if peer_type == "user":
+                return InputPeerUser(
+                    user_id=int(payload["user_id"]),
+                    access_hash=int(payload["access_hash"]),
+                )
+            if peer_type == "chat":
+                return InputPeerChat(chat_id=int(payload["chat_id"]))
+        except Exception:
+            return None
+        return None
+
     async def _resolve_entities(self) -> None:
         """Resolve channel handles to Telethon entities."""
-        if not self.client: return
-        
-        for ch in self.channels:
+        if not self.client:
+            return
+
+        resolution_started_at = asyncio.get_event_loop().time()
+        live_resolution_index = 0
+        for index, ch in enumerate(self.channels, start=1):
+            if self._stop_event.is_set():
+                break
             try:
-                await self._respect_flood_wait()
-                async with self._request_lock:
-                    entity = await asyncio.wait_for(
-                        self.client.get_entity(ch.handle), 
-                        timeout=self.request_timeout
-                    )
-                    self.entities[ch.handle] = entity
+                skip_reason = await self._should_skip_resolution(ch)
+                if skip_reason:
+                    self.skipped_resolution_count += 1
+                    log.info("Skipping channel %s resolution: %s", ch.handle, skip_reason)
+                    continue
+
+                entity, from_cache = await self._resolve_channel_entity(ch)
+                if entity is None:
+                    continue
+                self.entities[ch.handle] = entity
+                self.resolved_count += 1
+                if not from_cache:
+                    self.live_resolve_count += 1
+                    live_resolution_index += 1
+                await self.store.save_channel_state(
+                    ch.handle,
+                    {
+                        "lastResolvedAt": datetime.now(timezone.utc).isoformat(),
+                        "resolutionFailures": 0,
+                        "lastResolutionError": "",
+                        "resolutionStatus": "cache_hit" if from_cache else "resolved_live",
+                        "nextResolveAfter": None,
+                    },
+                )
+                if not from_cache and live_resolution_index % self.resolve_batch_size == 0:
+                    await asyncio.sleep(self.resolve_batch_pause)
+                elif from_cache:
+                    await asyncio.sleep(self.cache_hit_delay)
+                else:
                     await asyncio.sleep(self.per_channel_delay)
             except Exception as e:
+                self.resolution_failures += 1
+                current_state = await self.store.get_channel_state(ch.handle)
+                next_resolve_after = (
+                    datetime.now(timezone.utc) + timedelta(hours=self.resolve_failure_cooldown_hours)
+                ).isoformat()
+                await self.store.save_channel_state(
+                    ch.handle,
+                    {
+                        "lastResolutionError": str(e),
+                        "resolutionFailures": int(current_state.get("resolutionFailures", 0)) + 1,
+                        "resolutionStatus": "failed",
+                        "nextResolveAfter": next_resolve_after,
+                    },
+                )
                 log.warning(f"Failed to resolve channel {ch.handle}: {e}")
+
+        self.resolution_duration_seconds = asyncio.get_event_loop().time() - resolution_started_at
+        log.info(
+            "Resolution summary: resolved=%s cache_hits=%s cache_misses=%s skipped=%s failures=%s flood_waits=%s live_resolves=%s duration=%.2fs",
+            self.resolved_count,
+            self.cache_hit_count,
+            self.cache_miss_count,
+            self.skipped_resolution_count,
+            self.resolution_failures,
+            self.flood_wait_count,
+            self.live_resolve_count,
+            self.resolution_duration_seconds,
+        )
+
+    async def _should_skip_resolution(self, channel: TelegramChannel) -> str:
+        state = await self.store.get_channel_state(channel.handle)
+        next_resolve_after = state.get("nextResolveAfter")
+        if not next_resolve_after:
+            return ""
+        try:
+            retry_at = datetime.fromisoformat(str(next_resolve_after).replace("Z", "+00:00"))
+        except Exception:
+            return ""
+        if retry_at > datetime.now(timezone.utc):
+            return f"cooldown until {retry_at.isoformat()}"
+        return ""
+
+    async def _resolve_channel_entity(self, channel: TelegramChannel) -> tuple[Optional[Any], bool]:
+        if not self.client:
+            return None, False
+
+        cached = await self.store.get_entity_cache(channel.handle)
+        if cached:
+            entity = self._deserialize_entity_ref(cached)
+            if entity is not None:
+                self.cache_hit_count += 1
+                return entity, True
+
+        self.cache_miss_count += 1
+        await self._respect_flood_wait()
+        async with self._request_lock:
+            try:
+                entity = await asyncio.wait_for(
+                    self.client.get_entity(channel.handle),
+                    timeout=self.request_timeout,
+                )
+            except FloodWaitError as exc:
+                await self._handle_flood_wait(int(exc.seconds))
+                await self.store.save_channel_state(
+                    channel.handle,
+                    {
+                            "lastFloodWaitAt": datetime.now(timezone.utc).isoformat(),
+                            "lastFloodWaitSeconds": int(exc.seconds),
+                        },
+                    )
+                raise
+
+        payload = self._serialize_entity_ref(entity)
+        if payload is not None:
+            await self.store.save_entity_cache(channel.handle, payload)
+        return entity, False
 
     def _register_handlers(self) -> None:
         """Register NewMessage handlers for all resolved channels."""
@@ -341,17 +530,35 @@ class OsintTelegramSession(BaseSession):
                     
                     await self._respect_flood_wait()
                     async with self._request_lock:
-                        # Fetch messages since last_id OR since offset_date
-                        messages = await self.client.get_messages(
-                            entity, 
-                            limit=ch.max_messages,
-                            min_id=last_id,
-                            offset_date=None if last_id > 0 else offset_date,
-                            reverse=True # Fetch from oldest to newest
-                        )
+                        try:
+                            # Fetch messages since last_id OR since offset_date
+                            messages = await self.client.get_messages(
+                                entity, 
+                                limit=ch.max_messages,
+                                min_id=last_id,
+                                offset_date=None if last_id > 0 else offset_date,
+                                reverse=True # Fetch from oldest to newest
+                            )
+                        except FloodWaitError as exc:
+                            await self._handle_flood_wait(int(exc.seconds))
+                            await self.store.save_channel_state(
+                                ch.handle,
+                                {
+                                    "lastFloodWaitAt": datetime.now(timezone.utc).isoformat(),
+                                    "lastFloodWaitSeconds": int(exc.seconds),
+                                },
+                            )
+                            continue
                         await asyncio.sleep(self.per_channel_delay)
                         
                     if messages:
+                        await self.store.save_channel_state(
+                            ch.handle,
+                            {
+                                "lastBackfillCount": len(messages),
+                                "lastSuccessAt": datetime.now(timezone.utc).isoformat(),
+                            },
+                        )
                         for msg in messages:
                             if self._stop_event.is_set(): break
                             await self._process_message(msg, ch, source="backfill")
@@ -379,12 +586,19 @@ class OsintTelegramSession(BaseSession):
         if message.id <= last_id:
             self.duplicate_count += 1
             return
+
+        ts = message.date.replace(tzinfo=timezone.utc).isoformat()
             
         # Update cursor
         await self.store.save_cursor(channel.handle, message.id)
-        
-        # Build normalized item
-        ts = message.date.replace(tzinfo=timezone.utc).isoformat()
+        await self.store.save_channel_state(
+            channel.handle,
+            {
+                "lastSuccessAt": datetime.now(timezone.utc).isoformat(),
+                "lastMessageId": int(message.id),
+                "lastPublishedAt": ts,
+            },
+        )
         
         item_id = f"{channel.handle}:{message.id}"
         item = TelegramFeedItem(
@@ -471,4 +685,28 @@ class OsintTelegramSession(BaseSession):
 
     async def _handle_flood_wait(self, seconds: int) -> None:
         async with self._flood_lock:
+            self.flood_wait_count += 1
             self._flood_wait_until = asyncio.get_event_loop().time() + seconds + 1
+
+    def snapshot(self) -> Dict[str, Any]:
+        return {
+            "session_id": self.session_id,
+            "session_name": self.session_name,
+            "status": self.status,
+            "channel_set": self.channel_set,
+            "configured_channels": len(self.channels),
+            "resolved_channels": len(self.entities),
+            "received_count": self.received_count,
+            "accepted_count": self.accepted_count,
+            "duplicate_count": self.duplicate_count,
+            "processed_messages_count": self.processed_messages_count,
+            "last_poll_at": self.last_poll_at.isoformat() if self.last_poll_at else None,
+            "resolution_failures": self.resolution_failures,
+            "cache_hit_count": self.cache_hit_count,
+            "cache_miss_count": self.cache_miss_count,
+            "skipped_resolution_count": self.skipped_resolution_count,
+            "flood_wait_count": self.flood_wait_count,
+            "live_resolve_count": self.live_resolve_count,
+            "resolution_duration_seconds": round(self.resolution_duration_seconds, 3),
+            "startup_duration_seconds": round(self.startup_duration_seconds, 3),
+        }

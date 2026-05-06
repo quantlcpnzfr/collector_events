@@ -10,6 +10,8 @@ class OsintTelegramStore(BaseStore):
         super().__init__(mongo_manager)
         self.cursor_collection = "telegram_osint"
         self.session_collection = "telegram"
+        self.entity_cache_collection = "telegram_entity_cache"
+        self.channel_state_collection = "telegram_channel_state"
 
     async def ensure_indexes(self) -> None:
         """Create indexes for performance and uniqueness."""
@@ -22,6 +24,14 @@ class OsintTelegramStore(BaseStore):
         await self._mongo.async_ensure_indexes(
             self.session_collection,
             [[("_id", 1)]]
+        )
+        await self._mongo.async_ensure_indexes(
+            self.entity_cache_collection,
+            [[("handle", 1)]]
+        )
+        await self._mongo.async_ensure_indexes(
+            self.channel_state_collection,
+            [[("handle", 1)]]
         )
 
     async def store_item(self, collection: str, item: Any, filter_: Dict[str, Any]) -> Any:
@@ -75,10 +85,42 @@ class OsintTelegramStore(BaseStore):
             },
             {"key": f"cursor:{handle.lower()}"}
         )
+
     async def save_intel_item(self, item: Dict[str, Any]) -> None:
         """Save normalized IntelItem to 'globalintel' collection."""
         await self.store_item(
             "globalintel",
             item,
             {"id": item.get("id")}
+        )
+
+    async def get_entity_cache(self, handle: str) -> Optional[Dict[str, Any]]:
+        """Load cached Telethon input-entity reference for a handle."""
+        return await self.get_item(self.entity_cache_collection, {"handle": handle.lower()})
+
+    async def save_entity_cache(self, handle: str, payload: Dict[str, Any]) -> None:
+        """Persist Telethon input-entity reference for a handle."""
+        doc = dict(payload)
+        doc["handle"] = handle.lower()
+        doc["updated_at"] = datetime.now(timezone.utc)
+        await self.store_item(
+            self.entity_cache_collection,
+            doc,
+            {"handle": handle.lower()}
+        )
+
+    async def get_channel_state(self, handle: str) -> Dict[str, Any]:
+        """Load runtime state for a handle."""
+        return await self.get_item(self.channel_state_collection, {"handle": handle.lower()}) or {}
+
+    async def save_channel_state(self, handle: str, updates: Dict[str, Any]) -> None:
+        """Upsert runtime state for a handle."""
+        current = await self.get_channel_state(handle)
+        current.update(updates)
+        current["handle"] = handle.lower()
+        current["updated_at"] = datetime.now(timezone.utc)
+        await self.store_item(
+            self.channel_state_collection,
+            current,
+            {"handle": handle.lower()}
         )

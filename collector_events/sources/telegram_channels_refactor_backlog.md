@@ -1,0 +1,291 @@
+# Telegram Channels Refactor Backlog
+
+Generated: 2026-05-06
+
+Scope:
+- Source catalog: [telegram_channels.json](</c:/Projects/forex_system/services/collector_events/collector_events/sources/telegram_channels.json>)
+- Review input: [telegram_channels_osint_trade_review.md](</c:/Projects/forex_system/services/collector_events/collector_events/sources/telegram_channels_osint_trade_review.md>)
+- Runtime builder: [osint_extractor.py](</c:/Projects/forex_system/services/collector_events/collector_events/events_extractors/osint_extractor.py>)
+- Worker/session consumer: [session.py](</c:/Projects/forex_system/services/collector_events/collector_events/extractors/osint_telegram/session.py>)
+
+## Objectives
+
+1. Make the Telegram source catalog machine-trustworthy.
+2. Separate source governance from raw collection.
+3. Prevent runtime startup/resolution behavior from degrading as the catalog grows.
+4. Route different source families into the correct downstream pipelines.
+
+## Current State
+
+- `telegram_channels.json` is structurally consistent but contains stale `counts`.
+- The catalog uses `camelCase` fields and is consumed by multiple local loaders.
+- Runtime startup is vulnerable to resolution storms and Telethon flood waits.
+- Trust/routing semantics are still too coarse for Oracle-facing use.
+- Finance tape, cyber, conflict OSINT, crypto, and forex retail signals are mixed in one flat catalog.
+
+## Sprint Roadmap
+
+## P0 - Catalog Integrity and Contract Stabilization
+
+Goal:
+Make the catalog self-validating and safe to evolve without breaking the extractor.
+
+### Deliverables
+
+- [x] Add a catalog validator script for `telegram_channels.json`
+- [x] Recompute `counts` from `channels` instead of maintaining them manually
+- [ ] Add top-level schema metadata for the catalog
+- [x] Define canonical enums for topic, source role, routing family, bias risk, authenticity class
+- [x] Add additive governance defaults without breaking current consumers
+- [x] Preserve backward compatibility with existing `camelCase` field usage
+
+### Implementation Tasks
+
+1. Validation tooling
+   - Create `validate_telegram_channels.py`
+   - Validate required fields
+   - Validate duplicates
+   - Validate `publicUrl`
+   - Validate enum candidates
+   - Recompute and optionally rewrite `counts`
+
+2. Root catalog metadata
+   - Add `schemaVersion`
+   - Add `catalogType`
+   - Add `governance`
+   - Add `generated counts` support via validator
+
+3. Additive governance model
+   - Introduce optional per-channel fields:
+     - `sourceRole`
+     - `routingFamily`
+     - `biasRisk`
+     - `verificationRequired`
+     - `authenticityClass`
+     - `canTriggerTrade`
+     - `canInfluenceSentiment`
+     - `sendToTranslator`
+     - `sendToOracle`
+   - Keep them optional during P0
+   - Provide derived defaults in tooling/runtime builder
+
+4. Runtime compatibility
+   - Update runtime builder to preserve governance fields when present
+   - Derive safe defaults for runtime-generated channel inventories
+
+### Acceptance Criteria
+
+- Validator passes on current catalog
+- `counts` in the file match actual entries
+- Current extractor still runs with no contract break
+- Runtime file builder can carry governance fields forward
+
+### Risks
+
+- Over-normalizing field names too early may break current consumers
+- Treating governance defaults as final truth too early may hide real editorial review work
+
+## P1 - Runtime Resolution Safety and Channel Lifecycle
+
+Goal:
+Reduce Telethon startup pain and make the collector operate predictably with a larger catalog.
+
+### Deliverables
+
+- [x] Channel entity cache / resolved handle cache
+- [x] Incremental startup resolution
+- [x] Per-channel runtime state
+- [x] Priority-first startup scheduling
+- [x] Flood-wait-aware backoff strategy
+
+### Implementation Tasks
+
+1. Resolution cache
+   - Persist resolved input entities by handle
+   - Reuse cached entities before calling `get_entity()`
+
+2. Startup scheduler
+   - Resolve P0 channels first
+   - Resolve batches incrementally
+   - Defer lower-priority sets until healthy
+
+3. Runtime state
+   - Add:
+     - `lastResolvedAt`
+     - `lastSuccessAt`
+     - `lastFloodWaitAt`
+     - `resolutionFailures`
+     - `lastBackfillCount`
+
+4. Safe resolution strategy
+   - Honor flood waits explicitly
+   - Backoff on repeated failures
+   - Avoid full-catalog resolve on every cold start
+
+### Acceptance Criteria
+
+- Startup flood waits are materially reduced
+- P0 channel collection remains stable under restart
+- Failed resolutions no longer poison the whole startup flow
+
+### P1 Completion Notes
+
+- Added persistent `telegram_entity_cache` and `telegram_channel_state` collections.
+- Warm restart now skips failed handles during their cooldown window instead of retrying them every startup.
+- Resolution metrics are now explicit in session logs and snapshots:
+  - `cache_hit_count`
+  - `cache_miss_count`
+  - `skipped_resolution_count`
+  - `live_resolve_count`
+  - `resolution_duration_seconds`
+  - `startup_duration_seconds`
+- Cached warm-start behavior measured on 2026-05-06:
+  - `73` cached channel resolutions reused
+  - `14` failed handles skipped by cooldown
+  - `0` flood waits on warm restart
+  - resolution phase completed in about `28s`
+  - full session startup completed in about `29s`
+
+## P2 - Source Governance and Routing Separation
+
+Goal:
+Make the catalog express how a source should be used, not just what it is called.
+
+### Deliverables
+
+- [ ] Channel authenticity classification
+- [ ] Source family routing classification
+- [ ] P0/P1/P2 deployment priority embedded in the catalog
+- [ ] Separate routing path for forex retail signal channels
+
+### Implementation Tasks
+
+1. Source classification
+   - Add values such as:
+     - `official_brand`
+     - `independent_reporter`
+     - `osint_aggregator`
+     - `narrative_partisan`
+     - `market_tape`
+     - `retail_signal`
+     - `unofficial_mirror`
+
+2. Routing families
+   - Introduce:
+     - `osint_conflict`
+     - `osint_geopolitics`
+     - `osint_middleeast`
+     - `cyber_news`
+     - `finance_tape`
+     - `crypto_flow`
+     - `forex_retail_signal`
+
+3. Catalog curation pass
+   - Reclassify known entries:
+     - `financialjuice` -> likely `unofficial_mirror`
+     - `binance_announcements` -> `official_brand`
+     - `thehackernews` -> `official_brand`
+     - `OSINTdefender` -> `osint_aggregator`
+     - `rybar`, `intel_slava`, `DDGeopolitics`, `zerohedge` -> high-bias lane
+
+4. Separate forex signal handling
+   - Remove `forex_signals` channels from factual OSINT/Oracle path
+   - Route to sentiment/contrarian analysis only
+
+### Acceptance Criteria
+
+- No retail signal source is treated like factual OSINT
+- Each channel has an explicit trust/routing class
+
+## P3 - Enrichment, Dedupe, and Source Scoring
+
+Goal:
+Deliver scored and clustered events instead of raw Telegram posts.
+
+### Deliverables
+
+- [ ] Source scoring model
+- [ ] Dedupe layer
+- [ ] Cross-source event clustering
+- [ ] Translation-aware enrichment
+- [ ] Entity/country/asset resolution before Oracle
+
+### Implementation Tasks
+
+1. Scoring
+   - Base trust
+   - Confirmation count
+   - Bias penalty
+   - Recency
+   - Originality
+   - Translation confidence
+
+2. Dedupe
+   - Normalized text hash
+   - URL match
+   - Timestamp bucketing
+
+3. Clustering
+   - Group related posts across channels into one event narrative
+
+4. Enrichment
+   - Preserve `original_body`
+   - Translate only when needed
+   - Add structured entity/country/asset features
+
+### Acceptance Criteria
+
+- Oracle receives enriched, deduped, scored events
+- Source score influences downstream routing
+
+## P4 - Quality Metrics and Source Feedback Loop
+
+Goal:
+Operationalize source management with real evidence.
+
+### Deliverables
+
+- [ ] Source quality dashboard
+- [ ] Duplication and yield metrics
+- [ ] Oracle usefulness feedback
+- [ ] Automatic downgrade/disable heuristics
+
+### Metrics
+
+- collection success rate
+- flood-wait rate
+- message yield per channel
+- duplication ratio
+- translation rate
+- cross-source confirmation rate
+- Oracle usefulness rate
+
+### Acceptance Criteria
+
+- Source priority can be justified quantitatively
+- Noisy channels can be downgraded using historical evidence
+
+## P0 Implementation Notes
+
+P0 should be additive and low-risk:
+
+- keep `camelCase` fields in the source file
+- allow optional governance fields
+- add validator + generated counts first
+- derive defaults in runtime builder rather than forcing manual annotation of all 87 channels immediately
+
+## Immediate Decisions
+
+- Treat `financialjuice` as unverified/unofficial until official affiliation is proven
+- Keep `binance_announcements`, `thehackernews`, and `citeam` in high-value lanes
+- Keep `VahidOnline` high-value but not self-confirming
+- Move `forex_signals` into a separate routing family as soon as P2 starts
+
+## Execution Order
+
+1. P0 validator and counts rewrite
+2. P0 runtime governance field passthrough
+3. P1 resolution cache and safe startup
+4. P2 channel governance curation
+5. P3 scoring and clustering
+6. P4 metrics and feedback

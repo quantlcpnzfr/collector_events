@@ -107,6 +107,22 @@ def _normalize_topic(topic: Any) -> str:
     raw = str(topic or "").strip().lower()
     if not raw:
         return "osint"
+    if raw in {
+        "breaking",
+        "conflict",
+        "crypto",
+        "cyber",
+        "finance",
+        "forex",
+        "forex_signals",
+        "geopolitics",
+        "markets",
+        "middleeast",
+        "military_alert",
+        "military_intel",
+        "osint",
+    }:
+        return raw
     if "cyber" in raw or "hack" in raw:
         return "cyber"
     if "middle east" in raw or raw in {"me", "mena"}:
@@ -142,18 +158,114 @@ def _normalize_tier(value: Any) -> int | None:
     return {"A": 1, "B": 2, "C": 3}.get(raw)
 
 
+def _default_source_role(topic: str) -> str:
+    if topic in {"finance", "markets"}:
+        return "finance_tape"
+    if topic in {"forex", "forex_signals"}:
+        return "forex_retail_signal"
+    if topic == "crypto":
+        return "crypto_flow"
+    if topic == "cyber":
+        return "cyber_intel"
+    if topic == "osint":
+        return "osint_context"
+    if topic in {"middleeast", "geopolitics"}:
+        return "regional_news"
+    if topic == "breaking":
+        return "breaking_news"
+    return "conflict_osint"
+
+
+def _default_routing_family(topic: str) -> str:
+    if topic == "cyber":
+        return "cyber_news"
+    if topic in {"finance", "markets"}:
+        return "finance_tape"
+    if topic == "crypto":
+        return "crypto_flow"
+    if topic in {"forex", "forex_signals"}:
+        return "forex_retail_signal"
+    if topic == "middleeast":
+        return "osint_middleeast"
+    if topic == "geopolitics":
+        return "osint_geopolitics"
+    if topic == "breaking":
+        return "osint_breaking"
+    return "osint_conflict"
+
+
+def _default_bias_risk(handle: str, topic: str) -> str:
+    if handle.lower() in {
+        "abualiexpress",
+        "ddgeopolitics",
+        "disclosetv",
+        "disclosewt",
+        "englishabuali",
+        "financialjuice",
+        "intel_slava",
+        "intelrepublic",
+        "rybar",
+        "thecradlemedia",
+        "vahidonline",
+        "zerohedge",
+    }:
+        return "high"
+    if topic in {"forex", "forex_signals"}:
+        return "high"
+    return "medium"
+
+
+def _default_authenticity_class(handle: str, topic: str) -> str:
+    lowered = handle.lower()
+    if lowered == "financialjuice":
+        return "unofficial_mirror"
+    if lowered in {"binance_announcements", "thehackernews"}:
+        return "official_brand"
+    if topic in {"finance", "markets"}:
+        return "market_tape"
+    if topic in {"forex", "forex_signals"}:
+        return "retail_signal"
+    if topic == "cyber":
+        return "official_brand" if lowered == "thehackernews" else "osint_aggregator"
+    if lowered in {"citeam", "vahidonline"}:
+        return "independent_reporter"
+    if lowered in {"osintdefender", "osintlive", "osintupdates", "auroraintel", "clashreport"}:
+        return "osint_aggregator"
+    return "unknown"
+
+
+def _add_governance_defaults(channel: dict[str, Any]) -> dict[str, Any]:
+    topic = str(channel.get("topic") or "")
+    handle = str(channel.get("handle") or "")
+    channel.setdefault("sourceRole", _default_source_role(topic))
+    channel.setdefault("routingFamily", _default_routing_family(topic))
+    channel.setdefault("biasRisk", _default_bias_risk(handle, topic))
+    channel.setdefault(
+        "verificationRequired",
+        _default_authenticity_class(handle, topic) in {"unofficial_mirror", "unknown"}
+        or topic in {"forex", "forex_signals", "crypto", "cyber"},
+    )
+    channel.setdefault("authenticityClass", _default_authenticity_class(handle, topic))
+    channel.setdefault("canTriggerTrade", topic == "crypto" and handle.lower() == "binance_announcements")
+    channel.setdefault("canInfluenceSentiment", True)
+    channel.setdefault("sendToTranslator", topic not in {"finance", "markets", "crypto"})
+    channel.setdefault("sendToOracle", topic not in {"forex", "forex_signals"})
+    return channel
+
+
 def _worldmonitor_channel(raw: dict[str, Any]) -> dict[str, Any] | None:
     handle = _clean_handle(raw.get("handle"))
     if not handle or raw.get("enabled") is False:
         return None
-    return {
+    topic = _normalize_topic(raw.get("topic"))
+    channel = {
         "id": raw.get("id") or f"telegram_worldmonitor_{_slug(handle)}",
         "handle": handle,
         "label": str(raw.get("label") or handle),
         "sourceGroup": "telegram",
         "sourceTruthFile": raw.get("sourceTruthFile") or "worldmonitor/data/telegram-channels.json",
         "channelSet": str(raw.get("channelSet") or raw.get("channel_set") or "full").lower(),
-        "topic": _normalize_topic(raw.get("topic")),
+        "topic": topic,
         "region": _normalize_region(raw.get("region")),
         "tier": _normalize_tier(raw.get("tier")),
         "enabled": True,
@@ -163,6 +275,20 @@ def _worldmonitor_channel(raw: dict[str, Any]) -> dict[str, Any] | None:
         "decisionUse": raw.get("decisionUse")
         or ["early_signal", "geopolitical_risk", "conflict_risk", "market_sentiment"],
     }
+    for field in (
+        "sourceRole",
+        "routingFamily",
+        "biasRisk",
+        "verificationRequired",
+        "authenticityClass",
+        "canTriggerTrade",
+        "canInfluenceSentiment",
+        "sendToTranslator",
+        "sendToOracle",
+    ):
+        if field in raw:
+            channel[field] = raw[field]
+    return _add_governance_defaults(channel)
 
 
 def _local_social_channel(raw: dict[str, Any]) -> dict[str, Any] | None:
@@ -170,7 +296,7 @@ def _local_social_channel(raw: dict[str, Any]) -> dict[str, Any] | None:
     if not handle:
         return None
     topic = _normalize_topic(raw.get("topic"))
-    return {
+    channel = {
         "id": f"telegram_local_{_slug(handle)}",
         "handle": handle,
         "label": str(raw.get("label") or raw.get("name") or handle),
@@ -188,6 +314,7 @@ def _local_social_channel(raw: dict[str, Any]) -> dict[str, Any] | None:
         "localTierLabel": raw.get("tier"),
         "localTopicLabel": raw.get("topic"),
     }
+    return _add_governance_defaults(channel)
 
 
 def build_osint_channel_file(

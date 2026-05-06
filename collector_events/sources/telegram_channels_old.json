@@ -51,37 +51,30 @@
   },
   "counts": {
     "totalChannelOccurrences": 87,
-    "enabled": 78,
+    "enabled": 87,
     "bySet": {
       "full": 79,
       "tech": 8
     },
     "byTopic": {
-      "geopolitics": 18,
+      "geopolitics": 11,
       "middleeast": 5,
-      "conflict": 19,
-      "breaking": 13,
+      "conflict": 7,
+      "breaking": 9,
       "osint": 4,
-      "cyber": 9,
-      "military_intel": 2,
-      "finance": 4,
-      "markets": 1,
-      "forex": 1,
-      "crypto": 6,
-      "military_alert": 1,
-      "forex_signals": 4
+      "cyber": 9
     },
     "byTier": {
-      "1": 11,
-      "2": 44,
-      "3": 32
+      "1": 1,
+      "2": 19,
+      "3": 25
     },
     "byRegion": {
       "iran": 3,
-      "middleeast": 17,
-      "global": 53,
-      "ukraine": 11,
-      "europe": 2,
+      "middleeast": 11,
+      "global": 26,
+      "ukraine": 3,
+      "europe": 1,
       "asia": 1
     }
   },
@@ -105,16 +98,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "high",
-      "verificationRequired": false,
-      "authenticityClass": "independent_reporter",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_abualiexpress",
@@ -135,16 +119,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_middleeast",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_auroraintel",
@@ -165,16 +140,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": false,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_bnonews",
@@ -195,16 +161,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_clashreport",
@@ -225,16 +182,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": false,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_deepstateua",
@@ -255,16 +203,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_defenderdome",
@@ -285,16 +224,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_englishabuali",
@@ -315,16 +245,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_middleeast",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_iranintl_en",
@@ -345,16 +266,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_kpszsu",
@@ -375,16 +287,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_liveuamap",
@@ -405,16 +308,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_osintdefender",
@@ -435,16 +329,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": false,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_osintupdates",
@@ -465,16 +350,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": false,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_bellingcat",
@@ -495,16 +371,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "osint_context",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_cyberdetective",
@@ -525,16 +392,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "cyber_intel",
-      "routingFamily": "cyber_news",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_geopoliticalcenter",
@@ -555,16 +413,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_middle_east_spectator",
@@ -585,16 +434,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_middleeast",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_middleeastnow_breaking",
@@ -615,16 +455,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_middleeast",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_nexta_tv",
@@ -645,16 +476,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_osintindustries",
@@ -675,16 +497,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "osint_context",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_osintlatestnews",
@@ -705,16 +518,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "osint_context",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_osintlive",
@@ -735,16 +539,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "osint_context",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": false,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_osinttv",
@@ -765,16 +560,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_spectatorindex",
@@ -795,16 +581,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_wfwitness",
@@ -825,16 +602,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_war_monitor",
@@ -855,16 +623,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_nayaforiraq",
@@ -885,16 +644,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_yediotnews25",
@@ -915,16 +665,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_ddgeopolitics",
@@ -945,16 +686,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_fotrosresistancee",
@@ -975,16 +707,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_rezistancetrench1",
@@ -1005,16 +728,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_geopolitics_prime",
@@ -1035,16 +749,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_thecradlemedia",
@@ -1065,16 +770,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_middleeast",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_lebupdate",
@@ -1095,16 +791,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_middleeastobserver",
@@ -1125,16 +812,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_middleeasteye_tg",
@@ -1155,16 +833,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_dragonwatch",
@@ -1185,16 +854,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_tech_thehackernews",
@@ -1215,16 +875,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "cyber_intel",
-      "routingFamily": "cyber_news",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "official_brand",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_tech_cybersecboardrm",
@@ -1236,7 +887,7 @@
       "topic": "cyber",
       "region": "global",
       "tier": 3,
-      "enabled": false,
+      "enabled": true,
       "maxMessages": 15,
       "publicUrl": "https://t.me/cybersecboardrm",
       "captureMethod": "telegram_mtproto_relay",
@@ -1245,18 +896,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "cyber_intel",
-      "routingFamily": "cyber_news",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false,
-      "replacementHandle": "",
-      "reviewStatus": "disabled_dead_handle"
+      ]
     },
     {
       "id": "telegram_tech_securelist",
@@ -1277,16 +917,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "cyber_intel",
-      "routingFamily": "cyber_news",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_tech_darkwebinformer",
@@ -1307,16 +938,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "cyber_intel",
-      "routingFamily": "cyber_news",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_tech_cyberwarcom",
@@ -1328,7 +950,7 @@
       "topic": "cyber",
       "region": "global",
       "tier": 2,
-      "enabled": false,
+      "enabled": true,
       "maxMessages": 25,
       "publicUrl": "https://t.me/CYBERWARCOM",
       "captureMethod": "telegram_mtproto_relay",
@@ -1337,18 +959,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "cyber_intel",
-      "routingFamily": "cyber_news",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false,
-      "replacementHandle": "",
-      "reviewStatus": "disabled_dead_handle"
+      ]
     },
     {
       "id": "telegram_tech_thecyberwire",
@@ -1360,7 +971,7 @@
       "topic": "cyber",
       "region": "global",
       "tier": 2,
-      "enabled": false,
+      "enabled": true,
       "maxMessages": 20,
       "publicUrl": "https://t.me/thecyberwire",
       "captureMethod": "telegram_mtproto_relay",
@@ -1369,18 +980,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "cyber_intel",
-      "routingFamily": "cyber_news",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false,
-      "replacementHandle": "",
-      "reviewStatus": "disabled_no_telegram_channel"
+      ]
     },
     {
       "id": "telegram_tech_vxunderground",
@@ -1401,16 +1001,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "cyber_intel",
-      "routingFamily": "cyber_news",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_tech_falconfeeds",
@@ -1431,16 +1022,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "cyber_intel",
-      "routingFamily": "cyber_news",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "osint_aggregator",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_faytuks",
@@ -1461,16 +1043,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_bellumactanews",
@@ -1491,16 +1064,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_intelrepublic",
@@ -1521,20 +1085,11 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_intel_slava",
-      "handle": "intelslava",
+      "handle": "intel_slava",
       "label": "Intel Slava Z",
       "sourceGroup": "telegram",
       "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
@@ -1544,24 +1099,14 @@
       "tier": 3,
       "enabled": true,
       "maxMessages": 15,
-      "publicUrl": "https://t.me/intelslava",
+      "publicUrl": "https://t.me/intel_slava",
       "captureMethod": "telegram_mtproto_relay",
       "decisionUse": [
         "early_signal",
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "narrative_partisan",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true,
-      "reviewStatus": "handle_migrated"
+      ]
     },
     {
       "id": "telegram_full_rybar",
@@ -1582,16 +1127,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_milinfolive",
@@ -1612,16 +1148,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_operativnozsu",
@@ -1642,16 +1169,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_ukrainenow",
@@ -1672,16 +1190,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_pravdagerashchenko_en",
@@ -1702,16 +1211,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_israelwarroom",
@@ -1732,16 +1232,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_cig_telegram",
@@ -1762,16 +1253,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_atlasnewstelegram",
@@ -1792,16 +1274,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_casusbellilive",
@@ -1822,16 +1295,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_caucasuswar",
@@ -1852,16 +1316,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_disclosetv",
@@ -1882,16 +1337,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_citeam",
@@ -1912,16 +1358,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": false,
-      "authenticityClass": "independent_reporter",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_ukrainewarreport",
@@ -1942,16 +1379,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_syriatracker",
@@ -1963,7 +1391,7 @@
       "topic": "conflict",
       "region": "middleeast",
       "tier": 2,
-      "enabled": false,
+      "enabled": true,
       "maxMessages": 15,
       "publicUrl": "https://t.me/syriatracker",
       "captureMethod": "telegram_mtproto_relay",
@@ -1972,18 +1400,7 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false,
-      "replacementHandle": "",
-      "reviewStatus": "disabled_dead_handle"
+      ]
     },
     {
       "id": "telegram_full_middleeastmonitor",
@@ -2004,20 +1421,11 @@
         "geopolitical_risk",
         "conflict_risk",
         "market_sentiment"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_firstsquawk",
-      "handle": "firstsquaw",
+      "handle": "firstsquawk",
       "label": "First Squawk (Financial Feeds)",
       "sourceGroup": "telegram",
       "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
@@ -2027,22 +1435,12 @@
       "tier": 1,
       "enabled": true,
       "maxMessages": 25,
-      "publicUrl": "https://t.me/firstsquaw",
+      "publicUrl": "https://t.me/firstsquawk",
       "captureMethod": "telegram_mtproto_relay",
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "finance_tape",
-      "routingFamily": "finance_tape",
-      "biasRisk": "medium",
-      "verificationRequired": false,
-      "authenticityClass": "official_brand",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": true,
-      "reviewStatus": "handle_migrated"
+      ]
     },
     {
       "id": "telegram_full_tradingview",
@@ -2061,17 +1459,7 @@
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "finance_tape",
-      "routingFamily": "finance_tape",
-      "biasRisk": "medium",
-      "verificationRequired": false,
-      "authenticityClass": "retail_signal",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": false,
-      "reviewStatus": "disabled_low_quality_pump_feed"
+      ]
     },
     {
       "id": "telegram_full_forexsignalfactory",
@@ -2090,16 +1478,7 @@
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "forex_retail_signal",
-      "routingFamily": "forex_retail_signal",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "retail_signal",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false
+      ]
     },
     {
       "id": "telegram_full_whale_alert_io",
@@ -2118,16 +1497,7 @@
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "crypto_flow",
-      "routingFamily": "crypto_flow",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "market_tape",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_glassnode",
@@ -2146,16 +1516,7 @@
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "crypto_flow",
-      "routingFamily": "crypto_flow",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "market_tape",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_crypto_pump_alerts",
@@ -2167,24 +1528,14 @@
       "topic": "crypto",
       "region": "global",
       "tier": 3,
-      "enabled": false,
+      "enabled": true,
       "maxMessages": 15,
       "publicUrl": "https://t.me/crypto_pump_alerts",
       "captureMethod": "telegram_mtproto_relay",
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "crypto_flow",
-      "routingFamily": "crypto_flow",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "retail_signal",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": false,
-      "reviewStatus": "disabled_low_quality_pump_feed"
+      ]
     },
     {
       "id": "telegram_full_etherdrops_bot",
@@ -2203,16 +1554,7 @@
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "crypto_flow",
-      "routingFamily": "crypto_flow",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "market_tape",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_coindesk",
@@ -2231,16 +1573,7 @@
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "crypto_flow",
-      "routingFamily": "crypto_flow",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "market_tape",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_binance_announcements",
@@ -2259,16 +1592,7 @@
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "crypto_flow",
-      "routingFamily": "crypto_flow",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "official_brand",
-      "canTriggerTrade": true,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_disclosewt",
@@ -2280,7 +1604,7 @@
       "topic": "breaking",
       "region": "global",
       "tier": 2,
-      "enabled": false,
+      "enabled": true,
       "maxMessages": 15,
       "publicUrl": "https://t.me/disclosewt",
       "captureMethod": "telegram_mtproto_relay",
@@ -2288,18 +1612,7 @@
         "early_signal",
         "geopolitical_risk",
         "conflict_risk"
-      ],
-      "sourceRole": "breaking_news",
-      "routingFamily": "osint_breaking",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false,
-      "replacementHandle": "disclosetv",
-      "reviewStatus": "disabled_superseded_by_existing_channel"
+      ]
     },
     {
       "id": "telegram_full_bell_geo",
@@ -2311,7 +1624,7 @@
       "topic": "geopolitics",
       "region": "global",
       "tier": 2,
-      "enabled": false,
+      "enabled": true,
       "maxMessages": 15,
       "publicUrl": "https://t.me/bell_geo",
       "captureMethod": "telegram_mtproto_relay",
@@ -2319,18 +1632,7 @@
         "early_signal",
         "geopolitical_risk",
         "conflict_risk"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false,
-      "replacementHandle": "",
-      "reviewStatus": "disabled_dead_handle"
+      ]
     },
     {
       "id": "telegram_full_geopolitics_live",
@@ -2350,16 +1652,7 @@
         "early_signal",
         "geopolitical_risk",
         "conflict_risk"
-      ],
-      "sourceRole": "regional_news",
-      "routingFamily": "osint_geopolitics",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_asbmil",
@@ -2379,16 +1672,7 @@
         "early_signal",
         "geopolitical_risk",
         "conflict_risk"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_military_wave",
@@ -2408,16 +1692,7 @@
         "early_signal",
         "geopolitical_risk",
         "conflict_risk"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_financialjuice",
@@ -2436,16 +1711,7 @@
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "finance_tape",
-      "routingFamily": "finance_tape",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "unofficial_mirror",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_zerohedge",
@@ -2464,16 +1730,7 @@
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "finance_tape",
-      "routingFamily": "finance_tape",
-      "biasRisk": "high",
-      "verificationRequired": false,
-      "authenticityClass": "market_tape",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": true
+      ]
     },
     {
       "id": "telegram_full_deita",
@@ -2485,29 +1742,18 @@
       "topic": "finance",
       "region": "europe",
       "tier": 2,
-      "enabled": false,
+      "enabled": true,
       "maxMessages": 15,
       "publicUrl": "https://t.me/deita",
       "captureMethod": "telegram_mtproto_relay",
       "decisionUse": [
         "early_signal",
         "market_sentiment"
-      ],
-      "sourceRole": "finance_tape",
-      "routingFamily": "finance_tape",
-      "biasRisk": "medium",
-      "verificationRequired": false,
-      "authenticityClass": "market_tape",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": false,
-      "sendToOracle": false,
-      "replacementHandle": "",
-      "reviewStatus": "disabled_x_only_contact_handle"
+      ]
     },
     {
       "id": "telegram_full_lebanon24",
-      "handle": "lebanon_24",
+      "handle": "lebanon24",
       "label": "Lebanon 24",
       "sourceGroup": "telegram",
       "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
@@ -2517,23 +1763,13 @@
       "tier": 2,
       "enabled": true,
       "maxMessages": 15,
-      "publicUrl": "https://t.me/lebanon_24",
+      "publicUrl": "https://t.me/lebanon24",
       "captureMethod": "telegram_mtproto_relay",
       "decisionUse": [
         "early_signal",
         "geopolitical_risk",
         "conflict_risk"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unofficial_mirror",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": true,
-      "reviewStatus": "handle_migrated"
+      ]
     },
     {
       "id": "telegram_full_intel_sky",
@@ -2545,7 +1781,7 @@
       "topic": "military_alert",
       "region": "middleeast",
       "tier": 1,
-      "enabled": false,
+      "enabled": true,
       "maxMessages": 25,
       "publicUrl": "https://t.me/intel_sky",
       "captureMethod": "telegram_mtproto_relay",
@@ -2553,18 +1789,7 @@
         "early_signal",
         "geopolitical_risk",
         "conflict_risk"
-      ],
-      "sourceRole": "conflict_osint",
-      "routingFamily": "osint_conflict",
-      "biasRisk": "medium",
-      "verificationRequired": true,
-      "authenticityClass": "unknown",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false,
-      "replacementHandle": "",
-      "reviewStatus": "disabled_non_telegram_source"
+      ]
     },
     {
       "id": "telegram_full_altsignals",
@@ -2583,16 +1808,7 @@
       "decisionUse": [
         "retail_sentiment",
         "contrarian_signal"
-      ],
-      "sourceRole": "forex_retail_signal",
-      "routingFamily": "forex_retail_signal",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "retail_signal",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false
+      ]
     },
     {
       "id": "telegram_full_forexgdp",
@@ -2611,20 +1827,11 @@
       "decisionUse": [
         "retail_sentiment",
         "contrarian_signal"
-      ],
-      "sourceRole": "forex_retail_signal",
-      "routingFamily": "forex_retail_signal",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "retail_signal",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false
+      ]
     },
     {
       "id": "telegram_full_unitedsignals",
-      "handle": "UnitedSignalsFX",
+      "handle": "unitedsignals",
       "label": "United Signals (Free)",
       "sourceGroup": "telegram",
       "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
@@ -2634,27 +1841,17 @@
       "tier": 3,
       "enabled": true,
       "maxMessages": 10,
-      "publicUrl": "https://t.me/UnitedSignalsFX",
+      "publicUrl": "https://t.me/unitedsignals",
       "captureMethod": "telegram_mtproto_relay",
       "decisionUse": [
         "retail_sentiment",
         "contrarian_signal"
-      ],
-      "sourceRole": "forex_retail_signal",
-      "routingFamily": "forex_retail_signal",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "retail_signal",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false,
-      "reviewStatus": "handle_migrated_sentiment_only"
+      ]
     },
     {
       "id": "telegram_full_prosignalsfx",
-      "handle": "prosignalsfx_1",
-      "label": "ProSignalsFx",
+      "handle": "prosignalsfx",
+      "label": "ProSignalsFX (Free)",
       "sourceGroup": "telegram",
       "sourceTruthFile": "worldmonitor/data/telegram-channels.json",
       "channelSet": "full",
@@ -2663,28 +1860,12 @@
       "tier": 3,
       "enabled": true,
       "maxMessages": 10,
-      "publicUrl": "https://t.me/prosignalsfx_1",
+      "publicUrl": "https://t.me/prosignalsfx",
       "captureMethod": "telegram_mtproto_relay",
       "decisionUse": [
         "retail_sentiment",
         "contrarian_signal"
-      ],
-      "sourceRole": "forex_retail_signal",
-      "routingFamily": "forex_retail_signal",
-      "biasRisk": "high",
-      "verificationRequired": true,
-      "authenticityClass": "retail_signal",
-      "canTriggerTrade": false,
-      "canInfluenceSentiment": true,
-      "sendToTranslator": true,
-      "sendToOracle": false,
-      "reviewStatus": "handle_migrated_sentiment_only"
+      ]
     }
-  ],
-  "schemaVersion": 2,
-  "catalogType": "telegram_source_catalog",
-  "governance": {
-    "defaultsAppliedBy": "validate_telegram_channels.py",
-    "notes": "Governance fields are additive in P0 and may be overridden by manual curation in later phases."
-  }
+  ]
 }
