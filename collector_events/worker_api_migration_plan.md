@@ -148,6 +148,8 @@ Exit criteria:
 
 ### P1 - Add NLP to worker_api
 
+Status: baseline implemented / contract test added
+
 Goal:
 
 Introduce an NLP worker that consumes `intel.translated.#` and republishes enriched items.
@@ -174,7 +176,16 @@ Exit criteria:
 - enriched items retain source/clustering/translation metadata
 - `globalintel.intel_store` can still call `EventProcessor.process_items()` and receive `ProcessedEvent` objects
 
+Current notes:
+
+- `collector_events.nlp.session`, `collector_events.nlp.worker`, and `collector_events.nlp.main` exist.
+- Default runtime path is `intel.translated.# -> intel.enriched.{domain}`.
+- Enriched payloads are marked with `event_type=INTEL_ITEM_ENRICHED`.
+- `tests/unit/test_worker_api_contract.py` covers metadata preservation through translation and NLP enrichment without loading local NLP models.
+
 ### P2 - Make `EventProcessor` source-aware
+
+Status: in progress / first scoring pass implemented
 
 Goal:
 
@@ -192,6 +203,12 @@ Exit criteria:
 
 - non-Telegram legacy items still score normally
 - Telegram items gain source/attention-aware scoring
+
+Current notes:
+
+- `EventProcessor` reads `source_score`, source authenticity/bias fields, duplicate flags, verification flags, and cluster attention metrics from `IntelItem.extra`.
+- It writes `extra.source_signal_adjustment`, `extra.cluster_signal_adjustment`, and `extra.attention_score`.
+- Next work is calibration with real Telegram samples and adding threshold-level assertions around dangerous/high-attention events.
 
 ### P3 - Shared enriched topic contract
 
@@ -256,7 +273,8 @@ If translation not needed in a future worker-api extractor:
 
 ## Immediate Next Steps
 
-1. Add the worker-api NLP consumer for `intel.translated.#`
-2. Update `EventProcessor` to consume source/clustering metadata from `extra`
-3. Publish enriched items to `intel.enriched.{domain}`
-4. Later decide whether Oracle should consume `intel.enriched.{domain}` directly or through a filtered review topic
+1. Run the new worker-api contract tests in an environment with `pytest` installed.
+2. Calibrate P2 source/cluster scoring against recent Telegram sample payloads.
+3. Add an end-to-end local harness for `osint_telegram -> translation -> nlp` using in-memory/fake MQ or captured payload fixtures.
+4. Decide the P3 Oracle route: consume `intel.enriched.{domain}` directly or publish a filtered review topic.
+5. Add Mongo/update behavior for final enriched state if Oracle/downstream consumers need persisted enrichment.
