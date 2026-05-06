@@ -114,7 +114,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p0"
     },
     {
       "id": "telegram_full_abualiexpress",
@@ -144,7 +145,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_auroraintel",
@@ -174,7 +176,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_bnonews",
@@ -204,7 +207,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_clashreport",
@@ -234,7 +238,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_deepstateua",
@@ -264,7 +269,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_defenderdome",
@@ -294,7 +300,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_englishabuali",
@@ -324,7 +331,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_iranintl_en",
@@ -354,7 +362,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_kpszsu",
@@ -384,7 +393,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_liveuamap",
@@ -414,7 +424,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_osintdefender",
@@ -444,7 +455,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_osintupdates",
@@ -474,7 +486,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_bellingcat",
@@ -504,7 +517,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_cyberdetective",
@@ -534,7 +548,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_geopoliticalcenter",
@@ -564,7 +579,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_middle_east_spectator",
@@ -594,7 +610,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_middleeastnow_breaking",
@@ -624,7 +641,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_nexta_tv",
@@ -654,7 +672,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_osintindustries",
@@ -684,7 +703,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_osintlatestnews",
@@ -714,7 +734,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_osintlive",
@@ -744,7 +765,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_osinttv",
@@ -774,7 +796,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_spectatorindex",
@@ -804,7 +827,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_wfwitness",
@@ -834,7 +858,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_war_monitor",
@@ -864,7 +889,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_nayaforiraq",
@@ -894,7 +920,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_yediotnews25",
@@ -924,7 +951,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_ddgeopolitics",
@@ -954,7 +982,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_fotrosresistancee",
@@ -984,7 +1013,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_rezistancetrench1",
@@ -1014,7 +1044,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_geopolitics_prime",
@@ -1044,7 +1075,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_thecradlemedia",
@@ -1074,7 +1106,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_lebupdate",
@@ -1104,7 +1137,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_middleeastobserver",
@@ -1134,7 +1168,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_middleeasteye_tg",
@@ -1164,7 +1199,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_dragonwatch",
@@ -1194,7 +1230,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_tech_thehackernews",
@@ -1224,7 +1261,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p0"
     },
     {
       "id": "telegram_tech_cybersecboardrm",
@@ -1256,7 +1294,8 @@
       "sendToTranslator": true,
       "sendToOracle": false,
       "replacementHandle": "",
-      "reviewStatus": "disabled_dead_handle"
+      "reviewStatus": "disabled_dead_handle",
+      "deploymentPriority": "disabled"
     },
     {
       "id": "telegram_tech_securelist",
@@ -1286,7 +1325,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_tech_darkwebinformer",
@@ -1316,7 +1356,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_tech_cyberwarcom",
@@ -1348,7 +1389,8 @@
       "sendToTranslator": true,
       "sendToOracle": false,
       "replacementHandle": "",
-      "reviewStatus": "disabled_dead_handle"
+      "reviewStatus": "disabled_dead_handle",
+      "deploymentPriority": "disabled"
     },
     {
       "id": "telegram_tech_thecyberwire",
@@ -1380,7 +1422,8 @@
       "sendToTranslator": true,
       "sendToOracle": false,
       "replacementHandle": "",
-      "reviewStatus": "disabled_no_telegram_channel"
+      "reviewStatus": "disabled_no_telegram_channel",
+      "deploymentPriority": "disabled"
     },
     {
       "id": "telegram_tech_vxunderground",
@@ -1410,7 +1453,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_tech_falconfeeds",
@@ -1440,7 +1484,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_faytuks",
@@ -1470,7 +1515,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p0"
     },
     {
       "id": "telegram_full_bellumactanews",
@@ -1500,7 +1546,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_intelrepublic",
@@ -1530,7 +1577,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_intel_slava",
@@ -1561,7 +1609,8 @@
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
       "sendToOracle": true,
-      "reviewStatus": "handle_migrated"
+      "reviewStatus": "handle_migrated",
+      "deploymentPriority": "p2"
     },
     {
       "id": "telegram_full_rybar",
@@ -1591,7 +1640,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p0"
     },
     {
       "id": "telegram_full_milinfolive",
@@ -1621,7 +1671,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_operativnozsu",
@@ -1651,7 +1702,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p0"
     },
     {
       "id": "telegram_full_ukrainenow",
@@ -1681,7 +1733,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_pravdagerashchenko_en",
@@ -1711,7 +1764,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_israelwarroom",
@@ -1741,7 +1795,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_cig_telegram",
@@ -1771,7 +1826,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_atlasnewstelegram",
@@ -1801,7 +1857,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_casusbellilive",
@@ -1831,7 +1888,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_caucasuswar",
@@ -1861,7 +1919,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_disclosetv",
@@ -1891,7 +1950,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_citeam",
@@ -1921,7 +1981,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p0"
     },
     {
       "id": "telegram_full_ukrainewarreport",
@@ -1951,7 +2012,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_syriatracker",
@@ -1983,7 +2045,8 @@
       "sendToTranslator": true,
       "sendToOracle": false,
       "replacementHandle": "",
-      "reviewStatus": "disabled_dead_handle"
+      "reviewStatus": "disabled_dead_handle",
+      "deploymentPriority": "disabled"
     },
     {
       "id": "telegram_full_middleeastmonitor",
@@ -2013,7 +2076,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_firstsquawk",
@@ -2042,7 +2106,8 @@
       "canInfluenceSentiment": true,
       "sendToTranslator": false,
       "sendToOracle": true,
-      "reviewStatus": "handle_migrated"
+      "reviewStatus": "handle_migrated",
+      "deploymentPriority": "p0"
     },
     {
       "id": "telegram_full_tradingview",
@@ -2071,7 +2136,8 @@
       "canInfluenceSentiment": true,
       "sendToTranslator": false,
       "sendToOracle": false,
-      "reviewStatus": "disabled_low_quality_pump_feed"
+      "reviewStatus": "disabled_low_quality_pump_feed",
+      "deploymentPriority": "p2"
     },
     {
       "id": "telegram_full_forexsignalfactory",
@@ -2099,7 +2165,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": false
+      "sendToOracle": false,
+      "deploymentPriority": "p2"
     },
     {
       "id": "telegram_full_whale_alert_io",
@@ -2127,7 +2194,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": false,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p0"
     },
     {
       "id": "telegram_full_glassnode",
@@ -2155,7 +2223,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": false,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_crypto_pump_alerts",
@@ -2184,7 +2253,8 @@
       "canInfluenceSentiment": true,
       "sendToTranslator": false,
       "sendToOracle": false,
-      "reviewStatus": "disabled_low_quality_pump_feed"
+      "reviewStatus": "disabled_low_quality_pump_feed",
+      "deploymentPriority": "disabled"
     },
     {
       "id": "telegram_full_etherdrops_bot",
@@ -2212,7 +2282,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": false,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_coindesk",
@@ -2240,7 +2311,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": false,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_binance_announcements",
@@ -2268,7 +2340,8 @@
       "canTriggerTrade": true,
       "canInfluenceSentiment": true,
       "sendToTranslator": false,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p0"
     },
     {
       "id": "telegram_full_disclosewt",
@@ -2299,7 +2372,8 @@
       "sendToTranslator": true,
       "sendToOracle": false,
       "replacementHandle": "disclosetv",
-      "reviewStatus": "disabled_superseded_by_existing_channel"
+      "reviewStatus": "disabled_superseded_by_existing_channel",
+      "deploymentPriority": "disabled"
     },
     {
       "id": "telegram_full_bell_geo",
@@ -2330,7 +2404,8 @@
       "sendToTranslator": true,
       "sendToOracle": false,
       "replacementHandle": "",
-      "reviewStatus": "disabled_dead_handle"
+      "reviewStatus": "disabled_dead_handle",
+      "deploymentPriority": "disabled"
     },
     {
       "id": "telegram_full_geopolitics_live",
@@ -2359,7 +2434,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_asbmil",
@@ -2388,7 +2464,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_military_wave",
@@ -2417,7 +2494,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p1"
     },
     {
       "id": "telegram_full_financialjuice",
@@ -2445,7 +2523,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": false,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p2"
     },
     {
       "id": "telegram_full_zerohedge",
@@ -2473,7 +2552,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": false,
-      "sendToOracle": true
+      "sendToOracle": true,
+      "deploymentPriority": "p0"
     },
     {
       "id": "telegram_full_deita",
@@ -2503,7 +2583,8 @@
       "sendToTranslator": false,
       "sendToOracle": false,
       "replacementHandle": "",
-      "reviewStatus": "disabled_x_only_contact_handle"
+      "reviewStatus": "disabled_x_only_contact_handle",
+      "deploymentPriority": "disabled"
     },
     {
       "id": "telegram_full_lebanon24",
@@ -2533,7 +2614,8 @@
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
       "sendToOracle": true,
-      "reviewStatus": "handle_migrated"
+      "reviewStatus": "handle_migrated",
+      "deploymentPriority": "p2"
     },
     {
       "id": "telegram_full_intel_sky",
@@ -2564,7 +2646,8 @@
       "sendToTranslator": true,
       "sendToOracle": false,
       "replacementHandle": "",
-      "reviewStatus": "disabled_non_telegram_source"
+      "reviewStatus": "disabled_non_telegram_source",
+      "deploymentPriority": "disabled"
     },
     {
       "id": "telegram_full_altsignals",
@@ -2592,7 +2675,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": false
+      "sendToOracle": false,
+      "deploymentPriority": "p2"
     },
     {
       "id": "telegram_full_forexgdp",
@@ -2620,7 +2704,8 @@
       "canTriggerTrade": false,
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
-      "sendToOracle": false
+      "sendToOracle": false,
+      "deploymentPriority": "p2"
     },
     {
       "id": "telegram_full_unitedsignals",
@@ -2649,7 +2734,8 @@
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
       "sendToOracle": false,
-      "reviewStatus": "handle_migrated_sentiment_only"
+      "reviewStatus": "handle_migrated_sentiment_only",
+      "deploymentPriority": "p2"
     },
     {
       "id": "telegram_full_prosignalsfx",
@@ -2678,7 +2764,8 @@
       "canInfluenceSentiment": true,
       "sendToTranslator": true,
       "sendToOracle": false,
-      "reviewStatus": "handle_migrated_sentiment_only"
+      "reviewStatus": "handle_migrated_sentiment_only",
+      "deploymentPriority": "p2"
     }
   ],
   "schemaVersion": 2,

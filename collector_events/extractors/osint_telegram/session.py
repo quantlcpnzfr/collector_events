@@ -323,8 +323,10 @@ class OsintTelegramSession(BaseSession):
     def _prioritize_channels(self, channels: List[TelegramChannel]) -> List[TelegramChannel]:
         prioritized = list(channels)
         if self.priority_startup:
+            priority_rank = {"p0": 0, "p1": 1, "p2": 2, "disabled": 3}
             prioritized.sort(
                 key=lambda channel: (
+                    priority_rank.get(channel.deployment_priority.lower(), 9),
                     channel.tier if channel.tier is not None else 999,
                     0 if channel.send_to_oracle else 1,
                     0 if channel.send_to_translator else 1,

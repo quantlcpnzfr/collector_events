@@ -153,10 +153,10 @@ Make the catalog express how a source should be used, not just what it is called
 
 ### Deliverables
 
-- [ ] Channel authenticity classification
-- [ ] Source family routing classification
-- [ ] P0/P1/P2 deployment priority embedded in the catalog
-- [ ] Separate routing path for forex retail signal channels
+- [x] Channel authenticity classification
+- [x] Source family routing classification
+- [x] P0/P1/P2 deployment priority embedded in the catalog
+- [x] Separate routing path for forex retail signal channels
 
 ### Implementation Tasks
 
@@ -196,6 +196,56 @@ Make the catalog express how a source should be used, not just what it is called
 
 - No retail signal source is treated like factual OSINT
 - Each channel has an explicit trust/routing class
+
+### P2 Progress Notes
+
+- Catalog curation completed for the 14 problem handles found during P1 runtime measurement.
+- Handle migrations applied:
+  - `intel_slava` -> `intelslava`
+  - `firstsquawk` -> `firstsquaw`
+  - `lebanon24` -> `lebanon_24`
+  - `unitedsignals` -> `UnitedSignalsFX`
+  - `prosignalsfx` -> `prosignalsfx_1`
+- Disabled dead or non-Telegram handles:
+  - `cybersecboardrm`
+  - `CYBERWARCOM`
+  - `thecyberwire`
+  - `syriatracker`
+  - `disclosewt` (superseded by existing `disclosetv`)
+  - `bell_geo`
+  - `deita`
+  - `intel_sky`
+  - `crypto_pump_alerts`
+- Classification improvements applied:
+  - `intelslava` -> `authenticityClass=narrative_partisan`
+  - `firstsquaw` -> `authenticityClass=official_brand`
+  - `lebanon_24` -> `authenticityClass=unofficial_mirror`
+  - `crypto_pump_alerts` -> `authenticityClass=retail_signal`
+- Deployment priority is now embedded in the catalog as `deploymentPriority`:
+  - `p0` = core startup set
+  - `p1` = standard active set
+  - `p2` = lower-priority or sentiment-only set
+  - `disabled` = excluded from runtime startup
+- Current priority distribution:
+  - `p0`: 10
+  - `p1`: 59
+  - `p2`: 9
+  - `disabled`: 9
+- Forex retail signal channels remain sentiment-only with `sendToOracle=false`.
+- Post-curation runtime validation on 2026-05-06:
+  - `78` active channels
+  - `5` live resolves for migrated handles
+  - `73` cache hits
+  - `0` resolution failures
+  - `0` flood waits
+  - startup completed in about `23s`
+- Warm-cache validation after priority embedding on 2026-05-06:
+  - `78` resolved channels
+  - `78` cache hits
+  - `0` cache misses
+  - `0` failures
+  - `0` flood waits
+  - startup completed in about `24s`
 
 ## P3 - Enrichment, Dedupe, and Source Scoring
 

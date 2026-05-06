@@ -52,6 +52,7 @@ AUTHENTICITY_CLASS_VALUES = {
     "unofficial_mirror",
     "unknown",
 }
+DEPLOYMENT_PRIORITY_VALUES = {"p0", "p1", "p2", "disabled"}
 SOURCE_ROLE_VALUES = {
     "breaking_news",
     "conflict_osint",
@@ -203,6 +204,32 @@ def _default_send_to_oracle(channel: dict[str, Any]) -> bool:
     return topic not in {"forex", "forex_signals"}
 
 
+def _default_deployment_priority(channel: dict[str, Any]) -> str:
+    if not bool(channel.get("enabled", True)):
+        return "disabled"
+
+    tier = channel.get("tier")
+    try:
+        tier_num = int(tier) if tier is not None else 999
+    except Exception:
+        tier_num = 999
+
+    topic = str(channel.get("topic") or "").lower()
+    authenticity = str(channel.get("authenticityClass") or _default_authenticity_class(channel))
+    send_to_oracle = bool(channel.get("sendToOracle", _default_send_to_oracle(channel)))
+    routing_family = str(channel.get("routingFamily") or _default_routing_family(channel))
+
+    if topic in {"forex", "forex_signals"} or not send_to_oracle:
+        return "p2"
+    if authenticity in {"unofficial_mirror", "narrative_partisan"}:
+        return "p2"
+    if tier_num == 1 and routing_family in {"osint_conflict", "osint_geopolitics", "osint_middleeast", "osint_breaking", "finance_tape", "crypto_flow"}:
+        return "p0"
+    if authenticity in {"official_brand", "independent_reporter"} and tier_num <= 2:
+        return "p0"
+    return "p1"
+
+
 def recalc_counts(channels: list[dict[str, Any]]) -> dict[str, Any]:
     return {
         "totalChannelOccurrences": len(channels),
@@ -234,6 +261,7 @@ def apply_governance_defaults(payload: dict[str, Any]) -> None:
         channel.setdefault("canInfluenceSentiment", _default_can_influence_sentiment(channel))
         channel.setdefault("sendToTranslator", _default_send_to_translator(channel))
         channel.setdefault("sendToOracle", _default_send_to_oracle(channel))
+        channel.setdefault("deploymentPriority", _default_deployment_priority(channel))
 
 
 def validate_payload(payload: dict[str, Any], *, require_governance: bool) -> list[str]:
@@ -280,6 +308,7 @@ def validate_payload(payload: dict[str, Any], *, require_governance: bool) -> li
                 "routingFamily": ROUTING_FAMILY_VALUES,
                 "biasRisk": BIAS_RISK_VALUES,
                 "authenticityClass": AUTHENTICITY_CLASS_VALUES,
+                "deploymentPriority": DEPLOYMENT_PRIORITY_VALUES,
             }
             for field, allowed in governance_fields.items():
                 if field not in channel:

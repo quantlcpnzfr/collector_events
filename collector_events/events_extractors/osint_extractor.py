@@ -194,6 +194,29 @@ def _default_routing_family(topic: str) -> str:
     return "osint_conflict"
 
 
+def _default_deployment_priority(channel: dict[str, Any]) -> str:
+    if not bool(channel.get("enabled", True)):
+        return "disabled"
+    tier = channel.get("tier")
+    try:
+        tier_num = int(tier) if tier is not None else 999
+    except Exception:
+        tier_num = 999
+    topic = str(channel.get("topic") or "")
+    authenticity = str(channel.get("authenticityClass") or _default_authenticity_class(str(channel.get("handle") or ""), topic))
+    send_to_oracle = bool(channel.get("sendToOracle", topic not in {"forex", "forex_signals"}))
+    routing_family = str(channel.get("routingFamily") or _default_routing_family(topic))
+    if topic in {"forex", "forex_signals"} or not send_to_oracle:
+        return "p2"
+    if authenticity in {"unofficial_mirror", "narrative_partisan"}:
+        return "p2"
+    if tier_num == 1 and routing_family in {"osint_conflict", "osint_geopolitics", "osint_middleeast", "osint_breaking", "finance_tape", "crypto_flow"}:
+        return "p0"
+    if authenticity in {"official_brand", "independent_reporter"} and tier_num <= 2:
+        return "p0"
+    return "p1"
+
+
 def _default_bias_risk(handle: str, topic: str) -> str:
     if handle.lower() in {
         "abualiexpress",
@@ -250,6 +273,7 @@ def _add_governance_defaults(channel: dict[str, Any]) -> dict[str, Any]:
     channel.setdefault("canInfluenceSentiment", True)
     channel.setdefault("sendToTranslator", topic not in {"finance", "markets", "crypto"})
     channel.setdefault("sendToOracle", topic not in {"forex", "forex_signals"})
+    channel.setdefault("deploymentPriority", _default_deployment_priority(channel))
     return channel
 
 
@@ -285,6 +309,7 @@ def _worldmonitor_channel(raw: dict[str, Any]) -> dict[str, Any] | None:
         "canInfluenceSentiment",
         "sendToTranslator",
         "sendToOracle",
+        "deploymentPriority",
     ):
         if field in raw:
             channel[field] = raw[field]

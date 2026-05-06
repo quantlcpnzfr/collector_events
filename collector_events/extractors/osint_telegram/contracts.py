@@ -22,6 +22,7 @@ class TelegramChannel:
     can_influence_sentiment: bool = True
     send_to_translator: bool = True
     send_to_oracle: bool = True
+    deployment_priority: str = "p1"
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -57,6 +58,11 @@ class TelegramChannel:
                 data.get("send_to_oracle")
                 if "send_to_oracle" in data
                 else data.get("sendToOracle", True)
+            ),
+            deployment_priority=str(
+                data.get("deployment_priority")
+                or data.get("deploymentPriority")
+                or "p1"
             ),
         )
 
