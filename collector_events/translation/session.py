@@ -3,10 +3,10 @@ from __future__ import annotations
 import asyncio
 import copy
 import re
-from datetime import datetime, timezone
 from typing import Any, Dict, Optional, Mapping
 
 from forex_shared.worker_api import BaseSession
+from forex_shared.worker_api.contracts import SessionStatus
 from forex_shared.logging.get_logger import get_logger
 from forex_shared.providers.mq.mq_factory import MQFactory
 
@@ -23,7 +23,7 @@ class TranslationSession(BaseSession):
         self.config = config
         self.session_id = config.get("session_id", "default")
         self.session_name = config.get("session_name", self.session_id)
-        self.status = "RUNNING"
+        self.status = SessionStatus.STARTING.value
         self.metadata = config.get("metadata", {})
         self.kind = "translation"
         
@@ -41,12 +41,14 @@ class TranslationSession(BaseSession):
         if self._is_running:
             return
             
+        self.status = SessionStatus.STARTING.value
         self.engine.load()
-        
+
         self._mq = MQFactory.create_async_from_env()
         await self._mq.subscribe_event(self.input_topic, self._on_event)
-        
+
         self._is_running = True
+        self.status = SessionStatus.RUNNING.value
         # Note: start_consuming is usually called by the worker or in a task
         asyncio.create_task(self._mq.start_consuming())
         log.info(f"TranslationSession '{self.session_id}' started. Listening on {self.input_topic}")
@@ -54,10 +56,12 @@ class TranslationSession(BaseSession):
     async def stop(self) -> None:
         """Stop MQ consumption and disconnect."""
         self._is_running = False
+        self.status = SessionStatus.STOPPING.value
         if self._mq:
             await self._mq.stop_consuming()
             await self._mq.disconnect()
             self._mq = None
+        self.status = SessionStatus.STOPPED.value
         log.info(f"TranslationSession '{self.session_id}' stopped.")
 
     async def _on_event(self, payload: Any) -> None:
@@ -97,50 +101,44 @@ class TranslationSession(BaseSession):
 
         # Detection
         detection = self.engine.detect_language(sample)
-        
+
         # Decide if translation is needed
         is_english = detection.language == "eng_Latn" or detection.language in {"en", "eng"}
         should_translate = not is_english and detection.confidence >= self.min_confidence
-        
-        was_translated = False
-        status = detection.status
-        error = detection.error
 
         # Get raw body for storage
         raw_body = str(payload.get("body", ""))
 
-        if "extra" not in enriched:
+        if "extra" not in enriched or not isinstance(enriched.get("extra"), dict):
             enriched["extra"] = {}
 
         if should_translate:
             trans_title, t_status, t_error = self.engine.translate(title, detection.language)
             trans_body, b_status, b_error = self.engine.translate(body, detection.language)
-            
-            # Store original body in extra since it's not English
-            enriched["extra"]["source_body"] = raw_body
-            
+            title_translated = t_status == "translated" and bool(trans_title)
+            body_translated = b_status == "translated" and bool(trans_body)
+
+            # Store original body only when translation was actually needed.
+            enriched["extra"]["original_body"] = raw_body
+
             # Overwrite original fields with translated text
-            enriched["title"] = self._clean_title(trans_title)
-            enriched["body"] = trans_body
-            
+            enriched["title"] = self._clean_title(trans_title if title_translated else title)
+            enriched["body"] = trans_body if body_translated else body
+
             translation_source = f"⚡Translation from {detection.language_name} ({detection.language})"
         else:
             if is_english:
                 # Clean title even if already English
                 enriched["title"] = self._clean_title(title)
                 enriched["body"] = body
-                translation_source = "➡️ No translation needed"
-                enriched["extra"]["source_body"] = ""
+                translation_source = "➡️No translation needed"
+                enriched["extra"]["original_body"] = ""
             else:
                 # Not English, but maybe confidence too low?
-                # Even if not translated, store original body if it's not English
-                enriched["extra"]["source_body"] = raw_body
-                
                 # Just clean existing title
                 enriched["title"] = self._clean_title(title)
                 translation_source = f"⚠️ Detection: {detection.language_name} ({detection.language}) - No translation"
-        
-        # Add to extra as requested by user
+                enriched["extra"]["original_body"] = raw_body
         enriched["extra"]["translation_source"] = translation_source
 
         return enriched
@@ -161,6 +159,8 @@ class TranslationSession(BaseSession):
     def snapshot(self) -> Dict[str, Any]:
         return {
             "session_id": self.session_id,
+            "session_name": self.session_name,
+            "status": self.status,
             "is_running": self._is_running,
             "input_topic": self.input_topic,
             "provider": self.engine.translation_provider,

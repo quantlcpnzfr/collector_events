@@ -57,11 +57,10 @@ class TestTranslationIntelEnrichment(unittest.IsolatedAsyncioTestCase):
         
         # Mock detection logic
         def mock_detect(text):
-            text_lower = text.lower()
-            # Simple mock detection logic
-            if any(word in text_lower for word in ["iran", "tehran", "khamenei", "strait", "trump", "araghchi"]):
+            # Persian detection mock (check for Arabic-script Persian text)
+            if any('\u0600' <= c <= '\u06FF' for c in text):
                 return MagicMock(language="pes_Arab", language_name="Persian", confidence=0.9, status="detected", error="")
-            
+
             # Hebrew detection mock (check for Hebrew characters)
             if any('\u0590' <= c <= '\u05FF' for c in text):
                 return MagicMock(language="heb_Hebr", language_name="Hebrew", confidence=0.9, status="detected", error="")
@@ -79,8 +78,6 @@ class TestTranslationIntelEnrichment(unittest.IsolatedAsyncioTestCase):
             if "שר החוץ הגרמני" in text:
                 eng = "Germany's Foreign Minister (during Foreign Minister Gideon Sa'ar's visit to Germany): \n\nGermany is committed to Israel's security - a steadfast commitment that is not subject to change.\n\nLet it always be clear: we will not allow any threat to the very existence of the State of Israel.\n\nThis is a fundamental principle of Germany's policy."
                 return eng, "translated", ""
-            elif "Iran" in text or "Strait" in text:
-                return text, "translated", ""
                 
             return "This text was successfully translated into English by the mock engine.", "translated", ""
         engine.translate = MagicMock(side_effect=mock_translate)
@@ -95,25 +92,25 @@ class TestTranslationIntelEnrichment(unittest.IsolatedAsyncioTestCase):
             # Simulate MQ receiving a serialized IntelItem
             processed = await asyncio.to_thread(session._process_payload, item)
             if processed:
-                # 0. Check enrichment (Step 0)
-                # Verify simplified schema: no _en fields, no event_type, no translation root
+                # 0. Check enrichment contract
                 self.assertNotIn("title_en", processed)
                 self.assertNotIn("body_en", processed)
                 self.assertNotIn("text_en", processed)
                 self.assertNotIn("event_type", processed)
                 self.assertNotIn("translation", processed)
+                self.assertNotIn("source_language", processed)
+                self.assertNotIn("source_language_name", processed)
                 
                 self.assertIn("translation_source", processed["extra"])
+                self.assertIn("original_body", processed["extra"])
                 
                 source_str = processed["extra"]["translation_source"]
                 if "⚡Translation from" in source_str:
-                    # Verify source_body exists for non-english
-                    self.assertIn("source_body", processed["extra"])
-                    self.assertEqual(processed["extra"]["source_body"], item["body"])
+                    # Verify original_body exists for non-english
+                    self.assertEqual(processed["extra"]["original_body"], item["body"])
                 else:
-                    # Verify source_body is empty string for english
-                    self.assertIn("source_body", processed["extra"])
-                    self.assertEqual(processed["extra"]["source_body"], "")
+                    # Verify original_body is empty string for english
+                    self.assertEqual(processed["extra"]["original_body"], "")
                 
                 # Check title length and format (no newlines)
                 self.assertLessEqual(len(processed["title"]), 205)

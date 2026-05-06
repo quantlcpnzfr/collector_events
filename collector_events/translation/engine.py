@@ -1,12 +1,8 @@
 from __future__ import annotations
 
 import logging
-import copy
-import re
-import os
 from pathlib import Path
 from typing import Any, Dict, Optional, Tuple
-from datetime import datetime, timezone
 from dataclasses import dataclass, asdict
 
 # Optional imports for models
@@ -67,7 +63,9 @@ class TranslationEngine:
         self._tokenizer = None
         self._translation_model = None
         self._translation_pipeline = None
-        
+        self._detector_load_attempted = False
+        self._translator_load_attempted = False
+
         self.last_error = ""
 
     def load(self):
@@ -76,12 +74,14 @@ class TranslationEngine:
         self._load_translator()
 
     def _load_detector(self):
-        if self._detector is not None or not fasttext:
+        if self._detector is not None or self._detector_load_attempted or not fasttext:
             return
+        self._detector_load_attempted = True
 
         model_path = self.detector_model_path.expanduser().resolve()
         if not model_path.exists():
             log.warning(f"Language detector model not found: {model_path}")
+            self.last_error = f"Detector model not found: {model_path}"
             return
 
         try:
@@ -92,6 +92,10 @@ class TranslationEngine:
             log.error(self.last_error)
 
     def _load_translator(self):
+        if self._translator_load_attempted:
+            return
+        self._translator_load_attempted = True
+
         if self.translation_provider in {"none", "off", "disabled"}:
             return
 

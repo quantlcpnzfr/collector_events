@@ -64,10 +64,13 @@ class TestMockTranslation(unittest.IsolatedAsyncioTestCase):
             # Simulate MQ receiving
             result = await asyncio.to_thread(session._process_payload, item)
             if result:
-                # Check enrichment (Step 0)
-                self.assertIn("translation", result)
+                # Check enrichment contract
                 self.assertIn("translation_source", result["extra"])
-                self.assertTrue(result["extra"]["translation_source"].startswith("⚡Translation from"))
+                self.assertIn("original_body", result["extra"])
+                self.assertNotIn("event_type", result)
+                self.assertNotIn("translation", result)
+                self.assertNotIn("source_language", result)
+                self.assertNotIn("source_language_name", result)
                 
                 translated_items.append(result)
         

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import os
 from typing import Any, Dict, List, Optional, Mapping
 
 from forex_shared.worker_api import (
@@ -62,11 +63,16 @@ class TranslationWorker(BaseSessionWorker, InMemorySessionPoolMixin):
         while not self._stop_event.is_set():
             await asyncio.sleep(1.0)
 
+    async def list_sessions(self) -> List[Dict[str, Any]]:
+        """Return serializable snapshots for all active sessions."""
+        return self.session_snapshots()
+
     async def create_session(self, payload: Mapping[str, Any]) -> CommandResponse:
         """Create and start a new Translation session."""
         session_id = str(payload.get("session_id", "default"))
-        config = payload.get("config", {})
-        
+        config = dict(payload.get("config", {}))
+        config.setdefault("session_id", session_id)
+
         if session_id in self._sessions:
             return {"status": "error", "message": f"Session '{session_id}' already exists"}
 
@@ -77,8 +83,6 @@ class TranslationWorker(BaseSessionWorker, InMemorySessionPoolMixin):
             # Each session currently gets its own engine for simplicity, 
             # but we could share it if the config matches.
             session = TranslationSession(config)
-            session.session_id = session_id
-            
             await session.start()
             self._sessions[session_id] = session
             
