@@ -27,6 +27,22 @@ class FakeTranslationEngine:
         return text, "skipped", ""
 
 
+class FakeSpanishTranslationEngine(FakeTranslationEngine):
+    def detect_language(self, text):
+        return SimpleNamespace(
+            language="spa_Latn",
+            language_name="Spanish",
+            confidence=0.95,
+            status="detected",
+            error="",
+        )
+
+    def translate(self, text, source_language):
+        if text == "Alerta fronteriza":
+            return "Border alert", "translated", ""
+        return "Military movement reported near the border.", "translated", ""
+
+
 class FakeEventProcessor:
     def process_item(self, item):
         item.extra["danger_score"] = 0.82
@@ -63,6 +79,14 @@ def _telegram_payload():
     }
 
 
+def _spanish_telegram_payload():
+    payload = _telegram_payload()
+    payload["id"] = "telegram:item:spanish"
+    payload["title"] = "Alerta fronteriza"
+    payload["body"] = "Movimiento militar reportado cerca de la frontera."
+    return payload
+
+
 def test_translation_preserves_source_and_cluster_metadata():
     session = TranslationSession(
         {"session_id": "test", "min_detection_confidence": 0.35},
@@ -76,6 +100,24 @@ def test_translation_preserves_source_and_cluster_metadata():
     assert translated["extra"]["cluster_id"] == "cluster:conflict:test"
     assert translated["extra"]["cluster_channel_count"] == 2
     assert "No translation needed" in translated["extra"]["translation_source"]
+
+
+def test_translation_stores_original_body_for_non_english_payload():
+    payload = _spanish_telegram_payload()
+    session = TranslationSession(
+        {"session_id": "test", "min_detection_confidence": 0.35},
+        engine=FakeSpanishTranslationEngine(),
+    )
+
+    translated = session._process_payload(payload)
+
+    assert translated["event_type"] == "INTEL_ITEM_TRANSLATED"
+    assert translated["title"] == "Border alert"
+    assert translated["body"] == "Military movement reported near the border."
+    assert translated["extra"]["original_body"] == payload["body"]
+    assert "Translation from Spanish (spa_Latn)" in translated["extra"]["translation_source"]
+    assert translated["extra"]["source_score"] == 0.91
+    assert translated["extra"]["cluster_id"] == "cluster:conflict:test"
 
 
 def test_nlp_enrichment_preserves_metadata_and_publishes_enriched_contract():
