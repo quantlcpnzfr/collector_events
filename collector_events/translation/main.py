@@ -30,6 +30,9 @@ async def run_worker():
             "detector_model_path": os.getenv("GLOTLID_MODEL_PATH", ".models/lid/lid.176.bin"),
             "translation_model_path": os.getenv("TRANSLATION_MODEL_PATH", ".models/nllb-200-distilled-600M"),
             "device": os.getenv("TRANSLATION_DEVICE", "auto"),
+            "max_text_chars": int(os.getenv("TRANSLATION_MAX_TEXT_CHARS", "600")),
+            "nllb_max_new_tokens": int(os.getenv("NLLB_MAX_NEW_TOKENS", "96")),
+            "nllb_num_beams": int(os.getenv("NLLB_NUM_BEAMS", "1")),
         }
         await worker.create_session({"session_id": "default", "config": config})
     

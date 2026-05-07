@@ -29,6 +29,10 @@ ISO2_TO_NLLB = {
     "hi": "hin_Deva", "it": "ita_Latn", "ja": "jpn_Jpan", "ko": "kor_Hang",
     "pl": "pol_Latn", "pt": "por_Latn", "ru": "rus_Cyrl", "tr": "tur_Latn",
     "uk": "ukr_Cyrl", "zh": "zho_Hans",
+    "cs": "ces_Latn", "eo": "epo_Latn", "id": "ind_Latn", "nl": "nld_Latn",
+    "ro": "ron_Latn", "sv": "swe_Latn", "fi": "fin_Latn", "da": "dan_Latn",
+    "no": "nob_Latn", "bg": "bul_Cyrl", "hr": "hrv_Latn", "sr": "srp_Cyrl",
+    "sk": "slk_Latn", "sl": "slv_Latn",
 }
 
 @dataclass(frozen=True)
@@ -55,7 +59,7 @@ class TranslationEngine:
         self.translation_provider = str(config.get("translation_provider", "none")).lower()
         self.translation_model_path = config.get("translation_model_path", "")
         self.target_language = config.get("target_language", DEFAULT_TARGET_LANGUAGE)
-        self.max_text_chars = int(config.get("max_text_chars", 4000))
+        self.max_text_chars = int(config.get("max_text_chars", 600))
         self.device = config.get("device", "auto")
         self.min_detection_confidence = float(config.get("min_detection_confidence", 0.35))
         
@@ -160,17 +164,27 @@ class TranslationEngine:
 
     def translate(self, text: str, source_language: str) -> Tuple[str, str, str]:
         """Returns (translated_text, status, error)"""
-        if not text.strip():
+        text = text.strip()
+        if not text:
             return "", "empty_text", ""
 
         if self.translation_provider in {"none", "off", "disabled"}:
             return text, "provider_disabled", ""
 
+        truncated = False
+        if self.max_text_chars > 0 and len(text) > self.max_text_chars:
+            text = text[: self.max_text_chars].strip()
+            truncated = True
+
         try:
             if self.translation_provider == "nllb":
-                return self._translate_nllb(text, source_language), "translated", ""
+                if not self._is_supported_lang_token(source_language):
+                    return text, "unsupported_language", f"NLLB language token not supported: {source_language}"
+                status = "translated_truncated" if truncated else "translated"
+                return self._translate_nllb(text, source_language), status, ""
             elif self.translation_provider == "opus_mt":
-                return self._translate_opus_mt(text), "translated", ""
+                status = "translated_truncated" if truncated else "translated"
+                return self._translate_opus_mt(text), status, ""
         except Exception as e:
             return text, "error", str(e)
 
@@ -194,8 +208,8 @@ class TranslationEngine:
         generated = self._translation_model.generate(
             **inputs,
             forced_bos_token_id=forced_bos_token_id,
-            max_new_tokens=int(self.config.get("nllb_max_new_tokens", 512)),
-            num_beams=int(self.config.get("nllb_num_beams", 2))
+            max_new_tokens=int(self.config.get("nllb_max_new_tokens", 96)),
+            num_beams=int(self.config.get("nllb_num_beams", 1))
         )
         return self._tokenizer.batch_decode(generated, skip_special_tokens=True)[0].strip()
 
@@ -216,6 +230,15 @@ class TranslationEngine:
         if token_id == self._tokenizer.unk_token_id:
             raise ValueError(f"Language token {lang_code} not supported")
         return int(token_id)
+
+    def _is_supported_lang_token(self, lang_code: str) -> bool:
+        if not self._tokenizer:
+            return False
+        try:
+            self._get_lang_token_id(lang_code)
+            return True
+        except Exception:
+            return False
 
     def _get_language_name(self, code: str) -> str:
         if code == DEFAULT_TARGET_LANGUAGE: return "English"

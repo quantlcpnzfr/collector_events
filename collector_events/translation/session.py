@@ -128,8 +128,8 @@ class TranslationSession(BaseSession):
         if should_translate:
             trans_title, t_status, t_error = self.engine.translate(title, detection.language)
             trans_body, b_status, b_error = self.engine.translate(body, detection.language)
-            title_translated = t_status == "translated" and bool(trans_title)
-            body_translated = b_status == "translated" and bool(trans_body)
+            title_translated = t_status.startswith("translated") and bool(trans_title)
+            body_translated = b_status.startswith("translated") and bool(trans_body)
 
             # Store original body only when translation was actually needed.
             enriched["extra"]["original_body"] = raw_body
@@ -139,6 +139,13 @@ class TranslationSession(BaseSession):
             enriched["body"] = trans_body if body_translated else body
 
             translation_source = f"⚡Translation from {detection.language_name} ({detection.language})"
+            if t_status == "translated_truncated" or b_status == "translated_truncated":
+                translation_source += " [truncated]"
+            if t_status in {"error", "unsupported_language"} or b_status in {"error", "unsupported_language"}:
+                translation_source = (
+                    f"⚠️ Detection: {detection.language_name} ({detection.language}) - "
+                    f"translation fallback title={t_status} body={b_status}"
+                )
         else:
             if is_english:
                 # Clean title even if already English
