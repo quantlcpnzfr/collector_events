@@ -30,6 +30,7 @@ class TranslationSession(BaseSession):
         self.input_topic = config.get("input_topic", "intel.events.#")
         self.output_prefix = config.get("output_prefix", "intel.translated")
         self.min_confidence = float(config.get("min_detection_confidence", 0.35))
+        self.max_in_flight = max(1, int(config.get("max_in_flight", 1)))
         
         # Engine can be shared across sessions to save memory
         self.engine = engine or TranslationEngine(config)
@@ -38,6 +39,7 @@ class TranslationSession(BaseSession):
         self.processed_count = 0
         self.published_count = 0
         self.error_count = 0
+        self._process_semaphore = asyncio.Semaphore(self.max_in_flight)
 
     async def start(self) -> None:
         """Initialize MQ and start consuming."""
@@ -78,8 +80,10 @@ class TranslationSession(BaseSession):
             return
 
         try:
-            # Process in thread pool to not block asyncio loop
-            enriched = await asyncio.to_thread(self._process_payload, payload)
+            async with self._process_semaphore:
+                # Process in thread pool to not block asyncio loop. The semaphore
+                # keeps the heavy model path singleton by default.
+                enriched = await asyncio.to_thread(self._process_payload, payload)
             
             if enriched:
                 # Publish enriched event
@@ -190,4 +194,5 @@ class TranslationSession(BaseSession):
             "processed_count": self.processed_count,
             "published_count": self.published_count,
             "error_count": self.error_count,
+            "max_in_flight": self.max_in_flight,
         }
